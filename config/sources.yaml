@@ -1,0 +1,113 @@
+schema_version: 1
+database_path: var/news-ingest.sqlite3
+lock_path: var/news-ingest.lock
+poll_interval_seconds: 300
+homepage_poll_interval_seconds: 900
+export_default_lookback_hours: 48
+raw_payload_retention_days: null
+max_response_bytes: 5242880
+max_public_body_characters: 30000
+failure_alert_threshold: 3
+item_count_drop_warning_percent: 70
+http:
+  timeout_seconds: 15
+  attempts: 3
+  max_connections_per_host: 2
+  user_agent: "VictorNewsCollector/1.0 (private personal use; contact configured locally)"
+sources:
+  nytimes:
+    enabled: true
+    identity: guid
+    language: en
+    merge_across_feeds: true
+    fetch_article_pages: false
+    fetch_public_body: false
+    capture_homepage_placement: false
+    feeds:
+      - {id: nytimes.homepage, name: NYT Homepage, url: https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml, surface: homepage_rss, order: 0, description_priority: 10}
+  ft:
+    enabled: true
+    identity: uuid_guid
+    language: en
+    merge_across_feeds: true
+    fetch_article_pages: false
+    fetch_public_body: false
+    capture_homepage_placement: false
+    feeds:
+      - {id: ft.homepage.international, name: FT International Homepage, url: https://www.ft.com/rss/home/international, surface: homepage_rss, order: 0, description_priority: 10}
+      - {id: ft.world, name: FT World, url: "https://www.ft.com/world?format=rss", surface: section_rss, order: 10, description_priority: 10}
+      - {id: ft.global_economy, name: FT Global Economy, url: "https://www.ft.com/global-economy?format=rss", surface: section_rss, order: 20, description_priority: 10}
+      - {id: ft.companies, name: FT Companies, url: "https://www.ft.com/companies?format=rss", surface: section_rss, order: 30, description_priority: 10}
+      - {id: ft.markets, name: FT Markets, url: "https://www.ft.com/markets?format=rss", surface: section_rss, order: 40, description_priority: 10}
+      - {id: ft.technology, name: FT Technology, url: "https://www.ft.com/technology?format=rss", surface: section_rss, order: 50, description_priority: 10}
+      - {id: ft.climate_capital, name: FT Climate Capital, url: "https://www.ft.com/climate-capital?format=rss", surface: section_rss, order: 60, description_priority: 10}
+      - {id: ft.opinion, name: FT Opinion, url: "https://www.ft.com/opinion?format=rss", surface: section_rss, order: 70, description_priority: 10}
+      - {id: ft.work_careers, name: FT Work Careers, url: "https://www.ft.com/work-careers?format=rss", surface: section_rss, order: 80, description_priority: 10}
+      - {id: ft.life_arts, name: FT Life Arts, url: "https://www.ft.com/life-arts?format=rss", surface: section_rss, order: 90, description_priority: 10}
+  borsen:
+    enabled: true
+    identity: guid_or_url
+    language: da
+    merge_across_feeds: true
+    fetch_article_pages: false
+    fetch_public_body: false
+    capture_homepage_placement: false
+    feeds:
+      - {id: borsen.homepage, name: Børsen Homepage, url: https://borsen.dk/rss, surface: homepage_rss, order: 0, description_priority: 10}
+      - {id: borsen.breaking, name: Børsen Breaking, url: https://borsen.dk/rss/breaking, surface: section_rss, order: 10, description_priority: 10}
+      - {id: borsen.baeredygtig, name: Børsen Bæredygtig, url: https://borsen.dk/rss/baeredygtig, surface: section_rss, order: 20, description_priority: 10}
+      - {id: borsen.ejendomme, name: Børsen Ejendomme, url: https://borsen.dk/rss/ejendomme, surface: section_rss, order: 30, description_priority: 10}
+      - {id: borsen.finans, name: Børsen Finans, url: https://borsen.dk/rss/finans, surface: section_rss, order: 40, description_priority: 10}
+      - {id: borsen.investor, name: Børsen Investor, url: https://borsen.dk/rss/investor, surface: section_rss, order: 50, description_priority: 10}
+      - {id: borsen.executive, name: Børsen Executive, url: https://borsen.dk/rss/executive, surface: section_rss, order: 60, description_priority: 10}
+      - {id: borsen.longread, name: Børsen Longread, url: https://borsen.dk/rss/longread, surface: section_rss, order: 70, description_priority: 10}
+      - {id: borsen.markedsberetninger, name: Børsen Markedsberetninger, url: https://borsen.dk/rss/markedsberetninger, surface: section_rss, order: 80, description_priority: 10}
+      - {id: borsen.opinion, name: Børsen Opinion, url: https://borsen.dk/rss/opinion, surface: section_rss, order: 90, description_priority: 10}
+      - {id: borsen.pleasure, name: Børsen Pleasure, url: https://borsen.dk/rss/pleasure, surface: section_rss, order: 100, description_priority: 10}
+      - {id: borsen.politik, name: Børsen Politik, url: https://borsen.dk/rss/politik, surface: section_rss, order: 110, description_priority: 10}
+      - {id: borsen.tech, name: Børsen Tech, url: https://borsen.dk/rss/tech, surface: section_rss, order: 120, description_priority: 10}
+      - {id: borsen.udland, name: Børsen Udland, url: https://borsen.dk/rss/udland, surface: section_rss, order: 130, description_priority: 10}
+      - {id: borsen.virksomheder, name: Børsen Virksomheder, url: https://borsen.dk/rss/virksomheder, surface: section_rss, order: 140, description_priority: 10}
+      - {id: borsen.okonomi, name: Børsen Økonomi, url: https://borsen.dk/rss/okonomi, surface: section_rss, order: 150, description_priority: 10}
+  politiken:
+    enabled: true
+    identity: url_regex
+    identity_pattern: "art([0-9]+)"
+    language: da
+    merge_across_feeds: true
+    fetch_article_pages: false
+    fetch_public_body: false
+    capture_homepage_placement: false
+    homepage: {id: politiken.homepage, url: https://politiken.dk/, surface: homepage}
+    feeds:
+      - {id: politiken.latest, name: Politiken Latest, url: https://politiken.dk/rss/senestenyt.rss, surface: latest_rss, order: 0, description_priority: 10}
+  dr:
+    enabled: true
+    identity: guid
+    language: da
+    merge_across_feeds: true
+    fetch_article_pages: false
+    fetch_public_body: false
+    capture_homepage_placement: false
+    feeds:
+      - {id: dr.latest, name: DR Latest, url: https://www.dr.dk/nyheder/service/feeds/senestenyt, surface: latest_rss, order: 0, description_priority: 10}
+      - {id: dr.indland, name: DR Indland, url: https://www.dr.dk/nyheder/service/feeds/indland, surface: section_rss, order: 10, description_priority: 20}
+      - {id: dr.udland, name: DR Udland, url: https://www.dr.dk/nyheder/service/feeds/udland, surface: section_rss, order: 20, description_priority: 20}
+      - {id: dr.penge, name: DR Penge, url: https://www.dr.dk/nyheder/service/feeds/penge, surface: section_rss, order: 30, description_priority: 20}
+      - {id: dr.politik, name: DR Politik, url: https://www.dr.dk/nyheder/service/feeds/politik, surface: section_rss, order: 40, description_priority: 20}
+      - {id: dr.sporten, name: DR Sporten, url: https://www.dr.dk/nyheder/service/feeds/sporten, surface: section_rss, order: 50, description_priority: 20}
+      - {id: dr.senestesport, name: DR Seneste sport, url: https://www.dr.dk/nyheder/service/feeds/senestesport, surface: section_rss, order: 60, description_priority: 20}
+      - {id: dr.viden, name: DR Viden, url: https://www.dr.dk/nyheder/service/feeds/viden, surface: section_rss, order: 70, description_priority: 20}
+      - {id: dr.kultur, name: DR Kultur, url: https://www.dr.dk/nyheder/service/feeds/kultur, surface: section_rss, order: 80, description_priority: 20}
+      - {id: dr.musik, name: DR Musik, url: https://www.dr.dk/nyheder/service/feeds/musik, surface: section_rss, order: 90, description_priority: 20}
+      - {id: dr.vejret, name: DR Vejret, url: https://www.dr.dk/nyheder/service/feeds/vejret, surface: section_rss, order: 100, description_priority: 20}
+      - {id: dr.regionale, name: DR Regionale, url: https://www.dr.dk/nyheder/service/feeds/regionale, surface: section_rss, order: 110, description_priority: 20}
+      - {id: dr.regionale_kbh, name: DR Kbh, url: https://www.dr.dk/nyheder/service/feeds/regionale/kbh, surface: section_rss, order: 120, description_priority: 20}
+      - {id: dr.regionale_bornholm, name: DR Bornholm, url: https://www.dr.dk/nyheder/service/feeds/regionale/bornholm, surface: section_rss, order: 130, description_priority: 20}
+      - {id: dr.regionale_syd, name: DR Syd, url: https://www.dr.dk/nyheder/service/feeds/regionale/syd, surface: section_rss, order: 140, description_priority: 20}
+      - {id: dr.regionale_fyn, name: DR Fyn, url: https://www.dr.dk/nyheder/service/feeds/regionale/fyn, surface: section_rss, order: 150, description_priority: 20}
+      - {id: dr.regionale_vest, name: DR Vest, url: https://www.dr.dk/nyheder/service/feeds/regionale/vest, surface: section_rss, order: 160, description_priority: 20}
+      - {id: dr.regionale_nord, name: DR Nord, url: https://www.dr.dk/nyheder/service/feeds/regionale/nord, surface: section_rss, order: 170, description_priority: 20}
+      - {id: dr.regionale_trekanten, name: DR Trekanten, url: https://www.dr.dk/nyheder/service/feeds/regionale/trekanten, surface: section_rss, order: 180, description_priority: 20}
+      - {id: dr.regionale_sjaelland, name: DR Sjælland, url: https://www.dr.dk/nyheder/service/feeds/regionale/sjaelland, surface: section_rss, order: 190, description_priority: 20}
+      - {id: dr.regionale_oestjylland, name: DR Østjylland, url: https://www.dr.dk/nyheder/service/feeds/regionale/oestjylland, surface: section_rss, order: 200, description_priority: 20}
