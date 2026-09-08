@@ -5,7 +5,7 @@
 This is the execution plan for the empty repository at
 `/Users/vy/Documents/Development/news-gatherer`. It expands the Obsidian note
 `Inbox/Programmatic news ingestion plan — NYT, Politiken, Børsen, and DR.md` and adds the
-Financial Times (FT) to the source scope.
+Financial Times (FT) and Berlingske to the source scope.
 
 Implement the work packages in order. Do not start an optional work package until its gate is
 met. Each package names the files to create, the behavior to implement, the tests to add, and the
@@ -28,7 +28,7 @@ are optional follow-ups.
 ## 2. Product boundary
 
 Build a Python 3.12 service and CLI named `news-ingest`. It polls configured first-party feeds from
-NYT, FT, Børsen, Politiken, and DR; normalizes and versions every valid item; records feed placement;
+NYT, FT, Børsen, Politiken, Berlingske, and DR; normalizes and versions every valid item; records feed placement;
 and publishes JSONL bundles for a separate briefing agent.
 
 “Complete” means every item observed in the enabled feeds while the collector is running. It does
@@ -46,6 +46,7 @@ story across publishers, generate briefing Markdown, crawl archives, or fetch su
 | FT | RSS GUID UUID | International homepage RSS plus configured section RSS feeds | Homepage feed order is the main prominence signal; section feed order is a weak section signal | Disabled; no subscription credentials or cookies are used |
 | Børsen | RSS GUID | Main feed plus all enabled category feeds | Main-feed order | Disabled by default |
 | Politiken | `art([0-9]+)` from URL, GUID fallback | Latest-news RSS | `pol:order` and XML position; optional HTML homepage later | Disabled by default |
+| Berlingske | Complete RSS GUID URN | All-news RSS plus four main category feeds | Latest-feed and weaker section-feed order | Disabled by default |
 | DR | Full RSS GUID URN | Latest plus all enabled section and regional feeds | Feed membership and XML position | Disabled by default |
 
 FT was verified on 2026-09-07 using plain HTTP. The international homepage feed is
@@ -68,6 +69,14 @@ The FT article URL seen in the feed contains a changing tracking parameter shape
 `syn-<hex>=1`. Preserve it in `raw_url`, remove it from `canonical_url`, and use the GUID rather
 than either URL as identity. Treat the homepage feed as an observed international homepage, not a
 claim about every regional FT homepage. Keep the feed URL configurable.
+
+Berlingske was verified on 2026-09-08 using plain HTTP. The public
+`https://www.berlingske.dk/content/rss` alias redirects to the publisher-owned
+`/next-api/feeds/alle` RSS endpoint, returns ten recent items, and supplies title, description,
+link, a complete non-permalink `urn:bm:article:<uuid>` GUID, timezone-aware GMT `pubDate`, optional
+author and category values, and an optional image enclosure. The configured Samfund, Business,
+Kultur, and Opinion aliases redirect to equivalent category feeds. Preserve the feed-provided
+`referrer=RSS` query in `raw_url`, remove it from `canonical_url`, and use the full GUID as identity.
 
 ## 3. Locked technical decisions
 
@@ -291,6 +300,10 @@ Populate the feed list exactly as follows:
   `homepage_rss`; all others are `section_rss`.
 - Politiken: `politiken.latest`,
   `https://politiken.dk/rss/senestenyt.rss`, surface `latest_rss`.
+- Berlingske: `berlingske.latest` at `https://www.berlingske.dk/content/rss`, followed by
+  `berlingske.samfund`, `berlingske.business`, `berlingske.kultur`, and `berlingske.opinion` at
+  `/content/3/rss`, `/content/66/rss`, `/content/69/rss`, and `/content/21/rss`. Use `latest_rss`
+  for the all-news feed and `section_rss` for the category feeds.
 - DR: `dr.latest`, then indland, udland, penge, politik, sporten, senestesport, viden, kultur,
   musik, vejret, regionale, regionale/kbh, regionale/bornholm, regionale/syd, regionale/fyn,
   regionale/vest, regionale/nord, regionale/trekanten, regionale/sjaelland, and
@@ -510,6 +523,7 @@ Implement pure helpers before orchestration. Every helper must have table-driven
   use `syn-*` URL parameters.
 - Børsen: nonempty RSS GUID, canonical URL fallback only if GUID is missing.
 - Politiken: the first `art([0-9]+)` match from raw URL; nonempty GUID fallback.
+- Berlingske: complete nonempty `urn:bm:article:<uuid>` RSS GUID.
 - DR: complete GUID string, including the `urn:dr:umbraco:<type>:` prefix. Never use canonical URL.
 
 If a configured identity cannot be resolved, quarantine the item. Identity never crosses publisher
@@ -523,6 +537,7 @@ boundaries.
   remove a fragment from the canonical URL, and preserve the exact input in `raw_url`.
 - Remove parameters whose names match `utm_*`, `b_source`, `b_medium`, or `b_campaign`.
 - For FT also remove names matching `^syn-[A-Za-z0-9]+$`.
+- For Berlingske remove `referrer=RSS` from canonical URLs while preserving it in raw URLs.
 - Preserve all unrecognized parameters. Specifically preserve DR `focusId` with its original value
   and preserve the complete raw URL/fragment for live-blog entries.
 - Do not sort or rewrite parameters in `raw_url`. Canonical query parameters may be sorted by key
@@ -569,7 +584,8 @@ Feed-level behavior:
   quarantines only that item.
 - Record one-based XML/parsed order as `item_position`.
 - NYT and FT homepage position becomes `homepage_rss` appearance; Børsen main-feed position does
-  the same.
+  the same. Berlingske's all-news feed remains `latest_rss` and must not be described as homepage
+  placement.
 - FT section position remains a weak `section_rss` signal. Do not present it as homepage rank.
 - Politiken keeps both XML position and numeric `pol:order`.
 - Every valid entry from every enabled feed is kept regardless of age.
@@ -590,8 +606,8 @@ For a `(source, source_id)`:
    newest `observed_at`, then smallest configured feed order, then lexicographic feed ID.
 4. For DR descriptions, section feeds win because their configured priority is 20 versus latest at
    10. HTML metadata, if optional enrichment is later enabled, has priority below RSS.
-5. For FT and Børsen duplicates across homepage and section feeds, equal priority plus the explicit
-   tie-breakers produces a stable result while every appearance remains available.
+5. For FT, Børsen, and Berlingske duplicates across configured feeds, equal priority plus the
+   explicit tie-breakers produces a stable result while every appearance remains available.
 6. Union categories and keywords across current nonempty feed sightings, normalize, deduplicate, and
    sort. Deduplicate authors while preserving the chosen feed’s order.
 7. Preserve the earliest `first_seen_at`, latest `last_seen_at`, and latest applicable
@@ -813,8 +829,8 @@ database file without the WAL files is unsupported.
 - Immediate warning when all feeds for a publisher failed in the latest run.
 - Warning when a successful 200 yields zero items or item count drops by more than the configured
   percentage from the prior successful nonzero count.
-- Source-specific no-new-item staleness. Start with configurable defaults (NYT/FT/Politiken/DR 6
-  hours, Børsen 4 hours), label them heuristics, and suppress the warning until two successful
+- Source-specific no-new-item staleness. Start with configurable defaults
+  (NYT/FT/Politiken/Berlingske/DR 6 hours, Børsen 4 hours), label them heuristics, and suppress the warning until two successful
   polls exist.
 - Unresolved quarantine counts and oldest age.
 - Last export/backup status if known.
@@ -840,6 +856,7 @@ At minimum capture:
 - Børsen main and one category feed, plus a fixture containing a short `/nyhed/<id>` alias if it can
   be obtained without page automation.
 - Politiken latest in its declared ISO-8859-1 form and entries with `pol:order`/entities.
+- Berlingske all-news plus one category feed sharing a full article GUID.
 - DR latest plus a section feed sharing a GUID where only the section has a description, and a live
   blog URL with `focusId` when available.
 - Malformed/truncated synthetic variants derived from the structural shape, not copied full
@@ -853,12 +870,14 @@ Implement these named behaviors; combine cases only when failure output remains 
 
 - `test_config.py`: valid full config; every rejection in Section 6; stable secret-free config hash.
 - `test_time.py`: all timestamp cases in Section 8.
-- `test_urls.py`: tracking removal; FT dynamic `syn-*`; DR `focusId`; fragments/raw URL; Børsen
-  canonical fallback.
-- `test_identity.py`: all five source policies; Politiken fallback; FT UUID; DR live GUIDs.
+- `test_urls.py`: tracking removal; FT dynamic `syn-*`; Berlingske `referrer=RSS`; DR `focusId`;
+  fragments/raw URL; Børsen canonical fallback.
+- `test_identity.py`: all six source policies; Politiken fallback; FT UUID; Berlingske and DR live
+  GUIDs.
 - `test_feed.py`: one fixture per source/feed shape; declared Politiken encoding; entities/NBSP;
   NYT namespaces/standout; FT homepage order and thumbnail; Børsen author/image; Politiken
-  `pol:order`; DR missing description; bozo warning; per-item quarantine; raw/parsed count mismatch.
+  `pol:order`; Berlingske author/image enclosure; DR missing description; bozo warning; per-item
+  quarantine; raw/parsed count mismatch.
 - `test_http.py` with `respx`: redirects; ETag/Last-Modified; 304; 304 without cached payload;
   retryable statuses; both Retry-After forms; timeout; oversized body; non-retried 403/404; secret
   redaction.
@@ -921,7 +940,7 @@ succeed.
 Files: `config/sources.yaml`, `src/news_ingest/config.py`, `tests/test_config.py`.
 
 Implement Section 6 exactly. Complete when invalid configuration cannot start any mutating or
-network command and `validate-config` prints all five enabled sources and no credentials.
+network command and `validate-config` prints all six enabled sources and no credentials.
 
 ### Work Package 3 — models and pure normalization
 
@@ -963,7 +982,7 @@ or full subscriber text.
 
 Files: `feed.py`, `tests/test_feed.py`.
 
-Implement mapping/validation from Section 8. Complete when all five publishers parse through the
+Implement mapping/validation from Section 8. Complete when all six publishers parse through the
 same entry path, the parser retains complete JSON-safe metadata, and invalid siblings quarantine
 without discarding valid entries.
 
@@ -1095,7 +1114,7 @@ because a publisher is unavailable.
 
 All items below are mandatory:
 
-- One command polls every configured feed from all five sources with no LLM or browser.
+- One command polls every configured feed from all six sources with no LLM or browser.
 - Repeating an unchanged 200 or processing a 304 creates no duplicate article or version.
 - Every valid export has stable identity, title, raw URL, timezone-normalized publication time,
   first-seen time, and content hash, with nullable fields explicitly emitted.
@@ -1105,6 +1124,7 @@ All items below are mandatory:
 - DR same-GUID records merge, section descriptions win deterministically, and every feed appearance
   remains.
 - Politiken `pol:order`, XML feed position, and future homepage position remain distinct.
+- Berlingske full GUIDs merge all-news/section duplicates while every feed appearance remains.
 - NYT, FT, and Børsen homepage-feed positions are preserved.
 - No cross-publisher deduplication occurs.
 - Any UTC publication window exports a schema-valid deterministic bundle.
@@ -1140,6 +1160,8 @@ Source gates:
   publicly visible paragraphs may be stored.
 - Politiken: leave disabled unless a measured gap appears. Pages add little beyond canonical URL and
   a published `<time>`.
+- Berlingske: keep RSS-only unless a measured description-coverage gap and downstream requirement
+  pass this package's gate. Do not add login or subscriber-cookie handling.
 - DR: if bodies are required, parse `script#__NEXT_DATA__`, choose the publication whose URL matches
   canonical, traverse `props.pageProps.viewProps.site.publications[].content`, and extract structured
   body paragraphs. Never use hashed CSS classes. Cap at 30,000 characters and set the truncation

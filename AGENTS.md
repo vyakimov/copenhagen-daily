@@ -3,7 +3,7 @@
 ## Project overview
 
 `news-gatherer` contains the `news-ingest` Python 3.12 service and CLI. It polls
-configured first-party RSS feeds from NYT, FT, Børsen, Politiken, and DR,
+configured first-party RSS feeds from NYT, FT, Børsen, Politiken, Berlingske, and DR,
 persists raw payloads and every valid sighting in SQLite, builds a deterministic
 article projection, and publishes immutable JSONL export bundles.
 
@@ -84,6 +84,9 @@ requirement is not summarized here.
   is absent.
 - Politiken uses the first `art([0-9]+)` URL match, with GUID fallback. Keep
   `pol:order` distinct from XML position.
+- Berlingske keeps the complete `urn:bm:article:<uuid>` RSS GUID. Remove only
+  `referrer=RSS` from canonical URLs and retain it in raw URLs. Treat the all-news
+  feed as latest-news evidence and category feeds as weaker section evidence.
 - DR keeps the complete GUID URN. Section-feed descriptions outrank latest-feed
   descriptions through configured priorities. Preserve `focusId` URL values.
 - Never deduplicate identities across publishers.
@@ -127,7 +130,8 @@ requirement is not summarized here.
 - All default tests must be network-free and use temporary databases/directories.
 - Put network-backed checks under `tests/live/`, mark them `live`, and exclude
   them from the ordinary test suite.
-- Use `tools/capture_fixture.py` as the only normal fixture-capture path. Raw
+- Use `gather_news.sh capture-fixture` as the only normal fixture-capture path;
+  `tools/capture_fixture.py` is a compatibility shim. Raw
   fixtures need safe metadata sidecars and hashes, and must never contain
   credentials, cookies, or subscriber article bodies.
 - Add table-driven tests for normalization rules and regression tests for every
@@ -138,16 +142,16 @@ requirement is not summarized here.
 
 ## Required verification
 
-Run the offline check sequence before handing off code changes:
+Run the offline check before handing off code changes. All verification is
+routed through the allowlist-friendly repository entrypoint; do not invoke
+`uv`, Python, Ruff, or pytest directly:
 
 ```sh
-uv sync --locked --all-extras
-uv run ruff check .
-uv run ruff format --check .
-uv run python -m compileall -q src tests
-uv run pytest -m "not live" -q
-uv run news-ingest validate-config
+./gather_news.sh check
 ```
+
+This assumes the operator has already provisioned `.venv` from the committed
+`uv.lock`; the wrapper deliberately cannot install or update dependencies.
 
 For changes affecting persistence, collection, recovery, or exports, also run
 the smallest relevant CLI smoke test against a temporary database. Do not use or
@@ -157,7 +161,7 @@ Live publisher checks are separate and must be explicitly requested or clearly
 required by the task:
 
 ```sh
-uv run news-ingest live-contracts
+./gather_news.sh live-contracts
 ```
 
 Do not treat a publisher outage as an offline-test failure.

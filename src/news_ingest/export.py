@@ -25,24 +25,48 @@ def _boundary(value: str) -> str:
     return format_utc(parsed)
 
 
-def export_bundle(database, output, since=None, until=None, changed_since=None):
+def plan_export(output, since=None, until=None, changed_since=None):
     if bool(since) == bool(changed_since):
         raise ValueError("choose exactly one export mode")
     if since:
+        if not until:
+            raise ValueError("--until is required with --since")
         start = _boundary(since)
         end = _boundary(until)
         if start >= end:
             raise ValueError("since must precede until")
-        where = "published_at>=? AND published_at<?"
-        values = (start, end)
         mode = "publication_window"
     else:
-        where = "last_changed_at>=?"
-        values = (_boundary(changed_since),)
+        if until:
+            raise ValueError("--until is valid only with --since")
+        start = end = None
+        changed_since = _boundary(changed_since)
         mode = "changed_since"
     output = Path(output)
     if output.exists():
         raise ValueError("output already exists")
+    return {
+        "mode": mode,
+        "window": {"since": start, "until": end} if since else None,
+        "changed_since": changed_since if not since else None,
+        "output": str(output),
+        "format": "jsonl",
+    }
+
+
+def export_bundle(database, output, since=None, until=None, changed_since=None):
+    plan = plan_export(output, since, until, changed_since)
+    if plan["mode"] == "publication_window":
+        start = plan["window"]["since"]
+        end = plan["window"]["until"]
+        where = "published_at>=? AND published_at<?"
+        values = (start, end)
+    else:
+        start = end = None
+        where = "last_changed_at>=?"
+        values = (plan["changed_since"],)
+    mode = plan["mode"]
+    output = Path(output)
     con = connect(database, True)
     con.execute("BEGIN")
     generated = format_utc(now_utc())

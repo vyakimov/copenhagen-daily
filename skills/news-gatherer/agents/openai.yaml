@@ -1,0 +1,3 @@
+interface:
+  display_name: "News Gatherer"
+  short_description: "Collect, inspect, export, and maintain RSS news"

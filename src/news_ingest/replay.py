@@ -20,7 +20,7 @@ def backup(database, output):
 
 
 def restore_check(backup_path):
-    src = sqlite3.connect(backup_path)
+    src = connect(backup_path, readonly=True)
     result = src.execute("PRAGMA integrity_check").fetchone()[0]
     src.close()
     return {"integrity": result, "ok": result == "ok"}

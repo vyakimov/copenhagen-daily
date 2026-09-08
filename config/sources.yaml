@@ -81,6 +81,20 @@ sources:
     homepage: {id: politiken.homepage, url: https://politiken.dk/, surface: homepage}
     feeds:
       - {id: politiken.latest, name: Politiken Latest, url: https://politiken.dk/rss/senestenyt.rss, surface: latest_rss, order: 0, description_priority: 10}
+  berlingske:
+    enabled: true
+    identity: guid
+    language: da
+    merge_across_feeds: true
+    fetch_article_pages: false
+    fetch_public_body: false
+    capture_homepage_placement: false
+    feeds:
+      - {id: berlingske.latest, name: Berlingske Latest, url: https://www.berlingske.dk/content/rss, surface: latest_rss, order: 0, description_priority: 10}
+      - {id: berlingske.samfund, name: Berlingske Samfund, url: https://www.berlingske.dk/content/3/rss, surface: section_rss, order: 10, description_priority: 10}
+      - {id: berlingske.business, name: Berlingske Business, url: https://www.berlingske.dk/content/66/rss, surface: section_rss, order: 20, description_priority: 10}
+      - {id: berlingske.kultur, name: Berlingske Kultur, url: https://www.berlingske.dk/content/69/rss, surface: section_rss, order: 30, description_priority: 10}
+      - {id: berlingske.opinion, name: Berlingske Opinion, url: https://www.berlingske.dk/content/21/rss, surface: section_rss, order: 40, description_priority: 10}
   dr:
     enabled: true
     identity: guid

@@ -31,12 +31,12 @@ def process_lock(path):
 
 
 async def collect_once(config: AppConfig, source: str | None = None) -> dict:
-    db = Database(config.database_path)
-    run = db.start_run(source)
-    planned = config.enabled_feeds(source)
-    polls = []
-    try:
-        with process_lock(config.lock_path):
+    with process_lock(config.lock_path):
+        db = Database(config.database_path)
+        run = db.start_run(source)
+        planned = config.enabled_feeds(source)
+        polls = []
+        try:
             for sid, sc, feed in planned:
                 polls.append(
                     (sid, sc, feed, db.preallocate_poll(run, feed.id, sid, db.state(feed.id)))
@@ -99,5 +99,5 @@ async def collect_once(config: AppConfig, source: str | None = None) -> dict:
             }
             db.finish_run(run, status, result, ["partial_failures"] if failures else [])
             return {"status": status, **result}
-    finally:
-        db.close()
+        finally:
+            db.close()

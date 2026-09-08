@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Device page compositions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* ---- tokens: device profile trmnl-x-landscape ---- */
+:root{
+  --paper:#ffffff; --ink:#000000; --ink-2:#333333; --ink-3:#555555;
+  --rule:#111111; --hair:#bbbbbb; --fill:#dddddd; --fill-2:#eeeeee;
+  --display:"Playfair Display", "Didot", serif;
+  --text:"Source Serif 4", Georgia, serif;
+  --col:12; --gutter:36px; --margin:64px;
+  --s1:8px; --s2:16px; --s3:24px; --s4:40px; --s5:64px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#888}
+.page{width:1872px;height:1404px;background:var(--paper);color:var(--ink);
+  padding:56px var(--margin) 48px;position:relative;overflow:hidden;
+  font-family:var(--text);font-size:30px;line-height:1.4;
+  font-feature-settings:"onum" 0,"pnum";text-rendering:geometricPrecision;
+  margin:24px auto;display:flex;flex-direction:column}
+.page:not(.active){display:none}
+a{color:inherit;text-decoration:none}
+
+/* ---- masthead family ---- */
+.masthead{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;column-gap:var(--s3)}
+.masthead .ear{font-size:22px;line-height:1.3;color:var(--ink-2);align-self:end;padding-bottom:6px}
+.masthead .ear.right{text-align:right}
+.masthead .ear .lbl{font-variant-caps:small-caps;letter-spacing:.06em;color:var(--ink);font-weight:600}
+.title{font-family:var(--display);font-weight:900;font-size:108px;line-height:.95;text-align:center;
+  letter-spacing:-.01em;white-space:nowrap}
+.title.compact{font-size:92px}
+.dateline{display:flex;justify-content:space-between;align-items:baseline;
+  margin-top:18px;padding:10px 0 8px;border-top:5px solid var(--rule);border-bottom:1px solid var(--rule);
+  font-size:24px;font-variant-caps:small-caps;letter-spacing:.08em;font-weight:600}
+.dateline .mid{color:var(--ink-3);font-weight:400;letter-spacing:.06em}
+.dateline.double{border-top:1px solid var(--rule);box-shadow:0 -6px 0 0 var(--paper),0 -10px 0 0 var(--rule)}
+
+/* ---- story anatomy ---- */
+.kicker{font-variant-caps:small-caps;letter-spacing:.12em;font-size:23px;font-weight:700;margin-bottom:var(--s1)}
+.kicker .sec{color:var(--ink-3);font-weight:400}
+h1{font-family:var(--display);font-weight:700;letter-spacing:-.01em;line-height:1.05;font-size:82px;
+  margin:0 0 18px}
+h1.tall{font-size:72px}
+h2{font-family:var(--text);font-weight:700;font-size:44px;line-height:1.1;letter-spacing:-.01em;margin:0 0 14px;}
+h3{font-family:var(--text);font-weight:700;font-size:31px;line-height:1.18;margin:0 0 6px}
+.deck{font-style:italic;font-size:36px;line-height:1.32;color:var(--ink-2);max-width:32em;margin-bottom:12px}
+.body{font-size:30px;line-height:1.42;color:var(--ink)}
+.body p+p{margin-top:.55em;text-indent:1.6em}
+.body.two{column-count:2;column-gap:var(--gutter);column-rule:1px solid var(--hair)}
+.body.large{font-size:33px}
+.dropcap::first-letter{font-family:var(--display);font-weight:700;font-size:3.05em;float:left;line-height:.78;padding:.06em .08em 0 0}
+.src{font-size:22px;color:var(--ink-3);margin-top:10px;font-variant-caps:small-caps;letter-spacing:.06em}
+.src b{color:var(--ink);font-weight:600}
+.tail{border-top:1px solid var(--hair);margin-top:14px;padding-top:10px;font-size:26px;color:var(--ink-2)}
+
+/* ---- callouts ---- */
+.callout{margin:16px 0}
+.callout.figure{text-align:center;padding:10px 0 12px;border-top:3px solid var(--rule);border-bottom:1px solid var(--rule)}
+.callout.figure .n{font-family:var(--display);font-weight:400;font-size:96px;line-height:1;letter-spacing:-.02em}
+.callout.figure .l{font-size:24px;color:var(--ink-2);margin-top:4px;font-style:italic}
+.callout.quote{padding:6px 0 6px 28px;border-left:6px solid var(--ink);}
+.callout.quote .q{font-family:var(--display);font-style:italic;font-size:38px;line-height:1.22;}
+.callout.quote .w{font-size:22px;color:var(--ink-3);margin-top:8px;font-variant-caps:small-caps;letter-spacing:.06em}
+.callout.quote.centred{border:0;padding:8px 24px;text-align:center}
+.callout.quote.centred .q{font-size:46px}
+.callout.quote.centred::before{content:"❝";display:block;font-family:var(--display);font-size:64px;line-height:.5;margin-bottom:22px;color:var(--ink-3)}
+.callout.facts{background:var(--fill-2);padding:18px 24px 20px;border-top:3px solid var(--rule)}
+.callout.facts .t{font-variant-caps:small-caps;letter-spacing:.1em;font-weight:700;font-size:23px;margin-bottom:8px}
+.callout.facts li{list-style:none;font-size:27px;line-height:1.35;padding-left:1.1em;text-indent:-1.1em}
+.callout.facts li::before{content:"— ";}
+.callout.facts li+li{margin-top:6px}
+.callout.box{background:var(--fill);padding:22px 28px;text-align:center}
+.callout.box .l{font-variant-caps:small-caps;letter-spacing:.14em;font-size:23px;font-weight:600;color:var(--ink-2)}
+.callout.box .t{font-weight:700;font-size:31px;line-height:1.2;margin-top:6px}
+.callout.timeline{border-top:1px solid var(--rule);padding-top:10px}
+.callout.timeline .t{font-variant-caps:small-caps;letter-spacing:.1em;font-weight:700;font-size:23px;margin-bottom:6px}
+.callout.timeline dl{display:grid;grid-template-columns:auto 1fr;column-gap:16px;row-gap:5px;font-size:26px;line-height:1.3}
+.callout.timeline dt{font-weight:700;white-space:nowrap}
+.callout.timeline dd{color:var(--ink-2)}
+
+/* ---- grid helpers ---- */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gutter)}
+.band{border-top:3px solid var(--rule);padding-top:16px;margin-top:18px}
+.band.thin{border-top-width:1px}
+.band .head{font-variant-caps:small-caps;letter-spacing:.12em;font-weight:700;font-size:24px;margin-bottom:12px}
+.vsep>*+*{border-left:1px solid var(--rule);padding-left:var(--gutter);margin-left:calc(var(--gutter) * -1 + var(--gutter))}
+.rail{border-left:2px solid var(--rule);padding-left:var(--gutter)}
+.rail>*+*{border-top:1px solid var(--hair);padding-top:16px;margin-top:16px}
+.brief+.brief{border-top:1px solid var(--hair);padding-top:12px;margin-top:12px}
+.brief .lede{font-size:26px;line-height:1.3;color:var(--ink-2)}
+.brief .lede b{color:var(--ink)}
+.strip{display:grid;column-gap:var(--gutter)}
+.strip>*+*{border-left:1px solid var(--hair);padding-left:var(--gutter);margin-left:calc(-1 * var(--gutter))}
+.fill{flex:1 1 auto;min-height:0}
+.ornament{text-align:center;color:var(--ink-3);font-size:26px;letter-spacing:.6em;margin:10px 0 6px}
+.folio{border-top:1px solid var(--rule);padding-top:10px;margin-top:auto;display:flex;justify-content:space-between;
+  font-size:21px;color:var(--ink-3);letter-spacing:.04em}
+.folio b{color:var(--ink);font-weight:600}
+</style>
+</head>
+<body>
+
+<!-- ============ COMPOSITION A: lead-wide / 3 H2 / 4 H3 (echo of the reference) ============ -->
+<section class="page" id="A">
+  <header class="masthead">
+    <div class="ear"><span class="lbl">Morning edition</span><br>News through 06:30 CEST</div>
+    <div class="title">The Copenhagen Daily</div>
+    <div class="ear right"><span class="lbl">Inside</span><br>Arctic exercise · Rate decision · Court ruling</div>
+  </header>
+  <div class="dateline"><span>Tuesday 8 September 2026</span><span class="mid">No. 143</span><span>Politiken · DR · Børsen · FT · NYT</span></div>
+
+  <article class="lead" style="margin-top:28px">
+    <div class="kicker">Housing <span class="sec">· Tax</span></div>
+    <h1>Tax agency admits 100,000<br>flat valuations were wrong</h1>
+    <p class="deck">A flaw in the public model affected about a third of owner-occupied flats. Officials still have no remedy for owners.</p>
+    <div class="src"><b>DR</b> reported this morning, with Politiken</div>
+  </article>
+
+  <div class="grid band vsep fill" style="grid-template-columns:repeat(3,1fr)">
+    <article>
+      <div class="kicker">German election</div>
+      <h2>AfD takes 43.8% but misses majority</h2>
+      <div class="body"><p>A historic win in Saxony-Anhalt fell short of an absolute majority, leaving coalition arithmetic at the centre of the post-election fight.</p></div>
+      <div class="src"><b>DR</b> · <b>FT</b></div>
+    </article>
+    <article>
+      <div class="kicker">Arctic security</div>
+      <h2>Arctic Shield brings 400 troops south</h2>
+      <div class="callout box"><div class="l">Ten NATO nations</div><div class="t">exercising until 18 September</div></div>
+      <div class="body"><p>Land operations have begun near Narsaq.</p></div>
+      <div class="src"><b>DR</b> Greenland</div>
+    </article>
+    <article>
+      <div class="kicker">Danish economy</div>
+      <h2>Economists play down a new price spiral</h2>
+      <div class="body"><p>Eleven economists surveyed by Børsen expect energy prices to lift inflation, but not to start a second wave.</p></div>
+      <div class="src"><b>Børsen</b> Economy</div>
+    </article>
+  </div>
+
+  <div class="band">
+    <div class="head">Tuesday briefs</div>
+    <div class="strip" style="grid-template-columns:repeat(4,1fr)">
+      <div class="brief" style="border:0;padding-top:0;margin-top:0"><div class="kicker">Royal house <span class="sec">· DR</span></div><h3>Margrethe remains in hospital</h3><p class="lede">Treatment is expected all week.</p></div>
+      <div class="brief" style="border-top:0;padding-top:0;margin-top:0"><div class="kicker">Health law <span class="sec">· Politiken</span></div><h3>Court tests right to proper vegan meals</h3><p class="lede">A patient alleges discrimination.</p></div>
+      <div class="brief" style="border-top:0;padding-top:0;margin-top:0"><div class="kicker">Education <span class="sec">· Politiken</span></div><h3>Schools meet the first “Generation ChatGPT”</h3><p class="lede">Essays expose new grey zones.</p></div>
+      <div class="brief" style="border-top:0;padding-top:0;margin-top:0"><div class="kicker">Markets <span class="sec">· FT</span></div><h3>Gilts rally as BoE signals a pause</h3><p class="lede">Sterling slips against the krone.</p></div>
+    </div>
+  </div>
+  <footer class="folio"><span>Page <b>1</b> of 2 · edition 2026-09-08 rev 1</span><span>Digest of publisher headlines and summaries; follow the source links in the web edition</span></footer>
+</section>
+
+<!-- ============ COMPOSITION B: lead-tall / 2 H2 in rail / 0 H3, pull quote + figure ============ -->
+<section class="page" id="B">
+  <header class="masthead">
+    <div class="ear"><span class="lbl">Afternoon brief</span><br>News through 15:30 CEST</div>
+    <div class="title">The Copenhagen Daily</div>
+    <div class="ear right"><span class="lbl">Weather</span><br>Copenhagen 17°, showers clearing</div>
+  </header>
+  <div class="dateline"><span>Wednesday 9 September 2026</span><span class="mid">No. 144</span><span>Politiken · DR · Børsen · FT</span></div>
+
+  <div class="grid fill" style="margin-top:28px;grid-template-columns:7fr 5fr">
+    <article class="lead">
+      <div class="kicker">Monetary policy <span class="sec">· Nationalbanken</span></div>
+      <h1 class="tall">Nationalbanken holds, and warns the krone peg will be defended “at any price”</h1>
+      <p class="deck">Governor Christian Kettel Thomsen left the key rate unchanged at 2.1 per cent and used unusually direct language about speculative pressure on the currency.</p>
+      <div class="callout quote"><div class="q">“We have the reserves, we have the mandate, and we have done this before.”</div><div class="w">Christian Kettel Thomsen, quoted by Børsen</div></div>
+      <div class="body two dropcap"><p>The decision had been widely expected after the ECB's pause last week, but the tone was not. The bank's statement referred three times to “orderly conditions” and once to “unlimited intervention”, phrases it has not used since 2015.</p><p>Børsen reports that reserves rose by 14 billion kroner in August. The FT notes that hedge funds have reopened positions against the peg for the first time in a decade, citing Denmark's fiscal surplus as the reason a revaluation, not a devaluation, is the trade.</p><p>Politiken's economics desk describes the language as a message to Frankfurt as much as to markets.</p></div>
+      <div class="src"><b>Børsen</b> · <b>FT</b> · <b>Politiken</b></div>
+    </article>
+    <div class="rail">
+      <article>
+        <div class="kicker">Greenland</div>
+        <h2>Nuuk council rejects US consulate expansion</h2>
+        <div class="body"><p>The municipal vote was 11 to 8. The foreign ministry in Copenhagen said the matter is a local planning decision.</p></div>
+        <div class="src"><b>DR</b> · <b>NYT</b></div>
+      </article>
+      <article>
+        <div class="kicker">Energy</div>
+        <h2>Ørsted writes down its last US offshore project</h2>
+        <div class="callout figure"><div class="n">8.4 bn</div><div class="l">kroner impairment, the third in two years</div></div>
+        <div class="body"><p>The company will keep the Rhode Island lease but stop construction. Shares fell 6 per cent at the open.</p></div>
+        <div class="callout timeline"><div class="t">How it unfolded</div><dl><dt>2023</dt><dd>Ocean Wind cancelled, 28 bn kroner written off</dd><dt>2025</dt><dd>Revolution Wind halted by stop-work order</dd><dt>Today</dt><dd>Rhode Island build stopped</dd></dl></div>
+        <div class="src"><b>Børsen</b> · <b>FT</b></div>
+      </article>
+    </div>
+  </div>
+  <footer class="folio"><span>Page <b>1</b> of 1 · edition 2026-09-09 rev 1</span><span>Digest of publisher headlines and summaries; follow the source links in the web edition</span></footer>
+</section>
+
+<!-- ============ COMPOSITION C: lead-centred / 4 H2 / 6 H3 rail ============ -->
+<section class="page" id="C">
+  <header class="masthead">
+    <div class="ear"><span class="lbl">Morning edition</span><br>News through 06:30 CEST</div>
+    <div class="title compact">The Copenhagen Daily</div>
+    <div class="ear right"><span class="lbl">Inside</span><br>Six briefs, right column</div>
+  </header>
+  <div class="dateline"><span>Thursday 10 September 2026</span><span class="mid">No. 145</span><span>Politiken · DR · Børsen · FT · NYT</span></div>
+
+  <div class="grid fill" style="margin-top:24px;grid-template-columns:9fr 3fr">
+    <div>
+      <article class="lead" style="text-align:center">
+        <div class="kicker">Election night <span class="sec">· Norway</span></div>
+        <h1 style="font-size:80px">Støre survives, narrowly, as Progress Party doubles its seats</h1>
+        <p class="deck" style="margin:0 auto 14px">Labour will govern with the Centre Party again, but the right's surge in Oslo and Bergen is the story every Nordic capital woke up to.</p>
+        <div class="src"><b>NYT</b> · <b>DR</b> · <b>Politiken</b></div>
+      </article>
+      <div class="ornament">❦</div>
+      <div class="grid band thin vsep" style="grid-template-columns:repeat(4,1fr);border-top:0;margin-top:0;padding-top:6px">
+        <article><div class="kicker">Courts</div><h2 style="font-size:36px">Supreme Court backs ban on shareholder loans</h2><div class="body" style="font-size:27px"><p>The 5–2 ruling ends a six-year dispute over the 2019 tax reform.</p></div><div class="src"><b>Politiken</b></div></article>
+        <article><div class="kicker">Aviation</div><h2 style="font-size:36px">SAS returns to profit for a full year</h2><div class="callout facts" style="margin:10px 0"><div class="t">In figures</div><ul><li>1.2 bn SEK net</li><li>Passenger numbers up 9%</li><li>No dividend</li></ul></div><div class="src"><b>Børsen</b> · <b>FT</b></div></article>
+        <article><div class="kicker">Climate</div><h2 style="font-size:36px">Wadden Sea dyke plan doubles in cost</h2><div class="body" style="font-size:27px"><p>Ribe and Tønder councils want the state to pay the difference.</p></div><div class="src"><b>DR</b></div></article>
+        <article><div class="kicker">Technology</div><h2 style="font-size:36px">EU fines Meta again over teen accounts</h2><div class="body" style="font-size:27px"><p>The 900 million euro penalty is the first under the Digital Services Act's child rules.</p></div><div class="src"><b>FT</b> · <b>NYT</b></div></article>
+      </div>
+    </div>
+    <aside class="rail">
+      <div class="band" style="border:0;margin:0;padding:0"><div class="head">Also today</div></div>
+      <div class="brief" style="border:0;padding-top:0;margin-top:0"><h3>Metro line M5 delayed to 2036</h3><p class="lede"><b>Politiken</b> Cost now 28 bn kroner.</p></div>
+      <div class="brief"><h3>Novo cuts 900 jobs in Kalundborg</h3><p class="lede"><b>Børsen</b> Wegovy demand cooling in the US.</p></div>
+      <div class="brief"><h3>Ozempic generic cleared in India</h3><p class="lede"><b>FT</b> Patent expiry hits in March.</p></div>
+      <div class="brief"><h3>Roskilde Festival sells out in 40 minutes</h3><p class="lede"><b>DR</b> No headliners announced yet.</p></div>
+      <div class="brief"><h3>Storm Ingrid to reach Jutland Friday</h3><p class="lede"><b>DR</b> DMI warns of 30 m/s gusts.</p></div>
+      <div class="brief"><h3>Fed minutes show a split on October</h3><p class="lede"><b>NYT</b> Three governors favour a cut.</p></div>
+    </aside>
+  </div>
+  <footer class="folio"><span>Page <b>1</b> of 1 · edition 2026-09-10 rev 1</span><span>Digest of publisher headlines and summaries; follow the source links in the web edition</span></footer>
+</section>
+
+<script>
+const v=new URLSearchParams(location.search).get('v')||'A';
+document.getElementById(v).classList.add('active');
+</script>
+</body>
+</html>

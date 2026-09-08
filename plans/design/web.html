@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Web edition mockup</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f7f6f3; --ink:#000; --ink-2:#2b2b2b; --ink-3:#5a5a5a; --rule:#111; --hair:#c8c6c0; --fill:#e9e7e2;
+  --accent:#8a1c1c;
+  --display:"Playfair Display","Didot",serif; --text:"Source Serif 4",Georgia,serif;
+  --gutter:32px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--text);font-size:19px;line-height:1.5}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--hair);text-underline-offset:.18em}
+a:hover{text-decoration-color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding:36px 40px 60px}
+/* masthead */
+.masthead{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;column-gap:24px}
+.ear{font-size:15px;line-height:1.35;color:var(--ink-2)}
+.ear.right{text-align:right}
+.ear .lbl{font-variant-caps:small-caps;letter-spacing:.06em;font-weight:600;color:var(--ink)}
+.title{font-family:var(--display);font-weight:900;font-size:76px;line-height:.95;text-align:center;letter-spacing:-.01em;white-space:nowrap}
+.dateline{display:flex;justify-content:space-between;margin-top:14px;padding:8px 0 6px;border-top:4px solid var(--rule);border-bottom:1px solid var(--rule);font-size:15px;font-variant-caps:small-caps;letter-spacing:.08em;font-weight:600}
+.dateline .mid{color:var(--ink-3);font-weight:400}
+.dateline a{text-decoration:none}
+nav.editions{display:flex;justify-content:space-between;font-size:15px;color:var(--ink-3);padding:8px 0}
+nav.editions a{text-decoration:none;color:var(--ink-2)}
+nav.editions a:hover{color:var(--accent)}
+/* story anatomy */
+.kicker{font-variant-caps:small-caps;letter-spacing:.12em;font-size:14px;font-weight:700;margin-bottom:6px}
+.kicker .sec{color:var(--ink-3);font-weight:400}
+h1{font-family:var(--display);font-weight:700;font-size:56px;line-height:1.06;letter-spacing:-.01em;margin-bottom:12px}
+h1 a,h2 a,h3 a{text-decoration:none}
+h1 a:hover,h2 a:hover,h3 a:hover{text-decoration:underline;text-decoration-color:var(--accent)}
+h2{font-weight:700;font-size:28px;line-height:1.15;margin-bottom:8px}
+h3{font-weight:700;font-size:19px;line-height:1.25;margin-bottom:4px}
+.deck{font-style:italic;font-size:23px;line-height:1.35;color:var(--ink-2);max-width:34em;margin-bottom:10px}
+.body p+p{margin-top:.6em;text-indent:1.5em}
+.body.two{column-count:2;column-gap:var(--gutter);column-rule:1px solid var(--hair)}
+.dropcap::first-letter{font-family:var(--display);font-weight:700;font-size:3.2em;float:left;line-height:.8;padding:.05em .08em 0 0}
+.src{font-size:14px;color:var(--ink-3);margin-top:8px;font-variant-caps:small-caps;letter-spacing:.06em}
+.src b{color:var(--ink);font-weight:600}
+details.sources{margin-top:10px;font-size:15px;color:var(--ink-2);border-top:1px solid var(--hair);padding-top:8px}
+details.sources summary{cursor:pointer;color:var(--ink-3);list-style:none}
+details.sources summary::before{content:"+ ";color:var(--accent)}
+details[open].sources summary::before{content:"– "}
+details.sources li{margin:6px 0 0 0;list-style:none}
+details.sources li span{color:var(--ink-3)}
+/* callouts */
+.callout{margin:14px 0}
+.callout.quote{padding:4px 0 4px 20px;border-left:4px solid var(--accent)}
+.callout.quote .q{font-family:var(--display);font-style:italic;font-size:26px;line-height:1.25}
+.callout.quote .w{font-size:14px;color:var(--ink-3);margin-top:6px;font-variant-caps:small-caps;letter-spacing:.06em}
+.callout.figure{text-align:center;padding:8px 0 10px;border-top:3px solid var(--rule);border-bottom:1px solid var(--rule)}
+.callout.figure .n{font-family:var(--display);font-size:60px;line-height:1;letter-spacing:-.02em}
+.callout.figure .l{font-size:15px;font-style:italic;color:var(--ink-2)}
+.callout.facts{background:var(--fill);padding:12px 16px 14px;border-top:3px solid var(--rule)}
+.callout.facts .t{font-variant-caps:small-caps;letter-spacing:.1em;font-weight:700;font-size:14px;margin-bottom:6px}
+.callout.facts li{list-style:none;font-size:17px;line-height:1.35;padding-left:1.1em;text-indent:-1.1em}
+.callout.facts li::before{content:"— "}
+.callout.box{background:var(--fill);padding:14px 18px;text-align:center}
+.callout.box .l{font-variant-caps:small-caps;letter-spacing:.14em;font-size:14px;font-weight:600;color:var(--ink-2)}
+.callout.box .t{font-weight:700;font-size:21px;line-height:1.2;margin-top:4px}
+/* layout */
+.grid{display:grid;column-gap:var(--gutter)}
+.band{border-top:3px solid var(--rule);padding-top:14px;margin-top:22px}
+.band .head{font-variant-caps:small-caps;letter-spacing:.12em;font-weight:700;font-size:15px;margin-bottom:10px}
+.vsep>*+*{border-left:1px solid var(--rule);padding-left:var(--gutter)}
+.rail{border-left:2px solid var(--rule);padding-left:var(--gutter)}
+.rail>*+*{border-top:1px solid var(--hair);padding-top:12px;margin-top:12px}
+.brief .lede{font-size:16px;line-height:1.35;color:var(--ink-2)}
+.brief .lede b{color:var(--ink)}
+.ornament{text-align:center;color:var(--ink-3);font-size:20px;margin:8px 0 2px}
+.folio{border-top:1px solid var(--rule);padding-top:8px;margin-top:36px;display:flex;justify-content:space-between;font-size:14px;color:var(--ink-3)}
+.folio b{color:var(--accent);font-weight:600}
+.coverage{margin-top:18px;font-size:15px;color:var(--ink-2);border-top:1px solid var(--hair);padding-top:10px;max-width:70em}
+.coverage .t{font-variant-caps:small-caps;letter-spacing:.1em;font-weight:700;font-size:14px;color:var(--ink)}
+.device-note{display:inline-block;margin-left:10px;color:var(--ink-3)}
+@media (max-width:900px){
+  .wrap{padding:20px 18px 40px}
+  .masthead{grid-template-columns:1fr}.ear{display:none}
+  .title{font-size:44px;white-space:normal}
+  .grid{grid-template-columns:1fr !important}
+  .vsep>*+*{border-left:0;padding-left:0;border-top:1px solid var(--rule);padding-top:12px;margin-top:12px}
+  .rail{border-left:0;padding-left:0;border-top:2px solid var(--rule);padding-top:14px;margin-top:18px}
+  .body.two{column-count:1}
+  h1{font-size:36px} h2{font-size:24px} .deck{font-size:19px}
+  .dateline{flex-wrap:wrap;gap:6px}
+}
+@media (prefers-reduced-motion:no-preference){details.sources ul{animation:fade .18s ease-out}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <div class="ear"><span class="lbl">Afternoon brief</span><br>News through 15:30 CEST</div>
+    <div class="title">The Copenhagen Daily</div>
+    <div class="ear right"><span class="lbl">Weather</span><br>Copenhagen 17°, showers clearing</div>
+  </header>
+  <div class="dateline"><span>Wednesday 9 September 2026</span><span class="mid">No. 144</span><span><a href="#">Politiken</a> · <a href="#">DR</a> · <a href="#">Børsen</a> · <a href="#">FT</a></span></div>
+  <nav class="editions"><a href="#">← Tuesday 8 September</a><span>Edition archive <span class="device-note">· View as printed page (1872 × 1404)</span></span><a href="#">Thursday 10 September →</a></nav>
+
+  <div class="grid" style="grid-template-columns:7fr 5fr;margin-top:20px">
+    <article class="lead" id="s-nationalbanken">
+      <div class="kicker">Monetary policy <span class="sec">· Nationalbanken</span></div>
+      <h1><a href="#">Nationalbanken holds, and warns the krone peg will be defended “at any price”</a></h1>
+      <p class="deck">Governor Christian Kettel Thomsen left the key rate unchanged at 2.1 per cent and used unusually direct language about speculative pressure on the currency.</p>
+      <div class="callout quote"><div class="q">“We have the reserves, we have the mandate, and we have done this before.”</div><div class="w">Christian Kettel Thomsen, quoted by Børsen</div></div>
+      <div class="body two dropcap">
+        <p>The decision had been widely expected after the ECB's pause last week, but the tone was not. The bank's statement referred three times to “orderly conditions” and once to “unlimited intervention”, phrases it has not used since 2015.</p>
+        <p>Børsen reports that reserves rose by 14 billion kroner in August, the largest monthly increase since the pandemic. The FT notes that hedge funds have reopened positions against the peg for the first time in a decade, citing Denmark's fiscal surplus as the reason a revaluation, not a devaluation, is the trade.</p>
+        <p>Politiken's economics desk describes the language as a message to Frankfurt as much as to markets: Denmark will not follow a faster ECB easing cycle if it puts the currency under strain.</p>
+        <p>The next scheduled decision is on 22 October. The bank does not pre-announce intervention, and the governor declined to say whether the phrase “any price” included an emergency rate rise.</p>
+      </div>
+      <div class="src"><b>Børsen</b> · <b>FT</b> · <b>Politiken</b> · three sources, first reported 11:04 CEST</div>
+      <details class="sources"><summary>Sources for this story</summary><ul>
+        <li><a href="#">Nationalbanken fastholder renten og advarer spekulanter</a> <span>Børsen, 11:04</span></li>
+        <li><a href="#">Denmark's central bank vows to defend krone peg ‘at any price’</a> <span>FT, 12:30</span></li>
+        <li><a href="#">Nationalbanken sender en besked til Frankfurt</a> <span>Politiken, 13:15</span></li>
+      </ul></details>
+    </article>
+    <div class="rail">
+      <article id="s-nuuk">
+        <div class="kicker">Greenland</div>
+        <h2><a href="#">Nuuk council rejects US consulate expansion</a></h2>
+        <div class="body"><p>The municipal vote was 11 to 8. The foreign ministry in Copenhagen said the matter is a local planning decision and declined to comment on the State Department's response.</p></div>
+        <div class="src"><b>DR</b> · <b>NYT</b></div>
+        <details class="sources"><summary>Sources for this story</summary><ul><li><a href="#">Kommunalbestyrelsen siger nej til større amerikansk konsulat</a> <span>DR, 09:40</span></li><li><a href="#">Greenland's Capital Rebuffs U.S. Consulate Plan</a> <span>NYT, 14:02</span></li></ul></details>
+      </article>
+      <article id="s-orsted">
+        <div class="kicker">Energy</div>
+        <h2><a href="#">Ørsted writes down its last US offshore project</a></h2>
+        <div class="callout figure"><div class="n">8.4 bn</div><div class="l">kroner impairment, the third in two years</div></div>
+        <div class="body"><p>The company will keep the Rhode Island lease but stop construction. Shares fell 6 per cent at the open and closed down 4.1 per cent.</p></div>
+        <div class="src"><b>Børsen</b> · <b>FT</b></div>
+        <details class="sources"><summary>Sources for this story</summary><ul><li><a href="#">Ørsted nedskriver 8,4 mia. kr. på Revolution Wind</a> <span>Børsen, 07:31</span></li><li><a href="#">Ørsted halts final US offshore wind project</a> <span>FT, 08:10</span></li></ul></details>
+      </article>
+    </div>
+  </div>
+
+  <div class="ornament">❦</div>
+  <div class="grid band vsep" style="grid-template-columns:repeat(3,1fr);border-top-width:1px;margin-top:0">
+    <article><div class="kicker">Courts</div><h2><a href="#">Supreme Court backs ban on shareholder loans</a></h2><div class="body"><p>The 5–2 ruling ends a six-year dispute over the 2019 tax reform. Business groups had argued the rule penalised family-owned firms.</p></div><div class="src"><b>Politiken</b></div></article>
+    <article><div class="kicker">Aviation</div><h2><a href="#">SAS returns to profit for a full year</a></h2><div class="callout facts"><div class="t">In figures</div><ul><li>1.2 bn SEK net profit</li><li>Passenger numbers up 9 per cent</li><li>No dividend for 2026</li></ul></div><div class="src"><b>Børsen</b> · <b>FT</b></div></article>
+    <article><div class="kicker">Technology</div><h2><a href="#">EU fines Meta again over teen accounts</a></h2><div class="callout box"><div class="l">First penalty</div><div class="t">under the DSA's child-safety rules</div></div><div class="body"><p>The 900 million euro fine follows a two-year investigation into recommendation systems shown to under-16s.</p></div><div class="src"><b>FT</b> · <b>NYT</b></div></article>
+  </div>
+
+  <div class="band">
+    <div class="head">Also today</div>
+    <div class="grid vsep" style="grid-template-columns:repeat(4,1fr)">
+      <div class="brief"><h3><a href="#">Metro line M5 delayed to 2036</a></h3><p class="lede"><b>Politiken</b> Cost now 28 bn kroner.</p></div>
+      <div class="brief"><h3><a href="#">Novo cuts 900 jobs in Kalundborg</a></h3><p class="lede"><b>Børsen</b> Wegovy demand cooling in the US.</p></div>
+      <div class="brief"><h3><a href="#">Storm Ingrid to reach Jutland Friday</a></h3><p class="lede"><b>DR</b> DMI warns of 30 m/s gusts.</p></div>
+      <div class="brief"><h3><a href="#">Fed minutes show a split on October</a></h3><p class="lede"><b>NYT</b> Three governors favour a cut.</p></div>
+    </div>
+  </div>
+
+  <div class="coverage"><span class="t">About this edition</span> Stories are digests of publisher headlines and feed summaries with links to the original reporting. Feeds checked between 05:30 and 15:30 CEST; the FT Opinion feed was unreachable and is not represented. Editorial generation 15:42, published 15:47.</div>
+  <footer class="folio"><span>Edition <b>2026-09-09</b> rev 1 · page 1 of 1</span><span>The Copenhagen Daily is a personal newspaper; it is not affiliated with any publisher listed.</span></footer>
+</div>
+</body>
+</html>

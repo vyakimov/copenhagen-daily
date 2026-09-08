@@ -29,6 +29,7 @@ def resolve_source_id(source: str | SourceConfig, entry: Mapping, raw_url: str) 
             "ft": "uuid_guid",
             "borsen": "guid_or_url",
             "politiken": "url_regex",
+            "berlingske": "guid",
             "dr": "guid",
         }[source]
     )

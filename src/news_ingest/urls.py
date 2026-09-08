@@ -28,6 +28,8 @@ def normalize_url(source: str, raw_url: str) -> str:
     pairs = [
         (k, v)
         for k, v in parse_qsl(parts.query, keep_blank_values=True)
-        if not _DROP.match(k) and not (source == "ft" and _FT_SYN.match(k))
+        if not _DROP.match(k)
+        and not (source == "ft" and _FT_SYN.match(k))
+        and not (source == "berlingske" and k.lower() == "referrer" and v.lower() == "rss")
     ]
     return urlunsplit((parts.scheme.lower(), host, parts.path or "/", urlencode(sorted(pairs)), ""))
