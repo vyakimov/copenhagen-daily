@@ -1,10 +1,12 @@
 # Block 3: Broadsheet publishing architecture
 
-Status: architecture proposal, 7 September 2026, revised 8 September 2026 for per-edition layout variation, callouts, and the two-output requirement. This document recommends the publishing approach and decision boundaries; it is not a detailed implementation plan. Its companion is [Block 2: Personal newspaper editorial architecture](news-editorial-architecture-plan.md).
+Status: architecture proposal, 7 September 2026, revised 8 September 2026 twice: first for per-edition layout variation and callouts, then to make the web edition the first-class product and the device PNG a separate reduced artifact. This document recommends the publishing approach and decision boundaries; it is not a detailed implementation plan. Its companion is [Block 2: Newspaper editorial architecture](news-editorial-architecture-plan.md).
 
 ## Recommendation
 
-Build a **static edition publisher** using Astro, reusable HTML/CSS newspaper templates, and a pinned Playwright/Chromium renderer. It produces two outputs from one frozen edition: a **device edition**, one or more 1872 × 1404 16-level grayscale PNG pages for the TRMNL X, and a **web edition**, a static broadsheet-styled site that carries the same stories with more detail. Deliver the PNG through TRMNL's existing Image Display plugin first.
+Build a **static edition publisher** using Astro, reusable HTML/CSS newspaper templates, and a pinned Playwright/Chromium renderer. It produces two outputs from one accepted edition. The **web edition** is the product: a static broadsheet site carrying the whole edition, with per-edition permalinks, an archive, and a latest pointer. The **device edition** is a separate reduced artifact: one or more 1872 × 1404 16-level grayscale PNG pages for the TRMNL X, delivered through TRMNL's existing Image Display plugin first.
+
+The two outputs share an edition, a design language, and a component vocabulary. They do not share a layout, a page budget, or a build path. **Nothing in the web edition is constrained to keep parity with the panel.** Where the panel forces a compromise, the compromise stays on the panel.
 
 Editions must not look identical from day to day. Each edition has exactly one lead story, but the number of secondary and brief stories, the composition they sit in, and the callouts attached to them vary with the editorial contract from block 2. The variation is driven by editorial signals, never by randomness, so that a reader sees the emphasis an editor chose. The design direction is worked out in `plans/design/` and summarized below.
 
@@ -14,12 +16,13 @@ Keep this publisher in the proposed downstream `personal-newspaper` repository, 
 
 ```mermaid
 flowchart LR
-    A[Block 2: immutable edition JSON with roles and callouts] --> B[Validate edition and fit policy]
-    B --> C[Composition selection and measured pagination]
-    C --> D[Frozen page composition]
-    D --> E[Web edition: static broadsheet site]
-    D --> F[Device edition: Chromium capture and 16-level conversion]
+    A[Block 2: immutable edition JSON with roles and callouts] --> B[Validate edition]
+    B --> E[Web edition: every story, full length, own layout]
+    B --> C[Device composition selection and measured fitting]
+    C --> D[Frozen device composition]
+    D --> F[Chromium capture and 16-level conversion]
     F --> G[Device PNG pages]
+    C -.->|fit failure does not block the web edition| H
     E --> H[Validate and atomically publish bundle]
     G --> H
     H --> I[Web archive and latest edition]
@@ -31,7 +34,7 @@ flowchart LR
 
 The [supplied newspaper image](https://youyesyou.me/todays_news.png), inspected on 7 September 2026, uses a large serif masthead, horizontal rules, a wide lead story, three secondary columns, a bottom strip of short briefs, compact source labels, and restrained grayscale. Its newspaper character comes mainly from hierarchy, typography, and spacing; photographs are not necessary.
 
-Use that visual grammar as the starting point, then extend it. The reference's grey callout box in the Arctic column is the pattern to generalize: a lifted phrase, number, quote, or fact list that belongs to a story and pulls the eye to it. Do not carry its example news, date, masthead, or publisher list into generated editions as defaults. In particular, Weekendavisen appears in the reference but is not in the collector's configured five-publisher scope. Display only actual contributing publishers, with collection limitations separately available.
+Use that visual grammar as the starting point, then extend it. The reference's grey callout box in the Arctic column is the pattern to generalize: a lifted phrase, number, quote, or fact list that belongs to a story and pulls the eye to it. Do not carry its example news, date, masthead, or publisher list into generated editions as defaults. In particular, Weekendavisen appears in the reference but is not in the collector's configured scope, which covers six publishers as of 8 September 2026. Display only actual contributing publishers, with collection limitations separately available.
 
 The TRMNL X specification is a 10.3-inch display with **1872 × 1404 pixels and 16 grayscale levels**. Start with a landscape 4:3 device profile matching the reference. Portrait can be another composition later, rather than a rotated landscape newspaper. [TRMNL X specifications](https://enterprise.trmnl.app/products/x/spec-sheet).
 
@@ -46,9 +49,11 @@ The mockups in `plans/design/` (`device.html` with three compositions, `web.html
 - **Story roles.** Exactly one lead (H1) per edition, always on page 1: kicker, display headline, italic deck, optional callout, optional one- or two-column body with a drop cap, source row. Zero to four secondary stories (H2) per page with a headline in the text face, short body, optional callout. Zero to eight briefs (H3) per page: headline plus a one-line lede opening with the publisher's name.
 - **Callouts.** Five kinds, each attached to a story and attributed in that story's source row: `quote` (rule at the left, display italic, speaker and reporting publisher), `figure` (one large numeral with an italic label), `facts` (two to four dashed bullets on a grey fill), `box` (a small-caps label over a bold phrase on a grey fill, the reference's pattern), and `timeline` (two to four dated rows). A callout's text is approved copy from block 2, not text the publisher composes.
 - **Other elements.** Masthead ears (edition name and cutoff on the left, a short "Inside" line or weather on the right), an edition number, a fleuron between the lead and the secondary band, vertical column rules, a heavy rule above a briefs strip, and a folio with page, edition, and revision. These are structural, so they appear when the composition calls for them rather than as decoration.
-- **Compositions.** Three to start. *Lead-wide* runs the lead across the page with two or three secondaries below and a strip of three or four briefs. *Lead-tall* gives the lead a seven-column body with a pull quote and one to three secondaries in a ruled rail, with no briefs. *Lead-centred* sets the headline and deck centred over four secondaries with a rail of four to six briefs. Each takes a range of secondary and brief counts, so the same composition on two days still produces different pages.
+- **Compositions.** Three to start, and they are **device page templates only**; the web edition uses its own responsive layout built from the same tokens, components, and callout vocabulary. *Lead-wide* runs the lead across the page with two or three secondaries below and a strip of three or four briefs. *Lead-tall* gives the lead a seven-column body with a pull quote and one to three secondaries in a ruled rail, with no briefs. *Lead-centred* sets the headline and deck centred over four secondaries with a rail of four to six briefs. Each takes a range of secondary and brief counts, so the same composition on two days still produces different pages.
 
 What varies between editions is the composition, the role counts, which stories carry callouts and of which kind, and which structural elements appear. What never varies is type size, margins, rule weights, and the palette. Variation comes from the editorial contract; the publisher does not add randomness to appear hand-made.
+
+The shared layer is the design language, not the geometry: tokens, the type scale, rules and small caps, kickers and source rows, the story-role vocabulary, and the five callout kinds. Page templates, layout logic, and breakpoints are owned separately by each output. A small amount of duplication between a device composition and a web layout is correct; a component contorted to satisfy both is not.
 
 ## Why this stack, and where a CMS would fit
 
@@ -84,7 +89,9 @@ Show the edition date, cutoff or “news through” time, page number/count, and
 
 ## Make layout a constrained, measured process
 
-Create a small template family rather than a general page-layout designer. Start with a front page inspired by the reference, an inside page with medium-length stories, and a briefs-heavy alternative. Share masthead, section labels, source rows, rules, and typography tokens between them.
+**This section governs the device edition only.** The web edition has no page budget, no slot capacities, no measured overflow, no omissions, and no fit failure. It renders every story and every callout the edition accepted, at full approved length, in editorial order.
+
+For the device edition, create a small template family rather than a general page-layout designer: a front page inspired by the reference, an inside page with medium-length stories, and a briefs-heavy alternative. Share masthead, section labels, source rows, rules, and typography tokens between them and with the web edition.
 
 The editorial contract specifies story order, priority, proposed roles, required versus optional status, and approved copy variants. For this design it also carries, per story, the role block 2 wants (exactly one `lead`, any number of `secondary` and `brief`), a fallback role if the wanted one does not fit, and zero or more callout candidates in priority order, each with a kind, approved text, and attribution. At edition level it may name a preferred composition and an emphasis, for example "quiet day" or "one big story", which the publisher maps to a composition. The publisher chooses a feasible composition under those rules. The LLM does not position elements, choose type sizes, or write callout text at layout time; the corresponding contract additions belong in the block 2 plan.
 
@@ -105,15 +112,17 @@ Persist the final composition: story IDs, roles as placed, chosen copy variants,
 
 A provisional one-page target with a two-page maximum is a sensible pilot policy. It should be configurable and tested with the desired reading time; the publisher should support an ordered list of pages from the outset rather than hardcoding a single output image.
 
-## One content source, two outputs
+## One edition, two outputs, one of them first class
 
-**The device edition** is one or more PNG pages at exactly 1872 × 1404 pixels in 16-level grayscale, captured from fixed-size device pages. It shows the composition at its most reduced: the lead, the secondaries and briefs that fit, their callouts, and the source row. It carries no navigation and no links.
+**The web edition is the product.** It is a static broadsheet site built from the validated edition alone. It carries every accepted story at the longest approved body variant, every approved callout, an expandable list of every contributing article with original titles and times, the coverage note, per-story anchors, previous and next edition navigation, an archive index, and a link to the device image. It is real HTML with semantic headings, working links, selectable text, and visible keyboard focus.
 
-**The web edition** is a static site generated from the same frozen composition. Its front page is the same broadsheet in the same composition and typography, so a reader recognizes the device page in it, but it is allowed to add what the panel cannot hold: the full approved body text for every story rather than the shortest variant that fit, an expandable list of every contributing article with original titles and times, all callouts block 2 approved rather than only those that fit, a coverage note stating which feeds were checked and which failed, previous and next edition navigation, an edition archive, and a link to the device page image. The web edition may carry more secondaries and briefs than the device page when the fit policy moved them to a later device page or omitted them as optional; it must state when it does.
+Its layout is its own, chosen for a browser rather than copied from a device page. It keeps the design language — masthead, heavy and hairline rules, small caps, kickers, source rows, the type scale, and the five callout kinds — so it is recognizably the same newspaper, and it adds the warm paper tone and the single accent colour. It reflows to one column on narrow screens, preserving story order and attribution. **Do not constrain anything here for the sake of matching the panel.**
 
-The web edition stays a broadsheet. It keeps the masthead, rules, small caps, kickers, source rows, and compositions of the device edition, adds a warm paper tone and one accent colour, and reflows to a single column on narrow screens while preserving story order and attribution. It is real HTML with semantic headings, working links, text selection, and keyboard focus, not a screenshot with hotspots.
+**The device edition is a separate reduced artifact.** One or more PNG pages at exactly 1872 × 1404 pixels in 16-level grayscale, captured from fixed-size device pages: the lead, the secondaries and briefs that fit, their callouts, and the source row. No navigation, no links. Where the fit policy drops a callout or omits an optional story, that loss is the panel's alone; the web edition still carries it.
 
-Neither output may substitute different reporting. The web edition can show more of the accepted edition; it cannot show anything that is not in it.
+Because the web edition does not depend on the frozen device composition, a device fit failure does not block web publication. Publish the web edition, record the device failure in the receipt and the layout report, and leave the device pointer resolving to the last edition that produced pages, so the panel keeps a readable page rather than a gap. The reverse is not allowed: if the web build fails, publish nothing.
+
+Neither output may substitute different reporting. Either can show less of the accepted edition; neither can show anything that is not in it.
 
 ## Render locally and make the output reproducible
 
@@ -125,7 +134,16 @@ Make the render stage network-isolated apart from its local static server. Publi
 
 Begin with a text-led design and no remote publisher photography. A feed's image URL and credit do not by themselves establish a reuse policy. If photography becomes a desired feature, add an explicit permitted-asset path with local snapshots, attribution, and device-tested conversion. The reference shows that attractive output does not depend on this extension.
 
-Retain a full-depth PNG master and derive the device PNG from it: convert to 8-bit grayscale, quantize to the 16 evenly spaced levels without dithering, and write a 4-bit grayscale PNG (Pillow alone only emits 8-bit grayscale, so the pipeline needs ImageMagick or a small encoder for that last step). Because the design's fills and hairlines already sit on palette levels, the only pixels that change in quantization are anti-aliased glyph edges, and text stays crisp. Dithering is reserved for a future photography path and never applied to text. The reference image is itself a 4-bit grayscale PNG, which is the encoding to match first; still verify palette, bit depth, orientation, cover-fit, and grayscale preservation end to end on the actual TRMNL X, because the Image Display plugin performs its own conversion.
+Retain a full-depth PNG master and derive the device PNG from it with ImageMagick, which is installed and verified on 8 September 2026 at version 7.1.2-31:
+
+```sh
+magick master.png -strip -colorspace Gray -depth 4 \
+  -define png:color-type=0 -define png:bit-depth=4 page-1.png
+```
+
+`-depth 4` reduces to the 16 evenly spaced levels by rounding to nearest, and because the design's fills and hairlines are multiples of 0x11 they land on levels exactly; the only pixels that move are anti-aliased glyph edges, so text stays crisp. An explicit `+dither` is a verified no-op here, since `-depth 4` is a per-pixel depth reduction rather than a quantization, but dithering must never be introduced for text; it is reserved for a future photography path. `-strip` is load-bearing for reproducibility: without it ImageMagick writes `tIME` and `date:` text chunks, and two runs of the same input differ; with it they are byte-identical.
+
+The reference image is itself a 4-bit grayscale PNG, which is the encoding to match first. Still verify palette, bit depth, orientation, cover-fit, and grayscale preservation end to end on the actual TRMNL X, because the Image Display plugin performs its own conversion.
 
 Reproducibility means the same composition and pinned rendering environment yield stable artifacts. Do not promise byte-identical PNGs across operating systems or browser upgrades. Renderer upgrades should get visual regression checks before publishing new editions.
 

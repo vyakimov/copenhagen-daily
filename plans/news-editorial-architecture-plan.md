@@ -1,10 +1,12 @@
-# Block 2: Personal newspaper editorial architecture
+# Block 2: Newspaper editorial architecture
 
-Status: architecture proposal, 7 September 2026. This document recommends boundaries and tradeoffs; it is not an implementation work breakdown. Its companion is [Block 3: Broadsheet publishing architecture](news-publishing-architecture-plan.md).
+Status: architecture proposal, 7 September 2026, revised 8 September 2026 to carry the contract fields block 3 depends on, and revised 9 September 2026 to remove per-reader personalization: this block is the editorial voice of a newspaper, and one edition is published to every reader. This document recommends boundaries and tradeoffs; it is not an implementation work breakdown. Its companion is [Block 3: Broadsheet publishing architecture](news-publishing-architecture-plan.md).
 
 ## Recommendation
 
 Build a small, scheduled Python editorial application that consumes immutable `news-ingest` exports and produces an immutable, structured **edition**. Use LLMs for event matching, relevance assessment, and evidence-bounded writing. Use ordinary code for input validation, candidate retrieval, selection constraints, state, and publication decisions.
+
+**This block is an editorial desk, not a recommender.** It produces one edition that every reader receives. There is no per-reader profile, no per-reader selection, no reading history, and no behavioral signal of any kind. What the paper covers is a standing editorial decision the owner makes and writes down, the same way a masthead decides its remit. That keeps the system free of personal data, keeps every reader looking at the same public page, and keeps the cost of an edition independent of how many people read it.
 
 Keep `news-gatherer` unchanged as the acquisition system. Put blocks 2 and 3 in a separate downstream repository, provisionally `personal-newspaper`, with independently runnable editorial and publishing commands. They can run on one machine, on one schedule, without HTTP calls between them. Separate processes and file contracts provide the isolation needed here; microservices, a message broker, and an agent framework would add operating work without improving the newspaper.
 
@@ -15,11 +17,12 @@ flowchart LR
     A[Block 1: immutable RSS export bundles] --> B[Validate and retain inputs]
     B --> C[Find candidate event matches]
     C --> D[LLM matching and relevance assessment]
-    D --> E[Constrained edition selection]
-    E --> F[Evidence-bounded writing and validation]
-    F --> G[Immutable edition bundle]
+    D --> E[Per-title selection under policy]
+    E --> U[Union of selected stories]
+    U --> F[Evidence-bounded writing and validation, once per story]
+    F --> G[Immutable edition bundle per title]
     G --> H[Block 3: layout and publication]
-    P[Explicit reader profile] --> D
+    P[Editorial policy for the title] --> D
     S[Previous editions and story history] --> C
     S --> E
     H -->|publication receipt| S
@@ -55,37 +58,106 @@ Use four concepts with distinct lifetimes:
 | Article evidence | One publisher's observed text at a particular imported revision. Original identity, language, attribution, URL, and content hash remain attached. |
 | Story/event | A specific occurrence or development that can receive one newspaper treatment: for example, a particular rate decision. Membership is a revisable editorial judgment. |
 | Ongoing thread | Optional continuity between distinct developments, such as several decisions and reactions concerning the same central bank. This is useful memory, not one giant duplicate cluster. |
-| Edition | A frozen selection and wording for one reader, cutoff, profile revision, and editorial run. Later corrections create a new revision or subsequent edition. |
+| Title | A named newspaper with a standing remit, masthead, schedule, and editorial policy. One installation may run several. |
+| Edition | One dated issue of one title: a frozen selection and wording for a cutoff, a policy revision, and an editorial run. Later corrections create a new revision or a subsequent edition. |
 
 Assign durable editorial story IDs when stories are first established. Do not derive a permanent ID solely from a membership list, which changes as reporting arrives. Record merges, splits, and supersession so a corrected match does not silently rewrite past editions. Keep the current clustering projection rebuildable from retained decisions and evidence.
 
-## Deduplicate conservatively, with multilingual retrieval
+## Cluster in one model call, then verify in code
 
-Use a two-stage approach. First, inexpensive code proposes a limited set of plausible matches using publication/event timing, lexical overlap, named entities where available, and multilingual embeddings of the title plus description. Then an LLM decides whether the evidence describes the same development, a related development, a distinct story, or an uncertain match.
+Give the whole candidate window to one capable model in a single call per edition and let it group the articles. Do not build a retrieval stage, an embedding model, a vector cache, or similarity thresholds.
 
-Multilingual retrieval belongs in the initial design because the configured publishers mix Danish and English. Title equality and English-only lexical matching will miss obvious cross-source matches. Start with vectors cached locally and a bounded in-memory similarity search over recent candidates. A separate vector database is unnecessary at this scale. Choose the embedding model and thresholds using actual Danish/English examples when implementation begins.
+The arithmetic supports this. Measured on real collected articles, a title plus description averages about 51 tokens. A 24 to 48 hour candidate window across the six publishers is a few hundred articles, so the whole set is roughly 15,000 to 30,000 input tokens. That is one modest call per edition, a handful of times a day, which is negligible against the cost of writing the stories.
 
-The LLM receives a small evidence packet and returns a validated decision with referenced article IDs and a short reason. Similarity only proposes candidates; it does not authorize a merge. Prefer a duplicate occasionally appearing twice over suppressing a genuinely different event.
+The simplification is the stronger argument. Cross-lingual matching between Danish and English is exactly where embedding thresholds are most painful to tune and most fragile to maintain, and it is exactly what a capable general model does well without configuration. Removing the retrieval stage removes the most fragile components in this block: a model choice, a similarity threshold, a candidate-pair generator, and a cache to keep coherent with them.
 
-Do not form final clusters by blindly taking connected components of pairwise matches. If A resembles B and B resembles C, A and C may still concern different events. Check proposed membership against the cluster's specific event description, dates, entities, and contradictory members. Split or leave separate when the evidence is insufficient.
+Three design rules make the single call safe.
+
+**Return groups, not assignments.** Ask for a list of clusters, each carrying a short event description, the member article IDs, and a confidence. Anything not mentioned is a singleton. Most articles are singletons, so the output stays short, and long enumerations are where a model drifts, duplicates, or silently drops an identifier. The event description is what makes a cluster checkable by a person afterwards.
+
+**Move the cheap signal from before the model to after it.** The lexical and temporal checks that would have proposed candidates become a validator on the model's output instead. This is the same code in a better place: a pre-filter's misses are invisible and permanent, while a validator's flags are visible and cost nothing to review. Validate that every returned ID exists and appears at most once; that a cluster's members fall inside a plausible time span; that grouped articles share at least one rare term, named entity, or section; and that no cluster is implausibly large. A cluster that fails is split back into singletons and recorded, never silently accepted.
+
+**Scrutinize cross-publisher clusters hardest**, because they are the ones that matter. Breadth drives the ranking formula below, so an over-merge does not merely duplicate a story, it promotes a story that was never that big. Cluster errors are amplified exactly where the stakes are highest, so a merge that raises a story's publisher count deserves the strictest check and, when uncertain, the split.
+
+Instruct for conservatism and keep the standing preference: a duplicate occasionally appearing twice is better than suppressing a genuinely different event. Ask the model for coherent groups justified by a single event description rather than for pairwise matches, which is what keeps it from behaving like blind connected components. If A resembles B and B resembles C, A and C may still concern different events, and a group that cannot be described as one event is not a group.
+
+If candidate volume ever outgrows a single call, shard by day or by section and cluster within shards before a smaller reconciliation pass. Do not reintroduce embeddings to solve a volume problem.
+
+### Threads: the same call, a looser standard
+
+A **thread** is a running narrative that several distinct events belong to over time. The September floods in Nepal are a thread; the flooding itself, Nepal accusing China of withholding weather data, and India calling China's response insufficient are three clusters inside it. Clusters answer "is this the same event"; threads answer "is this the same story".
+
+Build them in the call already being made. Include in the prompt a compact list of active threads, each an identifier, a one-line description, and a last-seen date, and ask the model to attach every cluster it forms to an existing thread or open a new one. Active threads are a few dozen lines, so this adds almost nothing to a call that already carries the whole candidate window.
+
+**Thread attachment is deliberately looser than cluster merging, and that is safe.** A bad merge changes what gets published, because two events become one story and one of them disappears. A bad thread attachment changes a ranking nudge and a "see also" link. The conservative bias belongs on clustering and must not be copied onto threading, which is what makes threading cheap to get right.
+
+A thread goes dormant after a fortnight without a new story. Dormant threads leave the prompt to keep it small but are retained, so a revival reattaches rather than starting over.
+
+Threads serve three purposes. They let repeat suppression distinguish "already covered" from "a new development in a story we ran", which is what allows day-three copy to refer to the floods without re-reporting them. They give the web edition a story history, which is something a website can offer that a printed paper cannot. And they contribute to ranking, as described below. The first two justify threads on their own.
 
 Examples the design must handle include the same announcement in two languages, two different announcements by the same company, a news report and an opinion column about it, and a later correction or material development. Opinion can be linked as a perspective without being absorbed into the factual account. A changed headline alone is not automatically new news.
 
-## Personalization should be explicit and inspectable
+## The editorial policy is the newspaper's voice
 
-Use a small, versioned reader-profile file containing preferred topics and places, followed entities, exclusions, language, reading budget, and appetite for general-interest coverage. Store the profile privately. Do not infer a preference profile from unrelated Obsidian notes or from the fact that a device displayed something.
+Each title has a small, versioned **editorial policy** file: its remit, meaning the subjects it covers and the subjects it deliberately leaves out; its standing interests and exclusions; output language; tone; reading budget and page target; and its appetite for general news outside the remit. This is the masthead's editorial line, written by hand by the owner and kept in version control, so every change to what the paper covers is a deliberate, reviewable commit.
 
-Have the LLM assess understandable dimensions: relevance to explicit interests, likely consequence, novelty relative to previous editions, and adequacy of available evidence. Let code combine those assessments with recency and recent publisher prominence under a visible policy. The assessments are editorial judgments, not calibrated probabilities of importance.
+It is not a user profile and carries no privacy weight. Nothing about it is inferred, learned, or derived from anyone's behavior. Publishing it as a "what this paper covers" page is a reasonable feature rather than a leak.
 
-Selection happens across the edition, after clustering. Reserve some space for consequential general news and discovery outside explicit interests; cap repetitive topics; avoid letting the publisher with the most feed items dominate. Count distinct publishers rather than appearances when describing breadth of reporting, and do not present that count as independent corroboration. Publisher prominence is one bounded signal, not a cross-publisher universal ranking.
+**Do not add reader tracking to inform it.** No click logging, no dwell time, no per-reader analytics, and no inference from the fact that a device displayed something. Those would recreate the personal data this design exists without, and they answer a question the paper is not asking. An editor decides what matters; readers are not consulted by instrumentation.
+
+Running more than one title is the supported way to serve different appetites. A news title and a sports-and-culture title are two policies, two schedules, two mastheads, and two archives, each publishing one public edition that everyone gets. They share the expensive work. Block 1's collection, clustering, and matching run once across all titles. Each title's policy then selects and orders from the shared candidate set, which is ordinary ranking code with no model call in it. The selections are unioned, each distinct story is written exactly once, and each title's edition draws its own subset from that written pool. So a second title adds writing cost only for the stories the first title did not already run, and adds no matching cost at all. Keep repeat-suppression memory per title, since two titles are two publications with their own continuity, and a story may legitimately appear in both.
+
+### Sections come from the publisher, not from a model
+
+Resolve a story's sections from feed provenance, never from an LLM's reading of the text. Every appearance record names the feed it was seen in and marks whether that feed is a section, homepage, or latest feed. Filtering to section feeds gives the publisher's own placement decision, which is a better authority on where an article belongs than any inference we could make.
+
+A hand-written table maps each section feed to the title's own section vocabulary, so `dr.kultur`, `berlingske.kultur`, `ft.life_arts`, and `nytimes.arts` all resolve to culture. That table lives with the editorial policy, is inspectable, and needs no model. Coverage of the six publishers is 95 to 99 per cent once section feeds are configured for every source.
+
+Three rules govern its use. Keep the resulting **set** of sections rather than collapsing to one label, because roughly an eighth of articles legitimately sit in more than one and that overlap is editorial signal. Resolve sections at edition time from all accumulated appearances, not once at first sight, because an article often reaches a section feed on a later poll than the latest feed that first surfaced it. And treat **opinion as a flag rather than a section**, since an opinion piece about culture is both; a comment column should compete for a culture slot carrying a marker, not occupy a separate section that displaces its subject.
+
+Two feeds map to nothing on purpose. `borsen.breaking` and `borsen.longread` describe urgency and format rather than subject, and articles in them reliably appear in a subject feed as well.
+
+### Weighting: the editor sets priorities, the day can overrule them
+
+Rank candidate stories with a small, visible formula rather than a model call:
+
+```
+base  = 0.45 x breadth + 0.10 x peak_prominence + 0.30 x recency
+      + 0.15 x thread_strength
+score = base x section_weight
+```
+
+`breadth` is the count of distinct publishers covering the story, normalized and deliberately non-linear, because the step from one publisher to two is the largest gain in evidence. `section_weight` comes from the title's policy.
+
+`peak_prominence` counts **only feeds whose order is editorial**. Feed ordering was tested on 8 September 2026. The three homepage feeds are ranked, as are `nytimes.world` and `borsen.finans`. Every `latest` feed and most section feeds, including `dr.indland`, `politiken.indland`, `ft.world`, and `berlingske.samfund`, are in strict reverse-publication order, so position in them carries no editorial signal whatsoever. Scoring those was counting recency a second time under another name. Score a chronological surface at zero and let recency do that job once.
+
+Record prominence as **unknown rather than low** for a publisher with no ranked surface, and let the other terms carry the story. The distinction matters: a story missing from the NYT homepage feed was genuinely not front-paged, which is real negative evidence, while a story missing from a DR ranked surface tells us nothing, because DR publishes none. Treating those as the same number is the flaw that made prominence untrustworthy. Three of six publishers supply it honestly today; extending that to the rest requires homepage capture, which stays gated.
+
+`recency` is measured in **editions, not hours**. A story published since the previous edition's cutoff scores 1.0, one edition older scores about 0.45, two editions older about 0.15. Anchoring to the cutoff rather than to a rolling clock is what makes a daily paper behave like one: a story filed just after yesterday's deadline is new to this edition even though it is more than a day old. A smooth linear decay was tried and discarded because it barely discriminated between this morning and yesterday afternoon, which is the distinction that matters most.
+
+Two clocks, deliberately. **Gate candidacy on observation time** so that a story the collector discovered late is still eligible, and **score recency on publication time** so that a genuinely old story is penalized for being old. A three-day-old article nobody noticed can earn a brief; it should not lead.
+
+`thread_strength` is the peak breadth the thread ever reached, decayed by the number of editions since **this title last published from that thread**. It applies only when the paper actually ran a story from the thread, because the value being captured is continuity for a reader who read the earlier edition, not a generic boost for busy topics. A day-three follow-up to yesterday's lead scores meaningfully above an unrelated story with identical evidence; a fortnight later it scores below it. Setting this term to zero reproduces the behaviour of a paper with no memory, so it is a tunable rather than a commitment. The failure mode to watch in the editorial log is a long-running story that never dies and slowly crowds out fresh news.
+
+Prominence takes only a tenth of the weight because it is measurably weak, as the next paragraph explains. Recency takes nearly a third because a daily brief should visibly prefer today. Note that repeat suppression, not the recency term, is what stops yesterday's lead from reappearing: a story already published does not return unless the thread produces a material development, which arrives as a new cluster with its own age.
+
+Multiplying by the section weight rather than adding it gives the property that makes the numbers meaningful: **the ratio between two section weights is exactly the margin a story needs to overcome them.** With Denmark at 1.0 and technology at 0.5, a technology story must reach twice the base score of the best Danish story to lead the paper. An editor can reason about that directly and tune it without guessing.
+
+Breadth carries half the weight for a measured reason. Section-feed prominence barely discriminates: across the corpus, position one in almost every section feed scores identically, because the score is a within-publisher feed position and section feeds are short. Only homepage feeds produce a strong prominence signal, and only three of the six publishers have one configured. Cross-publisher breadth is the signal that actually separates the day's big story from a well-placed minor one. Measured on real data, the largest story of the day appeared across five of six publishers while a local item that outranked it on prominence alone appeared in one.
+
+A caution confirmed by experiment. A naive clustering that merged any two articles sharing rare terms, closing transitively, produced clusters spanning business, Denmark, world, climate, and culture at once and inflated breadth for stories that were never the same event. That is the failure mode the cluster validator exists to catch. Breadth is only trustworthy on top of conservative matching, and because it multiplies the cost of an over-merge, the validator should be tested against Danish and English examples before these weights are tuned.
+
+Have the LLM assess understandable dimensions: relevance to the title's remit, likely consequence, novelty relative to previous editions, and adequacy of available evidence. Let code combine those assessments with recency and recent publisher prominence under a visible policy. The assessments are editorial judgments, not calibrated probabilities of importance.
+
+Selection happens across the edition, after clustering and before writing, so the desk never pays to write a story it will not run. Reserve some space for consequential general news and discovery outside the stated remit; cap repetitive topics; avoid letting the publisher with the most feed items dominate. Count distinct publishers rather than appearances when describing breadth of reporting, and do not present that count as independent corroboration. Publisher prominence is one bounded signal, not a cross-publisher universal ranking.
 
 Prefer a simple weighted ordering followed by explicit diversity and space constraints to an opaque second LLM deciding the entire newspaper. Give every selected or rejected candidate a concise decision reason such as `already_covered`, `new_development`, `outside_budget`, or `insufficient_evidence`. Record the supporting dimensions so weights and exclusions can be adjusted without guessing what happened.
 
-Feedback should initially be explicit: “more like this,” “less like this,” “already knew this,” or “wrong match.” Store feedback separately and propose profile changes for the reader to inspect. Passive viewing and source-link clicks are weak signals, especially on e-paper, and should not silently rewrite preferences.
+Correction happens by editing the policy, not by learning. When an edition reads badly, the owner inspects the recorded decision reasons, changes the policy file, and commits. Keep a lightweight editorial log of judgments such as “wrong match,” “should not have led,” or “missed the obvious story,” tied to the edition and story IDs, so a policy change can be argued from examples rather than from memory. That log is an editor's notebook and an input to a human decision. It never adjusts weights on its own.
 
 ## Writing must remain attached to source evidence
 
-For selected stories, prepare a compact packet of attributed source text. Generate a headline, optional standfirst, and a small set of permitted copy lengths, such as brief, standard, and lead. These are maximum budgets, not word counts the model must fill. A title-only item can remain a headline with a source link; it need not become a paragraph.
+For selected stories, prepare a compact packet of attributed source text. Generate a headline, optional standfirst, and a small set of permitted copy lengths named `short`, `standard`, and `extended`. These names are deliberately distinct from the story roles `lead`, `secondary`, and `brief`, which describe prominence rather than length. These are maximum budgets, not word counts the model must fill. A title-only item can remain a headline with a source link; it need not become a paragraph.
 
 Each factual sentence, including the headline, must map to the source passage or passages supporting it. Preserve who made a claim, uncertainty, numbers, dates, and disagreements. “Publisher A reports X; publisher B reports Y” is preferable to manufacturing agreement. Agreement between feeds still does not verify an event independently. Do not add background facts or causal explanations from model memory.
 
@@ -93,36 +165,43 @@ Translate into the chosen newspaper language while retaining original source tex
 
 Validate output structure and reference integrity in code. Use an additional bounded LLM check for unsupported statements, changed attribution, and contradictions, with at most a small number of repairs. This check can catch mistakes; it is not proof of truth. If a story still fails, fall back to supported shorter copy or a source headline, or exclude it with an explicit reason. A missing paragraph is preferable to a confident invention.
 
-Treat all source text as untrusted data. The editorial model has no browser, shell, publishing credentials, or acquisition tools. Feed text cannot alter the reader profile or authorize actions. URLs in final output come from validated input references, not strings invented by the model.
+Callout text is approved copy written here, at generation time, with the same evidence discipline as the body. Block 3 chooses only which callouts fit; it never composes or edits their wording.
+
+Treat all source text as untrusted data. The editorial model has no browser, shell, publishing credentials, or acquisition tools. Feed text cannot alter the editorial policy or authorize actions. URLs in final output come from validated input references, not strings invented by the model.
 
 ## The edition is the contract with block 3
 
 Use versioned JSON with a published JSON Schema at this boundary. Markdown may be a useful preview, but should not be the primary machine interface. Block 2 owns meaning, selection priority, and permitted shortening; block 3 owns typography, coordinates, and actual pagination.
 
+**Block 3 owns the schema itself**, and publishes it as hand-written JSON Schema with golden example documents. The vocabulary it defines, the story roles, the callout kinds, and the compositions, is a statement of what block 3 can render, so a new callout kind is a block 3 change that adds both the schema variant and the code to draw it. Block 2 composes within that vocabulary and validates its output against the same schema file before writing, rather than against a copy or a translation. Block 3 evolves the schema additively within a major version, so a new kind or a new optional field never requires a coordinated change here; removals, renames, and newly required fields bump the version, and block 3 rejects versions it does not accept.
+
 The conceptual edition contract should carry:
 
 | Part | Required meaning |
 |---|---|
-| Identity and time | Edition ID and revision, cutoff, edition date, timezone, output language, schema version. Distinguish publication, observation, editorial generation, and eventual publication times. |
+| Identity and time | Title ID, edition ID and revision, cutoff, edition date, timezone, output language, schema version. The title ID selects the masthead and device profile block 3 holds for it. Distinguish publication, observation, editorial generation, and eventual publication times. |
 | Reproducibility | Input bundle references and digests; private references to profile, policy, prompts, models, and stored accepted responses. |
 | Coverage | Configured source/feed inventory and known gaps, or explicit unknown status; no claim of complete publisher coverage. |
-| Ordered stories | Story ID/revision, section, priority, intended role, required/optional status, permitted copy variants, source references, and evidence limitations. |
+| Ordered stories | Story ID/revision, section, priority, and required/optional status. A `role` of `lead`, `secondary`, or `brief`, with **exactly one `lead` per edition**, and an optional `fallback_role` block 3 may demote to when the wanted role does not fit. Copy variants named `short`, `standard`, and `extended`. Zero or more callout candidates in priority order, each carrying a kind of `quote`, `figure`, `facts`, `box`, or `timeline`, its approved text or fields, and its attribution. Source references and evidence limitations. |
+| Presentation intent | A preferred device composition, an edition emphasis such as `one_big_story` or `quiet_day`, masthead ear text, and the edition name and number. These are hints. Block 3 substitutes a different composition when the preferred one cannot hold the requested story counts, and reports what it chose. |
 | Links and attribution | Primary reading link plus every contributing source, publisher, article ID, original title, timestamps, and supporting content hash. |
-| Fit policy | Page budget/profile, allowed role or copy substitutions, ordered reserve stories, and what may be omitted if space is unavailable. |
+| Fit policy | **Constrains the device edition only.** Page budget/profile, allowed role or copy substitutions, ordered reserve stories, and what may be omitted if space is unavailable. The web edition has no page budget and carries every accepted story at full approved length, so a story the panel could not hold is still published. |
 
-Keep private audit material in a separate sidecar: evidence passages, cluster decisions, selection reasons, validation results, costs, and provenance. Export only the compact source attribution and limitations needed by the reader to block 3's public-facing content. Do not accidentally publish the reader profile or provider request logs with the newspaper.
+Keep private audit material in a separate sidecar: evidence passages, cluster decisions, selection reasons, validation results, costs, and provenance. Export only the compact source attribution and limitations needed by the reader to block 3's public-facing content. The editorial policy is not secret and may be published deliberately, but prompts, provider request logs, model responses, and cost records must never reach the newspaper.
 
-The publisher returns a receipt identifying the actual stories, copy variants, and pages published. Update “included previously” memory from that receipt, rather than from drafts or failed runs. Record delivery attempts separately; published, served to a device, and read by a person are different facts. Block 3 cannot call an LLM to silently shorten or rewrite approved text.
+The publisher returns a receipt that reports the two outputs separately: the web set, meaning every story published to a reader, and the device set, with the composition chosen, roles as placed, copy variants, page and slot, callouts placed and dropped, and structural elements shown. Update “included previously” memory from the **web set**, because a story that reached the website was published whether or not the panel had room for it, and update it from the receipt rather than from drafts or failed runs. Block 3 also returns a layout report describing how it reached that page; it is diagnostic, not a record of publication. Record delivery attempts separately; published, served to a device, and read by a person are different facts. Block 3 cannot call an LLM to silently shorten or rewrite approved text.
 
 ## State, scheduling, and failure behavior
 
-Use a separate SQLite database for imported article revisions, matching decisions, model-response caches, story history, edition status, and feedback. Store immutable input and output bundles on disk. Reuse the collector's operational principles: one writer, explicit ordering, short transactions, atomic directory publication, structured diagnostics, and backups. Never make a database transaction wait for a model call.
+Use a separate SQLite database for imported article revisions, matching decisions, model-response caches, the written story pool, per-title story history, edition status, and the editorial log. Article evidence, clusters, and written stories are shared across titles; selection state and repeat-suppression memory are keyed by title. Store immutable input and output bundles on disk. Reuse the collector's operational principles: one writer, explicit ordering, short transactions, atomic directory publication, structured diagnostics, and backups. Never make a database transaction wait for a model call.
 
-Use a scheduled batch, not continuous generation after each poll. A reasonable starting assumption is one morning edition in `Europe/Copenhagen`, with English copy as in the supplied visual reference, a one-page target, and up to two pages when justified. These are proposed defaults, not established user preferences. Exact delivery time, interests, and budget belong in the later configuration discussion.
+Use a scheduled batch, not continuous generation after each poll. Each title carries its own schedule. A reasonable starting point is a single title publishing one morning edition in `Europe/Copenhagen`, with English copy as in the supplied visual reference, a one-page device target, and up to two pages when justified. Support an ordered list of titles from the outset rather than hardcoding one, because adding a second title should be a configuration change and not a refactor. Publish each title independently: one title's failure must not delay or block another's edition.
 
-At each run, freeze the imported input set and cutoff. Combine a rolling recent publication window with imported changes to older articles, compare against prior editions, and keep a longer bounded story memory for continuing events. For example, a 72-hour candidate window and several weeks of continuity can be evaluated during a pilot. Late arrivals can be eligible because they were newly observed; label their actual publication time. Material corrections can override normal repeat suppression.
+At each run, freeze the imported input set and cutoff. **Default the candidate window to 72 hours of publication time**, and hold continuity for several weeks. The window is a backstop rather than the main mechanism: with recency anchored to edition cutoffs, anything past two editions already scores 0.15 and is effectively buried, so the gate exists to stop genuinely stale material appearing at all rather than to rank.
 
-Checkpoint import independently from successful newspaper publication: a model outage should not make ingestion progress disappear. Resume interrupted stages from retained inputs and responses. Cache keys include the exact relevant evidence and model/prompt revision; relevance additionally depends on profile, policy, cutoff, and prior-edition state. Placement-dependent decisions include appearance evidence even though article `content_hash` excludes it.
+Gate and score on different clocks, as the weighting section describes. Candidacy also admits anything newly observed since the previous edition, so a late discovery stays eligible even when the article is older; recency then scores it on publication time, so it can earn a brief without leading. One exemption to the window: a material correction to an older article is new information and is admitted regardless of the original's age. Block 1's changed-since export exists to surface exactly those. Late arrivals can be eligible because they were newly observed; label their actual publication time. Material corrections can override normal repeat suppression.
+
+Checkpoint import independently from successful newspaper publication: a model outage should not make ingestion progress disappear. Resume interrupted stages from retained inputs and responses. Cache keys include the exact relevant evidence and model/prompt revision. Matching and writing are title-independent and cache across titles; relevance assessment additionally depends on the title's policy revision, cutoff, and prior-edition state, so it caches per title. Placement-dependent decisions include appearance evidence even though article `content_hash` excludes it.
 
 Do not promise deterministic LLM regeneration, even with low temperature. Reproducibility means retaining the accepted response and all of its inputs. Deterministic code can then reproduce the chosen edition from those stored results. A deliberate fresh model run creates a new run/revision.
 
@@ -132,8 +211,8 @@ If some sources fail, use valid evidence and display the resulting coverage limi
 
 ## What would validate these decisions
 
-Run a short pilot with manually judged examples from all five publishers. Evaluate matching precision and missed matches separately, including Danish/English pairs and distinct developments in the same thread. Inspect selected and rejected candidates, not just attractive finished pages. Track unsupported statements, missing attribution, excessive repetition, interesting omissions, reading time, per-edition cost, and deadline reliability.
+Run a short pilot on one title with manually judged examples from all six publishers. Evaluate matching precision and missed matches separately, including Danish/English pairs and distinct developments in the same thread. Inspect selected and rejected candidates, not just attractive finished pages. Track unsupported statements, missing attribution, excessive repetition, interesting omissions, reading time, per-edition cost, and deadline reliability.
 
-The first useful milestone is one evidence-traceable edition, with visible reasons for its choices, successfully rendered by block 3. Next establish repeat suppression and correction handling across several mornings. Only then tune models, scoring, or add optional acquisition. No fine-tuning, autonomous researching agents, general knowledge graph, vector service, or collaborative editing system is required for that milestone.
+The first useful milestone is one evidence-traceable edition, with visible reasons for its choices, successfully rendered by block 3. Next establish repeat suppression and correction handling across several mornings. Then add a second title with a different remit and confirm that clustering and written copy are reused rather than recomputed, and that each title keeps its own continuity. Only then tune models, scoring, or add optional acquisition. No fine-tuning, autonomous researching agents, general knowledge graph, vector service, or collaborative editing system is required for that milestone.
 
-The principal open product decisions are the reader's explicit interests, output language, preferred delivery time, page/reading budget, and tolerance for a headlines-only degraded edition. These do not prevent adopting the file boundary, conservative matching, evidence policy, and batch architecture now.
+The principal open product decisions are which titles exist and what each one's remit is, output language, publication times, page and reading budget, and tolerance for a headlines-only degraded edition. These do not prevent adopting the file boundary, conservative matching, evidence policy, and batch architecture now.
