@@ -25,6 +25,16 @@ sources:
     capture_homepage_placement: false
     feeds:
       - {id: nytimes.homepage, name: NYT Homepage, url: https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml, surface: homepage_rss, order: 0, description_priority: 10}
+      - {id: nytimes.world, name: NYT World, url: https://rss.nytimes.com/services/xml/rss/nyt/World.xml, surface: section_rss, order: 10, description_priority: 20}
+      - {id: nytimes.europe, name: NYT Europe, url: https://rss.nytimes.com/services/xml/rss/nyt/Europe.xml, surface: section_rss, order: 20, description_priority: 20}
+      - {id: nytimes.business, name: NYT Business, url: https://rss.nytimes.com/services/xml/rss/nyt/Business.xml, surface: section_rss, order: 30, description_priority: 20}
+      - {id: nytimes.technology, name: NYT Technology, url: https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml, surface: section_rss, order: 40, description_priority: 20}
+      - {id: nytimes.science, name: NYT Science, url: https://rss.nytimes.com/services/xml/rss/nyt/Science.xml, surface: section_rss, order: 50, description_priority: 20}
+      - {id: nytimes.health, name: NYT Health, url: https://rss.nytimes.com/services/xml/rss/nyt/Health.xml, surface: section_rss, order: 60, description_priority: 20}
+      - {id: nytimes.climate, name: NYT Climate, url: https://rss.nytimes.com/services/xml/rss/nyt/Climate.xml, surface: section_rss, order: 70, description_priority: 20}
+      - {id: nytimes.arts, name: NYT Arts, url: https://rss.nytimes.com/services/xml/rss/nyt/Arts.xml, surface: section_rss, order: 80, description_priority: 20}
+      - {id: nytimes.books, name: NYT Books, url: https://rss.nytimes.com/services/xml/rss/nyt/Books.xml, surface: section_rss, order: 90, description_priority: 20}
+      - {id: nytimes.opinion, name: NYT Opinion, url: https://rss.nytimes.com/services/xml/rss/nyt/Opinion.xml, surface: section_rss, order: 100, description_priority: 20}
   ft:
     enabled: true
     identity: uuid_guid
@@ -81,6 +91,17 @@ sources:
     homepage: {id: politiken.homepage, url: https://politiken.dk/, surface: homepage}
     feeds:
       - {id: politiken.latest, name: Politiken Latest, url: https://politiken.dk/rss/senestenyt.rss, surface: latest_rss, order: 0, description_priority: 10}
+      - {id: politiken.indland, name: Politiken Indland, url: https://politiken.dk/rss/indland.rss, surface: section_rss, order: 10, description_priority: 20}
+      - {id: politiken.udland, name: Politiken Udland, url: https://politiken.dk/rss/udland.rss, surface: section_rss, order: 20, description_priority: 20}
+      - {id: politiken.politik, name: Politiken Politik, url: https://politiken.dk/rss/politik.rss, surface: section_rss, order: 30, description_priority: 20}
+      - {id: politiken.oekonomi, name: Politiken Oekonomi, url: https://politiken.dk/rss/oekonomi.rss, surface: section_rss, order: 40, description_priority: 20}
+      - {id: politiken.kultur, name: Politiken Kultur, url: https://politiken.dk/rss/kultur.rss, surface: section_rss, order: 50, description_priority: 20}
+      - {id: politiken.sport, name: Politiken Sport, url: https://politiken.dk/rss/sport.rss, surface: section_rss, order: 60, description_priority: 20}
+      - {id: politiken.viden, name: Politiken Viden, url: https://politiken.dk/rss/viden.rss, surface: section_rss, order: 70, description_priority: 20}
+      - {id: politiken.debat, name: Politiken Debat, url: https://politiken.dk/rss/debat.rss, surface: section_rss, order: 80, description_priority: 20}
+      - {id: politiken.forbrugogliv, name: Politiken Forbrug og Liv, url: https://politiken.dk/rss/forbrugogliv.rss, surface: section_rss, order: 90, description_priority: 20}
+      - {id: politiken.ibyen, name: Politiken iByen, url: https://politiken.dk/rss/ibyen.rss, surface: section_rss, order: 100, description_priority: 20}
+      - {id: politiken.rejser, name: Politiken Rejser, url: https://politiken.dk/rss/rejser.rss, surface: section_rss, order: 110, description_priority: 20}
   berlingske:
     enabled: true
     identity: guid
