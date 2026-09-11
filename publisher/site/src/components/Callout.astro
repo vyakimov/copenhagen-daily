@@ -1,0 +1,5 @@
+---
+import { renderCallout } from "../../../assets/html/callout.ts";
+const { callout } = Astro.props;
+---
+<Fragment set:html={renderCallout(callout)} />

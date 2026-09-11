@@ -1,0 +1,556 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://copenhagen.today/contracts/edition-contract.v1.schema.json",
+  "title": "Edition contract v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "title",
+    "edition",
+    "coverage",
+    "inputs",
+    "stories",
+    "fit_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "title": {
+      "$ref": "#/$defs/id"
+    },
+    "edition": {
+      "$ref": "#/$defs/edition"
+    },
+    "presentation": {
+      "$ref": "#/$defs/presentation"
+    },
+    "coverage": {
+      "$ref": "#/$defs/coverage"
+    },
+    "inputs": {
+      "type": "array",
+      "maxItems": 128,
+      "items": {
+        "$ref": "#/$defs/input"
+      }
+    },
+    "stories": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 64,
+      "items": {
+        "$ref": "#/$defs/story"
+      }
+    },
+    "fit_policy": {
+      "$ref": "#/$defs/fitPolicy"
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]{0,79}$"
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 20000,
+      "pattern": "\\S"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{6}Z$"
+    },
+    "digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "edition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "number",
+        "name",
+        "date",
+        "timezone",
+        "language",
+        "cutoff_at",
+        "generated_at"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "number": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "name": {
+          "$ref": "#/$defs/text"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "timezone": {
+          "const": "Europe/Copenhagen"
+        },
+        "language": {
+          "enum": [
+            "en",
+            "da"
+          ]
+        },
+        "cutoff_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "generated_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      }
+    },
+    "presentation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "preferred_composition": {
+          "enum": [
+            "lead-wide",
+            "lead-tall",
+            "lead-centred"
+          ]
+        },
+        "emphasis": {
+          "enum": [
+            "one_big_story",
+            "quiet_day",
+            "many_stories"
+          ]
+        },
+        "ear_right": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "checked_from",
+        "checked_until",
+        "feeds",
+        "note"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "complete",
+            "partial",
+            "unknown"
+          ]
+        },
+        "checked_from": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "checked_until": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "note": {
+          "$ref": "#/$defs/text"
+        },
+        "feeds": {
+          "type": "array",
+          "maxItems": 256,
+          "items": {
+            "$ref": "#/$defs/feed"
+          }
+        }
+      }
+    },
+    "feed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "feed_id",
+        "source",
+        "outcome",
+        "last_checked_at"
+      ],
+      "properties": {
+        "feed_id": {
+          "$ref": "#/$defs/feed_id"
+        },
+        "source": {
+          "$ref": "#/$defs/id"
+        },
+        "outcome": {
+          "enum": [
+            "checked",
+            "failed",
+            "not_checked"
+          ]
+        },
+        "last_checked_at": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "sha256"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "sha256": {
+          "$ref": "#/$defs/digest"
+        }
+      }
+    },
+    "body": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "extended": {
+          "$ref": "#/$defs/paragraphs"
+        },
+        "standard": {
+          "$ref": "#/$defs/paragraphs"
+        },
+        "short": {
+          "$ref": "#/$defs/paragraphs"
+        }
+      }
+    },
+    "paragraphs": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 64,
+      "items": {
+        "$ref": "#/$defs/text"
+      }
+    },
+    "copy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "headline",
+        "body"
+      ],
+      "properties": {
+        "headline": {
+          "$ref": "#/$defs/text"
+        },
+        "headline_short": {
+          "$ref": "#/$defs/text"
+        },
+        "deck": {
+          "$ref": "#/$defs/text"
+        },
+        "lede": {
+          "$ref": "#/$defs/text"
+        },
+        "body": {
+          "$ref": "#/$defs/body"
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "source_id",
+        "input_id",
+        "original_title",
+        "url",
+        "published_at",
+        "content_hash",
+        "primary"
+      ],
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/id"
+        },
+        "source_id": {
+          "$ref": "#/$defs/text"
+        },
+        "input_id": {
+          "$ref": "#/$defs/id"
+        },
+        "original_title": {
+          "$ref": "#/$defs/text"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "maxLength": 8192,
+          "pattern": "^https://"
+        },
+        "published_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "content_hash": {
+          "$ref": "#/$defs/digest"
+        },
+        "primary": {
+          "type": "boolean"
+        }
+      }
+    },
+    "callout": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "text",
+            "attribution",
+            "attribution_source"
+          ],
+          "properties": {
+            "kind": {
+              "const": "quote"
+            },
+            "text": {
+              "$ref": "#/$defs/text"
+            },
+            "attribution": {
+              "$ref": "#/$defs/text"
+            },
+            "attribution_source": {
+              "$ref": "#/$defs/text"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "value",
+            "label"
+          ],
+          "properties": {
+            "kind": {
+              "const": "figure"
+            },
+            "value": {
+              "$ref": "#/$defs/text"
+            },
+            "label": {
+              "$ref": "#/$defs/text"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "title",
+            "items"
+          ],
+          "properties": {
+            "kind": {
+              "const": "facts"
+            },
+            "title": {
+              "$ref": "#/$defs/text"
+            },
+            "items": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 4,
+              "items": {
+                "$ref": "#/$defs/text"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "label",
+            "text"
+          ],
+          "properties": {
+            "kind": {
+              "const": "box"
+            },
+            "label": {
+              "$ref": "#/$defs/text"
+            },
+            "text": {
+              "$ref": "#/$defs/text"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "title",
+            "rows"
+          ],
+          "properties": {
+            "kind": {
+              "const": "timeline"
+            },
+            "title": {
+              "$ref": "#/$defs/text"
+            },
+            "rows": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 4,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "date",
+                  "text"
+                ],
+                "properties": {
+                  "date": {
+                    "$ref": "#/$defs/text"
+                  },
+                  "text": {
+                    "$ref": "#/$defs/text"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "story": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "device_participation",
+        "role",
+        "kicker",
+        "copy",
+        "callouts",
+        "sources",
+        "limitations"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "device_participation": {
+          "enum": [
+            "required",
+            "optional",
+            "reserve"
+          ]
+        },
+        "role": {
+          "enum": [
+            "lead",
+            "secondary",
+            "brief"
+          ]
+        },
+        "fallback_role": {
+          "const": "brief"
+        },
+        "kicker": {
+          "$ref": "#/$defs/text"
+        },
+        "kicker_secondary": {
+          "$ref": "#/$defs/text"
+        },
+        "copy": {
+          "$ref": "#/$defs/copy"
+        },
+        "callouts": {
+          "type": "array",
+          "maxItems": 16,
+          "items": {
+            "$ref": "#/$defs/callout"
+          }
+        },
+        "sources": {
+          "type": "array",
+          "maxItems": 16,
+          "items": {
+            "$ref": "#/$defs/source"
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "digest_of_rss_description",
+              "translated_from_source_language",
+              "headline_only",
+              "partial_source_coverage"
+            ]
+          }
+        }
+      }
+    },
+    "fitPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "allow_role_fallback",
+        "allow_composition_substitution",
+        "reserve_story_ids",
+        "omittable_story_ids"
+      ],
+      "properties": {
+        "allow_role_fallback": {
+          "type": "boolean"
+        },
+        "allow_composition_substitution": {
+          "type": "boolean"
+        },
+        "reserve_story_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "omittable_story_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        }
+      }
+    },
+    "feed_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_.-]{0,79}$"
+    }
+  }
+}

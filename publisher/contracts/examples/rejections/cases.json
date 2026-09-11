@@ -1,0 +1,1604 @@
+{
+ "base": "minimal.json",
+ "cases": [
+  {
+   "name": "unknown-field",
+   "invariant": "unknown fields are rejected",
+   "ops": [
+    {
+     "op": "add",
+     "path": "/unexpected",
+     "value": true
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/unexpected"
+  },
+  {
+   "name": "unsupported-schema-version",
+   "invariant": "only implemented schema versions are accepted",
+   "ops": [
+    {
+     "op": "replace",
+     "path": "/schema_version",
+     "value": 2
+    }
+   ],
+   "expected_code": "contract_unsupported_schema_version",
+   "expected_pointer": "/schema_version"
+  },
+  {
+   "name": "title-mismatch",
+   "invariant": "title must equal the configured title id",
+   "ops": [
+    {
+     "op": "replace",
+     "path": "/title",
+     "value": "other-title"
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/title"
+  },
+  {
+   "name": "timestamp-shape",
+   "invariant": "timestamps are RFC 3339 UTC with six fractional digits",
+   "ops": [
+    {
+     "op": "replace",
+     "path": "/edition/cutoff_at",
+     "value": "2026-09-08T03:00:00Z"
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/edition/cutoff_at"
+  },
+  {
+   "name": "calendar-date",
+   "invariant": "dates are real calendar dates",
+   "ops": [
+    {
+     "op": "replace",
+     "path": "/edition/date",
+     "value": "2026-02-30"
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/edition/date"
+  },
+  {
+   "name": "duplicate-input",
+   "invariant": "input ids are unique",
+   "ops": [
+    {
+     "op": "add",
+     "path": "/inputs/1",
+     "value": {
+      "id": "export-2026-09-08-0300",
+      "sha256": "sha256:293a9e5e14222635ff747340a406028c1e49082ea7996676008b3528e10ae33f"
+     }
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/inputs/1/id"
+  },
+  {
+   "name": "lead-not-first",
+   "invariant": "the lead is first",
+   "ops": [
+    {
+     "op": "add",
+     "path": "/stories/0",
+     "value": {
+      "id": "extra-secondary",
+      "device_participation": "optional",
+      "role": "secondary",
+      "fallback_role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+       "headline": "An extra secondary",
+       "lede": "DR reports an extra item.",
+       "body": {
+        "short": [
+         "DR reports an extra item."
+        ]
+       }
+      },
+      "callouts": [],
+      "sources": [],
+      "limitations": [
+       "headline_only"
+      ]
+     }
+    },
+    {
+     "op": "replace",
+     "path": "/fit_policy/omittable_story_ids",
+     "value": [
+      "extra-secondary"
+     ]
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/stories/1/role"
+  },
+  {
+   "name": "no-lead",
+   "invariant": "exactly one lead",
+   "ops": [
+    {
+     "op": "replace",
+     "path": "/stories/0/role",
+     "value": "secondary"
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/stories"
+  },
+  {
+   "name": "lead-optional",
+   "invariant": "the lead is required on the device",
+   "ops": [
+    {
+     "op": "replace",
+     "path": "/stories/0/device_participation",
+     "value": "optional"
+    },
+    {
+     "op": "replace",
+     "path": "/fit_policy/omittable_story_ids",
+     "value": [
+      "dr-insect-survey-2026-09-07"
+     ]
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/stories/0/role"
+  },
+  {
+   "name": "brief-fallback",
+   "invariant": "only secondary falls back, and only to brief",
+   "ops": [
+    {
+     "op": "add",
+     "path": "/stories/1",
+     "value": {
+      "id": "extra-brief",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+       "headline": "An extra brief",
+       "lede": "DR reports an extra item.",
+       "body": {}
+      },
+      "callouts": [],
+      "sources": [],
+      "limitations": [
+       "headline_only"
+      ],
+      "fallback_role": "brief"
+     }
+    },
+    {
+     "op": "replace",
+     "path": "/fit_policy/omittable_story_ids",
+     "value": [
+      "extra-brief"
+     ]
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/stories/1/fallback_role"
+  },
+  {
+   "name": "brief-without-lede",
+   "invariant": "a brief-capable story carries a lede",
+   "ops": [
+    {
+     "op": "add",
+     "path": "/stories/1",
+     "value": {
+      "id": "extra-brief",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+       "headline": "An extra brief",
+       "body": {}
+      },
+      "callouts": [],
+      "sources": [],
+      "limitations": [
+       "headline_only"
+      ]
+     }
+    },
+    {
+     "op": "replace",
+     "path": "/fit_policy/omittable_story_ids",
+     "value": [
+      "extra-brief"
+     ]
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/stories/1/copy/lede"
+  },
+  {
+   "name": "lede-wrong-publisher",
+   "invariant": "a lede opens with the primary publisher's display name",
+   "ops": [
+    {
+     "op": "add",
+     "path": "/stories/1",
+     "value": {
+      "id": "extra-brief",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+       "headline": "An extra brief",
+       "lede": "Politiken reports an extra item.",
+       "body": {}
+      },
+      "callouts": [],
+      "sources": [
+       {
+        "source": "dr",
+        "source_id": "urn:dr:umbraco:article:00000000-0000-0000-0000-000000000001",
+        "input_id": "export-2026-09-08-0300",
+        "original_title": "x",
+        "url": "https://www.dr.dk/nyheder/x",
+        "published_at": "2026-09-07T12:00:00.000000Z",
+        "content_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "primary": true
+       }
+      ],
+      "limitations": [
+       "headline_only"
+      ]
+     }
+    },
+    {
+     "op": "replace",
+     "path": "/fit_policy/omittable_story_ids",
+     "value": [
+      "extra-brief"
+     ]
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/stories/1/copy/lede"
+  },
+  {
+   "name": "duplicate-story-id",
+   "invariant": "story ids are unique",
+   "ops": [
+    {
+     "op": "add",
+     "path": "/stories/1",
+     "value": {
+      "id": "dr-insect-survey-2026-09-07",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+       "headline": "An extra brief",
+       "lede": "DR reports an extra item.",
+       "body": {}
+      },
+      "callouts": [],
+      "sources": [],
+      "limitations": [
+       "headline_only"
+      ]
+     }
+    },
+    {
+     "op": "replace",
+     "path": "/fit_policy/omittable_story_ids",
+     "value": [
+      "dr-insect-survey-2026-09-07"
+     ]
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/stories/1/id"
+  },
+  {
+   "name": "unknown-publisher",
+   "invariant": "publisher mapping is configured",
+   "ops": [
+    {
+     "op": "replace",
+     "path": "/stories/0/sources/0/source",
+     "value": "weekendavisen"
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/stories/0/sources/0/source"
+  },
+  {
+   "name": "missing-input-reference",
+   "invariant": "source input references exist",
+   "ops": [
+    {
+     "op": "replace",
+     "path": "/stories/0/sources/0/input_id",
+     "value": "missing"
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/stories/0/sources/0/input_id"
+  },
+  {
+   "name": "no-primary-source",
+   "invariant": "nonempty sources have exactly one primary",
+   "ops": [
+    {
+     "op": "replace",
+     "path": "/stories/0/sources/0/primary",
+     "value": false
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/stories/0/sources"
+  },
+  {
+   "name": "url-userinfo",
+   "invariant": "URLs are absolute HTTPS without userinfo",
+   "ops": [
+    {
+     "op": "replace",
+     "path": "/stories/0/sources/0/url",
+     "value": "https://user@example.com/story"
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/stories/0/sources/0/url"
+  },
+  {
+   "name": "url-http",
+   "invariant": "URLs are HTTPS",
+   "ops": [
+    {
+     "op": "replace",
+     "path": "/stories/0/sources/0/url",
+     "value": "http://www.dr.dk/nyheder/x"
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/stories/0/sources/0/url"
+  },
+  {
+   "name": "content-hash-shape",
+   "invariant": "content hashes are sha256-prefixed hex",
+   "ops": [
+    {
+     "op": "replace",
+     "path": "/stories/0/sources/0/content_hash",
+     "value": "md5:abc"
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/stories/0/sources/0/content_hash"
+  },
+  {
+   "name": "blank-paragraph",
+   "invariant": "copy strings and paragraphs are nonempty",
+   "ops": [
+    {
+     "op": "replace",
+     "path": "/stories/0/copy/body/standard/0",
+     "value": "   "
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/stories/0/copy/body/standard/0"
+  },
+  {
+   "name": "unknown-body-variant",
+   "invariant": "body variants are exactly extended, standard, short",
+   "ops": [
+    {
+     "op": "add",
+     "path": "/stories/0/copy/body/medium",
+     "value": [
+      "x"
+     ]
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/stories/0/copy/body/medium"
+  },
+  {
+   "name": "callout-missing-field",
+   "invariant": "each callout kind carries its required fields",
+   "ops": [
+    {
+     "op": "add",
+     "path": "/stories/0/callouts/0",
+     "value": {
+      "kind": "quote",
+      "text": "x"
+     }
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/stories/0/callouts/0/attribution"
+  },
+  {
+   "name": "unknown-limitation",
+   "invariant": "limitations are from the declared set",
+   "ops": [
+    {
+     "op": "add",
+     "path": "/stories/0/limitations/0",
+     "value": "guessed"
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/stories/0/limitations/0"
+  },
+  {
+   "name": "reserve-set-mismatch",
+   "invariant": "reserve list equals the reserve participation set",
+   "ops": [
+    {
+     "op": "replace",
+     "path": "/fit_policy/reserve_story_ids",
+     "value": [
+      "missing"
+     ]
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/fit_policy/reserve_story_ids"
+  },
+  {
+   "name": "omittable-set-mismatch",
+   "invariant": "omittable list equals the optional participation set",
+   "ops": [
+    {
+     "op": "replace",
+     "path": "/fit_policy/omittable_story_ids",
+     "value": [
+      "dr-insect-survey-2026-09-07"
+     ]
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/fit_policy/omittable_story_ids"
+  },
+  {
+   "name": "policy-list-duplicate",
+   "invariant": "policy lists are duplicate-free",
+   "ops": [
+    {
+     "op": "add",
+     "path": "/stories/1",
+     "value": {
+      "id": "extra-brief",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+       "headline": "An extra brief",
+       "lede": "DR reports an extra item.",
+       "body": {}
+      },
+      "callouts": [],
+      "sources": [],
+      "limitations": [
+       "headline_only"
+      ]
+     }
+    },
+    {
+     "op": "replace",
+     "path": "/fit_policy/omittable_story_ids",
+     "value": [
+      "extra-brief",
+      "extra-brief"
+     ]
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/fit_policy/omittable_story_ids"
+  },
+  {
+   "name": "coverage-status-inconsistent",
+   "invariant": "coverage status matches feed outcomes",
+   "ops": [
+    {
+     "op": "replace",
+     "path": "/coverage/status",
+     "value": "partial"
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/coverage/status"
+  },
+  {
+   "name": "coverage-empty-not-unknown",
+   "invariant": "an empty inventory requires unknown",
+   "ops": [
+    {
+     "op": "replace",
+     "path": "/coverage/feeds",
+     "value": []
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/coverage/status"
+  },
+  {
+   "name": "checked-feed-without-timestamp",
+   "invariant": "a checked or failed feed carries a timestamp",
+   "ops": [
+    {
+     "op": "replace",
+     "path": "/coverage/feeds/0/last_checked_at",
+     "value": null
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/coverage/feeds/0/last_checked_at"
+  },
+  {
+   "name": "too-many-stories",
+   "invariant": "resource bounds are enforced",
+   "ops": [
+    {
+     "op": "replace",
+     "path": "/stories",
+     "value": [
+      {
+       "id": "b0",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b1",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b2",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b3",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b4",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b5",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b6",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b7",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b8",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b9",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b10",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b11",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b12",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b13",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b14",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b15",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b16",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b17",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b18",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b19",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b20",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b21",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b22",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b23",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b24",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b25",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b26",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b27",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b28",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b29",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b30",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b31",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b32",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b33",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b34",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b35",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b36",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b37",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b38",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b39",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b40",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b41",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b42",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b43",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b44",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b45",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b46",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b47",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b48",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b49",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b50",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b51",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b52",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b53",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b54",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b55",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b56",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b57",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b58",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b59",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b60",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b61",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b62",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b63",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      },
+      {
+       "id": "b64",
+       "device_participation": "optional",
+       "role": "brief",
+       "kicker": "Denmark",
+       "copy": {
+        "headline": "An extra brief",
+        "lede": "DR reports an extra item.",
+        "body": {}
+       },
+       "callouts": [],
+       "sources": [],
+       "limitations": [
+        "headline_only"
+       ]
+      }
+     ]
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/stories"
+  }
+ ]
+}

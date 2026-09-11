@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "title": "copenhagen-today",
+  "edition": {
+    "id": "2026-09-09-overflow",
+    "number": 2,
+    "name": "Morning edition",
+    "date": "2026-09-09",
+    "timezone": "Europe/Copenhagen",
+    "language": "en",
+    "cutoff_at": "2026-09-09T03:00:00.000000Z",
+    "generated_at": "2026-09-09T03:20:33.000000Z"
+  },
+  "coverage": {
+    "status": "complete",
+    "checked_from": "2026-09-08T03:00:00.000000Z",
+    "checked_until": "2026-09-09T03:00:00.000000Z",
+    "feeds": [
+      {
+        "feed_id": "dr.indland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:50:10.000000Z"
+      },
+      {
+        "feed_id": "dr.udland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:51:11.000000Z"
+      },
+      {
+        "feed_id": "politiken.latest",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:52:12.000000Z"
+      },
+      {
+        "feed_id": "berlingske.samfund",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:53:13.000000Z"
+      },
+      {
+        "feed_id": "ft.world",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:54:14.000000Z"
+      },
+      {
+        "feed_id": "nytimes.homepage",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:55:15.000000Z"
+      },
+      {
+        "feed_id": "borsen.finans",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:50:16.000000Z"
+      }
+    ],
+    "note": "Built from headlines and RSS descriptions in seven configured feeds across six publishers, checked through 05:00 Copenhagen time. This is a fixture edition; its stories are illustrative."
+  },
+  "inputs": [
+    {
+      "id": "export-2026-09-09-0300",
+      "sha256": "sha256:6f2f6d16b8ff76d4646dd3e7b3fc0af23ce3730da9bc51e96da00f187d15a97a"
+    }
+  ],
+  "stories": [
+    {
+      "id": "unbreakable",
+      "device_participation": "required",
+      "role": "lead",
+      "kicker": "Copenhagen",
+      "copy": {
+        "headline": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+        "body": {
+          "standard": [
+            "DR reports a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself and ends here."
+          ],
+          "short": [
+            "DR reports a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself and ends here."
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:0f7f9973-a90b-e161-9b18-c3b9e019457d",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+          "url": "https://www.dr.dk/nyheder/indland/wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:438fe884185889e81d5aaeaa72e8f50b02be8f13b7739508c133c339e5aab258",
+          "primary": true
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description"
+      ]
+    },
+    {
+      "id": "required-second",
+      "device_participation": "required",
+      "role": "secondary",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "This required secondary has no shorter headline and no shorter body to step down to",
+        "body": {
+          "standard": [
+            "Politiken reports that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. ",
+            "Politiken reports that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. ",
+            "Politiken reports that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. ",
+            "Politiken reports that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. ",
+            "Politiken reports that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. ",
+            "Politiken reports that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. ",
+            "Politiken reports that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. ",
+            "Politiken reports that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. "
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "politiken",
+          "source_id": "10903164",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "This required secondary has no shorter headline and no shorter body to step down to",
+          "url": "https://politiken.dk/indland/art10903164/this-required-secondary-has-no-shorter-headline-and-no-shorter-body-to-step-down-to",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:8d60f8918ef627da231611a6685a3b780642ccc84ca5a2272bd023c9f7250803",
+          "primary": true
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description"
+      ]
+    },
+    {
+      "id": "required-third",
+      "device_participation": "required",
+      "role": "secondary",
+      "kicker": "World",
+      "copy": {
+        "headline": "A third required secondary that together with the others exceeds every composition",
+        "body": {
+          "standard": [
+            "The New York Times reports that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. ",
+            "The New York Times reports that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. ",
+            "The New York Times reports that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. ",
+            "The New York Times reports that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. ",
+            "The New York Times reports that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. ",
+            "The New York Times reports that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. ",
+            "The New York Times reports that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. ",
+            "The New York Times reports that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. "
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/09/08/world/europe/a-third-required-secondary-that-together-with-the-others-exceeds-every-composition.html",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "A third required secondary that together with the others exceeds every composition",
+          "url": "https://www.nytimes.com/2026/09/08/world/europe/a-third-required-secondary-that-together-with-the-others-exceeds-every-composition.html",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:31ca423c355b91c120be8a80e2f60abc80b0ab4a80a49f4430a63b26de7d2f08",
+          "primary": true
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description"
+      ]
+    }
+  ],
+  "fit_policy": {
+    "allow_role_fallback": true,
+    "allow_composition_substitution": true,
+    "reserve_story_ids": [],
+    "omittable_story_ids": []
+  }
+}

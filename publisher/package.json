@@ -1,0 +1,31 @@
+{
+  "name": "copenhagen-today-publisher",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=26.0.0 <27" },
+  "packageManager": "npm@11.17.0",
+  "scripts": {
+    "check": "npm run lint && npm run typecheck && npm test",
+    "lint": "node scripts/lint.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test 'tests/**/*.test.ts'",
+    "generate:types": "json2ts -i contracts/edition-contract.v1.schema.json -o src/contract/edition-contract.generated.ts"
+  },
+  "dependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "astro": "7.3.1",
+    "playwright": "1.63.0",
+    "yaml": "2.9.0",
+    "zod": "4.6.2"
+  },
+  "devDependencies": {
+    "@fontsource/playfair-display": "5.3.0",
+    "@fontsource/source-serif-4": "5.3.0",
+    "@types/node": "22.20.2",
+    "json-schema-to-typescript": "16.0.0",
+    "typescript": "7.0.2"
+  },
+  "overrides": { "playwright-core": "1.63.0" }
+}

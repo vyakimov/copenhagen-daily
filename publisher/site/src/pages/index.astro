@@ -1,0 +1,19 @@
+---
+import Broadsheet from "../layouts/Broadsheet.astro";
+import Edition from "../components/Edition.astro";
+import { config, order } from "../lib.ts";
+import { getCollection } from "astro:content";
+// Only the candidate edition is in the collection. When it is not the latest (a backdated run), the
+// CLI replaces this page with a hardlink to the latest edition's own immutable page.
+const latest = order.at(-1);
+const editions = new Map((await getCollection("editions")).map((entry) => [entry.data.edition.id, entry.data]));
+const edition = latest ? editions.get(latest.id) : null;
+---
+<Broadsheet title={config.masthead} language={edition?.edition.language ?? "en"}>
+  {edition ? (
+    <Edition edition={edition} config={config} previous={order.length > 1} next={false}
+      device={latest!.device_status === "published"} />
+  ) : (
+    <main class="page"><h1>{config.masthead}</h1><p>No editions have been published.</p></main>
+  )}
+</Broadsheet>

@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://copenhagen.today/contracts/manifest.v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "edition_id",
+    "layout_version",
+    "contract_sha256",
+    "config_sha256",
+    "files",
+    "shared_assets",
+    "device",
+    "environment"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "edition_id": {
+      "type": "string"
+    },
+    "layout_version": {
+      "type": "string"
+    },
+    "contract_sha256": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "config_sha256": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/file"
+      }
+    },
+    "shared_assets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "files"
+      ],
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/file"
+          }
+        }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "node",
+        "icu",
+        "astro",
+        "playwright",
+        "chromium",
+        "chromium_executable_sha256",
+        "imagemagick",
+        "fonts_lock_sha256",
+        "failures"
+      ],
+      "properties": {
+        "node": {
+          "type": "string"
+        },
+        "icu": {
+          "type": "string"
+        },
+        "astro": {
+          "type": "string"
+        },
+        "playwright": {
+          "type": "string"
+        },
+        "chromium": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "chromium_executable_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "imagemagick": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "fonts_lock_sha256": {
+          "type": "string"
+        },
+        "failures": {
+          "type": "array"
+        }
+      }
+    },
+    "device": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "published",
+            "failed",
+            "skipped"
+          ]
+        }
+      }
+    }
+  },
+  "$defs": {
+    "file": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "bytes",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        }
+      }
+    }
+  }
+}

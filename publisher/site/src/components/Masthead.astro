@@ -1,0 +1,12 @@
+---
+import { formatCutoff, formatEditionDate } from "../../../assets/html/format.ts";
+const { edition, masthead, earRight } = Astro.props;
+const cutoff = formatCutoff(edition.cutoff_at, edition.language, edition.timezone);
+const date = formatEditionDate(edition.date, edition.language);
+---
+<header class="masthead">
+  <div class="ear">{edition.name}<br />News through {cutoff}</div>
+  <h1>{masthead}</h1>
+  <div class="ear">{earRight ?? `Edition ${edition.number}`}</div>
+</header>
+<p class="edition-meta"><time datetime={edition.date}>{date}</time> · No. {edition.number}</p>

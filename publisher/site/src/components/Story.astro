@@ -1,0 +1,38 @@
+---
+import Callout from "./Callout.astro";
+import { renderSourceRow } from "../../../assets/html/source-row.ts";
+import { formatPublished } from "../../../assets/html/format.ts";
+const { story, publishers, language, timezone } = Astro.props;
+const primary = story.sources.find((s: any) => s.primary);
+// The web carries the longest approved variant, always.
+const body = story.copy.body.extended ?? story.copy.body.standard ?? story.copy.body.short ?? [];
+const labels: Record<string, string> = {
+  digest_of_rss_description: "Based on an RSS description",
+  translated_from_source_language: "Translated from the source language",
+  headline_only: "Headline-only source",
+  partial_source_coverage: "Partial source coverage",
+};
+---
+<article class:list={["story", story.role]} id={story.id}>
+  <div class="kicker">{story.kicker}{story.kicker_secondary ? ` · ${story.kicker_secondary}` : ""}</div>
+  <h2>{primary ? <a href={primary.url}>{story.copy.headline}</a> : story.copy.headline}</h2>
+  {story.copy.deck && <p class="deck">{story.copy.deck}</p>}
+  {story.copy.lede && story.role === "brief" && <p class="lede">{story.copy.lede}</p>}
+  <div class="body">{body.map((p: string) => <p>{p}</p>)}</div>
+  {story.callouts.map((callout: any) => <Callout callout={callout} />)}
+  <Fragment set:html={renderSourceRow(story.sources, publishers)} />
+  <div class="limitations">{story.limitations.map((x: string) => labels[x]).join(" · ")}</div>
+  {story.sources.length > 0 && (
+    <details class="sources">
+      <summary>All source articles</summary>
+      <ul>
+        {story.sources.map((s: any) => (
+          <li>
+            <a href={s.url}>{s.original_title}</a> — {publishers[s.source]} ·{" "}
+            <time datetime={s.published_at}>{formatPublished(s.published_at, language, timezone)}</time>
+          </li>
+        ))}
+      </ul>
+    </details>
+  )}
+</article>

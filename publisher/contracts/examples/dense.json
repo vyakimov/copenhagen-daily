@@ -1,0 +1,465 @@
+{
+  "schema_version": 1,
+  "title": "copenhagen-today",
+  "edition": {
+    "id": "2026-09-09-dense",
+    "number": 2,
+    "name": "Morning edition",
+    "date": "2026-09-09",
+    "timezone": "Europe/Copenhagen",
+    "language": "en",
+    "cutoff_at": "2026-09-09T03:00:00.000000Z",
+    "generated_at": "2026-09-09T03:12:40.000000Z"
+  },
+  "presentation": {
+    "preferred_composition": "lead-centred",
+    "emphasis": "many_stories",
+    "ear_right": "Inside: rate decision, metro strike, free school lunches"
+  },
+  "coverage": {
+    "status": "complete",
+    "checked_from": "2026-09-08T03:00:00.000000Z",
+    "checked_until": "2026-09-09T03:00:00.000000Z",
+    "feeds": [
+      {
+        "feed_id": "dr.indland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:50:10.000000Z"
+      },
+      {
+        "feed_id": "dr.udland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:51:11.000000Z"
+      },
+      {
+        "feed_id": "politiken.latest",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:52:12.000000Z"
+      },
+      {
+        "feed_id": "berlingske.samfund",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:53:13.000000Z"
+      },
+      {
+        "feed_id": "ft.world",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:54:14.000000Z"
+      },
+      {
+        "feed_id": "nytimes.homepage",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:55:15.000000Z"
+      },
+      {
+        "feed_id": "borsen.finans",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:50:16.000000Z"
+      }
+    ],
+    "note": "Built from headlines and RSS descriptions in seven configured feeds across six publishers, checked through 05:00 Copenhagen time. This is a fixture edition; its stories are illustrative."
+  },
+  "inputs": [
+    {
+      "id": "export-2026-09-09-0300",
+      "sha256": "sha256:6f2f6d16b8ff76d4646dd3e7b3fc0af23ce3730da9bc51e96da00f187d15a97a"
+    }
+  ],
+  "stories": [
+    {
+      "id": "harbour-tunnel-vote",
+      "device_participation": "required",
+      "role": "lead",
+      "kicker": "Copenhagen",
+      "copy": {
+        "headline": "Council backs harbour tunnel after night-long sitting",
+        "headline_short": "Council backs harbour tunnel",
+        "deck": "A 29 to 26 vote sends the eastern ring road to the state for financing, with the mayor calling it the decision of a generation.",
+        "body": {
+          "extended": [
+            "Politiken reports that Copenhagen's city council voted 29 to 26 early on Tuesday to back the eastern harbour tunnel, ending a debate that ran past two in the morning.",
+            "According to Berlingske, the mayor described the vote as the decision of a generation and said the plan now goes to the state for a financing agreement.",
+            "DR reports that opponents on the council argued the tunnel would draw more cars into the city and asked for a further environmental review before construction begins."
+          ],
+          "standard": [
+            "Politiken reports that Copenhagen's city council voted 29 to 26 early on Tuesday to back the eastern harbour tunnel, ending a debate that ran past two in the morning.",
+            "According to Berlingske, the mayor called it the decision of a generation; DR reports opponents want a further environmental review."
+          ],
+          "short": [
+            "Politiken reports the council voted 29 to 26 for the eastern harbour tunnel after a sitting that ran past two in the morning."
+          ]
+        }
+      },
+      "callouts": [
+        {
+          "kind": "figure",
+          "value": "29–26",
+          "label": "the council vote, as reported by Politiken"
+        },
+        {
+          "kind": "quote",
+          "text": "The decision of a generation.",
+          "attribution": "The Lord Mayor",
+          "attribution_source": "Berlingske"
+        }
+      ],
+      "sources": [
+        {
+          "source": "politiken",
+          "source_id": "10915321",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Council backs harbour tunnel after night-long sitting",
+          "url": "https://politiken.dk/indland/art10915321/council-backs-harbour-tunnel-after-night-long-sitting",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:f3743d90b03f8081f7587432787dc71cb8741b5862e9eb278e14fcdeb3816c8c",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:05caa914-b1d1-c720-1959-a2ef02d222b4",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Overborgmester: Havnetunnel er en generations beslutning",
+          "url": "https://www.berlingske.dk/samfund/overborgmester-havnetunnel-er-en-generations-beslutning",
+          "published_at": "2026-09-08T23:40:00.000000Z",
+          "content_hash": "sha256:6287a47ce2526d13c2ad9bef8d75c01ab3ceb69f30b0d788eb30440a7731f695",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:5e055818-a527-9f21-fb83-1a8ba060fb96",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Modstandere kræver ny miljøvurdering af havnetunnel",
+          "url": "https://www.dr.dk/nyheder/indland/modstandere-kraever-ny-miljoevurdering-af-havnetunnel",
+          "published_at": "2026-09-09T00:15:00.000000Z",
+          "content_hash": "sha256:832e4ea3d9796a7bfc1dc639bb5514ed1805667ec47f872e3120458c05b06b81",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description"
+      ]
+    },
+    {
+      "id": "rate-decision",
+      "device_participation": "required",
+      "role": "secondary",
+      "kicker": "Economy",
+      "copy": {
+        "headline": "Nationalbanken holds its rate and warns on wages",
+        "headline_short": "Nationalbanken holds rate",
+        "body": {
+          "standard": [
+            "Børsen reports that Nationalbanken left its key rate unchanged and said wage growth remains above what it considers consistent with its target.",
+            "The Financial Times reports that the decision was widely expected by analysts."
+          ],
+          "short": [
+            "Børsen reports Nationalbanken left its key rate unchanged and warned that wage growth remains too high."
+          ]
+        }
+      },
+      "callouts": [
+        {
+          "kind": "box",
+          "label": "Unchanged",
+          "text": "The key rate stays where it has been since spring."
+        }
+      ],
+      "sources": [
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/okonomi/nationalbanken-holds-its-rate-and-warns-on-wages",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Nationalbanken holds its rate and warns on wages",
+          "url": "https://borsen.dk/nyheder/okonomi/nationalbanken-holds-its-rate-and-warns-on-wages",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:1a368f13b368a584cb48f83edc3bb1109fd47e7fd6c1febda28e8e852f0f7fd4",
+          "primary": true
+        },
+        {
+          "source": "ft",
+          "source_id": "7b6e8ac2-6405-8068-7913-adcafa7426c0",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Denmark's central bank holds rates, flags wage pressure",
+          "url": "https://www.ft.com/content/7b6e8ac2-6405-8068-7913-adcafa7426c0",
+          "published_at": "2026-09-08T12:30:00.000000Z",
+          "content_hash": "sha256:320e5ec286fb06e87a37a901e3f92c3bb290297a9e680414b70fb1be6f761934",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description"
+      ]
+    },
+    {
+      "id": "metro-strike",
+      "device_participation": "required",
+      "role": "secondary",
+      "fallback_role": "brief",
+      "kicker": "Transport",
+      "copy": {
+        "headline": "Metro drivers announce two-day strike from Thursday",
+        "lede": "DR reports that metro drivers will strike on Thursday and Friday over rostering.",
+        "body": {
+          "standard": [
+            "DR reports that the metro drivers' union has given notice of a two-day strike starting Thursday, citing a dispute over rostering.",
+            "Politiken reports that the operator expects to run a reduced service on the Cityringen line."
+          ],
+          "short": [
+            "DR reports metro drivers will strike Thursday and Friday over rostering; Politiken says a reduced service is planned."
+          ]
+        }
+      },
+      "callouts": [
+        {
+          "kind": "facts",
+          "title": "What is affected",
+          "items": [
+            "Thursday and Friday",
+            "All four metro lines",
+            "Reduced Cityringen service planned"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:1231e9a9-88e3-6802-7a34-3a2a8d753671",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Metro drivers announce two-day strike from Thursday",
+          "url": "https://www.dr.dk/nyheder/indland/metro-drivers-announce-two-day-strike-from-thursday",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:ae1bf6be3e04e21150fd6f837eedc8181f2f5bbf16b8ffb6a9d143b189b9f883",
+          "primary": true
+        },
+        {
+          "source": "politiken",
+          "source_id": "10918493",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Metroselskabet planlægger nøddrift under strejke",
+          "url": "https://politiken.dk/indland/art10918493/metroselskabet-planlaegger-noeddrift-under-strejke",
+          "published_at": "2026-09-08T16:05:00.000000Z",
+          "content_hash": "sha256:f1df3afbe5cd13971fed6aa0f5b1268657b3af3e8273870d0a69c6c228e8493a",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description"
+      ]
+    },
+    {
+      "id": "gaza-talks",
+      "device_participation": "optional",
+      "role": "secondary",
+      "fallback_role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Ceasefire talks resume in Cairo with no date for a deal",
+        "lede": "The New York Times reports that ceasefire talks resumed in Cairo without a timetable for an agreement.",
+        "body": {
+          "standard": [
+            "The New York Times reports that negotiators returned to Cairo on Monday, with officials on both sides describing the gap as narrower but declining to name a date.",
+            "The Financial Times reports that European governments are pressing for a deal before the UN General Assembly opens."
+          ],
+          "short": [
+            "The New York Times reports ceasefire talks resumed in Cairo on Monday with no date for an agreement."
+          ]
+        }
+      },
+      "callouts": [
+        {
+          "kind": "timeline",
+          "title": "The talks",
+          "rows": [
+            {
+              "date": "Aug 28",
+              "text": "Talks suspended"
+            },
+            {
+              "date": "Sep 8",
+              "text": "Delegations return to Cairo"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/09/08/world/europe/ceasefire-talks-resume-in-cairo-with-no-date-for-a-deal.html",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Ceasefire talks resume in Cairo with no date for a deal",
+          "url": "https://www.nytimes.com/2026/09/08/world/europe/ceasefire-talks-resume-in-cairo-with-no-date-for-a-deal.html",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:44cbd87202940353f6059ad5f938505835cdc795ad6aac2abec17222ad2912c4",
+          "primary": true
+        },
+        {
+          "source": "ft",
+          "source_id": "efc24aa7-f9a5-9e46-bdc6-c889dd111a96",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Europe presses for Gaza deal before UN week",
+          "url": "https://www.ft.com/content/efc24aa7-f9a5-9e46-bdc6-c889dd111a96",
+          "published_at": "2026-09-08T18:20:00.000000Z",
+          "content_hash": "sha256:bc14aa74740255cebaf48ee5e6cd69e89b95ea0bb109162d86f8869fefd5760b",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description"
+      ]
+    },
+    {
+      "id": "school-lunch",
+      "device_participation": "required",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Free school lunches to be tested in three municipalities",
+        "lede": "DR reports that three municipalities will trial free school lunches from January.",
+        "body": {}
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:98053bda-24ec-9cc9-7ecc-717438ec8877",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Free school lunches to be tested in three municipalities",
+          "url": "https://www.dr.dk/nyheder/indland/free-school-lunches-to-be-tested-in-three-municipalities",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:9315c6c5554a1a2964a9b247ed138d985860079e5fe5d5ecc8905a578725b7c5",
+          "primary": true
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description"
+      ]
+    },
+    {
+      "id": "novo-guidance",
+      "device_participation": "required",
+      "role": "brief",
+      "kicker": "Business",
+      "copy": {
+        "headline": "Novo Nordisk narrows full-year guidance",
+        "lede": "Børsen reports that Novo Nordisk narrowed its sales guidance for the year.",
+        "body": {}
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/okonomi/novo-nordisk-narrows-full-year-guidance",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Novo Nordisk narrows full-year guidance",
+          "url": "https://borsen.dk/nyheder/okonomi/novo-nordisk-narrows-full-year-guidance",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:be026ba8e6985986205050d6ac9ef1b44df5d52b46c48031fa26e0f0ff497981",
+          "primary": true
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description"
+      ]
+    },
+    {
+      "id": "wind-auction",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Energy",
+      "copy": {
+        "headline": "Ministry reopens offshore wind auction with higher subsidy",
+        "lede": "Børsen reports the energy minister will reopen the North Sea auction with a higher support ceiling.",
+        "body": {}
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/okonomi/ministry-reopens-offshore-wind-auction-with-higher-subsidy",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Ministry reopens offshore wind auction with higher subsidy",
+          "url": "https://borsen.dk/nyheder/okonomi/ministry-reopens-offshore-wind-auction-with-higher-subsidy",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:0abaea40f4728bba729588a332aab0735d6bd20b78c99fbcb08824a5a2d4c6c9",
+          "primary": true
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description"
+      ]
+    },
+    {
+      "id": "kunsthal-reopens",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Culture",
+      "copy": {
+        "headline": "Kunsthal Charlottenborg reopens after two-year renovation",
+        "lede": "Berlingske reports that Kunsthal Charlottenborg reopens on Saturday after two years of renovation.",
+        "body": {}
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:b4f3ad8c-1db1-8f55-0f97-04327997c963",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Kunsthal Charlottenborg reopens after two-year renovation",
+          "url": "https://www.berlingske.dk/samfund/kunsthal-charlottenborg-reopens-after-two-year-renovation",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:4db65c141d4b7b15bd6c93b1808cc68de49cfefe4a9d3d44c863c74af931cfae",
+          "primary": true
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description"
+      ]
+    },
+    {
+      "id": "bridge-repairs",
+      "device_participation": "reserve",
+      "role": "brief",
+      "kicker": "Copenhagen",
+      "copy": {
+        "headline": "Langebro repairs to close one lane through October",
+        "lede": "Politiken reports that Langebro loses one lane in each direction until the end of October.",
+        "body": {}
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "politiken",
+          "source_id": "10909715",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Langebro repairs to close one lane through October",
+          "url": "https://politiken.dk/indland/art10909715/langebro-repairs-to-close-one-lane-through-october",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:5ec586e70b4ba94ec08544562e54827644449f0818af6f763156e0a624ad5af5",
+          "primary": true
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description"
+      ]
+    }
+  ],
+  "fit_policy": {
+    "allow_role_fallback": true,
+    "allow_composition_substitution": true,
+    "reserve_story_ids": [
+      "bridge-repairs"
+    ],
+    "omittable_story_ids": [
+      "gaza-talks",
+      "wind-auction",
+      "kunsthal-reopens"
+    ]
+  }
+}

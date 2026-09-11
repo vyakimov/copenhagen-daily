@@ -1,0 +1,18 @@
+---
+import Broadsheet from "../../layouts/Broadsheet.astro";
+import { config, order } from "../../lib.ts";
+import { formatEditionDate } from "../../../../assets/html/format.ts";
+---
+<Broadsheet title={`Archive — ${config.masthead}`}>
+  <main class="page">
+    <h1>Archive</h1>
+    <ol class="archive-list">
+      {[...order].reverse().map((e) => (
+        <li>
+          <a href={`/n/${e.id}/`}>{e.name}</a> — <time datetime={e.date}>{formatEditionDate(e.date, e.language)}</time>
+        </li>
+      ))}
+    </ol>
+    <a href="/">Latest edition</a>
+  </main>
+</Broadsheet>

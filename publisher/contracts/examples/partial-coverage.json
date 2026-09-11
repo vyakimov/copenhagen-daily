@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "title": "copenhagen-today",
+  "edition": {
+    "id": "2026-09-09-partial",
+    "number": 2,
+    "name": "Morning edition",
+    "date": "2026-09-09",
+    "timezone": "Europe/Copenhagen",
+    "language": "en",
+    "cutoff_at": "2026-09-09T03:00:00.000000Z",
+    "generated_at": "2026-09-09T03:22:08.000000Z"
+  },
+  "coverage": {
+    "status": "partial",
+    "checked_from": "2026-09-08T03:00:00.000000Z",
+    "checked_until": "2026-09-09T03:00:00.000000Z",
+    "feeds": [
+      {
+        "feed_id": "dr.indland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:50:10.000000Z"
+      },
+      {
+        "feed_id": "dr.udland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:51:11.000000Z"
+      },
+      {
+        "feed_id": "politiken.latest",
+        "source": "politiken",
+        "outcome": "failed",
+        "last_checked_at": "2026-09-09T02:52:12.000000Z"
+      },
+      {
+        "feed_id": "berlingske.samfund",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:53:13.000000Z"
+      },
+      {
+        "feed_id": "ft.world",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:54:14.000000Z"
+      },
+      {
+        "feed_id": "nytimes.homepage",
+        "source": "nytimes",
+        "outcome": "not_checked",
+        "last_checked_at": null
+      },
+      {
+        "feed_id": "borsen.finans",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:50:16.000000Z"
+      }
+    ],
+    "note": "Politiken's feed could not be fetched and The New York Times was not checked for this edition, so their reporting is missing. Copy is based on RSS headlines and descriptions."
+  },
+  "inputs": [
+    {
+      "id": "export-2026-09-09-0300",
+      "sha256": "sha256:6f2f6d16b8ff76d4646dd3e7b3fc0af23ce3730da9bc51e96da00f187d15a97a"
+    }
+  ],
+  "stories": [
+    {
+      "id": "known-news",
+      "device_participation": "required",
+      "role": "lead",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Government presents budget with a smaller deficit than forecast",
+        "body": {
+          "standard": [
+            "DR reports that the government presented a budget proposal with a deficit below the spring forecast.",
+            "The Financial Times reports that the proposal keeps defence spending above two per cent of GDP."
+          ],
+          "short": [
+            "DR reports a budget proposal with a smaller deficit than forecast."
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:10a9f422-9228-4a31-71cd-d37a536d5ed5",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Government presents budget with a smaller deficit than forecast",
+          "url": "https://www.dr.dk/nyheder/indland/government-presents-budget-with-a-smaller-deficit-than-forecast",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:310847064a26af5c4abacf6725b9996e276058523159c97438ebc6aaab466b31",
+          "primary": true
+        },
+        {
+          "source": "ft",
+          "source_id": "ee50a508-9f1c-016b-8b68-bf64ca2fecd0",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Denmark unveils budget with defence above 2% of GDP",
+          "url": "https://www.ft.com/content/ee50a508-9f1c-016b-8b68-bf64ca2fecd0",
+          "published_at": "2026-09-08T13:45:00.000000Z",
+          "content_hash": "sha256:ead841aee6650acd8d1b10e250e777058523d5d4b85c6abf0869bced958dd762",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "partial_source_coverage"
+      ]
+    },
+    {
+      "id": "headline-only",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Business",
+      "copy": {
+        "headline": "Maersk names new chief financial officer",
+        "lede": "Børsen reports that Maersk has named a new chief financial officer.",
+        "body": {}
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/okonomi/maersk-names-new-chief-financial-officer",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Maersk names new chief financial officer",
+          "url": "https://borsen.dk/nyheder/okonomi/maersk-names-new-chief-financial-officer",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:31cb3e327501f07498a3ee23e278245eeabd33477133b68a37ce703c01c0d55d",
+          "primary": true
+        }
+      ],
+      "limitations": [
+        "headline_only"
+      ]
+    }
+  ],
+  "fit_policy": {
+    "allow_role_fallback": true,
+    "allow_composition_substitution": true,
+    "reserve_story_ids": [],
+    "omittable_story_ids": [
+      "headline-only"
+    ]
+  }
+}

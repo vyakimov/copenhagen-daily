@@ -1,0 +1,19 @@
+---
+import Broadsheet from "../../../layouts/Broadsheet.astro";
+import { config, order } from "../../../lib.ts";
+export function getStaticPaths() {
+  return order.flatMap((e, i) =>
+    ["prev", "next"].map((direction) => ({ params: { edition: e.id, direction }, props: { i, direction } })),
+  );
+}
+const { i, direction } = Astro.props;
+const neighbor = direction === "prev" ? order[i - 1] : order[i + 1];
+const word = direction === "prev" ? "previous" : "next";
+---
+<Broadsheet title={`${word[0]!.toUpperCase()}${word.slice(1)} edition — ${config.masthead}`}
+  redirect={neighbor ? `/n/${neighbor.id}/` : undefined}>
+  <main class="page">
+    <p>{neighbor ? <a href={`/n/${neighbor.id}/`}>Continue to the {word} edition</a> : `No ${word} edition.`}</p>
+    <a href="/archive/">Archive</a>
+  </main>
+</Broadsheet>

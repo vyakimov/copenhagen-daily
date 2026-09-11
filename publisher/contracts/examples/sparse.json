@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "title": "copenhagen-today",
+  "edition": {
+    "id": "2026-09-09-sparse",
+    "number": 2,
+    "name": "Morning edition",
+    "date": "2026-09-09",
+    "timezone": "Europe/Copenhagen",
+    "language": "en",
+    "cutoff_at": "2026-09-09T03:00:00.000000Z",
+    "generated_at": "2026-09-09T03:09:15.000000Z"
+  },
+  "presentation": {
+    "emphasis": "quiet_day"
+  },
+  "coverage": {
+    "status": "complete",
+    "checked_from": "2026-09-08T03:00:00.000000Z",
+    "checked_until": "2026-09-09T03:00:00.000000Z",
+    "feeds": [
+      {
+        "feed_id": "dr.indland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:50:10.000000Z"
+      },
+      {
+        "feed_id": "dr.udland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:51:11.000000Z"
+      },
+      {
+        "feed_id": "politiken.latest",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:52:12.000000Z"
+      },
+      {
+        "feed_id": "berlingske.samfund",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:53:13.000000Z"
+      },
+      {
+        "feed_id": "ft.world",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:54:14.000000Z"
+      },
+      {
+        "feed_id": "nytimes.homepage",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:55:15.000000Z"
+      },
+      {
+        "feed_id": "borsen.finans",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:50:16.000000Z"
+      }
+    ],
+    "note": "Built from headlines and RSS descriptions in seven configured feeds across six publishers, checked through 05:00 Copenhagen time. This is a fixture edition; its stories are illustrative."
+  },
+  "inputs": [
+    {
+      "id": "export-2026-09-09-0300",
+      "sha256": "sha256:6f2f6d16b8ff76d4646dd3e7b3fc0af23ce3730da9bc51e96da00f187d15a97a"
+    }
+  ],
+  "stories": [
+    {
+      "id": "storm-warning",
+      "device_participation": "required",
+      "role": "lead",
+      "kicker": "Weather",
+      "copy": {
+        "headline": "DMI issues its first autumn storm warning for the capital",
+        "deck": "Gusts of up to 30 metres per second are expected on Wednesday evening.",
+        "body": {
+          "standard": [
+            "DR reports that the Danish Meteorological Institute has issued a storm warning for Copenhagen and the surrounding region for Wednesday evening.",
+            "According to DR, gusts of up to 30 metres per second are possible along the coast."
+          ],
+          "short": [
+            "DR reports a storm warning for the capital on Wednesday evening, with coastal gusts of up to 30 metres per second."
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:9ac4a914-2ae6-5661-8ff4-c8146642b1fc",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "DMI issues its first autumn storm warning for the capital",
+          "url": "https://www.dr.dk/nyheder/indland/dmi-issues-its-first-autumn-storm-warning-for-the-capital",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:5d4c0d828087d74e552c414be1216493b3a3bc7b8b9e16d5416cefa1decd8e8b",
+          "primary": true
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description"
+      ]
+    },
+    {
+      "id": "ferry-cancelled",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Transport",
+      "copy": {
+        "headline": "Bornholm ferry cancels Wednesday evening sailings",
+        "lede": "DR reports that Wednesday evening sailings to Rønne are cancelled ahead of the storm.",
+        "body": {}
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:4f3ab0d7-ae50-5a35-4011-8afa0b9ef308",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Bornholm ferry cancels Wednesday evening sailings",
+          "url": "https://www.dr.dk/nyheder/indland/bornholm-ferry-cancels-wednesday-evening-sailings",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:b22a5c037e9b11ffc0bcbbcd44ee14a9d20542dd5a0e84e08ef5dcf49bd30242",
+          "primary": true
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description"
+      ]
+    }
+  ],
+  "fit_policy": {
+    "allow_role_fallback": true,
+    "allow_composition_substitution": true,
+    "reserve_story_ids": [],
+    "omittable_story_ids": [
+      "ferry-cancelled"
+    ]
+  }
+}

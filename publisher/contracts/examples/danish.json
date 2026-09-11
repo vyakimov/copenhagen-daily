@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "title": "copenhagen-today",
+  "edition": {
+    "id": "2026-09-09-dansk",
+    "number": 2,
+    "name": "Morgenudgave",
+    "date": "2026-09-09",
+    "timezone": "Europe/Copenhagen",
+    "language": "da",
+    "cutoff_at": "2026-09-09T03:00:00.000000Z",
+    "generated_at": "2026-09-09T03:16:51.000000Z"
+  },
+  "coverage": {
+    "status": "complete",
+    "checked_from": "2026-09-08T03:00:00.000000Z",
+    "checked_until": "2026-09-09T03:00:00.000000Z",
+    "feeds": [
+      {
+        "feed_id": "dr.indland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:50:10.000000Z"
+      },
+      {
+        "feed_id": "dr.udland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:51:11.000000Z"
+      },
+      {
+        "feed_id": "politiken.latest",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:52:12.000000Z"
+      },
+      {
+        "feed_id": "berlingske.samfund",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:53:13.000000Z"
+      },
+      {
+        "feed_id": "ft.world",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:54:14.000000Z"
+      },
+      {
+        "feed_id": "nytimes.homepage",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:55:15.000000Z"
+      },
+      {
+        "feed_id": "borsen.finans",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:50:16.000000Z"
+      }
+    ],
+    "note": "Bygget på overskrifter og RSS-beskrivelser fra syv konfigurerede feeds hos seks udgivere, tjekket frem til klokken 05.00 dansk tid. Dette er en testudgave."
+  },
+  "inputs": [
+    {
+      "id": "export-2026-09-09-0300",
+      "sha256": "sha256:6f2f6d16b8ff76d4646dd3e7b3fc0af23ce3730da9bc51e96da00f187d15a97a"
+    }
+  ],
+  "stories": [
+    {
+      "id": "koebenhavn-faellesskab",
+      "device_participation": "required",
+      "role": "lead",
+      "kicker": "København",
+      "copy": {
+        "headline": "København får en ny fortælling om byens fællesskab",
+        "deck": "Kommunen samler tusind borgere til et døgns samtaler om, hvad byen skal være.",
+        "body": {
+          "standard": [
+            "DR skriver, at Københavns Kommune inviterer tusind borgere til et døgns samtaler om byens fremtid.",
+            "Ifølge Politiken skal resultatet indgå i kommuneplanen næste år."
+          ],
+          "short": [
+            "DR skriver, at kommunen samler tusind borgere til et døgns samtaler om byens fremtid."
+          ]
+        }
+      },
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "Byen tilhører os alle.",
+          "attribution": "Overborgmesteren",
+          "attribution_source": "DR"
+        }
+      ],
+      "sources": [
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:7c6d9ff7-2c2e-a5b0-78d9-7ed01c5553c3",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "København får en ny fortælling om byens fællesskab",
+          "url": "https://www.dr.dk/nyheder/indland/koebenhavn-faar-en-ny-fortaelling-om-byens-faellesskab",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:04f9708cf18769fb07cb25afba696aa35fc81b247b6ec03cb0c9afa7bc71029d",
+          "primary": true
+        },
+        {
+          "source": "politiken",
+          "source_id": "10935508",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Borgersamling skal skrive med på kommuneplanen",
+          "url": "https://politiken.dk/indland/art10935508/borgersamling-skal-skrive-med-paa-kommuneplanen",
+          "published_at": "2026-09-08T15:10:00.000000Z",
+          "content_hash": "sha256:8eb8080f20f78b4202a750f5123d68a1ecaf18cf7ea602da666e59c5c8829d4f",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description"
+      ]
+    },
+    {
+      "id": "renteafgoerelse",
+      "device_participation": "required",
+      "role": "secondary",
+      "kicker": "Økonomi",
+      "copy": {
+        "headline": "Nationalbanken fastholder renten",
+        "body": {
+          "standard": [
+            "Børsen skriver, at Nationalbanken fastholder den ledende rente og advarer om lønvæksten."
+          ],
+          "short": [
+            "Børsen skriver, at Nationalbanken fastholder renten."
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/okonomi/nationalbanken-fastholder-renten",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Nationalbanken fastholder renten",
+          "url": "https://borsen.dk/nyheder/okonomi/nationalbanken-fastholder-renten",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:9cf8c94a073caa96e637621023a879ab3f03f4e50fa41e47e58fd27fc44697a2",
+          "primary": true
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description"
+      ]
+    },
+    {
+      "id": "metrostrejke",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Trafik",
+      "copy": {
+        "headline": "Metroførere varsler strejke torsdag",
+        "lede": "DR skriver, at metroførerne varsler strejke torsdag og fredag.",
+        "body": {}
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:f0aab63e-04a7-978e-1d44-53532b64424f",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Metroførere varsler strejke torsdag",
+          "url": "https://www.dr.dk/nyheder/indland/metrofoerere-varsler-strejke-torsdag",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:9cad8bef3e05a1027fb1a7182a8fae61ed0c7caf949d8cab2022bba3b9255900",
+          "primary": true
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description"
+      ]
+    }
+  ],
+  "fit_policy": {
+    "allow_role_fallback": true,
+    "allow_composition_substitution": true,
+    "reserve_story_ids": [],
+    "omittable_story_ids": [
+      "metrostrejke"
+    ]
+  }
+}

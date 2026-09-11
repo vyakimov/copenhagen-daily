@@ -1,0 +1,18 @@
+id: copenhagen-today
+masthead: Copenhagen Today
+device_profile:
+  width: 1872
+  height: 1404
+  timezone: Europe/Copenhagen
+composition_order:
+  - lead-wide
+  - lead-tall
+  - lead-centred
+# Publisher ids exactly as block 1's config/sources.yaml names them, mapped to reader-facing display names.
+publishers:
+  nytimes: The New York Times
+  ft: Financial Times
+  borsen: Børsen
+  politiken: Politiken
+  berlingske: Berlingske
+  dr: DR

@@ -1001,7 +1001,8 @@ Stable snake_case error types: `usage_error`, `contract_invalid`,
 `web_build_failed`, `asset_version_conflict`, `bundle_exists`, `publish_conflict`, `lock_busy`,
 `publish_root_invalid`,
 `renderer_unavailable`, `dependency_missing`, `font_glyph_missing`, `recovery_required`,
-`publication_outcome_uncertain`, `edition_not_activated`, `resource_not_found`, `bundle_integrity_failed`.
+`publication_outcome_uncertain`, `edition_not_activated`, `resource_not_found`, `bundle_integrity_failed`,
+`check_failed`.
 
 `--dry-run` on `publish` validates and renders the candidate in isolated staging, including release
 assembly, and returns planned hashes and target pointers. It writes no durable intent, activation

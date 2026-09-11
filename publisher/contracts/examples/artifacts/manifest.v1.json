@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-09-08-morning",
+  "layout_version": "broadsheet-v1",
+  "contract_sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "config_sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "files": [],
+  "shared_assets": {
+    "path": "a/broadsheet-v1/",
+    "files": []
+  },
+  "environment": {
+    "node": "v26.5.0",
+    "icu": "78.1",
+    "astro": "7.3.1",
+    "playwright": "1.63.0",
+    "chromium": null,
+    "chromium_executable_sha256": null,
+    "imagemagick": "7.1.2-31",
+    "fonts_lock_sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "failures": []
+  },
+  "device": {
+    "status": "skipped"
+  }
+}

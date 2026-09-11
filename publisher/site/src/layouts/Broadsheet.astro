@@ -1,0 +1,19 @@
+---
+const { title = "Copenhagen Today", language = "en", redirect } = Astro.props;
+const csp = [
+  "default-src 'none'", "style-src 'self'", "font-src 'self'", "img-src 'self'",
+  "base-uri 'none'", "form-action 'none'",
+].join("; ");
+---
+<!doctype html>
+<html lang={language}>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Security-Policy" content={csp}>
+    {redirect && <meta http-equiv="refresh" content={`0;url=${redirect}`} />}
+    <link rel="stylesheet" href="/a/broadsheet-v1/web.css">
+    <title>{title}</title>
+  </head>
+  <body><slot /></body>
+</html>

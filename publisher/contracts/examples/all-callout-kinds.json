@@ -1,0 +1,311 @@
+{
+  "schema_version": 1,
+  "title": "copenhagen-today",
+  "edition": {
+    "id": "2026-09-09-callouts",
+    "number": 2,
+    "name": "Morning edition",
+    "date": "2026-09-09",
+    "timezone": "Europe/Copenhagen",
+    "language": "en",
+    "cutoff_at": "2026-09-09T03:00:00.000000Z",
+    "generated_at": "2026-09-09T03:18:27.000000Z"
+  },
+  "coverage": {
+    "status": "complete",
+    "checked_from": "2026-09-08T03:00:00.000000Z",
+    "checked_until": "2026-09-09T03:00:00.000000Z",
+    "feeds": [
+      {
+        "feed_id": "dr.indland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:50:10.000000Z"
+      },
+      {
+        "feed_id": "dr.udland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:51:11.000000Z"
+      },
+      {
+        "feed_id": "politiken.latest",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:52:12.000000Z"
+      },
+      {
+        "feed_id": "berlingske.samfund",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:53:13.000000Z"
+      },
+      {
+        "feed_id": "ft.world",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:54:14.000000Z"
+      },
+      {
+        "feed_id": "nytimes.homepage",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:55:15.000000Z"
+      },
+      {
+        "feed_id": "borsen.finans",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-09T02:50:16.000000Z"
+      }
+    ],
+    "note": "Built from headlines and RSS descriptions in seven configured feeds across six publishers, checked through 05:00 Copenhagen time. This is a fixture edition; its stories are illustrative."
+  },
+  "inputs": [
+    {
+      "id": "export-2026-09-09-0300",
+      "sha256": "sha256:6f2f6d16b8ff76d4646dd3e7b3fc0af23ce3730da9bc51e96da00f187d15a97a"
+    }
+  ],
+  "stories": [
+    {
+      "id": "hospital-report",
+      "device_participation": "required",
+      "role": "lead",
+      "kicker": "Health",
+      "copy": {
+        "headline": "Regional audit finds waiting times doubled at Rigshospitalet",
+        "deck": "The audit covers 2024 and 2025 and blames staffing rather than demand.",
+        "body": {
+          "standard": [
+            "Berlingske reports that a regional audit found waiting times for planned surgery at Rigshospitalet doubled between 2024 and 2025.",
+            "According to DR, the region attributes the increase to staffing rather than demand."
+          ],
+          "short": [
+            "Berlingske reports an audit found planned-surgery waiting times at Rigshospitalet doubled over two years."
+          ]
+        }
+      },
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "We are not short of patients. We are short of nurses.",
+          "attribution": "The regional health director",
+          "attribution_source": "DR"
+        }
+      ],
+      "sources": [
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:9e75f3fd-c759-6837-759b-f729574825f0",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Regional audit finds waiting times doubled at Rigshospitalet",
+          "url": "https://www.berlingske.dk/samfund/regional-audit-finds-waiting-times-doubled-at-rigshospitalet",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:627c0146ca29da70d1539b4842557309ae19029c30d8e9e4f3315b006b1bc988",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:b7b9380b-0169-6e75-6a38-6cc8f6a40037",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Region: Ventetider skyldes mangel på sygeplejersker",
+          "url": "https://www.dr.dk/nyheder/indland/region-ventetider-skyldes-mangel-paa-sygeplejersker",
+          "published_at": "2026-09-08T11:00:00.000000Z",
+          "content_hash": "sha256:44a0d1f76c469ec042906abd70ca983443f5245b535d562a0e4d7b6d75bcc1ae",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description"
+      ]
+    },
+    {
+      "id": "housing-prices",
+      "device_participation": "required",
+      "role": "secondary",
+      "kicker": "Housing",
+      "copy": {
+        "headline": "Copenhagen flat prices rise for a fifth quarter",
+        "body": {
+          "standard": [
+            "Børsen reports that prices for owner-occupied flats in Copenhagen rose for a fifth consecutive quarter."
+          ],
+          "short": [
+            "Børsen reports Copenhagen flat prices rose for a fifth quarter."
+          ]
+        }
+      },
+      "callouts": [
+        {
+          "kind": "figure",
+          "value": "4.1%",
+          "label": "year-on-year rise in flat prices, per Børsen"
+        }
+      ],
+      "sources": [
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/okonomi/copenhagen-flat-prices-rise-for-a-fifth-quarter",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Copenhagen flat prices rise for a fifth quarter",
+          "url": "https://borsen.dk/nyheder/okonomi/copenhagen-flat-prices-rise-for-a-fifth-quarter",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:f7c84d8607cc6f84ee92fbc556a7944dc0ccc7aff5ab4523eb71ffb74cef8b6e",
+          "primary": true
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description"
+      ]
+    },
+    {
+      "id": "election-date",
+      "device_participation": "required",
+      "role": "secondary",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Prime minister names November 10 as election day",
+        "body": {
+          "standard": [
+            "Politiken reports that the prime minister has called a general election for November 10."
+          ],
+          "short": [
+            "Politiken reports a general election on November 10."
+          ]
+        }
+      },
+      "callouts": [
+        {
+          "kind": "facts",
+          "title": "The election",
+          "items": [
+            "Polling day November 10",
+            "179 seats in the Folketing",
+            "Deadline for candidate lists October 20",
+            "Last election was 2022"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source": "politiken",
+          "source_id": "10934736",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Prime minister names November 10 as election day",
+          "url": "https://politiken.dk/indland/art10934736/prime-minister-names-november-10-as-election-day",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:84c16c2176e7bd7222b4a69457aa381b1c575acf889fc1ea4a47418f50e71831",
+          "primary": true
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description"
+      ]
+    },
+    {
+      "id": "cycle-bridge",
+      "device_participation": "optional",
+      "role": "secondary",
+      "fallback_role": "brief",
+      "kicker": "Copenhagen",
+      "copy": {
+        "headline": "New cycle bridge over Inderhavnen opens to the public",
+        "lede": "DR reports that the new cycle bridge over Inderhavnen opened on Monday.",
+        "body": {
+          "standard": [
+            "DR reports that the new cycle and pedestrian bridge across Inderhavnen opened to the public on Monday."
+          ],
+          "short": [
+            "DR reports the new Inderhavnen cycle bridge opened on Monday."
+          ]
+        }
+      },
+      "callouts": [
+        {
+          "kind": "box",
+          "label": "Crossing time",
+          "text": "Four minutes from Nyhavn to Christianshavn"
+        }
+      ],
+      "sources": [
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:fb22eb50-cc04-ad8c-0479-59db5a457df1",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "New cycle bridge over Inderhavnen opens to the public",
+          "url": "https://www.dr.dk/nyheder/indland/new-cycle-bridge-over-inderhavnen-opens-to-the-public",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:2c3322574c098b524de80bfe0811f2a7ef90811da2a9d0904c6aab444784d92f",
+          "primary": true
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description"
+      ]
+    },
+    {
+      "id": "ferry-line",
+      "device_participation": "optional",
+      "role": "secondary",
+      "fallback_role": "brief",
+      "kicker": "Transport",
+      "copy": {
+        "headline": "Oslo ferry to move to a new terminal next spring",
+        "lede": "Berlingske reports that the Oslo ferry moves to a new terminal in Nordhavn next spring.",
+        "body": {
+          "standard": [
+            "Berlingske reports that the Oslo ferry will move from Søndre Frihavn to a new terminal in Nordhavn next spring."
+          ],
+          "short": [
+            "Berlingske reports the Oslo ferry moves to Nordhavn next spring."
+          ]
+        }
+      },
+      "callouts": [
+        {
+          "kind": "timeline",
+          "title": "The move",
+          "rows": [
+            {
+              "date": "2024",
+              "text": "Terminal approved"
+            },
+            {
+              "date": "Spring 2027",
+              "text": "First sailing from Nordhavn"
+            },
+            {
+              "date": "2028",
+              "text": "Old terminal redeveloped"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:56258c91-6b0e-4d67-8400-2f9c8eea075e",
+          "input_id": "export-2026-09-09-0300",
+          "original_title": "Oslo ferry to move to a new terminal next spring",
+          "url": "https://www.berlingske.dk/samfund/oslo-ferry-to-move-to-a-new-terminal-next-spring",
+          "published_at": "2026-09-08T14:00:00.000000Z",
+          "content_hash": "sha256:a19bd77b6543219c8baf6e66fc289be16eb159ae28abb5f2d81a3c835c1e7335",
+          "primary": true
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description"
+      ]
+    }
+  ],
+  "fit_policy": {
+    "allow_role_fallback": true,
+    "allow_composition_substitution": true,
+    "reserve_story_ids": [],
+    "omittable_story_ids": [
+      "cycle-bridge",
+      "ferry-line"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+---
+import Masthead from "./Masthead.astro";
+import Story from "./Story.astro";
+import { formatEditionDate } from "../../../assets/html/format.ts";
+const { edition, config, previous, next, device } = Astro.props;
+const meta = edition.edition;
+---
+<main class="page">
+  <Masthead edition={meta} masthead={config.masthead} earRight={edition.presentation?.ear_right} />
+  <p class="coverage"><strong>Coverage: {edition.coverage.status}.</strong> {edition.coverage.note}</p>
+  <section class="stories">
+    {edition.stories.map((story: any) => (
+      <Story story={story} publishers={config.publishers} language={meta.language} timezone={meta.timezone} />
+    ))}
+  </section>
+  {device && <p><a href="./device/page-1.png">Download the device edition</a></p>}
+  <nav aria-label="Edition navigation">
+    {previous && <a href={`/go/${meta.id}/prev/`}>Previous edition</a>}
+    {next && <a href={`/go/${meta.id}/next/`}>Next edition</a>}
+    <a href="/archive/">Archive</a>
+  </nav>
+  <footer class="folio">
+    <span>{config.masthead}</span>
+    <span>{formatEditionDate(meta.date, meta.language)} · Edition {meta.number}</span>
+  </footer>
+</main>
