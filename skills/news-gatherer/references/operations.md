@@ -1,6 +1,6 @@
 # Operations reference
 
-Read this file for running or diagnosing `news-gatherer`. The authoritative action schema is always:
+Read this file for running or diagnosing the `ingest/` collector. The authoritative action schema is always:
 
 ```sh
 ./gather_news.sh list-actions

@@ -2,8 +2,8 @@
 
 ## 1. How to use this plan
 
-This is the execution plan for the empty repository at
-`/Users/vy/Documents/Development/news-gatherer`. It expands the Obsidian note
+This is the execution plan for block 1, which lives in `ingest/` of the `copenhagen-today`
+repository (relocated there on 11 September 2026; paths below are relative to `ingest/`). It expands the Obsidian note
 `Inbox/Programmatic news ingestion plan — NYT, Politiken, Børsen, and DR.md` and adds the
 Financial Times (FT) and Berlingske to the source scope.
 
@@ -98,7 +98,7 @@ Kultur, and Opinion aliases redirect to equivalent category feeds. Preserve the 
 - Do not create a module per publisher. Feed behavior belongs in `config/sources.yaml`; only stable
   identity/URL policies and optional HTML extractors may contain source-specific branches.
 - JSON on stdout is the CLI contract. Human diagnostics and structured logs go to stderr.
-- The repository directory is `news-gatherer`; the import package and command remain
+- The block directory is `ingest/`; the import package and command remain
   `news_ingest` and `news-ingest`.
 
 Do not invent dependency versions in advance. Resolve once with `uv`, copy each resolved direct

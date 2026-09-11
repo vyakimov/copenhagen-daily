@@ -1,18 +1,18 @@
 ---
 name: news-gatherer
-description: Operate and maintain the news-gatherer RSS ingestion repository through its whitelisted JSON CLI. Use for collecting feeds, checking health, exporting or backing up data, capturing fixtures, validating changes, or modifying the news_ingest codebase. Do not use for downstream LLM selection, summarization, or newspaper rendering.
+description: Operate and maintain the ingest/ RSS ingestion block of the copenhagen-today repository through its whitelisted JSON CLI. Use for collecting feeds, checking health, exporting or backing up data, capturing fixtures, validating changes, or modifying the news_ingest codebase. Do not use for downstream LLM selection, summarization, or newspaper rendering.
 ---
 
 # News Gatherer
 
-`news-gatherer` is the deterministic acquisition block for a personal newspaper. It polls configured first-party RSS feeds, preserves every valid sighting and raw response, rebuilds an article projection, records publisher placement, and emits immutable JSONL bundles. It never calls an LLM or deduplicates across publishers.
+`ingest/` (the `news-ingest` package, block 1 of the `copenhagen-today` repository) is the deterministic acquisition block for a personal newspaper. It polls configured first-party RSS feeds, preserves every valid sighting and raw response, rebuilds an article projection, records publisher placement, and emits immutable JSONL bundles. It never calls an LLM or deduplicates across publishers.
 
 ## One executable
 
 Run every application, fixture, and verification workflow through:
 
 ```sh
-<repo>/gather_news.sh <action> [options]
+<repo>/ingest/gather_news.sh <action> [options]
 ```
 
 Call the executable directly. Do not prefix it with `uv run`, `python`, or another environment launcher. It resolves the repository and `.venv` itself, so the absolute path can be allowlisted and invoked from any working directory.
@@ -54,4 +54,4 @@ Preview mutating actions with `--dry-run`. Export and backup targets are immutab
 - Code layout, change workflow, testing, CLI evolution, and dependency boundaries: [references/development.md](references/development.md)
 - Source identities, prominence, transactions, exports, replay, and data safety: [references/contracts.md](references/contracts.md)
 
-For a requirement not covered there, read the repository `AGENTS.md`, then the authoritative `plans/news-ingestion-implementation-plan.md`. Treat the plan's optional work packages 14 and 15 as gated scope requiring explicit user approval.
+For a requirement not covered there, read `ingest/AGENTS.md`, then the authoritative `plans/news-ingestion-implementation-plan.md` at the repository root. Treat the plan's optional work packages 14 and 15 as gated scope requiring explicit user approval.
