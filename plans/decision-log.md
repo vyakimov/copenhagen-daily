@@ -12,22 +12,21 @@ Companions: [Block 1 implementation](news-ingestion-implementation-plan.md),
 [Block 2 editorial architecture](news-editorial-architecture-plan.md),
 [Block 3 publishing architecture](news-publishing-architecture-plan.md),
 [Block 3 implementation](news-publishing-implementation-plan.md),
-[design notes](design/README.md), and
-[deferred visual prominence capture](deferred-visual-prominence-capture.md).
+[design notes](design/README.md), and the
+[roadmap](roadmap.md) of designed but unbuilt work.
 
 ---
 
 ## Structure and boundaries
 
-**Two repositories, not one and not three.** `news-gatherer` holds block 1. A downstream
-`personal-newspaper` holds blocks 2 and 3. The reason is that coupling is asymmetric: block 1 hands
-block 2 an immutable bundle over a schema that already shipped and works, one-directional and stable,
-while blocks 2 and 3 share a contract that is still being designed and flows both ways. Splitting the
-pair that changes together while joining the pair that does not would be exactly backwards, which is
-what rules out three repositories. A single repository would be the better default if nothing were built
-yet, since this is one product built by one person on one schedule; block 1 stays separate because it
-already exists, works, and carries a real rule that no browser, model, or credential enters the component
-touching untrusted feeds.
+**One repository, `copenhagen-today`, holding all three blocks.** This is one product built by one
+person on one schedule, so one repository is the right default. The three blocks occupy sibling
+directories, `ingest/`, `editorial/`, and `publisher/`. Block 1's rule that no browser, model, or
+credential enters the component touching untrusted feeds is a directory rule enforced by tests: nothing
+under `ingest/` may depend on a browser, a model, or the Node toolchain. Coupling decides layout: blocks
+2 and 3 share a contract that flows both ways and is still being designed, so they sit together and
+change together; block 1 hands block 2 an immutable bundle over a schema that already shipped, so
+`ingest/` changes rarely and independently.
 
 **Repository layout does not affect the architecture.** All three blocks communicate through a shell
 wrapper, a JSON envelope on stdout, and files on disk. Nothing imports across a block boundary at
@@ -44,13 +43,14 @@ rather than a preference. You cannot add a callout kind by editing block 2, beca
 to draw it. A browser owns the HTML element set and pages are written against it. The real concern
 underneath was mechanical, not about ownership, and is recorded in the next entry.
 
-**The schema is hand-written JSON Schema, not generated from Zod.** Zod expresses constraints JSON Schema
-cannot carry, such as a refinement requiring a quote callout to name a speaker. Translating drops or
-weakens those, so block 2 would validate against a weaker artifact than block 3 enforces, pass, write the
-file, and be rejected at the publishing end for a mistake made at the editorial end. Both sides read the
-same file. TypeScript types are generated from the schema rather than the reverse. Because block 3 owns
-the vocabulary it can break block 2 unilaterally, so the schema evolves additively within a major version
-and breaking changes bump it.
+**The schema is hand-written JSON Schema, not generated from Zod. Corrected 11 September 2026.**
+Conditional quote attribution is expressible in JSON Schema; the earlier example claiming otherwise
+was wrong. The reason for direct authoring is one explicit cross-language contract, with generated
+TypeScript types, equivalent format assertions, and a shared acceptance/rejection corpus. Cross-ID
+integrity still needs semantic checks and block 3's final `validate` preflight. Published schemas are
+immutable numbered artifacts: accepted-shape changes, including optional additions, create the next
+integer version. Rejecting unknown fields means an older reader is not forward-compatible with new
+producer vocabulary. Both blocks select an explicitly supported schema version and digest.
 
 ---
 
@@ -74,14 +74,9 @@ page, and makes an edition's cost independent of readership.
 analytics. Those would recreate the personal data the design exists without, and they answer a question
 the paper is not asking.
 
-**Multiple titles are the supported way to serve different appetites.** A news title and a
-sports-and-culture title are two policies, schedules, mastheads, and archives, each publishing one public
-edition. They share collection, clustering, and matching; each title's policy selects from the shared
-candidate set; the selections are unioned and each distinct story is written once.
-
-**Selection happens before writing, not after. Reversed.** A first pass had the shared story pool written
-first and each title selecting from it. That pays to write stories nobody runs. Selecting per title first,
-unioning, then writing each distinct story once is cheaper and preserves the same sharing benefit.
+**One title.** The first release is one newspaper with one policy, one schedule, one masthead, one
+archive, and one device pointer. The store and release carry no title prefix. Multiple titles are designed
+in the [roadmap](roadmap.md).
 
 ---
 
@@ -112,12 +107,13 @@ Zod 4; Astro 7 shipped June 2026 and changed the `compressHTML` default to a mod
 between inline elements, which would silently eat the spaces in source rows. The config sets it
 explicitly.
 
-**Overflow detection differs by slot kind. Reversed and measured.** An earlier draft recommended comparing
-the last child's bottom edge to the container's content box. That is the least reliable of the options: it
-misses content overflowing past the last child, is fooled by collapsed margins, and in multi-column layout
-the last child sits inside the box. Block-flow slots compare scroll height to client height. Multi-column
-slots must compare scroll *width*, because a constrained height pushes overflow into extra columns
-sideways while the heights stay equal. Magnitude comes from an off-screen single-column clone probe.
+**Overflow detection and magnitude have different authority. Revised 11 September 2026; harness
+verification pending WP 0.** Check both scroll axes, nested constrained regions, and page bounds.
+Multi-column overflow can create extra columns sideways; fragmentation can leave unused space that
+a single-column probe cannot account for. Actual clipping always rejects a candidate even when the
+probe reports slack. That disagreement is an unreliable estimate, not an internal error. Line and
+character advice is nullable; the final capture context repeats checks. Retain the experiments as
+regression fixtures instead of treating browser assumptions as measured facts.
 
 **`-strip` is required and `+dither` is a no-op. Measured.** Verified 8 September 2026 with ImageMagick
 7.1.2-31 against a rendered composition. The conversion yields exactly 16 grey levels at 4-bit depth.
@@ -131,11 +127,31 @@ small mutable shell is regenerated. Rebuilding everything would replace archived
 changed or a dependency was upgraded, invalidating every hash recorded in every old manifest. That is the
 reason, not build time.
 
-**Object storage simplifies the publication design rather than complicating it.** The staging-directory
-rename, hardlinked release trees, and symlink docroot exist to make a filesystem behave the way object
-storage already does. On S3 or Blob Storage there are no hardlinks, symlinks, or atomic directory renames,
-so instead write each edition under its own immutable prefix, then overwrite the root index objects last.
-Single-object writes are atomic, so the index never points at absent content.
+**Publication has durable state even without a database. Settled 11 September 2026.** Immutable
+storage, live activation, and command acknowledgment are distinct events. Prepare and verify a full
+release, record durable intent, promote immutable objects, then swap `live` and retain an activation
+record. Each release owns its index snapshot. Recovery completes a pending transition without
+rerendering; receipt lookup reconciles lost stdout. Hash stored receipts in manifests and return the
+manifest digest outside the stored receipt to avoid circular hashing. Post-commit cleanup is best
+effort. See the implementation plan's protocol and its three crash boundaries.
+
+**Release-1 tests guard invariants and contracts, nothing else. Settled 11 September 2026.** The first
+handoff draft asked for crash injection at every transition, fuzzing of every string field, concurrent
+build isolation, a Python validator inside the Node package, and pixel-tolerance visual regression. That
+is more verification than block 1 needed, and each item guards a hypothetical rather than an invariant.
+The rule now: a test that holds no Section 1 invariant and no published contract is not written. Crash
+injection is three boundaries the protocol reduces every interruption to; escaping is one fixed
+injection string; visual regression is a manual re-inspection of checked-in reference PNGs before a
+renderer change; the Python validator is block 2's test when block 2 exists.
+
+**The ingestion code moved into `ingest/` on 11 September 2026.** Done with `git mv`, runtime state and
+the virtual environment moved alongside, and verified by the collector's own offline check and smoke
+actions from outside the repository. No scheduler entry referenced the old path.
+
+**Object storage is a future delivery design, not the local commit protocol. Clarified 11 September
+2026.** Immutable prefixes and a single release pointer could replace filesystem primitives. Atomic
+single-object writes do not make multiple root/index updates transactional. Hosting remains deferred;
+any adapter must define coherent activation and recovery before it is implemented.
 
 ---
 
@@ -151,8 +167,15 @@ during quantisation, so text stays crisp and dithering is never needed for text.
 
 **Five callout kinds, each owned by a story.** Quote, figure, facts, box, and timeline. A callout's text
 is approved copy written in block 2 with the same evidence discipline as the body; block 3 chooses only
-which fit and never composes wording. Callouts are the first thing dropped when a page overflows and the
-last thing added, so a busy day loses emphasis before it loses stories.
+which fit and never composes wording. Release 1 tries the first candidate or none, drops callouts
+before stories, and does not restore them after repairs. The full web edition carries all approved
+callouts regardless of device placement.
+
+**One device participation field. Settled 11 September 2026.** `required`, `optional`, and `reserve`
+are mutually exclusive. Ordered omission/reserve lists must equal those sets. Every story, including
+device reserves, is already accepted for the web. Story-array order is authoritative. Sparse layouts
+permit empty supporting bands, and count-level repairs precede measurement. The fit policy is bounded
+and greedy; a failure does not prove no permissible arrangement exists.
 
 ---
 
@@ -165,7 +188,7 @@ zero for NYT and Politiken until section feeds were added to the configuration o
 
 **Keep the set of sections, not a single label. Measured.** Roughly an eighth of articles appear in more
 than one section feed, and the overlaps are meaningful rather than noise. Forcing one label discards real
-editorial signal, and a story can legitimately be eligible for two titles.
+editorial signal.
 
 **Resolve sections at edition time from accumulated appearances.** An article often reaches a section feed
 on a later poll than the latest feed that first surfaced it, so a section assignment frozen at first sight
@@ -276,8 +299,19 @@ that never dies and crowds out fresh news.
 
 ## Deferred, with gates
 
-**Visual prominence capture.** Recorded separately in
-[deferred visual prominence capture](deferred-visual-prominence-capture.md). Gate: a recurring, named
+**Edition revisions and correction notices.** Designed in the [roadmap](roadmap.md). The first release
+publishes each edition id once and corrects mistakes in the next edition. Gate: a real correction is
+needed on a published edition and the next-edition workaround proves inadequate.
+
+**Multi-page device output.** Designed in the [roadmap](roadmap.md). The first release renders exactly one
+device page, so there is no page budget, no inside-page composition, and no playlist coordination. Gate:
+a week of material optional omissions or repeated required-story device fit failures. Required
+stories cannot be silently omitted from a successful device edition.
+
+**Multiple titles.** Designed in the [roadmap](roadmap.md). Gate: a second remit is actually wanted, such as
+a sports-and-culture paper beside the news paper.
+
+**Visual prominence capture.** Designed in the [roadmap](roadmap.md). Gate: a recurring, named
 complaint in the editorial log that single-publisher scoops are being buried, across several weeks of real
 editions.
 

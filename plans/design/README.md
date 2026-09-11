@@ -18,7 +18,7 @@ Render a composition with headless Chrome:
 | Ink / secondary / tertiary | `#000000` / `#333333` / `#555555` | `#000000` / `#2b2b2b` / `#5a5a5a` |
 | Rule / hairline / fill | `#111111` / `#bbbbbb` / `#dddddd` | `#111111` / `#c8c6c0` / `#e9e7e2` |
 | Accent | none | `#8a1c1c`, links and pull-quote bar only |
-| Display face | Playfair Display 700/900, italic for quotes | same |
+| Display face | Playfair Display 700/900 for headlines/masthead, 400 figures, 400 italic quotes; vendor 700 italic too | same |
 | Text face | Source Serif 4, 400/600/700, italic decks | same |
 | Body size | 30 px / 1.42 (minimum 26 px, briefs) | 19 px / 1.5 |
 | Margins / gutter | 64 px / 36 px | 40 px / 32 px |
@@ -29,7 +29,7 @@ Device greys are chosen so every colour maps to one of the 16 levels without dit
 
 | Role | Count per edition | Anatomy |
 |---|---|---|
-| H1 lead | exactly one, always page 1 | kicker, display headline 72–88 px, italic deck, optional callout, optional body (one or two columns, drop cap when two), source row |
+| H1 lead | exactly one | kicker, display headline 72–88 px, italic deck, optional callout, optional body (one or two columns, drop cap when two), source row |
 | H2 secondary | 0–4 per page | kicker, 36–44 px text-face headline, brief or standard body, optional callout, source row |
 | H3 brief | 0–8 per page | 31 px headline, one-line lede with bold publisher name |
 
@@ -43,7 +43,7 @@ Callouts belong to a story, never float alone. Every callout carries attribution
 | `box` | a single phrase to set apart | level-13 fill, small-caps label over bold phrase |
 | `timeline` | dated sequence, two to four rows | 1 px top rule, bold dates in a two-column list |
 
-Other elements the compositor may use: masthead ears (edition name and cutoff on the left, a short "Inside" or weather line on the right), an edition number, a fleuron between the lead and the secondary band, vertical rules between columns, a full-width rule above a briefs strip, and page folio with edition and revision.
+Other elements the compositor may use: masthead ears (edition name and cutoff on the left, a short "Inside" or weather line on the right), an edition number, a fleuron between the lead and the secondary band, vertical rules between columns, a full-width rule above a briefs strip, and page folio with edition.
 
 ## Compositions
 
@@ -58,7 +58,14 @@ A  lead-wide             B  lead-tall              C  lead-centred
 +--------------------+   +-------------+------+   +---+---+---+---+----+
 ```
 
-Each composition has parameters, not one fixed count: A takes 2–3 H2 and 3–4 H3, B takes 1–3 H2 and 0 H3, C takes 3–4 H2 and 4–6 H3. Callouts are allowed in the lead and in any H2 slot with at least a standard-length column. The combination of composition, counts, and callouts is what makes editions differ; type sizes, margins, and rules stay fixed.
+The mockups show preferred densities: A has 2–3 H2 and 3–4 H3, B has 1–3 H2 and no H3, and C has 3–4 H2 and 4–6 H3. Production occupancy limits, revised 11 September 2026, are A: 0–3/0–4, B: 0–3/0, C: 0–4/0–6. Supporting bands can be empty; remove their rules and retain whitespace without filler. The lead alone and lead-plus-one-brief are required sparse fixtures. Callouts may occupy lead/secondary slots, subject to actual measurement. A slot uses the first approved candidate or none; release 1 does not restore dropped callouts.
+
+An early physical-device typography sheet and one provisional composition validate body, briefs,
+attribution, rules, and every callout kind before all device layouts are frozen. Explicit font weights
+must match the vendored faces; the existing HTML remains a design reference, not a production baseline.
+Retain new baselines after that trial. Type sizes may differ by declared role/composition token, but
+the renderer never scales them in response to copy length. Variation comes from composition, counts,
+and callouts with those tokens, margins, rules, and palette unchanged.
 
 ## Previews
 
