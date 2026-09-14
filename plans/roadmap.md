@@ -181,11 +181,13 @@ judgment of importance and the one signal breadth cannot supply. Breadth says ma
 Prominence says one publisher cared a great deal, which is how a single-publisher scoop gets recognised
 instead of buried.
 
-Today only three of six publishers supply it honestly. Feed ordering was tested on 8 September 2026:
-the three homepage feeds are editorially ranked, as are `nytimes.world` and `borsen.finans`, while every
+Today only Børsen supplies it in a way that counts. Feed ordering was tested on 8 September 2026: the
+three homepage feeds are editorially ranked, as are `nytimes.world` and `borsen.finans`, while every
 `latest` feed and most section feeds are in strict reverse-publication order and therefore carry no
-placement signal at all. DR, Politiken, and Berlingske publish no ranked feed, so their prominence is
-recorded as unknown.
+placement signal at all. Since 14 September 2026 only the Danish scoring publishers contribute to
+prominence, which removes the NYT and FT homepage feeds from the calculation. DR, Politiken, and
+Berlingske publish no ranked feed, so their prominence is recorded as unknown, and Børsen's is the
+only one left. Capturing the three Danish homepages is therefore the whole of this item.
 
 ### Why the obvious fixes were rejected
 
@@ -241,10 +243,19 @@ these axes rather than on a product name:
 | Failure surface | A browser to pin and keep working | An external dependency and its availability |
 | Reuse | Block 3 already pins a browser, though for a different purpose and under a different boundary | New dependency |
 
-At six captures per edition the volume is too small for per-request cost to matter, so the decision turns
-on who handles bot mitigation and whether routing publisher URLs through a third party is acceptable.
-Some hosted services also return structured extraction, which would substitute for the vision model but
-reintroduces the markup-reading fragility this design exists to avoid.
+At three or four captures per edition the volume is too small for per-request cost to matter, so the
+decision turns on who handles bot mitigation and whether routing publisher URLs through a third party is
+acceptable. Some hosted services also return structured extraction, which would substitute for the vision
+model but reintroduces the markup-reading fragility this design exists to avoid.
+
+**Hosted services to explore first: Tavily and Firecrawl.** Both fetch and render a URL on your behalf
+and return the page as text, structured content, or a screenshot, and both are built to get past the
+consent walls and bot challenges that are the costly part here. Evaluate them on the axes above and on
+three specific questions: whether they return a full-page screenshot of the rendered homepage, which is
+what the vision model needs; whether a Danish consent wall is dismissed or captured as the page; and
+whether their terms and the publishers' terms permit fetching a homepage on a schedule. Their extraction
+output is a secondary interest, since the design reads the image rather than the markup. Neither is a
+commitment; the self-hosted browser block 3 already pins remains the comparison.
 
 ### What remains genuinely costly
 
