@@ -171,7 +171,10 @@ guidelines in the [editorial architecture](news-editorial-architecture-plan.md) 
 per sentence, attribute any colour to the outlet or speaker in the sentence itself, synthesise across
 sources instead of a paragraph per outlet, put the answer first, and set a word budget per role. They
 are guidelines rather than validators: attributed colour is acceptable on a slow day, unattributed
-colour never is. Above all the paper respects the reader's time: it never pads for its own sake, a slow
+colour never is. A source is named in the sentence only when the sentence rests on that source's
+judgement, observation, or access; a fact of record is cited by the marker alone, so naming an outlet
+in prose reads as "one outlet's view" and is never used for settled facts. Above all the paper respects
+the reader's time: it never pads for its own sake, a slow
 day makes a shorter paper rather than a thinner one, and the reader is meant to finish and move on.
 
 **The web edition is a grid with the sheet kept as a one-word switch. Settled 14 September 2026.**

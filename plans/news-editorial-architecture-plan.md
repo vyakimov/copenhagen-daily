@@ -221,6 +221,18 @@ weighs them, and the review step flags departures rather than rejecting them.
    The teaser's suspense structure is inverted.
 5. **Analysis has a name.** Judgements are attributed to a person or a title, never floated as the
    paper's view.
+   The test for whether a source is named in the sentence or only cited in the marker is *whose
+   authority the sentence rests on*. A fact of record, something that happened, a number, a date, a
+   decision, rests on the event itself: "The overnight count left two seats between the blocs" is
+   cited by the marker and names nobody, however many outlets reported it. A sentence that rests on
+   the source's own judgement, observation, or access names the source in prose: "Kristeligt Dagblad
+   describes empty dance floors", "an analyst quoted by Børsen hopes it does not distract", "Elisabet
+   Svane attributes the fall to the green change of course". Naming in prose is therefore a signal to
+   the reader that this is one outlet's view or eyewitness account rather than the settled record, and
+   it is never used for facts, because that would suggest the fact is contested when it is not. Where
+   the speaker is unnamed, the chain of attribution is kept: "an analyst quoted by Børsen", not "an
+   analyst". A direct quotation names its speaker and, if the speaker is not obvious, the outlet that
+   obtained it.
 6. **The headline and deck carry the drama; the body may be plain.**
 7. **A word budget per role** keeps density a constraint rather than a hope: lead 120 to 180 words,
    secondary 60 to 110, brief one sentence under 35. Thin evidence produces a short story, not a padded
