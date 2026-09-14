@@ -1,8 +1,6 @@
 # Block 3: Broadsheet publishing architecture
 
-Status: architecture record, 7 September 2026, revised 8 September 2026 for per-edition variation and
-for making the web edition the first-class product, and rewritten 14 September 2026 to describe block
-3 as built. This document records the publishing approach and the decisions behind it at the level
+Status: architecture, 14 September 2026, describing block 3 as built. This document records the publishing approach and the decisions behind it at the level
 needed to remember the design; the [implementation plan](news-publishing-implementation-plan.md)
 remains the exhaustive specification and governs contract, failure table, and protocol details.
 Companions: [Block 1: ingestion architecture](news-ingestion-architecture-plan.md) and
@@ -56,12 +54,12 @@ time are printed on the page, and the build time is never presented as the time 
 ## Design language, as built
 
 The direction was worked out in `plans/design/` and then settled by specimen and by reading real
-editions. What holds today:
+editions. What holds:
 
 - **Type.** Newsreader, a variable serif with optical sizes, for the masthead, headlines, decks,
   quotes, figures, and body; Libre Franklin, a variable grotesque, in tracked capitals for kickers,
-  the dateline, source lines, and navigation. Settled 11 September 2026 after Playfair Display and
-  Source Serif 4 were tried and reversed. Both faces are vendored under the OFL; no font loads from the
+  the dateline, source lines, and navigation. Chosen by specimen on 11 September 2026 over Playfair
+  Display with Source Serif 4, Libre Caslon, and a blackletter nameplate. Both faces are vendored under the OFL; no font loads from the
   network.
 - **Colour.** The device is pure black on pure white with two fill greys and one hairline grey that
   land exactly on the sixteen-level palette. The web adds a warm paper tone and one dark-red accent
@@ -151,10 +149,10 @@ CloudFront. These plans authorise no public posting, and publisher licensing is 
 
 ## Decisions and the reasons behind them
 
-- **Block 3 owns the edition schema (reversed, 8 September 2026).** The consumer that must render
+- **Block 3 owns the edition schema.** The consumer that must render
   every field is the right owner; block 2 validates against block 3's published schema and rejection
   corpus.
-- **The schema is hand-written JSON Schema, not generated from Zod (corrected 11 September).**
+- **The schema is hand-written JSON Schema, not generated from Zod.**
   TypeScript types are generated from it, never the reverse, so Python and TypeScript validate one
   artifact identically.
 - **Astro renders the web only; the device uses plain TypeScript templates.** Astro's container
@@ -168,7 +166,7 @@ CloudFront. These plans authorise no public posting, and publisher licensing is 
   test surface proportional to the product.
 - **Type by specimen, attribution by citation, grid with a sheet switch, quiet masthead and footers,
   gap paragraphing.** The design decisions of 11 and 14 September, each recorded in the
-  [decision log](decision-log.md) with what was tried and why it lost.
+  [decision log](decision-log.md) with the alternatives and why they lost.
 
 ## Where block 3 stands
 

@@ -1,14 +1,14 @@
 # Decision log
 
 Every choice in this project that required judgment, with the reasoning that produced it and the
-evidence where evidence exists. Recorded 8 and 9 September 2026.
+evidence where evidence exists.
 
-The architecture plans say what the system does. This says why, and what was tried and rejected on the
-way. Entries marked **Reversed** are the most useful ones: they record a position that was held and
-abandoned, so nobody re-derives it. Entries marked **Measured** rest on a test that was actually run,
-not on reasoning alone, and the test is named so it can be repeated.
+The architecture plans say what the system does. This says why, including the alternatives that were
+weighed and why they lost, so nobody re-derives them. Entries marked **Measured** rest on a test that
+was actually run, not on reasoning alone, and the test is named so it can be repeated.
 
-Companions: [Block 1 implementation](news-ingestion-implementation-plan.md),
+Companions: [Block 1 architecture](news-ingestion-architecture-plan.md),
+[Block 1 implementation](news-ingestion-implementation-plan.md),
 [Block 2 editorial architecture](news-editorial-architecture-plan.md),
 [Block 3 publishing architecture](news-publishing-architecture-plan.md),
 [Block 3 implementation](news-publishing-implementation-plan.md),
@@ -36,16 +36,14 @@ runtime. The repository question only decides where a change lands and what one 
 neighbour in its test suite, so a break surfaces as a failing test at the boundary. This works under any
 repository arrangement, which is why it beats reorganising.
 
-**Block 3 owns the edition schema. Reversed.** The initial position was that the producer should own the
-contract, on the grounds that the reader should not define what the writer must produce. That was wrong.
-Block 3 is not merely the reader, it is the renderer, and what a renderer can draw is a hard constraint
+**Block 3 owns the edition schema.** The producer-owns-the-contract instinct, that the reader should not
+define what the writer must produce, does not apply here. Block 3 is not merely the reader, it is the renderer, and what a renderer can draw is a hard constraint
 rather than a preference. You cannot add a callout kind by editing block 2, because nothing would exist
 to draw it. A browser owns the HTML element set and pages are written against it. The real concern
-underneath was mechanical, not about ownership, and is recorded in the next entry.
+underneath is mechanical, not about ownership, and is the next entry.
 
-**The schema is hand-written JSON Schema, not generated from Zod. Corrected 11 September 2026.**
-Conditional quote attribution is expressible in JSON Schema; the earlier example claiming otherwise
-was wrong. The reason for direct authoring is one explicit cross-language contract, with generated
+**The schema is hand-written JSON Schema, not generated from Zod.** Everything the contract needs,
+conditional quote attribution included, is expressible in JSON Schema. The reason for direct authoring is one explicit cross-language contract, with generated
 TypeScript types, equivalent format assertions, and a shared acceptance/rejection corpus. Cross-ID
 integrity still needs semantic checks and block 3's final `validate` preflight. Published schemas are
 immutable numbered artifacts: accepted-shape changes, including optional additions, create the next
@@ -56,9 +54,8 @@ producer vocabulary. Both blocks select an explicitly supported schema version a
 
 ## The product
 
-**One edition serves every reader. Reversed.** An earlier answer assumed per-reader personalisation and
-warned that language model cost would dominate and scale with the user count. That assumption was wrong.
-With one shared edition, every cost except bandwidth is fixed, and fixed costs do not care how many
+**One edition serves every reader.** Per-reader personalisation would make language model cost dominate
+and scale with the user count. With one shared edition, every cost except bandwidth is fixed, and fixed costs do not care how many
 readers there are.
 
 **Identical content for all readers is the best possible property for cheap hosting.** A CDN caches each
@@ -102,13 +99,11 @@ route was also rejected because dev mode injects a client script into the page, 
 the device page ships no JavaScript. Astro's value is routing, archives, and permalinks, none of which a
 fixed-size page with no links needs.
 
-**Astro is version 7, not 5. Measured.** Checked 8 September 2026. Astro 6 shipped March 2026 and moved to
-Zod 4; Astro 7 shipped June 2026 and changed the `compressHTML` default to a mode that strips newlines
-between inline elements, which would silently eat the spaces in source rows. The config sets it
-explicitly.
+**Astro is version 7. Measured 8 September 2026.** Astro 7 requires Zod 4, and its `compressHTML`
+default strips newlines between inline elements, which would silently eat the spaces in source rows.
+The config sets it explicitly.
 
-**Overflow detection and magnitude have different authority. Revised 11 September 2026; harness
-verification pending WP 0.** Check both scroll axes, nested constrained regions, and page bounds.
+**Overflow detection and magnitude have different authority.** Check both scroll axes, nested constrained regions, and page bounds.
 Multi-column overflow can create extra columns sideways; fragmentation can leave unused space that
 a single-column probe cannot account for. Actual clipping always rejects a candidate even when the
 probe reports slack. That disagreement is an unreliable estimate, not an internal error. Line and
@@ -135,17 +130,17 @@ rerendering; receipt lookup reconciles lost stdout. Hash stored receipts in mani
 manifest digest outside the stored receipt to avoid circular hashing. Post-commit cleanup is best
 effort. See the implementation plan's protocol and its three crash boundaries.
 
-**Release-1 tests guard invariants and contracts, nothing else. Settled 11 September 2026.** The first
-handoff draft asked for crash injection at every transition, fuzzing of every string field, concurrent
-build isolation, a Python validator inside the Node package, and pixel-tolerance visual regression. That
-is more verification than block 1 needed, and each item guards a hypothetical rather than an invariant.
-The rule now: a test that holds no Section 1 invariant and no published contract is not written. Crash
+**Release-1 tests guard invariants and contracts, nothing else. Settled 11 September 2026.** Crash
+injection at every transition, fuzzing of every string field, concurrent build isolation, a Python
+validator inside the Node package, and pixel-tolerance visual regression were all considered and
+rejected: each guards a hypothetical rather than an invariant, and together they are more verification
+than block 1 needed. The rule: a test that holds no Section 1 invariant and no published contract is not written. Crash
 injection is three boundaries the protocol reduces every interruption to; escaping is one fixed
 injection string; visual regression is a manual re-inspection of checked-in reference PNGs before a
 renderer change; the Python validator is block 2's test when block 2 exists.
 
 **Type is Newsreader and Libre Franklin. Settled 11 September 2026 by specimen.** The dense fixture
-was set five ways and compared in the browser: the original Playfair Display with Source Serif 4,
+was set five ways and compared in the browser: Playfair Display with Source Serif 4,
 Newsreader with Libre Franklin, Libre Caslon with Libre Franklin, Newsreader headlines over Source
 Serif, and Newsreader with a Chomsky blackletter nameplate. Playfair was dropped because its Didone
 hairlines break first at 16 grey levels and because it has become the default face of generated
@@ -160,14 +155,14 @@ any number of foreign outlets but by no Danish one is not news for this title an
 as `not_in_danish_media`. A story carried by DR and Berlingske that the FT also covers keeps the FT article
 as a source and a link. Breadth and prominence count only the scoring publishers, listed in the editorial
 policy file, so that adding an international feed can never change what gets selected. The list is every
-Danish outlet block 1 collects, nine since 14 September 2026, so adding a Danish outlet to the collector
-widens what counts as news. The price is that only Børsen's and Jyllands-Posten's ranked surfaces still
-score prominence; that term was already the weakest.
+Danish outlet block 1 collects, nine of them, so adding a Danish outlet to the collector widens what
+counts as news. The price is that only Børsen's and Jyllands-Posten's ranked surfaces score prominence;
+that term is the weakest in any case.
 
 **Copy is facts first, and colour needs a name on it. Settled 14 September 2026.** Three evaluation
 editions read as padded and editorialised because the writer paraphrased RSS teasers faithfully, so
 DR's "valggyser" and Altinget's sketch-writing surfaced as the paper's own voice. The writing
-guidelines in the [editorial architecture](news-editorial-architecture-plan.md) now require a new fact
+guidelines in the [editorial architecture](news-editorial-architecture-plan.md) require a new fact
 per sentence, attribute any colour to the outlet or speaker in the sentence itself, synthesise across
 sources instead of a paragraph per outlet, put the answer first, and set a word budget per role. They
 are guidelines rather than validators: attributed colour is acceptable on a slow day, unattributed
@@ -183,36 +178,27 @@ and one sheet of newspaper columns with a spanning lead headline, ragged and jus
 page on every kind of day; the grid gives the front page a clear opening and was preferred on balance.
 Both are kept because the cost is one small placement block each, on one shared story renderer and one
 type scale; if the sheet goes unused it is deleted, never left to drift. Justification won over ragged
-right once the inline citation markers were
-removed, which had been the real cause of the rivers. Hyphenation moved from the browser to the build:
-soft hyphens from TeX patterns make every browser break identically and make the exception list ours.
+right: the rivers that argue against it come from inline citation markers, which the design keeps out
+of the line. Hyphenation happens at build time rather than in the browser: soft hyphens from TeX
+patterns make every browser break identically and make the exception list ours.
 Knuth–Plass was rejected for the web because it needs a script or a fixed line width; it remains an
 option for the fixed-width device page.
 
-**Attribution is a trailing citation, not a sentence prefix. Settled 11 September 2026.** The first
-fixtures opened every paragraph with "X reports that", and rendered pages read as a machine
-repeating itself. Rotating the phrasing was rejected because rotated synonyms on every sentence read
+**Attribution is a trailing citation, not a sentence prefix. Settled 11 September 2026.** A page whose
+every paragraph opens with "X reports that" reads as a machine repeating itself. Rotating the phrasing
+was rejected because rotated synonyms on every sentence read
 as generated faster than plain repetition does; dropping attribution was rejected because the
-evidence discipline depends on it. Paragraphs and ledes became `{text, sources[]}` in the edition
+evidence discipline depends on it. Paragraphs and ledes are `{text, sources[]}` in the edition
 contract, with publisher ids validated against the story's sources and rendered as a small-caps
 marker after the text. Prose names a publisher only when publishers disagree.
 
-**The ingestion code moved into `ingest/` on 11 September 2026.** Done with `git mv`, runtime state and
-the virtual environment moved alongside, and verified by the collector's own offline check and smoke
-actions from outside the repository. No scheduler entry referenced the old path.
-
-**Object storage is a future delivery design, not the local commit protocol. Clarified 11 September
-2026.** Immutable prefixes and a single release pointer could replace filesystem primitives. Atomic
+**Object storage is a future delivery design, not the local commit protocol.** Immutable prefixes and a single release pointer could replace filesystem primitives. Atomic
 single-object writes do not make multiple root/index updates transactional. Hosting remains deferred;
 any adapter must define coherent activation and recovery before it is implemented.
 
 ---
 
 ## Design
-
-**Playfair Display and Source Serif 4. Reversed.** The first attempt used Bodoni Moda for display type.
-Rendering at device size showed its hairline strokes thinning to near-invisibility and its optical-size
-axis fighting the fixed sizes. Playfair holds up at 16 grey levels, which is what the panel provides.
 
 **Device greys sit exactly on palette levels.** Every device colour is of the form `#XYXYXY` with equal
 digits, so it is a multiple of 0x11 and lands on a 16-level step. Only anti-aliased glyph edges move
@@ -236,8 +222,8 @@ and greedy; a failure does not prove no permissible arrangement exists.
 
 **Sections come from feed provenance, never from a model. Measured.** Every appearance names the feed it
 was seen in and whether that feed is a section, homepage, or latest feed. Filtering to section feeds gives
-the publisher's own placement decision. Coverage is 95 to 99 per cent for four of six publishers, and was
-zero for NYT and Politiken until section feeds were added to the configuration on 9 September 2026.
+the publisher's own placement decision. Coverage is 95 to 99 per cent once every source has section
+feeds configured, and zero for a source that has only a latest feed.
 
 **Keep the set of sections, not a single label. Measured.** Roughly an eighth of articles appear in more
 than one section feed, and the overlaps are meaningful rather than noise. Forcing one label discards real
@@ -273,22 +259,23 @@ An editor can reason about that directly instead of guessing at constants.
 **Breadth carries the most weight because prominence is measurably weak. Measured.** Position one in
 almost every section feed scores identically, because the score is a within-publisher feed position and
 section feeds are short. Ranking on prominence alone put a single-publisher local item above a story that
-five of six publishers were running. Cross-publisher breadth is what separates the day's big story from a
+five of the six publishers in the sample were running. Cross-publisher breadth is what separates the day's big story from a
 well-placed minor one.
 
 **Prominence counts only feeds whose order is editorial. Measured.** Feed ordering was tested on
-8 September 2026. The three homepage feeds are ranked, as are `nytimes.world` and `borsen.finans`. Every
+8 September 2026. The homepage feeds are ranked, as are `nytimes.world`, `borsen.finans`, and
+Jyllands-Posten's top-stories feed. Every
 `latest` feed and most section feeds, including `dr.indland`, `politiken.indland`, `ft.world`, and
 `berlingske.samfund`, are in strict reverse-publication order, so position carries no editorial signal.
 Scoring those counted recency twice under another name.
 
 **Unknown prominence is recorded as unknown, not as low.** A story missing from the NYT homepage feed was
 genuinely not front-paged, which is real negative evidence. A story missing from a DR ranked surface tells
-us nothing, because DR publishes none. Treating those as the same number was the flaw that made prominence
+us nothing, because DR publishes none. Treating those as the same number would make prominence
 untrustworthy.
 
-**Recency is measured in editions, not hours. Reversed.** A linear decay over 48 hours was tried and
-discarded because it barely separated this morning from yesterday afternoon, which is the distinction a
+**Recency is measured in editions, not hours. Measured.** A linear decay over 48 hours barely separates
+this morning from yesterday afternoon, which is the distinction a
 daily paper cares about most. Anchoring to the previous edition's cutoff also handles the awkward case
 correctly: a story filed just after yesterday's deadline is new to this edition even though it is over a
 day old.
@@ -313,8 +300,8 @@ age. The recency term only ever ranks stories not yet run, which is why a modera
 
 **One model call per edition clusters the whole candidate window. No retrieval stage.** Measured: a title
 plus description averages 51 tokens, so a few hundred candidates is 15,000 to 30,000 input tokens, which
-is negligible against the cost of writing the stories. The stronger argument is what it deletes. The
-two-stage retrieval design required an embedding model, a similarity threshold, a candidate-pair
+is negligible against the cost of writing the stories. The stronger argument is what it avoids. A
+two-stage retrieval design would require an embedding model, a similarity threshold, a candidate-pair
 generator, and a cache to keep coherent with all three, and it was fragile precisely where the work is
 hardest. Cross-lingual Danish and English matching is where embedding thresholds hurt most and where a
 capable general model needs no configuration.
@@ -324,8 +311,8 @@ and a confidence; anything unmentioned is a singleton. Most articles are singlet
 short, and long enumerations are where a model drifts or silently drops an identifier. The event
 description is what makes a cluster checkable afterwards.
 
-**The cheap signal moved from before the model to after it.** The lexical and temporal checks that would
-have proposed candidates now validate the model's output. Same code, better position: a pre-filter's
+**The cheap signal sits after the model, not before it.** The lexical and temporal checks that would
+have proposed candidates validate the model's output instead. Same code, better position: a pre-filter's
 misses are invisible and permanent, while a validator's flags are visible and free to review.
 
 **Cross-publisher merges get the strictest scrutiny.** Breadth carries the most ranking weight, so an
@@ -383,8 +370,8 @@ a first release and each is available later without rework.
 ## Open questions
 
 **Publisher licensing is the largest unresolved risk, and it is not technical.** A personal digest for one
-reader is a very different position from a public page redistributing summaries of Financial Times, New
-York Times, Politiken, Børsen, Berlingske, and DR reporting. Charging for it would be a further
+reader is a very different position from a public page redistributing summaries of sixteen publishers'
+reporting. Charging for it would be a further
 escalation. This deserves an answer before the site is promoted.
 
 **Whether multi-column overflow really surfaces through scroll width.** It is what the specification

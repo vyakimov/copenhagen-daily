@@ -1,6 +1,6 @@
 # Broadsheet design notes
 
-Working mockups for block 3. `device.html` renders three 1872 × 1404 compositions (`?v=A`, `?v=B`, `?v=C`); `web.html` is the web edition of the same day as composition B. They are design references for the templates, not production templates. Fonts load from Google Fonts here only; production bundles them locally. The mockups predate the 11 September 2026 type decision (Newsreader + Libre Franklin replacing Playfair Display + Source Serif 4); the production stylesheets are authoritative on type.
+Working mockups for block 3. `device.html` renders three 1872 × 1404 compositions (`?v=A`, `?v=B`, `?v=C`); `web.html` is the web edition of the same day as composition B. They are design references for the templates, not production templates. Fonts load from Google Fonts here only; production bundles them locally. The production stylesheets in `publisher/assets/css/` are authoritative on type and tokens; the mockups are references for geometry and composition.
 
 Render a composition with headless Chrome:
 
@@ -31,7 +31,7 @@ Device greys are chosen so every colour maps to one of the 16 levels without dit
 |---|---|---|
 | H1 lead | exactly one | kicker, display headline 72–88 px, italic deck, optional callout, optional body (one or two columns, drop cap when two), source row |
 | H2 secondary | 0–4 per page | kicker, 36–44 px text-face headline, brief or standard body, optional callout, source row |
-| H3 brief | 0–8 per page | 31 px headline, one-line lede with bold publisher name |
+| H3 brief | 0–8 per page | 31 px headline, one-line lede |
 
 Callouts belong to a story, never float alone. Every callout carries attribution in the story's source row, and quotes name the speaker and the publisher that reported them.
 
@@ -58,7 +58,7 @@ A  lead-wide             B  lead-tall              C  lead-centred
 +--------------------+   +-------------+------+   +---+---+---+---+----+
 ```
 
-The mockups show preferred densities: A has 2–3 H2 and 3–4 H3, B has 1–3 H2 and no H3, and C has 3–4 H2 and 4–6 H3. Production occupancy limits, revised 11 September 2026, are A: 0–3/0–4, B: 0–3/0, C: 0–4/0–6. Supporting bands can be empty; remove their rules and retain whitespace without filler. The lead alone and lead-plus-one-brief are required sparse fixtures. Callouts may occupy lead/secondary slots, subject to actual measurement. A slot uses the first approved candidate or none; release 1 does not restore dropped callouts.
+The mockups show preferred densities: A has 2–3 H2 and 3–4 H3, B has 1–3 H2 and no H3, and C has 3–4 H2 and 4–6 H3. Production occupancy limits are A: 0–3/0–4, B: 0–3/0, C: 0–4/0–6. Supporting bands can be empty; remove their rules and retain whitespace without filler. The lead alone and lead-plus-one-brief are required sparse fixtures. Callouts may occupy lead/secondary slots, subject to actual measurement. A slot uses the first approved candidate or none; release 1 does not restore dropped callouts.
 
 An early physical-device typography sheet and one provisional composition validate body, briefs,
 attribution, rules, and every callout kind before all device layouts are frozen. Explicit font weights
@@ -69,4 +69,4 @@ and callouts with those tokens, margins, rules, and palette unchanged.
 
 ## Previews
 
-`preview/` holds the rendered pages: `device-{A,B,C}.png` are the 1872 × 1404 masters, `device-{A,B,C}-16gray.png` are the same pages quantized to 16 evenly spaced grey levels with no dithering (16 levels used, text edges are the only pixels that moved), and `web-desktop.png` / `web-narrow.png` show the web edition. Pillow writes the quantized file as 8-bit grayscale; the production pipeline needs a writer that emits true 4-bit grayscale PNG like the reference image (ImageMagick `-depth 4` or a small PNG encoder), which is a packaging step, not a design one.
+`preview/` holds the rendered pages: `device-{A,B,C}.png` are the 1872 × 1404 masters, `device-{A,B,C}-16gray.png` are the same pages quantized to 16 evenly spaced grey levels with no dithering (16 levels used, text edges are the only pixels that moved), and `web-desktop.png` / `web-narrow.png` show the web edition. The production pipeline writes true 4-bit grayscale PNG with ImageMagick; the preview files are 8-bit renderings of the same levels.

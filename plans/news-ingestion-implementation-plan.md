@@ -3,9 +3,9 @@
 ## 1. How to use this plan
 
 This is the execution plan for block 1, which lives in `ingest/` of the `copenhagen-daily`
-repository (relocated there on 11 September 2026; paths below are relative to `ingest/`). It expands the Obsidian note
-`Inbox/Programmatic news ingestion plan — NYT, Politiken, Børsen, and DR.md` and adds the
-Financial Times (FT) and Berlingske to the source scope.
+repository; paths below are relative to `ingest/`. Its source note is the Obsidian note
+`Inbox/Programmatic news ingestion plan — NYT, Politiken, Børsen, and DR.md`; the source scope is the
+sixteen publishers in the policy table below.
 
 Implement the work packages in order. Do not start an optional work package until its gate is
 met. Each package names the files to create, the behavior to implement, the tests to add, and the
@@ -28,7 +28,9 @@ are optional follow-ups.
 ## 2. Product boundary
 
 Build a Python 3.12 service and CLI named `news-ingest`. It polls configured first-party feeds from
-NYT, FT, Børsen, Politiken, Berlingske, and DR; normalizes and versions every valid item; records feed placement;
+sixteen publishers, nine Danish (DR, TV 2, Politiken, Berlingske, Jyllands-Posten, Børsen, Information,
+Altinget, Kristeligt Dagblad) and seven international (NYT, FT, BBC News, The Economist, The Guardian,
+The Washington Post, The Wall Street Journal); normalizes and versions every valid item; records feed placement;
 and publishes JSONL bundles for a separate briefing agent.
 
 “Complete” means every item observed in the enabled feeds while the collector is running. It does
@@ -48,6 +50,19 @@ story across publishers, generate briefing Markdown, crawl archives, or fetch su
 | Politiken | `art([0-9]+)` from URL, GUID fallback | Latest-news RSS | `pol:order` and XML position; optional HTML homepage later | Disabled by default |
 | Berlingske | Complete RSS GUID URN | All-news RSS plus four main category feeds | Latest-feed and weaker section-feed order | Disabled by default |
 | DR | Full RSS GUID URN | Latest plus all enabled section and regional feeds | Feed membership and XML position | Disabled by default |
+| TV 2 | Permalink GUID | Single news feed | Latest order only; query parameters are ignored by the feed | Disabled by default |
+| Jyllands-Posten | `ECE([0-9]+)` from URL, GUID fallback | Top-stories and latest feeds | Top-stories order | Disabled by default |
+| Information | Drupal GUID | Single site feed | None | Disabled by default |
+| Altinget | URL GUID | Front feed plus section feeds | None | Disabled by default |
+| Kristeligt Dagblad | UUID GUID | Nyheder and Artikler feeds; ISO 8601 `pubDate` | None | Disabled by default |
+| BBC News | `/(?:articles\|videos\|live)/([a-z0-9]+)` from URL, GUID fallback; GUIDs carry a per-feed fragment | Top stories plus section feeds; repeated items quarantined | Top-stories order (linked publisher, not scored) | Disabled by default |
+| The Economist | UUID GUID | Latest plus section feeds, 300 items each | None | Disabled by default |
+| The Guardian | RSS GUID | International plus section feeds | International feed order (linked publisher, not scored) | Disabled by default |
+| The Washington Post | RSS GUID | Section feeds | None | Disabled by default |
+| The Wall Street Journal | RSS GUID | Section feeds at `feeds.content.dowjones.io`; repeated items quarantined | None | Disabled by default |
+
+Reuters and the Associated Press publish no first-party RSS feed and are not in scope; Weekendavisen
+and Zetland have none either. Live findings for every source are in `docs/source-contracts.md`.
 
 FT was verified on 2026-09-07 using plain HTTP. The international homepage feed is
 `https://www.ft.com/rss/home/international`. It contains an ordered ten-item homepage snapshot,
@@ -98,8 +113,8 @@ Kultur, and Opinion aliases redirect to equivalent category feeds. Preserve the 
 - Do not create a module per publisher. Feed behavior belongs in `config/sources.yaml`; only stable
   identity/URL policies and optional HTML extractors may contain source-specific branches.
 - JSON on stdout is the CLI contract. Human diagnostics and structured logs go to stderr.
-- The block directory is `ingest/`; the import package and command remain
-  `news_ingest` and `news-ingest`.
+- The block directory is `ingest/`; the import package and command are `news_ingest` and
+  `news-ingest`.
 
 Do not invent dependency versions in advance. Resolve once with `uv`, copy each resolved direct
 dependency version into an exact `==` pin in `pyproject.toml`, regenerate `uv.lock`, and commit both.

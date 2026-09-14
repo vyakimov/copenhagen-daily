@@ -1,7 +1,6 @@
 # Block 1: News ingestion architecture
 
-Status: architecture record, 14 September 2026, written from the code as it runs rather than as it
-was first planned. It describes what block 1 is, how it is built, and the decisions that shaped it,
+Status: architecture, 14 September 2026, written from the code as it runs. It describes what block 1 is, how it is built, and the decisions that shaped it,
 at the level of detail needed to remember the design rather than to implement it. The
 [implementation plan](news-ingestion-implementation-plan.md) remains the exhaustive specification
 and is authoritative where this document is silent. Companions:
@@ -129,17 +128,16 @@ verification suite. Block 2 will invoke this the same way an operator does.
 - **First-party RSS only, no page fetching (7 September 2026).** Live probing showed NYT article pages
   return a DataDome challenge to any non-browser client, Politiken and DR pages have no JSON-LD, and DR
   hides its body in a Next.js data blob with hashed class names. Plain-HTTP enrichment was possible
-  for at most some publishers and fragile for all; RSS was available for every one. NYT enrichment
-  and the Playwright dependency were removed from the plan that day.
+  for at most some publishers and fragile for all; RSS was available for every one.
 - **One generic feed adapter, behaviour in configuration.** A module per publisher was rejected
   because the differences between feeds are data, not code: which feed is the homepage, which
   priority its descriptions carry, which regular expression yields identity.
 - **Sightings-derived articles, indefinite raw retention, replay.** Chosen together so that every
   layer above the raw payload is reproducible and no correction to normalisation requires
   re-collection.
-- **`changed-since` export replaced a version cursor.** A cursor over article versions was the first
-  design; a content-change timestamp is simpler for the consumer and answers the actual question,
-  which is "what did I not see last time".
+- **Exports select by content-change time, not by a version cursor.** A content-change timestamp is
+  simpler for the consumer than a cursor over article versions and answers the actual question, which
+  is "what did I not see last time".
 - **Homepage capture assessed and gated (9 September 2026).** Politiken exposes usable attributes,
   Berlingske hides content in an opaque blob, DR's class names would break on every redeploy. Not
   worth a subsystem; the four attributes Politiken offers are captured behind a gate.
@@ -153,9 +151,6 @@ verification suite. Block 2 will invoke this the same way an operator does.
   shaped the code: BBC GUIDs carry a per-feed fragment, so BBC identity is the URL article id, and BBC
   and WSJ list some items twice in one snapshot, so a repeat is quarantined as `duplicate_in_snapshot`
   rather than failing the poll.
-- **The block moved into `ingest/` (11 September 2026)** when the repository became the home of all
-  three blocks, with `git mv` and no change to package, command, or wrapper names.
-
 ## Where block 1 stands
 
 Built and running. Sixteen publishers and 131 feeds, all succeeding on the poll of 14 September 2026.

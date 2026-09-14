@@ -1,8 +1,7 @@
 # Detailed implementation plan: broadsheet publishing
 
-Status: implementation plan, 8 September 2026, revised 11 September 2026 after design review and
-again the same day for handoff: the repository is relocated, the contract's field shapes are fixed by
-a golden document, and test scope is bounded to the invariants. Its architecture companion is
+Status: implementation plan, 11 September 2026. The contract's field shapes are fixed by a golden
+document and test scope is bounded to the invariants. Its architecture companion is
 [Block 3: Broadsheet publishing architecture](news-publishing-architecture-plan.md), which is
 authoritative on boundaries where this document is silent. The upstream contract is defined in
 [Block 2: Newspaper editorial architecture](news-editorial-architecture-plan.md). The visual
@@ -66,8 +65,8 @@ person's action: the user places the PNG at a URL they control and enters it int
 plugin by hand. Block 3 uploads nothing and touches no account. These plans authorize no public posting.
 
 **Repository.** The `copenhagen-daily` repository, which holds all three blocks. Block 3 occupies
-`publisher/`. `editorial/` is reserved for block 2's Python application, and `ingest/` holds block 1,
-relocated there on 11 September 2026 with its wrapper at `ingest/gather_news.sh`. No block claims the
+`publisher/`. `editorial/` is reserved for block 2's Python application, and `ingest/` holds block 1
+with its wrapper at `ingest/gather_news.sh`. No block claims the
 repository root; the root `AGENTS.md` states the cross-block boundaries. `ingest/` is unchanged by
 this plan and gains no Node dependency; the Node toolchain is confined to `publisher/`.
 
@@ -698,8 +697,7 @@ the lead beside a rail of secondaries with the rest flowing through three column
 sheet of three columns with the lead's headline spanning them. They share one `Story` component and
 one type scale expressed as custom properties; a composition may set those properties and its own
 placement rules and nothing else, which is what keeps the second one cheap to carry. `build-web
---layout` previews the other; `publish` reads only the config. Grid is the default as of 14 September
-2026.
+--layout` previews the other; `publish` reads only the config. Grid is the default.
 
 **Layout.** Its own responsive layout, chosen for a browser. It keeps the design language — masthead,
 heavy and hairline rules, small caps, kickers, source rows, the type scale, and the five callout kinds —

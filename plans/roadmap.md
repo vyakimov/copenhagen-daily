@@ -212,14 +212,12 @@ judgment of importance and the one signal breadth cannot supply. Breadth says ma
 Prominence says one publisher cared a great deal, which is how a single-publisher scoop gets recognised
 instead of buried.
 
-Today only Børsen supplies it in a way that counts. Feed ordering was tested on 8 September 2026: the
-three homepage feeds are editorially ranked, as are `nytimes.world` and `borsen.finans`, while every
+Only Børsen's homepage feed and Jyllands-Posten's top-stories feed supply it in a way that counts.
+Feed ordering was tested on 8 September 2026: homepage feeds are editorially ranked, while every
 `latest` feed and most section feeds are in strict reverse-publication order and therefore carry no
-placement signal at all. Since 14 September 2026 only the Danish scoring publishers contribute to
-prominence, which removes the international homepage feeds from the calculation. Of the nine Danish
-scoring publishers only Børsen (homepage feed) and Jyllands-Posten (top-stories feed) publish a ranked
-feed; the other seven are recorded as unknown. Capturing the Danish homepages is therefore the whole of
-this item.
+placement signal at all. Only the Danish scoring publishers contribute to prominence, so the
+international homepage feeds do not enter the calculation, and the other seven Danish publishers are
+recorded as unknown. Capturing the Danish homepages is therefore the whole of this item.
 
 ### Why the obvious fixes were rejected
 

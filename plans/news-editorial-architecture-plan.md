@@ -1,6 +1,6 @@
 # Block 2: Newspaper editorial architecture
 
-Status: architecture proposal, 7 September 2026, revised 8 September 2026 to carry the contract fields block 3 depends on, and revised 9 September 2026 to remove per-reader personalization: this block is the editorial voice of a newspaper, and one edition is published to every reader. This document recommends boundaries and tradeoffs; it is not an implementation work breakdown. Its companion is [Block 3: Broadsheet publishing architecture](news-publishing-architecture-plan.md).
+Status: architecture, 14 September 2026. This block is the editorial voice of a newspaper, and one edition is published to every reader. This document recommends boundaries and tradeoffs; it is not an implementation work breakdown. Its companion is [Block 3: Broadsheet publishing architecture](news-publishing-architecture-plan.md).
 
 ## Recommendation
 
@@ -34,7 +34,7 @@ Release 1 supplies titles, RSS descriptions where available, publisher identitie
 
 The ingestion [implementation plan](news-ingestion-implementation-plan.md) remains authoritative for block 1. These downstream proposals do not enable its optional enrichment or homepage work. NYT article fetching remains prohibited. Any future text acquisition follows the existing source gates as a separately approved project; neither the LLM nor the publishing browser retrieves publisher pages.
 
-The current code also matters at the handoff. Inspection of [`models.py`](../src/news_ingest/models.py), [`export.py`](../src/news_ingest/export.py), and [`db.py`](../src/news_ingest/db.py) establishes these integration constraints:
+The current code also matters at the handoff. Inspection of [`models.py`](../ingest/src/news_ingest/models.py), [`export.py`](../ingest/src/news_ingest/export.py), and [`db.py`](../ingest/src/news_ingest/db.py) establishes these integration constraints:
 
 | Current behavior | Architectural consequence |
 |---|---|
@@ -67,7 +67,7 @@ Assign durable editorial story IDs when stories are first established. Do not de
 
 Give the whole candidate window to one capable model in a single call per edition and let it group the articles. Do not build a retrieval stage, an embedding model, a vector cache, or similarity thresholds.
 
-The arithmetic supports this. Measured on real collected articles, a title plus description averages about 51 tokens. A 24 to 48 hour candidate window across the six publishers is a few hundred articles, so the whole set is roughly 15,000 to 30,000 input tokens. That is one modest call per edition, a handful of times a day, which is negligible against the cost of writing the stories.
+The arithmetic supports this. Measured on real collected articles, a title plus description averages about 51 tokens. A 72-hour candidate window across sixteen publishers is on the order of 1,200 articles (1,228 on 14 September 2026), so the whole set is roughly 60,000 input tokens. That is one modest call per edition, a handful of times a day, which is negligible against the cost of writing the stories.
 
 The simplification is the stronger argument. Cross-lingual matching between Danish and English is exactly where embedding thresholds are most painful to tune and most fragile to maintain, and it is exactly what a capable general model does well without configuration. Removing the retrieval stage removes the most fragile components in this block: a model choice, a similarity threshold, a candidate-pair generator, and a cache to keep coherent with them.
 
@@ -110,8 +110,7 @@ It is not a user profile and carries no privacy weight. Nothing about it is infe
 **The paper is an overview of what Danish media are reporting. Settled 14 September 2026.** A story is
 eligible for an edition only if at least one *scoring publisher* reports it. The scoring publishers are
 every Danish outlet in the collector's configuration: DR, TV 2, Politiken, Berlingske, Jyllands-Posten,
-Børsen, Information, Altinget, and Kristeligt Dagblad (widened from four to all nine on 14 September
-2026). The international outlets, the Financial Times, the New York Times, BBC News, The Economist, The
+Børsen, Information, Altinget, and Kristeligt Dagblad. The international outlets, the Financial Times, the New York Times, BBC News, The Economist, The
 Guardian, The Washington Post, and The Wall Street Journal, are *linked publishers*: they
 never make a story eligible and never contribute to its score, but when a scoring publisher reports a
 story they also cover, their articles are attached to it as sources, so the reader gets the link and
@@ -138,14 +137,14 @@ Three consequences follow, and each is a rule:
 
 The practical effect on prominence is that, of the nine scoring publishers, only Børsen and
 Jyllands-Posten supply a ranked surface that counts (Børsen's homepage feed and Jyllands-Posten's
-top-stories feed), since the international homepage feeds no longer score. Prominence was already the
-weakest term; this makes it weaker, and the weights below assume it.
+top-stories feed), since international homepage feeds do not score. Prominence is the weakest term, and
+the weights below assume it.
 
 ### Sections come from the publisher, not from a model
 
 Resolve a story's sections from feed provenance, never from an LLM's reading of the text. Every appearance record names the feed it was seen in and marks whether that feed is a section, homepage, or latest feed. Filtering to section feeds gives the publisher's own placement decision, which is a better authority on where an article belongs than any inference we could make.
 
-A hand-written table maps each section feed to the title's own section vocabulary, so `dr.kultur`, `berlingske.kultur`, `ft.life_arts`, and `nytimes.arts` all resolve to culture. That table lives with the editorial policy, is inspectable, and needs no model. Coverage of the six publishers is 95 to 99 per cent once section feeds are configured for every source.
+A hand-written table maps each section feed to the title's own section vocabulary, so `dr.kultur`, `berlingske.kultur`, `ft.life_arts`, and `nytimes.arts` all resolve to culture. That table lives with the editorial policy, is inspectable, and needs no model. Coverage is 95 to 99 per cent once section feeds are configured for every source.
 
 Three rules govern its use. Keep the resulting **set** of sections rather than collapsing to one label, because roughly an eighth of articles legitimately sit in more than one and that overlap is editorial signal. Resolve sections at edition time from all accumulated appearances, not once at first sight, because an article often reaches a section feed on a later poll than the latest feed that first surfaced it. And treat **opinion as a flag rather than a section**, since an opinion piece about culture is both; a comment column should compete for a culture slot carrying a marker, not occupy a separate section that displaces its subject.
 
@@ -165,9 +164,9 @@ score = base x section_weight
 
 `peak_prominence` counts **only feeds whose order is editorial, and only on scoring publishers**. Feed ordering was tested on 8 September 2026. The three homepage feeds are ranked, as are `nytimes.world` and `borsen.finans`. Every `latest` feed and most section feeds, including `dr.indland`, `politiken.indland`, `ft.world`, and `berlingske.samfund`, are in strict reverse-publication order, so position in them carries no editorial signal whatsoever. Scoring those was counting recency a second time under another name. Score a chronological surface at zero and let recency do that job once.
 
-Record prominence as **unknown rather than low** for a publisher with no ranked surface, and let the other terms carry the story. The distinction matters: a story missing from Børsen's homepage feed was genuinely not front-paged, which is real negative evidence, while a story missing from a DR ranked surface tells us nothing, because DR publishes none. Treating those as the same number is the flaw that made prominence untrustworthy. Of the scoring publishers only Børsen supplies it today; the NYT and FT homepage feeds are ranked but belong to linked publishers and do not score. Extending prominence to the other Danish outlets requires homepage capture, which stays gated.
+Record prominence as **unknown rather than low** for a publisher with no ranked surface, and let the other terms carry the story. The distinction matters: a story missing from Børsen's homepage feed was genuinely not front-paged, which is real negative evidence, while a story missing from a DR ranked surface tells us nothing, because DR publishes none. Treating those as the same number would make prominence untrustworthy. Of the scoring publishers only Børsen and Jyllands-Posten supply it; the NYT, FT, BBC, and Guardian homepage feeds are ranked but belong to linked publishers and do not score. Extending prominence to the other Danish outlets requires homepage capture, which stays gated.
 
-`recency` is measured in **editions, not hours**. A story published since the previous edition's cutoff scores 1.0, one edition older scores about 0.45, two editions older about 0.15. Anchoring to the cutoff rather than to a rolling clock is what makes a daily paper behave like one: a story filed just after yesterday's deadline is new to this edition even though it is more than a day old. A smooth linear decay was tried and discarded because it barely discriminated between this morning and yesterday afternoon, which is the distinction that matters most.
+`recency` is measured in **editions, not hours**. A story published since the previous edition's cutoff scores 1.0, one edition older scores about 0.45, two editions older about 0.15. Anchoring to the cutoff rather than to a rolling clock is what makes a daily paper behave like one: a story filed just after yesterday's deadline is new to this edition even though it is more than a day old. A smooth linear decay barely discriminates between this morning and yesterday afternoon, which is the distinction that matters most.
 
 Two clocks, deliberately. **Gate candidacy on observation time** so that a story the collector discovered late is still eligible, and **score recency on publication time** so that a genuinely old story is penalized for being old. A three-day-old article nobody noticed can earn a brief; it should not lead.
 
@@ -177,7 +176,7 @@ Prominence takes only a tenth of the weight because it is measurably weak, as th
 
 Multiplying by the section weight rather than adding it gives the property that makes the numbers meaningful: **the ratio between two section weights is exactly the margin a story needs to overcome them.** With Denmark at 1.0 and technology at 0.5, a technology story must reach twice the base score of the best Danish story to lead the paper. An editor can reason about that directly and tune it without guessing.
 
-Breadth carries half the weight for a measured reason. Section-feed prominence barely discriminates: across the corpus, position one in almost every section feed scores identically, because the score is a within-publisher feed position and section feeds are short. Only homepage feeds produce a strong prominence signal, and only three of the six publishers have one configured. Cross-publisher breadth is the signal that actually separates the day's big story from a well-placed minor one. Measured on real data, the largest story of the day appeared across five of six publishers while a local item that outranked it on prominence alone appeared in one.
+Breadth carries half the weight for a measured reason. Section-feed prominence barely discriminates: across the corpus, position one in almost every section feed scores identically, because the score is a within-publisher feed position and section feeds are short. Only homepage feeds produce a strong prominence signal, and only a few publishers have one configured. Cross-publisher breadth is the signal that actually separates the day's big story from a well-placed minor one. Measured on real data, the largest story of the day appeared across five of the six publishers in the sample while a local item that outranked it on prominence alone appeared in one.
 
 A caution confirmed by experiment. A naive clustering that merged any two articles sharing rare terms, closing transitively, produced clusters spanning business, Denmark, world, climate, and culture at once and inflated breadth for stories that were never the same event. That is the failure mode the cluster validator exists to catch. Breadth is only trustworthy on top of conservative matching, and because it multiplies the cost of an over-merge, the validator should be tested against Danish and English examples before these weights are tuned.
 
@@ -199,12 +198,12 @@ Each factual sentence, including the headline, must map to the source passage or
 
 ### Writing guidelines: facts first, colour only with a name on it
 
-**Settled 14 September 2026, after reading three evaluation editions.** The evidence block 2 writes from
+**Settled 14 September 2026.** The evidence block 2 writes from
 is RSS descriptions, and Danish outlets write those as teasers: "Valggyser kan trække i langdrag",
 "vidste ikke hvilket ben de skulle stå på". A faithful paraphrase carries the teaser's voice into the
 paper, where it reads as the paper's own opinion, because the citation sits on the paragraph and is
-invisible in the prose. The result was copy that was at once padded, editorialised, and structurally
-serialised by outlet. These guidelines correct that. They are guidelines, not validators: the writer
+invisible in the prose. Unchecked, the result is copy that is at once padded, editorialised, and
+structurally serialised by outlet. These guidelines prevent that. They are guidelines, not validators: the writer
 weighs them, and the review step flags departures rather than rejecting them.
 
 1. **Every sentence should carry a new fact**: an actor, a number, a time, a place, or a decision. A
@@ -256,7 +255,7 @@ Treat all source text as untrusted data. The editorial model has no browser, she
 
 Use versioned JSON with a published JSON Schema at this boundary. Markdown may be a useful preview, but should not be the primary machine interface. Block 2 owns meaning, selection priority, and permitted shortening; block 3 owns typography, coordinates, and actual pagination.
 
-**Block 3 owns the schema itself**, published as hand-written JSON Schema Draft 2020-12 with golden acceptance and rejection documents. Revised 11 September 2026: every published schema is an immutable numbered artifact, and every accepted-shape change, including an optional field or new callout kind, creates a new integer version. Unknown fields are rejected, so older renderers cannot be assumed to accept newer output. Block 2 selects a supported version/digest, validates with the identical schema and equivalent format assertions, runs the shared semantic rejection corpus, and calls block 3's `validate` as final preflight. The detailed contract is Section 5 of the [publishing implementation plan](news-publishing-implementation-plan.md).
+**Block 3 owns the schema itself**, published as hand-written JSON Schema Draft 2020-12 with golden acceptance and rejection documents. Every published schema is an immutable numbered artifact, and every accepted-shape change, including an optional field or new callout kind, creates a new integer version. Unknown fields are rejected, so older renderers cannot be assumed to accept newer output. Block 2 selects a supported version/digest, validates with the identical schema and equivalent format assertions, runs the shared semantic rejection corpus, and calls block 3's `validate` as final preflight. The detailed contract is Section 5 of the [publishing implementation plan](news-publishing-implementation-plan.md).
 
 The conceptual edition contract should carry:
 
@@ -296,7 +295,7 @@ If some sources fail, use valid evidence and display the resulting coverage limi
 
 ## What would validate these decisions
 
-Run a short pilot with manually judged examples from all six publishers. Evaluate matching precision and missed matches separately, including Danish/English pairs and distinct developments in the same thread. Inspect selected and rejected candidates, not just attractive finished pages. Track unsupported statements, missing attribution, excessive repetition, interesting omissions, reading time, per-edition cost, and deadline reliability.
+Run a short pilot with manually judged examples from every publisher. Evaluate matching precision and missed matches separately, including Danish/English pairs and distinct developments in the same thread. Inspect selected and rejected candidates, not just attractive finished pages. Track unsupported statements, missing attribution, excessive repetition, interesting omissions, reading time, per-edition cost, and deadline reliability.
 
 The first useful milestone is one evidence-traceable edition, with visible reasons for its choices, successfully rendered by block 3. Next establish repeat suppression and correction handling across several mornings. Only then tune models, scoring, or add optional acquisition. No fine-tuning, autonomous researching agents, general knowledge graph, vector service, or collaborative editing system is required for that milestone.
 
