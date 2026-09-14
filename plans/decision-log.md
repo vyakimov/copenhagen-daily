@@ -154,6 +154,14 @@ The nameplate was memorable but unproven on the device. Newsreader was chosen fo
 axis, which gives headline and text cuts from one family, and Libre Franklin because a plain
 grotesque for labels is the second voice the reference has and the page lacked.
 
+**Danish media decide what is news; international media are linked, never scored. Settled 14 September
+2026.** The paper is an overview of what Danish outlets report. A story carried by the FT, the NYT, and
+any number of foreign outlets but by no Danish one is not news for this title and is dropped at selection
+as `not_in_danish_media`. A story carried by DR and Berlingske that the FT also covers keeps the FT article
+as a source and a link. Breadth and prominence count only the scoring publishers, listed in the editorial
+policy file, so that adding an international feed can never change what gets selected. The price is that
+only Børsen's ranked surface still scores prominence; that term was already the weakest.
+
 **The web edition is a grid with the sheet kept as a one-word switch. Settled 14 September 2026.**
 Three layouts were compared on three fresh editions: the lead beside a rail with flowing columns below,
 and one sheet of newspaper columns with a spanning lead headline, ragged and justified. The sheet fills the

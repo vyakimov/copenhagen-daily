@@ -99,11 +99,44 @@ Examples the design must handle include the same announcement in two languages, 
 
 ## The editorial policy is the newspaper's voice
 
-The title has a small, versioned **editorial policy** file: its remit, meaning the subjects it covers and the subjects it deliberately leaves out; its standing interests and exclusions; output language; tone; reading budget and page target; and its appetite for general news outside the remit. This is the masthead's editorial line, written by hand by the owner and kept in version control, so every change to what the paper covers is a deliberate, reviewable commit.
+The title has a small, versioned **editorial policy** file: its remit, meaning the subjects it covers and the subjects it deliberately leaves out; its standing interests and exclusions; the list of scoring publishers whose reporting decides what is news; output language; tone; reading budget and page target; and its appetite for general news outside the remit. This is the masthead's editorial line, written by hand by the owner and kept in version control, so every change to what the paper covers is a deliberate, reviewable commit.
 
 It is not a user profile and carries no privacy weight. Nothing about it is inferred, learned, or derived from anyone's behavior. Publishing it as a "what this paper covers" page is a reasonable feature rather than a leak.
 
 **Do not add reader tracking to inform it.** No click logging, no dwell time, no per-reader analytics, and no inference from the fact that a device displayed something. Those would recreate the personal data this design exists without, and they answer a question the paper is not asking. An editor decides what matters; readers are not consulted by instrumentation.
+
+### Danish media decide what is news
+
+**The paper is an overview of what Danish media are reporting. Settled 14 September 2026.** A story is
+eligible for an edition only if at least one *scoring publisher* reports it. The scoring publishers are
+the Danish outlets in the collector's configuration: DR, Politiken, Berlingske, and Børsen. The
+international outlets, the Financial Times and the New York Times today, are *linked publishers*: they
+never make a story eligible and never contribute to its score, but when a scoring publisher reports a
+story they also cover, their articles are attached to it as sources, so the reader gets the link and
+the writer gets the evidence.
+
+The distinction is a list in the editorial policy file, `scoring_publishers`, not a property of block 1's
+configuration, because it is an editorial decision about what the paper is, not a fact about a feed. Any
+publisher not on the list is a linked publisher. Adding a new international feed changes nothing about
+selection; adding a new Danish outlet to the list widens what counts as news.
+
+Three consequences follow, and each is a rule:
+
+- **Clustering still sees everything.** International articles enter the single clustering call, because
+  matching them to Danish reporting is how they get attached. A cluster whose members are all linked
+  publishers is dropped at selection with the decision reason `not_in_danish_media`, and the drop is
+  recorded like any other rejection. It is never written, never scored, never counted.
+- **Breadth and prominence count scoring publishers only.** `breadth` is the number of distinct scoring
+  publishers on the story, and `peak_prominence` reads only their ranked surfaces. A story on DR,
+  Berlingske, and the FT has breadth two, not three. The FT's front page placing it first is evidence
+  for the writer, not a signal for the ranking.
+- **Sources are complete.** The story's `sources[]` in the edition contract carries every contributing
+  article, scoring and linked alike, with one primary. The primary is a scoring publisher's article.
+  Block 3 renders and links them all; the web's dateline lists every publisher that contributed.
+
+The practical effect on prominence is that, of the six configured publishers, only Børsen supplies a
+ranked surface that counts, since the NYT and FT homepage feeds no longer score. Prominence was
+already the weakest term; this makes it weaker, and the weights below assume it.
 
 ### Sections come from the publisher, not from a model
 
@@ -125,11 +158,11 @@ base  = 0.45 x breadth + 0.10 x peak_prominence + 0.30 x recency
 score = base x section_weight
 ```
 
-`breadth` is the count of distinct publishers covering the story, normalized and deliberately non-linear, because the step from one publisher to two is the largest gain in evidence. `section_weight` comes from the title's policy.
+`breadth` is the count of distinct *scoring* publishers covering the story, normalized and deliberately non-linear, because the step from one publisher to two is the largest gain in evidence. Linked publishers do not count, however many of them carry the story. `section_weight` comes from the title's policy.
 
-`peak_prominence` counts **only feeds whose order is editorial**. Feed ordering was tested on 8 September 2026. The three homepage feeds are ranked, as are `nytimes.world` and `borsen.finans`. Every `latest` feed and most section feeds, including `dr.indland`, `politiken.indland`, `ft.world`, and `berlingske.samfund`, are in strict reverse-publication order, so position in them carries no editorial signal whatsoever. Scoring those was counting recency a second time under another name. Score a chronological surface at zero and let recency do that job once.
+`peak_prominence` counts **only feeds whose order is editorial, and only on scoring publishers**. Feed ordering was tested on 8 September 2026. The three homepage feeds are ranked, as are `nytimes.world` and `borsen.finans`. Every `latest` feed and most section feeds, including `dr.indland`, `politiken.indland`, `ft.world`, and `berlingske.samfund`, are in strict reverse-publication order, so position in them carries no editorial signal whatsoever. Scoring those was counting recency a second time under another name. Score a chronological surface at zero and let recency do that job once.
 
-Record prominence as **unknown rather than low** for a publisher with no ranked surface, and let the other terms carry the story. The distinction matters: a story missing from the NYT homepage feed was genuinely not front-paged, which is real negative evidence, while a story missing from a DR ranked surface tells us nothing, because DR publishes none. Treating those as the same number is the flaw that made prominence untrustworthy. Three of six publishers supply it honestly today; extending that to the rest requires homepage capture, which stays gated.
+Record prominence as **unknown rather than low** for a publisher with no ranked surface, and let the other terms carry the story. The distinction matters: a story missing from Børsen's homepage feed was genuinely not front-paged, which is real negative evidence, while a story missing from a DR ranked surface tells us nothing, because DR publishes none. Treating those as the same number is the flaw that made prominence untrustworthy. Of the scoring publishers only Børsen supplies it today; the NYT and FT homepage feeds are ranked but belong to linked publishers and do not score. Extending prominence to the other Danish outlets requires homepage capture, which stays gated.
 
 `recency` is measured in **editions, not hours**. A story published since the previous edition's cutoff scores 1.0, one edition older scores about 0.45, two editions older about 0.15. Anchoring to the cutoff rather than to a rolling clock is what makes a daily paper behave like one: a story filed just after yesterday's deadline is new to this edition even though it is more than a day old. A smooth linear decay was tried and discarded because it barely discriminated between this morning and yesterday afternoon, which is the distinction that matters most.
 
@@ -149,7 +182,7 @@ Have the LLM assess understandable dimensions: relevance to the title's remit, l
 
 Selection happens across the edition, after clustering and before writing, so the desk never pays to write a story it will not run. Reserve some space for consequential general news and discovery outside the stated remit; cap repetitive topics; avoid letting the publisher with the most feed items dominate. Count distinct publishers rather than appearances when describing breadth of reporting, and do not present that count as independent corroboration. Publisher prominence is one bounded signal, not a cross-publisher universal ranking.
 
-Prefer a simple weighted ordering followed by explicit diversity and space constraints to an opaque second LLM deciding the entire newspaper. Give every selected or rejected candidate a concise decision reason such as `already_covered`, `new_development`, `outside_budget`, or `insufficient_evidence`. Record the supporting dimensions so weights and exclusions can be adjusted without guessing what happened.
+Prefer a simple weighted ordering followed by explicit diversity and space constraints to an opaque second LLM deciding the entire newspaper. Give every selected or rejected candidate a concise decision reason such as `already_covered`, `new_development`, `outside_budget`, `insufficient_evidence`, or `not_in_danish_media`. Record the supporting dimensions so weights and exclusions can be adjusted without guessing what happened.
 
 Correction happens by editing the policy, not by learning. When an edition reads badly, the owner inspects the recorded decision reasons, changes the policy file, and commits. Keep a lightweight editorial log of judgments such as “wrong match,” “should not have led,” or “missed the obvious story,” tied to the edition and story IDs, so a policy change can be argued from examples rather than from memory. That log is an editor's notebook and an input to a human decision. It never adjusts weights on its own.
 
