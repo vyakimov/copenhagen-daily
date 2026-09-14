@@ -33,6 +33,8 @@ import type { EditionContractV1 } from "../contract/edition-contract.generated.t
 import { canonical, hashBytes, hashFile } from "./hash.ts";
 import { publisherError } from "./errors.ts";
 import { buildWeb, copyAssets, indexEntry, LAYOUT_VERSION, sortEntries, type IndexEntry } from "./web.ts";
+import { loadTitleConfig } from "../contract/title-config.ts";
+import { buildDevice, DEVICE_INTEGRITY_ERRORS, type DeviceOutput } from "../device/index.ts";
 
 export type PublishOptions = {
   root: string;
@@ -62,6 +64,11 @@ type Intent = {
 };
 
 type Activation = Intent & { activated: true; sequence: number; activated_at: string };
+
+type DeviceOutcome =
+  | { status: "skipped" }
+  | { status: "published"; output: DeviceOutput }
+  | { status: "failed"; error: { type: string; message: string; details: Record<string, unknown> }; report: unknown };
 
 const DEFAULT_KEEP_RELEASES = 5;
 
@@ -246,21 +253,42 @@ async function readActivations(root: string): Promise<Activation[]> {
   return records.sort((a, b) => a.sequence - b.sequence);
 }
 
-function environment(projectRoot: string, packageJson: Record<string, any>, fontsLock: string) {
+function environment(packageJson: Record<string, any>, fontsLock: string, device: DeviceOutcome) {
   const magick = spawnSync("magick", ["-version"], { encoding: "utf8" });
   const imagemagick =
     magick.status === 0 ? magick.stdout.split("\n")[0]!.replace(/^Version: ImageMagick /, "") : null;
+  const chromium = device.status === "published" ? device.output.environment : null;
+  const failures: Array<{ code: string; component: string }> = [];
+  if (device.status === "failed") failures.push({ code: device.error.type, component: "device" });
   return {
     node: process.version,
     icu: process.versions.icu,
     astro: packageJson.dependencies.astro,
     playwright: packageJson.dependencies.playwright,
-    chromium: null,
-    chromium_executable_sha256: null,
+    chromium: chromium?.chromium ?? null,
+    chromium_executable_sha256: chromium?.chromium_executable_sha256 ?? null,
     imagemagick,
     fonts_lock_sha256: fontsLock,
-    failures: [] as Array<{ code: string; component: string }>,
+    failures,
   };
+}
+
+/**
+ * The device edition, or the reason there is none. Capacity and availability failures degrade to a
+ * web-only publication unless --require-device; integrity failures always stop the run.
+ */
+async function renderDevice(options: PublishOptions): Promise<DeviceOutcome> {
+  if (options.skipDevice) return { status: "skipped" };
+  const config = loadTitleConfig(join(options.projectRoot, "config/title.yaml"));
+  try {
+    return { status: "published", output: await buildDevice(options.projectRoot, options.edition, config) };
+  } catch (caught) {
+    const error = caught as Error & { type?: string; details?: Record<string, unknown> };
+    if (!error.type || options.requireDevice || DEVICE_INTEGRITY_ERRORS.has(error.type)) throw caught;
+    const { fit_report, ...details } = error.details ?? {};
+    process.stderr.write(`device edition failed: ${error.type}: ${error.message}\n`);
+    return { status: "failed", error: { type: error.type, message: error.message, details }, report: fit_report };
+  }
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -326,16 +354,6 @@ export async function publishEdition(options: PublishOptions): Promise<Record<st
   const contractDigest = hashBytes(contract);
   const keep = options.keepReleases ?? DEFAULT_KEEP_RELEASES;
 
-  if (!options.skipDevice) {
-    throw publisherError(
-      "renderer_unavailable",
-      "device rendering starts in implementation batch 3; use --skip-device",
-      {
-        component: "chromium",
-      },
-    );
-  }
-
   await mkdir(root, { recursive: true });
   return withLock(root, async () => {
     await probeSameFilesystem(root);
@@ -361,8 +379,10 @@ export async function publishEdition(options: PublishOptions): Promise<Record<st
     let intentDurable = false;
     try {
       await mkdir(work, { recursive: true });
-      const entries = sortEntries([...priorEntries, indexEntry(edition, "skipped")]);
+      const device = await renderDevice(options);
+      const entries = sortEntries([...priorEntries, indexEntry(edition, device.status)]);
       const latest = entries.at(-1)!;
+      const latestDevice = entries.filter((e) => e.device_status === "published").at(-1) ?? null;
 
       // Web build and bundle.
       const dist = await buildWeb(projectRoot, work, edition, entries);
@@ -370,17 +390,53 @@ export async function publishEdition(options: PublishOptions): Promise<Record<st
       await mkdir(bundle, { recursive: true });
       await writeFile(join(bundle, "edition.json"), contract);
       await copyFile(join(dist, "n", editionId, "index.html"), join(bundle, "index.html"));
+      if (device.status === "published") {
+        const { output } = device;
+        await mkdir(join(bundle, "device"), { recursive: true });
+        await writeFile(join(bundle, "device", "page-1.html"), output.html);
+        await writeFile(join(bundle, "device", "page-1.png"), output.png);
+        await writeFile(join(bundle, "fit-report.json"), canonical(output.report));
+        await writeFile(
+          join(bundle, "composition.json"),
+          canonical({
+            schema_version: 1,
+            edition_id: editionId,
+            composition: output.plan.composition,
+            stories: output.plan.placements,
+            contract_sha256: contractDigest,
+            config_sha256: await hashFile(join(projectRoot, "config/title.yaml")),
+            assets_sha256: output.stylesheet_sha256,
+          }),
+        );
+      } else if (device.status === "failed" && device.report) {
+        await writeFile(join(bundle, "fit-report.json"), canonical(device.report));
+      }
+      const receiptDevice =
+        device.status === "published"
+          ? {
+              status: "published",
+              composition: device.output.plan.composition,
+              story_ids: device.output.plan.placements.map((p) => p.story_id),
+              placements: device.output.plan.placements,
+              omitted: device.output.plan.omitted,
+              dropped_callouts: device.output.plan.dropped_callouts,
+              structural_elements: [],
+            }
+          : {
+              status: device.status,
+              story_ids: [],
+              omitted: edition.stories.map((s) => ({ story_id: s.id, reason: `device_${device.status}` })),
+              dropped_callouts: [],
+              structural_elements: [],
+              ...(device.status === "failed"
+                ? { error: { type: device.error.type, message: device.error.message } }
+                : {}),
+            };
       const receipt = {
         schema_version: 1,
         edition_id: editionId,
         web: { story_ids: edition.stories.map((s) => s.id) },
-        device: {
-          status: "skipped",
-          story_ids: [],
-          omitted: edition.stories.map((s) => ({ story_id: s.id, reason: "device_skipped" })),
-          dropped_callouts: [],
-          structural_elements: [],
-        },
+        device: receiptDevice,
         bundle: { path: `n/${editionId}/` },
       };
       await writeFile(join(bundle, "publication-receipt.json"), canonical(receipt));
@@ -408,11 +464,20 @@ export async function publishEdition(options: PublishOptions): Promise<Record<st
         config_sha256: await hashFile(join(projectRoot, "config/title.yaml")),
         files: await fileRecords(bundle),
         shared_assets: { path: `a/${LAYOUT_VERSION}/`, files: assetRecords },
-        device: { status: "skipped" },
+        device:
+          device.status === "published"
+            ? {
+                status: "published",
+                composition: device.output.plan.composition,
+                image_sha256: device.output.image_sha256,
+              }
+            : device.status === "failed"
+              ? { status: "failed", error_type: device.error.type }
+              : { status: "skipped" },
         environment: environment(
-          projectRoot,
           packageJson,
           await hashFile(join(projectRoot, "assets/fonts/fonts.lock.json")),
+          device,
         ),
       };
       await writeFile(join(bundle, "manifest.json"), canonical(manifest));
@@ -431,9 +496,20 @@ export async function publishEdition(options: PublishOptions): Promise<Record<st
         join(release, "latest.json"),
         canonical({
           web: { edition_id: latest.id, date: latest.date, name: latest.name, status: "published" },
-          device: { edition_id: null, date: null, status: "none" },
+          device: latestDevice
+            ? { edition_id: latestDevice.id, date: latestDevice.date, status: "published" }
+            : { edition_id: null, date: null, status: "none" },
         }),
       );
+      // device/current.png follows the newest edition with a device page, which may not be this one.
+      if (latestDevice) {
+        await mkdir(join(release, "device"), { recursive: true });
+        const current =
+          latestDevice.id === editionId
+            ? join(bundle, "device", "page-1.png")
+            : join(root, "store", "n", latestDevice.id, "device", "page-1.png");
+        await link(current, join(release, "device", "current.png"));
+      }
       // "/" is the latest edition's own immutable page, which may be an older edition on a backdated run.
       await rm(join(release, "index.html"), { force: true });
       const latestPage =
@@ -444,6 +520,7 @@ export async function publishEdition(options: PublishOptions): Promise<Record<st
         return {
           status: "planned",
           edition_id: editionId,
+          device_status: device.status,
           bundle: { path: `n/${editionId}/`, manifest_sha256: manifestDigest },
           live_target: `releases/${releaseId}`,
         };
@@ -486,10 +563,20 @@ export async function publishEdition(options: PublishOptions): Promise<Record<st
       intentDurable = false;
       const warnings = await retainReleases(root, keep);
       return {
-        status: "published",
+        status: device.status === "failed" ? "partial" : "published",
         edition_id: editionId,
         web_story_ids: receipt.web.story_ids,
-        device_status: "skipped",
+        device_status: device.status,
+        device:
+          device.status === "published"
+            ? {
+                composition: device.output.plan.composition,
+                story_ids: device.output.plan.placements.map((p) => p.story_id),
+                image_sha256: device.output.image_sha256,
+              }
+            : device.status === "failed"
+              ? { error: device.error }
+              : null,
         bundle: { path: `n/${editionId}/`, manifest_sha256: manifestDigest },
         warnings,
       };

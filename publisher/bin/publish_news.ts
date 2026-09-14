@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { access, cp, mkdir, mkdtemp, readFile, rm } from "node:fs/promises";
+import { access, cp, mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -12,8 +12,11 @@ import { readEdition, validateEdition, type EditionContractV1 } from "../src/con
 import { CLI_VERSION, ENVELOPE_VERSION, SUPPORTED_EDITION_SCHEMA_VERSIONS } from "../src/contract/version.ts";
 import { publishEdition, recoverPublication, activatedReceipt, verifyBundle } from "../src/publish/store.ts";
 import { buildWeb, copyAssets, indexEntry, LAYOUT_VERSION } from "../src/publish/web.ts";
-import { hashFile } from "../src/publish/hash.ts";
+import { canonical, hashBytes, hashFile } from "../src/publish/hash.ts";
 import { publisherError } from "../src/publish/errors.ts";
+import { loadTitleConfig } from "../src/contract/title-config.ts";
+import { buildDevice, withBrowser } from "../src/device/index.ts";
+import { fitEdition } from "../src/device/fit.ts";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const REQUIRED_NODE_MAJOR = 26;
@@ -126,6 +129,65 @@ async function buildWebAction(): Promise<void> {
   }
 }
 
+async function fit(): Promise<void> {
+  const edition = await loadValidEdition(requiredOption(args, "edition"));
+  const config = loadTitleConfig(resolve(root, "config/title.yaml"));
+  const result = await withBrowser(root, (browser) => fitEdition(browser, edition, config));
+  emit("fit", {
+    status: "fit",
+    edition_id: edition.edition.id,
+    composition: result.plan.composition,
+    plan: result.plan,
+    fit_report: result.report,
+  });
+}
+
+/** Fit, capture, and convert one edition into <output>/device/; never overwrites an existing page. */
+async function renderDevice(): Promise<void> {
+  const edition = await loadValidEdition(requiredOption(args, "edition"));
+  const dry = args.options.has("dry-run");
+  const output = dry ? null : resolve(requiredOption(args, "output"));
+  const files = ["page-1.html", "page-1.png", "composition.json", "fit-report.json"];
+  if (output) {
+    for (const name of files) {
+      if (await access(resolve(output, name)).then(() => true, () => false)) {
+        fail("bundle_exists", "output directory already holds a device page", { path: resolve(output, name) });
+      }
+    }
+  }
+  const config = loadTitleConfig(resolve(root, "config/title.yaml"));
+  const device = await buildDevice(root, edition, config);
+  if (output) {
+    await mkdir(output, { recursive: true });
+    await writeFile(resolve(output, "page-1.html"), device.html);
+    await writeFile(resolve(output, "page-1.png"), device.png);
+    await writeFile(
+      resolve(output, "composition.json"),
+      canonical({
+        schema_version: 1,
+        edition_id: edition.edition.id,
+        composition: device.plan.composition,
+        stories: device.plan.placements,
+        contract_sha256: hashBytes(canonical(edition)),
+        config_sha256: await hashFile(resolve(root, "config/title.yaml")),
+        assets_sha256: device.stylesheet_sha256,
+      }),
+    );
+    await writeFile(resolve(output, "fit-report.json"), canonical(device.report));
+  }
+  emit("render-device", {
+    status: dry ? "planned" : "rendered",
+    edition_id: edition.edition.id,
+    composition: device.plan.composition,
+    story_ids: device.plan.placements.map((p) => p.story_id),
+    omitted: device.plan.omitted,
+    dropped_callouts: device.plan.dropped_callouts,
+    image_sha256: device.image_sha256,
+    files: output ? files.map((name) => resolve(output, name)) : [],
+    environment: device.environment,
+  });
+}
+
 async function publish(): Promise<void> {
   const skipDevice = args.options.has("skip-device");
   const requireDevice = args.options.has("require-device");
@@ -188,6 +250,10 @@ async function main(): Promise<void> {
     }
     case "build-web":
       return buildWebAction();
+    case "fit":
+      return fit();
+    case "render-device":
+      return renderDevice();
     case "publish":
       return publish();
     case "recover":

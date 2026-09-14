@@ -350,6 +350,19 @@ compact separators, mirroring block 1's `export.py`.
 
 ## 7. Compositions and slot capacities
 
+**As built, 14 September 2026.** Release 1 ships one composition, `lead-wide`, as a plain template in
+`src/device/render.ts` with capacity constants beside it; the catalog directory, composition
+substitution, and the `lead-tall` and `lead-centred` templates are not built. The secondary and brief
+bands size to their content and the lead takes the remaining height, so a too-full page shows as a
+clipped lead and the repair loop in `src/device/fit.ts` works from that signal: drop the tallest
+stories' callouts, demote secondaries with a brief fallback, omit optional stories, take the lead's
+short headline, then trim the tallest remaining story. Optional stories
+are omitted from the end of `omittable_story_ids`, because every edition written so far lists them in
+contract order, which is prominence order. The device lead carries no body, matching the panel of
+7 September 2026; its body is read on the web. The device source row names at most four publishers. The owner expects to replace
+this device path with another TRMNL ingestion method, so it is kept deliberately small. The rest of
+this section is the fuller design, retained for that later work.
+
 `src/device/catalog/` is the only place capacity is declared.
 
 | Composition | Secondaries | Briefs | Callout slots | Starting variant (lead / secondary) |

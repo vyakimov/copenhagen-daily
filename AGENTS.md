@@ -8,7 +8,7 @@ JSON envelopes on stdout, and files on disk. Nothing imports across a block boun
 |---|---|---|
 | `ingest/` | Block 1: deterministic RSS collection and immutable JSONL exports (Python) | Built. Rules in `ingest/AGENTS.md`. |
 | `editorial/` | Block 2: LLM editorial desk producing one edition per run (Python) | Reserved. Design in `plans/news-editorial-architecture-plan.md`. |
-| `publisher/` | Block 3: web edition and TRMNL device page from an accepted edition (TypeScript, Astro, Playwright) | Planned. Spec in `plans/news-publishing-implementation-plan.md`. |
+| `publisher/` | Block 3: web edition and TRMNL device page from an accepted edition (TypeScript, Astro, Playwright) | Built: web, store, and a single-composition device page. Spec in `plans/news-publishing-implementation-plan.md`. |
 
 Cross-block documents live in `plans/`. Repository-level agent skills live in `skills/`.
 

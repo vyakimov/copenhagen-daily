@@ -16,11 +16,30 @@ Run `./publish_news.sh check` for the offline verification suite and `doctor` fo
 Publication, recovery, receipt reconciliation, and archive verification use the wrapper:
 
 ```sh
+./publish_news.sh publish --edition edition.json --publish-root /srv/copenhagen-daily
 ./publish_news.sh publish --edition edition.json --publish-root /srv/copenhagen-daily --skip-device
+./publish_news.sh render-device --edition edition.json --output /tmp/device
+./publish_news.sh fit --edition edition.json
 ./publish_news.sh recover --publish-root /srv/copenhagen-daily
 ./publish_news.sh receipt --publish-root /srv/copenhagen-daily --edition EDITION_ID
 ./publish_news.sh verify --publish-root /srv/copenhagen-daily --edition EDITION_ID
 ```
+
+`publish` renders the device page unless `--skip-device` is given. A device page that cannot be fitted
+(`fit_failed_required_story`, `composition_unavailable`, `fit_budget_exhausted`) or rendered
+(`renderer_unavailable`, `font_not_loaded`, `render_timeout`, `quantize_failed`) still publishes the web
+edition: the result is `status: "partial"` with `device_status: "failed"` and the cause under
+`device.error`, exit 0, and `live/device/current.png` keeps the previous edition's bytes. Pass
+`--require-device` to activate nothing and exit 1 with the cause instead. Integrity failures
+(`network_access_blocked`, `screenshot_size_mismatch`, `image_invariant_violation`,
+`measurement_inconsistent`) always stop the run. `render-device` writes `page-1.png`, `page-1.html`,
+`composition.json`, and `fit-report.json` into `--output` without touching a publish root, which is the
+quickest way to get a PNG for the panel; `fit` only measures and reports. The device page is served
+from the docroot at `device/current.png` (the newest edition with a page) and at
+`n/<edition-id>/device/page-1.png`.
+
+The device path needs the hermetic Chromium above and `magick` on `PATH`; under cron, where Homebrew's
+`/opt/homebrew/bin` is often absent, set `PUBLISHER_MAGICK=/opt/homebrew/bin/magick` in the environment.
 
 `publish --dry-run` completes an isolated build and release assembly in run-owned staging under the
 publish root, then removes it; the root is byte-identical afterwards. `recover --dry-run` verifies a

@@ -7,7 +7,7 @@ broadsheet website and a one-page grayscale image for a TRMNL X panel.
 |---|---|
 | `ingest/` | Block 1. Deterministic RSS collector and exporter. See `ingest/README.md`. |
 | `editorial/` | Block 2. Editorial desk. Reserved; not yet built. |
-| `publisher/` | Block 3. Web and device publisher. Planned; not yet built. |
+| `publisher/` | Block 3. Web and device publisher. See `publisher/README.md`. |
 | `plans/` | Architecture, implementation plans, decision log, roadmap, and design mockups. |
 | `skills/` | Repository-level agent skills. |
 
