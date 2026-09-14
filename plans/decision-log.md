@@ -159,8 +159,20 @@ grotesque for labels is the second voice the reference has and the page lacked.
 any number of foreign outlets but by no Danish one is not news for this title and is dropped at selection
 as `not_in_danish_media`. A story carried by DR and Berlingske that the FT also covers keeps the FT article
 as a source and a link. Breadth and prominence count only the scoring publishers, listed in the editorial
-policy file, so that adding an international feed can never change what gets selected. The price is that
-only Børsen's ranked surface still scores prominence; that term was already the weakest.
+policy file, so that adding an international feed can never change what gets selected. The list is every
+Danish outlet block 1 collects, nine since 14 September 2026, so adding a Danish outlet to the collector
+widens what counts as news. The price is that only Børsen's and Jyllands-Posten's ranked surfaces still
+score prominence; that term was already the weakest.
+
+**Copy is facts first, and colour needs a name on it. Settled 14 September 2026.** Three evaluation
+editions read as padded and editorialised because the writer paraphrased RSS teasers faithfully, so
+DR's "valggyser" and Altinget's sketch-writing surfaced as the paper's own voice. The writing
+guidelines in the [editorial architecture](news-editorial-architecture-plan.md) now require a new fact
+per sentence, attribute any colour to the outlet or speaker in the sentence itself, synthesise across
+sources instead of a paragraph per outlet, put the answer first, and set a word budget per role. They
+are guidelines rather than validators: attributed colour is acceptable on a slow day, unattributed
+colour never is. Above all the paper respects the reader's time: it never pads for its own sake, a slow
+day makes a shorter paper rather than a thinner one, and the reader is meant to finish and move on.
 
 **The web edition is a grid with the sheet kept as a one-word switch. Settled 14 September 2026.**
 Three layouts were compared on three fresh editions: the lead beside a rail with flowing columns below,

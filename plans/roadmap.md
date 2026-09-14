@@ -9,6 +9,37 @@ on anything here. Companions: [Block 2 editorial architecture](news-editorial-ar
 
 ---
 
+## Sources without public RSS
+
+**Status: deferred. Ignore sources without public RSS feeds for now.** Settled 14 September 2026.
+
+Zetland, Weekendavisen, AP, and Reuters are candidates to revisit. Hosted services such as
+[RSS.app](https://rss.app/), [Feeder](https://feeder.co/), and
+[Inoreader](https://www.inoreader.com/) can generate feeds from public web pages, potentially filling
+these gaps while existing first-party RSS collection stays direct. RSS.app extracts entries
+automatically or through a visual builder, optionally renders JavaScript, and periodically updates a
+hosted RSS feed. Feeder explicitly offers AI-assisted extraction; RSS.app's use of an LLM was not
+established. This buys managed extraction and hosting, not complete wire coverage or subscriber text.
+
+RSS.app is the first trial candidate if this is revisited; it advertises AP and Reuters support, but
+actual output for all four publishers remains untested. Feeder and Inoreader are more attractive if a
+personal reader is also wanted. Check current pricing and external-feed export limits before choosing.
+Weekendavisen's Google News sitemap, already recorded in the source contracts, is a possible
+first-party alternative to generated RSS.
+
+**Gate:** explicitly decide that missing-source coverage warrants expanding the first-party RSS policy.
+Then trial output against public listings for missed articles, stable URLs/IDs, accurate dates, usable
+teasers, and refresh/item-window limits. Retain third-party provenance; generated ordering is not
+publisher-prominence evidence, and generated summaries are not publisher-authored text. Local XML
+processing can remain deterministic, but upstream extraction adds uncertainty and page-change failures.
+No integration or scraping work is authorized by this note.
+
+References: [RSS.app extraction and limitations](https://help.rss.app/en/articles/10522151-generator-and-builder-faq),
+[Feeder AI feeds](https://feeder.co/product/ai-feeds),
+[Feeder RSS/JSON export](https://feeder.co/help/rss/how-to-export-your-posts-as-rss-and-json-feeds/).
+
+---
+
 ## Edition revisions and correction notices
 
 **Status: deferred. Not in the first release.** Settled 11 September 2026.
@@ -185,9 +216,10 @@ Today only Børsen supplies it in a way that counts. Feed ordering was tested on
 three homepage feeds are editorially ranked, as are `nytimes.world` and `borsen.finans`, while every
 `latest` feed and most section feeds are in strict reverse-publication order and therefore carry no
 placement signal at all. Since 14 September 2026 only the Danish scoring publishers contribute to
-prominence, which removes the NYT and FT homepage feeds from the calculation. DR, Politiken, and
-Berlingske publish no ranked feed, so their prominence is recorded as unknown, and Børsen's is the
-only one left. Capturing the three Danish homepages is therefore the whole of this item.
+prominence, which removes the international homepage feeds from the calculation. Of the nine Danish
+scoring publishers only Børsen (homepage feed) and Jyllands-Posten (top-stories feed) publish a ranked
+feed; the other seven are recorded as unknown. Capturing the Danish homepages is therefore the whole of
+this item.
 
 ### Why the obvious fixes were rejected
 

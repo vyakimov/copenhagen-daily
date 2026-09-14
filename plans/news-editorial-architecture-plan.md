@@ -109,8 +109,10 @@ It is not a user profile and carries no privacy weight. Nothing about it is infe
 
 **The paper is an overview of what Danish media are reporting. Settled 14 September 2026.** A story is
 eligible for an edition only if at least one *scoring publisher* reports it. The scoring publishers are
-the Danish outlets in the collector's configuration: DR, Politiken, Berlingske, and Børsen. The
-international outlets, the Financial Times and the New York Times today, are *linked publishers*: they
+every Danish outlet in the collector's configuration: DR, TV 2, Politiken, Berlingske, Jyllands-Posten,
+Børsen, Information, Altinget, and Kristeligt Dagblad (widened from four to all nine on 14 September
+2026). The international outlets, the Financial Times, the New York Times, BBC News, The Economist, The
+Guardian, The Washington Post, and The Wall Street Journal, are *linked publishers*: they
 never make a story eligible and never contribute to its score, but when a scoring publisher reports a
 story they also cover, their articles are attached to it as sources, so the reader gets the link and
 the writer gets the evidence.
@@ -134,9 +136,10 @@ Three consequences follow, and each is a rule:
   article, scoring and linked alike, with one primary. The primary is a scoring publisher's article.
   Block 3 renders and links them all; the web's dateline lists every publisher that contributed.
 
-The practical effect on prominence is that, of the six configured publishers, only Børsen supplies a
-ranked surface that counts, since the NYT and FT homepage feeds no longer score. Prominence was
-already the weakest term; this makes it weaker, and the weights below assume it.
+The practical effect on prominence is that, of the nine scoring publishers, only Børsen and
+Jyllands-Posten supply a ranked surface that counts (Børsen's homepage feed and Jyllands-Posten's
+top-stories feed), since the international homepage feeds no longer score. Prominence was already the
+weakest term; this makes it weaker, and the weights below assume it.
 
 ### Sections come from the publisher, not from a model
 
@@ -193,6 +196,41 @@ For selected stories, prepare a compact packet of attributed source text. Genera
 Each factual sentence, including the headline, must map to the source passage or passages supporting it. Preserve who made a claim, uncertainty, numbers, dates, and disagreements. Agreement between feeds still does not verify an event independently. Do not add background facts or causal explanations from model memory.
 
 **Attribute by citation, not by prefix. Settled 11 September 2026.** Every paragraph and every brief lede is `{text, sources[]}`: the prose states what happened, and the publisher ids in `sources[]` say who reported it. Block 3 renders them as a trailing marker linking to the article. Copy must not open with "X reports that" or rotate through synonyms for it; in a paper where every sentence is a digest, the prefix repeats on every paragraph and carries nothing the marker does not. Name a publisher inside the sentence only when the point is that publishers differ: "Politiken puts the vote at 29 to 26; DR reports 28 to 27" is prose because the disagreement is the news. A quote's reporting publisher is likewise a publisher id.
+
+### Writing guidelines: facts first, colour only with a name on it
+
+**Settled 14 September 2026, after reading three evaluation editions.** The evidence block 2 writes from
+is RSS descriptions, and Danish outlets write those as teasers: "Valggyser kan trække i langdrag",
+"vidste ikke hvilket ben de skulle stå på". A faithful paraphrase carries the teaser's voice into the
+paper, where it reads as the paper's own opinion, because the citation sits on the paragraph and is
+invisible in the prose. The result was copy that was at once padded, editorialised, and structurally
+serialised by outlet. These guidelines correct that. They are guidelines, not validators: the writer
+weighs them, and the review step flags departures rather than rejecting them.
+
+1. **Every sentence should carry a new fact**: an actor, a number, a time, a place, or a decision. A
+   sentence that only characterises ("it is a thriller that may drag on") is cut, not rewritten.
+2. **Colour is attributed or cut.** The paper's own voice is plain. Idiom, metaphor, and mood from a
+   source are either translated to their plain meaning or kept as that source's characterisation with
+   the outlet or speaker named in the sentence: "Altinget called the night a thriller", never "it was a
+   thriller". A direct quotation with a named speaker is always allowed. On a slow news day a story may
+   carry attributed colour as padding; unattributed colour is never padding.
+3. **Synthesise, do not serialise.** One story is one account. Sources are citations on sentences, not
+   units of structure; a paragraph per outlet restating the same fact is the tell of summarisation. An
+   outlet is named in prose only when outlets disagree or when guideline 2 requires it.
+4. **Answer first.** The result and what happens next, then how it unfolded, then reactions and analysis.
+   The teaser's suspense structure is inverted.
+5. **Analysis has a name.** Judgements are attributed to a person or a title, never floated as the
+   paper's view.
+6. **The headline and deck carry the drama; the body may be plain.**
+7. **A word budget per role** keeps density a constraint rather than a hope: lead 120 to 180 words,
+   secondary 60 to 110, brief one sentence under 35. Thin evidence produces a short story, not a padded
+   one; guideline 1 wins over filling the slot.
+8. **Respect the reader's time.** The paper never pads for its own sake. A slow news day makes a shorter
+   newspaper, not a thinner one: fewer stories, shorter stories, empty slots left empty. The reader stays
+   engaged because every sentence carries something relevant to them, and when the sentences stop the
+   reader is done and can get on with their day. The budgets in guideline 7 are ceilings, never targets,
+   and the attributed colour guideline 2 allows on a slow day is a courtesy to the source's voice, not a
+   way to fill space.
 
 Translate into the chosen newspaper language while retaining original source text and language in the private evidence record. Do not turn a paraphrase into a quotation. Convert relative time expressions using the source and edition timestamps, or omit them when ambiguous. Label digests as based on RSS headlines/descriptions where that is the evidence available.
 
