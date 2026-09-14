@@ -1,6 +1,6 @@
 # AGENTS.md
 
-`copenhagen-today` is a personal newspaper built from first-party RSS feeds. It is three
+`copenhagen-daily` is a personal newspaper built from first-party RSS feeds. It is three
 independently runnable blocks in sibling directories, communicating only through shell wrappers,
 JSON envelopes on stdout, and files on disk. Nothing imports across a block boundary at runtime.
 

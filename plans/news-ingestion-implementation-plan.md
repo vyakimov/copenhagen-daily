@@ -2,7 +2,7 @@
 
 ## 1. How to use this plan
 
-This is the execution plan for block 1, which lives in `ingest/` of the `copenhagen-today`
+This is the execution plan for block 1, which lives in `ingest/` of the `copenhagen-daily`
 repository (relocated there on 11 September 2026; paths below are relative to `ingest/`). It expands the Obsidian note
 `Inbox/Programmatic news ingestion plan — NYT, Politiken, Børsen, and DR.md` and adds the
 Financial Times (FT) and Berlingske to the source scope.

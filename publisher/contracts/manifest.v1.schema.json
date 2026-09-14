@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://copenhagen.today/contracts/manifest.v1.schema.json",
+  "$id": "https://copenhagen.daily/contracts/manifest.v1.schema.json",
   "type": "object",
   "additionalProperties": false,
   "required": [

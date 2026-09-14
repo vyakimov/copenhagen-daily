@@ -16,7 +16,7 @@ Editions must not look identical from day to day. Each edition has exactly one l
 
 A conventional CMS is not the primary missing component. Block 2 already supplies structured, edited content; the difficult remaining work is fitting that content into readable pages consistently. Start with file-based editions and a standard static site generator. Add Keystatic as an editing interface only if manually correcting headlines, pinning stories, or adjusting sections becomes a regular task. Do not build a custom administration application.
 
-Keep this publisher in the `copenhagen-today` repository, in its own `publisher/` directory, alongside but independently runnable from the Python editorial application in `editorial/` and the ingestion code in `ingest/`. The TypeScript/Node toolchain is confined to `publisher/`. Its browser renders only our generated pages and local assets. No browser dependency or publisher browsing is introduced into `ingest/`; its existing restrictions remain in force.
+Keep this publisher in the `copenhagen-daily` repository, in its own `publisher/` directory, alongside but independently runnable from the Python editorial application in `editorial/` and the ingestion code in `ingest/`. The TypeScript/Node toolchain is confined to `publisher/`. Its browser renders only our generated pages and local assets. No browser dependency or publisher browsing is introduced into `ingest/`; its existing restrictions remain in force.
 
 ```mermaid
 flowchart LR

@@ -1,4 +1,4 @@
-# Copenhagen Today publisher
+# Copenhagen Daily publisher
 
 Block 3 validates an editorial edition and publishes the web newspaper and TRMNL-sized device page.
 The public interface is the self-locating `publish_news.sh` JSON command wrapper.

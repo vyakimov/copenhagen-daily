@@ -1,4 +1,4 @@
-# copenhagen-today
+# copenhagen-daily
 
 A personal daily newspaper: first-party RSS feeds in, one edited edition out, published as a static
 broadsheet website and a one-page grayscale image for a TRMNL X panel.

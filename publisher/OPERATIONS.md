@@ -16,10 +16,10 @@ Run `./publish_news.sh check` for the offline verification suite and `doctor` fo
 Publication, recovery, receipt reconciliation, and archive verification use the wrapper:
 
 ```sh
-./publish_news.sh publish --edition edition.json --publish-root /srv/copenhagen-today --skip-device
-./publish_news.sh recover --publish-root /srv/copenhagen-today
-./publish_news.sh receipt --publish-root /srv/copenhagen-today --edition EDITION_ID
-./publish_news.sh verify --publish-root /srv/copenhagen-today --edition EDITION_ID
+./publish_news.sh publish --edition edition.json --publish-root /srv/copenhagen-daily --skip-device
+./publish_news.sh recover --publish-root /srv/copenhagen-daily
+./publish_news.sh receipt --publish-root /srv/copenhagen-daily --edition EDITION_ID
+./publish_news.sh verify --publish-root /srv/copenhagen-daily --edition EDITION_ID
 ```
 
 `publish --dry-run` completes an isolated build and release assembly in run-owned staging under the

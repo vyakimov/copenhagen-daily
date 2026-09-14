@@ -2,7 +2,7 @@
 
 ## Project overview
 
-`ingest/` contains the `news-ingest` Python 3.12 service and CLI, block 1 of the `copenhagen-today` repository. It polls
+`ingest/` contains the `news-ingest` Python 3.12 service and CLI, block 1 of the `copenhagen-daily` repository. It polls
 configured first-party RSS feeds from NYT, FT, Børsen, Politiken, Berlingske, and DR,
 persists raw payloads and every valid sighting in SQLite, builds a deterministic
 article projection, and publishes immutable JSONL export bundles.
