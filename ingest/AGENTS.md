@@ -3,7 +3,9 @@
 ## Project overview
 
 `ingest/` contains the `news-ingest` Python 3.12 service and CLI, block 1 of the `copenhagen-daily` repository. It polls
-configured first-party RSS feeds from NYT, FT, Børsen, Politiken, Berlingske, and DR,
+configured first-party RSS feeds from NYT, FT, Børsen, Politiken, Berlingske, DR,
+TV 2, Jyllands-Posten, Information, Altinget, Kristeligt Dagblad, BBC News, The
+Economist, The Guardian, The Washington Post, and The Wall Street Journal,
 persists raw payloads and every valid sighting in SQLite, builds a deterministic
 article projection, and publishes immutable JSONL export bundles.
 
@@ -89,6 +91,34 @@ requirement is not summarized here.
   feed as latest-news evidence and category feeds as weaker section evidence.
 - DR keeps the complete GUID URN. Section-feed descriptions outrank latest-feed
   descriptions through configured priorities. Preserve `focusId` URL values.
+- TV 2 uses its permalink GUID from the single first-party news feed at
+  `feeds.services.tv2.dk`. The feed ignores query parameters, so there are no
+  section feeds; treat it as latest-news evidence only.
+- Jyllands-Posten uses the first `ECE([0-9]+)` URL match, with GUID fallback.
+  `topnyheder` is an editorially ordered top-stories surface; `seneste` is
+  latest-news evidence. Both public `feeds.jp.dk` aliases redirect to a
+  publisher-owned newsletter proxy and are capped at ten items.
+- Information uses its Drupal GUID (`<node id> at https://www.information.dk`)
+  from its single site-wide feed.
+- Altinget uses its URL GUID. The front feed is latest-news evidence; the
+  `/<section>/rss` feeds are weaker section evidence.
+- Kristeligt Dagblad uses its UUID GUID. Its `pubDate` values are ISO 8601, so
+  timestamp parsing accepts ISO 8601 after RFC 2822.
+- Weekendavisen and Zetland publish no first-party RSS feed and are therefore
+  not monitored. Weekendavisen exposes a Google News sitemap instead.
+- BBC uses the article id from the URL path (`/articles/<id>`, `/videos/<id>`,
+  `/live/<id>`), with GUID fallback, because BBC GUIDs carry a per-feed `#N`
+  fragment that would split one article into several identities. The top-stories
+  feed is a ranked homepage surface.
+- The Economist uses its UUID GUID; every feed carries 300 items. The Guardian,
+  The Washington Post, and The Wall Street Journal use their GUIDs. The Guardian
+  international feed is a ranked homepage surface. WSJ feeds live at
+  `feeds.content.dowjones.io`; the old `feeds.a.dj.com` aliases are stale.
+- Reuters and the Associated Press publish no first-party RSS feed (Reuters
+  returns 401, AP 403 to every client) and are therefore not monitored.
+- A publisher may list the same article twice in one feed snapshot (BBC and WSJ
+  do). The first placement is the sighting; later repeats are quarantined with
+  `duplicate_in_snapshot` so the poll still succeeds.
 - Never deduplicate identities across publishers.
 
 ## Publisher-prominence contract

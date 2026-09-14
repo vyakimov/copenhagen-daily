@@ -1,6 +1,6 @@
 # news-ingest
 
-`news-ingest` is a small, portable Python service that records every valid item observed in configured first-party RSS feeds from NYT, FT, Børsen, Politiken, Berlingske, and DR. It stores raw feed payloads, feed sightings, and a rebuildable article projection, then atomically exports deterministic JSONL bundles.
+`news-ingest` is a small, portable Python service that records every valid item observed in configured first-party RSS feeds from NYT, FT, Børsen, Politiken, Berlingske, DR, TV 2, Jyllands-Posten, Information, Altinget, Kristeligt Dagblad, BBC News, The Economist, The Guardian, The Washington Post, and The Wall Street Journal. It stores raw feed payloads, feed sightings, and a rebuildable article projection, then atomically exports deterministic JSONL bundles.
 
 It is metadata-only in release 1. It does not use an LLM, a browser, login automation, subscription cookies, paywall bypasses, page crawling, ranking, summaries, or cross-publisher clustering. Coverage means items observed while polling the configured feeds; feeds have finite windows and cannot prove that an item absent between polls was collected.
 

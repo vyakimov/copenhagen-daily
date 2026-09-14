@@ -31,6 +31,16 @@ def resolve_source_id(source: str | SourceConfig, entry: Mapping, raw_url: str) 
             "politiken": "url_regex",
             "berlingske": "guid",
             "dr": "guid",
+            "tv2": "guid",
+            "jp": "url_regex",
+            "information": "guid",
+            "altinget": "guid",
+            "kristeligt_dagblad": "guid",
+            "bbc": "url_regex",
+            "economist": "uuid_guid",
+            "guardian": "guid",
+            "wapo": "guid",
+            "wsj": "guid",
         }[source]
     )
     guid = _value(entry, "id", "guid")
@@ -47,7 +57,13 @@ def resolve_source_id(source: str | SourceConfig, entry: Mapping, raw_url: str) 
             raise IdentityError("invalid UUID GUID") from exc
     if policy == "guid_or_url":
         return guid or normalize_url("borsen", raw_url)
-    pattern = source.identity_pattern if isinstance(source, SourceConfig) else r"art([0-9]+)"
+    pattern = (
+        source.identity_pattern
+        if isinstance(source, SourceConfig)
+        else {"jp": r"ECE([0-9]+)", "bbc": r"/(?:articles|videos|live)/([a-z0-9]+)"}.get(
+            source, r"art([0-9]+)"
+        )
+    )
     match = re.search(pattern or "", raw_url)
     if match:
         return match.group(1) if match.groups() else match.group(0)

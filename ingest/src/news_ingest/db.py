@@ -116,8 +116,30 @@ class Database:
                 "INSERT OR IGNORE INTO raw_payloads VALUES(?,?,?,?,?,?)",
                 (digest, "gzip", gzip.compress(body), len(body), poll, now),
             )
+            seen_in_snapshot: set[str] = set()
             for candidate in parsed.entries:
                 article = candidate.article.model_copy(update={"content_hash": ""})
+                if article.source_id in seen_in_snapshot:
+                    # A publisher listed the same article twice in one snapshot (BBC and WSJ
+                    # do). The first placement is the sighting; later repeats are recorded as
+                    # quarantined duplicates so the evidence stays visible without violating
+                    # the one-sighting-per-poll invariant.
+                    self.con.execute(
+                        "INSERT INTO quarantine(poll_id,feed_id,source,item_position,stage,error_code,error_json,raw_item_json,created_at) VALUES(?,?,?,?,?,?,?,?,?)",
+                        (
+                            poll,
+                            feed,
+                            source,
+                            candidate.position,
+                            "item",
+                            "duplicate_in_snapshot",
+                            json.dumps({"source_id": article.source_id}),
+                            json.dumps(candidate.raw_item, ensure_ascii=False),
+                            now,
+                        ),
+                    )
+                    continue
+                seen_in_snapshot.add(article.source_id)
                 data = article.model_dump(mode="json")
                 self.con.execute(
                     "INSERT INTO sightings(poll_id,feed_id,source,source_id,item_position,publisher_order,observed_at,normalized_json,raw_metadata_json,raw_item_json) VALUES(?,?,?,?,?,?,?,?,?,?)",

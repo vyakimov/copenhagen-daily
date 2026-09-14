@@ -11,10 +11,14 @@ class TimestampError(ValueError):
 def parse_feed_timestamp(original: str) -> datetime:
     if not original or not original.strip():
         raise TimestampError("missing publication timestamp")
+    text = original.strip()
     try:
-        value = parsedate_to_datetime(original)
-    except (TypeError, ValueError, IndexError) as exc:
-        raise TimestampError(f"invalid publication timestamp: {original!r}") from exc
+        value = parsedate_to_datetime(text)
+    except (TypeError, ValueError, IndexError):
+        try:
+            value = datetime.fromisoformat(text)
+        except ValueError as exc:
+            raise TimestampError(f"invalid publication timestamp: {original!r}") from exc
     if value.tzinfo is None or value.utcoffset() is None:
         raise TimestampError("publication timestamp requires an explicit timezone")
     return value.astimezone(UTC)

@@ -146,3 +146,151 @@ sources:
       - {id: dr.regionale_trekanten, name: DR Trekanten, url: https://www.dr.dk/nyheder/service/feeds/regionale/trekanten, surface: section_rss, order: 180, description_priority: 20}
       - {id: dr.regionale_sjaelland, name: DR Sjælland, url: https://www.dr.dk/nyheder/service/feeds/regionale/sjaelland, surface: section_rss, order: 190, description_priority: 20}
       - {id: dr.regionale_oestjylland, name: DR Østjylland, url: https://www.dr.dk/nyheder/service/feeds/regionale/oestjylland, surface: section_rss, order: 200, description_priority: 20}
+  tv2:
+    enabled: true
+    identity: guid
+    language: da
+    merge_across_feeds: true
+    fetch_article_pages: false
+    fetch_public_body: false
+    capture_homepage_placement: false
+    feeds:
+      - {id: tv2.nyheder, name: TV 2 Nyheder, url: https://feeds.services.tv2.dk/api/feeds/nyheder/rss, surface: latest_rss, order: 0, description_priority: 10}
+  jp:
+    enabled: true
+    identity: url_regex
+    identity_pattern: "ECE([0-9]+)"
+    language: da
+    merge_across_feeds: true
+    fetch_article_pages: false
+    fetch_public_body: false
+    capture_homepage_placement: false
+    feeds:
+      - {id: jp.topnyheder, name: Jyllands-Posten Tophistorier, url: https://feeds.jp.dk/jp/topnyheder, surface: homepage_rss, order: 0, description_priority: 10}
+      - {id: jp.seneste, name: Jyllands-Posten Seneste nyt, url: https://feeds.jp.dk/jp/seneste, surface: latest_rss, order: 10, description_priority: 10}
+  information:
+    enabled: true
+    identity: guid
+    language: da
+    merge_across_feeds: true
+    fetch_article_pages: false
+    fetch_public_body: false
+    capture_homepage_placement: false
+    feeds:
+      - {id: information.feed, name: Information Nyheder, url: https://www.information.dk/feed, surface: latest_rss, order: 0, description_priority: 10}
+  altinget:
+    enabled: true
+    identity: guid
+    language: da
+    merge_across_feeds: true
+    fetch_article_pages: false
+    fetch_public_body: false
+    capture_homepage_placement: false
+    feeds:
+      - {id: altinget.forside, name: Altinget Forside, url: https://www.altinget.dk/rss, surface: latest_rss, order: 0, description_priority: 10}
+      - {id: altinget.christiansborg, name: Altinget Christiansborg, url: https://www.altinget.dk/christiansborg/rss, surface: section_rss, order: 10, description_priority: 20}
+      - {id: altinget.eu, name: Altinget EU, url: https://www.altinget.dk/eu/rss, surface: section_rss, order: 20, description_priority: 20}
+      - {id: altinget.klima, name: Altinget Klima, url: https://www.altinget.dk/klima/rss, surface: section_rss, order: 30, description_priority: 20}
+      - {id: altinget.sundhed, name: Altinget Sundhed, url: https://www.altinget.dk/sundhed/rss, surface: section_rss, order: 40, description_priority: 20}
+      - {id: altinget.arbejdsmarked, name: Altinget Arbejdsmarked, url: https://www.altinget.dk/arbejdsmarked/rss, surface: section_rss, order: 50, description_priority: 20}
+      - {id: altinget.forsvar, name: Altinget Forsvar, url: https://www.altinget.dk/forsvar/rss, surface: section_rss, order: 60, description_priority: 20}
+      - {id: altinget.kommunal, name: Altinget Kommunal, url: https://www.altinget.dk/kommunal/rss, surface: section_rss, order: 70, description_priority: 20}
+      - {id: altinget.uddannelse, name: Altinget Uddannelse, url: https://www.altinget.dk/uddannelse/rss, surface: section_rss, order: 80, description_priority: 20}
+      - {id: altinget.by, name: Altinget By, url: https://www.altinget.dk/by/rss, surface: section_rss, order: 90, description_priority: 20}
+  kristeligt_dagblad:
+    enabled: true
+    identity: guid
+    language: da
+    merge_across_feeds: true
+    fetch_article_pages: false
+    fetch_public_body: false
+    capture_homepage_placement: false
+    feeds:
+      - {id: kristeligt_dagblad.nyheder, name: Kristeligt Dagblad Nyheder, url: https://www.kristeligt-dagblad.dk/rss/nyheder, surface: latest_rss, order: 0, description_priority: 10}
+      - {id: kristeligt_dagblad.artikler, name: Kristeligt Dagblad Artikler, url: https://www.kristeligt-dagblad.dk/rss/artikler, surface: latest_rss, order: 10, description_priority: 20}
+  bbc:
+    enabled: true
+    identity: url_regex
+    identity_pattern: "/(?:articles|videos|live)/([a-z0-9]+)"
+    language: en
+    merge_across_feeds: true
+    fetch_article_pages: false
+    fetch_public_body: false
+    capture_homepage_placement: false
+    feeds:
+      - {id: bbc.top, name: BBC News Top Stories, url: https://feeds.bbci.co.uk/news/rss.xml, surface: homepage_rss, order: 0, description_priority: 10}
+      - {id: bbc.world, name: BBC News World, url: https://feeds.bbci.co.uk/news/world/rss.xml, surface: section_rss, order: 10, description_priority: 20}
+      - {id: bbc.europe, name: BBC News Europe, url: https://feeds.bbci.co.uk/news/world/europe/rss.xml, surface: section_rss, order: 20, description_priority: 20}
+      - {id: bbc.business, name: BBC News Business, url: https://feeds.bbci.co.uk/news/business/rss.xml, surface: section_rss, order: 30, description_priority: 20}
+      - {id: bbc.technology, name: BBC News Technology, url: https://feeds.bbci.co.uk/news/technology/rss.xml, surface: section_rss, order: 40, description_priority: 20}
+      - {id: bbc.science, name: BBC News Science and Environment, url: https://feeds.bbci.co.uk/news/science_and_environment/rss.xml, surface: section_rss, order: 50, description_priority: 20}
+      - {id: bbc.health, name: BBC News Health, url: https://feeds.bbci.co.uk/news/health/rss.xml, surface: section_rss, order: 60, description_priority: 20}
+      - {id: bbc.politics, name: BBC News Politics, url: https://feeds.bbci.co.uk/news/politics/rss.xml, surface: section_rss, order: 70, description_priority: 20}
+      - {id: bbc.culture, name: BBC News Entertainment and Arts, url: https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml, surface: section_rss, order: 80, description_priority: 20}
+  economist:
+    enabled: true
+    identity: uuid_guid
+    language: en
+    merge_across_feeds: true
+    fetch_article_pages: false
+    fetch_public_body: false
+    capture_homepage_placement: false
+    feeds:
+      - {id: economist.latest, name: The Economist Latest, url: https://www.economist.com/latest/rss.xml, surface: latest_rss, order: 0, description_priority: 10}
+      - {id: economist.leaders, name: The Economist Leaders, url: https://www.economist.com/leaders/rss.xml, surface: section_rss, order: 10, description_priority: 20}
+      - {id: economist.briefing, name: The Economist Briefing, url: https://www.economist.com/briefing/rss.xml, surface: section_rss, order: 20, description_priority: 20}
+      - {id: economist.europe, name: The Economist Europe, url: https://www.economist.com/europe/rss.xml, surface: section_rss, order: 30, description_priority: 20}
+      - {id: economist.international, name: The Economist International, url: https://www.economist.com/international/rss.xml, surface: section_rss, order: 40, description_priority: 20}
+      - {id: economist.finance, name: The Economist Finance and Economics, url: https://www.economist.com/finance-and-economics/rss.xml, surface: section_rss, order: 50, description_priority: 20}
+      - {id: economist.business, name: The Economist Business, url: https://www.economist.com/business/rss.xml, surface: section_rss, order: 60, description_priority: 20}
+      - {id: economist.science, name: The Economist Science and Technology, url: https://www.economist.com/science-and-technology/rss.xml, surface: section_rss, order: 70, description_priority: 20}
+      - {id: economist.culture, name: The Economist Culture, url: https://www.economist.com/culture/rss.xml, surface: section_rss, order: 80, description_priority: 20}
+  guardian:
+    enabled: true
+    identity: guid
+    language: en
+    merge_across_feeds: true
+    fetch_article_pages: false
+    fetch_public_body: false
+    capture_homepage_placement: false
+    feeds:
+      - {id: guardian.international, name: The Guardian International, url: https://www.theguardian.com/international/rss, surface: homepage_rss, order: 0, description_priority: 10}
+      - {id: guardian.world, name: The Guardian World, url: https://www.theguardian.com/world/rss, surface: section_rss, order: 10, description_priority: 20}
+      - {id: guardian.europe, name: The Guardian Europe, url: https://www.theguardian.com/world/europe-news/rss, surface: section_rss, order: 20, description_priority: 20}
+      - {id: guardian.business, name: The Guardian Business, url: https://www.theguardian.com/uk/business/rss, surface: section_rss, order: 30, description_priority: 20}
+      - {id: guardian.technology, name: The Guardian Technology, url: https://www.theguardian.com/uk/technology/rss, surface: section_rss, order: 40, description_priority: 20}
+      - {id: guardian.environment, name: The Guardian Environment, url: https://www.theguardian.com/uk/environment/rss, surface: section_rss, order: 50, description_priority: 20}
+      - {id: guardian.science, name: The Guardian Science, url: https://www.theguardian.com/science/rss, surface: section_rss, order: 60, description_priority: 20}
+      - {id: guardian.culture, name: The Guardian Culture, url: https://www.theguardian.com/uk/culture/rss, surface: section_rss, order: 70, description_priority: 20}
+      - {id: guardian.opinion, name: The Guardian Opinion, url: https://www.theguardian.com/uk/commentisfree/rss, surface: section_rss, order: 80, description_priority: 20}
+  wapo:
+    enabled: true
+    identity: guid
+    language: en
+    merge_across_feeds: true
+    fetch_article_pages: false
+    fetch_public_body: false
+    capture_homepage_placement: false
+    feeds:
+      - {id: wapo.world, name: The Washington Post World, url: https://feeds.washingtonpost.com/rss/world, surface: section_rss, order: 0, description_priority: 10}
+      - {id: wapo.national, name: The Washington Post National, url: https://feeds.washingtonpost.com/rss/national, surface: section_rss, order: 10, description_priority: 10}
+      - {id: wapo.politics, name: The Washington Post Politics, url: https://feeds.washingtonpost.com/rss/politics, surface: section_rss, order: 20, description_priority: 10}
+      - {id: wapo.business, name: The Washington Post Business, url: https://feeds.washingtonpost.com/rss/business, surface: section_rss, order: 30, description_priority: 10}
+      - {id: wapo.technology, name: The Washington Post Technology, url: https://feeds.washingtonpost.com/rss/business/technology, surface: section_rss, order: 40, description_priority: 10}
+      - {id: wapo.opinions, name: The Washington Post Opinions, url: https://feeds.washingtonpost.com/rss/opinions, surface: section_rss, order: 50, description_priority: 10}
+  wsj:
+    enabled: true
+    identity: guid
+    language: en
+    merge_across_feeds: true
+    fetch_article_pages: false
+    fetch_public_body: false
+    capture_homepage_placement: false
+    feeds:
+      - {id: wsj.world, name: The Wall Street Journal World, url: https://feeds.content.dowjones.io/public/rss/RSSWorldNews, surface: section_rss, order: 0, description_priority: 10}
+      - {id: wsj.business, name: The Wall Street Journal Business, url: https://feeds.content.dowjones.io/public/rss/WSJcomUSBusiness, surface: section_rss, order: 10, description_priority: 10}
+      - {id: wsj.markets, name: The Wall Street Journal Markets, url: https://feeds.content.dowjones.io/public/rss/RSSMarketsMain, surface: section_rss, order: 20, description_priority: 10}
+      - {id: wsj.economy, name: The Wall Street Journal Economy, url: https://feeds.content.dowjones.io/public/rss/socialeconomyfeed, surface: section_rss, order: 30, description_priority: 10}
+      - {id: wsj.politics, name: The Wall Street Journal Politics, url: https://feeds.content.dowjones.io/public/rss/socialpoliticsfeed, surface: section_rss, order: 40, description_priority: 10}
+      - {id: wsj.technology, name: The Wall Street Journal Technology, url: https://feeds.content.dowjones.io/public/rss/RSSWSJD, surface: section_rss, order: 50, description_priority: 10}
+      - {id: wsj.opinion, name: The Wall Street Journal Opinion, url: https://feeds.content.dowjones.io/public/rss/RSSOpinion, surface: section_rss, order: 60, description_priority: 10}
