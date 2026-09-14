@@ -18,12 +18,30 @@ const roles = {
   secondaries: stories.filter((s) => s.role === "secondary"),
   briefs: stories.filter((s) => s.role === "brief"),
 };
-const contributing = [...new Set(stories.flatMap((s) => s.sources.map((x: any) => x.source)))]
-  .map((id) => config.publishers[id] ?? id);
+// The dateline names the publishers that contributed to the most stories, at most five, and counts
+// the rest. Stories rather than articles, so a wire-heavy outlet cannot climb the line by volume.
+// Each story's source row still names its own publishers in full.
+const storiesBy = new Map<string, number>();
+const articlesBy = new Map<string, number>();
+for (const s of stories) {
+  const ids = new Set<string>(s.sources.map((x: any) => x.source));
+  for (const id of ids) storiesBy.set(id, (storiesBy.get(id) ?? 0) + 1);
+  for (const x of s.sources) articlesBy.set(x.source, (articlesBy.get(x.source) ?? 0) + 1);
+}
+const nameOf = (id: string) => String(config.publishers[id] ?? id);
+const ranked = [...storiesBy.keys()]
+  .sort(
+    (a, b) =>
+      storiesBy.get(b)! - storiesBy.get(a)! ||
+      articlesBy.get(b)! - articlesBy.get(a)! ||
+      nameOf(a).localeCompare(nameOf(b)),
+  )
+  .map(nameOf);
+const leading = { names: ranked.slice(0, 5), others: Math.max(0, ranked.length - 5) };
 ---
 <main class:list={["page", `layout-${layout}`]}>
   <Masthead edition={meta} masthead={config.masthead} earRight={edition.presentation?.ear_right}
-    publishers={contributing} device={device} />
+    leading={leading} device={device} />
   <Layout {...roles} common={common} />
 
   <div class="coverage">

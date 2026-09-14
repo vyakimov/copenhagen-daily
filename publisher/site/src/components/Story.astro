@@ -1,6 +1,5 @@
 ---
 import Callout from "./Callout.astro";
-import { renderSourceRow } from "../../../assets/html/source-row.ts";
 import { formatPublished } from "../../../assets/html/format.ts";
 import { softHyphenate } from "../../../assets/html/hyphenate.ts";
 const { story, publishers, language, timezone, twoColumn = false } = Astro.props;
@@ -12,12 +11,17 @@ const primary = sources.find((s) => s.primary);
 const body: Attributed[] = story.copy.body.extended ?? story.copy.body.standard ?? story.copy.body.short ?? [];
 const Heading = story.role === "lead" ? "h1" : story.role === "secondary" ? "h2" : "h3";
 const limitations: Record<string, string> = {
-  digest_of_rss_description: "digest of RSS descriptions",
-  translated_from_source_language: "translated",
+  digest_of_rss_description: "a digest of RSS descriptions",
+  translated_from_source_language: "translated from the source language",
   headline_only: "headline only",
   partial_source_coverage: "partial source coverage",
 };
 const note = story.limitations.map((x: string) => limitations[x]).join(", ");
+// One name per contributing publisher, the primary first, in the order they appear in the contract. The
+// row is the summary of the source list: clicking it opens the full evidence trail with titles and
+// times, so the names carry no links of their own.
+const publisherIds = [...new Set([...(primary ? [primary.source] : []), ...sources.map((s) => s.source)])];
+const publisherNames = publisherIds.map((id) => publishers[id] ?? id);
 // Paragraph citations stay in the contract but are not rendered inline on the web: the source line under
 // each story carries the publishers. Inline markers unsettled the line breaking in narrow columns.
 // Body copy and ledes get build-time soft hyphens so every browser breaks words at the same points.
@@ -44,12 +48,13 @@ const hy = (text: string) => softHyphenate(text, language);
   )}
   {story.callouts.slice(1).map((callout: any) => <Callout callout={callout} publishers={publishers} />)}
   <footer class="attribution">
-    <div class="src">
-      <Fragment set:html={renderSourceRow(sources, publishers)} />{note && ` · ${note}`}
-    </div>
     {sources.length > 0 && (
       <details class="sources">
-        <summary>Sources for this story</summary>
+        <summary>
+          <span class="pubs">{publisherNames.join(" · ")}</span>
+          <span class="toggle" aria-hidden="true"></span>
+        </summary>
+        {note && <p class="note">This story is {note}.</p>}
         <ul>
           {sources.map((s) => (
             <li>
