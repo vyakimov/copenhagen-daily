@@ -11,16 +11,26 @@ export type Timestamp = string;
 export type FeedId = string;
 export type Digest = string;
 /**
+ * Publisher ids, each naming an entry in the story's sources[] by its source field. Rendered as a trailing marker linking to that publisher's article.
+ *
+ * @maxItems 6
+ */
+export type Citations =
+  [] | [Id] | [Id, Id] | [Id, Id, Id] | [Id, Id, Id, Id] | [Id, Id, Id, Id, Id] | [Id, Id, Id, Id, Id, Id];
+/**
  * @minItems 1
  * @maxItems 64
  */
-export type Paragraphs = [Text, ...Text[]];
+export type Paragraphs = [AttributedText, ...AttributedText[]];
 export type Callout =
   | {
       kind: "quote";
       text: Text;
       attribution: Text;
-      attribution_source: Text;
+      /**
+       * Publisher id of the reporting publisher, present in the story's sources[].
+       */
+      attribution_source: string;
     }
   | {
       kind: "figure";
@@ -57,7 +67,21 @@ export type Callout =
             {
               date: Text;
               text: Text;
+            }
+          ]
+        | [
+            {
+              date: Text;
+              text: Text;
             },
+            {
+              date: Text;
+              text: Text;
+            },
+            {
+              date: Text;
+              text: Text;
+            }
           ]
         | [
             {
@@ -72,24 +96,10 @@ export type Callout =
               date: Text;
               text: Text;
             },
-          ]
-        | [
             {
               date: Text;
               text: Text;
-            },
-            {
-              date: Text;
-              text: Text;
-            },
-            {
-              date: Text;
-              text: Text;
-            },
-            {
-              date: Text;
-              text: Text;
-            },
+            }
           ];
     };
 
@@ -183,7 +193,23 @@ export interface Story {
         Callout,
         Callout,
         Callout,
+        Callout
+      ]
+    | [
         Callout,
+        Callout,
+        Callout,
+        Callout,
+        Callout,
+        Callout,
+        Callout,
+        Callout,
+        Callout,
+        Callout,
+        Callout,
+        Callout,
+        Callout,
+        Callout
       ]
     | [
         Callout,
@@ -200,6 +226,7 @@ export interface Story {
         Callout,
         Callout,
         Callout,
+        Callout
       ]
     | [
         Callout,
@@ -217,24 +244,7 @@ export interface Story {
         Callout,
         Callout,
         Callout,
-      ]
-    | [
-        Callout,
-        Callout,
-        Callout,
-        Callout,
-        Callout,
-        Callout,
-        Callout,
-        Callout,
-        Callout,
-        Callout,
-        Callout,
-        Callout,
-        Callout,
-        Callout,
-        Callout,
-        Callout,
+        Callout
       ];
   /**
    * @maxItems 16
@@ -270,7 +280,7 @@ export interface Story {
         Source,
         Source,
         Source,
-        Source,
+        Source
       ]
     | [
         Source,
@@ -288,7 +298,7 @@ export interface Story {
         Source,
         Source,
         Source,
-        Source,
+        Source
       ];
   limitations: (
     "digest_of_rss_description" | "translated_from_source_language" | "headline_only" | "partial_source_coverage"
@@ -298,8 +308,12 @@ export interface Copy {
   headline: Text;
   headline_short?: Text;
   deck?: Text;
-  lede?: Text;
+  lede?: AttributedText;
   body: Body;
+}
+export interface AttributedText {
+  text: Text;
+  sources: Citations;
 }
 export interface Body {
   extended?: Paragraphs;

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "title": "copenhagen-today",
+  "title": "copenhagen-daily",
   "edition": {
     "id": "2026-09-09-overflow",
     "number": 2,
@@ -77,10 +77,20 @@
         "headline": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
         "body": {
           "standard": [
-            "DR reports a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself and ends here."
+            {
+              "text": "A very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself and ends here.",
+              "sources": [
+                "dr"
+              ]
+            }
           ],
           "short": [
-            "DR reports a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself and ends here."
+            {
+              "text": "A very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself a very long sentence that repeats itself and ends here.",
+              "sources": [
+                "dr"
+              ]
+            }
           ]
         }
       },
@@ -110,14 +120,54 @@
         "headline": "This required secondary has no shorter headline and no shorter body to step down to",
         "body": {
           "standard": [
-            "Politiken reports that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. ",
-            "Politiken reports that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. ",
-            "Politiken reports that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. ",
-            "Politiken reports that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. ",
-            "Politiken reports that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. ",
-            "Politiken reports that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. ",
-            "Politiken reports that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. ",
-            "Politiken reports that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. "
+            {
+              "text": "The approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. ",
+              "sources": [
+                "politiken"
+              ]
+            },
+            {
+              "text": "The approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. ",
+              "sources": [
+                "politiken"
+              ]
+            },
+            {
+              "text": "The approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. ",
+              "sources": [
+                "politiken"
+              ]
+            },
+            {
+              "text": "The approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. ",
+              "sources": [
+                "politiken"
+              ]
+            },
+            {
+              "text": "The approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. ",
+              "sources": [
+                "politiken"
+              ]
+            },
+            {
+              "text": "The approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. ",
+              "sources": [
+                "politiken"
+              ]
+            },
+            {
+              "text": "The approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. ",
+              "sources": [
+                "politiken"
+              ]
+            },
+            {
+              "text": "The approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. that the approved copy is deliberately far longer than any slot can hold. ",
+              "sources": [
+                "politiken"
+              ]
+            }
           ]
         }
       },
@@ -147,14 +197,54 @@
         "headline": "A third required secondary that together with the others exceeds every composition",
         "body": {
           "standard": [
-            "The New York Times reports that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. ",
-            "The New York Times reports that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. ",
-            "The New York Times reports that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. ",
-            "The New York Times reports that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. ",
-            "The New York Times reports that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. ",
-            "The New York Times reports that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. ",
-            "The New York Times reports that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. ",
-            "The New York Times reports that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. "
+            {
+              "text": "This paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. ",
+              "sources": [
+                "nytimes"
+              ]
+            },
+            {
+              "text": "This paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. ",
+              "sources": [
+                "nytimes"
+              ]
+            },
+            {
+              "text": "This paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. ",
+              "sources": [
+                "nytimes"
+              ]
+            },
+            {
+              "text": "This paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. ",
+              "sources": [
+                "nytimes"
+              ]
+            },
+            {
+              "text": "This paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. ",
+              "sources": [
+                "nytimes"
+              ]
+            },
+            {
+              "text": "This paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. ",
+              "sources": [
+                "nytimes"
+              ]
+            },
+            {
+              "text": "This paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. ",
+              "sources": [
+                "nytimes"
+              ]
+            },
+            {
+              "text": "This paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. that this paragraph exists only to overflow the device page. ",
+              "sources": [
+                "nytimes"
+              ]
+            }
           ]
         }
       },

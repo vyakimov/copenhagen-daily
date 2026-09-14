@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "title": "copenhagen-today",
+  "title": "copenhagen-daily",
   "edition": {
     "id": "2026-09-09-sparse",
     "number": 2,
@@ -81,11 +81,26 @@
         "deck": "Gusts of up to 30 metres per second are expected on Wednesday evening.",
         "body": {
           "standard": [
-            "DR reports that the Danish Meteorological Institute has issued a storm warning for Copenhagen and the surrounding region for Wednesday evening.",
-            "According to DR, gusts of up to 30 metres per second are possible along the coast."
+            {
+              "text": "The Danish Meteorological Institute has issued a storm warning for Copenhagen and the surrounding region for Wednesday evening.",
+              "sources": [
+                "dr"
+              ]
+            },
+            {
+              "text": "Gusts of up to 30 metres per second are possible along the coast.",
+              "sources": [
+                "dr"
+              ]
+            }
           ],
           "short": [
-            "DR reports a storm warning for the capital on Wednesday evening, with coastal gusts of up to 30 metres per second."
+            {
+              "text": "A storm warning for the capital on Wednesday evening, with coastal gusts of up to 30 metres per second.",
+              "sources": [
+                "dr"
+              ]
+            }
           ]
         }
       },
@@ -113,7 +128,12 @@
       "kicker": "Transport",
       "copy": {
         "headline": "Bornholm ferry cancels Wednesday evening sailings",
-        "lede": "DR reports that Wednesday evening sailings to Rønne are cancelled ahead of the storm.",
+        "lede": {
+          "text": "Wednesday evening sailings to Rønne are cancelled ahead of the storm.",
+          "sources": [
+            "dr"
+          ]
+        },
         "body": {}
       },
       "callouts": [],

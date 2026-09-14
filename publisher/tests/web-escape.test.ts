@@ -5,7 +5,6 @@ import { join, resolve } from "node:path";
 import { tmpdir } from "node:os";
 import { readEdition, validateEdition } from "../src/contract/edition-contract.ts";
 import { buildWeb, indexEntry } from "../src/publish/web.ts";
-import { loadTitleConfig } from "../src/contract/title-config.ts";
 
 const projectRoot = resolve(import.meta.dirname, "..");
 const INJECT = `<script>&"'</div>`;
@@ -36,21 +35,19 @@ function inject(doc: any): number {
     set(story.copy, "headline");
     set(story.copy, "headline_short", false);
     set(story.copy, "deck");
-    if (typeof story.copy.lede === "string") {
-      // A lede must open with the primary publisher's display name; inject after it.
-      const primary = story.sources.find((s: any) => s.primary);
-      story.copy.lede = `${loadTitleConfig().publishers[primary.source]} ${INJECT}`;
+    if (story.copy.lede) {
+      story.copy.lede.text = INJECT;
       if (story.role === "brief") rendered += 1;
     }
     const longest = story.copy.body.extended ?? story.copy.body.standard ?? story.copy.body.short;
-    for (const variant of Object.values(story.copy.body) as string[][]) {
-      for (let i = 0; i < variant.length; i += 1) {
-        variant[i] = INJECT;
+    for (const variant of Object.values(story.copy.body) as Array<Array<{ text: string }>>) {
+      for (const paragraph of variant) {
+        paragraph.text = INJECT;
         if (variant === longest) rendered += 1;
       }
     }
     for (const callout of story.callouts) {
-      for (const key of ["text", "attribution", "attribution_source", "value", "label", "title"]) set(callout, key);
+      for (const key of ["text", "attribution", "value", "label", "title"]) set(callout, key);
       if (callout.items) callout.items = callout.items.map(() => ((rendered += 1), INJECT));
       if (callout.rows) callout.rows = callout.rows.map(() => ((rendered += 2), { date: INJECT, text: INJECT }));
     }
@@ -83,7 +80,8 @@ test("the injection string survives the real web build as text and adds no eleme
       const dist = await buildWeb(projectRoot, join(work, name), doc, [indexEntry(doc, "skipped")]);
       pages.push(await readFile(join(dist, "n", doc.edition.id, "index.html"), "utf8"));
     }
-    const [cleanHtml, injectedHtml] = pages as [string, string];
+    // Soft hyphens are presentation inserted at build time; strip them before comparing text.
+    const [cleanHtml, injectedHtml] = pages.map((p) => p.replaceAll("\u00ad", "")) as [string, string];
     assert.deepEqual(countTags(injectedHtml), countTags(cleanHtml), "element and handler counts must not change");
     assert.doesNotMatch(injectedHtml, /<script>/);
     const pattern = new RegExp(ESCAPED.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g");

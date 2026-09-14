@@ -79,16 +79,34 @@ function semantic(doc: EditionContractV1, title: TitleConfig): ValidationIssue[]
         issues.push(issue(`${p}/sources/${j}/url`, "URL must be absolute HTTPS without userinfo"));
       }
     });
-    if (story.role === "brief" || story.fallback_role === "brief") {
-      const sourceName = primary[0]?.source;
-      if (
-        sourceName &&
-        story.copy.lede &&
-        publisherNames[sourceName] &&
-        !story.copy.lede.startsWith(publisherNames[sourceName]!)
-      )
-        issues.push(issue(`${p}/copy/lede`, "brief lede must open with the primary publisher display name"));
+    // Citations name publishers, and every cited publisher must have contributed a source to the story.
+    const cited = new Set(story.sources.map((s) => s.source));
+    const checkCitations = (pointer: string, value: { text: string; sources: string[] } | undefined) => {
+      if (!value) return;
+      if (story.sources.length > 0 && value.sources.length === 0) {
+        issues.push(issue(`${pointer}/sources`, "a sourced story must cite at least one publisher per paragraph"));
+      }
+      value.sources.forEach((id, k) => {
+        if (!cited.has(id))
+          issues.push(issue(`${pointer}/sources/${k}`, "cited publisher is not among the story's sources"));
+      });
+    };
+    checkCitations(`${p}/copy/lede`, story.copy.lede);
+    for (const [variant, paragraphs] of Object.entries(story.copy.body)) {
+      (paragraphs as Array<{ text: string; sources: string[] }>).forEach((paragraph, k) =>
+        checkCitations(`${p}/copy/body/${variant}/${k}`, paragraph),
+      );
     }
+    story.callouts.forEach((callout, k) => {
+      if (callout.kind === "quote" && !cited.has(callout.attribution_source)) {
+        issues.push(
+          issue(
+            `${p}/callouts/${k}/attribution_source`,
+            "quote attribution names a publisher not among the story's sources",
+          ),
+        );
+      }
+    });
   });
   const reserve = doc.stories.filter((s) => s.device_participation === "reserve").map((s) => s.id);
   const optional = doc.stories.filter((s) => s.device_participation === "optional").map((s) => s.id);

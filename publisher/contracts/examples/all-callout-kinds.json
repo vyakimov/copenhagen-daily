@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "title": "copenhagen-today",
+  "title": "copenhagen-daily",
   "edition": {
     "id": "2026-09-09-callouts",
     "number": 2,
@@ -78,11 +78,26 @@
         "deck": "The audit covers 2024 and 2025 and blames staffing rather than demand.",
         "body": {
           "standard": [
-            "Berlingske reports that a regional audit found waiting times for planned surgery at Rigshospitalet doubled between 2024 and 2025.",
-            "According to DR, the region attributes the increase to staffing rather than demand."
+            {
+              "text": "A regional audit found waiting times for planned surgery at Rigshospitalet doubled between 2024 and 2025.",
+              "sources": [
+                "berlingske"
+              ]
+            },
+            {
+              "text": "The region attributes the increase to staffing rather than demand.",
+              "sources": [
+                "dr"
+              ]
+            }
           ],
           "short": [
-            "Berlingske reports an audit found planned-surgery waiting times at Rigshospitalet doubled over two years."
+            {
+              "text": "An audit found planned-surgery waiting times at Rigshospitalet doubled over two years.",
+              "sources": [
+                "berlingske"
+              ]
+            }
           ]
         }
       },
@@ -91,7 +106,7 @@
           "kind": "quote",
           "text": "We are not short of patients. We are short of nurses.",
           "attribution": "The regional health director",
-          "attribution_source": "DR"
+          "attribution_source": "dr"
         }
       ],
       "sources": [
@@ -129,10 +144,20 @@
         "headline": "Copenhagen flat prices rise for a fifth quarter",
         "body": {
           "standard": [
-            "Børsen reports that prices for owner-occupied flats in Copenhagen rose for a fifth consecutive quarter."
+            {
+              "text": "Prices for owner-occupied flats in Copenhagen rose for a fifth consecutive quarter.",
+              "sources": [
+                "borsen"
+              ]
+            }
           ],
           "short": [
-            "Børsen reports Copenhagen flat prices rose for a fifth quarter."
+            {
+              "text": "Copenhagen flat prices rose for a fifth quarter.",
+              "sources": [
+                "borsen"
+              ]
+            }
           ]
         }
       },
@@ -168,10 +193,20 @@
         "headline": "Prime minister names November 10 as election day",
         "body": {
           "standard": [
-            "Politiken reports that the prime minister has called a general election for November 10."
+            {
+              "text": "The prime minister has called a general election for November 10.",
+              "sources": [
+                "politiken"
+              ]
+            }
           ],
           "short": [
-            "Politiken reports a general election on November 10."
+            {
+              "text": "A general election on November 10.",
+              "sources": [
+                "politiken"
+              ]
+            }
           ]
         }
       },
@@ -211,13 +246,28 @@
       "kicker": "Copenhagen",
       "copy": {
         "headline": "New cycle bridge over Inderhavnen opens to the public",
-        "lede": "DR reports that the new cycle bridge over Inderhavnen opened on Monday.",
+        "lede": {
+          "text": "The new cycle bridge over Inderhavnen opened on Monday.",
+          "sources": [
+            "dr"
+          ]
+        },
         "body": {
           "standard": [
-            "DR reports that the new cycle and pedestrian bridge across Inderhavnen opened to the public on Monday."
+            {
+              "text": "The new cycle and pedestrian bridge across Inderhavnen opened to the public on Monday.",
+              "sources": [
+                "dr"
+              ]
+            }
           ],
           "short": [
-            "DR reports the new Inderhavnen cycle bridge opened on Monday."
+            {
+              "text": "The new Inderhavnen cycle bridge opened on Monday.",
+              "sources": [
+                "dr"
+              ]
+            }
           ]
         }
       },
@@ -252,13 +302,28 @@
       "kicker": "Transport",
       "copy": {
         "headline": "Oslo ferry to move to a new terminal next spring",
-        "lede": "Berlingske reports that the Oslo ferry moves to a new terminal in Nordhavn next spring.",
+        "lede": {
+          "text": "The Oslo ferry moves to a new terminal in Nordhavn next spring.",
+          "sources": [
+            "berlingske"
+          ]
+        },
         "body": {
           "standard": [
-            "Berlingske reports that the Oslo ferry will move from Søndre Frihavn to a new terminal in Nordhavn next spring."
+            {
+              "text": "The Oslo ferry will move from Søndre Frihavn to a new terminal in Nordhavn next spring.",
+              "sources": [
+                "berlingske"
+              ]
+            }
           ],
           "short": [
-            "Berlingske reports the Oslo ferry moves to Nordhavn next spring."
+            {
+              "text": "The Oslo ferry moves to Nordhavn next spring.",
+              "sources": [
+                "berlingske"
+              ]
+            }
           ]
         }
       },

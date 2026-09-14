@@ -10,6 +10,7 @@ test("shared HTML helpers escape the fixed injection string", () => {
   const outputs = [
     escapeHtml(value),
     renderCallout({ kind: "box", label: value, text: value }),
+    renderCallout({ kind: "quote", text: value, attribution: value, attribution_source: "x" }, { x: value }),
     renderSourceRow([{ source: value, url: "https://example.com/?q=%22" }], { [value]: value }),
   ];
   for (const html of outputs) {

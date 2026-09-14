@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "title": "copenhagen-today",
+  "title": "copenhagen-daily",
   "edition": {
     "id": "2026-09-09-partial",
     "number": 2,
@@ -77,11 +77,26 @@
         "headline": "Government presents budget with a smaller deficit than forecast",
         "body": {
           "standard": [
-            "DR reports that the government presented a budget proposal with a deficit below the spring forecast.",
-            "The Financial Times reports that the proposal keeps defence spending above two per cent of GDP."
+            {
+              "text": "The government presented a budget proposal with a deficit below the spring forecast.",
+              "sources": [
+                "dr"
+              ]
+            },
+            {
+              "text": "The proposal keeps defence spending above two per cent of GDP.",
+              "sources": [
+                "ft"
+              ]
+            }
           ],
           "short": [
-            "DR reports a budget proposal with a smaller deficit than forecast."
+            {
+              "text": "A budget proposal with a smaller deficit than forecast.",
+              "sources": [
+                "dr"
+              ]
+            }
           ]
         }
       },
@@ -120,7 +135,12 @@
       "kicker": "Business",
       "copy": {
         "headline": "Maersk names new chief financial officer",
-        "lede": "Børsen reports that Maersk has named a new chief financial officer.",
+        "lede": {
+          "text": "Maersk has named a new chief financial officer.",
+          "sources": [
+            "borsen"
+          ]
+        },
         "body": {}
       },
       "callouts": [],

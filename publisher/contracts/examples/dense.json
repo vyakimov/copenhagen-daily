@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "title": "copenhagen-today",
+  "title": "copenhagen-daily",
   "edition": {
     "id": "2026-09-09-dense",
     "number": 2,
@@ -84,16 +84,47 @@
         "deck": "A 29 to 26 vote sends the eastern ring road to the state for financing, with the mayor calling it the decision of a generation.",
         "body": {
           "extended": [
-            "Politiken reports that Copenhagen's city council voted 29 to 26 early on Tuesday to back the eastern harbour tunnel, ending a debate that ran past two in the morning.",
-            "According to Berlingske, the mayor described the vote as the decision of a generation and said the plan now goes to the state for a financing agreement.",
-            "DR reports that opponents on the council argued the tunnel would draw more cars into the city and asked for a further environmental review before construction begins."
+            {
+              "text": "Copenhagen's city council voted 29 to 26 early on Tuesday to back the eastern harbour tunnel, ending a debate that ran past two in the morning.",
+              "sources": [
+                "politiken"
+              ]
+            },
+            {
+              "text": "The mayor described the vote as the decision of a generation and said the plan now goes to the state for a financing agreement.",
+              "sources": [
+                "berlingske"
+              ]
+            },
+            {
+              "text": "Opponents on the council argued the tunnel would draw more cars into the city and asked for a further environmental review before construction begins.",
+              "sources": [
+                "dr"
+              ]
+            }
           ],
           "standard": [
-            "Politiken reports that Copenhagen's city council voted 29 to 26 early on Tuesday to back the eastern harbour tunnel, ending a debate that ran past two in the morning.",
-            "According to Berlingske, the mayor called it the decision of a generation; DR reports opponents want a further environmental review."
+            {
+              "text": "Copenhagen's city council voted 29 to 26 early on Tuesday to back the eastern harbour tunnel, ending a debate that ran past two in the morning.",
+              "sources": [
+                "politiken"
+              ]
+            },
+            {
+              "text": "The mayor called it the decision of a generation; opponents want a further environmental review.",
+              "sources": [
+                "berlingske",
+                "dr"
+              ]
+            }
           ],
           "short": [
-            "Politiken reports the council voted 29 to 26 for the eastern harbour tunnel after a sitting that ran past two in the morning."
+            {
+              "text": "The council voted 29 to 26 for the eastern harbour tunnel after a sitting that ran past two in the morning.",
+              "sources": [
+                "politiken"
+              ]
+            }
           ]
         }
       },
@@ -107,7 +138,7 @@
           "kind": "quote",
           "text": "The decision of a generation.",
           "attribution": "The Lord Mayor",
-          "attribution_source": "Berlingske"
+          "attribution_source": "berlingske"
         }
       ],
       "sources": [
@@ -156,11 +187,26 @@
         "headline_short": "Nationalbanken holds rate",
         "body": {
           "standard": [
-            "Børsen reports that Nationalbanken left its key rate unchanged and said wage growth remains above what it considers consistent with its target.",
-            "The Financial Times reports that the decision was widely expected by analysts."
+            {
+              "text": "Nationalbanken left its key rate unchanged and said wage growth remains above what it considers consistent with its target.",
+              "sources": [
+                "borsen"
+              ]
+            },
+            {
+              "text": "The decision was widely expected by analysts.",
+              "sources": [
+                "ft"
+              ]
+            }
           ],
           "short": [
-            "Børsen reports Nationalbanken left its key rate unchanged and warned that wage growth remains too high."
+            {
+              "text": "Nationalbanken left its key rate unchanged and warned that wage growth remains too high.",
+              "sources": [
+                "borsen"
+              ]
+            }
           ]
         }
       },
@@ -205,14 +251,34 @@
       "kicker": "Transport",
       "copy": {
         "headline": "Metro drivers announce two-day strike from Thursday",
-        "lede": "DR reports that metro drivers will strike on Thursday and Friday over rostering.",
+        "lede": {
+          "text": "Metro drivers will strike on Thursday and Friday over rostering.",
+          "sources": [
+            "dr"
+          ]
+        },
         "body": {
           "standard": [
-            "DR reports that the metro drivers' union has given notice of a two-day strike starting Thursday, citing a dispute over rostering.",
-            "Politiken reports that the operator expects to run a reduced service on the Cityringen line."
+            {
+              "text": "The metro drivers' union has given notice of a two-day strike starting Thursday, citing a dispute over rostering.",
+              "sources": [
+                "dr"
+              ]
+            },
+            {
+              "text": "The operator expects to run a reduced service on the Cityringen line.",
+              "sources": [
+                "politiken"
+              ]
+            }
           ],
           "short": [
-            "DR reports metro drivers will strike Thursday and Friday over rostering; Politiken says a reduced service is planned."
+            {
+              "text": "Metro drivers will strike Thursday and Friday over rostering; Politiken says a reduced service is planned.",
+              "sources": [
+                "dr"
+              ]
+            }
           ]
         }
       },
@@ -261,14 +327,34 @@
       "kicker": "World",
       "copy": {
         "headline": "Ceasefire talks resume in Cairo with no date for a deal",
-        "lede": "The New York Times reports that ceasefire talks resumed in Cairo without a timetable for an agreement.",
+        "lede": {
+          "text": "Ceasefire talks resumed in Cairo without a timetable for an agreement.",
+          "sources": [
+            "nytimes"
+          ]
+        },
         "body": {
           "standard": [
-            "The New York Times reports that negotiators returned to Cairo on Monday, with officials on both sides describing the gap as narrower but declining to name a date.",
-            "The Financial Times reports that European governments are pressing for a deal before the UN General Assembly opens."
+            {
+              "text": "Negotiators returned to Cairo on Monday, with officials on both sides describing the gap as narrower but declining to name a date.",
+              "sources": [
+                "nytimes"
+              ]
+            },
+            {
+              "text": "European governments are pressing for a deal before the UN General Assembly opens.",
+              "sources": [
+                "ft"
+              ]
+            }
           ],
           "short": [
-            "The New York Times reports ceasefire talks resumed in Cairo on Monday with no date for an agreement."
+            {
+              "text": "Ceasefire talks resumed in Cairo on Monday with no date for an agreement.",
+              "sources": [
+                "nytimes"
+              ]
+            }
           ]
         }
       },
@@ -321,7 +407,12 @@
       "kicker": "Denmark",
       "copy": {
         "headline": "Free school lunches to be tested in three municipalities",
-        "lede": "DR reports that three municipalities will trial free school lunches from January.",
+        "lede": {
+          "text": "Three municipalities will trial free school lunches from January.",
+          "sources": [
+            "dr"
+          ]
+        },
         "body": {}
       },
       "callouts": [],
@@ -348,7 +439,12 @@
       "kicker": "Business",
       "copy": {
         "headline": "Novo Nordisk narrows full-year guidance",
-        "lede": "Børsen reports that Novo Nordisk narrowed its sales guidance for the year.",
+        "lede": {
+          "text": "Novo Nordisk narrowed its sales guidance for the year.",
+          "sources": [
+            "borsen"
+          ]
+        },
         "body": {}
       },
       "callouts": [],
@@ -375,7 +471,12 @@
       "kicker": "Energy",
       "copy": {
         "headline": "Ministry reopens offshore wind auction with higher subsidy",
-        "lede": "Børsen reports the energy minister will reopen the North Sea auction with a higher support ceiling.",
+        "lede": {
+          "text": "The energy minister will reopen the North Sea auction with a higher support ceiling.",
+          "sources": [
+            "borsen"
+          ]
+        },
         "body": {}
       },
       "callouts": [],
@@ -402,7 +503,12 @@
       "kicker": "Culture",
       "copy": {
         "headline": "Kunsthal Charlottenborg reopens after two-year renovation",
-        "lede": "Berlingske reports that Kunsthal Charlottenborg reopens on Saturday after two years of renovation.",
+        "lede": {
+          "text": "Kunsthal Charlottenborg reopens on Saturday after two years of renovation.",
+          "sources": [
+            "berlingske"
+          ]
+        },
         "body": {}
       },
       "callouts": [],
@@ -429,7 +535,12 @@
       "kicker": "Copenhagen",
       "copy": {
         "headline": "Langebro repairs to close one lane through October",
-        "lede": "Politiken reports that Langebro loses one lane in each direction until the end of October.",
+        "lede": {
+          "text": "Langebro loses one lane in each direction until the end of October.",
+          "sources": [
+            "politiken"
+          ]
+        },
         "body": {}
       },
       "callouts": [],

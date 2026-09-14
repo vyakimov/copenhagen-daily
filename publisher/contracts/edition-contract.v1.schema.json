@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://copenhagen.today/contracts/edition-contract.v1.schema.json",
+  "$id": "https://copenhagen.daily/contracts/edition-contract.v1.schema.json",
   "title": "Edition contract v1",
   "type": "object",
   "additionalProperties": false,
@@ -243,7 +243,7 @@
       "minItems": 1,
       "maxItems": 64,
       "items": {
-        "$ref": "#/$defs/text"
+        "$ref": "#/$defs/attributed_text"
       }
     },
     "copy": {
@@ -264,7 +264,7 @@
           "$ref": "#/$defs/text"
         },
         "lede": {
-          "$ref": "#/$defs/text"
+          "$ref": "#/$defs/attributed_text"
         },
         "body": {
           "$ref": "#/$defs/body"
@@ -336,7 +336,8 @@
               "$ref": "#/$defs/text"
             },
             "attribution_source": {
-              "$ref": "#/$defs/text"
+              "$ref": "#/$defs/id",
+              "description": "Publisher id of the reporting publisher, present in the story's sources[]."
             }
           }
         },
@@ -551,6 +552,31 @@
     "feed_id": {
       "type": "string",
       "pattern": "^[a-z0-9][a-z0-9_.-]{0,79}$"
+    },
+    "citations": {
+      "type": "array",
+      "maxItems": 6,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/id"
+      },
+      "description": "Publisher ids, each naming an entry in the story's sources[] by its source field. Rendered as a trailing marker linking to that publisher's article."
+    },
+    "attributed_text": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "sources"
+      ],
+      "properties": {
+        "text": {
+          "$ref": "#/$defs/text"
+        },
+        "sources": {
+          "$ref": "#/$defs/citations"
+        }
+      }
     }
   }
 }

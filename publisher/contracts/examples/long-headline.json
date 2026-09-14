@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "title": "copenhagen-today",
+  "title": "copenhagen-daily",
   "edition": {
     "id": "2026-09-09-long",
     "number": 2,
@@ -78,11 +78,26 @@
         "headline_short": "A ten-year plan for Copenhagen's streets",
         "body": {
           "standard": [
-            "Politiken reports that the city's technical committee received a ten-year proposal covering streets, squares, cycle lanes, and harbour fronts.",
-            "According to Politiken, the committee will take a position after the autumn budget."
+            {
+              "text": "The city's technical committee received a ten-year proposal covering streets, squares, cycle lanes, and harbour fronts.",
+              "sources": [
+                "politiken"
+              ]
+            },
+            {
+              "text": "The committee will take a position after the autumn budget.",
+              "sources": [
+                "politiken"
+              ]
+            }
           ],
           "short": [
-            "Politiken reports a ten-year proposal for streets, squares, cycle lanes, and harbour fronts is before the technical committee."
+            {
+              "text": "A ten-year proposal for streets, squares, cycle lanes, and harbour fronts is before the technical committee.",
+              "sources": [
+                "politiken"
+              ]
+            }
           ]
         }
       },
@@ -111,13 +126,28 @@
       "kicker": "Denmark",
       "copy": {
         "headline": "Arbejdsmarkedsuddannelsesreformforhandlingerne genoptages efter sommerens sammenbrud",
-        "lede": "DR reports that negotiations on the labour-market training reform resume after collapsing in the summer.",
+        "lede": {
+          "text": "Negotiations on the labour-market training reform resume after collapsing in the summer.",
+          "sources": [
+            "dr"
+          ]
+        },
         "body": {
           "standard": [
-            "DR reports that negotiations on the labour-market training reform resume this week after collapsing before the summer break."
+            {
+              "text": "Negotiations on the labour-market training reform resume this week after collapsing before the summer break.",
+              "sources": [
+                "dr"
+              ]
+            }
           ],
           "short": [
-            "DR reports the labour-market training reform talks resume this week."
+            {
+              "text": "The labour-market training reform talks resume this week.",
+              "sources": [
+                "dr"
+              ]
+            }
           ]
         }
       },

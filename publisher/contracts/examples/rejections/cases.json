@@ -97,10 +97,16 @@
       "kicker": "Denmark",
       "copy": {
        "headline": "An extra secondary",
-       "lede": "DR reports an extra item.",
+       "lede": {
+        "text": "An extra item.",
+        "sources": []
+       },
        "body": {
         "short": [
-         "DR reports an extra item."
+         {
+          "text": "DR reports an extra item.",
+          "sources": []
+         }
         ]
        }
       },
@@ -169,7 +175,10 @@
       "kicker": "Denmark",
       "copy": {
        "headline": "An extra brief",
-       "lede": "DR reports an extra item.",
+       "lede": {
+        "text": "An extra item.",
+        "sources": []
+       },
        "body": {}
       },
       "callouts": [],
@@ -226,52 +235,6 @@
    "expected_pointer": "/stories/1/copy/lede"
   },
   {
-   "name": "lede-wrong-publisher",
-   "invariant": "a lede opens with the primary publisher's display name",
-   "ops": [
-    {
-     "op": "add",
-     "path": "/stories/1",
-     "value": {
-      "id": "extra-brief",
-      "device_participation": "optional",
-      "role": "brief",
-      "kicker": "Denmark",
-      "copy": {
-       "headline": "An extra brief",
-       "lede": "Politiken reports an extra item.",
-       "body": {}
-      },
-      "callouts": [],
-      "sources": [
-       {
-        "source": "dr",
-        "source_id": "urn:dr:umbraco:article:00000000-0000-0000-0000-000000000001",
-        "input_id": "export-2026-09-08-0300",
-        "original_title": "x",
-        "url": "https://www.dr.dk/nyheder/x",
-        "published_at": "2026-09-07T12:00:00.000000Z",
-        "content_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
-        "primary": true
-       }
-      ],
-      "limitations": [
-       "headline_only"
-      ]
-     }
-    },
-    {
-     "op": "replace",
-     "path": "/fit_policy/omittable_story_ids",
-     "value": [
-      "extra-brief"
-     ]
-    }
-   ],
-   "expected_code": "contract_invalid",
-   "expected_pointer": "/stories/1/copy/lede"
-  },
-  {
    "name": "duplicate-story-id",
    "invariant": "story ids are unique",
    "ops": [
@@ -285,7 +248,10 @@
       "kicker": "Denmark",
       "copy": {
        "headline": "An extra brief",
-       "lede": "DR reports an extra item.",
+       "lede": {
+        "text": "An extra item.",
+        "sources": []
+       },
        "body": {}
       },
       "callouts": [],
@@ -390,12 +356,12 @@
    "ops": [
     {
      "op": "replace",
-     "path": "/stories/0/copy/body/standard/0",
+     "path": "/stories/0/copy/body/standard/0/text",
      "value": "   "
     }
    ],
    "expected_code": "contract_invalid",
-   "expected_pointer": "/stories/0/copy/body/standard/0"
+   "expected_pointer": "/stories/0/copy/body/standard/0/text"
   },
   {
    "name": "unknown-body-variant",
@@ -485,7 +451,10 @@
       "kicker": "Denmark",
       "copy": {
        "headline": "An extra brief",
-       "lede": "DR reports an extra item.",
+       "lede": {
+        "text": "An extra item.",
+        "sources": []
+       },
        "body": {}
       },
       "callouts": [],
@@ -561,7 +530,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -577,7 +549,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -593,7 +568,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -609,7 +587,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -625,7 +606,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -641,7 +625,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -657,7 +644,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -673,7 +663,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -689,7 +682,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -705,7 +701,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -721,7 +720,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -737,7 +739,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -753,7 +758,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -769,7 +777,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -785,7 +796,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -801,7 +815,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -817,7 +834,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -833,7 +853,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -849,7 +872,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -865,7 +891,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -881,7 +910,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -897,7 +929,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -913,7 +948,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -929,7 +967,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -945,7 +986,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -961,7 +1005,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -977,7 +1024,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -993,7 +1043,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1009,7 +1062,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1025,7 +1081,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1041,7 +1100,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1057,7 +1119,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1073,7 +1138,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1089,7 +1157,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1105,7 +1176,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1121,7 +1195,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1137,7 +1214,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1153,7 +1233,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1169,7 +1252,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1185,7 +1271,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1201,7 +1290,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1217,7 +1309,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1233,7 +1328,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1249,7 +1347,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1265,7 +1366,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1281,7 +1385,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1297,7 +1404,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1313,7 +1423,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1329,7 +1442,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1345,7 +1461,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1361,7 +1480,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1377,7 +1499,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1393,7 +1518,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1409,7 +1537,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1425,7 +1556,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1441,7 +1575,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1457,7 +1594,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1473,7 +1613,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1489,7 +1632,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1505,7 +1651,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1521,7 +1670,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1537,7 +1689,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1553,7 +1708,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1569,7 +1727,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1585,7 +1746,10 @@
        "kicker": "Denmark",
        "copy": {
         "headline": "An extra brief",
-        "lede": "DR reports an extra item.",
+        "lede": {
+         "text": "An extra item.",
+         "sources": []
+        },
         "body": {}
        },
        "callouts": [],
@@ -1599,6 +1763,52 @@
    ],
    "expected_code": "contract_invalid",
    "expected_pointer": "/stories"
+  },
+  {
+   "name": "citation-unknown-publisher",
+   "invariant": "every cited publisher is among the story's sources",
+   "ops": [
+    {
+     "op": "replace",
+     "path": "/stories/0/copy/body/standard/0/sources",
+     "value": [
+      "politiken"
+     ]
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/stories/0/copy/body/standard/0/sources/0"
+  },
+  {
+   "name": "citation-missing-on-sourced-story",
+   "invariant": "a sourced story cites at least one publisher per paragraph",
+   "ops": [
+    {
+     "op": "replace",
+     "path": "/stories/0/copy/body/standard/0/sources",
+     "value": []
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/stories/0/copy/body/standard/0/sources"
+  },
+  {
+   "name": "quote-attribution-unknown-publisher",
+   "invariant": "a quote's reporting publisher is among the story's sources",
+   "ops": [
+    {
+     "op": "add",
+     "path": "/stories/0/callouts/0",
+     "value": {
+      "kind": "quote",
+      "text": "x",
+      "attribution": "y",
+      "attribution_source": "politiken"
+     }
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/stories/0/callouts/0/attribution_source"
   }
  ]
 }

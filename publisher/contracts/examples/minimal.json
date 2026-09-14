@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "title": "copenhagen-today",
+  "title": "copenhagen-daily",
   "edition": {
     "id": "2026-09-08-morning",
     "number": 1,
@@ -47,11 +47,26 @@
         "headline": "Mass experiment on Danish soil to shed light on 'super overlooked' insects",
         "body": {
           "standard": [
-            "DR reports that a mass experiment on Danish soil is set to shed light on what it calls the 'super overlooked' insects.",
-            "According to DR, it is the largest national mapping of insect species diversity ever carried out in Denmark."
+            {
+              "text": "A mass experiment on Danish soil is set to shed light on what researchers call the 'super overlooked' insects.",
+              "sources": [
+                "dr"
+              ]
+            },
+            {
+              "text": "It is the largest national mapping of insect species diversity ever carried out in Denmark.",
+              "sources": [
+                "dr"
+              ]
+            }
           ],
           "short": [
-            "DR reports the largest national mapping of insect species diversity in Denmark, a mass experiment aimed at the 'super overlooked' insects."
+            {
+              "text": "The largest national mapping of insect species diversity in Denmark is under way, a mass experiment aimed at the 'super overlooked' insects.",
+              "sources": [
+                "dr"
+              ]
+            }
           ]
         }
       },

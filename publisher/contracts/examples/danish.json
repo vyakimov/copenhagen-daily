@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "title": "copenhagen-today",
+  "title": "copenhagen-daily",
   "edition": {
     "id": "2026-09-09-dansk",
     "number": 2,
@@ -78,11 +78,26 @@
         "deck": "Kommunen samler tusind borgere til et døgns samtaler om, hvad byen skal være.",
         "body": {
           "standard": [
-            "DR skriver, at Københavns Kommune inviterer tusind borgere til et døgns samtaler om byens fremtid.",
-            "Ifølge Politiken skal resultatet indgå i kommuneplanen næste år."
+            {
+              "text": "Københavns Kommune inviterer tusind borgere til et døgns samtaler om byens fremtid.",
+              "sources": [
+                "dr"
+              ]
+            },
+            {
+              "text": "Resultatet skal indgå i kommuneplanen næste år.",
+              "sources": [
+                "politiken"
+              ]
+            }
           ],
           "short": [
-            "DR skriver, at kommunen samler tusind borgere til et døgns samtaler om byens fremtid."
+            {
+              "text": "Kommunen samler tusind borgere til et døgns samtaler om byens fremtid.",
+              "sources": [
+                "dr"
+              ]
+            }
           ]
         }
       },
@@ -91,7 +106,7 @@
           "kind": "quote",
           "text": "Byen tilhører os alle.",
           "attribution": "Overborgmesteren",
-          "attribution_source": "DR"
+          "attribution_source": "dr"
         }
       ],
       "sources": [
@@ -129,10 +144,20 @@
         "headline": "Nationalbanken fastholder renten",
         "body": {
           "standard": [
-            "Børsen skriver, at Nationalbanken fastholder den ledende rente og advarer om lønvæksten."
+            {
+              "text": "Nationalbanken fastholder den ledende rente og advarer om lønvæksten.",
+              "sources": [
+                "borsen"
+              ]
+            }
           ],
           "short": [
-            "Børsen skriver, at Nationalbanken fastholder renten."
+            {
+              "text": "Nationalbanken fastholder renten.",
+              "sources": [
+                "borsen"
+              ]
+            }
           ]
         }
       },
@@ -160,7 +185,12 @@
       "kicker": "Trafik",
       "copy": {
         "headline": "Metroførere varsler strejke torsdag",
-        "lede": "DR skriver, at metroførerne varsler strejke torsdag og fredag.",
+        "lede": {
+          "text": "Metroførerne varsler strejke torsdag og fredag.",
+          "sources": [
+            "dr"
+          ]
+        },
         "body": {}
       },
       "callouts": [],
