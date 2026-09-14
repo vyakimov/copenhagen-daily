@@ -1,58 +1,33 @@
 {
   "version": "fontsource-5.3.0",
   "subset": "latin",
-  "note": "Static instances of the Google Fonts 'latin' subset (ASCII, Latin-1 incl. \u00e6\u00f8\u00e5, general punctuation) copied byte-for-byte from the pinned @fontsource packages. 'latin-ext' alone lacks ASCII.",
+  "note": "Variable fonts of the Google Fonts 'latin' subset (ASCII, Latin-1 incl. \u00e6\u00f8\u00e5, general punctuation), copied byte-for-byte from the pinned @fontsource-variable packages. Newsreader carries weight 200-800 and optical size 6-72; Libre Franklin carries weight 100-900. Both are OFL.",
   "upstream_registry": "https://registry.npmjs.org",
   "files": {
     "OFL.txt": {
-      "bytes": 4630,
-      "sha256": "sha256:c052aafd2a71e90bcee6e69f475029d430a10d548c08ffcae350171f0e9668b1",
-      "upstream": "@fontsource/playfair-display@5.3.0/LICENSE"
+      "bytes": 4520,
+      "sha256": "sha256:26028ec4e13b650065fa525a09532176f8a668b76ff849ea01c564a7480f91e7",
+      "upstream": "@fontsource-variable/newsreader@5.3.0/LICENSE"
     },
-    "playfair-display-400-italic.woff2": {
-      "bytes": 21884,
-      "sha256": "sha256:eabce94d4a69e439cd050755c31f9894ac8a78f93e58b063c6c01f370474e1de",
-      "upstream": "@fontsource/playfair-display@5.3.0/files/playfair-display-latin-400-italic.woff2"
+    "libre-franklin-wght-italic.woff2": {
+      "bytes": 32856,
+      "sha256": "sha256:c9fb9170f00060c83306219df8357a81a56c5ad142e25b3e3d9c21d2d47e2009",
+      "upstream": "@fontsource-variable/libre-franklin@5.3.0/files/libre-franklin-latin-wght-italic.woff2"
     },
-    "playfair-display-400.woff2": {
-      "bytes": 21856,
-      "sha256": "sha256:1fe9ad5d8b2ebd8ecb8fbd05bed1e3fdfa52dae3f1a04e1c219918442fe9394d",
-      "upstream": "@fontsource/playfair-display@5.3.0/files/playfair-display-latin-400-normal.woff2"
+    "libre-franklin-wght.woff2": {
+      "bytes": 29292,
+      "sha256": "sha256:52e605852c72cc2df1473df1fb7f26a3a0be58e31835bc8f33f29b1918c82cbd",
+      "upstream": "@fontsource-variable/libre-franklin@5.3.0/files/libre-franklin-latin-wght-normal.woff2"
     },
-    "playfair-display-700-italic.woff2": {
-      "bytes": 23196,
-      "sha256": "sha256:de2f4041e7ef84f418bd0144484e521e8df849aff47762230c981704b9661877",
-      "upstream": "@fontsource/playfair-display@5.3.0/files/playfair-display-latin-700-italic.woff2"
+    "newsreader-opsz-italic.woff2": {
+      "bytes": 146872,
+      "sha256": "sha256:5dfcd10d24af8c82927ba57f7983dd997f7b200594c09c35a1b1ed9fc4597506",
+      "upstream": "@fontsource-variable/newsreader@5.3.0/files/newsreader-latin-opsz-italic.woff2"
     },
-    "playfair-display-700.woff2": {
-      "bytes": 23224,
-      "sha256": "sha256:28453852ea165c47b5a941be00e418402e1407002ed87507f062a1e316328fe6",
-      "upstream": "@fontsource/playfair-display@5.3.0/files/playfair-display-latin-700-normal.woff2"
-    },
-    "playfair-display-900.woff2": {
-      "bytes": 22372,
-      "sha256": "sha256:2772c56b28bec10f310634732b0554dd6cced8ad0f723bbdf73f6abc53829ad0",
-      "upstream": "@fontsource/playfair-display@5.3.0/files/playfair-display-latin-900-normal.woff2"
-    },
-    "source-serif-4-400-italic.woff2": {
-      "bytes": 20092,
-      "sha256": "sha256:882b7c150c29f29d4f8daae6b8dcae8662aac7f28ca34b34615305154136ecfd",
-      "upstream": "@fontsource/source-serif-4@5.3.0/files/source-serif-4-latin-400-italic.woff2"
-    },
-    "source-serif-4-400.woff2": {
-      "bytes": 20088,
-      "sha256": "sha256:02194deb92d3975dd30e11a3824a1f1db32b48c93654e60560cb81ce8e7b5f95",
-      "upstream": "@fontsource/source-serif-4@5.3.0/files/source-serif-4-latin-400-normal.woff2"
-    },
-    "source-serif-4-600.woff2": {
-      "bytes": 21532,
-      "sha256": "sha256:f2b7e1cf1d277b7608231868135648f8ad8e2b58d8e97ca088bee15dc357bee7",
-      "upstream": "@fontsource/source-serif-4@5.3.0/files/source-serif-4-latin-600-normal.woff2"
-    },
-    "source-serif-4-700.woff2": {
-      "bytes": 21716,
-      "sha256": "sha256:7691c51bc286a9014db0048277d2c3f2ad0a90b533dc8adfb16cb22a95390d39",
-      "upstream": "@fontsource/source-serif-4@5.3.0/files/source-serif-4-latin-700-normal.woff2"
+    "newsreader-opsz.woff2": {
+      "bytes": 132000,
+      "sha256": "sha256:6e4f2958c3a7c4a80acde4e5a679abe7e01bc1e30b92be3c7a8b696ef401d101",
+      "upstream": "@fontsource-variable/newsreader@5.3.0/files/newsreader-latin-opsz-normal.woff2"
     }
   }
 }

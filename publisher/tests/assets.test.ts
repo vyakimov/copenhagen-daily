@@ -6,16 +6,18 @@ import { hashFile } from "../src/publish/hash.ts";
 
 const root = resolve(import.meta.dirname, "..");
 
-test("font files match the lock and CSS declares all nine faces", async () => {
+test("font files match the lock and CSS declares the four variable faces", async () => {
   const lock = JSON.parse(await readFile(resolve(root, "assets/fonts/fonts.lock.json"), "utf8"));
   for (const [name, entry] of Object.entries(lock.files) as Array<[string, { sha256: string; bytes: number }]>) {
     assert.equal(await hashFile(resolve(root, "assets/fonts", name)), entry.sha256);
     assert.equal((await stat(resolve(root, "assets/fonts", name))).size, entry.bytes);
     // The 'latin' subset carries ASCII and Latin-1; 'latin-ext' alone does not, and would fall back silently.
-    if (name.endsWith(".woff2")) assert.match((entry as any).upstream, /-latin-(400|600|700|900)-/, name);
+    if (name.endsWith(".woff2")) assert.match((entry as any).upstream, /-latin-(opsz|wght)-/, name);
   }
   const css = await readFile(resolve(root, "assets/css/tokens.css"), "utf8");
-  assert.equal((css.match(/@font-face/g) ?? []).length, 9);
+  assert.equal((css.match(/@font-face/g) ?? []).length, 4);
+  assert.match(css, /font-weight:200 800/);
+  assert.match(css, /font-weight:100 900/);
 });
 
 test("device palette and structural stylesheet invariants are fixed", async () => {

@@ -1,6 +1,6 @@
 # Broadsheet design notes
 
-Working mockups for block 3. `device.html` renders three 1872 × 1404 compositions (`?v=A`, `?v=B`, `?v=C`); `web.html` is the web edition of the same day as composition B. They are design references for the templates, not production templates. Fonts load from Google Fonts here only; production bundles them locally.
+Working mockups for block 3. `device.html` renders three 1872 × 1404 compositions (`?v=A`, `?v=B`, `?v=C`); `web.html` is the web edition of the same day as composition B. They are design references for the templates, not production templates. Fonts load from Google Fonts here only; production bundles them locally. The mockups predate the 11 September 2026 type decision (Newsreader + Libre Franklin replacing Playfair Display + Source Serif 4); the production stylesheets are authoritative on type.
 
 Render a composition with headless Chrome:
 
@@ -18,8 +18,8 @@ Render a composition with headless Chrome:
 | Ink / secondary / tertiary | `#000000` / `#333333` / `#555555` | `#000000` / `#2b2b2b` / `#5a5a5a` |
 | Rule / hairline / fill | `#111111` / `#bbbbbb` / `#dddddd` | `#111111` / `#c8c6c0` / `#e9e7e2` |
 | Accent | none | `#8a1c1c`, links and pull-quote bar only |
-| Display face | Playfair Display 700/900 for headlines/masthead, 400 figures, 400 italic quotes; vendor 700 italic too | same |
-| Text face | Source Serif 4, 400/600/700, italic decks | same |
+| Display face | Newsreader (variable, optical sizes): 800 masthead, 600 lead headline, 700 secondary headlines, 500 figures, italic quotes and decks | same |
+| Text face | Newsreader 400 at text optical size; Libre Franklin (variable) capitals for kickers, datelines, source rows, citations, navigation | same |
 | Body size | 30 px / 1.42 (minimum 26 px, briefs) | 19 px / 1.5 |
 | Margins / gutter | 64 px / 36 px | 40 px / 32 px |
 
