@@ -1,0 +1,17 @@
+{
+  "min_word": 5,
+  "left": 2,
+  "right": 3,
+  "exceptions": {
+    "en": {
+      "broadcaster": "broad-caster",
+      "copenhagen": "copen-hagen",
+      "nationalbanken": "national-banken",
+      "zealand": "zealand",
+      "jutland": "jutland",
+      "bornholm": "born-holm",
+      "malmö": "malmö"
+    },
+    "da": {}
+  }
+}

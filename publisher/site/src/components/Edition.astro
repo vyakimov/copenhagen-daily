@@ -1,26 +1,36 @@
 ---
 import Masthead from "./Masthead.astro";
-import Story from "./Story.astro";
+import Grid from "./layouts/Grid.astro";
+import Sheet from "./layouts/Sheet.astro";
 import { formatEditionDate } from "../../../assets/html/format.ts";
-const { edition, config, previous, next, device } = Astro.props;
+const { edition, config, device } = Astro.props;
 const meta = edition.edition;
+const common = { publishers: config.publishers, language: meta.language, timezone: meta.timezone };
+
+// The composition is a title-level choice (config/title.yaml, web_layout). Both compositions render the
+// same Story component and share one type scale, so switching is one word and nothing drifts.
+const layouts = { grid: Grid, sheet: Sheet } as const;
+const layout: keyof typeof layouts = config.web_layout in layouts ? config.web_layout : "grid";
+const Layout = layouts[layout];
+const stories: any[] = edition.stories;
+const roles = {
+  lead: stories.find((s) => s.role === "lead"),
+  secondaries: stories.filter((s) => s.role === "secondary"),
+  briefs: stories.filter((s) => s.role === "brief"),
+};
+const contributing = [...new Set(stories.flatMap((s) => s.sources.map((x: any) => x.source)))]
+  .map((id) => config.publishers[id] ?? id);
 ---
-<main class="page">
-  <Masthead edition={meta} masthead={config.masthead} earRight={edition.presentation?.ear_right} />
-  <p class="coverage"><strong>Coverage: {edition.coverage.status}.</strong> {edition.coverage.note}</p>
-  <section class="stories">
-    {edition.stories.map((story: any) => (
-      <Story story={story} publishers={config.publishers} language={meta.language} timezone={meta.timezone} />
-    ))}
-  </section>
-  {device && <p><a href="./device/page-1.png">Download the device edition</a></p>}
-  <nav aria-label="Edition navigation">
-    {previous && <a href={`/go/${meta.id}/prev/`}>Previous edition</a>}
-    {next && <a href={`/go/${meta.id}/next/`}>Next edition</a>}
-    <a href="/archive/">Archive</a>
-  </nav>
+<main class:list={["page", `layout-${layout}`]}>
+  <Masthead edition={meta} masthead={config.masthead} earRight={edition.presentation?.ear_right}
+    publishers={contributing} device={device} />
+  <Layout {...roles} common={common} />
+
+  <div class="coverage">
+    <span class="t">About this edition</span> Coverage {edition.coverage.status}. {edition.coverage.note}
+  </div>
   <footer class="folio">
-    <span>{config.masthead}</span>
-    <span>{formatEditionDate(meta.date, meta.language)} · Edition {meta.number}</span>
+    <span>Edition <b>{meta.id}</b> · {formatEditionDate(meta.date, meta.language)}</span>
+    <span>{config.masthead} is a personal newspaper; it is not affiliated with any publisher listed.</span>
   </footer>
 </main>

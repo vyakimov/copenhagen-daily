@@ -8,10 +8,8 @@ export async function getStaticPaths() {
   return entries.map((entry) => ({ params: { edition: entry.data.edition.id }, props: { edition: entry.data } }));
 }
 const { edition } = Astro.props;
-const position = order.findIndex((x) => x.id === edition.edition.id);
-const entry = order[position];
+const entry = order.find((x) => x.id === edition.edition.id);
 ---
 <Broadsheet title={`${edition.edition.name} — ${config.masthead}`} language={edition.edition.language}>
-  <Edition edition={edition} config={config} previous={position > 0} next={position + 1 < order.length}
-    device={entry?.device_status === "published"} />
+  <Edition edition={edition} config={config} device={entry?.device_status === "published"} />
 </Broadsheet>

@@ -7,6 +7,7 @@ export type TitleConfig = {
   masthead: string;
   device_profile: { width: number; height: number; timezone: string };
   composition_order: string[];
+  web_layout?: "grid" | "sheet";
   publishers: Record<string, string>;
 };
 

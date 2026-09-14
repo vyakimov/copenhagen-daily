@@ -2,37 +2,63 @@
 import Callout from "./Callout.astro";
 import { renderSourceRow } from "../../../assets/html/source-row.ts";
 import { formatPublished } from "../../../assets/html/format.ts";
-const { story, publishers, language, timezone } = Astro.props;
-const primary = story.sources.find((s: any) => s.primary);
+import { softHyphenate } from "../../../assets/html/hyphenate.ts";
+const { story, publishers, language, timezone, twoColumn = false } = Astro.props;
+type Source = { source: string; url: string; primary: boolean; original_title: string; published_at: string };
+type Attributed = { text: string; sources: string[] };
+const sources: Source[] = story.sources;
+const primary = sources.find((s) => s.primary);
 // The web carries the longest approved variant, always.
-const body = story.copy.body.extended ?? story.copy.body.standard ?? story.copy.body.short ?? [];
-const labels: Record<string, string> = {
-  digest_of_rss_description: "Based on an RSS description",
-  translated_from_source_language: "Translated from the source language",
-  headline_only: "Headline-only source",
-  partial_source_coverage: "Partial source coverage",
+const body: Attributed[] = story.copy.body.extended ?? story.copy.body.standard ?? story.copy.body.short ?? [];
+const Heading = story.role === "lead" ? "h1" : story.role === "secondary" ? "h2" : "h3";
+const limitations: Record<string, string> = {
+  digest_of_rss_description: "digest of RSS descriptions",
+  translated_from_source_language: "translated",
+  headline_only: "headline only",
+  partial_source_coverage: "partial source coverage",
 };
+const note = story.limitations.map((x: string) => limitations[x]).join(", ");
+// Paragraph citations stay in the contract but are not rendered inline on the web: the source line under
+// each story carries the publishers. Inline markers unsettled the line breaking in narrow columns.
+// Body copy and ledes get build-time soft hyphens so every browser breaks words at the same points.
+const hy = (text: string) => softHyphenate(text, language);
 ---
 <article class:list={["story", story.role]} id={story.id}>
-  <div class="kicker">{story.kicker}{story.kicker_secondary ? ` · ${story.kicker_secondary}` : ""}</div>
-  <h2>{primary ? <a href={primary.url}>{story.copy.headline}</a> : story.copy.headline}</h2>
-  {story.copy.deck && <p class="deck">{story.copy.deck}</p>}
-  {story.copy.lede && story.role === "brief" && <p class="lede">{story.copy.lede}</p>}
-  <div class="body">{body.map((p: string) => <p>{p}</p>)}</div>
-  {story.callouts.map((callout: any) => <Callout callout={callout} />)}
-  <Fragment set:html={renderSourceRow(story.sources, publishers)} />
-  <div class="limitations">{story.limitations.map((x: string) => labels[x]).join(" · ")}</div>
-  {story.sources.length > 0 && (
-    <details class="sources">
-      <summary>All source articles</summary>
-      <ul>
-        {story.sources.map((s: any) => (
-          <li>
-            <a href={s.url}>{s.original_title}</a> — {publishers[s.source]} ·{" "}
-            <time datetime={s.published_at}>{formatPublished(s.published_at, language, timezone)}</time>
-          </li>
-        ))}
-      </ul>
-    </details>
+  <header>
+    <div class="kicker">
+      {story.kicker}{story.kicker_secondary && <span class="sec"> · {story.kicker_secondary}</span>}
+    </div>
+    <Heading>{primary ? <a href={primary.url}>{story.copy.headline}</a> : story.copy.headline}</Heading>
+    {story.copy.deck && <p class="deck">{story.copy.deck}</p>}
+  </header>
+  {story.copy.lede && story.role === "brief" && (
+    <p class="lede">{hy(story.copy.lede.text)}</p>
   )}
+  {story.callouts.length > 0 && <Callout callout={story.callouts[0]} publishers={publishers} />}
+  {body.length > 0 && (
+    <div class:list={["body", { two: twoColumn && body.length > 1, dropcap: story.role === "lead" }]}>
+      {body.map((p) => (
+        <p>{hy(p.text)}</p>
+      ))}
+    </div>
+  )}
+  {story.callouts.slice(1).map((callout: any) => <Callout callout={callout} publishers={publishers} />)}
+  <footer class="attribution">
+    <div class="src">
+      <Fragment set:html={renderSourceRow(sources, publishers)} />{note && ` · ${note}`}
+    </div>
+    {sources.length > 0 && (
+      <details class="sources">
+        <summary>Sources for this story</summary>
+        <ul>
+          {sources.map((s) => (
+            <li>
+              <a href={s.url}>{s.original_title}</a>{" "}
+              <span>{publishers[s.source]}, {formatPublished(s.published_at, language, timezone)}</span>
+            </li>
+          ))}
+        </ul>
+      </details>
+    )}
+  </footer>
 </article>

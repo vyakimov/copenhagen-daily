@@ -11,9 +11,11 @@ const edition = latest ? editions.get(latest.id) : null;
 ---
 <Broadsheet title={config.masthead} language={edition?.edition.language ?? "en"}>
   {edition ? (
-    <Edition edition={edition} config={config} previous={order.length > 1} next={false}
-      device={latest!.device_status === "published"} />
+    <Edition edition={edition} config={config} device={latest!.device_status === "published"} />
   ) : (
-    <main class="page"><h1>{config.masthead}</h1><p>No editions have been published.</p></main>
+    <main class="page">
+      <div class="title">{config.masthead}</div>
+      <p class="stub">No editions have been published.</p>
+    </main>
   )}
 </Broadsheet>

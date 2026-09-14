@@ -1,0 +1,13 @@
+---
+// Sheet composition: one sheet of balanced newspaper columns. The lead's kicker, headline, and deck span
+// every column; its body and every other story then flow through in contract order, secondaries before
+// briefs, breaking wherever they break.
+import Story from "../Story.astro";
+const { lead, secondaries, briefs, common } = Astro.props;
+---
+<div class="sheet">
+  <Story story={lead} {...common} />
+  {secondaries.map((s: any) => <Story story={s} {...common} />)}
+  {briefs.length > 0 && <div class="head">Also today</div>}
+  {briefs.map((s: any) => <Story story={s} {...common} />)}
+</div>

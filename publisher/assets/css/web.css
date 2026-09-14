@@ -1,1 +1,137 @@
-:root{--secondary:#2b2b2b;--tertiary:#5a5a5a;--hairline:#c8c6c0;--fill:#e9e7e2;--paper:#f7f6f3;--accent:#8a1c1c}*{box-sizing:border-box}html{background:var(--paper);color:var(--ink);font-family:var(--text)}body{margin:0}a{color:var(--accent);text-underline-offset:.15em}a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.page{width:min(1320px,calc(100% - 80px));margin:auto}.masthead{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;border-bottom:8px solid var(--rule);padding:28px 0 12px}.masthead h1{font:900 clamp(58px,7vw,104px)/.9 var(--display);margin:0}.ear{font:600 14px/1.3 var(--text);letter-spacing:.08em;text-transform:uppercase}.ear:last-child{text-align:right}.edition-meta,.coverage,.folio{font:400 15px/1.45 var(--text);color:var(--secondary)}.coverage{border-bottom:1px solid var(--hairline);padding:14px 0}.stories{display:grid;grid-template-columns:repeat(12,1fr);gap:32px}.story{grid-column:span 4;border-top:3px solid var(--rule);padding-top:14px;margin-top:32px}.story.lead{grid-column:1/-1}.story.secondary{grid-column:span 6}.kicker,.source-row,.limitations{font:700 13px/1.4 var(--text);letter-spacing:.09em;text-transform:uppercase}.kicker{color:var(--accent)}h2{font:700 34px/1.05 var(--display);margin:.15em 0}.lead h2{font-size:clamp(54px,6vw,84px)}.deck{font:italic 400 24px/1.3 var(--text)}.body{font:400 19px/1.5 var(--text)}.body p:first-child::first-letter{float:left;font:700 3.4em/.8 var(--display);padding:.08em .08em 0 0}.callout{margin:24px 0;padding:16px;border-top:3px solid var(--rule);background:var(--fill)}.callout.quote{border-left:5px solid var(--accent);font:italic 400 27px/1.25 var(--display)}.callout.figure .value{font:400 64px/1 var(--display)}.callout dt{font-weight:700}.callout dd{margin-left:0}.sources{margin:18px 0}.sources summary{cursor:pointer}.source-row{margin-top:16px}.limitations{color:var(--tertiary)}.folio{display:flex;justify-content:space-between;border-top:8px solid var(--rule);padding:12px 0 30px;margin-top:42px}.archive-list{font-size:20px;line-height:1.6}@media(max-width:700px){.page{width:calc(100% - 32px)}.masthead{display:block}.masthead h1{font-size:50px;margin:.15em 0}.ear:last-child{text-align:left}.stories{display:block}.story,.story.secondary,.story.lead{width:100%}.lead h2{font-size:46px}}
+/* Web edition: the design language of design/web.html on the tokens of tokens.css.
+   Two voices, as the Times sets them: Newsreader (optical sizes) for everything read, Libre Franklin for
+   everything small: kickers, datelines, source rows, navigation.
+
+   Two compositions share everything here except the block that places stories on the page. The type scale
+   is a set of custom properties; a composition may only set those properties and its own placement rules.
+   Story markup, callouts, and attribution are identical in both. config/title.yaml selects the default. */
+:root{--secondary:#2b2b2b;--tertiary:#5a5a5a;--hairline:#c8c6c0;--fill:#e9e7e2;--paper:#f7f6f3;--accent:#8a1c1c;--gutter:32px;
+  /* type scale (grid values; the sheet composition narrows them) */
+  --body:18px;--lh:1.42;--h1:54px;--h2:26px;--h3:19px;--deck:22px;--quote:24px;--figure:54px;--box:20px;--small:17px;--lede:16px}
+.layout-sheet{--body:16.5px;--lh:1.38;--h1:50px;--h2:23px;--h3:18px;--deck:20px;--quote:21px;--figure:46px;--box:18px;--small:15.5px;--lede:15.5px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--paper);color:var(--ink);font-family:var(--text)}
+.page{font-size:var(--body);line-height:var(--lh);max-width:1240px;margin:0 auto;padding:22px 36px 40px}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--hairline);text-underline-offset:.18em}
+a:hover{text-decoration-color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.label{font-family:var(--label);text-transform:uppercase;letter-spacing:.1em;font-weight:600;font-size:12px}
+
+/* masthead, dateline, navigation */
+.masthead{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;column-gap:24px}
+.ear{font-family:var(--label);font-size:14px;line-height:1.35;color:var(--secondary)}
+.ear.right{text-align:right}
+.ear .lbl{text-transform:uppercase;letter-spacing:.08em;font-size:11.5px;font-weight:600;color:var(--ink)}
+.title{font-family:var(--display);font-weight:800;font-size:76px;line-height:.95;text-align:center;letter-spacing:-.02em;white-space:nowrap}
+.dateline{display:flex;justify-content:space-between;gap:16px;margin-top:8px;padding:6px 0 5px;border-top:4px solid var(--rule);border-bottom:1px solid var(--rule);font-family:var(--label);font-size:12.5px;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+.dateline .mid{color:var(--tertiary);font-weight:400}
+nav.editions{display:flex;justify-content:space-between;gap:16px;font-family:var(--label);font-size:13px;color:var(--tertiary);padding:5px 0;border-bottom:1px solid var(--hairline)}
+nav.editions a{text-decoration:none;color:var(--secondary)}
+nav.editions a:hover{color:var(--accent)}
+
+/* story anatomy */
+.kicker{font-family:var(--label);text-transform:uppercase;letter-spacing:.1em;font-size:11.5px;font-weight:600;margin-bottom:3px}
+.kicker .sec{color:var(--tertiary);font-weight:400}
+h1{font-family:var(--display);font-weight:600;font-size:var(--h1);line-height:1.04;letter-spacing:-.01em;margin-bottom:8px}
+h2{font-family:var(--display);font-weight:700;font-size:var(--h2);line-height:1.12;letter-spacing:-.005em;margin-bottom:3px}
+h3{font-family:var(--display);font-weight:700;font-size:var(--h3);line-height:1.2;margin-bottom:2px}
+h1 a,h2 a,h3 a{text-decoration:none}
+h1 a:hover,h2 a:hover,h3 a:hover{text-decoration:underline;text-decoration-color:var(--accent)}
+.deck{font-style:italic;font-size:var(--deck);line-height:1.3;color:var(--secondary);margin-bottom:4px}
+/* Body copy is justified. Hyphenation is manual: the publisher inserts soft hyphens at build time
+   (assets/html/hyphenate.ts, limits in config/hyphenation.json) so every browser breaks words identically;
+   at most three hyphenated lines in a row. text-wrap:pretty is the browser's paragraph-level line breaking
+   (whole-paragraph in Safari, last lines in Chrome); hanging-punctuation hangs quotes and periods where supported. */
+.body,.lede{text-align:justify;hyphens:manual;overflow-wrap:break-word;orphans:2;widows:2;text-wrap:pretty;
+  hanging-punctuation:first allow-end last;-webkit-hyphenate-limit-lines:3;hyphenate-limit-lines:3}
+.body{max-width:38em}
+.body p+p{margin-top:.3em;text-indent:1.4em}
+.dropcap p:first-child::first-letter{font-family:var(--display);font-weight:700;font-size:3.1em;float:left;line-height:.8;padding:.05em .08em 0 0}
+.src{font-family:var(--label);font-size:11px;color:var(--tertiary);margin-top:4px;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.src .source-row{display:inline}
+.src .source-row a{color:var(--ink);font-weight:700;text-decoration:none}
+.src .source-row a:hover{text-decoration:underline;text-decoration-color:var(--accent)}
+details.sources{margin-top:4px;font-family:var(--label);font-size:13px;color:var(--secondary)}
+details.sources li a{font-family:var(--text);font-size:16px}
+details.sources summary{cursor:pointer;color:var(--tertiary);list-style:none}
+details.sources summary::-webkit-details-marker{display:none}
+details.sources summary::before{content:"+ ";color:var(--accent)}
+details[open].sources summary::before{content:"– "}
+details.sources li{margin:6px 0 0;list-style:none}
+details.sources li span{color:var(--tertiary)}
+.lede{font-size:var(--lede);line-height:1.32;color:var(--secondary)}
+header,.callout,.attribution{break-inside:avoid}
+header{break-after:avoid}
+.attribution{break-before:avoid}
+.head{font-family:var(--label);text-transform:uppercase;letter-spacing:.1em;font-weight:600;font-size:12px;margin:6px 0 4px;padding-top:6px;border-top:3px solid var(--rule);break-after:avoid}
+
+/* callouts: five kinds, five treatments */
+.callout{margin:8px 0}
+.callout.quote{padding:4px 0 4px 20px;border-left:4px solid var(--accent)}
+.callout.quote .q{font-family:var(--display);font-style:italic;font-size:var(--quote);line-height:1.22}
+.callout.quote .w{font-family:var(--label);font-size:11.5px;color:var(--tertiary);margin-top:6px;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.callout.figure{text-align:center;padding:6px 0 8px;border-top:3px solid var(--rule);border-bottom:1px solid var(--rule)}
+.callout.figure .n{font-family:var(--display);font-weight:500;font-size:var(--figure);line-height:1;letter-spacing:-.02em}
+.callout.figure .l{font-size:15px;font-style:italic;color:var(--secondary)}
+.callout.facts{background:var(--fill);padding:8px 14px 10px;border-top:3px solid var(--rule)}
+.callout.facts .t,.callout.timeline .t{font-family:var(--label);text-transform:uppercase;letter-spacing:.1em;font-weight:600;font-size:12px;margin-bottom:6px;color:var(--accent)}
+.callout.facts li{list-style:none;font-size:var(--small);line-height:1.35;padding-left:1.1em;text-indent:-1.1em}
+.callout.facts li::before{content:"• "}
+.callout.box{background:var(--fill);padding:10px 16px;text-align:center}
+.callout.box .l{font-family:var(--label);text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:600;color:var(--accent)}
+.callout.box .t{font-weight:700;font-size:var(--box);line-height:1.2;margin-top:2px}
+.callout.timeline{border-top:1px solid var(--rule);padding-top:8px}
+.callout.timeline dl{display:grid;grid-template-columns:auto 1fr;column-gap:12px;row-gap:3px;font-size:var(--small);line-height:1.35}
+.callout.timeline dt{font-weight:700}
+
+/* composition: grid. The lead beside a rail of up to two secondaries, then the remaining stories flow
+   through three balanced columns, secondaries before briefs. */
+.grid{display:grid;column-gap:var(--gutter)}
+.top{grid-template-columns:7fr 5fr;margin-top:12px}
+.top.alone{grid-template-columns:1fr}
+.rail{border-left:2px solid var(--rule);padding-left:var(--gutter)}
+.rail>*+*{border-top:1px solid var(--hairline);padding-top:8px;margin-top:8px}
+.ornament{text-align:center;color:var(--tertiary);font-size:18px;margin:6px 0 0}
+.flow{column-count:3;column-gap:var(--gutter);column-rule:1px solid var(--rule);column-fill:balance;border-top:1px solid var(--rule);padding-top:10px}
+.flow .story{break-inside:avoid;padding-bottom:8px}
+.flow .story+.story{border-top:1px solid var(--hairline);padding-top:8px}
+.flow .body{max-width:none}
+.flow .head{margin-top:0}
+.flow .head+.story{padding-top:0;border-top:0}
+.body.two{max-width:none;column-count:2;column-gap:var(--gutter);column-rule:1px solid var(--hairline)}
+
+/* composition: sheet. One sheet of three balanced newspaper columns; the lead's header spans them and
+   everything else, the lead's body included, flows through in contract order. */
+.sheet{column-count:3;column-gap:26px;column-rule:1px solid var(--rule);column-fill:balance;border-top:1px solid var(--rule);padding-top:8px;margin-top:6px}
+.sheet .story.lead>header{column-span:all;padding-bottom:6px;margin-bottom:4px;border-bottom:1px solid var(--rule)}
+.sheet .story.lead h1{max-width:16em}
+.sheet .story.lead .deck{max-width:38em}
+.sheet .story+.story{border-top:1px solid var(--hairline);padding-top:6px;margin-top:6px}
+.sheet .body{max-width:none}
+.sheet .head+.story{border-top:0;padding-top:0;margin-top:0}
+
+/* foot */
+.coverage{margin-top:10px;font-family:var(--label);font-size:13px;color:var(--secondary);border-top:1px solid var(--hairline);padding-top:8px;max-width:70em}
+.coverage .t{text-transform:uppercase;letter-spacing:.1em;font-weight:600;font-size:12px;color:var(--ink)}
+.folio{border-top:1px solid var(--rule);padding-top:6px;margin-top:16px;display:flex;justify-content:space-between;gap:16px;font-family:var(--label);font-size:13px;color:var(--tertiary)}
+.folio b{color:var(--accent);font-weight:600}
+.archive-list{margin:20px 0 28px 1.2em;font-size:19px;line-height:1.7}
+.archive-list li span{color:var(--tertiary)}
+.stub{margin-top:24px;font-size:19px}
+
+@media (max-width:900px){
+  .page{padding:16px 16px 32px}
+  .masthead{grid-template-columns:1fr}
+  .ear{display:none}
+  .title{font-size:44px;white-space:normal}
+  .grid{grid-template-columns:1fr}
+  .rail{border-left:0;padding-left:0;border-top:2px solid var(--rule);padding-top:10px;margin-top:12px}
+  .flow{column-count:1}
+  .body.two{column-count:1}
+  .sheet{column-count:2}
+  h1,.sheet .story.lead h1{font-size:36px}h2{font-size:23px}.deck{font-size:19px}
+  .dateline,nav.editions,.folio{flex-wrap:wrap;gap:6px}
+}
+@media (max-width:600px){.sheet{column-count:1}.body,.lede{text-align:left}}
+@media (prefers-reduced-motion:no-preference){details.sources ul{animation:fade .18s ease-out}}
+@keyframes fade{from{opacity:0}to{opacity:1}}

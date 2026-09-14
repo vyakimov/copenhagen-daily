@@ -5,11 +5,14 @@ import { formatEditionDate } from "../../../../assets/html/format.ts";
 ---
 <Broadsheet title={`Archive — ${config.masthead}`}>
   <main class="page">
-    <h1>Archive</h1>
-    <ol class="archive-list">
+    <div class="title">{config.masthead}</div>
+    <div class="dateline">
+      <span>Edition archive</span><span class="mid">{order.length} editions</span><span></span>
+    </div>
+    <ol class="archive-list" reversed>
       {[...order].reverse().map((e) => (
         <li>
-          <a href={`/n/${e.id}/`}>{e.name}</a> — <time datetime={e.date}>{formatEditionDate(e.date, e.language)}</time>
+          <a href={`/n/${e.id}/`}>{formatEditionDate(e.date, e.language)}</a> <span>· {e.name}</span>
         </li>
       ))}
     </ol>

@@ -1,9 +1,11 @@
-id: copenhagen-today
-masthead: Copenhagen Today
+id: copenhagen-daily
+masthead: Copenhagen Daily
 device_profile:
   width: 1872
   height: 1404
   timezone: Europe/Copenhagen
+# Web composition: grid (lead beside a rail, then columns) or sheet (one sheet of columns).
+web_layout: grid
 composition_order:
   - lead-wide
   - lead-tall

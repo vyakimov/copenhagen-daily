@@ -103,7 +103,11 @@ async function buildWebAction(): Promise<void> {
   const dry = args.options.has("dry-run");
   const work = await mkdtemp(resolve(tmpdir(), "publisher-web-"));
   try {
-    const dist = await buildWeb(root, work, edition, [indexEntry(edition, "skipped")]);
+    const layout = args.options.get("layout");
+    if (layout !== undefined && layout !== "grid" && layout !== "sheet") {
+      fail("usage_error", "--layout must be grid or sheet", { option: "layout", value: layout });
+    }
+    const dist = await buildWeb(root, work, edition, [indexEntry(edition, "skipped")], { layout: layout as never });
     const assets = resolve(work, "assets");
     await copyAssets(root, assets);
     if (!dry) {

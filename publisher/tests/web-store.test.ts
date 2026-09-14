@@ -7,6 +7,7 @@ import { tmpdir } from "node:os";
 import { readEdition, validateEdition } from "../src/contract/edition-contract.ts";
 import { publishEdition, recoverPublication, activatedReceipt, verifyBundle } from "../src/publish/store.ts";
 import { hashFile } from "../src/publish/hash.ts";
+import { buildWeb, indexEntry } from "../src/publish/web.ts";
 
 const projectRoot = resolve(import.meta.dirname, "..");
 const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -65,11 +66,17 @@ test("web publication is immutable, hardlinked, verifiable, and backdate safe", 
   const html = await readFile(join(root, "live", "n", dense.edition.id, "index.html"), "utf8");
   for (const story of dense.stories) {
     assert.match(html, new RegExp(story.id));
-    assert.match(html, new RegExp(escapeRegExp(story.copy.headline)));
+    assert.match(html.replaceAll("\u00ad", ""), new RegExp(escapeRegExp(story.copy.headline)));
     for (const c of story.callouts as any[]) {
-      assert.match(html, new RegExp(escapeRegExp(String(c.text ?? c.value ?? c.title ?? c.label))));
+      assert.match(
+        html.replaceAll("\u00ad", ""),
+        new RegExp(escapeRegExp(String(c.text ?? c.value ?? c.title ?? c.label))),
+      );
     }
   }
+  // Body copy carries build-time soft hyphens; the stored contract never does.
+  assert.ok(html.includes("\u00ad"));
+  assert.ok(!(await readFile(join(root, "store", "n", dense.edition.id, "edition.json"), "utf8")).includes("\u00ad"));
   // Timestamps are formatted for readers, never raw ISO.
   assert.doesNotMatch(html, /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{6}Z<\//);
   assert.match(html, /News through 05:00, Wednesday,? 9 September/);
@@ -166,6 +173,16 @@ test("retention keeps the newest releases by activation sequence and never the l
   assert.equal((await readdir(join(root, "store", "n"))).length, 3);
   assert.equal((await readdir(join(root, "state", "activations"))).length, 3);
   assert.equal((await verifyBundle(root, "2026-09-08-morning")).valid, true);
+});
+
+test("the other composition builds from the same story markup", async () => {
+  const dense = await edition("dense.json");
+  const work = await mkdtemp(join(tmpdir(), "publisher-layout-"));
+  const dist = await buildWeb(projectRoot, work, dense, [indexEntry(dense, "skipped")], { layout: "sheet" });
+  const html = await readFile(join(dist, "n", dense.edition.id, "index.html"), "utf8");
+  assert.match(html, /class="page layout-sheet"/);
+  assert.match(html, /class="sheet"/);
+  for (const story of dense.stories) assert.match(html, new RegExp(story.id));
 });
 
 test("standalone web builds are deterministic and load no remote resources", async () => {

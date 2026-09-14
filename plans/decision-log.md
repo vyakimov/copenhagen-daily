@@ -19,7 +19,7 @@ Companions: [Block 1 implementation](news-ingestion-implementation-plan.md),
 
 ## Structure and boundaries
 
-**One repository, `copenhagen-today`, holding all three blocks.** This is one product built by one
+**One repository, `copenhagen-daily`, holding all three blocks.** This is one product built by one
 person on one schedule, so one repository is the right default. The three blocks occupy sibling
 directories, `ingest/`, `editorial/`, and `publisher/`. Block 1's rule that no browser, model, or
 credential enters the component touching untrusted feeds is a directory rule enforced by tests: nothing
@@ -143,6 +143,36 @@ The rule now: a test that holds no Section 1 invariant and no published contract
 injection is three boundaries the protocol reduces every interruption to; escaping is one fixed
 injection string; visual regression is a manual re-inspection of checked-in reference PNGs before a
 renderer change; the Python validator is block 2's test when block 2 exists.
+
+**Type is Newsreader and Libre Franklin. Settled 11 September 2026 by specimen.** The dense fixture
+was set five ways and compared in the browser: the original Playfair Display with Source Serif 4,
+Newsreader with Libre Franklin, Libre Caslon with Libre Franklin, Newsreader headlines over Source
+Serif, and Newsreader with a Chomsky blackletter nameplate. Playfair was dropped because its Didone
+hairlines break first at 16 grey levels and because it has become the default face of generated
+broadsheets. Caslon Display comes in one light weight, elegant on screen and too thin for the panel.
+The nameplate was memorable but unproven on the device. Newsreader was chosen for its optical-size
+axis, which gives headline and text cuts from one family, and Libre Franklin because a plain
+grotesque for labels is the second voice the reference has and the page lacked.
+
+**The web edition is a grid with the sheet kept as a one-word switch. Settled 14 September 2026.**
+Three layouts were compared on three fresh editions: the lead beside a rail with flowing columns below,
+and one sheet of newspaper columns with a spanning lead headline, ragged and justified. The sheet fills the
+page on every kind of day; the grid gives the front page a clear opening and was preferred on balance.
+Both are kept because the cost is one small placement block each, on one shared story renderer and one
+type scale; if the sheet goes unused it is deleted, never left to drift. Justification won over ragged
+right once the inline citation markers were
+removed, which had been the real cause of the rivers. Hyphenation moved from the browser to the build:
+soft hyphens from TeX patterns make every browser break identically and make the exception list ours.
+Knuth–Plass was rejected for the web because it needs a script or a fixed line width; it remains an
+option for the fixed-width device page.
+
+**Attribution is a trailing citation, not a sentence prefix. Settled 11 September 2026.** The first
+fixtures opened every paragraph with "X reports that", and rendered pages read as a machine
+repeating itself. Rotating the phrasing was rejected because rotated synonyms on every sentence read
+as generated faster than plain repetition does; dropping attribution was rejected because the
+evidence discipline depends on it. Paragraphs and ledes became `{text, sources[]}` in the edition
+contract, with publisher ids validated against the story's sources and rendered as a small-caps
+marker after the text. Prose names a publisher only when publishers disagree.
 
 **The ingestion code moved into `ingest/` on 11 September 2026.** Done with `git mv`, runtime state and
 the virtual environment moved alongside, and verified by the collector's own offline check and smoke

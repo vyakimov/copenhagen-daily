@@ -1,5 +1,5 @@
 ---
 import { renderCallout } from "../../../assets/html/callout.ts";
-const { callout } = Astro.props;
+const { callout, publishers = {} } = Astro.props;
 ---
-<Fragment set:html={renderCallout(callout)} />
+<Fragment set:html={renderCallout(callout, publishers)} />

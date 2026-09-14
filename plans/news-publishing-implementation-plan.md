@@ -65,7 +65,7 @@ trial and WP 12's device check, each of which is a
 person's action: the user places the PNG at a URL they control and enters it into the Image Display
 plugin by hand. Block 3 uploads nothing and touches no account. These plans authorize no public posting.
 
-**Repository.** The `copenhagen-today` repository, which holds all three blocks. Block 3 occupies
+**Repository.** The `copenhagen-daily` repository, which holds all three blocks. Block 3 occupies
 `publisher/`. `editorial/` is reserved for block 2's Python application, and `ingest/` holds block 1,
 relocated there on 11 September 2026 with its wrapper at `ingest/gather_news.sh`. No block claims the
 repository root; the root `AGENTS.md` states the cross-block boundaries. `ingest/` is unchanged by
@@ -86,7 +86,7 @@ exactly, and commit the lockfile.
 | Astro content collection | Zod 4 | Astro 6 upgraded to Zod 4 and dropped Zod 3. Used only for content already validated at the CLI boundary |
 | Image conversion | ImageMagick 7.1.2-31 | Verified on this machine |
 | Package manager | npm 11.17.0, `npm ci` only, `package-lock.json` committed | — |
-| Fonts | Playfair Display and Source Serif 4, OFL, vendored WOFF2 static instances | Section 14 |
+| Fonts | Newsreader and Libre Franklin, OFL, vendored variable WOFF2 | Section 14 |
 | Persistence | Files only; no database | Immutable bundles, release snapshots, and a durable publication journal; Section 13 |
 
 Rendering depends on the accepted contract, configuration, assets, and pinned environment. Publication
@@ -96,7 +96,7 @@ an immutable bundle alone does not establish that readers could reach it.
 ## 4. Target repository layout
 
 ```text
-copenhagen-today/
+copenhagen-daily/
   README.md
   AGENTS.md
   ingest/                        Block 1 (Python). No Node dependency.
@@ -248,6 +248,13 @@ section define meaning. Shapes the tables leave open are settled here:
   `headline_only`, and `partial_source_coverage`. Adding a value is a schema version change.
 - `copy.body` keys are exactly `extended`, `standard`, `short`. A `callouts[]` item carries `kind`
   plus the fields of the callout table below and nothing else.
+- **Attribution is data, not prose.** A paragraph and a lede are `{text, sources[]}`, where
+  `sources[]` lists publisher ids that each name an entry in the story's `sources[]`. Block 3
+  renders them as a trailing small-caps marker after the text, linking on the web to that
+  publisher's article for the story and unlinked on the device. Copy therefore does not open with
+  "X reports that"; a publisher is named in the sentence only when the point is that publishers
+  differ. A sourced story cites at least one publisher per paragraph; a story with no sources cites
+  none.
 
 ### Stories
 
@@ -262,8 +269,8 @@ section define meaning. Shapes the tables leave open are settled here:
 | `fallback_role` | Optional demotion target. `lead` has no fallback. |
 | `copy.headline`, `copy.headline_short` | The headline and an approved shorter form for a narrow slot. |
 | `copy.deck` | Optional italic standfirst. |
-| `copy.lede` | One sentence opening with the primary publisher's display name, shown under a brief's headline. Required when `role` or `fallback_role` is `brief`; ignored in other roles. |
-| `copy.body` | Object keyed `extended`, `standard`, `short`, each an array of paragraphs. All optional; a title-only item supplies none. Approved variants, not budgets block 3 may trim. |
+| `copy.lede` | One attributed sentence, `{text, sources[]}`, shown under a brief's headline. Required when `role` or `fallback_role` is `brief`; ignored in other roles. |
+| `copy.body` | Object keyed `extended`, `standard`, `short`, each an array of attributed paragraphs `{text, sources[]}`. All optional; a title-only item supplies none. Approved variants, not budgets block 3 may trim. |
 | `callouts[]` | Zero or more candidates in priority order. |
 | `sources[]` | Every contributing article: `source` and `source_id` exactly as in block 1, `input_id` referencing `inputs[]`, original title, validated original reading URL, published time, content hash, and one flagged `primary`. Display names come from title config, never a redundant model-authored publisher field. |
 | `limitations[]` | Evidence limitations such as `digest_of_rss_description`. |
@@ -272,7 +279,7 @@ section define meaning. Shapes the tables leave open are settled here:
 
 | `kind` | Required fields |
 |---|---|
-| `quote` | `text`, `attribution` (the speaker), `attribution_source` (the reporting publisher) |
+| `quote` | `text`, `attribution` (the speaker), `attribution_source` (the reporting publisher's id, present in `sources[]`) |
 | `figure` | `value` (a short numeral string such as `8.4 bn`), `label` |
 | `facts` | `title`, `items[]` of two to four short strings |
 | `box` | `label`, `text` |
@@ -293,8 +300,8 @@ there is no page budget field; multi-page output is designed in the [roadmap](ro
 
 Exactly one `lead`, first in `stories[]`, with `device_participation: required` and no fallback.
 The only fallback transition is `secondary -> brief`; briefs have no fallback. Every story that can
-be a brief carries a nonempty approved `copy.lede` opening with its primary publisher's configured
-display name. Story IDs and input IDs are unique. Policy lists are duplicate-free, disjoint, and equal
+be a brief carries an approved `copy.lede`. Every cited publisher, including a quote's
+`attribution_source`, appears in the story's `sources[]`. Story IDs and input IDs are unique. Policy lists are duplicate-free, disjoint, and equal
 to their participation sets. Every nonempty `sources[]` has exactly one primary; all source IDs are
 namespaced by publisher, input references exist, publisher mappings are known, and content hashes
 have the defined form. URLs must parse as absolute HTTPS URLs without userinfo. No URL is fetched.
@@ -686,6 +693,14 @@ anchors. A link to the device image when one exists. Render each story's evidenc
 reader-visible labels; RSS-based copy must be labeled as such. Briefs and title-only stories retain
 their approved lede when applicable, sources, and limitations even without a body variant.
 
+**Composition.** Two compositions exist and `config/title.yaml` selects one (`web_layout`): `grid`,
+the lead beside a rail of secondaries with the rest flowing through three columns, and `sheet`, one
+sheet of three columns with the lead's headline spanning them. They share one `Story` component and
+one type scale expressed as custom properties; a composition may set those properties and its own
+placement rules and nothing else, which is what keeps the second one cheap to carry. `build-web
+--layout` previews the other; `publish` reads only the config. Grid is the default as of 14 September
+2026.
+
 **Layout.** Its own responsive layout, chosen for a browser. It keeps the design language — masthead,
 heavy and hairline rules, small caps, kickers, source rows, the type scale, and the five callout kinds —
 and adds the warm paper tone and the single dark-red accent. It reflows to one column on narrow screens,
@@ -910,18 +925,23 @@ the original renderer. `doctor --compare <manifest>` separately reports environm
 the need for visual regression before producing new editions. An upgrade never invalidates intact
 archive bytes merely because the current browser differs.
 
-**Fonts.** Vendor nine static-instance WOFF2 faces — Playfair Display 400, 700, 900, 400 italic, and
-700 italic; Source
-Serif 4 400, 600, 700, and 400 italic — with `OFL.txt` and a `fonts.lock.json` recording each file's
-SHA-256, byte count, upstream URL, and version. Static instances rather than variable fonts, because
-variable rendering varies more subtly across browser builds and complicates asserting loaded faces. Do not use
-Astro's Fonts API: it emits hashed filenames, which breaks the stable asset path, and generates metric
-fallbacks, which is the wrong behavior in a system where a missing font must be a hard error. Two gates:
-every file's hash matches the lock, and every `(family, weight, style)` used in the stylesheets has a
-matching `@font-face` and appears in the measurement code's required-face list. Figures explicitly
-use Playfair 400 and quotes 400 italic, matching the mockup; display headlines use 700. Avoid implicit
-weight inheritance or synthetic styles. Record any typography change from the physical trial and
-refresh references before treating screenshots as golden baselines.
+**Fonts.** Two families, settled 11 September 2026 after a specimen review: Newsreader for
+everything read (masthead, headlines, decks, body, quotes, figures) and Libre Franklin for
+everything small (kickers, datelines, source rows, citation markers, navigation, folio). This is
+the Times' system in open-licensed faces: a news serif with optical sizes and a Franklin Gothic
+revival for labels. Vendor four variable WOFF2 files of the Google Fonts `latin` subset (Newsreader
+weight 200–800 with optical size 6–72, upright and italic; Libre Franklin weight 100–900, upright
+and italic) with `OFL.txt` and a `fonts.lock.json` recording each file's SHA-256, byte count, and
+exact upstream package path. Variable files are the deliberate exception to the static-instance
+preference: Newsreader's value is its optical-size axis, and a single pinned Chromium renders one
+variable file as reproducibly as an instance. The `latin` subset, not `latin-ext`, is load-bearing:
+`latin-ext` alone lacks ASCII and æøå and falls back silently to a system serif. Do not use Astro's
+Fonts API: it emits hashed filenames, which breaks the stable asset path, and generates metric
+fallbacks, which is the wrong behavior in a system where a missing font must be a hard error. Two
+gates: every file's hash matches the lock, and every family used in the stylesheets has a
+matching `@font-face` and appears in the measurement code's required-face list. Labels are Franklin
+capitals with tracking, never synthesised small caps. Record any typography change from the
+physical trial and refresh references before treating screenshots as golden baselines.
 
 **Freeze display formatting.** Format date/time metadata in Node once using the contract's validated
 language and timezone; retain those strings in both web render input and frozen device composition.
@@ -929,6 +949,12 @@ Do not reformat approved copy such as figure values. Record Node/ICU identity an
 Node formatting can change with an upgrade even though replay from frozen strings remains stable.
 Set `TZ` and context locale/timezone explicitly and inject clocks; one fixture crosses a Copenhagen
 DST boundary.
+
+**Hyphenation is decided at build time.** Body copy and ledes receive discretionary soft hyphens from
+TeX patterns for the edition's language (British English and Danish) with limits and an exception list in
+`config/hyphenation.json`; stylesheets set `hyphens: manual`, so every reader's browser and the pinned
+device Chromium break words at the same points, and a missing OS dictionary changes nothing. Soft hyphens
+are presentation: `edition.json` and the contract digest never contain one.
 
 **Animations are disabled three ways**: `reducedMotion: 'reduce'` on the context, `animations:
 'disabled'` on the screenshot, and `*, *::before, *::after { animation: none !important; transition:

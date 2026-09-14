@@ -50,6 +50,7 @@ export async function buildWeb(
   run: string,
   edition: EditionContractV1,
   entries: IndexEntry[],
+  options: { layout?: "grid" | "sheet" } = {},
 ): Promise<string> {
   const input = resolve(run, "build-input");
   const out = resolve(run, "dist");
@@ -69,6 +70,8 @@ export async function buildWeb(
   await writeFile(resolve(input, "editions", `${edition.edition.id}.json`), canonical(edition));
   await writeFile(resolve(input, "index.json"), canonical({ editions: sortEntries(entries) }));
   const title = parse(await readFile(resolve(projectRoot, "config/title.yaml"), "utf8"));
+  // A layout override exists for previews only; publish never passes one.
+  if (options.layout) title.web_layout = options.layout;
   await writeFile(resolve(input, "config.json"), canonical(title));
 
   const result = spawnSync(resolve(projectRoot, "node_modules/.bin/astro"), ["build", "--root", generatedSite], {
@@ -80,6 +83,7 @@ export async function buildWeb(
       PUBLISHER_BUILD_INPUT: input,
       PUBLISHER_ASTRO_OUT: out,
       PUBLISHER_ASTRO_CACHE: cache,
+      PUBLISHER_HYPHENATION: resolve(projectRoot, "config/hyphenation.json"),
       TZ: "Europe/Copenhagen",
       SOURCE_DATE_EPOCH: "0",
     },
