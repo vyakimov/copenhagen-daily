@@ -20,7 +20,7 @@ schedule:
 # Danish outlets decide what is news. A story is eligible only if one of these reports it, and only
 # these count towards breadth and prominence. Every other configured publisher is linked: attached as
 # a source when it covers a story a scoring publisher reports, never scoring, never making eligible.
-scoring_publishers: [dr, tv2, politiken, berlingske, jp, borsen, information, altinget, kristeligt_dagblad]
+scoring_publishers: [dr, tv2, politiken, berlingske, jp, borsen, information, altinget, kristeligt_dagblad, via_ritzau]
 
 # score = (0.45 breadth + 0.10 peak_prominence + 0.30 recency + 0.15 thread_strength) x section_weight
 weights:
@@ -149,7 +149,7 @@ feed_sections:
   altinget.kommunal: [denmark]
   altinget.uddannelse: [education]
   altinget.by: [denmark]
-  # TV 2, Jyllands-Posten, Information, and Kristeligt Dagblad publish no section feeds; their
+  # TV 2, Jyllands-Posten, Information, Kristeligt Dagblad, and Via Ritzau publish no section feeds; their
   # articles take sections from other publishers' feeds when the same story is clustered, else none.
   # Linked publishers (sections attach to the story only through a scoring publisher's article)
   nytimes.world: [world]

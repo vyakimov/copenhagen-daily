@@ -110,7 +110,7 @@ It is not a user profile and carries no privacy weight. Nothing about it is infe
 **The paper is an overview of what Danish media are reporting. Settled 14 September 2026.** A story is
 eligible for an edition only if at least one *scoring publisher* reports it. The scoring publishers are
 every Danish outlet in the collector's configuration: DR, TV 2, Politiken, Berlingske, Jyllands-Posten,
-Børsen, Information, Altinget, and Kristeligt Dagblad. The international outlets, the Financial Times, the New York Times, BBC News, The Economist, The
+Børsen, Information, Altinget, Kristeligt Dagblad, and Via Ritzau. The international outlets, the Financial Times, the New York Times, BBC News, The Economist, The
 Guardian, The Washington Post, and The Wall Street Journal, are *linked publishers*: they
 never make a story eligible and never contribute to its score, but when a scoring publisher reports a
 story they also cover, their articles are attached to it as sources, so the reader gets the link and
@@ -149,7 +149,7 @@ The primary is the scoring publisher's article that supplied the most of the cop
 with the fuller description, then the earlier one. The headline links to the primary, so it must be an
 article a reader can open and recognise the story in.
 
-The practical effect on prominence is that, of the nine scoring publishers, only Børsen and
+The practical effect on prominence is that, of the ten scoring publishers, only Børsen and
 Jyllands-Posten supply a ranked surface that counts (Børsen's homepage feed and Jyllands-Posten's
 top-stories feed), since international homepage feeds do not score. Prominence is the weakest term, and
 the weights below assume it.

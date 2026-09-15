@@ -155,7 +155,7 @@ any number of foreign outlets but by no Danish one is not news for this title an
 as `not_in_danish_media`. A story carried by DR and Berlingske that the FT also covers keeps the FT article
 as a source and a link. Breadth and prominence count only the scoring publishers, listed in the editorial
 policy file, so that adding an international feed can never change what gets selected. The list is every
-Danish outlet block 1 collects, nine of them, so adding a Danish outlet to the collector widens what
+Danish outlet block 1 collects, ten of them, so adding a Danish outlet to the collector widens what
 counts as news. The price is that only Børsen's and Jyllands-Posten's ranked surfaces score prominence;
 that term is the weakest in any case.
 

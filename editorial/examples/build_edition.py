@@ -14,7 +14,7 @@ import json
 import sys
 from pathlib import Path
 
-DANISH = {"dr", "politiken", "berlingske", "borsen", "tv2", "jp", "information", "altinget", "kristeligt_dagblad"}
+DANISH = {"dr", "politiken", "berlingske", "borsen", "tv2", "jp", "information", "altinget", "kristeligt_dagblad", "via_ritzau"}
 
 
 def load_bundle(path: Path) -> list[dict]:
