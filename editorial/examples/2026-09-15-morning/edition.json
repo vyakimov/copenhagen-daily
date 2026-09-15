@@ -1,0 +1,2606 @@
+{
+  "schema_version": 1,
+  "title": "copenhagen-daily",
+  "edition": {
+    "id": "2026-09-15-morning",
+    "number": 4,
+    "name": "Morning edition",
+    "date": "2026-09-15",
+    "timezone": "Europe/Copenhagen",
+    "language": "en",
+    "cutoff_at": "2026-09-15T08:00:00.000000Z",
+    "generated_at": "2026-09-15T08:33:12.978658Z"
+  },
+  "presentation": {
+    "preferred_composition": "lead-centred",
+    "emphasis": "many_stories",
+    "ear_right": "Inside: Supreme Court blocks Trump on postal votes, Sweden's Centre Party says no, Widow's Bay sweeps the Emmys"
+  },
+  "coverage": {
+    "status": "complete",
+    "checked_from": "2026-09-12T08:00:00.000000Z",
+    "checked_until": "2026-09-15T08:00:00.000000Z",
+    "feeds": [
+      {
+        "feed_id": "altinget.arbejdsmarked",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:51.809110Z"
+      },
+      {
+        "feed_id": "altinget.by",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:52.571531Z"
+      },
+      {
+        "feed_id": "altinget.christiansborg",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:51.071966Z"
+      },
+      {
+        "feed_id": "altinget.eu",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:51.253134Z"
+      },
+      {
+        "feed_id": "altinget.forside",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:50.884198Z"
+      },
+      {
+        "feed_id": "altinget.forsvar",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:51.990923Z"
+      },
+      {
+        "feed_id": "altinget.klima",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:51.438611Z"
+      },
+      {
+        "feed_id": "altinget.kommunal",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:52.184135Z"
+      },
+      {
+        "feed_id": "altinget.sundhed",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:51.622881Z"
+      },
+      {
+        "feed_id": "altinget.uddannelse",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:52.375423Z"
+      },
+      {
+        "feed_id": "bbc.business",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:54.115936Z"
+      },
+      {
+        "feed_id": "bbc.culture",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:56.692082Z"
+      },
+      {
+        "feed_id": "bbc.europe",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:53.843026Z"
+      },
+      {
+        "feed_id": "bbc.health",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:55.422597Z"
+      },
+      {
+        "feed_id": "bbc.politics",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:56.017279Z"
+      },
+      {
+        "feed_id": "bbc.science",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:55.014920Z"
+      },
+      {
+        "feed_id": "bbc.technology",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:54.761785Z"
+      },
+      {
+        "feed_id": "bbc.top",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:53.019790Z"
+      },
+      {
+        "feed_id": "bbc.world",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:53.450362Z"
+      },
+      {
+        "feed_id": "berlingske.business",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:44.602386Z"
+      },
+      {
+        "feed_id": "berlingske.kultur",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:44.718086Z"
+      },
+      {
+        "feed_id": "berlingske.latest",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:44.370045Z"
+      },
+      {
+        "feed_id": "berlingske.opinion",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:44.839700Z"
+      },
+      {
+        "feed_id": "berlingske.samfund",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:44.486062Z"
+      },
+      {
+        "feed_id": "borsen.baeredygtig",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:38.599996Z"
+      },
+      {
+        "feed_id": "borsen.breaking",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:38.595030Z"
+      },
+      {
+        "feed_id": "borsen.ejendomme",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:38.836497Z"
+      },
+      {
+        "feed_id": "borsen.executive",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:39.491875Z"
+      },
+      {
+        "feed_id": "borsen.finans",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:39.054973Z"
+      },
+      {
+        "feed_id": "borsen.homepage",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:38.279012Z"
+      },
+      {
+        "feed_id": "borsen.investor",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:39.270598Z"
+      },
+      {
+        "feed_id": "borsen.longread",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:39.708458Z"
+      },
+      {
+        "feed_id": "borsen.markedsberetninger",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:39.926926Z"
+      },
+      {
+        "feed_id": "borsen.okonomi",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:41.519967Z"
+      },
+      {
+        "feed_id": "borsen.opinion",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:40.146968Z"
+      },
+      {
+        "feed_id": "borsen.pleasure",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:40.374534Z"
+      },
+      {
+        "feed_id": "borsen.politik",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:40.601652Z"
+      },
+      {
+        "feed_id": "borsen.tech",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:40.827745Z"
+      },
+      {
+        "feed_id": "borsen.udland",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:41.069517Z"
+      },
+      {
+        "feed_id": "borsen.virksomheder",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:41.301555Z"
+      },
+      {
+        "feed_id": "dr.indland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:45.180633Z"
+      },
+      {
+        "feed_id": "dr.kultur",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:46.765874Z"
+      },
+      {
+        "feed_id": "dr.latest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:44.955975Z"
+      },
+      {
+        "feed_id": "dr.musik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:46.989490Z"
+      },
+      {
+        "feed_id": "dr.penge",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:45.633399Z"
+      },
+      {
+        "feed_id": "dr.politik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:45.860033Z"
+      },
+      {
+        "feed_id": "dr.regionale",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:47.437772Z"
+      },
+      {
+        "feed_id": "dr.regionale_bornholm",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:47.895170Z"
+      },
+      {
+        "feed_id": "dr.regionale_fyn",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:48.373414Z"
+      },
+      {
+        "feed_id": "dr.regionale_kbh",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:47.664446Z"
+      },
+      {
+        "feed_id": "dr.regionale_nord",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:48.843448Z"
+      },
+      {
+        "feed_id": "dr.regionale_oestjylland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:49.544294Z"
+      },
+      {
+        "feed_id": "dr.regionale_sjaelland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:49.312374Z"
+      },
+      {
+        "feed_id": "dr.regionale_syd",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:48.130484Z"
+      },
+      {
+        "feed_id": "dr.regionale_trekanten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:49.080824Z"
+      },
+      {
+        "feed_id": "dr.regionale_vest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:48.604803Z"
+      },
+      {
+        "feed_id": "dr.senestesport",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:46.304522Z"
+      },
+      {
+        "feed_id": "dr.sporten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:46.082652Z"
+      },
+      {
+        "feed_id": "dr.udland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:45.406441Z"
+      },
+      {
+        "feed_id": "dr.vejret",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:47.210573Z"
+      },
+      {
+        "feed_id": "dr.viden",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:46.537990Z"
+      },
+      {
+        "feed_id": "economist.briefing",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:00.360929Z"
+      },
+      {
+        "feed_id": "economist.business",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:00.361102Z"
+      },
+      {
+        "feed_id": "economist.culture",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:00.361227Z"
+      },
+      {
+        "feed_id": "economist.europe",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:00.360979Z"
+      },
+      {
+        "feed_id": "economist.finance",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:00.361061Z"
+      },
+      {
+        "feed_id": "economist.international",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:00.361020Z"
+      },
+      {
+        "feed_id": "economist.latest",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:57.014140Z"
+      },
+      {
+        "feed_id": "economist.leaders",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:00.360780Z"
+      },
+      {
+        "feed_id": "economist.science",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:00.361154Z"
+      },
+      {
+        "feed_id": "ft.climate_capital",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:37.013500Z"
+      },
+      {
+        "feed_id": "ft.companies",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:36.207455Z"
+      },
+      {
+        "feed_id": "ft.global_economy",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:35.938402Z"
+      },
+      {
+        "feed_id": "ft.homepage.international",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:35.546531Z"
+      },
+      {
+        "feed_id": "ft.life_arts",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:37.819559Z"
+      },
+      {
+        "feed_id": "ft.markets",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:36.465622Z"
+      },
+      {
+        "feed_id": "ft.opinion",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:37.281385Z"
+      },
+      {
+        "feed_id": "ft.technology",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:36.738253Z"
+      },
+      {
+        "feed_id": "ft.work_careers",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:37.551007Z"
+      },
+      {
+        "feed_id": "ft.world",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:35.680180Z"
+      },
+      {
+        "feed_id": "guardian.business",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:02.668860Z"
+      },
+      {
+        "feed_id": "guardian.culture",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:04.296151Z"
+      },
+      {
+        "feed_id": "guardian.environment",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:03.565690Z"
+      },
+      {
+        "feed_id": "guardian.europe",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:02.398379Z"
+      },
+      {
+        "feed_id": "guardian.international",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:00.457557Z"
+      },
+      {
+        "feed_id": "guardian.opinion",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:05.186310Z"
+      },
+      {
+        "feed_id": "guardian.science",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:03.900334Z"
+      },
+      {
+        "feed_id": "guardian.technology",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:03.166428Z"
+      },
+      {
+        "feed_id": "guardian.world",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:01.833638Z"
+      },
+      {
+        "feed_id": "information.feed",
+        "source": "information",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:50.649171Z"
+      },
+      {
+        "feed_id": "jp.seneste",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:50.524080Z"
+      },
+      {
+        "feed_id": "jp.topnyheder",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:50.397763Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.artikler",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:52.891504Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.nyheder",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:52.763334Z"
+      },
+      {
+        "feed_id": "nytimes.arts",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:33.922478Z"
+      },
+      {
+        "feed_id": "nytimes.books",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:34.600222Z"
+      },
+      {
+        "feed_id": "nytimes.business",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:31.975983Z"
+      },
+      {
+        "feed_id": "nytimes.climate",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:33.389743Z"
+      },
+      {
+        "feed_id": "nytimes.europe",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:31.732645Z"
+      },
+      {
+        "feed_id": "nytimes.health",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:33.153255Z"
+      },
+      {
+        "feed_id": "nytimes.homepage",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:30.525268Z"
+      },
+      {
+        "feed_id": "nytimes.opinion",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:35.033570Z"
+      },
+      {
+        "feed_id": "nytimes.science",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:32.796477Z"
+      },
+      {
+        "feed_id": "nytimes.technology",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:32.520034Z"
+      },
+      {
+        "feed_id": "nytimes.world",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:31.120469Z"
+      },
+      {
+        "feed_id": "politiken.debat",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:43.445665Z"
+      },
+      {
+        "feed_id": "politiken.forbrugogliv",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:43.680452Z"
+      },
+      {
+        "feed_id": "politiken.ibyen",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:43.910754Z"
+      },
+      {
+        "feed_id": "politiken.indland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:41.855129Z"
+      },
+      {
+        "feed_id": "politiken.kultur",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:42.758143Z"
+      },
+      {
+        "feed_id": "politiken.latest",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:41.636710Z"
+      },
+      {
+        "feed_id": "politiken.oekonomi",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:42.532761Z"
+      },
+      {
+        "feed_id": "politiken.politik",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:42.307705Z"
+      },
+      {
+        "feed_id": "politiken.rejser",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:44.143132Z"
+      },
+      {
+        "feed_id": "politiken.sport",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:42.987301Z"
+      },
+      {
+        "feed_id": "politiken.udland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:42.082410Z"
+      },
+      {
+        "feed_id": "politiken.viden",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:43.212162Z"
+      },
+      {
+        "feed_id": "tv2.nyheder",
+        "source": "tv2",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:23:49.819538Z"
+      },
+      {
+        "feed_id": "wapo.business",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:06.196392Z"
+      },
+      {
+        "feed_id": "wapo.national",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:05.795656Z"
+      },
+      {
+        "feed_id": "wapo.opinions",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:06.319816Z"
+      },
+      {
+        "feed_id": "wapo.politics",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:05.920001Z"
+      },
+      {
+        "feed_id": "wapo.technology",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:06.244742Z"
+      },
+      {
+        "feed_id": "wapo.world",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:05.645281Z"
+      },
+      {
+        "feed_id": "wsj.business",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:07.372004Z"
+      },
+      {
+        "feed_id": "wsj.economy",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:09.104978Z"
+      },
+      {
+        "feed_id": "wsj.markets",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:08.359341Z"
+      },
+      {
+        "feed_id": "wsj.opinion",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:10.515753Z"
+      },
+      {
+        "feed_id": "wsj.politics",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:09.539670Z"
+      },
+      {
+        "feed_id": "wsj.technology",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:09.806115Z"
+      },
+      {
+        "feed_id": "wsj.world",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-15T08:24:06.532634Z"
+      }
+    ],
+    "note": "Built from headlines and RSS descriptions published between 10:00 on Saturday and 10:00 on Tuesday Copenhagen time, from 131 feeds at sixteen publishers, all polled successfully. Danish outlets decide what is news; international titles are linked where they cover the same story. Nothing else was read."
+  },
+  "inputs": [
+    {
+      "id": "export-2026-09-15-0800",
+      "sha256": "sha256:f969a5224c76f169dedca7862f3abcebf9c9ec652a2699ebdcbc41acd3ec21d7"
+    }
+  ],
+  "stories": [
+    {
+      "id": "russian-frigate-flares-gedser",
+      "device_participation": "required",
+      "role": "lead",
+      "kicker": "Defence",
+      "copy": {
+        "headline": "Russian frigate fires flares at Danish helicopter off Gedser",
+        "body": {
+          "extended": [
+            {
+              "text": "A Russian frigate fired two flares at a Danish Fennec helicopter in international waters off Gedser on Monday, during what the Defence Command describes as routine photo documentation of the ship. The Foreign Ministry has summoned Russia's ambassador.",
+              "sources": [
+                "dr",
+                "kristeligt_dagblad",
+                "politiken"
+              ]
+            },
+            {
+              "text": "Defence minister Jeppe Bruus calls the situation serious. There had been no prior communication with the frigate as far as he knows.",
+              "sources": [
+                "berlingske",
+                "dr"
+              ]
+            },
+            {
+              "text": "The incident is 'unfortunately not surprising', Mette Frederiksen said in a written statement on Tuesday. It shows Russia testing and challenging NATO, the behaviour of an 'aggressive and assertive Russia'.",
+              "sources": [
+                "kristeligt_dagblad",
+                "dr"
+              ]
+            },
+            {
+              "text": "Politicians across the parties have united behind a joint message to Moscow, Jyllands-Posten reports from its live coverage, and foreign minister Lars Løkke Rasmussen responded on Tuesday morning.",
+              "sources": [
+                "jp"
+              ]
+            },
+            {
+              "text": "Both the frigate and the helicopter had every right to be where they were, Kristina Siig, professor of maritime law at Aalborg University, tells Ritzau.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "The Defence Ministry's statement landed at 23:02 on Monday night. Michael Jarlner, Politiken's international commentator, reads the affair as part of a new and risky pattern.",
+              "sources": [
+                "politiken"
+              ]
+            }
+          ],
+          "standard": [
+            {
+              "text": "A Russian frigate fired two flares at a Danish Fennec helicopter in international waters off Gedser on Monday, during what the Defence Command describes as routine photo documentation of the ship. The Foreign Ministry has summoned Russia's ambassador.",
+              "sources": [
+                "dr",
+                "kristeligt_dagblad",
+                "politiken"
+              ]
+            },
+            {
+              "text": "Defence minister Jeppe Bruus calls the situation serious. There had been no prior communication with the frigate as far as he knows.",
+              "sources": [
+                "berlingske",
+                "dr"
+              ]
+            },
+            {
+              "text": "The incident is 'unfortunately not surprising', Mette Frederiksen said on Tuesday. It shows Russia testing and challenging NATO, the behaviour of an 'aggressive and assertive Russia'.",
+              "sources": [
+                "kristeligt_dagblad",
+                "dr"
+              ]
+            },
+            {
+              "text": "Both the frigate and the helicopter had every right to be where they were, Kristina Siig, professor of maritime law at Aalborg University, tells Ritzau.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "A Russian frigate fired two flares at a Danish helicopter in international waters off Gedser on Monday. The Foreign Ministry has summoned Russia's ambassador, and Mette Frederiksen calls it the behaviour of an 'aggressive and assertive Russia'.",
+              "sources": [
+                "dr",
+                "politiken",
+                "kristeligt_dagblad"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Russia fires flares at Danish helicopter",
+        "deck": "Ambassador summoned; Frederiksen says Moscow is testing NATO."
+      },
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "Aggressive and assertive Russia.",
+          "attribution": "Mette Frederiksen, prime minister",
+          "attribution_source": "dr"
+        },
+        {
+          "kind": "timeline",
+          "title": "How it unfolded",
+          "rows": [
+            {
+              "date": "Monday",
+              "text": "Frigate fires two flares at the helicopter off Gedser"
+            },
+            {
+              "date": "23:02",
+              "text": "The Defence Ministry's statement lands"
+            },
+            {
+              "date": "Overnight",
+              "text": "Foreign Ministry summons Russia's ambassador"
+            },
+            {
+              "date": "Tuesday",
+              "text": "Frederiksen: 'unfortunately not surprising'"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:c32aa14b-32bf-4745-87a6-4c2d9097ee2a",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Forsvarets helikopter beskudt med flares fra russisk fregat nær Gedser",
+          "url": "https://www.dr.dk/nyheder/indland/forsvarets-helikopter-beskudt-med-flares-fra-russisk-fregat-naer-gedser",
+          "published_at": "2026-09-14T21:20:26.000000Z",
+          "content_hash": "sha256:1c85a78214ae8beb5d0266ac1f22bd4dbba48f7156d636e1caf4871889e5d9f6",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:70ea5036-5747-4f3f-816a-2577c3b28ab1",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Statsministeren reagerer på hændelse ved Gedser: 'Aggressivt og selvhævdende Rusland'",
+          "url": "https://www.dr.dk/nyheder/indland/statsministeren-reagerer-paa-haendelse-ved-gedser-aggressivt-og-selvhaevdende-rusland",
+          "published_at": "2026-09-15T07:55:16.000000Z",
+          "content_hash": "sha256:e8bc35daa4953d88ec46e06cbcae28c590cdf8d838a8c002d71de75b7b865dbb",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:acdcf4c9-b465-461e-9425-97f13f8fb9f7",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Beskydning skete i internationalt farvand ud for Gedser",
+          "url": "https://www.dr.dk/nyheder/indland/live-russisk-fregat-affyrede-flares-mod-dansk-helikopter?focusId=12446142",
+          "published_at": "2026-09-15T04:33:02.000000Z",
+          "content_hash": "sha256:0c3b714160621662548d1b43f1ba1336be7817f6adacd28014d45d306449c377",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:reel:3c41126d-b1f6-4938-ad9d-7a06b6b3de53",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Forudgående kommunikation? Ikke mig bekendt, siger minister",
+          "url": "https://www.dr.dk/nyheder/indland/reels/forudgaaende-kommunikation-ikke-mig-bekendt-siger-minister",
+          "published_at": "2026-09-15T05:25:08.000000Z",
+          "content_hash": "sha256:49e8d3cf94c37693cf4596a8b52c3b332e5d496c2302a708896665e2ed4b7b51",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "10983068",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Dansk militærhelikopter beskudt med nødblus fra russisk fregat – ambassadør indkaldt til samtale",
+          "url": "https://politiken.dk/danmark/art10983068/Dansk-milit%C3%A6rhelikopter-beskudt-med-n%C3%B8dblus-fra-russisk-fregat-%E2%80%93-ambassad%C3%B8r-indkaldt-til-samtale",
+          "published_at": "2026-09-15T04:53:05.000000Z",
+          "content_hash": "sha256:14efd70e4b5e915d6aa5aa1eda6366bd8338136bb3bc266e10317cd439cd82ff",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "10983108",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Beskeden landede kl. 23.02 fra Forsvarsministeriet. Den udstiller Danmarks sprængfarlige hovedpine",
+          "url": "https://politiken.dk/internationalt/art10983108/Beskeden-landede-kl.-23.02-fra-Forsvarsministeriet.-Den-udstiller-Danmarks-spr%C3%A6ngfarlige-hovedpine",
+          "published_at": "2026-09-15T05:34:25.000000Z",
+          "content_hash": "sha256:e7e09c9a1055a240ce42a01af06fef2a1340b2caeafb5a190d776b1d062a7301",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:65695fe8-2020-5656-9fca-7013e28e8649",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Forsvarets helikopter beskudt af pyroteknik fra russisk fregat",
+          "url": "https://www.berlingske.dk/danmark/forsvarets-helikopter-beskudt-af-pyroteknik-fra-russisk-fregat",
+          "published_at": "2026-09-14T22:34:46.000000Z",
+          "content_hash": "sha256:c3ceb549c953d47e3b99ab0084fc518e1fd4a7cb658fff31b35882a6edb42631",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:86906d6c-8f6f-501c-94b2-922e891d0f7d",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Forsvarets helikopter beskudt af russisk fregat med flares",
+          "url": "https://www.berlingske.dk/indland/forsvarets-helikopter-beskudt-af-russisk-fregat-med-flares",
+          "published_at": "2026-09-14T21:22:47.000000Z",
+          "content_hash": "sha256:6c733a5c8b719f61be015a24ea4652c0a164333f601a99a6749381b319e8487a",
+          "primary": false
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "c1b114fd-9919-4ece-a072-3b24772be6a3",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Forsvarets helikopter beskudt af pyroteknik fra russisk fregat",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/forsvarets-helikopter-beskudt-af-pyroteknik-fra-russisk-fregat",
+          "published_at": "2026-09-14T21:18:55.000000Z",
+          "content_hash": "sha256:8a86e574c16b106cf81f48c9f9cee103a4dd648090dd11ea85edafec1db0290e",
+          "primary": false
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "0fbd4b2b-2d98-4e5a-9074-4b203938718a",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Dansk helikopter og russisk fregat havde begge ret til at være der",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/dansk-helikopter-og-russisk-fregat-havde-begge-ret-til-vaere-der",
+          "published_at": "2026-09-15T07:14:00.000000Z",
+          "content_hash": "sha256:672ddd30c0027c4703569e686c2ea40372b36102ce327edfe2551e3f2d13472e",
+          "primary": false
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "619f810d-b829-4429-a0ee-4f35dec742fa",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Mette Frederiksen: Russisk beskydning er desværre ikke overraskende",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/mette-f-russisk-beskydning-er-desvaerre-ikke-overraskende",
+          "published_at": "2026-09-15T06:46:00.000000Z",
+          "content_hash": "sha256:0dfff779ee013a0b2937a74cd328ba232d104cd726e38b444954167d8716e2cd",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/samfund/2026-09-14-forsvarets-helikopter-beskudt-af-russisk-fregat",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Forsvarets helikopter beskudt af russisk fregat",
+          "url": "https://nyheder.tv2.dk/samfund/2026-09-14-forsvarets-helikopter-beskudt-af-russisk-fregat",
+          "published_at": "2026-09-14T21:18:01.000000Z",
+          "content_hash": "sha256:200003ac906bc39dc2a06ba3cc8ebdaff77dc64b87d223b2e077dc81be844c8d",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19642349",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Forsvarets helikopter beskudt af pyroteknik fra russisk fregat",
+          "url": "https://jyllands-posten.dk/indland/ECE19642349/forsvarets-helikopter-beskudt-af-pyroteknik-fra-russisk-fregat/",
+          "published_at": "2026-09-15T03:23:32.000000Z",
+          "content_hash": "sha256:c62237618382d0b3f1da1917f7b4d4834948b600d41886c52acc70a9e7a034ca",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19642497",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "»Det er alvorligt«: Danske politikere samler sig om et fælles budskab til Rusland",
+          "url": "https://jyllands-posten.dk/indland/ECE19642497/forsvarets-helikopter-er-blevet-beskudt/",
+          "published_at": "2026-09-15T04:57:49.000000Z",
+          "content_hash": "sha256:2fdaf2e7c73113b12212a1b24b2f6cdfc2c0d47c6826b82ba848c0f48086efa3",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19642840",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Lars Løkke reagerer på beskydning af Forsvarets helikopter",
+          "url": "https://jyllands-posten.dk/politik/ECE19642840/forsvarets-helikopter-er-blevet-beskudt/",
+          "published_at": "2026-09-15T06:40:00.000000Z",
+          "content_hash": "sha256:4b58b05cfa802b90dc64ff26ba0f75ae6a69c7e2ed88e922f7924680756d6945",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/samfund/helikopter-beskudt-med-pyroteknik-fra-russisk-fregat-ved-gedser",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Helikopter beskudt med pyroteknik fra russisk fregat ved Gedser",
+          "url": "https://borsen.dk/nyheder/samfund/helikopter-beskudt-med-pyroteknik-fra-russisk-fregat-ved-gedser",
+          "published_at": "2026-09-15T04:11:37.000000Z",
+          "content_hash": "sha256:e7dab79be35cc5ae4f67d7ff9b5b23ce8e044a1c4c323c09af3cd4624080c266",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "trump-energy-truce-claim",
+      "device_participation": "required",
+      "role": "secondary",
+      "kicker": "World",
+      "copy": {
+        "headline": "Trump says Russia and Ukraine have agreed to stop hitting each other's energy sites",
+        "body": {
+          "standard": [
+            {
+              "text": "Ukraine and Russia have agreed not to attack each other's energy installations, Donald Trump wrote on Truth Social on Monday. Neither country has confirmed it.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "borsen"
+              ]
+            },
+            {
+              "text": "TV 2's correspondent calls such a pause short-lived relief, 'like wetting your trousers' to keep warm.",
+              "sources": [
+                "tv2"
+              ]
+            },
+            {
+              "text": "Poland has warned of 'intensive actions' after Sunday's Russian drone strike on a passenger train a few kilometres from its border, which Ukrainians and Poles read as a new escalation.",
+              "sources": [
+                "dr"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Ukraine and Russia have agreed not to attack each other's energy installations, Donald Trump wrote on Monday. Neither country has confirmed it.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Trump claims an energy truce",
+        "deck": "Neither country has confirmed the deal."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:0941a2fc-37ca-5ab5-ae24-e8b807224a03",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Trump: Ukraine og Rusland enige om ikke at angribe energianlæg",
+          "url": "https://www.berlingske.dk/internationalt/trump-ukraine-og-rusland-enige-om-ikke-at-angribe-energianlaeg",
+          "published_at": "2026-09-14T16:44:44.000000Z",
+          "content_hash": "sha256:4ae1bc7000971f65884171f19799530fe126feecbd25f6d47e42504edc416ed4",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "cb632335-ac16-4795-9031-13a0ee75d31d",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Trump: Ukraine og Rusland enige om ikke at angribe energianlæg",
+          "url": "https://www.kristeligt-dagblad.dk/udland/trump-ukraine-og-rusland-enige-om-ikke-angribe-energianlaeg",
+          "published_at": "2026-09-14T16:08:37.000000Z",
+          "content_hash": "sha256:471b5015d346f234ec88373d13da9bb654954b4603f299ac20020407103c2501",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/trump-ukraine-og-rusland-har-lovet-ikke-at-angribe-hinandens-energi-installationer",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Trump: Ukraine og Rusland har lovet ikke at angribe hinandens energi-installationer",
+          "url": "https://borsen.dk/nyheder/udland/trump-ukraine-og-rusland-har-lovet-ikke-at-angribe-hinandens-energi-installationer",
+          "published_at": "2026-09-14T15:46:02.000000Z",
+          "content_hash": "sha256:fbe22e684ab1b626743a12a3a72d5ca8c11ecc1323e60a0f5e323ad614bcaf82",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/udland/2026-09-14-som-at-tisse-i-bukserne-siger-korrespondent-om-angrebspause",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "\"Som at tisse i bukserne\", siger korrespondent om angrebspause",
+          "url": "https://nyheder.tv2.dk/udland/2026-09-14-som-at-tisse-i-bukserne-siger-korrespondent-om-angrebspause",
+          "published_at": "2026-09-14T18:10:39.000000Z",
+          "content_hash": "sha256:b97663f644ac0b7e9211ad690ca3560c64a649a1d1448dfc527693fd720c69d8",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:af237534-bbe1-45ed-955b-bed6577f2e8b",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "'Putin eskalerer': Opsigtsvækkende droneangreb på passagertog får Polen til at advare om 'intensive handlinger'",
+          "url": "https://www.dr.dk/nyheder/udland/putin-eskalerer-opsigtsvaekkende-droneangreb-paa-passagertog-faar-polen-til-advare-om-intensive",
+          "published_at": "2026-09-14T19:27:00.000000Z",
+          "content_hash": "sha256:dcc6dddeb78f3042813e8d2982159ee0414187ccb6660057475f178dfe1fe657",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "d6f98d2e-9f0c-4414-a339-fe8462810276",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Trump claims Russia and Ukraine have agreed energy truce",
+          "url": "https://www.ft.com/content/d6f98d2e-9f0c-4414-a339-fe8462810276",
+          "published_at": "2026-09-14T17:18:42.000000Z",
+          "content_hash": "sha256:c52779dc98697e6576085ead95f6064bed25bf667101877580e39acd27c57a7b",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "supreme-court-mail-ballots",
+      "device_participation": "required",
+      "role": "secondary",
+      "kicker": "World",
+      "copy": {
+        "headline": "Supreme Court blocks Trump's bid to restrict postal voting",
+        "body": {
+          "standard": [
+            {
+              "text": "The US Supreme Court on Monday refused to let the postal service enforce stricter rules on mail-in ballots, so states can send ballots by post as normal ahead of the midterms.",
+              "sources": [
+                "kristeligt_dagblad",
+                "borsen",
+                "dr"
+              ]
+            },
+            {
+              "text": "Trump, a long-standing opponent of postal voting, had signed the order in late March. The justices he appointed helped deliver what Politiken calls a decisive defeat.",
+              "sources": [
+                "kristeligt_dagblad",
+                "politiken"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "The US Supreme Court on Monday refused to let the postal service enforce stricter rules on mail-in ballots, so states can post ballots as normal before the midterms.",
+              "sources": [
+                "kristeligt_dagblad",
+                "borsen"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Supreme Court blocks Trump on postal votes",
+        "deck": "States can post ballots as usual before the midterms, and the president's own appointees delivered the defeat."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "be9d5793-320c-4893-bdf7-45a6bca3c268",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Højesteret afviser Trump i sag om strammere brevstemmeregler",
+          "url": "https://www.kristeligt-dagblad.dk/udland/hoejesteret-afviser-trump-i-sag-om-strammere-brevstemmeregler",
+          "published_at": "2026-09-15T00:45:55.000000Z",
+          "content_hash": "sha256:94a29a66365b2bf5bafe15c257cfa75ef8d438eacb9d12df6997fa1cba0fa5e7",
+          "primary": true
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/hojesteret-afviser-trump-i-sag-om-strammere-brevstemmeregler",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Højesteret afviser Trump i sag om strammere brevstemmeregler",
+          "url": "https://borsen.dk/nyheder/udland/hojesteret-afviser-trump-i-sag-om-strammere-brevstemmeregler",
+          "published_at": "2026-09-15T04:15:23.000000Z",
+          "content_hash": "sha256:940dd60800dbacf65044ff0154d8e61a9d78b4c538c7d70cd0fb6cd94234a679",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:0922ec52-f23a-536f-bee9-80563d08922b",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Højesteret afviser Trump i sag om strammere brevstemmeregler",
+          "url": "https://www.berlingske.dk/internationalt/hoejesteret-afviser-trump-i-sag-om-strammere-brevstemmeregler",
+          "published_at": "2026-09-15T00:46:46.000000Z",
+          "content_hash": "sha256:91ddd9fff0103014ed6f1f1763d4f2bb92afd9c8118c1992f078b34bd1efa3c2",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:91f20e45-43fc-4ec9-bd4d-acf4ca2b85d6",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Højesteret blokerer Trumps plan om at ændre brevstemme-system før midtvejsvalg",
+          "url": "https://www.dr.dk/nyheder/seneste/hoejesteret-blokerer-trumps-plan-om-aendre-brevstemme-system-foer-midtvejsvalg",
+          "published_at": "2026-09-15T00:26:44.000000Z",
+          "content_hash": "sha256:ea18ab8b0ce43ed4cd853f6bd70f4c63ad05b3a270f9ffd8b669bd5d97f606df",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "10983072",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Trump taber stort i højesteret, og hans egne dommere førte kniven",
+          "url": "https://politiken.dk/internationalt/art10983072/Trump-taber-stort-i-h%C3%B8jesteret-og-hans-egne-dommere-f%C3%B8rte-kniven1",
+          "published_at": "2026-09-15T02:18:43.000000Z",
+          "content_hash": "sha256:ba1b208cc4611e72246e25ecda517cde068eb1763bc43f34be193561c89a6f02",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/09/14/us/politics/supreme-court-trump-mail-voting.html",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Supreme Court Blocks Trump Administration Plan to Screen Mail-In Ballots",
+          "url": "https://www.nytimes.com/2026/09/14/us/politics/supreme-court-trump-mail-voting.html",
+          "published_at": "2026-09-15T04:25:21.000000Z",
+          "content_hash": "sha256:5c45ce23bd17168bf7c3f55fc13a92f6887a7389fb16d1d4dfe77e1187688ecf",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "b3674c9d-9db2-448d-bd57-f1c040de2d54",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Supreme Court rejects Trump’s mail-in ballot restrictions for midterms",
+          "url": "https://www.ft.com/content/b3674c9d-9db2-448d-bd57-f1c040de2d54",
+          "published_at": "2026-09-15T02:43:08.000000Z",
+          "content_hash": "sha256:eb5d0fcbe5ea1fad3703270f3d3b1cd500d3b2f30c2b4b1165aa775ed6c521d9",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/politics/2026/09/14/supreme-court-blocks-sweeping-mail-ballot-restrictions-midterm-elections/",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Supreme Court blocks sweeping mail ballot restrictions for midterm elections",
+          "url": "https://www.washingtonpost.com/politics/2026/09/14/supreme-court-blocks-sweeping-mail-ballot-restrictions-midterm-elections/",
+          "published_at": "2026-09-15T01:53:50.000000Z",
+          "content_hash": "sha256:12b36ba346f46ae36e301e90483bed8046b2488c323a861b7614b65ff18417e2",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/us-news/2026/sep/14/supreme-court-rejects-mail-ballot-restrictions",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Supreme court rejects Trump’s mail ballot restrictions for midterm elections",
+          "url": "https://www.theguardian.com/us-news/2026/sep/14/supreme-court-rejects-mail-ballot-restrictions",
+          "published_at": "2026-09-15T01:51:49.000000Z",
+          "content_hash": "sha256:7cada00d8956560de1bc1e58986db173f42d6926ff7332020e994339cc768e60",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "c5yjpdy4gjlo",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Supreme Court blocks Trump's plan to restrict mail-in ballots",
+          "url": "https://www.bbc.co.uk/news/articles/c5yjpdy4gjlo?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-09-15T01:15:15.000000Z",
+          "content_hash": "sha256:f0d6f2c51a47ac6eaa56e9beeb9d6579b73522fbb8a5d539ea55a660cc611153",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "ai-shares-slide-trump-conspiracy",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Technology",
+      "copy": {
+        "headline": "AI shares slide as Trump calls safety warnings a 'sick conspiracy'",
+        "body": {
+          "standard": [
+            {
+              "text": "Warnings from the heads of the leading US AI companies that development is moving too fast pushed US stocks down on Monday, with Nvidia, Broadcom and Micron the heaviest weights. European AI-related shares fell too.",
+              "sources": [
+                "borsen"
+              ]
+            },
+            {
+              "text": "Trump sees no need for the safety framework the executives called for. He describes a 'sick conspiracy' against AI and data centres that only China could welcome, and says a 'strong and smart president' will rein the technology in.",
+              "sources": [
+                "borsen",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "Germany, speaking for Europe, does not believe in limiting AI, TV 2 reports. Critics tell Berlingske the executives are 'wolves in sheep's clothing', and a former 'AI czar' warns against taking their motives as altruistic.",
+              "sources": [
+                "tv2",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "Danes' expectations of AI have plunged in two years, a survey shows; bad experiences appear to have fed the scepticism, experts tell Politiken.",
+              "sources": [
+                "politiken"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Warnings from leading AI executives pushed Nvidia, Broadcom and Micron lower on Monday, while Trump dismissed the calls as a 'sick conspiracy' against AI and data centres.",
+              "sources": [
+                "borsen",
+                "berlingske"
+              ]
+            }
+          ]
+        },
+        "headline_short": "AI shares slide after warnings",
+        "deck": "Nvidia, Broadcom and Micron led Wall Street lower after the weekend's calls for a slowdown.",
+        "lede": {
+          "text": "Warnings from leading AI executives pushed Nvidia, Broadcom and Micron lower on Monday, while Trump dismissed the calls as a 'sick conspiracy' against AI and data centres.",
+          "sources": [
+            "borsen",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "There is a sick conspiracy going on against AI and data centres.",
+          "attribution": "Donald Trump, US president",
+          "attribution_source": "borsen"
+        }
+      ],
+      "sources": [
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/markedsberetninger/aktieluk-i-usa-ai-frygt-pressede-aktier-mandag-nvidia-broadcom-og-micron-tyngede",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Aktieluk i USA: AI-frygt pressede aktier mandag - Nvidia, Broadcom og Micron tyngede",
+          "url": "https://borsen.dk/nyheder/markedsberetninger/aktieluk-i-usa-ai-frygt-pressede-aktier-mandag-nvidia-broadcom-og-micron-tyngede",
+          "published_at": "2026-09-14T20:13:44.000000Z",
+          "content_hash": "sha256:a8c85134126cd6afad179cb3b3e8c86d9b6c2e47c1ee72fb50c6c9d0467b009a",
+          "primary": true
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/ai/trump-der-foregar-en-syg-sammensvaergelse-mod-ai-og-datacentre",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Trump: Der foregår en syg sammensværgelse mod AI og datacentre",
+          "url": "https://borsen.dk/nyheder/ai/trump-der-foregar-en-syg-sammensvaergelse-mod-ai-og-datacentre",
+          "published_at": "2026-09-14T14:34:13.000000Z",
+          "content_hash": "sha256:63302e141034a22dc93510702171b62513331b45e8c736a5c83c10e037a23d8a",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:c4f6ae9d-c19a-5aea-977b-ed10efedfa22",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Banebrydende techfirmaer advarer, men Trump vil tøjle AI med en »stærk og klog præsident«",
+          "url": "https://www.berlingske.dk/business/banebrydende-techfirmaer-advarer-men-trump-vil-toejle-ai-med-enstaerk-og-klog-praesident",
+          "published_at": "2026-09-14T19:26:21.000000Z",
+          "content_hash": "sha256:cb43d27cb55912afd21c98f68cbf32814f391c2c4e9c03d98bbf6c6a8003f517",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/udland/2026-09-14-tyskland-tror-ikke-paa-begraensning-af-kunstig-intelligens",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Tyskland tror ikke på begrænsning af kunstig intelligens",
+          "url": "https://nyheder.tv2.dk/udland/2026-09-14-tyskland-tror-ikke-paa-begraensning-af-kunstig-intelligens",
+          "published_at": "2026-09-14T14:53:29.000000Z",
+          "content_hash": "sha256:43195ec17dac09f7054dbcb36e7f7d622226172293177781f18e2ff130e83b12",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:f340bee5-bca5-544c-84cb-b230e65753ba",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Kritikere i opråb: AI-chefer er »ulve i fåreklæder«, når de ønsker regulering",
+          "url": "https://www.berlingske.dk/virksomheder/kritikere-i-opraab-ai-chefer-er-ulve-i-faareklaeder-naar-de-oensker-regulering",
+          "published_at": "2026-09-14T11:32:52.000000Z",
+          "content_hash": "sha256:7926b0490e36ed82b3685d11ebdf5333fbb25f2fd164548cb07610220cf933a3",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "10979195",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Danskernes forventninger til ai er styrtdykket på bare to år",
+          "url": "https://politiken.dk/viden/art10979195/Danskernes-forventninger-til-ai-er-styrtdykket-p%C3%A5-bare-to-%C3%A5r",
+          "published_at": "2026-09-14T18:51:37.000000Z",
+          "content_hash": "sha256:f236890d2bb2345a7642a5b8e2b825930cda8e78fe8bd2f75506e986ecf46ad3",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:c1b4e98a-ab5d-4d29-8867-c23a76884b5a",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "AI-giganter ønsker opbremsning: Ægte bekymring eller smart markedsføring?",
+          "url": "https://www.dr.dk/nyheder/viden/teknologi/ai-giganter-oensker-opbremsning-aegte-bekymring-eller-smart-markedsfoering",
+          "published_at": "2026-09-14T14:37:00.000000Z",
+          "content_hash": "sha256:171e1ca88f9a974812e77b9c61ab971e6c50a677e5044da4ea901ce60a038d03",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "aa8a1be7-abe0-44b7-bcd3-31fd0a44de08",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "US tech stocks fall after big AI groups call for slowdown",
+          "url": "https://www.ft.com/content/aa8a1be7-abe0-44b7-bcd3-31fd0a44de08",
+          "published_at": "2026-09-14T20:10:48.000000Z",
+          "content_hash": "sha256:fa834cde58087b57f4a3189711c83bef37b21535c4c416b92a78378b0feef8a2",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/politics/2026/09/14/onstage-call-with-nvidia-ceo-trump-deems-ai-fears-hoax/",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "In onstage call with Nvidia CEO, Trump deems AI fears a ‘hoax’",
+          "url": "https://www.washingtonpost.com/politics/2026/09/14/onstage-call-with-nvidia-ceo-trump-deems-ai-fears-hoax/",
+          "published_at": "2026-09-14T20:47:52.000000Z",
+          "content_hash": "sha256:f0a775a1f36da388b2a4e7ed9d160c9aee30dcc37c6f7247551d625d9907a2ac",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/09/14/technology/trump-ai-safety-jensen-huang.html",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Nvidia’s Jensen Huang Gets Onstage Call From Trump, Who Dismissed A.I. Safety Concerns",
+          "url": "https://www.nytimes.com/2026/09/14/technology/trump-ai-safety-jensen-huang.html",
+          "published_at": "2026-09-14T22:29:25.000000Z",
+          "content_hash": "sha256:85b4199068c0da4a31d9e2e7e7f66dd8a34ab613244e448bb79d4b43ab074b24",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003891839",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "AI Leaders Are Calling for a Slowdown, but Wall Street Keeps on Buying",
+          "url": "https://www.wsj.com/finance/stocks/ai-leaders-are-calling-for-a-slowdown-but-wall-street-keeps-on-buying-7c671903?mod=rss_Technology",
+          "published_at": "2026-09-15T01:00:00.000000Z",
+          "content_hash": "sha256:f9ce40a11ebb3196d1e29d46e51996c1a12ad3af206f04daadb2607005cbdad7",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ],
+      "fallback_role": "brief"
+    },
+    {
+      "id": "sweden-centre-party-refuses-kristersson",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Nordics",
+      "copy": {
+        "headline": "Sweden's Centre Party rules out Kristersson as coalition talks begin",
+        "body": {
+          "standard": [
+            {
+              "text": "The Centre Party wants a government with the Social Democrats and will not cooperate with Ulf Kristersson's Moderates, it said on Monday.",
+              "sources": [
+                "borsen"
+              ]
+            },
+            {
+              "text": "That leaves its leader, Elisabeth Thand Ringqvist, a front-line politician only since November 2025, in a position Politiken compares to the Moderates' in Denmark.",
+              "sources": [
+                "politiken"
+              ]
+            },
+            {
+              "text": "Kristersson has a bold plan to hold on to power despite the blocs standing far closer than expected, Jyllands-Posten reports. Forming a government may take a month or more, and a new election cannot be ruled out.",
+              "sources": [
+                "jp",
+                "politiken",
+                "borsen"
+              ]
+            },
+            {
+              "text": "Swedish authorities found no sign of foreign interference in the election.",
+              "sources": [
+                "berlingske"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "The Centre Party wants a government with the Social Democrats and will not work with Ulf Kristersson's Moderates; a new government may be a month or more away.",
+              "sources": [
+                "borsen",
+                "politiken"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Centre Party says no to Kristersson",
+        "deck": "Elisabeth Thand Ringqvist holds the keys, and a new government may be a month or more away.",
+        "lede": {
+          "text": "The Centre Party wants a government with the Social Democrats and will not work with Ulf Kristersson's Moderates; a new government may be a month or more away.",
+          "sources": [
+            "borsen",
+            "politiken"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/svensk-midterparti-afviser-samarbejde-med-ulf-kristersson",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Svensk midterparti afviser samarbejde med Ulf Kristersson",
+          "url": "https://borsen.dk/nyheder/udland/svensk-midterparti-afviser-samarbejde-med-ulf-kristersson",
+          "published_at": "2026-09-14T15:55:14.000000Z",
+          "content_hash": "sha256:8081de2b7caaf3758873605421eb28026944cfcaa178cb54071ee59d259c09b4",
+          "primary": true
+        },
+        {
+          "source": "politiken",
+          "source_id": "10982011",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Hun sidder lige nu med nøglerne i svensk politik",
+          "url": "https://politiken.dk/internationalt/art10982011/Hun-sidder-lige-nu-med-n%C3%B8glerne-i-svensk-politik",
+          "published_at": "2026-09-14T12:05:51.000000Z",
+          "content_hash": "sha256:34da6311b4da7d45c1700dfced8aba5310eb54ee09b0a2ab1090d39062e195d8",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19639394",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Han er en presset mand. Men statsministeren har en dristig plan for at beholde magten",
+          "url": "https://jyllands-posten.dk/international/ECE19639394/sveriges-borgerlige-styrer-mod-nederlag-men-statsministeren-har-en-dristig-plan-for-at-beholde-magten/",
+          "published_at": "2026-09-14T15:55:00.000000Z",
+          "content_hash": "sha256:e2d5c473eaa80b1b13bc1ac17694a1f81f20e3218bd60915d04c0a4d3b95a6cc",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "10982094",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Det svenske valg blev noget rod, men der er faste regler for, hvad der nu skal ske",
+          "url": "https://politiken.dk/internationalt/art10982094/Det-svenske-valg-blev-noget-rod-men-der-er-faste-regler-for-hvad-der-nu-skal-ske",
+          "published_at": "2026-09-14T14:00:35.000000Z",
+          "content_hash": "sha256:7e917a8da72c8c16cbb71af8465ad6f4f7337f4e3fe6d073cc349bcf5ec9e720",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/sverige-vagnede-til-politisk-kaos-her-er-scenarierne",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Sverige vågnede til politisk kaos – her er scenarierne",
+          "url": "https://borsen.dk/nyheder/udland/sverige-vagnede-til-politisk-kaos-her-er-scenarierne",
+          "published_at": "2026-09-14T11:03:05.000000Z",
+          "content_hash": "sha256:97e400a38278b21e82d6b0292a468e3fe79ae65621128a2002fa0cbffc846b77",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:4d51d9b1-ccc8-5547-b775-55f90af93560",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Svenske myndigheder: Ingen tegn på udenlandsk påvirkning af valget",
+          "url": "https://www.berlingske.dk/internationalt/svenske-myndigheder-ingen-tegn-paa-udenlandsk-paavirkning-af-valget",
+          "published_at": "2026-09-14T17:16:45.000000Z",
+          "content_hash": "sha256:fb8fe6dc51a5808c0f8245fbc4220069e82a8f21895ecda791b865547ceaf057",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/sep/14/sweden-political-parties-launch-coalition-talks-both-blocs-try-to-secure-power",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Sweden’s political parties launch coalition talks as both blocs try to secure power",
+          "url": "https://www.theguardian.com/world/2026/sep/14/sweden-political-parties-launch-coalition-talks-both-blocs-try-to-secure-power",
+          "published_at": "2026-09-14T16:47:25.000000Z",
+          "content_hash": "sha256:c3a6a56d1797586477b7cd4118b537a6d3fb478561d8d942abc53aa1d9971d97",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ],
+      "fallback_role": "brief"
+    },
+    {
+      "id": "afghanistan-documents-withheld",
+      "device_participation": "required",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Ministry has yet to release 1,000 Afghanistan documents",
+        "body": {},
+        "lede": {
+          "text": "The Foreign Ministry has still not released about 1,000 documents the Afghanistan inquiry needs, two years past its own deadline, Berlingske reports.",
+          "sources": [
+            "berlingske",
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:5c694f7c-414e-55d1-b5de-3d9e44d8dc46",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Avis: Ministerium har undladt at frigive dokumenter om Afghanistan",
+          "url": "https://www.berlingske.dk/politik/avis-ministerium-har-undladt-at-frigive-dokumenter-om-afghanistan",
+          "published_at": "2026-09-15T01:56:45.000000Z",
+          "content_hash": "sha256:9d9040f790ec3da6d5d1d05f2d9d1d3746fc0c1b4abefbfef90af493982f4b83",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "616865c4-cef5-48cf-8326-12fa1f68ab43",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Avis: Ministerium har undladt at frigive dokumenter om Afghanistan",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/avis-ministerium-har-undladt-frigive-dokumenter-om-afghanistan",
+          "published_at": "2026-09-15T01:54:51.000000Z",
+          "content_hash": "sha256:325871b85574578d414f9f0ccd078f47d51c55412fdc81dcff43fb665d2b06b4",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "sewage-citizens-proposal",
+      "device_participation": "required",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Sewage proposal reaches 50,000 signatures in ten days",
+        "body": {},
+        "lede": {
+          "text": "A citizens' proposal against discharging untreated sewage into rivers, fjords and the sea reached 50,000 supporters in ten days and goes to the Folketing.",
+          "sources": [
+            "berlingske",
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:928b6e5b-769b-5c95-b2de-a167571d86aa",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Borgerforslag om spildevand når 50.000 støttere på ti dage",
+          "url": "https://www.berlingske.dk/politik/borgerforslag-om-spildevand-naar-50000-stoettere-paa-ti-dage",
+          "published_at": "2026-09-15T07:59:45.000000Z",
+          "content_hash": "sha256:8a5fea9bf03a0e5b569cac065a85fc6e5ff441c701282c1b55419f4df46147f8",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "36d0e516-9523-4cde-a113-c2d217180828",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Borgerforslag om spildevand når 50.000 støttere på ti dage",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/borgerforslag-om-spildevand-naar-50000-stoettere-paa-ti-dage",
+          "published_at": "2026-09-15T07:58:26.000000Z",
+          "content_hash": "sha256:2d42a895f682f66c48b6901993bd279937793c7193ecd9f883d5fbbeacd40e3b",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "10982096",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "»Det er sund fornuft«: Venstre hælder til at støtte borgerforslag om vandmiljø",
+          "url": "https://politiken.dk/danmark/politik/art10982096/%C2%BBDet-er-sund-fornuft%C2%AB-Venstre-h%C3%A6lder-til-at-st%C3%B8tte-borgerforslag-om-vandmilj%C3%B8",
+          "published_at": "2026-09-14T15:25:36.000000Z",
+          "content_hash": "sha256:76cc60653f7fa633044f65262b11be0701569599460078f752a656a3cd320c20",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "nato-drone-lithuania",
+      "device_participation": "required",
+      "role": "brief",
+      "kicker": "Europe",
+      "copy": {
+        "headline": "NATO jet shoots down drone over Lithuania",
+        "body": {},
+        "lede": {
+          "text": "A NATO fighter shot down a drone in Lithuanian airspace on Monday; where it came from is unclear.",
+          "sources": [
+            "berlingske",
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:9ee0621c-4375-57ee-96d9-eac532f7f8f8",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Nato-kampfly skyder drone ned i Litauens luftrum",
+          "url": "https://www.berlingske.dk/internationalt/nato-kampfly-skyder-drone-ned-i-litauens-luftrum",
+          "published_at": "2026-09-15T00:27:46.000000Z",
+          "content_hash": "sha256:4de78da63c415721c298d9499c157adbb3fd9e8e755f967d1d398c8adac0f149",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "44eadc1e-ba35-4433-812e-999cff351cc4",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Nato-kampfly skyder drone ned i Litauens luftrum",
+          "url": "https://www.kristeligt-dagblad.dk/udland/nato-kampfly-skyder-drone-ned-i-litauens-luftrum",
+          "published_at": "2026-09-14T21:54:09.000000Z",
+          "content_hash": "sha256:147f47c1dc7d5acbab29ea31f163ffb340d7f4c0f6f7b15b2392702346412676",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:ca2e8b32-c0e5-4a9f-9fb2-77a4b585a40b",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Nato-kampfly nedskyder drone over Litauens luftrum",
+          "url": "https://www.dr.dk/nyheder/seneste/nato-kampfly-nedskyder-drone-over-litauens-luftrum",
+          "published_at": "2026-09-14T22:13:46.000000Z",
+          "content_hash": "sha256:391197a7401a5798b646aaf381e3464a716e7df2663b427a85f4c683e79fe2b6",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cjx2zgk7edlzo",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Nato jets down drone that entered Lithuanian airspace",
+          "url": "https://www.bbc.co.uk/news/articles/cjx2zgk7edlzo?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-09-15T06:29:17.000000Z",
+          "content_hash": "sha256:a705061cc22e7dcd55e9b28bbea2ddb19521990d9c40362b7ae3d881d9a57848",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/sep/15/nato-jets-shoot-down-drone-violating-lithuania-airspace-kaunas",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Nato jets shoot down drone violating Lithuania’s airspace",
+          "url": "https://www.theguardian.com/world/2026/sep/15/nato-jets-shoot-down-drone-violating-lithuania-airspace-kaunas",
+          "published_at": "2026-09-15T03:36:56.000000Z",
+          "content_hash": "sha256:480bd883b8e990e74f0986d62a8c518714cdf17fa1049ab0f5031fb2e0adece0",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "emmys-widows-bay-record",
+      "device_participation": "required",
+      "role": "brief",
+      "kicker": "Culture",
+      "copy": {
+        "headline": "'Widow's Bay' takes 14 Emmys, a record for a comedy",
+        "body": {},
+        "lede": {
+          "text": "The horror comedy 'Widow's Bay' took 14 Emmys overnight, a record for a comedy series; its Welsh lead Matthew Rhys was among the winners.",
+          "sources": [
+            "politiken",
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "politiken",
+          "source_id": "10983093",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Gyserkomedieserie slår Emmy-rekord for flest priser i sin kategori",
+          "url": "https://politiken.dk/kultur/film_og_tv/art10983093/Gyserkomedieserie-sl%C3%A5r-Emmy-rekord-for-flest-priser-i-sin-kategori",
+          "published_at": "2026-09-15T04:33:18.000000Z",
+          "content_hash": "sha256:ceb465ac2aa173bf64c9e98e0506a090fe091a651be67f5cd7d2d9db1fcb95fd",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "3ec1d5f2-2c0a-4ed9-964b-f5c169445691",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Gyserkomedieserie tangerer Emmy-rekord med flere priser",
+          "url": "https://www.kristeligt-dagblad.dk/kultur/gyserkomedieserie-tangerer-emmy-rekord-med-flere-priser",
+          "published_at": "2026-09-15T02:42:37.000000Z",
+          "content_hash": "sha256:8883df0c7f4e8791094cde7936ddf5b1f4a82b1491a3297a3b64e158b2d70436",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:b7527ff7-7814-45eb-9310-7270edab7fd4",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Gyserkomedieserie slår Emmy-rekord",
+          "url": "https://www.dr.dk/nyheder/kultur/gyserkomedieserie-slaar-emmy-rekord",
+          "published_at": "2026-09-15T04:38:53.000000Z",
+          "content_hash": "sha256:404671bf2bd2a2fd4c0622f306f015df631d47e55b91379607f2f8f3e2b351c1",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:ba532aa9-1432-578d-8f78-679c35533b73",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Gyserkomedieserie slår Emmy-rekord for flest priser i sin kategori",
+          "url": "https://www.berlingske.dk/skaerm/gyserkomedieserie-slaar-emmy-rekord-for-flest-priser-i-sin-kategori",
+          "published_at": "2026-09-15T03:47:00.000000Z",
+          "content_hash": "sha256:b6ba3c8e611d7b68f181fe4231cb123deff20ac31f1b1f172d3e57d809aaba6a",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/tv-and-radio/2026/sep/15/emmy-winners-2026-widows-bay-the-pitt-hacks-matthew-rhys-jean-smart-historic-wins",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Emmys 2026: Widow’s Bay dominates as Matthew Rhys and Jean Smart land historic wins",
+          "url": "https://www.theguardian.com/tv-and-radio/2026/sep/15/emmy-winners-2026-widows-bay-the-pitt-hacks-matthew-rhys-jean-smart-historic-wins",
+          "published_at": "2026-09-15T03:31:32.000000Z",
+          "content_hash": "sha256:50f4cdeb6c6b6ce710118b7d215e84338c365cd6893056b7e107e6a5512f2ffd",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/09/14/arts/television/widows-bay-the-pitt-emmys-awards.html",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "‘Widow’s Bay’ Dominates, and 7 Other Takeaways From the 2026 Emmys",
+          "url": "https://www.nytimes.com/2026/09/14/arts/television/widows-bay-the-pitt-emmys-awards.html",
+          "published_at": "2026-09-15T03:22:53.000000Z",
+          "content_hash": "sha256:e2f5706f119b789ededc9501f8c2fbea44556d298b5903bb9a083c72cd78b533",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "c6j9xym8zjy3o",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Superstars and broken records: 2026 Emmy highlights",
+          "url": "https://www.bbc.co.uk/news/videos/c6j9xym8zjy3o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-09-15T05:14:24.000000Z",
+          "content_hash": "sha256:651fd50267b4287857028858b0b3f859491469bfdd7462509a1d973374f034b9",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "ninth-grade-fail-rate",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Education",
+      "copy": {
+        "headline": "More than one in ten leave ninth grade without passing Danish and maths",
+        "body": {},
+        "lede": {
+          "text": "11.8 per cent of pupils failed Danish and maths at this summer's ninth-grade exams, a rise a school researcher calls 'worrying'.",
+          "sources": [
+            "berlingske",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:ee63b230-b519-55d4-bf0c-263e9681ddb7",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Mere end hver tiende elev består ikke dansk og matematik i 9. klasse",
+          "url": "https://www.berlingske.dk/politik/mere-end-hver-tiende-elev-bestaar-ikke-dansk-og-matematik-i-9-klasse",
+          "published_at": "2026-09-14T16:03:46.000000Z",
+          "content_hash": "sha256:03ee37859d47c7fcc8a4275ef966e51e3dcee6201f494d6834c4b491e330326d",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:6b86b24d-4627-4b9c-ac0a-03abe1307bd2",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Årets eksamenskarakterer er ude. Flere består ikke dansk og matematik",
+          "url": "https://www.dr.dk/nyheder/indland/aarets-eksamenskarakterer-er-ude-flere-bestaar-ikke-dansk-og-matematik",
+          "published_at": "2026-09-14T12:27:51.000000Z",
+          "content_hash": "sha256:f5ed7568577834699b446b1dede580ee8aaf6003d8cc9f4967e04631315a2e87",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "tilst-murder-charges",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "Two 16-year-olds charged with murder in Tilst",
+        "body": {},
+        "lede": {
+          "text": "Two 16-year-old boys are charged with murder over the fatal stabbing of a 25-year-old man in Tilst; four young people were already in custody.",
+          "sources": [
+            "politiken",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "politiken",
+          "source_id": "10983155",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "To 16-årige drenge sigtes for drab efter dødeligt knivstik i Tilst",
+          "url": "https://politiken.dk/danmark/art10983155/To-16-%C3%A5rige-drenge-sigtes-for-drab-efter-d%C3%B8deligt-knivstik-i-Tilst",
+          "published_at": "2026-09-15T06:28:21.000000Z",
+          "content_hash": "sha256:f37d74c7edf23273929bf9ec88ea503b9032c84a9af1a05e06064a6fc4436298",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:40ebde33-e686-41a2-bbdd-80288bfa49fd",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "To 16-årige sigtet i sag om drab på 25-årig i Tilst",
+          "url": "https://www.dr.dk/nyheder/seneste/16-aarige-sigtet-i-sag-om-drab-paa-25-aarig-i-tilst",
+          "published_at": "2026-09-15T06:12:32.000000Z",
+          "content_hash": "sha256:6f177e5b623f76a6ae2706c0bc133074bc3c3670c4cfa8267d1df23671107596",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "cars-co2-down-30-percent",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Climate",
+      "copy": {
+        "headline": "Emissions from Danish cars down 30 per cent in six years",
+        "body": {},
+        "lede": {
+          "text": "CO2 emissions from Danish cars have fallen 30 per cent in six years despite more cars on the road, with electric cars one of the reasons.",
+          "sources": [
+            "dr",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:11fcdab9-618d-4a2a-b3c5-bc852c78256c",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Danske bilers CO2-udledning er faldet 30 procent på seks år",
+          "url": "https://www.dr.dk/nyheder/viden/klima/danske-bilers-co2-udledning-er-faldet-30-procent-paa-seks-aar",
+          "published_at": "2026-09-15T07:01:07.000000Z",
+          "content_hash": "sha256:fc485ced0d32cc87cb78cb48d43845fe29bf16140ca393380909a109407c4a8d",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:b25a8e5f-4124-5548-807d-9031b07bde0f",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Danske bilers CO2-udledning er faldet 30 procent på seks år",
+          "url": "https://www.berlingske.dk/business/danske-bilers-co2-udledning-er-faldet-30-procent-paa-seks-aar",
+          "published_at": "2026-09-15T06:46:46.000000Z",
+          "content_hash": "sha256:df67753ae78c04f915b2979c6974b4d868a9368a91944d1fb39b55f5cdb7051a",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "novo-ascendis-end-deal",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Business",
+      "copy": {
+        "headline": "Novo and Ascendis end their collaboration",
+        "body": {},
+        "lede": {
+          "text": "Novo and Ascendis, Denmark's largest and third-largest drugmakers by market value, have ended their collaboration.",
+          "sources": [
+            "borsen"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/virksomheder/novo-og-ascendis-ophaever-aftale",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Novo og Ascendis ophæver aftale",
+          "url": "https://borsen.dk/nyheder/virksomheder/novo-og-ascendis-ophaever-aftale",
+          "published_at": "2026-09-15T05:56:50.000000Z",
+          "content_hash": "sha256:87396abfc1bdcd352cbf337bda4e3a48f542435e84994ae165f740bd35e7f98a",
+          "primary": true
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "ukraine-aid-reprioritised",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Government to move 129 million kroner from Ukraine aid",
+        "body": {},
+        "lede": {
+          "text": "The government proposes moving 129 million kroner from Ukraine support to Danish business development; the opposition calls both the signal and the substance wrong.",
+          "sources": [
+            "jp"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "jp",
+          "source_id": "19630871",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Regeringen lægger op til at trække 129 mio. kr. fra støtten til Ukraine. Et dokument viser, hvad pengene i stedet skal bruges på",
+          "url": "https://jyllands-posten.dk/indland/ECE19630871/regeringen-laegger-op-til-at-traekke-129-mio-kr-fra-stoetten-til-ukraine-et-dokument-viser-hvad-pengene-i-stedet-skal-bruges-paa/",
+          "published_at": "2026-09-14T16:00:00.000000Z",
+          "content_hash": "sha256:712a898abd903c1ddd87e1f53e1e835770fa161e56ba89fec5766e2ca3111734",
+          "primary": true
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "trains-resume-after-soro-damage",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Transport",
+      "copy": {
+        "headline": "Trains run again after overhead-line damage at Sorø",
+        "body": {},
+        "lede": {
+          "text": "Trains run again from 10am on Tuesday after damage to the overhead line at Sorø caused cancellations and delays from Monday noon, Banedanmark says.",
+          "sources": [
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "da25ce67-11ab-42fd-b854-e79a1a7720ea",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Togtrafikken genoptages efter mandagens aflysninger",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/togtrafikken-genoptages-efter-mandagens-aflysninger",
+          "published_at": "2026-09-15T07:47:02.000000Z",
+          "content_hash": "sha256:51e62321731eb00473627c08523e462cfbe439ae796a4ef4407fd2bc6e56b0d7",
+          "primary": true
+        },
+        {
+          "source": "politiken",
+          "source_id": "10982668",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Omfattende skader fører til togaflysninger og store forsinkelser",
+          "url": "https://politiken.dk/rejser/art10982668/Omfattende-skader-f%C3%B8rer-til-togaflysninger-og-store-forsinkelser",
+          "published_at": "2026-09-14T13:03:57.000000Z",
+          "content_hash": "sha256:f5f0e215254db5d274b6e52df02005a6abf73befd974997e2e0e00898f05c5ed",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:f0dae03e-746a-4b12-956a-0e1f724a95e0",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Omfattende skader giver togaflysninger og store forsinkelser",
+          "url": "https://www.dr.dk/nyheder/indland/omfattende-skader-giver-togaflysninger-og-store-forsinkelser",
+          "published_at": "2026-09-14T11:26:48.000000Z",
+          "content_hash": "sha256:9e00f0201b64202bceb2be8701e6405dd1102867c16a756410b2d8536afe990c",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "dutch-rail-sabotage",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Europe",
+      "copy": {
+        "headline": "Dutch rail disrupted in rush hour; sabotage suspected",
+        "body": {},
+        "lede": {
+          "text": "Dutch rail traffic was disrupted in Tuesday's rush hour after objects were found on tracks in the north and centre of the country; operator ProRail suspects sabotage.",
+          "sources": [
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "975f1442-da89-4e6f-b0fd-307a4528b78c",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Hollandske tog ramt af mulig sabotage midt i myldretid",
+          "url": "https://www.kristeligt-dagblad.dk/udland/hollandske-tog-ramt-af-mistaenkt-sabotage-midt-i-myldretid",
+          "published_at": "2026-09-15T07:41:08.000000Z",
+          "content_hash": "sha256:df3a4aba30f13f9a16b1f1eb99465b85fdf9aac7dbace0edcc71d8f9ba3b5f65",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:a3aa367c-d31e-4267-81fd-6dda3bcedd05",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Holland ramt af forstyrrelser i togtrafikken: Mistanke om sabotage",
+          "url": "https://www.dr.dk/nyheder/seneste/holland-ramt-af-forstyrrelser-i-togtrafikken-mistanke-om-sabotage",
+          "published_at": "2026-09-15T07:51:53.000000Z",
+          "content_hash": "sha256:e863729cfb943b58c1a4a8c0caf4a15a86aff38690510ac20999d55584c9c380",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "houthi-attacks-saudi-base",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Houthis claim new strikes on Saudi Arabia, 13 wounded",
+        "body": {},
+        "lede": {
+          "text": "The Houthis say they fired missiles and drones at a military base in Khamis Mushait in southern Saudi Arabia, wounding 13, in retaliation for Saudi strikes in Yemen; Trump refuses to draw the US in, Politiken reports.",
+          "sources": [
+            "berlingske",
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:29292976-7c25-579a-973c-5bb720e6394b",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Houthier melder om nye angreb mod Saudi-Arabien - 13 sårede",
+          "url": "https://www.berlingske.dk/internationalt/houthier-melder-om-nye-angreb-mod-saudi-arabien-13-saarede",
+          "published_at": "2026-09-15T01:44:47.000000Z",
+          "content_hash": "sha256:7b6ab03785596034fabdd8e1d10b87812512cb79f1a7c0bd28aac7912993c0ca",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "3e9ec671-c534-433f-98eb-c7a5fb7eb1a6",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Houthier melder om nye angreb mod Saudi-Arabien - 13 sårede",
+          "url": "https://www.kristeligt-dagblad.dk/udland/houthier-melder-om-nye-angreb-mod-saudi-arabien-13-saarede",
+          "published_at": "2026-09-15T01:42:47.000000Z",
+          "content_hash": "sha256:6e2ed485d5c73fa432634832420aea601704eccbdd922e60f5d08d7df340f750",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "10982026",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Houthierne bider sig fast i det sydlige Yemen, mens USA nægter at komme landet til undsætning",
+          "url": "https://politiken.dk/internationalt/art10982026/Houthierne-bider-sig-fast-i-det-sydlige-Yemen-mens-USA-n%C3%A6gter-at-komme-landet-til-unds%C3%A6tning",
+          "published_at": "2026-09-14T15:35:12.000000Z",
+          "content_hash": "sha256:aabd7842fac0f98801729f0b807ca8083642df8a84000618eb28a8696a8b8fb3",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/sep/15/houthi-rebels-seize-red-sea-hanish-islands-saudi-oil-warning",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Houthis seize strategic Red Sea islands as analysts warn of impending oil crunch",
+          "url": "https://www.theguardian.com/world/2026/sep/15/houthi-rebels-seize-red-sea-hanish-islands-saudi-oil-warning",
+          "published_at": "2026-09-15T04:22:16.000000Z",
+          "content_hash": "sha256:9b766147c2ee6289d2d555b2f43c3b7acd61085b19323c9ec197a4b6313882ca",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003891173",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "The Lightning Offensive That Saw the Houthis Grab a Crucial Oil Corridor",
+          "url": "https://www.wsj.com/world/middle-east/the-lightning-offensive-that-saw-the-houthis-grab-a-crucial-oil-corridor-f70f0e96?mod=rss_worldnews",
+          "published_at": "2026-09-15T02:00:00.000000Z",
+          "content_hash": "sha256:b3b85ae62d5b6a7834f17334c1e1cc7bc90e051ff71da862399476f7a73910d6",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "macklemore-dropped-sheeran-tour",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Culture",
+      "copy": {
+        "headline": "Macklemore dropped from Ed Sheeran's tour after Gaza remarks",
+        "body": {},
+        "lede": {
+          "text": "Macklemore has been removed from Ed Sheeran's US tour after voicing support for Palestinians on stage; he says stadium owners pressured Sheeran and calls it a small price to pay.",
+          "sources": [
+            "politiken",
+            "kristeligt_dagblad",
+            "tv2"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "politiken",
+          "source_id": "10983070",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Macklemore fjernet fra Ed Sheerans turné efter Gaza-støtte",
+          "url": "https://politiken.dk/kultur/musik/art10983070/Macklemore-fjernet-fra-Ed-Sheerans-turn%C3%A9-efter-Gaza-st%C3%B8tte",
+          "published_at": "2026-09-15T04:17:14.000000Z",
+          "content_hash": "sha256:eceb4d1f9806827fae700456f75d7f2c6732293519e59e0ebc667540929e80ce",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "8cc7fbd4-f318-4ddb-9368-29334d42a2a1",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Macklemore fjernet fra Ed Sheerans turné efter Gaza-støtte",
+          "url": "https://www.kristeligt-dagblad.dk/kultur/macklemore-fjernet-fra-ed-sheerans-turne-efter-gaza-stoette",
+          "published_at": "2026-09-14T23:21:18.000000Z",
+          "content_hash": "sha256:da62808ab820d858be1306d0cc8fd7760eab80706b96dbdf3eaea816a043fc62",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/udland/2026-09-14-macklemore-droppet-fra-ed-sheerans-turne-efter-palaestina-udtalelser",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Stjerne droppet fra Ed Sheeran-turné efter udtalelser",
+          "url": "https://nyheder.tv2.dk/udland/2026-09-14-macklemore-droppet-fra-ed-sheerans-turne-efter-palaestina-udtalelser",
+          "published_at": "2026-09-14T21:04:58.000000Z",
+          "content_hash": "sha256:a192b3358aa9dfd17d2f89645fbdb741b3187340c05aaa03e049edadeb1db11c",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:02bc99dd-98d4-5a73-acaa-2e2bb4b2bb9f",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Macklemore fjernet fra Ed Sheerans turné efter Gaza-støtte",
+          "url": "https://www.berlingske.dk/internationalt/macklemore-fjernet-fra-ed-sheerans-turne-efter-gaza-stoette",
+          "published_at": "2026-09-14T23:46:48.000000Z",
+          "content_hash": "sha256:0be784c62019e6a821ddbc5dd6251d1d781958a3a85bbc5b753602e393b7ef66",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cq0m3pkmgg1ko",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Macklemore dropped from Ed Sheeran tour after 'Free Palestine' speech",
+          "url": "https://www.bbc.co.uk/news/articles/cq0m3pkmgg1ko?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-09-14T21:10:49.000000Z",
+          "content_hash": "sha256:db15f968957b1a059ab67103b80d1d62417bb851969cc4a5471d0acafabd8260",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/entertainment/music/2026/09/14/macklemore-dropped-ed-sheeran-tour-after-pro-palestine-comments/",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Macklemore dropped from Ed Sheeran tour after pro-Palestine comments",
+          "url": "https://www.washingtonpost.com/entertainment/music/2026/09/14/macklemore-dropped-ed-sheeran-tour-after-pro-palestine-comments/",
+          "published_at": "2026-09-14T16:55:13.000000Z",
+          "content_hash": "sha256:d6243bfb6737a679b90968290548607d4f530735080b2ed547f7fab034ea363d",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "children-online-survey",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Two in three 9-to-12-year-olds use platforms meant for over-13s",
+        "body": {},
+        "lede": {
+          "text": "65 per cent of children aged 9 to 12 use a platform with a 13-year age limit, and two in three have had unpleasant experiences online, a new survey finds; a children's organisation wants platforms to tighten up.",
+          "sources": [
+            "jp",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "jp",
+          "source_id": "19642441",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "To ud af tre i alderen 9-12 er på platforme med aldersgrænse på 13 år",
+          "url": "https://jyllands-posten.dk/indland/ECE19642441/to-ud-af-tre-i-alderen-912-er-paa-platforme-med-aldersgraense-paa-13-aar/",
+          "published_at": "2026-09-15T04:36:19.000000Z",
+          "content_hash": "sha256:1edda25d13cbcfbe1eaa68be51173809688fcf1669c830d5fd4efebead9b4dc3",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:e001c119-0ac9-4939-ac92-7a0e3d878070",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Undersøgelse kaster lys over børns færden på nettet: To ud af tre udsættes for ubehagelige oplevelser",
+          "url": "https://www.dr.dk/nyheder/indland/undersoegelse-kaster-lys-over-boerns-faerden-paa-nettet-ud-af-tre-udsaettes-ubehagelige-oplevelser",
+          "published_at": "2026-09-15T04:02:00.000000Z",
+          "content_hash": "sha256:cc11eb51979ec8509b156191a0ac68fb5941555d1ef9e8aa88d96335ba0c44e0",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "greenland-talks-optimistic",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Frederiksen 'quite optimistic' about Greenland talks with the US",
+        "body": {},
+        "lede": {
+          "text": "Mette Frederiksen sees 'very clear signs and signals' in the talks between the US, Greenland and Denmark and is 'quite optimistic', though the working group has not finished.",
+          "sources": [
+            "altinget",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:0d9bcfac-e683-43e0-83d2-0d2ca97dec99",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Mette Frederiksen er optimistisk omkring en løsning med Trump om Grønland",
+          "url": "https://www.dr.dk/nyheder/udland/mette-frederiksen-er-optimistisk-omkring-en-loesning-med-trump-om-groenland",
+          "published_at": "2026-09-14T14:13:28.000000Z",
+          "content_hash": "sha256:1939134f73012212ae21c9c610971ab323af110f13a36ca133b93820bceb17f3",
+          "primary": true
+        },
+        {
+          "source": "altinget",
+          "source_id": "https://www.altinget.dk/artikel/mette-frederiksen-er-ret-optimistisk-om-forhandlinger-med-usa-og-groenland",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Mette Frederiksen er \"ret optimistisk\" om forhandlinger med USA og Grønland",
+          "url": "https://www.altinget.dk/artikel/mette-frederiksen-er-ret-optimistisk-om-forhandlinger-med-usa-og-groenland",
+          "published_at": "2026-09-14T13:24:00.000000Z",
+          "content_hash": "sha256:ffd1ccbbf9ffde0fa3271c037c90560875e33b53e684152a40eb6fe47bee6cb2",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "gang-paragraph-double-sentences",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Justice",
+      "copy": {
+        "headline": "Wammen to widen the gang paragraph after Supreme Court ruling",
+        "body": {},
+        "lede": {
+          "text": "Justice minister Nicolai Wammen will amend the gang paragraph so prosecutors can more easily seek double sentences for group feuds, and says criminal families should be treated as gangs.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:8bfbc934-3264-5f6b-8246-85cbc6a5a0ed",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Anklagere skal føre flere sager med krav om dobbelt straf",
+          "url": "https://www.berlingske.dk/indland/anklagere-skal-foere-flere-sager-med-krav-om-dobbelt-straf",
+          "published_at": "2026-09-14T16:28:46.000000Z",
+          "content_hash": "sha256:ace424111b0d2d6c9f841cfd774f8dd906b4b914536f891135eec2b5e0c0b20e",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "6074827e-2dd1-472a-8bda-4686aa626092",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Anklagere skal føre flere sager med krav om dobbelt straf",
+          "url": "https://www.kristeligt-dagblad.dk/anklagere-skal-foere-flere-sager-med-krav-om-dobbelt-straf",
+          "published_at": "2026-09-14T16:28:33.000000Z",
+          "content_hash": "sha256:d7a7fc06505b10a5ecc3189e56d7f7f39a4448852e7ce2d0c744850d7af1c04f",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:70f19a03-df65-4dc0-b0d1-f0cf03877b5f",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "Justitsminister: Kriminelle familier skal behandles som bander",
+          "url": "https://www.dr.dk/nyheder/seneste/justitsminister-kriminelle-familier-skal-behandles-som-bander",
+          "published_at": "2026-09-14T13:50:44.000000Z",
+          "content_hash": "sha256:7c19548ef94a7bb7e3ed1b65162c73b4e00ef7fe53956a9d7e3644ea6accb867",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "commuting-deduction-diesel",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Social Democrats want a higher commuting deduction against record diesel",
+        "body": {},
+        "lede": {
+          "text": "The Social Democrats propose a higher commuting deduction to counter diesel's record price of 19.19 kroner a litre.",
+          "sources": [
+            "borsen"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/politik/s-vil-lade-forhojet-korselsfradrag-bekaempe-rekordhoj-dieselpris",
+          "input_id": "export-2026-09-15-0800",
+          "original_title": "S vil lade forhøjet kørselsfradrag bekæmpe rekordhøj dieselpris",
+          "url": "https://borsen.dk/nyheder/politik/s-vil-lade-forhojet-korselsfradrag-bekaempe-rekordhoj-dieselpris",
+          "published_at": "2026-09-14T13:00:40.000000Z",
+          "content_hash": "sha256:1a6b97758a44b5030640be454e0e2c44f7a5dba8cacd102baae7cddd611b05b5",
+          "primary": true
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    }
+  ],
+  "fit_policy": {
+    "allow_role_fallback": true,
+    "allow_composition_substitution": true,
+    "reserve_story_ids": [],
+    "omittable_story_ids": [
+      "ai-shares-slide-trump-conspiracy",
+      "sweden-centre-party-refuses-kristersson",
+      "ninth-grade-fail-rate",
+      "tilst-murder-charges",
+      "cars-co2-down-30-percent",
+      "novo-ascendis-end-deal",
+      "ukraine-aid-reprioritised",
+      "trains-resume-after-soro-damage",
+      "dutch-rail-sabotage",
+      "houthi-attacks-saudi-base",
+      "macklemore-dropped-sheeran-tour",
+      "children-online-survey",
+      "greenland-talks-optimistic",
+      "gang-paragraph-double-sentences",
+      "commuting-deduction-diesel"
+    ]
+  }
+}

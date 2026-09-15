@@ -1,0 +1,210 @@
+# Editorial policy for Copenhagen Daily.
+#
+# This is the masthead's standing line, written by the owner and versioned here. Block 2 reads it at
+# every run. It is not a reader profile and nothing in it is inferred from behaviour. Numbers here are
+# the tunables the architecture plan names; the desk handbook says how they are used, and the editor
+# is trusted with everything the file does not settle.
+
+title: copenhagen-daily
+masthead: Copenhagen Daily
+language: en
+timezone: Europe/Copenhagen
+
+schedule:
+  edition: morning
+  cutoff_local: "08:00"      # the edition covers news through this time; published shortly after
+  candidate_window_hours: 72 # publication-time window; anything observed since the last edition also qualifies
+  memory_editions: 14        # published editions read at each run for repeat suppression and threads
+  thread_dormant_days: 14
+
+# Danish outlets decide what is news. A story is eligible only if one of these reports it, and only
+# these count towards breadth and prominence. Every other configured publisher is linked: attached as
+# a source when it covers a story a scoring publisher reports, never scoring, never making eligible.
+scoring_publishers: [dr, tv2, politiken, berlingske, jp, borsen, information, altinget, kristeligt_dagblad]
+
+# score = (0.45 breadth + 0.10 peak_prominence + 0.30 recency + 0.15 thread_strength) x section_weight
+weights:
+  breadth: 0.45
+  peak_prominence: 0.10
+  recency: 0.30
+  thread_strength: 0.15
+
+# The ratio between two weights is the margin a story needs to overcome them.
+section_weights:
+  denmark: 1.0
+  politics: 1.0
+  copenhagen: 0.9
+  economy: 0.8
+  education: 0.8
+  justice: 0.8
+  nordics: 0.8
+  business: 0.7
+  climate: 0.7
+  europe: 0.7
+  world: 0.7
+  health: 0.6
+  culture: 0.6
+  science: 0.6
+  technology: 0.5
+  sport: 0.4
+
+# Kickers are what the reader sees. Each section has a default; the editor may use a more specific
+# kicker from the allowed list when it helps the reader, and never one outside it. "Opinion" is a
+# secondary kicker, not a section.
+kickers:
+  denmark: [Denmark, Defence, Transport, Municipalities, Crime, Prices, History, Bornholm]
+  copenhagen: [Copenhagen]
+  politics: [Politics, Welfare]
+  economy: [Economy, Prices, Markets]
+  business: [Business]
+  nordics: [Nordics]
+  europe: [Europe]
+  world: [World]
+  culture: [Culture, Obituary]
+  science: [Science, Environment]
+  climate: [Climate, Environment, Energy]
+  technology: [Technology]
+  health: [Health]
+  education: [Education]
+  justice: [Justice, Crime]
+  sport: [Sport]
+  secondary_kickers: [Opinion, Analysis]
+
+# Word budgets are ceilings, never targets. A thin story is a short story.
+budgets:
+  lead_words: [120, 180]
+  secondary_words: [60, 110]
+  brief_words: 35
+  device_capacity:            # lead-wide, the composition block 3 has built; the required set must fit
+    secondary: 3
+    brief: 4
+
+sources:
+  max_per_story: 16
+  one_article_per_publisher: true      # a second only when it carries distinct evidence the copy uses
+  exclude_unless_sole_coverage: [live_blog, rolling_page, video_reel]
+
+# Section resolution comes from feed provenance, never from a model. Each feed maps to the sections
+# an article seen in it belongs to; an article keeps the set of every section it was seen in. Latest
+# and homepage feeds carry no section. Two Børsen feeds map to nothing on purpose: breaking and
+# longread describe urgency and format, not subject.
+feed_sections:
+  # Danish scoring publishers
+  dr.indland: [denmark]
+  dr.udland: [world]
+  dr.penge: [economy]
+  dr.politik: [politics]
+  dr.sporten: [sport]
+  dr.senestesport: [sport]
+  dr.viden: [science]
+  dr.kultur: [culture]
+  dr.musik: [culture]
+  dr.vejret: [denmark]
+  dr.regionale: [denmark]
+  dr.regionale_kbh: [copenhagen]
+  dr.regionale_bornholm: [denmark]
+  dr.regionale_syd: [denmark]
+  dr.regionale_fyn: [denmark]
+  dr.regionale_vest: [denmark]
+  dr.regionale_nord: [denmark]
+  dr.regionale_trekanten: [denmark]
+  dr.regionale_sjaelland: [denmark]
+  dr.regionale_oestjylland: [denmark]
+  politiken.indland: [denmark]
+  politiken.udland: [world]
+  politiken.politik: [politics]
+  politiken.oekonomi: [economy]
+  politiken.kultur: [culture]
+  politiken.sport: [sport]
+  politiken.viden: [science]
+  politiken.debat: [opinion]
+  politiken.forbrugogliv: [denmark]
+  politiken.ibyen: [copenhagen, culture]
+  politiken.rejser: [culture]
+  berlingske.samfund: [denmark]
+  berlingske.business: [business]
+  berlingske.kultur: [culture]
+  berlingske.opinion: [opinion]
+  borsen.baeredygtig: [climate, business]
+  borsen.ejendomme: [business]
+  borsen.finans: [economy]
+  borsen.investor: [economy]
+  borsen.executive: [business]
+  borsen.markedsberetninger: [economy]
+  borsen.opinion: [opinion]
+  borsen.pleasure: [culture]
+  borsen.politik: [politics]
+  borsen.tech: [technology]
+  borsen.udland: [world]
+  borsen.virksomheder: [business]
+  borsen.okonomi: [economy]
+  borsen.breaking: []
+  borsen.longread: []
+  altinget.christiansborg: [politics]
+  altinget.eu: [europe]
+  altinget.klima: [climate]
+  altinget.sundhed: [health]
+  altinget.arbejdsmarked: [economy]
+  altinget.forsvar: [denmark]
+  altinget.kommunal: [denmark]
+  altinget.uddannelse: [education]
+  altinget.by: [denmark]
+  # TV 2, Jyllands-Posten, Information, and Kristeligt Dagblad publish no section feeds; their
+  # articles take sections from other publishers' feeds when the same story is clustered, else none.
+  # Linked publishers (sections attach to the story only through a scoring publisher's article)
+  nytimes.world: [world]
+  nytimes.europe: [europe]
+  nytimes.business: [business]
+  nytimes.technology: [technology]
+  nytimes.science: [science]
+  nytimes.health: [health]
+  nytimes.climate: [climate]
+  nytimes.arts: [culture]
+  nytimes.books: [culture]
+  nytimes.opinion: [opinion]
+  ft.world: [world]
+  ft.global_economy: [economy]
+  ft.companies: [business]
+  ft.markets: [economy]
+  ft.technology: [technology]
+  ft.climate_capital: [climate]
+  ft.opinion: [opinion]
+  ft.work_careers: [business]
+  ft.life_arts: [culture]
+  bbc.world: [world]
+  bbc.europe: [europe]
+  bbc.business: [business]
+  bbc.technology: [technology]
+  bbc.science: [science]
+  bbc.health: [health]
+  bbc.politics: [world]
+  bbc.culture: [culture]
+  economist.leaders: [opinion]
+  economist.briefing: [world]
+  economist.europe: [europe]
+  economist.international: [world]
+  economist.finance: [economy]
+  economist.business: [business]
+  economist.science: [science]
+  economist.culture: [culture]
+  guardian.world: [world]
+  guardian.europe: [europe]
+  guardian.business: [business]
+  guardian.technology: [technology]
+  guardian.environment: [climate]
+  guardian.science: [science]
+  guardian.culture: [culture]
+  guardian.opinion: [opinion]
+  wapo.world: [world]
+  wapo.national: [world]
+  wapo.politics: [world]
+  wapo.business: [business]
+  wapo.technology: [technology]
+  wapo.opinions: [opinion]
+  wsj.world: [world]
+  wsj.business: [business]
+  wsj.markets: [economy]
+  wsj.economy: [economy]
+  wsj.politics: [world]
+  wsj.technology: [technology]
+  wsj.opinion: [opinion]

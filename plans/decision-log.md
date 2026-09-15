@@ -335,6 +335,19 @@ The term is worth 0.15 and decays by editions since the paper last ran the threa
 reproduces the behaviour of a paper with no memory. The failure mode to watch is a long-running story
 that never dies and crowds out fresh news.
 
+**The editor is a model and is trusted with judgement. Settled 15 September 2026.** After the first
+edition the owner judged good, the question was how much of what made it good to codify. The answer is
+the three kinds the architecture names: what the paper is, the hard rules that protect the reader and
+the evidence, and the working method. The rest is guidance with reasons, kept out of validators, plus a
+golden example, because a capable model given a good example and broad guidelines writes a better paper
+than one given a rulebook, and the paper runs few enough calls a day to afford a capable model.
+
+**Sixteen sources per story is kept, with an inclusion rule.** The cap was reached once, on the Gedser
+lead, and only because live-blog entries and a rolling page were counted alongside dated articles. With
+one article per publisher unless a second carries distinct evidence, sixteen is every configured
+publisher. Raising the cap means a new schema version, which is the right cost for a genuine need and
+the wrong reflex for a padded source list.
+
 ---
 
 ## Deferred, with gates

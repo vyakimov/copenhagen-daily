@@ -1,0 +1,707 @@
+{
+  "bundle": "ingest/var/exports/eval/2026-09-15-morning",
+  "feeds": "editorial/examples/2026-09-15-morning/feeds.json",
+  "edition": {
+    "id": "2026-09-15-morning",
+    "number": 4,
+    "name": "Morning edition",
+    "date": "2026-09-15",
+    "cutoff_at": "2026-09-15T08:00:00.000000Z",
+    "checked_from": "2026-09-12T08:00:00.000000Z",
+    "input_id": "export-2026-09-15-0800",
+    "presentation": {
+      "preferred_composition": "lead-centred",
+      "emphasis": "many_stories",
+      "ear_right": "Inside: Supreme Court blocks Trump on postal votes, Sweden's Centre Party says no, Widow's Bay sweeps the Emmys"
+    },
+    "note": "Built from headlines and RSS descriptions published between 10:00 on Saturday and 10:00 on Tuesday Copenhagen time, from 131 feeds at sixteen publishers, all polled successfully. Danish outlets decide what is news; international titles are linked where they cover the same story. Nothing else was read."
+  },
+  "stories": [
+    {
+      "id": "russian-frigate-flares-gedser",
+      "role": "lead",
+      "kicker": "Defence",
+      "headline": "Russian frigate fires flares at Danish helicopter off Gedser",
+      "headline_short": "Russia fires flares at Danish helicopter",
+      "deck": "Ambassador summoned; Frederiksen says Moscow is testing NATO.",
+      "extended": [
+        [
+          "A Russian frigate fired two flares at a Danish Fennec helicopter in international waters off Gedser on Monday, during what the Defence Command describes as routine photo documentation of the ship. The Foreign Ministry has summoned Russia's ambassador.",
+          [
+            "dr",
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        ],
+        [
+          "Defence minister Jeppe Bruus calls the situation serious. There had been no prior communication with the frigate as far as he knows.",
+          [
+            "berlingske",
+            "dr"
+          ]
+        ],
+        [
+          "The incident is 'unfortunately not surprising', Mette Frederiksen said in a written statement on Tuesday. It shows Russia testing and challenging NATO, the behaviour of an 'aggressive and assertive Russia'.",
+          [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        ],
+        [
+          "Politicians across the parties have united behind a joint message to Moscow, Jyllands-Posten reports from its live coverage, and foreign minister Lars Løkke Rasmussen responded on Tuesday morning.",
+          [
+            "jp"
+          ]
+        ],
+        [
+          "Both the frigate and the helicopter had every right to be where they were, Kristina Siig, professor of maritime law at Aalborg University, tells Ritzau.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "The Defence Ministry's statement landed at 23:02 on Monday night. Michael Jarlner, Politiken's international commentator, reads the affair as part of a new and risky pattern.",
+          [
+            "politiken"
+          ]
+        ]
+      ],
+      "standard": [
+        [
+          "A Russian frigate fired two flares at a Danish Fennec helicopter in international waters off Gedser on Monday, during what the Defence Command describes as routine photo documentation of the ship. The Foreign Ministry has summoned Russia's ambassador.",
+          [
+            "dr",
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        ],
+        [
+          "Defence minister Jeppe Bruus calls the situation serious. There had been no prior communication with the frigate as far as he knows.",
+          [
+            "berlingske",
+            "dr"
+          ]
+        ],
+        [
+          "The incident is 'unfortunately not surprising', Mette Frederiksen said on Tuesday. It shows Russia testing and challenging NATO, the behaviour of an 'aggressive and assertive Russia'.",
+          [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        ],
+        [
+          "Both the frigate and the helicopter had every right to be where they were, Kristina Siig, professor of maritime law at Aalborg University, tells Ritzau.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "A Russian frigate fired two flares at a Danish helicopter in international waters off Gedser on Monday. The Foreign Ministry has summoned Russia's ambassador, and Mette Frederiksen calls it the behaviour of an 'aggressive and assertive Russia'.",
+          [
+            "dr",
+            "politiken",
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "Aggressive and assertive Russia.",
+          "attribution": "Mette Frederiksen, prime minister",
+          "attribution_source": "dr"
+        },
+        {
+          "kind": "timeline",
+          "title": "How it unfolded",
+          "rows": [
+            {
+              "date": "Monday",
+              "text": "Frigate fires two flares at the helicopter off Gedser"
+            },
+            {
+              "date": "23:02",
+              "text": "The Defence Ministry's statement lands"
+            },
+            {
+              "date": "Overnight",
+              "text": "Foreign Ministry summons Russia's ambassador"
+            },
+            {
+              "date": "Tuesday",
+              "text": "Frederiksen: 'unfortunately not surprising'"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "dr:c32aa14b-32bf-4745-87a6-4c2d9097ee2a",
+        "dr:70ea5036-5747-4f3f-816a-2577c3b28ab1",
+        "dr:acdcf4c9-b465-461e-9425-97f13f8fb9f7",
+        "dr:3c41126d-b1f6-4938-ad9d-7a06b6b3de53",
+        "politiken:10983068",
+        "politiken:10983108",
+        "berlingske:65695fe8-2020-5656-9fca-7013e28e8649",
+        "berlingske:86906d6c-8f6f-501c-94b2-922e891d0f7d",
+        "kristeligt_dagblad:c1b114fd-9919-4ece-a072-3b24772be6a3",
+        "kristeligt_dagblad:0fbd4b2b-2d98-4e5a-9074-4b203938718a",
+        "kristeligt_dagblad:619f810d-b829-4429-a0ee-4f35dec742fa",
+        "tv2:ets-helikopter-beskudt-af-russisk-fregat",
+        "jp:19642349",
+        "jp:19642497",
+        "jp:19642840",
+        "borsen:pyroteknik-fra-russisk-fregat-ved-gedser"
+      ]
+    },
+    {
+      "id": "trump-energy-truce-claim",
+      "role": "secondary",
+      "kicker": "World",
+      "headline": "Trump says Russia and Ukraine have agreed to stop hitting each other's energy sites",
+      "headline_short": "Trump claims an energy truce",
+      "deck": "Neither country has confirmed the deal.",
+      "standard": [
+        [
+          "Ukraine and Russia have agreed not to attack each other's energy installations, Donald Trump wrote on Truth Social on Monday. Neither country has confirmed it.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "borsen"
+          ]
+        ],
+        [
+          "TV 2's correspondent calls such a pause short-lived relief, 'like wetting your trousers' to keep warm.",
+          [
+            "tv2"
+          ]
+        ],
+        [
+          "Poland has warned of 'intensive actions' after Sunday's Russian drone strike on a passenger train a few kilometres from its border, which Ukrainians and Poles read as a new escalation.",
+          [
+            "dr"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Ukraine and Russia have agreed not to attack each other's energy installations, Donald Trump wrote on Monday. Neither country has confirmed it.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ]
+      ],
+      "sources": [
+        "berlingske:0941a2fc-37ca-5ab5-ae24-e8b807224a03",
+        "kristeligt_dagblad:cb632335-ac16-4795-9031-13a0ee75d31d",
+        "borsen:-angribe-hinandens-energi-installationer",
+        "tv2:erne-siger-korrespondent-om-angrebspause",
+        "dr:af237534-bbe1-45ed-955b-bed6577f2e8b",
+        "ft:d6f98d2e-9f0c-4414-a339-fe8462810276"
+      ]
+    },
+    {
+      "id": "supreme-court-mail-ballots",
+      "role": "secondary",
+      "kicker": "World",
+      "headline": "Supreme Court blocks Trump's bid to restrict postal voting",
+      "headline_short": "Supreme Court blocks Trump on postal votes",
+      "deck": "States can post ballots as usual before the midterms, and the president's own appointees delivered the defeat.",
+      "standard": [
+        [
+          "The US Supreme Court on Monday refused to let the postal service enforce stricter rules on mail-in ballots, so states can send ballots by post as normal ahead of the midterms.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "dr"
+          ]
+        ],
+        [
+          "Trump, a long-standing opponent of postal voting, had signed the order in late March. The justices he appointed helped deliver what Politiken calls a decisive defeat.",
+          [
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "The US Supreme Court on Monday refused to let the postal service enforce stricter rules on mail-in ballots, so states can post ballots as normal before the midterms.",
+          [
+            "kristeligt_dagblad",
+            "borsen"
+          ]
+        ]
+      ],
+      "sources": [
+        "kristeligt_dagblad:be9d5793-320c-4893-bdf7-45a6bca3c268",
+        "borsen:rump-i-sag-om-strammere-brevstemmeregler",
+        "berlingske:0922ec52-f23a-536f-bee9-80563d08922b",
+        "dr:91f20e45-43fc-4ec9-bd4d-acf4ca2b85d6",
+        "politiken:10983072",
+        "nytimes:ics/supreme-court-trump-mail-voting.html",
+        "ft:b3674c9d-9db2-448d-bd57-f1c040de2d54",
+        "wapo:l-ballot-restrictions-midterm-elections/",
+        "guardian:e-court-rejects-mail-ballot-restrictions",
+        "bbc:c5yjpdy4gjlo"
+      ]
+    },
+    {
+      "id": "ai-shares-slide-trump-conspiracy",
+      "role": "secondary",
+      "kicker": "Technology",
+      "headline": "AI shares slide as Trump calls safety warnings a 'sick conspiracy'",
+      "headline_short": "AI shares slide after warnings",
+      "deck": "Nvidia, Broadcom and Micron led Wall Street lower after the weekend's calls for a slowdown.",
+      "standard": [
+        [
+          "Warnings from the heads of the leading US AI companies that development is moving too fast pushed US stocks down on Monday, with Nvidia, Broadcom and Micron the heaviest weights. European AI-related shares fell too.",
+          [
+            "borsen"
+          ]
+        ],
+        [
+          "Trump sees no need for the safety framework the executives called for. He describes a 'sick conspiracy' against AI and data centres that only China could welcome, and says a 'strong and smart president' will rein the technology in.",
+          [
+            "borsen",
+            "berlingske"
+          ]
+        ],
+        [
+          "Germany, speaking for Europe, does not believe in limiting AI, TV 2 reports. Critics tell Berlingske the executives are 'wolves in sheep's clothing', and a former 'AI czar' warns against taking their motives as altruistic.",
+          [
+            "tv2",
+            "berlingske"
+          ]
+        ],
+        [
+          "Danes' expectations of AI have plunged in two years, a survey shows; bad experiences appear to have fed the scepticism, experts tell Politiken.",
+          [
+            "politiken"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Warnings from leading AI executives pushed Nvidia, Broadcom and Micron lower on Monday, while Trump dismissed the calls as a 'sick conspiracy' against AI and data centres.",
+          [
+            "borsen",
+            "berlingske"
+          ]
+        ]
+      ],
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "There is a sick conspiracy going on against AI and data centres.",
+          "attribution": "Donald Trump, US president",
+          "attribution_source": "borsen"
+        }
+      ],
+      "sources": [
+        "borsen:mandag-nvidia-broadcom-og-micron-tyngede",
+        "borsen:yg-sammensvaergelse-mod-ai-og-datacentre",
+        "berlingske:c4f6ae9d-c19a-5aea-977b-ed10efedfa22",
+        "tv2:-paa-begraensning-af-kunstig-intelligens",
+        "berlingske:f340bee5-bca5-544c-84cb-b230e65753ba",
+        "politiken:10979195",
+        "dr:c1b4e98a-ab5d-4d29-8867-c23a76884b5a",
+        "ft:aa8a1be7-abe0-44b7-bcd3-31fd0a44de08",
+        "wapo:th-nvidia-ceo-trump-deems-ai-fears-hoax/",
+        "nytimes:nology/trump-ai-safety-jensen-huang.html",
+        "wsj:WP-WSJ-0003891839"
+      ],
+      "device": "optional",
+      "fallback": true,
+      "lede": [
+        "Warnings from leading AI executives pushed Nvidia, Broadcom and Micron lower on Monday, while Trump dismissed the calls as a 'sick conspiracy' against AI and data centres.",
+        [
+          "borsen",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "sweden-centre-party-refuses-kristersson",
+      "role": "secondary",
+      "kicker": "Nordics",
+      "headline": "Sweden's Centre Party rules out Kristersson as coalition talks begin",
+      "headline_short": "Centre Party says no to Kristersson",
+      "deck": "Elisabeth Thand Ringqvist holds the keys, and a new government may be a month or more away.",
+      "standard": [
+        [
+          "The Centre Party wants a government with the Social Democrats and will not cooperate with Ulf Kristersson's Moderates, it said on Monday.",
+          [
+            "borsen"
+          ]
+        ],
+        [
+          "That leaves its leader, Elisabeth Thand Ringqvist, a front-line politician only since November 2025, in a position Politiken compares to the Moderates' in Denmark.",
+          [
+            "politiken"
+          ]
+        ],
+        [
+          "Kristersson has a bold plan to hold on to power despite the blocs standing far closer than expected, Jyllands-Posten reports. Forming a government may take a month or more, and a new election cannot be ruled out.",
+          [
+            "jp",
+            "politiken",
+            "borsen"
+          ]
+        ],
+        [
+          "Swedish authorities found no sign of foreign interference in the election.",
+          [
+            "berlingske"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "The Centre Party wants a government with the Social Democrats and will not work with Ulf Kristersson's Moderates; a new government may be a month or more away.",
+          [
+            "borsen",
+            "politiken"
+          ]
+        ]
+      ],
+      "sources": [
+        "borsen:i-afviser-samarbejde-med-ulf-kristersson",
+        "politiken:10982011",
+        "jp:19639394",
+        "politiken:10982094",
+        "borsen:ede-til-politisk-kaos-her-er-scenarierne",
+        "berlingske:4d51d9b1-ccc8-5547-b775-55f90af93560",
+        "guardian:ion-talks-both-blocs-try-to-secure-power"
+      ],
+      "device": "optional",
+      "fallback": true,
+      "lede": [
+        "The Centre Party wants a government with the Social Democrats and will not work with Ulf Kristersson's Moderates; a new government may be a month or more away.",
+        [
+          "borsen",
+          "politiken"
+        ]
+      ]
+    },
+    {
+      "id": "afghanistan-documents-withheld",
+      "role": "brief",
+      "kicker": "Denmark",
+      "headline": "Ministry has yet to release 1,000 Afghanistan documents",
+      "lede": [
+        "The Foreign Ministry has still not released about 1,000 documents the Afghanistan inquiry needs, two years past its own deadline, Berlingske reports.",
+        [
+          "berlingske",
+          "kristeligt_dagblad"
+        ]
+      ],
+      "sources": [
+        "berlingske:5c694f7c-414e-55d1-b5de-3d9e44d8dc46",
+        "kristeligt_dagblad:616865c4-cef5-48cf-8326-12fa1f68ab43"
+      ]
+    },
+    {
+      "id": "sewage-citizens-proposal",
+      "role": "brief",
+      "kicker": "Denmark",
+      "headline": "Sewage proposal reaches 50,000 signatures in ten days",
+      "lede": [
+        "A citizens' proposal against discharging untreated sewage into rivers, fjords and the sea reached 50,000 supporters in ten days and goes to the Folketing.",
+        [
+          "berlingske",
+          "kristeligt_dagblad",
+          "politiken"
+        ]
+      ],
+      "sources": [
+        "berlingske:928b6e5b-769b-5c95-b2de-a167571d86aa",
+        "kristeligt_dagblad:36d0e516-9523-4cde-a113-c2d217180828",
+        "politiken:10982096"
+      ]
+    },
+    {
+      "id": "nato-drone-lithuania",
+      "role": "brief",
+      "kicker": "Europe",
+      "headline": "NATO jet shoots down drone over Lithuania",
+      "lede": [
+        "A NATO fighter shot down a drone in Lithuanian airspace on Monday; where it came from is unclear.",
+        [
+          "berlingske",
+          "kristeligt_dagblad"
+        ]
+      ],
+      "sources": [
+        "berlingske:9ee0621c-4375-57ee-96d9-eac532f7f8f8",
+        "kristeligt_dagblad:44eadc1e-ba35-4433-812e-999cff351cc4",
+        "dr:ca2e8b32-c0e5-4a9f-9fb2-77a4b585a40b",
+        "bbc:cjx2zgk7edlzo",
+        "guardian:rone-violating-lithuania-airspace-kaunas"
+      ]
+    },
+    {
+      "id": "emmys-widows-bay-record",
+      "role": "brief",
+      "kicker": "Culture",
+      "headline": "'Widow's Bay' takes 14 Emmys, a record for a comedy",
+      "lede": [
+        "The horror comedy 'Widow's Bay' took 14 Emmys overnight, a record for a comedy series; its Welsh lead Matthew Rhys was among the winners.",
+        [
+          "politiken",
+          "kristeligt_dagblad"
+        ]
+      ],
+      "sources": [
+        "politiken:10983093",
+        "kristeligt_dagblad:3ec1d5f2-2c0a-4ed9-964b-f5c169445691",
+        "dr:b7527ff7-7814-45eb-9310-7270edab7fd4",
+        "berlingske:ba532aa9-1432-578d-8f78-679c35533b73",
+        "guardian:ks-matthew-rhys-jean-smart-historic-wins",
+        "nytimes:on/widows-bay-the-pitt-emmys-awards.html",
+        "bbc:c6j9xym8zjy3o"
+      ]
+    },
+    {
+      "id": "ninth-grade-fail-rate",
+      "role": "brief",
+      "kicker": "Education",
+      "headline": "More than one in ten leave ninth grade without passing Danish and maths",
+      "lede": [
+        "11.8 per cent of pupils failed Danish and maths at this summer's ninth-grade exams, a rise a school researcher calls 'worrying'.",
+        [
+          "berlingske",
+          "dr"
+        ]
+      ],
+      "sources": [
+        "berlingske:ee63b230-b519-55d4-bf0c-263e9681ddb7",
+        "dr:6b86b24d-4627-4b9c-ac0a-03abe1307bd2"
+      ],
+      "device": "optional"
+    },
+    {
+      "id": "tilst-murder-charges",
+      "role": "brief",
+      "kicker": "Crime",
+      "headline": "Two 16-year-olds charged with murder in Tilst",
+      "lede": [
+        "Two 16-year-old boys are charged with murder over the fatal stabbing of a 25-year-old man in Tilst; four young people were already in custody.",
+        [
+          "politiken",
+          "dr"
+        ]
+      ],
+      "sources": [
+        "politiken:10983155",
+        "dr:40ebde33-e686-41a2-bbdd-80288bfa49fd"
+      ],
+      "device": "optional"
+    },
+    {
+      "id": "cars-co2-down-30-percent",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "Climate",
+      "headline": "Emissions from Danish cars down 30 per cent in six years",
+      "lede": [
+        "CO2 emissions from Danish cars have fallen 30 per cent in six years despite more cars on the road, with electric cars one of the reasons.",
+        [
+          "dr",
+          "berlingske"
+        ]
+      ],
+      "sources": [
+        "dr:11fcdab9-618d-4a2a-b3c5-bc852c78256c",
+        "berlingske:b25a8e5f-4124-5548-807d-9031b07bde0f"
+      ]
+    },
+    {
+      "id": "novo-ascendis-end-deal",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "Business",
+      "headline": "Novo and Ascendis end their collaboration",
+      "lede": [
+        "Novo and Ascendis, Denmark's largest and third-largest drugmakers by market value, have ended their collaboration.",
+        [
+          "borsen"
+        ]
+      ],
+      "sources": [
+        "borsen:omheder/novo-og-ascendis-ophaever-aftale"
+      ]
+    },
+    {
+      "id": "ukraine-aid-reprioritised",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "Politics",
+      "headline": "Government to move 129 million kroner from Ukraine aid",
+      "lede": [
+        "The government proposes moving 129 million kroner from Ukraine support to Danish business development; the opposition calls both the signal and the substance wrong.",
+        [
+          "jp"
+        ]
+      ],
+      "sources": [
+        "jp:19630871"
+      ]
+    },
+    {
+      "id": "trains-resume-after-soro-damage",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "Transport",
+      "headline": "Trains run again after overhead-line damage at Sorø",
+      "lede": [
+        "Trains run again from 10am on Tuesday after damage to the overhead line at Sorø caused cancellations and delays from Monday noon, Banedanmark says.",
+        [
+          "kristeligt_dagblad",
+          "politiken"
+        ]
+      ],
+      "sources": [
+        "kristeligt_dagblad:da25ce67-11ab-42fd-b854-e79a1a7720ea",
+        "politiken:10982668",
+        "dr:f0dae03e-746a-4b12-956a-0e1f724a95e0"
+      ]
+    },
+    {
+      "id": "dutch-rail-sabotage",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "Europe",
+      "headline": "Dutch rail disrupted in rush hour; sabotage suspected",
+      "lede": [
+        "Dutch rail traffic was disrupted in Tuesday's rush hour after objects were found on tracks in the north and centre of the country; operator ProRail suspects sabotage.",
+        [
+          "kristeligt_dagblad"
+        ]
+      ],
+      "sources": [
+        "kristeligt_dagblad:975f1442-da89-4e6f-b0fd-307a4528b78c",
+        "dr:a3aa367c-d31e-4267-81fd-6dda3bcedd05"
+      ]
+    },
+    {
+      "id": "houthi-attacks-saudi-base",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "World",
+      "headline": "Houthis claim new strikes on Saudi Arabia, 13 wounded",
+      "lede": [
+        "The Houthis say they fired missiles and drones at a military base in Khamis Mushait in southern Saudi Arabia, wounding 13, in retaliation for Saudi strikes in Yemen; Trump refuses to draw the US in, Politiken reports.",
+        [
+          "berlingske",
+          "kristeligt_dagblad",
+          "politiken"
+        ]
+      ],
+      "sources": [
+        "berlingske:29292976-7c25-579a-973c-5bb720e6394b",
+        "kristeligt_dagblad:3e9ec671-c534-433f-98eb-c7a5fb7eb1a6",
+        "politiken:10982026",
+        "guardian:red-sea-hanish-islands-saudi-oil-warning",
+        "wsj:WP-WSJ-0003891173"
+      ]
+    },
+    {
+      "id": "macklemore-dropped-sheeran-tour",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "Culture",
+      "headline": "Macklemore dropped from Ed Sheeran's tour after Gaza remarks",
+      "lede": [
+        "Macklemore has been removed from Ed Sheeran's US tour after voicing support for Palestinians on stage; he says stadium owners pressured Sheeran and calls it a small price to pay.",
+        [
+          "politiken",
+          "kristeligt_dagblad",
+          "tv2"
+        ]
+      ],
+      "sources": [
+        "politiken:10983070",
+        "kristeligt_dagblad:8cc7fbd4-f318-4ddb-9368-29334d42a2a1",
+        "tv2:eerans-turne-efter-palaestina-udtalelser",
+        "berlingske:02bc99dd-98d4-5a73-acaa-2e2bb4b2bb9f",
+        "bbc:cq0m3pkmgg1ko",
+        "wapo:eeran-tour-after-pro-palestine-comments/"
+      ]
+    },
+    {
+      "id": "children-online-survey",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "Denmark",
+      "headline": "Two in three 9-to-12-year-olds use platforms meant for over-13s",
+      "lede": [
+        "65 per cent of children aged 9 to 12 use a platform with a 13-year age limit, and two in three have had unpleasant experiences online, a new survey finds; a children's organisation wants platforms to tighten up.",
+        [
+          "jp",
+          "dr"
+        ]
+      ],
+      "sources": [
+        "jp:19642441",
+        "dr:e001c119-0ac9-4939-ac92-7a0e3d878070"
+      ]
+    },
+    {
+      "id": "greenland-talks-optimistic",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "Politics",
+      "headline": "Frederiksen 'quite optimistic' about Greenland talks with the US",
+      "lede": [
+        "Mette Frederiksen sees 'very clear signs and signals' in the talks between the US, Greenland and Denmark and is 'quite optimistic', though the working group has not finished.",
+        [
+          "altinget",
+          "dr"
+        ]
+      ],
+      "sources": [
+        "dr:0d9bcfac-e683-43e0-83d2-0d2ca97dec99",
+        "altinget:sk-om-forhandlinger-med-usa-og-groenland"
+      ]
+    },
+    {
+      "id": "gang-paragraph-double-sentences",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "Justice",
+      "headline": "Wammen to widen the gang paragraph after Supreme Court ruling",
+      "lede": [
+        "Justice minister Nicolai Wammen will amend the gang paragraph so prosecutors can more easily seek double sentences for group feuds, and says criminal families should be treated as gangs.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "dr"
+        ]
+      ],
+      "sources": [
+        "berlingske:8bfbc934-3264-5f6b-8246-85cbc6a5a0ed",
+        "kristeligt_dagblad:6074827e-2dd1-472a-8bda-4686aa626092",
+        "dr:70f19a03-df65-4dc0-b0d1-f0cf03877b5f"
+      ]
+    },
+    {
+      "id": "commuting-deduction-diesel",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "Politics",
+      "headline": "Social Democrats want a higher commuting deduction against record diesel",
+      "lede": [
+        "The Social Democrats propose a higher commuting deduction to counter diesel's record price of 19.19 kroner a litre.",
+        [
+          "borsen"
+        ]
+      ],
+      "sources": [
+        "borsen:elsfradrag-bekaempe-rekordhoj-dieselpris"
+      ]
+    }
+  ]
+}

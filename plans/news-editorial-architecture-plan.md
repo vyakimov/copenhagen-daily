@@ -135,6 +135,20 @@ Three consequences follow, and each is a rule:
   article, scoring and linked alike, with one primary. The primary is a scoring publisher's article.
   Block 3 renders and links them all; the web's dateline lists every publisher that contributed.
 
+### Which articles a story carries, and which is primary
+
+A story's sources are every article that supplied a fact, a quotation, or a judgement used in its copy,
+from scoring and linked publishers alike. The rule is evidence, not volume: include at most one article
+per publisher unless a second carries distinct evidence the copy actually uses, and prefer dated
+articles to live blogs, rolling "latest" pages, and video reels, which are included only when they are
+the sole coverage. The contract's cap of sixteen sources per story is kept: under this rule a story
+that reaches it has drawn on every configured publisher, and a story that genuinely needs more is the
+occasion to raise the cap with a new schema version, never to drop evidence silently.
+
+The primary is the scoring publisher's article that supplied the most of the copy; on a tie, the one
+with the fuller description, then the earlier one. The headline links to the primary, so it must be an
+article a reader can open and recognise the story in.
+
 The practical effect on prominence is that, of the nine scoring publishers, only Børsen and
 Jyllands-Posten supply a ranked surface that counts (Børsen's homepage feed and Jyllands-Posten's
 top-stories feed), since international homepage feeds do not score. Prominence is the weakest term, and
@@ -187,6 +201,28 @@ Selection happens across the edition, after clustering and before writing, so th
 Prefer a simple weighted ordering followed by explicit diversity and space constraints to an opaque second LLM deciding the entire newspaper. Give every selected or rejected candidate a concise decision reason such as `already_covered`, `new_development`, `outside_budget`, `insufficient_evidence`, or `not_in_danish_media`. Record the supporting dimensions so weights and exclusions can be adjusted without guessing what happened.
 
 Correction happens by editing the policy, not by learning. When an edition reads badly, the owner inspects the recorded decision reasons, changes the policy file, and commits. Keep a lightweight editorial log of judgments such as “wrong match,” “should not have led,” or “missed the obvious story,” tied to the edition and story IDs, so a policy change can be argued from examples rather than from memory. That log is an editor's notebook and an input to a human decision. It never adjusts weights on its own.
+
+### Guidelines, not micromanagement
+
+The editor is a model, and it is trusted as an editor. The paper runs a few model calls a day, so it can
+afford a capable model, and a capable model given broad guidelines and a good example produces better
+editions than one given a rulebook. The plans therefore codify three kinds of thing and deliberately
+stop there: what the paper is (remit, scoring publishers, schedule, voice); the hard rules that protect
+the reader and the evidence (eligibility, attribution, no invention, immutability, budgets as
+ceilings); and the working method (the run, the budget, the repair order). Everything else, which
+story leads on a day with two contenders, whether a figure beats a quote, whether a timeline earns its
+space, how a Danish institution is named in English, is guidance with a reason attached, and the
+editor may depart from it when the day demands and say so in the editorial log. Do not turn guidance
+into validators. A rule that the model must follow algorithmically belongs in code; a judgement that a
+good editor would make belongs in the prompt as advice.
+
+The working material for the editor lives in `editorial/`: the policy file `policy.yaml` with the
+scoring publishers, section table, section weights, kicker vocabulary, budgets, and schedule; the desk
+handbook `HANDBOOK.md` with the run, the budget, the repair order, and the callout guidance; and the
+golden example under `examples/`, the edition of 15 September 2026 with the reasoning behind each
+choice, which is both the quality bar and block 2's first test fixture. A style guide, `STYLE.md`, is
+still to be written: spelling, numbers and currency, English names for Danish institutions, how Danish
+titles and quotations are rendered. Until it exists the golden example is the style reference.
 
 ## Writing must remain attached to source evidence
 
@@ -273,6 +309,25 @@ Keep private audit material in a separate sidecar: evidence passages, cluster de
 
 The publisher returns separate web and device sets, chosen composition, roles, headline/body variants, slots, callout indices, omissions, and structural elements. Update “included previously” memory from the **web set** only after an activated receipt is acknowledged, idempotently by edition ID and manifest digest. A stored bundle or fitting report is not activation evidence. If stdout is lost, use `receipt --edition <id>`; if activation is pending, run `recover` and look up the receipt again, rather than generating a different edition to escape the conflict. Block 3 retains activation evidence beyond release cleanup. Stored receipts omit their enclosing manifest digest; the outer lookup/command result supplies it. Local activation, external hosting, device delivery, and reading are separate facts.
 
+### Story budget and device capacity
+
+The web edition carries every accepted story; the device page carries what fits, and whether it fits is
+decided before publication, not after. Block 3's built composition holds one lead, up to three
+secondaries, and up to four briefs. The required set must fit that capacity, so block 2 marks stories
+beyond it `optional`, gives a secondary that can live as a brief a `fallback_role`, and treats the web
+as the place where the rest of the day's news lives. Typical editions carry three to five secondaries
+and eight to sixteen briefs on the web; a quiet day carries fewer, and that is a complete edition rather
+than a thin one.
+
+### Repairing a fit failure
+
+Block 3's fit report names the slot and the shortfall. Block 2 repairs in a fixed order and stops as
+soon as `fit` passes: first participation (the weakest required secondary becomes optional with a brief
+fallback, briefs beyond four become optional); then the lead's own variants (a shorter deck, the short
+headline); then the supporting stories' copy (the required briefs' ledes shortened by a line, then the
+secondaries' `short` variants); only then which stories are required. A fit is never repaired by cutting
+a source, a qualifier, or an attribution, and the edition id does not change between attempts.
+
 Fit reports name failed fields and actual clipping, with advisory nullable line/character estimates. Capacity failures, layout failures, exhausted search, and unavailable rendering tools are distinct causes; retry copy only when the cause calls for editorial repair. The web can publish with failed/skipped device output under the publisher's failure table, so check the activated result before any rewrite retry. A published edition cannot subsequently gain a repaired device image in release 1; improved copy belongs to a new edition. Block 3 never calls an LLM to repair text.
 
 ## State, scheduling, and failure behavior
@@ -282,6 +337,17 @@ Use a separate SQLite database for imported article revisions, matching decision
 Use a scheduled batch, not continuous generation after each poll. The title publishes one morning edition in `Europe/Copenhagen`, with English copy as in the supplied visual reference, and a one-page device edition. Multiple titles are designed in the [roadmap](roadmap.md).
 
 At each run, freeze the imported input set and cutoff. **Default the candidate window to 72 hours of publication time**, and hold continuity for several weeks. The window is a backstop rather than the main mechanism: with recency anchored to edition cutoffs, anything past two editions already scores 0.15 and is effectively buried, so the gate exists to stop genuinely stale material appearing at all rather than to rank.
+
+### Reading past editions
+
+Every run begins by reading the paper it has already published. Block 2 loads the published contracts
+of the last fortnight from block 3's store, newest first, and from them builds three things: the set of
+story ids and the articles each carried, which is the "already covered" memory; each story's thread,
+which is what lets day-three copy refer to a story without re-reporting it; and the day each ran, which
+is what the recency and thread terms are measured against. A candidate cluster that overlaps a
+published story's articles is covered unless it brings a material development, a new decision, number,
+actor, or consequence; further analysis of the same event is not a development. Memory advances only
+from an activated publication receipt, so an edition that failed to publish leaves no trace in it.
 
 Gate and score on different clocks, as the weighting section describes. Candidacy also admits anything newly observed since the previous edition, so a late discovery stays eligible even when the article is older; recency then scores it on publication time, so it can earn a brief without leading. One exemption to the window: a material correction to an older article is new information and is admitted regardless of the original's age. Block 1's changed-since export exists to surface exactly those. Late arrivals can be eligible because they were newly observed; label their actual publication time. Material corrections can override normal repeat suppression.
 
