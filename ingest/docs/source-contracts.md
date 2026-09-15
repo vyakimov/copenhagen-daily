@@ -30,6 +30,18 @@ Not monitored:
   which the RSS-only collector cannot consume.
 - **Zetland** publishes no RSS feed and no article sitemap.
 
+## Via Ritzau (verified 2026-09-15)
+
+`via_ritzau` uses https://via.ritzau.dk/rss/releases/latest, the first-party
+Via Ritzau distribution feed for third-party press releases and announcements.
+It is not Ritzau's editorial newswire. The endpoint returned HTTP 200 with 25
+items. Preserve the complete GUID URL (including `publisherId` and `lang`) as
+identity; classify placement as `latest_rss`. The feed contains titles, links,
+descriptions, and RFC 2822 publication dates. It does not provide an item-level
+sender field, so the source identifies the distribution service, not the author.
+Leave the fallback language unset: the observed feed included Greenlandic text
+despite `lang=da` in its URLs. Article pages and enclosure images are not fetched.
+
 ## International expansion (verified 2026-09-14)
 
 | Source | Identity | Feeds | Notes |

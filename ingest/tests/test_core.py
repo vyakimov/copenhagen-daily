@@ -4,7 +4,7 @@ from news_ingest.time import format_utc, parse_feed_timestamp
 from news_ingest.urls import normalize_url
 
 
-def test_config_has_sixteen_sources(config_path):
+def test_config_has_seventeen_sources(config_path):
     assert set(load_config(config_path).enabled_sources()) == {
         "nytimes",
         "ft",
@@ -17,6 +17,7 @@ def test_config_has_sixteen_sources(config_path):
         "information",
         "altinget",
         "kristeligt_dagblad",
+        "via_ritzau",
         "bbc",
         "economist",
         "guardian",

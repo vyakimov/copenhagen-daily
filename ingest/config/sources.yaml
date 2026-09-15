@@ -208,6 +208,16 @@ sources:
     feeds:
       - {id: kristeligt_dagblad.nyheder, name: Kristeligt Dagblad Nyheder, url: https://www.kristeligt-dagblad.dk/rss/nyheder, surface: latest_rss, order: 0, description_priority: 10}
       - {id: kristeligt_dagblad.artikler, name: Kristeligt Dagblad Artikler, url: https://www.kristeligt-dagblad.dk/rss/artikler, surface: latest_rss, order: 10, description_priority: 20}
+  via_ritzau:
+    enabled: true
+    identity: guid
+    language: null
+    merge_across_feeds: true
+    fetch_article_pages: false
+    fetch_public_body: false
+    capture_homepage_placement: false
+    feeds:
+      - {id: via_ritzau.latest, name: Via Ritzau Press Releases, url: https://via.ritzau.dk/rss/releases/latest, surface: latest_rss, order: 0, description_priority: 10}
   bbc:
     enabled: true
     identity: url_regex

@@ -5,7 +5,7 @@
 `ingest/` contains the `news-ingest` Python 3.12 service and CLI, block 1 of the `copenhagen-daily` repository. It polls
 configured first-party RSS feeds from NYT, FT, Børsen, Politiken, Berlingske, DR,
 TV 2, Jyllands-Posten, Information, Altinget, Kristeligt Dagblad, BBC News, The
-Economist, The Guardian, The Washington Post, and The Wall Street Journal,
+Economist, The Guardian, The Washington Post, The Wall Street Journal, and Via Ritzau,
 persists raw payloads and every valid sighting in SQLite, builds a deterministic
 article projection, and publishes immutable JSONL export bundles.
 
@@ -120,6 +120,9 @@ requirement is not summarized here.
   do). The first placement is the sighting; later repeats are quarantined with
   `duplicate_in_snapshot` so the poll still succeeds.
 - Never deduplicate identities across publishers.
+- Via Ritzau distributes third-party press releases and announcements, not
+  Ritzau's editorial newswire. Use the complete GUID URL and `latest_rss`
+  placement. Do not assume Danish language from `lang=da` in the feed URLs.
 
 ## Publisher-prominence contract
 
