@@ -118,7 +118,10 @@ the writer gets the evidence.
 
 The distinction is a list in the editorial policy file, `scoring_publishers`, not a property of block 1's
 configuration, because it is an editorial decision about what the paper is, not a fact about a feed. Any
-publisher not on the list is a linked publisher. Adding a new international feed changes nothing about
+publisher not on the list is a linked publisher. A Danish feed of primary material, such as Via Ritzau's
+press releases, is listed separately as a *corroborating publisher*: it is evidence for a story other
+outlets report, never a source of eligibility in itself, because a press release is a claim by an
+interested party and not a news judgement. Settled 16 September 2026. Adding a new international feed changes nothing about
 selection; adding a new Danish outlet to the list widens what counts as news.
 
 Three consequences follow, and each is a rule:

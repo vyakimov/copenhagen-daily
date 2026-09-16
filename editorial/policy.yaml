@@ -20,7 +20,12 @@ schedule:
 # Danish outlets decide what is news. A story is eligible only if one of these reports it, and only
 # these count towards breadth and prominence. Every other configured publisher is linked: attached as
 # a source when it covers a story a scoring publisher reports, never scoring, never making eligible.
-scoring_publishers: [dr, tv2, politiken, berlingske, jp, borsen, information, altinget, kristeligt_dagblad, via_ritzau]
+scoring_publishers: [dr, tv2, politiken, berlingske, jp, borsen, information, altinget, kristeligt_dagblad]
+
+# Danish feeds that carry primary material rather than journalism: press releases and similar. They
+# never make a story eligible and never score, but when a scoring publisher reports a story they
+# also carry, their text is attached as evidence for the writer, the way a linked publisher's is.
+corroborating_publishers: [via_ritzau]
 
 # score = (0.45 breadth + 0.10 peak_prominence + 0.30 recency + 0.15 thread_strength) x section_weight
 weights:

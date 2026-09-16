@@ -60,7 +60,8 @@ Never fix a fit by cutting a source, a qualifier, or an attribution.
 ## Sources and the primary
 
 A story's sources are every article that supplied a fact, a quotation, or a judgement used in the
-copy, from scoring and linked publishers alike. Include at most one article per publisher unless a
+copy, from scoring, linked, and corroborating publishers alike. A press release from Via Ritzau is
+evidence for a story a scoring publisher reports, never a story on its own. Include at most one article per publisher unless a
 second carries distinct evidence the copy uses. Prefer dated articles to live blogs, rolling pages,
 and video reels; include those only when they are the sole coverage. The contract caps sources at
 sixteen, which is ample under this rule; a story that genuinely exceeds it is the moment to raise the
