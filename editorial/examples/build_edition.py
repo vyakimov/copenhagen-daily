@@ -6,6 +6,7 @@ example can be rebuilt and so the source-resolution rule is executable rather th
 Sources are resolved from the block 1 export bundle by (publisher, id suffix), so
 identity, URL, timestamp and content hash come from the evidence, never by hand.
 """
+
 from __future__ import annotations
 
 import datetime as dt
@@ -14,7 +15,18 @@ import json
 import sys
 from pathlib import Path
 
-DANISH = {"dr", "politiken", "berlingske", "borsen", "tv2", "jp", "information", "altinget", "kristeligt_dagblad", "via_ritzau"}
+DANISH = {
+    "dr",
+    "politiken",
+    "berlingske",
+    "borsen",
+    "tv2",
+    "jp",
+    "information",
+    "altinget",
+    "kristeligt_dagblad",
+    "via_ritzau",
+}
 
 
 def load_bundle(path: Path) -> list[dict]:
@@ -29,11 +41,15 @@ class Builder:
     def __init__(self, bundle: Path, input_id: str):
         self.articles = load_bundle(bundle)
         self.input_id = input_id
-        self.input_sha = "sha256:" + hashlib.sha256((bundle / "manifest.json").read_bytes()).hexdigest()
+        self.input_sha = (
+            "sha256:" + hashlib.sha256((bundle / "manifest.json").read_bytes()).hexdigest()
+        )
 
     def source(self, ref: str, primary: bool = False) -> dict:
         publisher, suffix = ref.split(":", 1)
-        hits = [a for a in self.articles if a["source"] == publisher and a["source_id"].endswith(suffix)]
+        hits = [
+            a for a in self.articles if a["source"] == publisher and a["source_id"].endswith(suffix)
+        ]
         if len(hits) != 1:
             raise SystemExit(f"{ref}: {len(hits)} hits")
         a = hits[0]
@@ -52,7 +68,9 @@ class Builder:
         refs = spec["sources"]
         sources = [self.source(r, primary=(i == 0)) for i, r in enumerate(refs)]
         publishers = [s["source"] for s in sources]
-        assert len(set(publishers)) == len(publishers) or True  # a publisher may contribute two articles
+        assert (
+            len(set(publishers)) == len(publishers) or True
+        )  # a publisher may contribute two articles
         cited = set(publishers)
 
         def para(p):
@@ -73,7 +91,11 @@ class Builder:
         limitations = ["digest_of_rss_description"]
         if any(p in DANISH for p in publishers):
             limitations.append("translated_from_source_language")
-        primary_desc = next(a for a in self.articles if a["source"] == sources[0]["source"] and a["source_id"] == sources[0]["source_id"]).get("description")
+        primary_desc = next(
+            a
+            for a in self.articles
+            if a["source"] == sources[0]["source"] and a["source_id"] == sources[0]["source_id"]
+        ).get("description")
         if not primary_desc:
             limitations.append("headline_only")
         if not all(p in DANISH for p in publishers):
@@ -127,7 +149,9 @@ def build(edition: dict, stories: list[dict], bundle: Path, feeds_path: Path, ou
             "allow_role_fallback": True,
             "allow_composition_substitution": True,
             "reserve_story_ids": [s["id"] for s in built if s["device_participation"] == "reserve"],
-            "omittable_story_ids": [s["id"] for s in built if s["device_participation"] == "optional"],
+            "omittable_story_ids": [
+                s["id"] for s in built if s["device_participation"] == "optional"
+            ],
         },
     }
     out.write_text(json.dumps(doc, ensure_ascii=False, indent=2) + "\n")
@@ -136,4 +160,10 @@ def build(edition: dict, stories: list[dict], bundle: Path, feeds_path: Path, ou
 
 if __name__ == "__main__":
     spec = json.load(open(sys.argv[1]))
-    build(spec["edition"], spec["stories"], Path(spec["bundle"]), Path(spec["feeds"]), Path(sys.argv[2]))
+    build(
+        spec["edition"],
+        spec["stories"],
+        Path(spec["bundle"]),
+        Path(spec["feeds"]),
+        Path(sys.argv[2]),
+    )
