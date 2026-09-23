@@ -1,0 +1,220 @@
+{
+  "bundle": "ingest/var/exports/eval/2026-09-19-evening",
+  "feeds": "editorial/runs/2026-09-19-evening/feeds.json",
+  "edition": {
+    "id": "2026-09-19-evening",
+    "number": 8,
+    "name": "Evening edition",
+    "date": "2026-09-19",
+    "cutoff_at": "2026-09-19T19:49:28.000000Z",
+    "checked_from": "2026-09-16T19:49:28.000000Z",
+    "input_id": "export-2026-09-19-1949",
+    "presentation": {
+      "preferred_composition": "lead-wide",
+      "emphasis": "one_big_story",
+      "ear_right": "Inside: Trump plans an AI force, 48 killed in Yemen fighting, Denmark wins in Davis Cup"
+    },
+    "note": "Built from headlines and RSS descriptions published between 21:49 on Wednesday and 21:49 on Saturday Copenhagen time, from 132 feeds at seventeen publishers, all polled successfully. Danish outlets decide what is news; international titles are linked only where they cover the same event. Nothing else was read."
+  },
+  "stories": [
+    {
+      "id": "greenland-us-security-agreement",
+      "role": "lead",
+      "kicker": "Defence",
+      "headline": "Denmark, Greenland and US reach Arctic security agreement",
+      "headline_short": "Arctic security agreement reached",
+      "deck": "The text remains unpublished; signing is expected next week as Trump claims permanent control and the governments stress sovereignty.",
+      "extended": [
+        [
+          "Denmark, Greenland and the United States have negotiated a security agreement expected to be signed during next week's UN General Assembly in New York. Mette Frederiksen says it recognises the Kingdom of Denmark's sovereignty and territorial integrity, and Greenlanders' right to self-determination.",
+          ["kristeligt_dagblad", "altinget", "borsen"]
+        ],
+        [
+          "Donald Trump says the agreement gives the US 'permanent control' over security in Greenland, permits a larger American military presence and prevents other countries from making agreements with Greenland without written US approval. The text has not been published, and the Danish and Greenlandic governments have not confirmed those details.",
+          ["politiken", "dr", "kristeligt_dagblad"]
+        ],
+        [
+          "Greenlandic MP Naaja Nathanielsen says the reported protection of sovereignty and self-determination means red lines have not been crossed. Marc Jacobsen of the Royal Danish Defence College says the 1951 arrangement already gave the US broad military access; the cost, timing and NATO's role remain unknown.",
+          ["berlingske", "kristeligt_dagblad"]
+        ]
+      ],
+      "standard": [
+        [
+          "Denmark, Greenland and the United States have negotiated a security agreement expected to be signed during next week's UN General Assembly in New York. Mette Frederiksen says it recognises the Kingdom of Denmark's sovereignty and territorial integrity, and Greenlanders' right to self-determination.",
+          ["kristeligt_dagblad", "altinget", "borsen"]
+        ],
+        [
+          "Donald Trump says the agreement gives the US 'permanent control' over security in Greenland and permits a larger American military presence. The text has not been published, and the Danish and Greenlandic governments have not confirmed his detailed claims.",
+          ["politiken", "dr", "kristeligt_dagblad"]
+        ],
+        [
+          "Greenlandic MP Naaja Nathanielsen says the reported protection of sovereignty and self-determination means red lines have not been crossed. The agreement's cost, timing and NATO's role remain unknown.",
+          ["berlingske", "kristeligt_dagblad"]
+        ]
+      ],
+      "short": [
+        [
+          "Denmark, Greenland and the United States have negotiated an Arctic security agreement expected to be signed next week. The governments stress sovereignty and self-determination; the unpublished text leaves Trump's broader claims unconfirmed.",
+          ["kristeligt_dagblad", "altinget", "politiken"]
+        ]
+      ],
+      "sources": [
+        "kristeligt_dagblad:6727fc99-a010-4e2f-8226-575e0e55a807",
+        "altinget:https://www.altinget.dk/artikel/statsministeriet-bekraefter-aftale-indgaaet-mellem-groenland-danmark-og-usa",
+        "politiken:10989119",
+        "dr:urn:dr:umbraco:article:13839577-ee31-4918-9347-ff891acd6975",
+        "borsen:https://borsen.dk/nyheder/udland/trump-annoncerer-aftale-med-danmark-og-gronland",
+        "tv2:https://nyheder.tv2.dk/2026-09-18-usa-danmark-og-groenland-annoncerer-aftale-om-sikkerhed",
+        "information:842719 at https://www.information.dk",
+        "berlingske:urn:bm:article:41719701-92ab-51dc-ad49-0eea73fe4e5b",
+        "jp:19659324"
+      ]
+    },
+    {
+      "id": "trump-ai-force",
+      "role": "secondary",
+      "kicker": "Business",
+      "headline": "Trump plans an AI Force and a new AI chief",
+      "headline_short": "Trump plans an AI Force",
+      "deck": "The president says Washington will watch for harms while helping the industry grow.",
+      "standard": [
+        [
+          "Donald Trump says he will create an 'AI Force' and appoint an 'AI tsar' to oversee artificial intelligence while helping the industry grow. He said the US would neither hinder nor stifle it and suggested AI could account for as much as 25 per cent of GDP.",
+          ["kristeligt_dagblad", "borsen"]
+        ],
+        [
+          "The announcement follows warnings from AI developers and King Charles that autonomous systems could bring serious social risks.",
+          ["kristeligt_dagblad", "berlingske"]
+        ]
+      ],
+      "short": [
+        [
+          "Donald Trump says he will create an 'AI Force' and appoint an 'AI tsar' to oversee artificial intelligence while helping the industry grow.",
+          ["kristeligt_dagblad", "borsen"]
+        ]
+      ],
+      "sources": [
+        "kristeligt_dagblad:ffd1473b-7f9f-4bbd-906c-1638247c5a43",
+        "borsen:https://borsen.dk/nyheder/udland/trump-vil-oprette-tilsyn-til-overvagning-af-ai-udviklingen",
+        "berlingske:urn:bm:article:1b3ce9e1-4fb4-5df5-a730-466001f77b48",
+        "dr:urn:dr:umbraco:article:8b598aff-fa3f-4604-aca3-7489da297e45"
+      ]
+    },
+    {
+      "id": "yemen-fighting-48-killed",
+      "role": "secondary",
+      "kicker": "World",
+      "headline": "Fighting in southern Yemen kills 48",
+      "headline_short": "48 killed in Yemen fighting",
+      "deck": "Military sources report 17 government soldiers and 31 Houthi fighters dead.",
+      "standard": [
+        [
+          "Fighting between Yemen's government forces and the Houthis has killed 48 people in the south of the country, military sources on both sides told AFP. Government sources put their losses at 17 soldiers; the Houthis reported 31 fighters killed.",
+          ["kristeligt_dagblad", "berlingske"]
+        ],
+        [
+          "The clashes follow a September Houthi offensive that has taken large areas while Saudi air strikes have failed to stop the advance.",
+          ["kristeligt_dagblad"]
+        ]
+      ],
+      "short": [
+        [
+          "Fighting in southern Yemen killed 17 government soldiers and 31 Houthi fighters, military sources on both sides told AFP.",
+          ["kristeligt_dagblad", "berlingske"]
+        ]
+      ],
+      "sources": [
+        "kristeligt_dagblad:aaba9986-7d33-4977-94ee-25dbc56c8910",
+        "berlingske:urn:bm:article:13f715e3-3c60-537a-9fdd-58c4429c9d9a"
+      ]
+    },
+    {
+      "id": "langeskov-shopping-cart-shelter-crash",
+      "role": "brief",
+      "kicker": "Denmark",
+      "headline": "Four injured after car hits shopping-cart shelter in Langeskov",
+      "lede": [
+        "Four girls were injured when a car hit a shopping-cart shelter in Langeskov overnight; one was seriously hurt, police said after correcting their initial assessment.",
+        ["kristeligt_dagblad", "tv2", "berlingske"]
+      ],
+      "sources": [
+        "kristeligt_dagblad:3ef730f6-b441-4fe2-9d04-5ac3c74e940b",
+        "tv2:https://nyheder.tv2.dk/samfund/2026-09-19-pige-kom-alvorligt-til-skade-da-bil-ramte-skur-med-indkoebsvogne",
+        "berlingske:urn:bm:article:1f9feeac-1eca-5b06-bf7c-cff0dcc7f3c2"
+      ]
+    },
+    {
+      "id": "breuer-nato-military-committee",
+      "role": "brief",
+      "kicker": "Defence",
+      "headline": "German general chosen to chair NATO's Military Committee",
+      "lede": [
+        "Germany's defence chief, General Carsten Breuer, was chosen in Copenhagen to lead NATO's Military Committee.",
+        ["borsen", "dr"]
+      ],
+      "sources": [
+        "borsen:https://borsen.dk/nyheder/udland/nato-vaelger-tysk-forsvarschef-som-leder-for-magtfuld-militaerkomite",
+        "dr:urn:dr:umbraco:article:f93ba140-4eb7-4418-9f0c-2b4512cd22a3"
+      ]
+    },
+    {
+      "id": "us-enacts-russia-sanctions",
+      "role": "brief",
+      "kicker": "World",
+      "headline": "US enacts sweeping sanctions against Russia",
+      "lede": [
+        "A new US sanctions package gives Donald Trump power to impose tariffs on major buyers of Russian oil and gas.",
+        ["borsen", "dr"]
+      ],
+      "sources": [
+        "borsen:https://borsen.dk/nyheder/udland/usa-indforer-omfattende-sanktioner-mod-rusland",
+        "dr:urn:dr:umbraco:article:efb06886-a8c5-49c6-9b95-d60a93ab55f2"
+      ]
+    },
+    {
+      "id": "denmark-davis-cup-bulgaria",
+      "role": "brief",
+      "kicker": "Sport",
+      "headline": "Møller and Rune secure Danish Davis Cup win",
+      "lede": [
+        "Elmer Møller completed Denmark's Davis Cup victory over Bulgaria after Holger Rune won his second match.",
+        ["berlingske", "dr"]
+      ],
+      "sources": [
+        "berlingske:urn:bm:article:7ca63600-7a08-5987-ad6a-ed27177ec839",
+        "dr:urn:dr:umbraco:article:878b4af6-43f9-4da0-b8f9-2d00d1c6bb78"
+      ]
+    },
+    {
+      "id": "maribo-suspected-arson",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "Crime",
+      "headline": "Police investigate suspected arson in Maribo flats",
+      "lede": [
+        "Police suspect a fire in a Maribo apartment entrance was set deliberately; nobody was hurt, but two flats are uninhabitable.",
+        ["kristeligt_dagblad", "tv2", "berlingske"]
+      ],
+      "sources": [
+        "kristeligt_dagblad:0c73ff86-d6c4-438a-8ae4-a85d09bdc375",
+        "tv2:https://nyheder.tv2.dk/krimi/2026-09-19-politi-efterforsker-mistaenkelig-brand-i-lejlighedskompleks-i-maribo",
+        "berlingske:urn:bm:article:0a739707-5744-58dd-b864-50f3746781fe"
+      ]
+    },
+    {
+      "id": "electricity-near-zero-saturday",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "Prices",
+      "headline": "Electricity price falls close to zero after costly September",
+      "lede": [
+        "Saturday's electricity price fell close to zero after reaching its highest level in almost two years earlier this week.",
+        ["dr", "berlingske"]
+      ],
+      "sources": [
+        "dr:urn:dr:umbraco:article:f910e84a-89ab-46e6-941b-ce0720750efc",
+        "berlingske:urn:bm:article:9df938c1-fdf7-56ea-b9b0-30cb02ce3928"
+      ]
+    }
+  ]
+}
