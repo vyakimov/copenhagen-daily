@@ -3,11 +3,12 @@ from pathlib import Path
 
 import pytest
 
-from news_editorial.paths import POLICY_PATH
+from news_editorial.paths import EDITORIAL, POLICY_PATH
 from news_editorial.policy import load_policy
 
 FIXTURES = Path(__file__).parent / "fixtures"
 BUNDLE = FIXTURES / "bundle-2026-09-15"
+EDITORIAL_EXAMPLES = EDITORIAL / "examples"
 CUTOFF = "2026-09-15T08:00:00.000000Z"
 PREVIOUS_CUTOFF = "2026-09-14T10:00:00.000000Z"
 

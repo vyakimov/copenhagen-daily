@@ -13,7 +13,7 @@ from . import blocks
 from .bundle import BundleError, load_bundle
 from .cli import ACTIONS, ActionError, action
 from .memory import build_memory, write_memory
-from .paths import POLICY_PATH, RUNS, VAR
+from .paths import POLICY_PATH, REPO, RUNS, VAR
 from .policy import Policy, load_policy
 from .window import build_window, write_window
 
@@ -172,4 +172,45 @@ def score_action(args: argparse.Namespace) -> dict[str, Any]:
         "decisions": decisions,
         "diversity_notes": ranking["diversity_notes"],
         "top": [{"rank": c["rank"], "id": c["id"], "score": c["score"]} for c in ranking["candidates"][:5]],
+    }
+
+
+@action("build")
+def build_action(args: argparse.Namespace) -> dict[str, Any]:
+    from .build import BuildError, build_edition, write_edition
+
+    policy = _policy()
+    run_dir = _run_dir(args.run)
+    spec_path = Path(args.spec) if args.spec else run_dir / "spec.json"
+    output = Path(args.output) if args.output else run_dir / "edition.json"
+    spec = _read(spec_path, "spec.json")
+    window_doc = _read(run_dir / "window.json", "window.json") if (run_dir / "window.json").is_file() else None
+    memory_doc = _read(run_dir / "memory.json", "memory.json") if (run_dir / "memory.json").is_file() else None
+    bundle_path = Path(spec["bundle"]) if spec.get("bundle") else Path(window_doc["bundle"]["path"]) if window_doc else None
+    if bundle_path is None:
+        raise ActionError("invalid_arguments", "the spec names no bundle and the run has no window.json")
+    if not bundle_path.is_absolute():
+        bundle_path = (REPO / bundle_path) if (REPO / bundle_path).exists() else bundle_path
+    feeds_path = Path(spec["feeds"]) if spec.get("feeds") else run_dir / "feeds.json"
+    if not feeds_path.is_absolute():
+        feeds_path = (REPO / feeds_path) if (REPO / feeds_path).exists() else feeds_path
+    try:
+        bundle = load_bundle(bundle_path)
+    except BundleError as exc:
+        raise ActionError("bundle_invalid", str(exc), {"path": str(bundle_path)}) from exc
+    feeds = _read(feeds_path, "feeds.json")
+    try:
+        edition = build_edition(
+            spec, bundle, feeds, window=window_doc, memory=memory_doc,
+            scoring=set(policy.scoring_publishers), corroborating=set(policy.corroborating_publishers),
+        )
+    except BuildError as exc:
+        raise ActionError("spec_invalid", str(exc), {"spec": str(spec_path)}) from exc
+    write_edition(edition, output)
+    return {
+        "edition": str(output),
+        "edition_id": edition["edition"]["id"],
+        "stories": len(edition["stories"]),
+        "sources": sum(len(s["sources"]) for s in edition["stories"]),
+        "coverage": edition["coverage"]["status"],
     }

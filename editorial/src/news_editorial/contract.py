@@ -37,7 +37,7 @@ def _pointer(parts: list[Any]) -> str:
     return "/" + "/".join(str(p) for p in parts) if parts else "/"
 
 
-def _schema_pointer(error: Any) -> str:
+def schema_pointer(error: Any) -> str:
     """Block 3 points an unknown-field error at the field itself, not at its parent."""
     parts = list(error.absolute_path)
     if error.validator == "additionalProperties":
@@ -158,7 +158,7 @@ def _semantic(doc: dict[str, Any], title: dict[str, Any]) -> list[tuple[str, str
 def validate_edition(document: Any) -> list[str]:
     """Return `pointer: message` strings; an empty list means block 3 will accept the document."""
     schema_errors = sorted(
-        (_schema_pointer(e), e.message) for e in _validator().iter_errors(document)
+        (schema_pointer(e), e.message) for e in _validator().iter_errors(document)
     )
     if schema_errors:
         return [f"{p}: {m}" for p, m in schema_errors]

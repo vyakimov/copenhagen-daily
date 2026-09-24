@@ -49,3 +49,19 @@ def test_score_needs_checked_clusters(run_dir, tmp_path):
     prepared_run(run_dir, tmp_path)
     result = run("score", "--run", str(run_dir))
     assert result["ok"] is False and result["error"]["type"] == "resource_not_found"
+
+
+def test_build_action_rebuilds_the_golden_example(tmp_path):
+    golden = EDITORIAL / "examples" / "2026-09-15-morning"
+    spec = read_json(golden / "spec.json")
+    spec["bundle"] = str(BUNDLE)
+    spec["feeds"] = str(golden / "feeds.json")
+    spec["edition"]["generated_at"] = read_json(golden / "edition.json")["edition"]["generated_at"]
+    spec_path = tmp_path / "spec.json"
+    spec_path.write_text(json.dumps(spec))
+    result = run("build", "--run", str(tmp_path), "--spec", str(spec_path))
+    assert result["ok"], result
+    built = read_json(tmp_path / "edition.json")
+    archived = read_json(golden / "edition.json")
+    built["inputs"] = archived["inputs"]
+    assert built == archived
