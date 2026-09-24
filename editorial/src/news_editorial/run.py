@@ -326,11 +326,26 @@ class Runner:
         if edition["edition"]["id"] != self.edition_id:
             raise RunFailure("conflict", "the edition id does not match the run", {"edition": edition["edition"]["id"]})
 
-    def _check_once(self, edition: dict[str, Any], final: bool) -> dict[str, Any]:
+    def _verdicts_on_disk_for(self, check_input_doc: dict[str, Any]) -> bool:
+        """True when a previous, interrupted run already had this exact check input checked."""
+        previous = self.run_dir / "check-input.json"
+        verdicts = self.run_dir / "verdicts.json"
+        if not (previous.is_file() and verdicts.is_file()):
+            return False
+        try:
+            return json.loads(previous.read_text(encoding="utf8")) == check_input_doc
+        except json.JSONDecodeError:
+            return False
+
+    def _check_once(self, edition: dict[str, Any], final: bool, resume: bool = False) -> dict[str, Any]:
         window = self._read("window.json")
-        self._write("check-input.json", check_input(edition, window))
-        (self.run_dir / "verdicts.json").unlink(missing_ok=True)
-        self.checker(self.run_dir, self._budget(self.policy.limits.checker_minutes))
+        check_input_doc = check_input(edition, window)
+        if resume and self._verdicts_on_disk_for(check_input_doc):
+            self.resumed_checks += 1
+        else:
+            self._write("check-input.json", check_input_doc)
+            (self.run_dir / "verdicts.json").unlink(missing_ok=True)
+            self.checker(self.run_dir, self._budget(self.policy.limits.checker_minutes))
         verdicts = without_nulls(self._read("verdicts.json"))
         self._write("verdicts.json", verdicts)
         if verdicts.get("edition_id") != edition["edition"]["id"]:
@@ -348,8 +363,10 @@ class Runner:
 
     def _check(self) -> None:
         edition = self._read("edition.json")
+        self.resumed_checks = 0
         rounds = 0
-        result = self._check_once(edition, final=False)
+        # Only the first round may pick up an interrupted run's verdicts; a send-back is always re-checked.
+        result = self._check_once(edition, final=False, resume=True)
         rounds += 1
         sent_back = list(result["send_back"])
         for _ in range(self.policy.limits.check_send_backs):
@@ -370,7 +387,7 @@ class Runner:
         if problems:
             raise RunFailure("contract_invalid", "the struck edition fails the contract", {"problems": problems[:10]})
         self._write("edition-checked.json", result["edition"])
-        self._phase("check", rounds=rounds, struck=result["struck"], send_back=sent_back, fallen=result["fallen"])
+        self._phase("check", rounds=rounds, struck=result["struck"], send_back=sent_back, fallen=result["fallen"], resumed=self.resumed_checks > 0)
 
     def _preflight(self) -> None:
         self.publisher("validate", "--edition", str(self.run_dir / "edition-checked.json"), timeout=self._budget(2))

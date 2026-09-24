@@ -21,8 +21,9 @@ def test_cutoff_for_converts_local_cutoff_to_utc(policy):
 class Fakes:
     """Stand-ins for block 1, block 3, the editor session, and the checker session."""
 
-    def __init__(self, tmp_path, strikes_first=False, fit_failures=0, editor_hangs=False):
+    def __init__(self, tmp_path, strikes_first=False, fit_failures=0, editor_hangs=False, send_back_fails=False):
         self.calls = []
+        self.send_back_fails = send_back_fails
         self.strikes_first = strikes_first
         self.fit_failures = fit_failures
         self.editor_hangs = editor_hangs
@@ -60,6 +61,8 @@ class Fakes:
         self.calls.append(("editor", mode))
         if self.editor_hangs:
             raise RunFailure("editor_timeout", "the editor ran past its wall clock", {"limit": "editor_minutes"})
+        if self.send_back_fails and mode == "send-back":
+            raise RunFailure("editor_failed", "the send-back session exited 1", {})
         if mode == "edition":
             (run_dir / "clusters.json").write_text(json.dumps({"schema_version": 1, "clusters": [
                 {"id": "gedser", "event": "frigate", "members": [79, 3, 30], "confidence": 0.9, "thread": {"new": {"id": "russia-baltic", "description": "Russian pressure in the Baltic"}}}]}))
@@ -125,6 +128,23 @@ def test_send_back_revises_once_then_finalises(policy, tmp_path):
     assert fakes.checker_calls == 2
     check = next(p for p in status["phases"] if p["name"] == "check")
     assert check["send_back"] == ["russian-frigate-flares-gedser"] and check["rounds"] == 2
+
+
+def test_rerun_reuses_verdicts_when_the_check_input_is_unchanged(policy, tmp_path):
+    fakes = Fakes(tmp_path, strikes_first=True, send_back_fails=True)
+    status = make_runner(policy, tmp_path, fakes).run()
+    assert status["outcome"] == "failed" and status["failure"]["type"] == "editor_failed"
+    assert fakes.checker_calls == 1
+    # The rerun continues from the verdicts on disk: no second checker session for the same edition.
+    fakes.send_back_fails = False
+    fakes.calls.clear()
+    status = make_runner(policy, tmp_path, fakes).run()
+    assert status["outcome"] == "published", status["failure"]
+    assert [c[1] for c in fakes.calls if c[0] == "editor"] == ["send-back"]
+    assert fakes.checker_calls == 2
+    check = next(p for p in status["phases"] if p["name"] == "check")
+    assert check["rounds"] == 2 and check["resumed"] is True
+    assert next(p for p in status["phases"] if p["name"] == "editor")["resumed"] is True
 
 
 def test_fit_repair_is_bounded(policy, tmp_path):
