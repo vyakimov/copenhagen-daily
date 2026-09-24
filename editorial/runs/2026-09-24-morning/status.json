@@ -2,23 +2,23 @@
  "schema_version": 1,
  "edition_id": "2026-09-24-morning",
  "cutoff_at": "2026-09-24T06:00:00.000000Z",
- "started_at": "2026-09-24T17:55:35.296753Z",
+ "started_at": "2026-09-24T19:42:13.630018Z",
  "dry_run": true,
  "outcome": "dry_run",
  "phases": [
   {
    "name": "collect",
-   "finished_at": "2026-09-24T17:55:35.297002Z",
+   "finished_at": "2026-09-24T19:42:13.630953Z",
    "skipped": true
   },
   {
    "name": "window",
-   "finished_at": "2026-09-24T17:55:35.297114Z",
+   "finished_at": "2026-09-24T19:42:13.631072Z",
    "resumed": true
   },
   {
    "name": "memory",
-   "finished_at": "2026-09-24T17:55:35.307457Z",
+   "finished_at": "2026-09-24T19:42:13.648428Z",
    "editions": [
     "2026-09-21-evening",
     "2026-09-19-evening",
@@ -35,51 +35,42 @@
   },
   {
    "name": "editor",
-   "finished_at": "2026-09-24T17:55:35.307649Z",
+   "finished_at": "2026-09-24T19:42:13.648648Z",
    "resumed": true
   },
   {
    "name": "check",
-   "finished_at": "2026-09-24T18:07:30.891669Z",
-   "rounds": 2,
+   "finished_at": "2026-09-24T19:47:02.478932Z",
+   "rounds": 1,
    "struck": 0,
-   "send_back": [
-    "sweden-vote-fraud-timeout",
-    "judge-restores-white-house-access"
-   ],
+   "send_back": [],
    "fallen": [],
    "resumed": false
   },
   {
    "name": "preflight",
-   "finished_at": "2026-09-24T18:07:31.153747Z",
+   "finished_at": "2026-09-24T19:47:02.700878Z",
    "valid": true
   },
   {
-   "name": "fit",
-   "finished_at": "2026-09-24T18:12:35.070568Z",
-   "rounds": 1,
-   "composition": "lead-wide"
-  },
-  {
    "name": "publish",
-   "finished_at": "2026-09-24T18:12:38.310747Z",
+   "finished_at": "2026-09-24T19:47:04.226370Z",
    "status": "planned",
-   "device_status": "published"
+   "device_status": "skipped"
   },
   {
    "name": "receipt",
-   "finished_at": "2026-09-24T18:12:38.311063Z",
+   "finished_at": "2026-09-24T19:47:04.226671Z",
    "skipped": true
   },
   {
    "name": "threads",
-   "finished_at": "2026-09-24T18:12:38.311298Z",
+   "finished_at": "2026-09-24T19:47:04.226785Z",
    "skipped": true
   },
   {
    "name": "archive",
-   "finished_at": "2026-09-24T18:12:38.311405Z",
+   "finished_at": "2026-09-24T19:47:04.226887Z",
    "skipped": true
   }
  ],
@@ -87,12 +78,12 @@
  "published": {
   "edition": "/Users/vy/Documents/Development/news-gatherer/editorial/runs/2026-09-24-morning/edition-checked.json",
   "status": "planned",
-  "device_status": "published",
+  "device_status": "skipped",
   "bundle": {
-   "manifest_sha256": "sha256:5d340a443814bc76fb8023f2ea415aa210e29ab750d38c16555accb06699d7ed",
+   "manifest_sha256": "sha256:24debeef41c2a60572ea75a1b905d3302f8893596e9babdb29753f07d0dc734f",
    "path": "n/2026-09-24-morning/"
   }
  },
- "updated_at": "2026-09-24T18:12:38.311510Z",
- "elapsed_s": 1023.0
+ "updated_at": "2026-09-24T19:47:04.227008Z",
+ "elapsed_s": 290.6
 }

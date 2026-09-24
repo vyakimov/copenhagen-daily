@@ -25,9 +25,27 @@
           ]
         },
         {
+          "location": "headline_short",
+          "sentence": 0,
+          "text": "Greenland deal signed",
+          "cites": [
+            "politiken",
+            "borsen",
+            "tv2",
+            "information",
+            "dr",
+            "jp",
+            "altinget",
+            "wapo",
+            "bbc",
+            "nytimes",
+            "wsj"
+          ]
+        },
+        {
           "location": "deck",
           "sentence": 0,
-          "text": "Bases at Narsarsuaq and Mestersvig, no end date; Denmark's sovereignty over Greenland reaffirmed.",
+          "text": "Two US bases, at Narsarsuaq and Mestersvig, no end date; Denmark's sovereignty reaffirmed.",
           "cites": [
             "politiken",
             "borsen",
@@ -442,6 +460,22 @@
           ]
         },
         {
+          "location": "headline_short",
+          "sentence": 0,
+          "text": "Trump greets Xi as trade truce extended",
+          "cites": [
+            "dr",
+            "borsen",
+            "tv2",
+            "politiken",
+            "wapo",
+            "ft",
+            "guardian",
+            "bbc",
+            "nytimes"
+          ]
+        },
+        {
           "location": "deck",
           "sentence": 0,
           "text": "The talks cover trade, AI and Taiwan; DR's analysis sees too little trust for an AI deal.",
@@ -662,6 +696,16 @@
           ]
         },
         {
+          "location": "headline_short",
+          "sentence": 0,
+          "text": "Nationalbanken doubles growth forecast",
+          "cites": [
+            "dr",
+            "politiken",
+            "kristeligt_dagblad"
+          ]
+        },
+        {
           "location": "deck",
           "sentence": 0,
           "text": "Pharmaceutical output abroad drives the upgrade; house prices are set to rise 8.6 per cent this year.",
@@ -717,7 +761,17 @@
         {
           "location": "short[0]",
           "sentence": 0,
-          "text": "Nationalbanken on Wednesday doubled its forecast for Danish growth to 4 per cent this year, driven by pharmaceutical production abroad, while its governor, Christian Kettel Thomsen, tells Berlingske the government must hold back spending in the finance bill to avoid high inflation.",
+          "text": "Nationalbanken on Wednesday doubled its growth forecast to 4 per cent this year.",
+          "cites": [
+            "dr",
+            "politiken",
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "short[0]",
+          "sentence": 1,
+          "text": "Its governor, Christian Kettel Thomsen, tells Berlingske the government must hold back spending.",
           "cites": [
             "dr",
             "politiken",
@@ -801,6 +855,16 @@
           "location": "headline",
           "sentence": 0,
           "text": "Government halts new pig production for twelve months",
+          "cites": [
+            "politiken",
+            "dr",
+            "borsen"
+          ]
+        },
+        {
+          "location": "headline_short",
+          "sentence": 0,
+          "text": "Twelve-month halt on new pig farms",
           "cites": [
             "politiken",
             "dr",
@@ -924,6 +988,16 @@
           ]
         },
         {
+          "location": "headline_short",
+          "sentence": 0,
+          "text": "Swedish vote-fraud case widens",
+          "cites": [
+            "politiken",
+            "kristeligt_dagblad",
+            "tv2"
+          ]
+        },
+        {
           "location": "deck",
           "sentence": 0,
           "text": "A third person joined the Borlänge case on Wednesday; Swedish media say the party offered the MP a job to go.",
@@ -1040,6 +1114,19 @@
           "location": "headline",
           "sentence": 0,
           "text": "AI chiefs tell UN Security Council to keep the technology under human control",
+          "cites": [
+            "borsen",
+            "politiken",
+            "dr",
+            "nytimes",
+            "wapo",
+            "wsj"
+          ]
+        },
+        {
+          "location": "headline_short",
+          "sentence": 0,
+          "text": "AI chiefs urge global controls at UN",
           "cites": [
             "borsen",
             "politiken",
@@ -1198,9 +1285,20 @@
           ]
         },
         {
+          "location": "headline_short",
+          "sentence": 0,
+          "text": "Judge restores CNN, MS Now and Politico access",
+          "cites": [
+            "dr",
+            "guardian",
+            "wapo",
+            "bbc"
+          ]
+        },
+        {
           "location": "lede",
           "sentence": 0,
-          "text": "A federal judge has ordered the White House to temporarily restore access for CNN, MS Now and Politico, saying the ban announced on 18 September was likely unconstitutional.",
+          "text": "A federal judge found the 18 September ban likely unconstitutional and ordered access temporarily restored.",
           "cites": [
             "guardian",
             "dr"
@@ -1268,9 +1366,18 @@
           ]
         },
         {
+          "location": "headline_short",
+          "sentence": 0,
+          "text": "Klimarådet: VAT cut adds 520,000 tonnes CO2",
+          "cites": [
+            "politiken",
+            "dr"
+          ]
+        },
+        {
           "location": "lede",
           "sentence": 0,
-          "text": "Cutting food VAT as the government has promised would add 520,000 tonnes of CO2 emissions globally, Klimarådet's new calculations show.",
+          "text": "The government's promised food VAT cut would add 520,000 tonnes of CO2 globally, Klimarådet's new calculations show.",
           "cites": [
             "politiken",
             "dr"
