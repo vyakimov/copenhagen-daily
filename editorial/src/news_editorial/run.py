@@ -1,5 +1,8 @@
 """The runner: one edition end to end, deterministic steps around two bounded sessions.
 
+The output is the web edition. The contract's device fields are filled mechanically by `build` and
+block 3 is told to skip the device page.
+
 Every phase ends in a file in the run directory and a line in status.json. Nothing retries a model
 step blindly; a failure keeps the last activated edition in place and says why.
 """
@@ -38,7 +41,7 @@ EDITOR_ACTIONS = ("check-clusters", "score", "build")
 SMALL_FILES = [
     "feeds.json", "clusters.json", "clusters-checked.json", "ranking.json", "selection.json", "spec.json",
     "edition.json", "check-input.json", "verdicts.json", "send-back.json", "edition-checked.json",
-    "fit-repair.json", "NOTES.md", "status.json",
+    "NOTES.md", "status.json",
 ]
 
 
@@ -291,7 +294,6 @@ class Runner:
                 ("editor", self._editor),
                 ("check", self._check),
                 ("preflight", self._preflight),
-                ("fit", self._fit),
                 ("publish", self._publish),
                 ("receipt", self._receipt),
                 ("threads", self._threads),
@@ -439,37 +441,11 @@ class Runner:
         self.publisher("validate", "--edition", str(self.run_dir / "edition-checked.json"), timeout=self._budget(2))
         self._phase("preflight", valid=True)
 
-    def _fit(self) -> None:
-        rounds = 0
-        while True:
-            try:
-                result = self.publisher("fit", "--edition", str(self.run_dir / "edition-checked.json"), timeout=self._budget(10))
-                self._phase("fit", rounds=rounds, composition=result.get("composition"))
-                return
-            except BlockError as exc:
-                if exc.error_type not in {"fit_failed_required_story", "composition_unavailable", "fit_budget_exhausted"}:
-                    raise
-                if rounds >= self.policy.limits.fit_rounds_with_editor:
-                    raise RunFailure("fit_unrepairable", f"the device fit failed after {rounds} editorial rounds", {"cause": exc.error_type, "details": exc.details}) from exc
-                rounds += 1
-                self._write("fit-repair.json", {"schema_version": 1, "round": rounds, "cause": exc.error_type, "message": str(exc), "details": exc.details})
-                self.editor("fit-repair", self.run_dir, self._budget(self.policy.limits.editor_minutes))
-                edition = self._read("edition.json")
-                problems = validate_edition(edition)
-                if problems:
-                    raise RunFailure("contract_invalid", "the repaired edition fails the contract", {"problems": problems[:10]}) from exc
-                # The repair wrote new copy, so the whole edition is checked again; a story that no
-                # longer stands falls to a headline, since the send-back budget is spent by now.
-                struck = self._check_once(edition, final=True)
-                problems = validate_edition(struck["edition"])
-                if problems:
-                    raise RunFailure("contract_invalid", "the repaired, struck edition fails the contract", {"problems": problems[:10]}) from exc
-                self._write("edition-checked.json", struck["edition"])
-                (self.run_dir / "fit-repair.json").unlink(missing_ok=True)
-
     def _publish(self) -> None:
+        """The web edition only. Block 3 keeps its device renderer, but no run asks for it: the desk
+        makes no device decisions, and a kitchen screen is fed from the live paper by other means."""
         self._refuse_stray_edits()
-        args = ["--edition", str(self.run_dir / "edition-checked.json"), "--publish-root", str(self.publish_root)]
+        args = ["--edition", str(self.run_dir / "edition-checked.json"), "--publish-root", str(self.publish_root), "--skip-device"]
         if self.dry_run:
             args.append("--dry-run")
         result = self.publisher("publish", *args, timeout=self._budget(15))

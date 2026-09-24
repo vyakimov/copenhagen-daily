@@ -83,15 +83,11 @@ budgets:
   lead_words: [120, 180]
   secondary_words: [60, 110]
   brief_words: 35
-  device_capacity:            # lead-wide, the composition block 3 has built; the required set must fit
-    secondary: 3
-    brief: 4
 
 # Deadline discipline. A limit hit is a shorter paper or no paper, never a late one. The handbook says
 # how each is applied.
 limits:
   stories_written: 24          # beyond this the ranking is recorded as outside_budget
-  fit_rounds_with_editor: 3    # shorter-variant requests before the only repair left is participation
   check_send_backs: 1          # a story that fails the check goes back to the editor at most once
   story_stands_min_words: 0.67 # share of words that must survive strikes, with the opening sentence
   editor_minutes: 40           # wall clock for the editor session

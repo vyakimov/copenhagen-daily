@@ -6,7 +6,6 @@ import pytest
 
 from conftest import BUNDLE, EDITORIAL_EXAMPLES, FIXTURES, read_json
 from news_editorial.run import RunFailure, Runner, cutoff_for
-from news_editorial.blocks import BlockError
 
 GOLDEN = EDITORIAL_EXAMPLES / "2026-09-15-morning"
 EDITION_ID = "2026-09-15-morning"
@@ -21,13 +20,13 @@ def test_cutoff_for_converts_local_cutoff_to_utc(policy):
 class Fakes:
     """Stand-ins for block 1, block 3, the editor session, and the checker session."""
 
-    def __init__(self, tmp_path, strikes_first=False, fit_failures=0, editor_hangs=False, send_back_fails=False):
+    def __init__(self, tmp_path, strikes_first=False, editor_hangs=False, send_back_fails=False):
         self.calls = []
+        self.publish_args = None
         self.send_back_fails = send_back_fails
         self.omit_stories = set()
         self.checker_raises = None
         self.strikes_first = strikes_first
-        self.fit_failures = fit_failures
         self.editor_hangs = editor_hangs
         self.checker_calls = 0
         self.registry = tmp_path / "threads.json"
@@ -45,14 +44,10 @@ class Fakes:
 
     def publisher(self, action, *args, timeout=0):
         self.calls.append(("publisher", action))
-        if action == "fit":
-            if self.fit_failures:
-                self.fit_failures -= 1
-                raise BlockError("fit_failed_required_story", "a required story cannot be placed", {"story_id": "x", "fit_report": {"status": "failed"}})
-            return {"status": "fit", "composition": "lead-wide", "fit_report": {"status": "fit"}}
         if action == "validate":
             return {"valid": True}
         if action == "publish":
+            self.publish_args = list(args)
             edition = read_json(Path(args[args.index("--edition") + 1]))
             return {"status": "published", "edition_id": edition["edition"]["id"], "web_story_ids": [s["id"] for s in edition["stories"]], "device_status": "published", "bundle": {"path": f"n/{EDITION_ID}/", "manifest_sha256": "sha256:" + "0" * 64}}
         if action == "receipt":
@@ -125,7 +120,7 @@ def test_happy_path_publishes_and_records(policy, tmp_path):
     status = runner.run()
     assert status["outcome"] == "published", status
     assert [p["name"] for p in status["phases"]] == [
-        "collect", "window", "memory", "editor", "check", "preflight", "fit", "publish", "receipt", "threads", "archive"]
+        "collect", "window", "memory", "editor", "check", "preflight", "publish", "receipt", "threads", "archive"]
     assert ("publisher", "publish") in fakes.calls and ("git", "commit") in fakes.calls
     assert read_json(runner.run_dir / "status.json")["outcome"] == "published"
     assert (runner.run_dir / "check-input.json").exists()
@@ -165,20 +160,14 @@ def test_rerun_reuses_verdicts_when_the_check_input_is_unchanged(policy, tmp_pat
     assert next(p for p in status["phases"] if p["name"] == "editor")["resumed"] is True
 
 
-def test_fit_repair_is_bounded(policy, tmp_path):
-    fakes = Fakes(tmp_path, fit_failures=1)
+def test_the_run_publishes_web_only_without_a_fit_phase(policy, tmp_path):
+    fakes = Fakes(tmp_path)
     status = make_runner(policy, tmp_path, fakes).run()
     assert status["outcome"] == "published"
-    assert [c[1] for c in fakes.calls if c[0] == "editor"] == ["edition", "fit-repair"]
-    # Copy written by the fit repair is checked before it reaches the reader.
-    assert fakes.checker_calls == 2
-    assert [c[0] for c in fakes.calls if c[0] in ("checker", "editor")] == ["editor", "checker", "editor", "checker"]
-    fakes = Fakes(tmp_path / "b", fit_failures=99)
-    (tmp_path / "b").mkdir()
-    status = make_runner(policy, tmp_path / "b", fakes).run()
-    assert status["outcome"] == "failed" and status["failure"]["type"] == "fit_unrepairable"
-    assert [c[1] for c in fakes.calls if c[0] == "editor"] == ["edition"] + ["fit-repair"] * policy.limits.fit_rounds_with_editor
-    assert ("publisher", "publish") not in fakes.calls
+    assert "fit" not in [p["name"] for p in status["phases"]]
+    assert [c[1] for c in fakes.calls if c[0] == "editor"] == ["edition"]
+    assert fakes.publish_args is not None and "--skip-device" in fakes.publish_args
+    assert not any(c == ("publisher", "fit") for c in fakes.calls)
 
 
 def test_editor_timeout_fails_loudly_without_publishing(policy, tmp_path):

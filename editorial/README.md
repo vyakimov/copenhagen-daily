@@ -9,7 +9,7 @@ the rules are deterministic tools behind `edit_news.sh`. The design is
 
 ```sh
 ./edit_news.sh list-actions
-./edit_news.sh run --dry-run                 # today's edition: collect, window, memory, editor, check, fit, publish --dry-run
+./edit_news.sh run --dry-run                 # today's edition: collect, window, memory, editor, check, publish --dry-run
 ./edit_news.sh run                           # the same, then publish, receipt, threads, and a commit of the run
 ./edit_news.sh status
 ./edit_news.sh window --run runs/<id> --cutoff 2026-09-24T06:00:00Z [--bundle <dir>] [--feeds <file>]

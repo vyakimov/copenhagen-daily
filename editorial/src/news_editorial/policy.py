@@ -26,24 +26,16 @@ class Weights(BaseModel):
     thread_strength: float
 
 
-class DeviceCapacity(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-    secondary: int
-    brief: int
-
-
 class Budgets(BaseModel):
     model_config = ConfigDict(extra="forbid")
     lead_words: list[int]
     secondary_words: list[int]
     brief_words: int
-    device_capacity: DeviceCapacity
 
 
 class Limits(BaseModel):
     model_config = ConfigDict(extra="forbid")
     stories_written: int
-    fit_rounds_with_editor: int
     check_send_backs: int
     story_stands_min_words: float
     editor_minutes: int

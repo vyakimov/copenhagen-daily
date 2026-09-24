@@ -304,40 +304,33 @@ The conceptual edition contract should carry:
 | Reproducibility | Input bundle references and digests; private references to profile, policy, prompts, models, and stored accepted responses. |
 | Coverage | Configured source/feed inventory and known gaps, or explicit unknown status; no claim of complete publisher coverage. |
 | Ordered stories | Unique story IDs in authoritative array order, with no redundant `order` field. `device_participation` is `required`, `optional`, or `reserve`; all are accepted web stories. Exactly one lead is first and required. Other roles are secondary and brief, with only secondary-to-brief fallback. Approved bodies are `short`, `standard`, and `extended`, with optional `headline_short` and a publisher-prefixed lede for any brief-capable story. Attributed callouts use the five declared kinds. Reader-facing kickers carry section presentation; internal ranking dimensions stay in private editorial records. |
-| Presentation intent | A preferred device composition, an edition emphasis such as `one_big_story` or `quiet_day`, masthead ear text, and the edition name and number. These are hints. Block 3 substitutes a different composition when the preferred one cannot hold the requested story counts, and reports what it chose. |
+| Presentation intent | An edition emphasis such as `one_big_story` or `quiet_day`, masthead ear text, and the edition name and number. These are hints. |
 | Links and attribution | Primary reading link and every contributor, preserving block 1's `(source, source_id)`, an opaque input-bundle reference, original title, timestamps, and supporting content hash. Publisher display names come from block 3 config. No local paths enter public provenance. Evidence limitations must be visible to readers. |
-| Fit policy | **Device only.** Role/composition permissions, a duplicate-free omission list containing every optional ID, and a duplicate-free attempt list containing every reserve ID. Required stories occur in neither list. Reserves are inserted in their contract-order position after a base fit; all reserves still appear on the web and enter publication memory. Device output remains one page. |
+| Fit policy | Present for the contract and filled mechanically; block 2 does not use it, since no run renders a device page. |
 
 Keep private audit material in a separate sidecar: evidence passages, cluster decisions, selection reasons, validation results, costs, and provenance. Export only the compact source attribution and limitations needed by the reader to block 3's public-facing content. The editorial policy is not secret and may be published deliberately, but prompts, provider request logs, model responses, and cost records must never reach the newspaper.
 
 The publisher returns separate web and device sets, chosen composition, roles, headline/body variants, slots, callout indices, omissions, and structural elements. Update “included previously” memory from the **web set** only after an activated receipt is acknowledged, idempotently by edition ID and manifest digest. A stored bundle or fitting report is not activation evidence. If stdout is lost, use `receipt --edition <id>`; if activation is pending, run `recover` and look up the receipt again, rather than generating a different edition to escape the conflict. Block 3 retains activation evidence beyond release cleanup. Stored receipts omit their enclosing manifest digest; the outer lookup/command result supplies it. Local activation, external hosting, device delivery, and reading are separate facts.
 
-### Story budget and device capacity
+### Story budget
 
-The web edition carries every accepted story; the device page carries what fits, and whether it fits is
-decided before publication, not after. Block 3's built composition holds one lead, up to three
-secondaries, and up to four briefs. The required set must fit that capacity, so block 2 marks stories
-beyond it `optional`, gives a secondary that can live as a brief a `fallback_role`, and treats the web
-as the place where the rest of the day's news lives. Typical editions carry three to five secondaries
-and eight to sixteen briefs on the web; a quiet day carries fewer, and that is a complete edition rather
-than a thin one.
+The web edition carries every accepted story and is the paper. Typical editions carry three to five
+secondaries and eight to sixteen briefs; a quiet day carries fewer, and that is a complete edition
+rather than a thin one.
 
-### Repairing a fit failure
+### The device page is not block 2's concern
 
-Block 3's fit report names the slot and the shortfall. Block 2 repairs in a fixed order and stops as
-soon as `fit` passes: first participation (the weakest required secondary becomes optional with a brief
-fallback, briefs beyond four become optional); then the lead's own variants (a shorter deck, the short
-headline); then the supporting stories' copy (the required briefs' ledes shortened by a line, then the
-secondaries' `short` variants); only then which stories are required. A fit is never repaired by cutting
-a source, a qualifier, or an attribution, and the edition id does not change between attempts.
-
-Fit reports name failed fields and actual clipping, with advisory nullable line/character estimates. Capacity failures, layout failures, exhausted search, and unavailable rendering tools are distinct causes; retry copy only when the cause calls for editorial repair. The web can publish with failed/skipped device output under the publisher's failure table, so check the activated result before any rewrite retry. A published edition cannot subsequently gain a repaired device image in release 1; improved copy belongs to a new edition. Block 3 never calls an LLM to repair text.
+Block 3 keeps a device renderer and a fit report, but a scheduled run tells it to skip the device page,
+and block 2 makes no device decisions: no participation, no fallback role, no short headline, no
+composition preference, and no fit repair. The contract's device fields are filled mechanically by
+`build` so the contract stays valid. A kitchen screen that shows the paper is fed from the published web
+edition by something outside the three blocks, and never drives what the desk writes.
 
 ## State, scheduling, and failure behavior
 
 Use a separate SQLite database for imported article revisions, matching decisions, model-response caches, the written story pool, story history, edition status, and the editorial log. Store immutable input and output bundles on disk. Reuse the collector's operational principles: one writer, explicit ordering, short transactions, atomic directory publication, structured diagnostics, and backups. Never make a database transaction wait for a model call.
 
-Use a scheduled batch, not continuous generation after each poll. The title publishes one morning edition in `Europe/Copenhagen`, with English copy as in the supplied visual reference, and a one-page device edition. Multiple titles are designed in the [roadmap](roadmap.md).
+Use a scheduled batch, not continuous generation after each poll. The title publishes one morning edition in `Europe/Copenhagen`, with English copy as in the supplied visual reference. A device page is not part of a run. Multiple titles are designed in the [roadmap](roadmap.md).
 
 At each run, freeze the imported input set and cutoff. **Default the candidate window to 72 hours of publication time**, and hold continuity for several weeks. The window is a backstop rather than the main mechanism: with recency anchored to edition cutoffs, anything past two editions already scores 0.15 and is effectively buried, so the gate exists to stop genuinely stale material appearing at all rather than to rank.
 

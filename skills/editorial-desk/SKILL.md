@@ -1,6 +1,6 @@
 ---
 name: editorial-desk
-description: Act as the editor of Copenhagen Daily for one run directory - read the candidate window, cluster by event, select under the ranking, write evidence-bound copy, build the edition, and write the editorial log. Use when asked to produce an edition, revise sent-back stories, or repair a device fit for a run.
+description: Act as the editor of Copenhagen Daily for one run directory - read the candidate window, cluster by event, select under the ranking, write evidence-bound copy, build the edition, and write the editorial log. Use when asked to produce an edition or revise sent-back stories for a run.
 ---
 
 # The editorial desk
@@ -37,7 +37,6 @@ reading view so that you rarely need `window.json` whole.
 ## Which mode you are in
 
 - `send-back.json` exists and its `send_back` list is not empty: **send-back mode**, below.
-- `fit-repair.json` exists: **fit-repair mode**, below.
 - Otherwise: **a fresh edition**. If some phase files already exist from an interrupted attempt, read
   them and continue from the first missing one.
 
@@ -86,9 +85,9 @@ eligible. `outside_budget` is eligible but beyond the limit.
 {"schema_version": 1,
  "stories": [
    {"id": "russian-frigate-flares-gedser", "cluster": "russian-frigate-flares", "role": "lead",
-    "device": "required", "kicker": "Defence", "sources": [79, 3, 30, 26, 71],
+    "kicker": "Defence", "sources": [79, 3, 30, 26, 71],
     "reason": null},
-   {"id": "greenland-talks", "cluster": "greenland", "role": "brief", "device": "optional",
+   {"id": "greenland-talks", "cluster": "greenland", "role": "brief",
     "kicker": "Politics", "sources": [102],
     "reason": "already_covered on the 18th, but the ministers' confirmed date is a new decision"}
  ],
@@ -98,8 +97,8 @@ eligible. `outside_budget` is eligible but beyond the limit.
 
 The ranking proposes; you decide, and every departure carries a reason. A covered cluster runs only
 as a new development, and the reason names the development. Apply the handbook's budget and
-diversity rule. Roles: exactly one lead, first. Secondaries that can live as briefs get
-`"fallback": true`. Beyond the device capacity, stories are `"optional"`. `sources` are window
+diversity rule. Roles: exactly one lead, first. The paper is the web edition; there is no device
+page to fit, so write nothing about participation, fallbacks, or short headlines. `sources` are window
 numbers, primary first, and the primary is a scoring publisher's article that supplied the most of the
 copy; at most one article per publisher unless a second carries distinct evidence the copy uses;
 dated articles before live blogs and rolling pages. Story ids are slugs never used before; memory
@@ -123,7 +122,7 @@ directly.
 block: `id` is the run directory's name; `number` is memory's `next_edition_number`; `name` is
 "Morning edition" or as the policy's schedule says; `date` is the edition date; `cutoff_at` and
 `input_id` come from `window.json`; `checked_from` is the window's `since`; `presentation` carries
-the preferred composition, an emphasis of `one_big_story`, `quiet_day`, or `many_stories`, and an
+an emphasis of `one_big_story`, `quiet_day`, or `many_stories`, and an
 `ear_right` line naming two or three inside stories; `note` is the coverage note in the golden
 example's form, saying what was read, how many feeds at how many publishers, and whether all polled.
 Stories in order, lead first, each in the shape the golden spec uses, with `sources` as window numbers.
@@ -145,18 +144,3 @@ reasons. Revise only those stories in `spec.json`: rewrite from the evidence, sh
 is thin, and never with anything the sources do not say. A story that has no supportable copy left
 becomes a headline with its lede equal to the headline. Run `build` again. Append a short paragraph to
 `NOTES.md` saying what was struck and what changed. Touch no other story.
-
-## Fit-repair mode
-
-`fit-repair.json` carries block 3's fit report and the failure cause. Block 3 has already tried
-dropping callouts, demoting secondaries with a fallback, omitting optional stories, the short
-headline, and trimming; what remains needs an editorial decision. Repair in the handbook's order:
-
-- `composition_unavailable`: too many required stories. Make the weakest required secondary optional
-  with a brief fallback; make briefs beyond four optional.
-- `fit_failed_required_story`: the named story cannot be placed at any supplied length. Give it a
-  shorter `headline_short`, a shorter `deck`, a one-line `short` variant or a shorter `lede`. Never cut
-  a source, a qualifier, or an attribution.
-- `fit_budget_exhausted`: as for `composition_unavailable`.
-
-Edit `spec.json`, run `build`, append what changed to `NOTES.md`, and stop.

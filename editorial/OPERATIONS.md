@@ -11,10 +11,9 @@ before exporting so the window is current to the minute.
 ## What a run does
 
 Collect, export the window, read memory, the editor session, the checker session, strikes, preflight,
-fit, publish, receipt, threads, commit. Every fit-repair round is followed by a full check of the
-repaired edition, so copy written during repair is verified like the rest; a story that no longer
-stands at that point falls to a headline, and a struck headline is replaced by the primary source's
-own title. Each phase appends to `runs/<id>/status.json`, so `status`
+publish, receipt, threads, commit. The run publishes the web edition only: block 3 is told to skip
+the device page, and the desk makes no device decisions. On the final check a story that no longer
+stands falls to a headline, and a struck headline is replaced by the primary source's own title. Each phase appends to `runs/<id>/status.json`, so `status`
 says where a run is or where it stopped. The sessions are bounded by `limits` in `policy.yaml`, in
 minutes and in turns; a limit hit stops the run and leaves the last activated edition in place. The
 editor session may run only `check-clusters`, `score`, and `build` through the wrapper, has no web
@@ -31,8 +30,6 @@ Read `runs/<id>/status.json`: `failure.phase` and `failure.type` say which step 
   id and the runner continues from the first missing file.
 - `contract_invalid`, `spec_invalid`: the editor wrote something block 3 would refuse. The details name
   the pointer. Fix the spec by hand and run `build`, or run again.
-- `fit_unrepairable`: the device fit failed after the bounded editorial rounds. The web edition was
-  not published either. Reduce the required set in `spec.json`, `build`, then run again.
 - `verdicts_invalid`: the checker's verdicts do not cover the check input sentence for sentence, or
   name a different edition. The details list the missing and unknown addresses. Run again; the check
   phase reruns the checker.
@@ -51,6 +48,6 @@ A published edition id is never rerun; the next edition corrects it.
 
 ## Rehearsing without publishing
 
-`edit_news.sh run --dry-run` does everything up to `publish --dry-run`, which assembles and removes a
+`edit_news.sh run --dry-run` does everything up to `publish --dry-run --skip-device`, which assembles and removes a
 release under the publish root, and skips the receipt, the thread registry, and the commit. Use it
 after changing the handbook, the policy, or a skill.

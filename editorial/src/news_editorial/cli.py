@@ -117,7 +117,7 @@ def build_parser() -> JSONArgumentParser:
     p.add_argument("--cutoff", help="RFC 3339 UTC cutoff; defaults to the policy's cutoff today")
     p.add_argument("--edition", help="edition id; defaults to <date>-<edition>")
     p.add_argument("--publish-root", help="block 3's publish root; defaults to config/desk.yaml")
-    p.add_argument("--dry-run", action="store_true", help="build, check, and fit, then publish --dry-run; no commit, no memory")
+    p.add_argument("--dry-run", action="store_true", help="build and check, then publish --dry-run; no commit, no memory")
     p.add_argument("--no-collect", action="store_true", help="skip block 1's poll before the export")
     p.add_argument("--checker", choices=["claude", "codex"], help="which tool checks the copy; defaults to config/desk.yaml")
     return parser

@@ -26,36 +26,21 @@ because there deliberately is not one.
    budget below and the diversity rule: no publisher dominates, no section takes more than half the
    page, culture and sport appear only when a Danish outlet made them news.
 6. **Write** to the guidelines in the architecture plan, then check every sentence against its sources.
-7. **Build, validate, fit, publish.** If block 3 reports a fit failure, repair in the order below and go
-   again. Never change the edition id between attempts before publication.
+7. **Build, validate, publish.** Never change the edition id between attempts before publication.
 8. **Log** what was selected and rejected with a reason, and anything that felt wrong.
 
 ## The budget
 
-The web carries everything accepted. The device page carries what fits, and the fit is decided before
-publication, so the required set must fit the composition block 3 has:
+The paper is the web edition, and it carries everything accepted. No device page is fitted from a
+run, so nothing is marked for a device and no story needs a shorter form to make room.
 
-| Role | Device capacity (lead-wide) | Web |
-|---|---|---|
-| Lead | exactly 1, required | 1 |
-| Secondary | up to 3 required | as many as the day earns, typically 3 to 5 |
-| Brief | up to 4 required | as many as earn a line, typically 8 to 16 |
+| Role | Web |
+|---|---|
+| Lead | exactly 1, first |
+| Secondary | as many as the day earns, typically 3 to 5 |
+| Brief | as many as earn a line, typically 8 to 16 |
 
-Mark stories beyond the device capacity `optional`, and give a secondary that can live as a brief a
-`fallback_role`. A quiet day is a shorter paper: two secondaries and five briefs is a complete edition.
-
-## Repairing a fit failure
-
-Block 3 names the slot and the shortfall. Repair in this order and stop as soon as `fit` passes:
-
-1. Participation: make the weakest required secondary optional with a brief fallback; make briefs
-   beyond four optional.
-2. The lead's own variants: a shorter deck, the `headline_short`.
-3. The supporting stories' copy: shorten the required briefs' ledes by a line; then the secondaries'
-   `short` variants.
-4. Only then reconsider which stories are required.
-
-Never fix a fit by cutting a source, a qualifier, or an attribution.
+A quiet day is a shorter paper: two secondaries and five briefs is a complete edition.
 
 ## Sources and the primary
 
@@ -72,8 +57,8 @@ with the fuller description; on a further tie, the earlier one. The headline lin
 
 ## Callouts
 
-Use at most one callout on a secondary and up to three on a lead, and expect the device to keep only
-the first. General guidance, not an algorithm:
+Use at most one callout on a secondary and up to three on a lead. General guidance, not an
+algorithm:
 
 - A **figure** beats a quote when one number is the story and the copy would otherwise repeat it.
 - A **quote** earns its space only when the words themselves carry the news, are verbatim in a
@@ -109,15 +94,13 @@ invented one, and a missing paragraph is preferable to a confident invention.
 ## Limits
 
 The policy file's `limits` are the desk's deadline discipline. At most that many stories are written;
-the rest of the ranking is recorded as `outside_budget`. The fit loop asks the editor for shorter
-variants at most that many rounds before the only repair left is participation. A checked story goes
-back at most once. When the editor or the checker runs past its wall clock, the run stops, the last
+the rest of the ranking is recorded as `outside_budget`. A checked story goes back at most once. When the editor or the checker runs past its wall clock, the run stops, the last
 published edition stays with its own date, and the log says why. A limit hit is a shorter paper or no
 paper, never a padded or a late one.
 
 ## Before publishing
 
-- Exactly one lead, first, required, no fallback.
+- Exactly one lead, first.
 - Every quotation is verbatim in a source and has a speaker.
 - Every sentence that rests on a judgement names its source in the sentence; every fact of record
   cites by marker only.

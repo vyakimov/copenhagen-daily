@@ -86,8 +86,8 @@
       "properties": {
         "id": {"$ref": "#/$defs/id"},
         "role": {"enum": ["lead", "secondary", "brief"]},
-        "device": {"enum": ["required", "optional", "reserve"], "description": "Defaults to required."},
-        "fallback": {"type": "boolean", "description": "A secondary that can live as a brief."},
+        "device": {"enum": ["required", "optional", "reserve"], "description": "Inert: no run renders a device page. Defaults to required; kept so archived specs still build."},
+        "fallback": {"type": "boolean", "description": "Inert, as device: a secondary that could live as a brief on a device page."},
         "kicker": {"$ref": "#/$defs/text"},
         "kicker_secondary": {"$ref": "#/$defs/text"},
         "headline": {"$ref": "#/$defs/text"},

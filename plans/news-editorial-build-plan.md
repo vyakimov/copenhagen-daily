@@ -61,13 +61,12 @@ without seeing the editor's reasoning, and what the owner reads afterwards.
 | 2 | `memory.json` | `memory` | Covered stories, threads, and edition days from block 3's store |
 | 3 | `clusters.json` | editor | Groups with an event description, member numbers, confidence, and thread attachment; anything unmentioned is a singleton |
 | 4 | `ranking.json` | `score` | Every cluster with its terms, eligibility, and decision reason |
-| 5 | `selection.json` | editor | The stories to write with role, device participation, kicker, and the reason for any departure from the ranking |
+| 5 | `selection.json` | editor | The stories to write with role, kicker, and the reason for any departure from the ranking |
 | 6 | `spec.json` | editor | The compact editorial decision: copy variants, callouts, and source references per story, in the form the golden example uses |
 | 7 | `edition.json` | `build` | The contract, validated against block 3's schema |
 | 8 | `verdicts.json` | verifier | Per sentence: supported with the passage, or unsupported with the reason |
-| 9 | `fit-*.json` | block 3 | Fit reports, one per attempt |
-| 10 | `NOTES.md` | editor | The editorial log entry: what led and why, what was rejected and why, anything that felt wrong |
-| 11 | `status.json` | `run` | Outcome, timings, limits hit, receipt |
+| 9 | `NOTES.md` | editor | The editorial log entry: what led and why, what was rejected and why, anything that felt wrong |
+| 10 | `status.json` | `run` | Outcome, timings, limits hit, receipt |
 
 The whole window fits in one context, so clustering stays one reading pass, as the architecture
 requires. Writing fans out: the editor delegates each selected story to a subagent that receives only
@@ -101,7 +100,7 @@ again falls to a headline with a link.
 
 One shell action, `edit_news.sh run`, does the deterministic sequence: block 1 collect and export, the
 editor invocation, `build`, the verifier invocation, `apply-verdicts`, one send-back if needed, block
-3's `validate` and `fit`, the bounded fit repair, `publish`, the receipt check, and the commit of the run
+3's `validate`, `publish` with the device page skipped, the receipt check, and the commit of the run
 directory. launchd invokes it on the Mac at the cutoff in `Europe/Copenhagen`; cron on the AWS box does
 the same later. Nothing else schedules anything.
 
@@ -119,11 +118,9 @@ a model step blindly, because a second attempt at the same window costs the same
 the fault. The owner reads the status and decides. A headlines-only degraded edition is designed in the
 [roadmap](roadmap.md) and is not in release 1.
 
-The fit loop mirrors a desk: block 3 names the slot and the shortfall, the editor is asked for the
-specific shorter variant the handbook's repair order calls for, and the loop stops when `fit` passes or
-after the bounded number of rounds, after which the remaining repair is participation only. The golden
-example needed three rounds by hand, which is what the bound is calibrated to. Variants are written on
-demand, not speculatively, because most editions need few of them.
+There is no fit loop. The run publishes the web edition only and tells block 3 to skip the device
+page; the desk writes nothing for a device and repairs nothing for one. Block 3's renderer stays in
+place for whoever wants a device image from a published edition, outside the run.
 
 ## What protects quality across fresh runs
 
@@ -167,8 +164,7 @@ Each package ends with a check the owner can show. Later packages depend on earl
 5. **The runner.** `run` with the headless invocations, the allowlist, the limits, `status.json`, and
    the launchd job. Kill a run midway and confirm the last edition stays activated and the status says
    why.
-6. **The repair loops.** The verification send-back and the fit rounds, each bounded, each recorded in
-   the run directory. Reproduce the golden example's three-round fit by replaying its first contract.
+6. **The repair loop.** The verification send-back, bounded and recorded in the run directory.
 
 After package 6 the paper publishes itself every morning. The style guide, `STYLE.md`, is still to be
 written and should be written from the editorial log's first fortnight of complaints rather than in
