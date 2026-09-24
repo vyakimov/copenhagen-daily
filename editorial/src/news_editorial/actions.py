@@ -130,3 +130,46 @@ def status(_: argparse.Namespace) -> dict[str, Any]:
     latest = runs[-1]
     status_path = latest / "status.json"
     return {"runs": len(runs), "latest": latest.name, "status": _read(status_path, "status.json") if status_path.is_file() else None}
+
+
+@action("check-clusters")
+def check_clusters_action(args: argparse.Namespace) -> dict[str, Any]:
+    from .clusters import check_clusters, write_checked
+
+    run_dir = _run_dir(args.run)
+    window_doc = _read(run_dir / "window.json", "window.json")
+    clusters = _read(run_dir / "clusters.json", "clusters.json")
+    checked = check_clusters(clusters, window_doc)
+    path = write_checked(checked, run_dir)
+    return {
+        "checked": str(path),
+        "clusters": len(checked["clusters"]),
+        "split": sum(1 for c in checked["clusters"] if "split" in c["flags"]),
+        "dissolved": sum(1 for c in checked["clusters"] if "too_large" in c["flags"]),
+        "removed": sum(len(c["removed"]) for c in checked["clusters"]),
+        "singletons": len(checked["singletons"]),
+    }
+
+
+@action("score")
+def score_action(args: argparse.Namespace) -> dict[str, Any]:
+    from .score import rank, write_ranking
+
+    policy = _policy()
+    run_dir = _run_dir(args.run)
+    window_doc = _read(run_dir / "window.json", "window.json")
+    memory_doc = _read(run_dir / "memory.json", "memory.json")
+    checked = _read(run_dir / "clusters-checked.json", "clusters-checked.json")
+    ranking = rank(checked, window_doc, memory_doc, policy)
+    path = write_ranking(ranking, run_dir)
+    decisions: dict[str, int] = {}
+    for c in ranking["candidates"]:
+        decisions[c["decision"]] = decisions.get(c["decision"], 0) + 1
+    return {
+        "ranking": str(path),
+        "candidates": len(ranking["candidates"]),
+        "eligible": decisions.get("eligible", 0),
+        "decisions": decisions,
+        "diversity_notes": ranking["diversity_notes"],
+        "top": [{"rank": c["rank"], "id": c["id"], "score": c["score"]} for c in ranking["candidates"][:5]],
+    }

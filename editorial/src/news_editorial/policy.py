@@ -69,6 +69,7 @@ class Policy(BaseModel):
     corroborating_publishers: list[str]
     weights: Weights
     section_weights: dict[str, float]
+    unsectioned_weight: float
     kickers: dict[str, list[str]]
     budgets: Budgets
     limits: Limits

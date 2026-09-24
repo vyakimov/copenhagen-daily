@@ -52,6 +52,9 @@ section_weights:
   science: 0.6
   technology: 0.5
   sport: 0.4
+# A story whose scoring publishers publish no section feeds (TV 2, Jyllands-Posten, Information,
+# Kristeligt Dagblad) has no section until another publisher's feed supplies one.
+unsectioned_weight: 0.8
 
 # Kickers are what the reader sees. Each section has a default; the editor may use a more specific
 # kicker from the allowed list when it helps the reader, and never one outside it. "Opinion" is a
