@@ -30,4 +30,7 @@ def test_check_input_attaches_the_evidence_from_the_window(policy):
     assert len(lead["evidence"]) == len(edition["stories"][0]["sources"])
     dr = next(e for e in lead["evidence"] if e["source"] == "dr")
     assert dr["title"] and dr["description"] and dr["published_at"] and dr["url"].startswith("https://")
-    assert set(lead["evidence"][0]) == {"source", "source_id", "title", "description", "published_at", "url", "primary"}
+    assert set(lead["evidence"][0]) == {"source", "source_id", "title", "description", "authors", "categories", "published_at", "url", "primary"}
+    assert any(e["authors"] for story in doc["stories"] for e in story["evidence"])
+    headline = lead["sentences"][0]
+    assert headline["location"] == "headline" and len(headline["cites"]) == len(lead["evidence"])

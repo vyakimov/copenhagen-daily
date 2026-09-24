@@ -197,17 +197,17 @@ def check_input(edition: dict[str, Any], window: dict[str, Any]) -> dict[str, An
             for index, part in enumerate(parts):
                 sentences.append({"location": location, "sentence": index, "text": part, "cites": cites})
 
-        primary = [s["source"] for s in story["sources"] if s["primary"]]
-        add("headline", copy_["headline"], primary, split=False)
+        everyone = list(dict.fromkeys(s["source"] for s in story["sources"]))
+        add("headline", copy_["headline"], everyone, split=False)
         if copy_.get("deck"):
-            add("deck", copy_["deck"], primary, split=False)
+            add("deck", copy_["deck"], everyone, split=False)
         if copy_.get("lede"):
             add("lede", copy_["lede"]["text"], copy_["lede"]["sources"])
         for variant in ("extended", "standard", "short"):
             for index, paragraph in enumerate(copy_["body"].get(variant, [])):
                 add(f"{variant}[{index}]", paragraph["text"], paragraph["sources"])
         for index, callout in enumerate(story["callouts"]):
-            cites = [callout["attribution_source"]] if callout["kind"] == "quote" else primary
+            cites = [callout["attribution_source"]] if callout["kind"] == "quote" else everyone
             add(f"callouts[{index}]", _callout_text(callout), cites, split=False)
         evidence = []
         for source in story["sources"]:
@@ -218,6 +218,8 @@ def check_input(edition: dict[str, Any], window: dict[str, Any]) -> dict[str, An
                     "source_id": source["source_id"],
                     "title": article.get("title", source["original_title"]),
                     "description": article.get("description"),
+                    "authors": article.get("authors", []),
+                    "categories": article.get("categories", []),
                     "published_at": source["published_at"],
                     "url": source["url"],
                     "primary": source["primary"],

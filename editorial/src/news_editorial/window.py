@@ -60,6 +60,8 @@ def build_window(bundle: Bundle, policy: Policy, cutoff: str, previous_cutoff: s
                 "title": article["title"],
                 "description": article.get("description"),
                 "language": article.get("language"),
+                "authors": article.get("authors") or [],
+                "categories": article.get("categories") or [],
                 "content_type": article.get("content_type"),
                 "url": article["canonical_url"],
                 "published_at": _ts(article["published_at"]),
