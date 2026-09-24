@@ -65,3 +65,22 @@ def test_build_action_rebuilds_the_golden_example(tmp_path):
     archived = read_json(golden / "edition.json")
     built["inputs"] = archived["inputs"]
     assert built == archived
+
+
+def test_apply_verdicts_action_writes_struck_edition_and_send_back(tmp_path):
+    golden = EDITORIAL / "examples" / "2026-09-15-morning"
+    shutil.copy(golden / "edition.json", tmp_path / "edition.json")
+    (tmp_path / "verdicts.json").write_text(json.dumps({
+        "schema_version": 1, "edition_id": "2026-09-15-morning",
+        "stories": [{"id": "russian-frigate-flares-gedser", "sentences": [
+            {"location": "standard[0]", "sentence": 0, "verdict": "unsupported", "reason": "invented"},
+        ], "guideline_notes": ["colour without a name in paragraph 2"]}],
+    }))
+    result = run("apply-verdicts", "--run", str(tmp_path))
+    assert result["ok"], result
+    assert result["result"]["send_back"] == ["russian-frigate-flares-gedser"]
+    assert read_json(tmp_path / "send-back.json")["strikes"][0]["reason"] == "invented"
+    final = run("apply-verdicts", "--run", str(tmp_path), "--final")
+    assert final["ok"] and final["result"]["fallen"] == ["russian-frigate-flares-gedser"]
+    struck = read_json(tmp_path / "edition-checked.json")
+    assert struck["stories"][0]["copy"]["body"] == {}

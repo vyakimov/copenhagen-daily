@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://copenhagen.daily/contracts/verdicts.v1.schema.json",
+  "title": "Checker verdicts: one entry per sentence the checker read, and its notes",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "edition_id", "stories"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "edition_id": {"type": "string"},
+    "checker": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {"tool": {"type": "string"}, "model": {"type": "string"}, "started_at": {"type": "string"}}
+    },
+    "stories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "sentences"],
+        "properties": {
+          "id": {"type": "string"},
+          "sentences": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["location", "sentence", "verdict"],
+              "properties": {
+                "location": {
+                  "type": "string",
+                  "pattern": "^(headline|deck|lede|(extended|standard|short)\\[[0-9]+\\]|callouts\\[[0-9]+\\])$",
+                  "description": "headline, deck, lede, <variant>[paragraph index], or callouts[index]"
+                },
+                "sentence": {"type": "integer", "minimum": 0, "description": "Sentence index within the location; 0 for headline, deck, and callouts."},
+                "text": {"type": "string", "description": "The sentence as read, for the log."},
+                "verdict": {"enum": ["supported", "unsupported"]},
+                "reason": {"type": "string"},
+                "passage": {"type": "string", "description": "The source passage that supports the sentence, when supported."},
+                "cites": {"type": "array", "items": {"type": "string"}}
+              }
+            }
+          },
+          "guideline_notes": {"type": "array", "items": {"type": "string"}, "description": "Departures from the writing guidelines: advisory, never strikes."}
+        }
+      }
+    }
+  }
+}

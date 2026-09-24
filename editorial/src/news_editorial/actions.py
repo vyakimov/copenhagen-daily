@@ -214,3 +214,57 @@ def build_action(args: argparse.Namespace) -> dict[str, Any]:
         "sources": sum(len(s["sources"]) for s in edition["stories"]),
         "coverage": edition["coverage"]["status"],
     }
+
+
+@action("apply-verdicts")
+def apply_verdicts_action(args: argparse.Namespace) -> dict[str, Any]:
+    from .contract import validate_edition
+    from .verdicts import apply_verdicts
+
+    policy = _policy()
+    run_dir = _run_dir(args.run)
+    edition_path = Path(args.edition) if args.edition else run_dir / "edition.json"
+    verdicts_path = Path(args.verdicts) if args.verdicts else run_dir / "verdicts.json"
+    edition = _read(edition_path, "edition.json")
+    verdicts = _read(verdicts_path, "verdicts.json")
+    if verdicts.get("edition_id") != edition["edition"]["id"]:
+        raise ActionError("conflict", "verdicts name a different edition", {"verdicts": verdicts.get("edition_id"), "edition": edition["edition"]["id"]})
+    try:
+        result = apply_verdicts(edition, verdicts, min_words=policy.limits.story_stands_min_words, final=args.final)
+    except ValueError as exc:
+        raise ActionError("verdicts_invalid", str(exc)) from exc
+    problems = validate_edition(result["edition"])
+    if problems:
+        raise ActionError("contract_invalid", "the struck edition fails the contract", {"problems": problems[:10]})
+    output = Path(args.output) if args.output else run_dir / "edition-checked.json"
+    output.write_text(json.dumps(result["edition"], ensure_ascii=False, indent=2) + "\n", encoding="utf8")
+    send_back_path = run_dir / "send-back.json"
+    send_back_path.write_text(
+        json.dumps(
+            {
+                "schema_version": 1,
+                "edition_id": edition["edition"]["id"],
+                "send_back": result["send_back"],
+                "fallen": result["fallen"],
+                "stories": {sid: r for sid, r in result["stories"].items() if not r["stands"]},
+                "strikes": [
+                    {"story": s["id"], **v}
+                    for s in verdicts["stories"]
+                    for v in s["sentences"]
+                    if v["verdict"] == "unsupported"
+                ],
+            },
+            ensure_ascii=False,
+            indent=1,
+        )
+        + "\n",
+        encoding="utf8",
+    )
+    return {
+        "edition": str(output),
+        "struck": result["struck"],
+        "checked_stories": len(result["stories"]),
+        "send_back": result["send_back"],
+        "fallen": result["fallen"],
+        "guideline_notes": sum(len(r["guideline_notes"]) for r in result["stories"].values()),
+    }
