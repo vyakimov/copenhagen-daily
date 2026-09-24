@@ -98,6 +98,49 @@ inadequate in practice. Do not build it speculatively.
 
 ---
 
+## Headlines-only degraded edition
+
+**Status: deferred. Not in the first release.** Settled 24 September 2026.
+
+### The gap
+
+When the editor or the checker fails or runs past its wall clock, release 1 keeps the last activated
+edition in place with its own date and publishes nothing. On a morning with real news that leaves the
+reader with yesterday's paper. A clearly labelled headlines-only edition, built by deterministic policy
+from the ranking alone, would give the reader today's headlines with links and no copy.
+
+### The approach
+
+The ranking already exists as a file before any writing happens. A degraded edition takes the top of
+`ranking.json`, uses each story's primary headline and link, writes no copy and no callouts, marks the
+edition emphasis as degraded, and carries a coverage note that says the desk did not write today. It
+goes through `build`, `validate`, and `publish` like any other edition, so the contract, the store, and
+the receipt are unchanged. It never reuses an old summary against corrected source text, and it never
+presents itself as a written edition.
+
+### The gate
+
+A run has actually failed on a morning that mattered, and the owner would rather have had the
+headlines than yesterday's paper. Do not build it before the runner has failed for real.
+
+---
+
+## More golden editions
+
+**Status: wanted, not scheduled.** Recorded 24 September 2026.
+
+Two golden editions exist, 15 September morning and 19 September evening. They are the quality bar,
+the writing reference until the style guide exists, and the fixtures for `build` and the checker. Two
+is thin: a quiet day, a day dominated by one story, a day with a material correction, and a day where a
+Danish outlet made sport or culture news are each a case the desk skill will meet and the examples do
+not yet show. The mechanism is already in place: a run the owner judges good moves from `runs/` to
+`examples/` with its notes. The work is the judging, one edition at a time, and it should start with the
+first fortnight of scheduled runs.
+
+**Gate:** none. Add one whenever a run is judged good and shows something the existing examples do not.
+
+---
+
 ## Multi-page device output
 
 **Status: deferred. Not in the first release.** Settled 11 September 2026.

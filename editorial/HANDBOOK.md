@@ -90,6 +90,31 @@ file. It may be more specific than the mapped section when that helps the reader
 than "Denmark", "Prices" rather than "Economy"); it may not invent a section the policy lacks. Opinion
 is a secondary kicker, never a section.
 
+## Checking the copy
+
+A separate checker reads the edition and the window, nothing else: not the spec, not the notes, not
+the editor's reasoning. It reads every sentence, the headline and callouts included, against the
+sources the sentence cites, and marks each one supported, with the passage, or unsupported, with the
+reason: no source says it, the attribution changed, a paraphrase became a quotation, a quotation has
+no speaker, the sources disagree and the copy does not. The checker marks; it never rewrites. A check
+can catch a mistake; it is not proof of truth.
+
+The repair is a strike, not a rewrite. Unsupported sentences are struck by the desk tool, and nothing
+new enters. A story still stands if its opening sentence survived and at least two thirds of its words
+remain. A story that stands ships as struck. A story that does not stand goes back to the editor once,
+with the strikes and their reasons attached, and the rewrite is checked once more. A story that fails
+again falls to its headline and a link to the primary. The failure mode is a shorter story, never an
+invented one, and a missing paragraph is preferable to a confident invention.
+
+## Limits
+
+The policy file's `limits` are the desk's deadline discipline. At most that many stories are written;
+the rest of the ranking is recorded as `outside_budget`. The fit loop asks the editor for shorter
+variants at most that many rounds before the only repair left is participation. A checked story goes
+back at most once. When the editor or the checker runs past its wall clock, the run stops, the last
+published edition stays with its own date, and the log says why. A limit hit is a shorter paper or no
+paper, never a padded or a late one.
+
 ## Before publishing
 
 - Exactly one lead, first, required, no fallback.

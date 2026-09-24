@@ -358,7 +358,7 @@ Checkpoint import independently from successful newspaper publication: a model o
 
 Do not promise deterministic LLM regeneration, even with low temperature. Reproducibility means retaining the accepted response and all of its inputs. Deterministic code can then reproduce the chosen edition from those stored results. A deliberate fresh model run creates a new run.
 
-Set per-run limits on candidates, calls, tokens, retries, and elapsed time. Start with one provider integration and one evaluated general-purpose model behind a small structured-call interface. Add cheaper models or selective escalation only after measurements show a benefit. Choose models using multilingual matching and attribution tests, rather than fixing a vendor or model name in this architecture plan.
+Set per-run limits on stories written, repair rounds, and elapsed time, and record them in the policy file. Start with one capable general-purpose model for the editor; the checker may run on a different one, since a different model has different blind spots. Choose models using multilingual matching and attribution tests, rather than fixing a vendor or model name in this architecture plan.
 
 If some sources fail, use valid evidence and display the resulting coverage limitation. If model processing fails, retain the last published edition with its original date; optionally issue a clearly labeled headlines-only fallback using deterministic policy. Do not disguise yesterday's newspaper as today's, or reuse an old summary against corrected source text.
 

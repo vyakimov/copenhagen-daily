@@ -342,6 +342,33 @@ the evidence, and the working method. The rest is guidance with reasons, kept ou
 golden example, because a capable model given a good example and broad guidelines writes a better paper
 than one given a rulebook, and the paper runs few enough calls a day to afford a capable model.
 
+**Block 2 is a Claude Code session under a skill, with the rules in small tools. Settled 24 September
+2026.** The API design was costed at roughly eight to thirteen dollars an edition on a capable model,
+with the writing calls dominating, against a flat subscription for a session run. The two editions the
+owner judged good had in fact been produced by a session reading the handbook, the policy, the golden
+example, and the bundle, so the mechanism that made them good already existed and only needed to be
+made repeatable. The division the architecture draws is unchanged: judgement in the model, rules in
+code. What changed is that the model's part is a session reading and writing phase files, and code's
+part is a wrapper of deterministic tools the session must call. The API implementation continues on a
+separate branch as a learning exercise. What is given up: structured outputs, caching control, and
+per-edition token accounting; what is gained: a smaller block, no framework, and an editor whose
+guidance is the documents the owner already edits.
+
+**The checker strikes; it does not rewrite. Settled 24 September 2026.** A rewrite is a fresh
+generation and can introduce a new unsupported claim while fixing the old one, so every rewrite needs
+another check and the loop needs a termination rule. A strike is deterministic, replayable, and
+inspectable, and nothing new can enter. A strike can leave a dangling pronoun or take the opening
+sentence, so a story that no longer stands, meaning the opening sentence is gone or more than a third
+of the words are, goes back to the editor once with the strikes attached, and a story that fails again
+falls to a headline and a link. That is a chief editor who marks up copy and sends it back only when
+the marks gut the piece.
+
+**Shorter variants are written on demand, not speculatively. Settled 24 September 2026.** Writing every
+variant up front would make the fit loop free of model calls, but most editions need few variants and
+each costs output. The loop instead mirrors a desk: block 3 names the shortfall, the editor is asked for
+the specific variant the repair order calls for, and the rounds are bounded by the policy's limits with
+participation as the final repair.
+
 **Sixteen sources per story is kept, with an inclusion rule.** The cap was reached once, on the Gedser
 lead, and only because live-blog entries and a rolling page were counted alongside dated articles. With
 one article per publisher unless a second carries distinct evidence, sixteen is every configured
@@ -355,6 +382,9 @@ the wrong reflex for a padded source list.
 **Edition revisions and correction notices.** Designed in the [roadmap](roadmap.md). The first release
 publishes each edition id once and corrects mistakes in the next edition. Gate: a real correction is
 needed on a published edition and the next-edition workaround proves inadequate.
+
+**Headlines-only degraded edition.** Designed in the [roadmap](roadmap.md). Release 1 keeps the last
+activated edition when a run fails. Gate: a run has failed on a morning that mattered.
 
 **Multi-page device output.** Designed in the [roadmap](roadmap.md). The first release renders exactly one
 device page, so there is no page budget, no inside-page composition, and no playlist coordination. Gate:
