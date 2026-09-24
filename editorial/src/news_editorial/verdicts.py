@@ -225,3 +225,55 @@ def check_input(edition: dict[str, Any], window: dict[str, Any]) -> dict[str, An
             )
         stories.append({"id": story["id"], "role": story["role"], "sentences": sentences, "evidence": evidence})
     return {"schema_version": 1, "edition_id": edition["edition"]["id"], "stories": stories}
+
+
+def _strict(node: Any) -> Any:
+    """OpenAI-style strict schema: every property typed, required, nullable when optional."""
+    if isinstance(node, list):
+        return [_strict(n) for n in node]
+    if not isinstance(node, dict):
+        return node
+    node = dict(node)
+    node.pop("$schema", None)
+    node.pop("$id", None)
+    if "const" in node and "type" not in node:
+        value = node["const"]
+        node["type"] = "integer" if isinstance(value, int) else "string"
+    if "enum" in node and "type" not in node:
+        node["type"] = "string"
+    if node.get("type") == "object" and "properties" in node:
+        required = set(node.get("required", []))
+        properties = {}
+        for key, child in node["properties"].items():
+            child = _strict(child)
+            if key not in required:
+                child.pop("pattern", None)
+                child.pop("minimum", None)
+                if "enum" in child:
+                    child["enum"] = child["enum"] + [None]
+                kind = child.get("type")
+                if isinstance(kind, list):
+                    child["type"] = kind + ["null"] if "null" not in kind else kind
+                elif kind is not None:
+                    child["type"] = [kind, "null"]
+            properties[key] = child
+        node["properties"] = properties
+        node["required"] = list(properties)
+        node["additionalProperties"] = False
+    if "items" in node:
+        node["items"] = _strict(node["items"])
+    return node
+
+
+@lru_cache(maxsize=1)
+def strict_verdicts_schema() -> dict[str, Any]:
+    return _strict(json.loads(VERDICTS_SCHEMA_PATH.read_text(encoding="utf8")))
+
+
+def without_nulls(node: Any) -> Any:
+    """Drop null-valued keys a strict-schema checker had to emit for optional fields."""
+    if isinstance(node, dict):
+        return {k: without_nulls(v) for k, v in node.items() if v is not None}
+    if isinstance(node, list):
+        return [without_nulls(v) for v in node]
+    return node

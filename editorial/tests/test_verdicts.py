@@ -120,3 +120,26 @@ def test_final_pass_keeps_the_lede_for_a_brief_capable_story():
     result = apply_verdicts(doc, verdicts((brief["id"], "lede", 0, "invented")), min_words=0.67, final=True)
     fallen = next(s for s in result["edition"]["stories"] if s["id"] == brief["id"])
     assert fallen["copy"]["lede"]["text"] == fallen["copy"]["headline"]
+
+
+def test_strict_schema_for_codex_types_every_property_and_requires_all():
+    from news_editorial.verdicts import strict_verdicts_schema
+
+    schema = strict_verdicts_schema()
+    assert schema["properties"]["schema_version"]["type"] == "integer"
+    assert sorted(schema["required"]) == sorted(schema["properties"])
+    sentence = schema["properties"]["stories"]["items"]["properties"]["sentences"]["items"]
+    assert sorted(sentence["required"]) == sorted(sentence["properties"])
+    assert sentence["properties"]["reason"]["type"] == ["string", "null"]
+    assert sentence["additionalProperties"] is False
+
+
+def test_null_fields_from_a_strict_checker_are_dropped():
+    from news_editorial.verdicts import without_nulls
+
+    doc = {"schema_version": 1, "edition_id": "x", "checker": None, "stories": [
+        {"id": "a", "sentences": [{"location": "headline", "sentence": 0, "verdict": "supported", "reason": None, "passage": None, "cites": None, "text": None}], "guideline_notes": None}]}
+    cleaned = without_nulls(doc)
+    assert cleaned == {"schema_version": 1, "edition_id": "x", "stories": [
+        {"id": "a", "sentences": [{"location": "headline", "sentence": 0, "verdict": "supported"}]}]}
+    assert validate_verdicts(cleaned) == []

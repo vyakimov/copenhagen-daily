@@ -23,9 +23,9 @@ from .bundle import BundleError, load_bundle
 from .clusters import check_clusters, write_checked  # noqa: F401 -- re-exported for the desk
 from .contract import validate_edition
 from .memory import build_memory, load_registry, save_registry, write_memory
-from .paths import EDITORIAL, REPO, RUNS, VAR, VERDICTS_SCHEMA_PATH
+from .paths import EDITORIAL, REPO, RUNS, VAR
 from .policy import Policy
-from .verdicts import apply_verdicts, check_input
+from .verdicts import apply_verdicts, check_input, strict_verdicts_schema, without_nulls
 from .window import build_window, write_window
 
 DESK_CONFIG = EDITORIAL / "config" / "desk.yaml"
@@ -126,9 +126,12 @@ def invoke_checker(run_dir: Path, timeout: int, config: dict[str, Any] | None = 
             f"Read {EDITORIAL / 'VERIFIER.md'} and follow it exactly. Read {run_dir / 'check-input.json'}. "
             "Your final message is the verdicts JSON and nothing else."
         )
+        schema_path = run_dir / "sessions" / "verdicts.strict.schema.json"
+        schema_path.parent.mkdir(exist_ok=True)
+        schema_path.write_text(json.dumps(strict_verdicts_schema(), indent=1) + "\n", encoding="utf8")
         command = [
             config.get("codex_command", "codex"), "exec", "--skip-git-repo-check", "-s", "read-only", "--ephemeral",
-            "--output-schema", str(VERDICTS_SCHEMA_PATH), "-o", str(run_dir / "verdicts.json"), "-C", str(run_dir),
+            "--output-schema", str(schema_path), "-o", str(run_dir / "verdicts.json"), "-C", str(run_dir),
         ]
         if config.get("checker_model"):
             command += ["-m", config["checker_model"]]
@@ -328,7 +331,8 @@ class Runner:
         self._write("check-input.json", check_input(edition, window))
         (self.run_dir / "verdicts.json").unlink(missing_ok=True)
         self.checker(self.run_dir, self._budget(self.policy.limits.checker_minutes))
-        verdicts = self._read("verdicts.json")
+        verdicts = without_nulls(self._read("verdicts.json"))
+        self._write("verdicts.json", verdicts)
         if verdicts.get("edition_id") != edition["edition"]["id"]:
             raise RunFailure("verdicts_invalid", "the verdicts name a different edition")
         try:
