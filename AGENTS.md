@@ -7,7 +7,7 @@ JSON envelopes on stdout, and files on disk. Nothing imports across a block boun
 | Directory | Block | Status |
 |---|---|---|
 | `ingest/` | Block 1: deterministic RSS collection and immutable JSONL exports (Python) | Built. Rules in `ingest/AGENTS.md`. |
-| `editorial/` | Block 2: editorial desk producing one edition per run (a Claude Code session under a skill, with deterministic Python tools) | Built: tools, desk and checker skills, and the runner; first scheduled runs pending. Design in `plans/news-editorial-architecture-plan.md`, build plan in `plans/news-editorial-build-plan.md`. |
+| `editorial/` | Block 2: editorial desk producing one edition per run (a Claude Code session under a skill, with deterministic Python tools) | Built and rehearsed end to end on 24 September 2026 (dry run with a send-back and a fit-repair round). The launchd job in `editorial/config/` is not yet installed; see `editorial/OPERATIONS.md`. Design in `plans/news-editorial-architecture-plan.md`, build plan in `plans/news-editorial-build-plan.md`. |
 | `publisher/` | Block 3: web edition and TRMNL device page from an accepted edition (TypeScript, Astro, Playwright) | Built: web, store, and a single-composition device page. Spec in `plans/news-publishing-implementation-plan.md`. |
 
 Cross-block documents live in `plans/`. Repository-level agent skills live in `skills/`.
