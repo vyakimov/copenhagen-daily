@@ -28,6 +28,7 @@ def test_editor_session_is_bounded_and_allowlisted(tmp_path):
     assert f"--allowedTools Bash({EDITORIAL / 'edit_news.sh'} *)" in argv
     assert "--disallowedTools WebFetch,WebSearch" in argv
     assert "--no-session-persistence" in argv and "--output-format json" in argv
+    assert f"--add-dir {REPO}" in argv
     assert str(REPO / "skills" / "editorial-desk" / "SKILL.md") in argv and "Mode: edition" in argv
     assert record["num_turns"] == 2
     assert list((run_dir / "sessions").glob("editor-edition-*.json"))

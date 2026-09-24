@@ -105,9 +105,11 @@ editor invocation, `build`, the verifier invocation, `apply-verdicts`, one send-
 directory. launchd invokes it on the Mac at the cutoff in `Europe/Copenhagen`; cron on the AWS box does
 the same later. Nothing else schedules anything.
 
-The editor runs headless with a restricted tool allowlist: the desk tools, reads anywhere in
-`editorial/`, writes only under the run directory, and no web fetch, no browser, no other shell. That is
-the boundary `AGENTS.md` states, enforced by the invocation rather than by trust. The invocation is
+The editor runs headless with a restricted tool allowlist: the desk tools as the only shell command,
+file edits accepted without prompting, the repository readable, and no web fetch, no browser, no other
+shell. That is the boundary `AGENTS.md` states, enforced by the invocation rather than by trust. The
+one thing the invocation cannot narrow is where inside the repository the session may write; the skill
+confines it to the run directory, and a stray edit anywhere else shows in git before the run's commit. The invocation is
 bounded by a maximum turn count and a wall clock from the policy's `limits`. The verifier gets the same
 shape with a smaller budget.
 

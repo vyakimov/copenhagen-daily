@@ -4,10 +4,75 @@
  "cutoff_at": "2026-09-24T06:00:00.000000Z",
  "started_at": "2026-09-24T12:31:46.424253Z",
  "dry_run": true,
- "outcome": "running",
- "phases": [],
- "failure": null,
+ "outcome": "failed",
+ "phases": [
+  {
+   "name": "collect",
+   "finished_at": "2026-09-24T12:35:04.285827Z",
+   "status": "success"
+  },
+  {
+   "name": "window",
+   "finished_at": "2026-09-24T12:35:05.715918Z",
+   "articles": 1854,
+   "feeds": 132,
+   "failed_feeds": 0
+  },
+  {
+   "name": "memory",
+   "finished_at": "2026-09-24T12:35:05.729891Z",
+   "editions": [
+    "2026-09-21-evening",
+    "2026-09-19-evening",
+    "2026-09-18-afternoon",
+    "2026-09-17-midday",
+    "2026-09-16-morning",
+    "2026-09-15-morning",
+    "2026-09-14-midday",
+    "2026-09-13-morning",
+    "2026-09-12-morning"
+   ],
+   "threads": 0,
+   "next_edition_number": 10
+  },
+  {
+   "name": "editor",
+   "finished_at": "2026-09-24T12:35:31.598024Z",
+   "session": {
+    "command": [
+     "claude",
+     "-p"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 25.9,
+    "session_id": "442b3a35-7ee4-4873-9e58-136e67a3931a",
+    "num_turns": 4,
+    "duration_ms": 22850,
+    "total_cost_usd": 0.49023475,
+    "is_error": false,
+    "subtype": "success",
+    "permission_denials": [
+     {
+      "tool_name": "Read",
+      "tool_use_id": "toolu_019DgPXcATjkGtJZR8WpRRJA",
+      "tool_input": {
+       "file_path": "/Users/vy/Documents/Development/news-gatherer/skills/editorial-desk/SKILL.md"
+      }
+     }
+    ],
+    "result": "I cannot proceed with this run. The read of the desk skill was denied by the permission layer, and the task requires following that skill exactly.\n\nWhat I confirmed before stopping:\n\n- **The run directory is ready.** It holds the window, memory, feeds, status, and bundle inputs for edition 2026-09-24-morning, and status.json shows the collect, window, and memory phases finished successfully in dry-run mode.\n- **The skill is unreachable.** The file at `skills/editorial-desk/SKILL.md` sits outside the run directory, and the read was refused. I did not attempt to bypass the denial through the shell.\n\nTo unblock the run, grant read access to the repository's `skills/` directory for this session, or point the runner's permission settings at it. Once the skill is readable I can start the edition from the beginning."
+   }
+  }
+ ],
+ "failure": {
+  "phase": "editor",
+  "type": "phase_output_missing",
+  "message": "edition.json was not written",
+  "details": {
+   "path": "/Users/vy/Documents/Development/news-gatherer/editorial/runs/2026-09-24-morning/edition.json"
+  }
+ },
  "published": null,
- "updated_at": "2026-09-24T12:31:46.424374Z",
- "elapsed_s": 0.0
+ "updated_at": "2026-09-24T12:35:31.599014Z",
+ "elapsed_s": 225.2
 }

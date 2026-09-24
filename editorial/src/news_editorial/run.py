@@ -108,7 +108,7 @@ def invoke_editor(mode: str, run_dir: Path, timeout: int, config: dict[str, Any]
     )
     command = [
         config.get("editor_command", "claude"), "-p", prompt,
-        "--output-format", "json", "--permission-mode", "acceptEdits",
+        "--output-format", "json", "--permission-mode", "acceptEdits", "--add-dir", str(REPO),
         "--allowedTools", f"Bash({wrapper} *)",
         "--disallowedTools", "WebFetch,WebSearch",
         "--no-session-persistence",
@@ -140,7 +140,7 @@ def invoke_checker(run_dir: Path, timeout: int, config: dict[str, Any] | None = 
         prompt = f"Read {REPO / 'skills' / 'editorial-checker' / 'SKILL.md'} and follow it exactly. Run directory: {run_dir}."
         command = [
             config.get("editor_command", "claude"), "-p", prompt,
-            "--output-format", "json", "--permission-mode", "acceptEdits",
+            "--output-format", "json", "--permission-mode", "acceptEdits", "--add-dir", str(REPO),
             "--disallowedTools", "WebFetch,WebSearch,Bash",
             "--no-session-persistence",
         ]
