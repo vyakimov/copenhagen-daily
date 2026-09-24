@@ -35,3 +35,11 @@ def test_check_input_attaches_the_evidence_from_the_window(policy):
     headline = lead["sentences"][0]
     assert headline["location"] == "headline"
     assert sorted(headline["cites"]) == sorted({e["source"] for e in lead["evidence"]})
+
+
+def test_check_input_includes_the_short_headline(policy):
+    edition = read_json(GOLDEN / "edition.json")
+    window = build_window(load_bundle(BUNDLE), policy, cutoff=CUTOFF, previous_cutoff=PREVIOUS_CUTOFF)
+    story = check_input(edition, window)["stories"][0]
+    short = [s for s in story["sentences"] if s["location"] == "headline_short"]
+    assert len(short) == 1 and short[0]["text"] == edition["stories"][0]["copy"]["headline_short"]

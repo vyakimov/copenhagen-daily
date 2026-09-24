@@ -11,7 +11,7 @@ One file, `check-input.json` in the run directory:
 
 - `edition_id`.
 - `stories`: for each story, its `id`, `role`, and two lists.
-  - `sentences`: every sentence of the copy, each with a `location` (`headline`, `deck`, `lede`,
+  - `sentences`: every sentence of the copy, each with a `location` (`headline`, `headline_short`, `deck`, `lede`,
     `standard[i]`, `short[i]`, `extended[i]`, or `callouts[i]`), a `sentence` index within that
     location, the `text`, and `cites`, the publisher ids the paragraph cites.
   - `evidence`: every article the story carries, each with `source` (the publisher id), `title`,

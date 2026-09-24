@@ -95,7 +95,9 @@ limits:
   check_send_backs: 1          # a story that fails the check goes back to the editor at most once
   story_stands_min_words: 0.67 # share of words that must survive strikes, with the opening sentence
   editor_minutes: 40           # wall clock for the editor session
+  editor_turns: 150            # turn bound for the editor session; the rehearsal edition took 70
   checker_minutes: 15          # wall clock for the checker session
+  checker_turns: 40            # turn bound for the checker session; the rehearsal check took 7
   run_minutes: 75              # wall clock for the whole run from collect to receipt
 
 sources:

@@ -24,6 +24,8 @@ class Fakes:
     def __init__(self, tmp_path, strikes_first=False, fit_failures=0, editor_hangs=False, send_back_fails=False):
         self.calls = []
         self.send_back_fails = send_back_fails
+        self.omit_stories = set()
+        self.checker_raises = None
         self.strikes_first = strikes_first
         self.fit_failures = fit_failures
         self.editor_hangs = editor_hangs
@@ -84,16 +86,32 @@ class Fakes:
     def checker(self, run_dir, timeout):
         self.checker_calls += 1
         self.calls.append(("checker", self.checker_calls))
-        strikes = []
+        if self.checker_raises:
+            raise self.checker_raises
+        strikes = {}
         if self.strikes_first and self.checker_calls == 1:
-            strikes = [{"location": "standard[0]", "sentence": 0, "verdict": "unsupported", "reason": "invented"}]
-        (run_dir / "verdicts.json").write_text(json.dumps({"schema_version": 1, "edition_id": EDITION_ID, "stories": [
-            {"id": "russian-frigate-flares-gedser", "sentences": strikes, "guideline_notes": []}]}))
+            strikes[("russian-frigate-flares-gedser", "standard[0]", 0)] = "invented"
+        check = read_json(run_dir / "check-input.json")
+        stories = []
+        for story in check["stories"]:
+            if story["id"] in self.omit_stories:
+                continue
+            sentences = []
+            for sentence in story["sentences"]:
+                key = (story["id"], sentence["location"], sentence["sentence"])
+                if key in strikes:
+                    sentences.append({"location": sentence["location"], "sentence": sentence["sentence"], "verdict": "unsupported", "reason": strikes[key]})
+                else:
+                    sentences.append({"location": sentence["location"], "sentence": sentence["sentence"], "verdict": "supported"})
+            stories.append({"id": story["id"], "sentences": sentences, "guideline_notes": []})
+        (run_dir / "verdicts.json").write_text(json.dumps({"schema_version": 1, "edition_id": EDITION_ID, "stories": stories}))
         return {"tool": "fake"}
 
 
 def make_runner(policy, tmp_path, fakes, **kwargs):
     run_dir = tmp_path / "runs" / EDITION_ID
+    kwargs.setdefault("stray_changes", lambda: [])
+    kwargs.setdefault("lock_path", tmp_path / "run.lock")
     return Runner(
         policy=policy, run_dir=run_dir, edition_id=EDITION_ID, cutoff=CUTOFF, publish_root=fakes.publish_root,
         registry=fakes.registry, ingest=fakes.ingest, publisher=fakes.publisher, editor=fakes.editor, checker=fakes.checker,
@@ -152,6 +170,9 @@ def test_fit_repair_is_bounded(policy, tmp_path):
     status = make_runner(policy, tmp_path, fakes).run()
     assert status["outcome"] == "published"
     assert [c[1] for c in fakes.calls if c[0] == "editor"] == ["edition", "fit-repair"]
+    # Copy written by the fit repair is checked before it reaches the reader.
+    assert fakes.checker_calls == 2
+    assert [c[0] for c in fakes.calls if c[0] in ("checker", "editor")] == ["editor", "checker", "editor", "checker"]
     fakes = Fakes(tmp_path / "b", fit_failures=99)
     (tmp_path / "b").mkdir()
     status = make_runner(policy, tmp_path / "b", fakes).run()
@@ -183,3 +204,45 @@ def test_published_run_is_not_rerun(policy, tmp_path):
     with pytest.raises(RunFailure) as info:
         make_runner(policy, tmp_path, Fakes(tmp_path)).run()
     assert info.value.error_type == "conflict"
+
+
+def test_incomplete_verdicts_fail_the_run(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    fakes.omit_stories = {"russian-frigate-flares-gedser"}
+    status = make_runner(policy, tmp_path, fakes).run()
+    assert status["outcome"] == "failed"
+    assert status["failure"]["type"] == "verdicts_invalid"
+    assert "russian-frigate-flares-gedser" in json.dumps(status["failure"]["details"])
+    assert ("publisher", "publish") not in fakes.calls
+
+
+def test_stray_edits_outside_the_run_directory_stop_the_publish(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    status = make_runner(policy, tmp_path, fakes, stray_changes=lambda: ["editorial/policy.yaml", f"runs/{EDITION_ID}/spec.json"]).run()
+    assert status["outcome"] == "failed"
+    assert status["failure"]["type"] == "stray_edits"
+    assert status["failure"]["details"]["paths"] == ["editorial/policy.yaml"]
+    assert ("publisher", "publish") not in fakes.calls
+
+
+def test_an_unexpected_exception_is_recorded_in_status(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    fakes.checker_raises = KeyError("stories")
+    runner = make_runner(policy, tmp_path, fakes)
+    status = runner.run()
+    assert status["outcome"] == "failed"
+    assert status["failure"]["phase"] == "check" and status["failure"]["type"] == "internal_error"
+    assert "KeyError" in status["failure"]["message"]
+    assert read_json(runner.run_dir / "status.json")["outcome"] == "failed"
+
+
+def test_a_second_run_finds_the_lock_busy(policy, tmp_path):
+    import fcntl
+
+    fakes = Fakes(tmp_path)
+    lock = tmp_path / "run.lock"
+    with lock.open("w") as held:
+        fcntl.flock(held, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        status = make_runner(policy, tmp_path, fakes, lock_path=lock).run()
+    assert status["outcome"] == "failed" and status["failure"]["type"] == "lock_busy"
+    assert fakes.calls == []

@@ -47,7 +47,9 @@ class Limits(BaseModel):
     check_send_backs: int
     story_stands_min_words: float
     editor_minutes: int
+    editor_turns: int
     checker_minutes: int
+    checker_turns: int
     run_minutes: int
 
 

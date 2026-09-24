@@ -11,9 +11,15 @@ before exporting so the window is current to the minute.
 ## What a run does
 
 Collect, export the window, read memory, the editor session, the checker session, strikes, preflight,
-fit, publish, receipt, threads, commit. Each phase appends to `runs/<id>/status.json`, so `status`
-says where a run is or where it stopped. The sessions are bounded by `limits` in `policy.yaml`; a
-limit hit stops the run and leaves the last activated edition in place.
+fit, publish, receipt, threads, commit. Every fit-repair round is followed by a full check of the
+repaired edition, so copy written during repair is verified like the rest; a story that no longer
+stands at that point falls to a headline, and a struck headline is replaced by the primary source's
+own title. Each phase appends to `runs/<id>/status.json`, so `status`
+says where a run is or where it stopped. The sessions are bounded by `limits` in `policy.yaml`, in
+minutes and in turns; a limit hit stops the run and leaves the last activated edition in place. The
+editor session may run only `check-clusters`, `score`, and `build` through the wrapper, has no web
+tools and no MCP servers, and a change it makes anywhere in the repository outside its run directory
+stops the run before `publish`.
 
 ## When a run fails
 
@@ -27,9 +33,19 @@ Read `runs/<id>/status.json`: `failure.phase` and `failure.type` say which step 
   the pointer. Fix the spec by hand and run `build`, or run again.
 - `fit_unrepairable`: the device fit failed after the bounded editorial rounds. The web edition was
   not published either. Reduce the required set in `spec.json`, `build`, then run again.
-- `lock_busy` from block 1 or block 3: another process holds a lock. Wait, then run again.
+- `verdicts_invalid`: the checker's verdicts do not cover the check input sentence for sentence, or
+  name a different edition. The details list the missing and unknown addresses. Run again; the check
+  phase reruns the checker.
+- `stray_edits`: a session wrote outside the run directory. The details name the paths. Read the
+  diff, revert what should not be there, and run again; nothing was published.
+- `internal_error`: the runner itself raised. The details carry the traceback. Fix, then run again.
+- `lock_busy` from block 1 or block 3: another process holds a lock. Wait, then run again. The same
+  type from block 2 means another `run` is in progress; `editorial/var/run.lock` names it.
 - `not_activated`: `publish` returned but no activation exists. Run block 3's `recover`, then
   `receipt`; never generate a different edition to escape it.
+- A failure in `receipt`, `threads`, or `archive` after an activated publish is not resumed by a
+  rerun; the rerun would re-enter `publish` and block 3 would refuse the duplicate. Finish those
+  steps by hand: block 3's `receipt`, then commit the run directory.
 
 A published edition id is never rerun; the next edition corrects it.
 

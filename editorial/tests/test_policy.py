@@ -17,3 +17,7 @@ def test_policy_publisher_status():
     assert policy.publisher_status("dr") == "scoring"
     assert policy.publisher_status("via_ritzau") == "corroborating"
     assert policy.publisher_status("ft") == "linked"
+
+
+def test_policy_bounds_the_sessions_by_turns(policy):
+    assert policy.limits.editor_turns > 0 and policy.limits.checker_turns > 0

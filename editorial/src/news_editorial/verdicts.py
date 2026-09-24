@@ -72,8 +72,14 @@ def _strike_text(text: str, indexes: set[int]) -> str:
     return " ".join(kept)
 
 
-def _fall_to_headline(story: dict[str, Any]) -> None:
+def _fall_to_headline(story: dict[str, Any], headline_struck: bool = False) -> None:
     primary = next((s["source"] for s in story["sources"] if s["primary"]), None)
+    if headline_struck:
+        # The one string the checker refused cannot be the whole story: the primary source's own title
+        # is supported by construction and takes its place.
+        source = next((s for s in story["sources"] if s["primary"]), story["sources"][0])
+        story["copy"]["headline"] = source["original_title"]
+        story["copy"].pop("headline_short", None)
     story["copy"]["body"] = {}
     story["copy"].pop("deck", None)
     story["callouts"] = []
@@ -111,6 +117,9 @@ def apply_verdicts(edition: dict[str, Any], verdicts: dict[str, Any], min_words:
             struck_total += len(indexes)
             if location == "headline":
                 headline_struck = True
+                continue
+            if location == "headline_short":
+                story["copy"].pop("headline_short", None)
                 continue
             if location == "deck":
                 story["copy"].pop("deck", None)
@@ -164,7 +173,7 @@ def apply_verdicts(edition: dict[str, Any], verdicts: dict[str, Any], min_words:
         }
         if not stands:
             if final:
-                _fall_to_headline(story)
+                _fall_to_headline(story, headline_struck=headline_struck)
                 fallen.append(story["id"])
             else:
                 send_back.append(story["id"])
@@ -184,6 +193,22 @@ def _callout_text(callout: dict[str, Any]) -> str:
     return f"{callout['title']}: " + " | ".join(f"{r['date']}: {r['text']}" for r in callout["rows"])
 
 
+def addresses(check_input_doc: dict[str, Any]) -> set[tuple[str, str, int]]:
+    """Every (story, location, sentence) the checker was handed."""
+    return {(s["id"], x["location"], x["sentence"]) for s in check_input_doc["stories"] for x in s["sentences"]}
+
+
+def coverage_problems(check_input_doc: dict[str, Any], verdicts: dict[str, Any]) -> dict[str, list[str]]:
+    """Addresses the checker skipped or invented; empty when every sentence has exactly its verdict."""
+    expected = addresses(check_input_doc)
+    given = {(s["id"], x["location"], x["sentence"]) for s in verdicts["stories"] for x in s["sentences"]}
+    fmt = lambda a: f"{a[0]}/{a[1]}#{a[2]}"  # noqa: E731
+    return {
+        "missing": sorted(fmt(a) for a in expected - given),
+        "unknown": sorted(fmt(a) for a in given - expected),
+    }
+
+
 def check_input(edition: dict[str, Any], window: dict[str, Any]) -> dict[str, Any]:
     """What the checker reads: every sentence with its address, and the story's evidence. Nothing else."""
     articles = {(a["source"], a["source_id"]): a for a in window["articles"]}
@@ -199,6 +224,8 @@ def check_input(edition: dict[str, Any], window: dict[str, Any]) -> dict[str, An
 
         everyone = list(dict.fromkeys(s["source"] for s in story["sources"]))
         add("headline", copy_["headline"], everyone, split=False)
+        if copy_.get("headline_short"):
+            add("headline_short", copy_["headline_short"], everyone, split=False)
         if copy_.get("deck"):
             add("deck", copy_["deck"], everyone, split=False)
         if copy_.get("lede"):

@@ -22,11 +22,14 @@ def test_editor_session_is_bounded_and_allowlisted(tmp_path):
     run_dir = tmp_path / "run"
     run_dir.mkdir()
     claude = recording_claude(tmp_path)
-    record = invoke_editor("edition", run_dir, timeout=30, config={"editor_command": str(claude)})
+    record = invoke_editor("edition", run_dir, timeout=30, config={"editor_command": str(claude)}, max_turns=150)
     argv = (run_dir / "argv.txt").read_text()
     assert "--permission-mode acceptEdits" in argv
-    assert f"--allowedTools Bash({EDITORIAL / 'edit_news.sh'} *)" in argv
+    wrapper = EDITORIAL / "edit_news.sh"
+    assert f"--allowedTools Bash({wrapper} check-clusters *),Bash({wrapper} score *),Bash({wrapper} build *)" in argv
+    assert f"Bash({wrapper} *)" not in argv and f"Bash({wrapper} run" not in argv
     assert "--disallowedTools WebFetch,WebSearch" in argv
+    assert "--strict-mcp-config" in argv and "--max-turns 150" in argv
     assert "--no-session-persistence" in argv and "--output-format json" in argv
     assert f"--add-dir {REPO}" in argv
     assert str(REPO / "skills" / "editorial-desk" / "SKILL.md") in argv and "Mode: edition" in argv
@@ -38,9 +41,10 @@ def test_checker_session_has_no_bash(tmp_path):
     run_dir = tmp_path / "run"
     run_dir.mkdir()
     claude = recording_claude(tmp_path)
-    invoke_checker(run_dir, timeout=30, config={"checker": "claude", "editor_command": str(claude)})
+    invoke_checker(run_dir, timeout=30, config={"checker": "claude", "editor_command": str(claude)}, max_turns=40)
     argv = (run_dir / "argv.txt").read_text()
     assert "--disallowedTools WebFetch,WebSearch,Bash" in argv
+    assert "--strict-mcp-config" in argv and "--max-turns 40" in argv
     assert str(REPO / "skills" / "editorial-checker" / "SKILL.md") in argv
 
 

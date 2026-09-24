@@ -7,8 +7,10 @@ step blindly; a failure keeps the last activated edition in place and says why.
 from __future__ import annotations
 
 import datetime as dt
+import fcntl
 import json
 import subprocess
+import traceback
 import sys
 import time
 import zoneinfo
@@ -25,10 +27,14 @@ from .contract import validate_edition
 from .memory import build_memory, load_registry, save_registry, write_memory
 from .paths import EDITORIAL, REPO, RUNS, VAR
 from .policy import Policy
-from .verdicts import apply_verdicts, check_input, strict_verdicts_schema, without_nulls
+from .verdicts import apply_verdicts, check_input, coverage_problems, strict_verdicts_schema, without_nulls
 from .window import build_window, write_window
 
 DESK_CONFIG = EDITORIAL / "config" / "desk.yaml"
+LOCK_PATH = VAR / "run.lock"
+# The desk actions an editor session may call. `run` is deliberately absent: a session must never
+# start another run, publish, or reach block 1 or block 3 through the wrapper.
+EDITOR_ACTIONS = ("check-clusters", "score", "build")
 SMALL_FILES = [
     "feeds.json", "clusters.json", "clusters-checked.json", "ranking.json", "selection.json", "spec.json",
     "edition.json", "check-input.json", "verdicts.json", "send-back.json", "edition-checked.json",
@@ -99,7 +105,7 @@ def _headless(command: list[str], cwd: Path, timeout: int, name: str, run_dir: P
     return record
 
 
-def invoke_editor(mode: str, run_dir: Path, timeout: int, config: dict[str, Any] | None = None) -> dict[str, Any]:
+def invoke_editor(mode: str, run_dir: Path, timeout: int, config: dict[str, Any] | None = None, max_turns: int | None = None) -> dict[str, Any]:
     config = config or load_desk_config()
     wrapper = EDITORIAL / "edit_news.sh"
     prompt = (
@@ -109,16 +115,18 @@ def invoke_editor(mode: str, run_dir: Path, timeout: int, config: dict[str, Any]
     command = [
         config.get("editor_command", "claude"), "-p", prompt,
         "--output-format", "json", "--permission-mode", "acceptEdits", "--add-dir", str(REPO),
-        "--allowedTools", f"Bash({wrapper} *)",
+        "--allowedTools", ",".join(f"Bash({wrapper} {action} *)" for action in EDITOR_ACTIONS),
         "--disallowedTools", "WebFetch,WebSearch",
-        "--no-session-persistence",
+        "--strict-mcp-config", "--no-session-persistence",
     ]
+    if max_turns:
+        command += ["--max-turns", str(max_turns)]
     if config.get("editor_model"):
         command += ["--model", config["editor_model"]]
     return _headless(command, cwd=run_dir, timeout=timeout, name=f"editor-{mode}-{_now()[:19]}", run_dir=run_dir, limit="editor")
 
 
-def invoke_checker(run_dir: Path, timeout: int, config: dict[str, Any] | None = None) -> dict[str, Any]:
+def invoke_checker(run_dir: Path, timeout: int, config: dict[str, Any] | None = None, max_turns: int | None = None) -> dict[str, Any]:
     config = config or load_desk_config()
     tool = config.get("checker", "claude")
     if tool == "codex":
@@ -142,8 +150,10 @@ def invoke_checker(run_dir: Path, timeout: int, config: dict[str, Any] | None = 
             config.get("editor_command", "claude"), "-p", prompt,
             "--output-format", "json", "--permission-mode", "acceptEdits", "--add-dir", str(REPO),
             "--disallowedTools", "WebFetch,WebSearch,Bash",
-            "--no-session-persistence",
+            "--strict-mcp-config", "--no-session-persistence",
         ]
+        if max_turns:
+            command += ["--max-turns", str(max_turns)]
         if config.get("checker_model"):
             command += ["--model", config["checker_model"]]
     return _headless(command, cwd=run_dir, timeout=timeout, name=f"checker-{_now()[:19]}", run_dir=run_dir, limit="checker")
@@ -151,6 +161,12 @@ def invoke_checker(run_dir: Path, timeout: int, config: dict[str, Any] | None = 
 
 def _git(*args: str) -> None:
     subprocess.run(["git", *args], cwd=REPO, check=True, capture_output=True, text=True)
+
+
+def _stray_changes() -> list[str]:
+    """Paths the working tree has changed, relative to the repository root, as git reports them."""
+    proc = subprocess.run(["git", "status", "--porcelain", "--untracked-files=all"], cwd=REPO, check=True, capture_output=True, text=True)
+    return [line[3:].split(" -> ")[-1] for line in proc.stdout.splitlines() if line.strip()]
 
 
 # ---------------------------------------------------------------------------------------------------
@@ -172,12 +188,16 @@ class Runner:
         editor: Callable[[str, Path, int], dict[str, Any]] = invoke_editor,
         checker: Callable[[Path, int], dict[str, Any]] = invoke_checker,
         git: Callable[..., None] = _git,
+        stray_changes: Callable[[], list[str]] = _stray_changes,
+        lock_path: Path = LOCK_PATH,
         collect: bool = True,
         dry_run: bool = False,
         commit: bool = True,
         repo: Path = REPO,
     ):
         self.repo = repo
+        self.stray_changes = stray_changes
+        self.lock_path = lock_path
         self.policy = policy
         self.run_dir = run_dir
         self.edition_id = edition_id
@@ -245,6 +265,21 @@ class Runner:
             previous = json.loads((self.run_dir / "status.json").read_text(encoding="utf8"))
             if previous.get("outcome") == "published":
                 raise RunFailure("conflict", f"{self.edition_id} is already published; an edition id is used once", {"run": str(self.run_dir)})
+        self.lock_path.parent.mkdir(parents=True, exist_ok=True)
+        with self.lock_path.open("a+") as lock:
+            try:
+                fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            except OSError:
+                self.status["outcome"] = "failed"
+                self.status["failure"] = {"phase": "start", "type": "lock_busy", "message": f"another run holds {self.lock_path}", "details": {"lock": str(self.lock_path)}}
+                return self.status
+            lock.seek(0)
+            lock.truncate()
+            lock.write(f"{self.edition_id} {_now()}\n")
+            lock.flush()
+            return self._run_locked()
+
+    def _run_locked(self) -> dict[str, Any]:
         self.run_dir.mkdir(parents=True, exist_ok=True)
         self._write_status()
         phase = "start"
@@ -266,6 +301,11 @@ class Runner:
         except (RunFailure, BlockError) as exc:
             self.status["outcome"] = "failed"
             self.status["failure"] = {"phase": phase, "type": exc.error_type, "message": str(exc), "details": exc.details}
+            self._write_status()
+            return self.status
+        except Exception as exc:  # noqa: BLE001 -- a run that dies must not leave status.json at "running".
+            self.status["outcome"] = "failed"
+            self.status["failure"] = {"phase": phase, "type": "internal_error", "message": f"{type(exc).__name__}: {exc}", "details": {"traceback": traceback.format_exc()[-4000:]}}
             self._write_status()
             return self.status
         self.status["outcome"] = "dry_run" if self.dry_run else "published"
@@ -351,6 +391,12 @@ class Runner:
         if verdicts.get("edition_id") != edition["edition"]["id"]:
             raise RunFailure("verdicts_invalid", "the verdicts name a different edition")
         try:
+            coverage = coverage_problems(check_input_doc, verdicts)
+        except (KeyError, TypeError) as exc:
+            raise RunFailure("verdicts_invalid", f"the verdicts are malformed: {exc}") from exc
+        if coverage["missing"] or coverage["unknown"]:
+            raise RunFailure("verdicts_invalid", "the verdicts do not cover the check input sentence for sentence", {k: v[:20] for k, v in coverage.items()})
+        try:
             result = apply_verdicts(edition, verdicts, min_words=self.policy.limits.story_stands_min_words, final=final)
         except ValueError as exc:
             raise RunFailure("verdicts_invalid", str(exc)) from exc
@@ -412,14 +458,17 @@ class Runner:
                 problems = validate_edition(edition)
                 if problems:
                     raise RunFailure("contract_invalid", "the repaired edition fails the contract", {"problems": problems[:10]}) from exc
-                # The repair edited the spec and rebuilt; carry the strikes forward by re-checking is not
-                # needed: the checker's verdicts apply to sentences that still exist, so reapply them.
-                verdicts = self._read("verdicts.json")
-                struck = apply_verdicts(edition, verdicts, min_words=self.policy.limits.story_stands_min_words, final=True)
+                # The repair wrote new copy, so the whole edition is checked again; a story that no
+                # longer stands falls to a headline, since the send-back budget is spent by now.
+                struck = self._check_once(edition, final=True)
+                problems = validate_edition(struck["edition"])
+                if problems:
+                    raise RunFailure("contract_invalid", "the repaired, struck edition fails the contract", {"problems": problems[:10]}) from exc
                 self._write("edition-checked.json", struck["edition"])
                 (self.run_dir / "fit-repair.json").unlink(missing_ok=True)
 
     def _publish(self) -> None:
+        self._refuse_stray_edits()
         args = ["--edition", str(self.run_dir / "edition-checked.json"), "--publish-root", str(self.publish_root)]
         if self.dry_run:
             args.append("--dry-run")
@@ -431,6 +480,16 @@ class Runner:
             "bundle": result.get("bundle"),
         }
         self._phase("publish", status=result.get("status"), device_status=result.get("device_status"))
+
+    def _refuse_stray_edits(self) -> None:
+        """A session may only write inside its run directory; anything else in git stops the publish."""
+        try:
+            run_prefix = self.run_dir.relative_to(self.repo).as_posix() + "/"
+        except ValueError:
+            run_prefix = None
+        stray = [p for p in self.stray_changes() if run_prefix is None or not p.startswith(run_prefix)]
+        if stray:
+            raise RunFailure("stray_edits", "the working tree changed outside the run directory; the sessions may only write there", {"paths": stray[:20]})
 
     def _receipt(self) -> None:
         if self.dry_run:
@@ -513,8 +572,8 @@ def run_edition(args: Any, policy: Policy) -> dict[str, Any]:
         cutoff=cutoff,
         publish_root=publish_root,
         registry=VAR / "threads.json",
-        editor=lambda mode, run_dir, timeout: invoke_editor(mode, run_dir, timeout, config),
-        checker=lambda run_dir, timeout: invoke_checker(run_dir, timeout, {**config, "checker": args.checker or config.get("checker", "claude")}),
+        editor=lambda mode, run_dir, timeout: invoke_editor(mode, run_dir, timeout, config, max_turns=policy.limits.editor_turns),
+        checker=lambda run_dir, timeout: invoke_checker(run_dir, timeout, {**config, "checker": args.checker or config.get("checker", "claude")}, max_turns=policy.limits.checker_turns),
         collect=config.get("collect_before_export", True) and not args.no_collect,
         dry_run=args.dry_run,
         commit=config.get("commit_runs", True),

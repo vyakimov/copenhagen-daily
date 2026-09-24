@@ -143,3 +143,23 @@ def test_null_fields_from_a_strict_checker_are_dropped():
     assert cleaned == {"schema_version": 1, "edition_id": "x", "stories": [
         {"id": "a", "sentences": [{"location": "headline", "sentence": 0, "verdict": "supported"}]}]}
     assert validate_verdicts(cleaned) == []
+
+
+def test_final_pass_replaces_a_struck_headline_with_the_primary_source_title():
+    doc = edition()
+    result = apply_verdicts(doc, verdicts(("russian-frigate-flares-gedser", "headline", 0, "wrong")), min_words=0.0, final=True)
+    story = result["edition"]["stories"][0]
+    primary = next(s for s in story["sources"] if s["primary"])
+    assert story["copy"]["headline"] == primary["original_title"]
+    assert "headline_short" not in story["copy"]
+    assert story["copy"]["headline"] != doc["stories"][0]["copy"]["headline"]
+    assert result["fallen"] == ["russian-frigate-flares-gedser"]
+
+
+def test_struck_short_headline_is_dropped_and_the_story_stands():
+    doc = edition()
+    result = apply_verdicts(doc, verdicts(("russian-frigate-flares-gedser", "headline_short", 0, "wrong")), min_words=0.0)
+    story = result["edition"]["stories"][0]
+    assert "headline_short" not in story["copy"]
+    assert story["copy"]["headline"] == doc["stories"][0]["copy"]["headline"]
+    assert result["send_back"] == [] and result["struck"] == 1
