@@ -1,0 +1,1072 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-09-24-morning",
+  "checker": {
+    "tool": "claude-code",
+    "model": "claude-fable-5-1",
+    "started_at": "2026-09-24T06:30:00Z"
+  },
+  "stories": [
+    {
+      "id": "greenland-agreement-signed-new-york",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "De tre regeringsledere fra Danmark, Grønland og USA har tirsdag eftermiddag underskrevet ny sikkerhedsaftale. / USA får tilladelse til to nye baser i Grønland",
+          "cites": [
+            "politiken",
+            "tv2"
+          ]
+        },
+        {
+          "location": "deck",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "USA må bygge baser i Narsarsuaq og Mestersvig / Ny aftale om Grønland har ingen slutdato / re-affirms Denmark's sovereignty over its semi-autonomous Arctic territory",
+          "cites": [
+            "information",
+            "tv2",
+            "bbc"
+          ]
+        },
+        {
+          "location": "extended[0]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "De tre regeringsledere fra Danmark, Grønland og USA har tirsdag eftermiddag underskrevet ny sikkerhedsaftale. / draget til New York / The defence deal signed at the UN General Assembly",
+          "cites": [
+            "politiken",
+            "borsen",
+            "bbc"
+          ]
+        },
+        {
+          "location": "extended[0]",
+          "sentence": 1,
+          "verdict": "supported",
+          "passage": "USA må bygge baser i Narsarsuaq og Mestersvig / Ny aftale om Grønland har ingen slutdato",
+          "cites": [
+            "information",
+            "tv2"
+          ]
+        },
+        {
+          "location": "extended[1]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "also re-affirms Denmark's sovereignty over its semi-autonomous Arctic territory",
+          "cites": [
+            "bbc"
+          ]
+        },
+        {
+          "location": "extended[1]",
+          "sentence": 1,
+          "verdict": "supported",
+          "passage": "forpligter USA sig til at prioritere grønlandske virksomheder, når de bygger baser i landet / USA har genbekræftet et 35 år gammelt løfte om at fjerne affald efter sig i Grønland",
+          "cites": [
+            "dr",
+            "politiken"
+          ]
+        },
+        {
+          "location": "extended[2]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Grønlands regeringsleder: Aftale sikrer Grønlands selvbestemmelse / Onsdag aften landede Grønlands regeringsleder, Jens-Frederik Nielsen, i lufthavnen i Nuuk.",
+          "cites": [
+            "borsen"
+          ]
+        },
+        {
+          "location": "extended[2]",
+          "sentence": 1,
+          "verdict": "supported",
+          "passage": "'At se sin egen befolkning i øjnene og have leveret det, vi ønsker - at vi selv former vores fremtid - det er rørende,' fortalte Múte B. Egede",
+          "cites": [
+            "dr"
+          ]
+        },
+        {
+          "location": "extended[2]",
+          "sentence": 2,
+          "verdict": "supported",
+          "passage": "fortalte Múte B. Egede til kaffemik i Nuuk",
+          "cites": [
+            "dr"
+          ]
+        },
+        {
+          "location": "extended[3]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Med den nye aftale bevarer Danmark og Grønland suveræniteten og selvbestemmelsesretten. Og USA styrker markant sit militære herredømme i Grønland. Men den kommer med en høj pris",
+          "cites": [
+            "altinget"
+          ]
+        },
+        {
+          "location": "extended[3]",
+          "sentence": 1,
+          "verdict": "supported",
+          "passage": "a Greenland security deal that falls well short of his demands to turn the island into a U.S. territory",
+          "cites": [
+            "nytimes"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "De tre regeringsledere fra Danmark, Grønland og USA har tirsdag eftermiddag underskrevet ny sikkerhedsaftale. / draget til New York / signed at the UN General Assembly",
+          "cites": [
+            "politiken",
+            "borsen",
+            "bbc"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 1,
+          "verdict": "supported",
+          "passage": "USA må bygge baser i Narsarsuaq og Mestersvig / Ny aftale om Grønland har ingen slutdato",
+          "cites": [
+            "information",
+            "tv2"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "also re-affirms Denmark's sovereignty over its semi-autonomous Arctic territory",
+          "cites": [
+            "bbc"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 1,
+          "verdict": "supported",
+          "passage": "forpligter USA sig til at prioritere grønlandske virksomheder, når de bygger baser i landet / genbekræftet et 35 år gammelt løfte om at fjerne affald efter sig i Grønland",
+          "cites": [
+            "dr",
+            "politiken"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Aftale sikrer Grønlands selvbestemmelse / Onsdag aften landede Grønlands regeringsleder, Jens-Frederik Nielsen, i lufthavnen i Nuuk.",
+          "cites": [
+            "borsen"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 1,
+          "verdict": "supported",
+          "passage": "'At se sin egen befolkning i øjnene og have leveret det, vi ønsker - at vi selv former vores fremtid - det er rørende,' fortalte Múte B. Egede",
+          "cites": [
+            "dr"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 2,
+          "verdict": "supported",
+          "passage": "fortalte Múte B. Egede til kaffemik i Nuuk",
+          "cites": [
+            "dr"
+          ]
+        },
+        {
+          "location": "short[0]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "De tre regeringsledere fra Danmark, Grønland og USA har tirsdag eftermiddag underskrevet ny sikkerhedsaftale. / draget til New York",
+          "cites": [
+            "politiken",
+            "borsen"
+          ]
+        },
+        {
+          "location": "short[0]",
+          "sentence": 1,
+          "verdict": "supported",
+          "passage": "USA må bygge baser i Narsarsuaq og Mestersvig / ingen slutdato / re-affirms Denmark's sovereignty",
+          "cites": [
+            "information",
+            "tv2",
+            "bbc"
+          ]
+        },
+        {
+          "location": "callouts[0]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "USA får lov til at oprette forsvarsområder to steder i Grønland (Narsarsuaq og Mestersvig) / ingen slutdato / re-affirms Denmark's sovereignty / prioritere grønlandske virksomheder / fjerne affald efter sig",
+          "cites": [
+            "information",
+            "tv2",
+            "bbc",
+            "dr",
+            "politiken"
+          ]
+        },
+        {
+          "location": "callouts[1]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "'At se sin egen befolkning i øjnene og have leveret det, vi ønsker - at vi selv former vores fremtid - det er rørende,' fortalte Múte B. Egede til kaffemik i Nuuk. / Glade grønlandske toppolitikere",
+          "cites": [
+            "dr"
+          ]
+        }
+      ],
+      "guideline_notes": [
+        "extended[2] and standard[2]: the sentence splitter breaks the speaker's name at 'Múte B.' so the quote and its attribution land in two sentences; a strike on either would leave half a quotation.",
+        "extended[3] names Altinget and The New York Times in prose; acceptable as attribution of a judgement, but the paragraph is two outlets' views back to back with no fact of its own."
+      ]
+    },
+    {
+      "id": "trump-greets-xi-summit-opens",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Trump greeted Xi on the tarmac / the countries have agreed to extension until January 10",
+          "cites": [
+            "wapo",
+            "ft"
+          ]
+        },
+        {
+          "location": "deck",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "talks on trade, A.I. and Taiwan / En aftale mellem USA og Kina om at trække i AI-bremsen kræver et niveau af tillid, der ikke eksisterer mellem de to lande.",
+          "cites": [
+            "nytimes",
+            "dr"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "taking the unusual step of greeting the Chinese leader on the tarmac at Joint Base Andrews to kick off his state visit / agreed to extension until January 10 (both published Wednesday 23 September)",
+          "cites": [
+            "guardian",
+            "ft"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "USA og Kina blev sidste år enige om at sætte konflikt på pause. Aftalen vil blive forlænget, siger minister / Treasury secretary Scott Bessent says the countries have agreed to extension until January 10 / to kick off his state visit",
+          "cites": [
+            "borsen",
+            "ft",
+            "guardian"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 1,
+          "verdict": "supported",
+          "passage": "talks on trade, A.I. and Taiwan",
+          "cites": [
+            "nytimes"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Donald Trump og Melania Trump var til stede, da Xi Jinping og hans hustru onsdag landede / tarmac at Joint Base Andrews ... 30-metre-long (100ft) red carpet ... military flyover by two B-1 bombers / Et militærorkester stod klar og spillede / an unusual gesture",
+          "cites": [
+            "borsen",
+            "guardian",
+            "dr",
+            "wapo"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "kræver et niveau af tillid, der ikke eksisterer mellem de to lande / hvis han må kontrollere Grønland, må Kina også kontrollere Taiwan, påpeger iagttagere",
+          "cites": [
+            "dr",
+            "politiken"
+          ]
+        },
+        {
+          "location": "short[0]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Treasury secretary Scott Bessent says the countries have agreed to extension until January 10 / greeting the Chinese leader on the tarmac ... red carpet ... military flyover by two B-1 bombers",
+          "cites": [
+            "ft",
+            "guardian"
+          ]
+        }
+      ],
+      "guideline_notes": [
+        "standard[1] names the Washington Post in prose for the characterisation 'unusual'; the marker already cites it and Børsen carries the same word."
+      ]
+    },
+    {
+      "id": "nationalbanken-four-percent-growth-warning",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Nationalbanken nu fordobler sin forventning til væksten i år / ventes at vokse med fire procent i år / Nationalbanken sender advarsel til regeringen: hold igen med pengene",
+          "cites": [
+            "politiken",
+            "dr",
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "deck",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Fremgangen i dansk økonomi drives primært af medicinalindustriens produktion i udlandet. / Huspriserne ventes nu at stige 8,6 procent i år",
+          "cites": [
+            "dr"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Nationalbanken nu fordobler sin forventning til væksten i år / fire procent i år / drives primært af medicinalindustriens produktion i udlandet / klar opfordring til politikerne før forhandlingerne om næste års finanslov: hold igen med pengene (DR published Wednesday 23 September)",
+          "cites": [
+            "politiken",
+            "dr",
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Dansk økonomi ventes at vokse med fire procent i år trods told og krig / drives primært af medicinalindustriens produktion i udlandet / fordobler sin forventning til væksten i år",
+          "cites": [
+            "dr",
+            "politiken"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Huspriserne ventes nu at stige 8,6 procent i år, 4,6 procent i 2027 og 2,9 procent i 2028",
+          "cites": [
+            "dr"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "\"Regeringen skal lade være med at føde ind til den situation med finanspolitikken,\" siger han til Berlingske ... oprustningen af Forsvaret, fødevarechecken og reduktionen af elafgiften er med til at øge forbruget, der risikerer at lede til højere inflation",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 1,
+          "verdict": "supported",
+          "passage": "Regeringen forventes at komme med sit forslag til finansloven omkring Folketingets åbning tirsdag den 6. oktober.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "short[0]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "fordobler sin forventning til væksten i år / fire procent / medicinalindustriens produktion i udlandet / Christian Kettel Thomsen ... siger han til Berlingske ... hold igen med pengene ... situation med høj inflation",
+          "cites": [
+            "politiken",
+            "dr",
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "callouts[0]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "ventes at vokse med fire procent i år / Nationalbanken nu fordobler sin forventning til væksten i år",
+          "cites": [
+            "dr",
+            "politiken"
+          ]
+        }
+      ],
+      "guideline_notes": []
+    },
+    {
+      "id": "pig-production-halt-twelve-months",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Regeringen iværksætter midlertidigt stop for ny konventionel svineproduktion, som varer i 12 måneder.",
+          "cites": [
+            "politiken"
+          ]
+        },
+        {
+          "location": "deck",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Indtil der er lavet nye regler for svineproduktionen bliver det forbudt at udvide eller etablere nye konventionelle griseproduktioner. / bakker partiet ikke op om regeringens midlertidige stop",
+          "cites": [
+            "dr",
+            "borsen"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "midlertidigt stop for ny konventionel svineproduktion, som varer i 12 måneder / Indtil der er lavet nye regler ... forbudt at udvide eller etablere (both published Wednesday 23 September)",
+          "cites": [
+            "politiken",
+            "dr"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Regeringen iværksætter midlertidigt stop for ny konventionel svineproduktion, som varer i 12 måneder.",
+          "cites": [
+            "politiken"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 1,
+          "verdict": "supported",
+          "passage": "Indtil der er lavet nye regler for svineproduktionen bliver det forbudt at udvide eller etablere nye konventionelle griseproduktioner.",
+          "cites": [
+            "dr"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Selvom Venstre er enig i, at der skal være bedre dyrevelfærd for landets grise, så bakker partiet ikke op om regeringens midlertidige stop ... Det fortæller Venstres dyrevelfærdsordfører, Marie Bjerre, til Berlingske.",
+          "cites": [
+            "borsen"
+          ]
+        },
+        {
+          "location": "short[0]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "midlertidigt stop ... som varer i 12 måneder / forbudt at udvide eller etablere nye konventionelle griseproduktioner indtil der er lavet nye regler",
+          "cites": [
+            "politiken",
+            "dr"
+          ]
+        },
+        {
+          "location": "short[0]",
+          "sentence": 1,
+          "verdict": "supported",
+          "passage": "bakker partiet ikke op ... Det fortæller Venstres dyrevelfærdsordfører, Marie Bjerre, til Berlingske.",
+          "cites": [
+            "borsen"
+          ]
+        }
+      ],
+      "guideline_notes": []
+    },
+    {
+      "id": "sweden-vote-fraud-timeout",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "et nyvalgt rigsdagsmedlem blevet enig med Vänsterpartiet om en 'timeout' / Onsdag blev en tredje person en del af sagen",
+          "cites": [
+            "politiken",
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "deck",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Onsdag blev en tredje person en del af sagen / Ifølge svenske medier har partiet tilbudt politikeren et job for at få ham til at trække sig.",
+          "cites": [
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Efter anklager om valgfusk er et nyvalgt rigsdagsmedlem blevet enig med Vänsterpartiet om en 'timeout' / Venstrepartiet er meget langt fra den regeringsdeltagelse / Mohamed Ali, der fik 648 stemmer i kommunen Borlänge",
+          "cites": [
+            "politiken",
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Mohamed Ali, der fik 648 stemmer i kommunen Borlänge / blevet enig med Vänsterpartiet om en 'timeout' / Nyvalgt svensk parlamentsmedlem afviser anklager / partiet tilbudt politikeren et job for at få ham til at trække sig",
+          "cites": [
+            "kristeligt_dagblad",
+            "politiken",
+            "tv2"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "blev partiet med over 8,4 procent af stemmerne Sveriges fjerdestørste / Venstrepartiet har i månedsvis krævet ministerposter",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 1,
+          "verdict": "supported",
+          "passage": "Venstrepartiet er meget langt fra den regeringsdeltagelse / Blandt svenske analytikere spekuleres nu i stedet i, om Magdalena Andersson og Socialdemokraterne går efter en mindretalsregering – alene eller sammen med Miljøpartiet.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Allerede små to uger inden valget kom den første anmeldelse om valgfusk. Den blev droppet. Men på valgdagen kom så endnu en anmeldelse. Den sag efterforskes nu på øverste politi-niveau. ... Onsdag blev en tredje person en del af sagen",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "short[0]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Mohamed Ali ... Borlänge / enig med Vänsterpartiet om en 'timeout' / afviser anklager / meget langt fra den regeringsdeltagelse",
+          "cites": [
+            "kristeligt_dagblad",
+            "politiken",
+            "tv2"
+          ]
+        },
+        {
+          "location": "callouts[0]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "\"Frie og retfærdige valg er fundamentalt,\" understreger Sveriges Televisions kommentator Mats Knutson.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        }
+      ],
+      "guideline_notes": [
+        "Kristeligt Dagblad is named in prose in the lede, standard[1] and short[0]; the attribution of its judgement is right, but three mentions in one story is heavy."
+      ]
+    },
+    {
+      "id": "ai-chiefs-warn-un-security-council",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Sam Altman of OpenAI and Dario Amodei of Anthropic told the Security Council that international cooperation was needed to ensure that A.I. remains under human control.",
+          "cites": [
+            "nytimes"
+          ]
+        },
+        {
+          "location": "deck",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "told the Security Council that international cooperation was needed to ensure that A.I. remains under human control",
+          "cites": [
+            "nytimes"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "international cooperation was needed to ensure that A.I. remains under human control / Dagen før lovede Donald Trump fra samme bygning, at han ville holde USA foran Kina (published Wednesday 23 September)",
+          "cites": [
+            "nytimes",
+            "borsen"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Sam Altman of OpenAI and Dario Amodei of Anthropic told the Security Council that international cooperation was needed / called for nations to work together on regulations / FN's Sikkerhedsråd får onsdag en orientering",
+          "cites": [
+            "nytimes",
+            "wapo",
+            "politiken"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "ChatGPT-direktør: Udvikling af kunstig intelligens kræver »ekstrem omhyggelighed« / “Kapløbet truer enhver nation” advarede AI-profil",
+          "cites": [
+            "politiken",
+            "borsen"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 1,
+          "verdict": "supported",
+          "passage": "Dagen før lovede Donald Trump fra samme bygning, at han ville holde USA foran Kina / FN's Sikkerhedsråd får onsdag en orientering",
+          "cites": [
+            "borsen",
+            "politiken"
+          ]
+        },
+        {
+          "location": "short[0]",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "international cooperation was needed to ensure that A.I. remains under human control / Dagen før lovede Donald Trump fra samme bygning, at han ville holde USA foran Kina",
+          "cites": [
+            "nytimes",
+            "borsen"
+          ]
+        }
+      ],
+      "guideline_notes": [
+        "standard[1] names Børsen in prose ('an AI executive quoted by Børsen') where the marker would do; Børsen itself leaves the speaker unnamed."
+      ]
+    },
+    {
+      "id": "judge-restores-white-house-access",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Judge orders Trump White House to restore access to CNN, MS Now and Politico",
+          "cites": [
+            "guardian"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "A federal judge has ordered the Trump administration to temporarily restore White House access to journalists from CNN, MS Now and Politico, saying his ban on the three media outlets was likely unconstitutional ... the ban that the president announced on 18 September",
+          "cites": [
+            "guardian"
+          ]
+        }
+      ],
+      "guideline_notes": []
+    },
+    {
+      "id": "food-vat-co2-klimaraadet",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Regeringens plan om lavere fødevaremoms kommer med en CO2-udledning på 520.000 ton globalt, siger Klimarådet.",
+          "cites": [
+            "politiken"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Hvis regeringen som lovet sænker momsen på fødevarer, vil det øge klimabelastningen, viser nye beregninger fra Klimarådet. / CO2-udledning på 520.000 ton globalt",
+          "cites": [
+            "dr",
+            "politiken"
+          ]
+        }
+      ],
+      "guideline_notes": []
+    },
+    {
+      "id": "junior-scheme-one-in-three-fail",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Hver tredje elev dumper dansk og matematik på ny hypet skoleordning / dumpede enten dansk eller matematik",
+          "cites": [
+            "dr"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Der var mange af eleverne på juniormesterlæreordningen, som dumpede enten dansk eller matematik til afgangseksamen i sommer. / Hver tredje elev",
+          "cites": [
+            "dr"
+          ]
+        }
+      ],
+      "guideline_notes": []
+    },
+    {
+      "id": "metro-busiest-weekend",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Metroen har haft den travleste weekend nogensinde med 1,4 millioner passagerer",
+          "cites": [
+            "dr"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Metroen har haft den travleste weekend nogensinde med 1,4 millioner passagerer (published Thursday 24 September)",
+          "cites": [
+            "dr"
+          ]
+        }
+      ],
+      "guideline_notes": []
+    },
+    {
+      "id": "gade-sues-klink",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Søren Gade har lagt sag an mod partifælles mand for æreskrænkelse",
+          "cites": [
+            "tv2"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Til februar skal Venstres Søren Gade i Retten i Herning i en sag mod forretningsmanden Jakob Klink. / retssag mod et nyvalgt Venstre-folketingsmedlems mand",
+          "cites": [
+            "tv2",
+            "politiken"
+          ]
+        }
+      ],
+      "guideline_notes": []
+    },
+    {
+      "id": "denmark-billion-global-education-fund",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Danmark vil give en milliard til global uddannelsesfond",
+          "cites": [
+            "dr"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Danmark skal igen investere i uddannelse i udviklingslande og sender global fond milliard kroner som støtte.",
+          "cites": [
+            "politiken"
+          ]
+        }
+      ],
+      "guideline_notes": []
+    },
+    {
+      "id": "greenland-mining-shares-quadruple",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Trump-aftale har firedoblet værdien af grønlandsk mineselskab",
+          "cites": [
+            "tv2"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Efter en ny sikkerhedsaftale satser investorer massivt på Grønlands råstoffer. Men undergrunden har skuffet før.",
+          "cites": [
+            "tv2"
+          ]
+        }
+      ],
+      "guideline_notes": []
+    },
+    {
+      "id": "weinstein-fifteen-years",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Harvey Weinstein sentenced to 15 years in prison for sexual assault",
+          "cites": [
+            "bbc"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Harvey Weinstein får 15 års fængsel for overgreb på produktionsassistent / En tidligere dom mod Harvey Weinstein blev underkendt, men ved en ny retssag blev han igen fundet skyldig.",
+          "cites": [
+            "politiken"
+          ]
+        }
+      ],
+      "guideline_notes": []
+    },
+    {
+      "id": "meta-glasses-without-camera",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Efter hård kritik: Meta lancerer briller uden kamera / Meta has unveiled audio-only smart glasses ... the backlash over privacy",
+          "cites": [
+            "politiken",
+            "bbc"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Meta announced an advanced new set of virtual reality glasses and a collection of new smart glasses Wednesday, including an audio-only version without a camera ... facing backlash over privacy concerns",
+          "cites": [
+            "guardian"
+          ]
+        }
+      ],
+      "guideline_notes": []
+    },
+    {
+      "id": "openai-agent-hacked-australian-site",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Australia Investigates OpenAI Hack on Public Health Care Site",
+          "cites": [
+            "nytimes"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "En AI-agent fra Open AI fik i juni uautoriseret adgang til en australsk myndighedsside / Australia launches investigation after OpenAI agent hacked healthcare database / Australia is exploring potential legal action",
+          "cites": [
+            "borsen",
+            "guardian",
+            "nytimes"
+          ]
+        }
+      ],
+      "guideline_notes": []
+    },
+    {
+      "id": "el-nino-450000-deaths-forecast",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Huge El Niño projected to cause more than 450,000 deaths by February / Varme under El Niño vil koste 450.000 liv på seks måneder",
+          "cites": [
+            "guardian",
+            "dr"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "More than 450,000 people are projected to die from the additional heat brought by the super El Niño by February, according to estimates by climate scientists. / 450.000 liv på seks måneder",
+          "cites": [
+            "guardian",
+            "dr"
+          ]
+        }
+      ],
+      "guideline_notes": []
+    },
+    {
+      "id": "eriksen-leaves-wolfsburg",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Christian Eriksen er færdig i Wolfsburg et år før tid / efter danskerens ønske",
+          "cites": [
+            "dr",
+            "politiken"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Christian Eriksen leaves Wolfsburg by mutual consent, just over three months after collapsing during Denmark's friendly with Ukraine. / kollapsede i en landskamp i juni / et år før tid (all published Wednesday 23 September)",
+          "cites": [
+            "bbc",
+            "politiken",
+            "dr"
+          ]
+        }
+      ],
+      "guideline_notes": []
+    },
+    {
+      "id": "russian-tugboats-cables-alert",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Mistænkelig aktivitet ved forsyningskabler – russiske slæbebåde aktiverer kriseberedskab / henvendte sig til kommunen",
+          "cites": [
+            "tv2"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Det var en bekymret borger, der henvendte sig til kommunen. Beredskabet er netop sat i bero igen.",
+          "cites": [
+            "tv2"
+          ]
+        }
+      ],
+      "guideline_notes": []
+    },
+    {
+      "id": "bruus-criticises-media-ambassador",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Forsvarsministeren til danske medier: Hvorfor formidler I det bare uden at være specielt kritiske over for den kilde, I bringer videre?",
+          "cites": [
+            "politiken"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Ruslands ambassadørs påstande fik lov til at stå uimodsagt, da han hævdede, at dansk helikopter havde provokeret russisk fregat ved Gedser, mener forsvarsminister Jeppe Bruus.",
+          "cites": [
+            "politiken"
+          ]
+        }
+      ],
+      "guideline_notes": []
+    },
+    {
+      "id": "trump-backs-diesel-export-halt",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Trump støtter stop for eksport af diesel til Europa / En liter diesel koster i omegnen af 19 kr. på de danske tankstationer",
+          "cites": [
+            "borsen"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Trump støtter stop for eksport af diesel / i omegnen af 19 kr. / Energy Secretary Chris Wright on Wednesday said the Trump administration wouldn't outright ban exports of diesel but rather implement restrictions",
+          "cites": [
+            "borsen",
+            "wsj"
+          ]
+        }
+      ],
+      "guideline_notes": [
+        "headline: 'nears 19 kroner a litre' tightens Børsen's 'i omegnen af 19 kr.' (around 19 kr.); the lede's 'near 19 kroner' is the closer rendering."
+      ]
+    },
+    {
+      "id": "norse-church-found-greenland",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Nationalmuseet gør et \"sensationelt\" kirkefund i Grønland / Kirken blev bygget af nordboerne / i det sydlige Grønland",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "verdict": "supported",
+          "passage": "Da vi kom tilbage i august året efter ... der lå en krop / en kirke ved Qinngua nær Narsarsuaq / dateres til i hvert fald mellem 1100 og 1300 / tæt på Erik den Rødes boplads, er der nu fundet hele seks kirker",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        }
+      ],
+      "guideline_notes": []
+    }
+  ]
+}

@@ -21,8 +21,8 @@
       "device": "required",
       "kicker": "Defence",
       "headline": "Denmark, Greenland and US sign security deal opening two new bases in Greenland",
-      "headline_short": "Greenland deal signed: two new US bases",
-      "deck": "Bases at Narsarsuaq and Mestersvig, no end date; Denmark's sovereignty over Greenland reaffirmed.",
+      "headline_short": "Greenland deal signed",
+      "deck": "Two US bases, at Narsarsuaq and Mestersvig, no end date; Denmark's sovereignty reaffirmed.",
       "extended": [
         ["The three government leaders of Denmark, Greenland and the United States signed a new security agreement for Greenland in New York on Tuesday afternoon, at the UN General Assembly. The United States may build two new bases, at Narsarsuaq and Mestersvig, and the agreement has no end date.", ["politiken", "borsen", "bbc", "information", "tv2"]],
         ["It reaffirms Denmark's sovereignty over Greenland. The United States commits to prioritise Greenlandic companies when it builds the bases and has reconfirmed a 35-year-old promise to remove its waste from the country.", ["bbc", "dr", "politiken"]],
@@ -76,7 +76,7 @@
         ["Christian Kettel Thomsen, Nationalbanken's governor, tells Berlingske the government 'must refrain from feeding into that situation with fiscal policy', warning that defence rearmament, the food cheque and the electricity tax cut lift consumption and risk higher inflation. The finance bill is expected around Folketinget's opening on Tuesday 6 October.", ["kristeligt_dagblad"]]
       ],
       "short": [
-        ["Nationalbanken on Wednesday doubled its forecast for Danish growth to 4 per cent this year, driven by pharmaceutical production abroad, while its governor, Christian Kettel Thomsen, tells Berlingske the government must hold back spending in the finance bill to avoid high inflation.", ["dr", "politiken", "kristeligt_dagblad"]]
+        ["Nationalbanken on Wednesday doubled its growth forecast to 4 per cent this year. Its governor, Christian Kettel Thomsen, tells Berlingske the government must hold back spending.", ["dr", "politiken", "kristeligt_dagblad"]]
       ],
       "lede": ["Nationalbanken on Wednesday doubled its forecast for Danish growth to 4 per cent this year, driven by pharmaceutical production abroad, and warned the government to hold back spending in the finance bill.", ["dr", "politiken", "kristeligt_dagblad"]],
       "callouts": [
@@ -112,14 +112,14 @@
       "headline_short": "Swedish vote-fraud case widens",
       "deck": "A third person joined the Borlänge case on Wednesday; Swedish media say the party offered the MP a job to go.",
       "standard": [
-        ["Mohamed Ali, elected for Vänsterpartiet with 648 votes in Borlänge, has agreed a 'timeout' with the party over vote-fraud accusations he rejects; according to Swedish media cited by Politiken, it offered him a job to withdraw.", ["politiken", "kristeligt_dagblad", "tv2"]],
-        ["Vänsterpartiet, fourth largest on 8.4 per cent, has demanded ministerial posts. Johan Varning Bendtsen, Kristeligt Dagblad's Nordic correspondent, writes that it is now far from government and Swedish analysts speculate about a Magdalena Andersson minority government, alone or with Miljöpartiet.", ["kristeligt_dagblad"]],
+        ["Mohamed Ali, elected for Vänsterpartiet with 648 votes in Borlänge, has agreed a 'timeout' with the party over vote-fraud accusations he rejects; Swedish media report the party offered him a job to withdraw.", ["politiken", "kristeligt_dagblad", "tv2"]],
+        ["Vänsterpartiet, fourth largest on 8.4 per cent, has demanded ministerial posts. Kristeligt Dagblad writes that it is now far from government, and Swedish analysts speculate about a Magdalena Andersson minority government, alone or with Miljöpartiet.", ["kristeligt_dagblad"]],
         ["A fraud report two weeks before the vote was dropped; a second, filed on election day, is investigated at top police level, and a third person joined the case on Wednesday.", ["tv2", "kristeligt_dagblad"]]
       ],
       "short": [
-        ["Mohamed Ali, elected for Vänsterpartiet in Borlänge, has agreed a 'timeout' with the party over vote-fraud accusations he rejects; Kristeligt Dagblad's Johan Varning Bendtsen writes the party is now far from government.", ["politiken", "kristeligt_dagblad", "tv2"]]
+        ["Mohamed Ali, elected for Vänsterpartiet in Borlänge, has agreed a 'timeout' with the party over vote-fraud accusations he rejects; Kristeligt Dagblad writes the party is now far from government.", ["politiken", "kristeligt_dagblad", "tv2"]]
       ],
-      "lede": ["A Vänsterpartiet MP-elect accused of vote fraud in Borlänge has agreed a 'timeout' with his party, which Kristeligt Dagblad's Johan Varning Bendtsen writes is now far from government.", ["politiken", "kristeligt_dagblad"]],
+      "lede": ["A Vänsterpartiet MP-elect accused of vote fraud in Borlänge has agreed a 'timeout' with his party, which Kristeligt Dagblad writes is now far from government.", ["politiken", "kristeligt_dagblad"]],
       "callouts": [
         {"kind": "quote", "text": "Free and fair elections are fundamental.", "attribution": "Mats Knutson, Sveriges Television's commentator", "attribution_source": "kristeligt_dagblad"}
       ],
@@ -150,7 +150,8 @@
       "device": "required",
       "kicker": "World",
       "headline": "Judge orders White House to restore access for CNN, MS Now and Politico",
-      "lede": ["A federal judge on Wednesday ordered the White House to temporarily restore access for CNN, MS Now and Politico, saying the ban announced on 18 September was likely unconstitutional.", ["guardian", "dr"]],
+      "headline_short": "Judge restores CNN, MS Now and Politico access",
+      "lede": ["A federal judge found the 18 September ban likely unconstitutional and ordered access temporarily restored.", ["guardian", "dr"]],
       "sources": [7, 14, 186, 201]
     },
     {
@@ -159,7 +160,8 @@
       "device": "required",
       "kicker": "Climate",
       "headline": "Klimarådet: food VAT cut would add 520,000 tonnes of CO2 globally",
-      "lede": ["Cutting food VAT as the government has promised would add 520,000 tonnes of CO2 emissions globally, Klimarådet's new calculations show.", ["politiken", "dr"]],
+      "headline_short": "Klimarådet: VAT cut adds 520,000 tonnes CO2",
+      "lede": ["The government's promised food VAT cut would add 520,000 tonnes of CO2 globally, Klimarådet's new calculations show.", ["politiken", "dr"]],
       "sources": [393, 645]
     },
     {
