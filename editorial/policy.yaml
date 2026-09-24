@@ -100,6 +100,10 @@ sources:
   one_article_per_publisher: true      # a second only when it carries distinct evidence the copy uses
   exclude_unless_sole_coverage: [live_blog, rolling_page, video_reel]
 
+# Feeds whose order is editorial. Only these count towards peak prominence, and only on scoring
+# publishers; every latest and section feed is chronological and scores nothing. Tested 8 September 2026.
+ranked_feeds: [borsen.homepage, jp.topnyheder]
+
 # Section resolution comes from feed provenance, never from a model. Each feed maps to the sections
 # an article seen in it belongs to; an article keeps the set of every section it was seen in. Latest
 # and homepage feeds carry no section. Two Børsen feeds map to nothing on purpose: breaking and
