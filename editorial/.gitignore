@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+var/
+runs/*/bundle/
+runs/*/window.json
+runs/*/window.md
+runs/*/sessions/

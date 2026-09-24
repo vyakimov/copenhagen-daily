@@ -268,3 +268,24 @@ def apply_verdicts_action(args: argparse.Namespace) -> dict[str, Any]:
         "fallen": result["fallen"],
         "guideline_notes": sum(len(r["guideline_notes"]) for r in result["stories"].values()),
     }
+
+
+@action("run")
+def run_action(args: argparse.Namespace) -> dict[str, Any]:
+    from .run import RunFailure, run_edition
+
+    policy = _policy()
+    try:
+        status = run_edition(args, policy)
+    except RunFailure as exc:
+        raise ActionError(exc.error_type, str(exc), exc.details) from exc
+    if status["outcome"] == "failed":
+        failure = status["failure"]
+        raise ActionError(failure["type"], f"{failure['phase']}: {failure['message']}", {"edition_id": status["edition_id"], "phase": failure["phase"], **failure.get("details", {})})
+    return {
+        "edition_id": status["edition_id"],
+        "outcome": status["outcome"],
+        "phases": [p["name"] for p in status["phases"]],
+        "published": status.get("published"),
+        "elapsed_s": status.get("elapsed_s"),
+    }

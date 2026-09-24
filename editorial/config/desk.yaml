@@ -1,0 +1,10 @@
+# Operational settings for the editorial desk runner. The editorial line is in policy.yaml; this file
+# says where things are and which tools run the sessions.
+publish_root: publisher/var/evaluation/site   # block 3's publish root; relative paths are from the repository root
+checker: claude                                # claude or codex; the brief is the same
+editor_command: claude                         # the Claude Code binary
+codex_command: codex
+editor_model: null                             # null keeps the CLI's default
+checker_model: null
+collect_before_export: true                    # poll block 1 once before exporting the window
+commit_runs: true                              # git-commit the run directory after an activated publish

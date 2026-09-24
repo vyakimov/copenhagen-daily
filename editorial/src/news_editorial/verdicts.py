@@ -169,3 +169,59 @@ def apply_verdicts(edition: dict[str, Any], verdicts: dict[str, Any], min_words:
             else:
                 send_back.append(story["id"])
     return {"edition": edition, "struck": struck_total, "stories": report, "send_back": send_back, "fallen": fallen}
+
+
+def _callout_text(callout: dict[str, Any]) -> str:
+    kind = callout["kind"]
+    if kind == "quote":
+        return f"{callout['text']} ({callout['attribution']})"
+    if kind == "figure":
+        return f"{callout['value']}: {callout['label']}"
+    if kind == "facts":
+        return f"{callout['title']}: " + " | ".join(callout["items"])
+    if kind == "box":
+        return f"{callout['label']}: {callout['text']}"
+    return f"{callout['title']}: " + " | ".join(f"{r['date']}: {r['text']}" for r in callout["rows"])
+
+
+def check_input(edition: dict[str, Any], window: dict[str, Any]) -> dict[str, Any]:
+    """What the checker reads: every sentence with its address, and the story's evidence. Nothing else."""
+    articles = {(a["source"], a["source_id"]): a for a in window["articles"]}
+    stories = []
+    for story in edition["stories"]:
+        copy_ = story["copy"]
+        sentences: list[dict[str, Any]] = []
+
+        def add(location: str, text: str, cites: list[str], split: bool = True) -> None:
+            parts = sentences_of(text) if split else [text]
+            for index, part in enumerate(parts):
+                sentences.append({"location": location, "sentence": index, "text": part, "cites": cites})
+
+        primary = [s["source"] for s in story["sources"] if s["primary"]]
+        add("headline", copy_["headline"], primary, split=False)
+        if copy_.get("deck"):
+            add("deck", copy_["deck"], primary, split=False)
+        if copy_.get("lede"):
+            add("lede", copy_["lede"]["text"], copy_["lede"]["sources"])
+        for variant in ("extended", "standard", "short"):
+            for index, paragraph in enumerate(copy_["body"].get(variant, [])):
+                add(f"{variant}[{index}]", paragraph["text"], paragraph["sources"])
+        for index, callout in enumerate(story["callouts"]):
+            cites = [callout["attribution_source"]] if callout["kind"] == "quote" else primary
+            add(f"callouts[{index}]", _callout_text(callout), cites, split=False)
+        evidence = []
+        for source in story["sources"]:
+            article = articles.get((source["source"], source["source_id"]), {})
+            evidence.append(
+                {
+                    "source": source["source"],
+                    "source_id": source["source_id"],
+                    "title": article.get("title", source["original_title"]),
+                    "description": article.get("description"),
+                    "published_at": source["published_at"],
+                    "url": source["url"],
+                    "primary": source["primary"],
+                }
+            )
+        stories.append({"id": story["id"], "role": story["role"], "sentences": sentences, "evidence": evidence})
+    return {"schema_version": 1, "edition_id": edition["edition"]["id"], "stories": stories}

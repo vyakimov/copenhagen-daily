@@ -7,7 +7,7 @@ JSON envelopes on stdout, and files on disk. Nothing imports across a block boun
 | Directory | Block | Status |
 |---|---|---|
 | `ingest/` | Block 1: deterministic RSS collection and immutable JSONL exports (Python) | Built. Rules in `ingest/AGENTS.md`. |
-| `editorial/` | Block 2: editorial desk producing one edition per run (a Claude Code session under a skill, with deterministic Python tools) | Policy, handbook, and golden examples in place; the tools, skills, and runner are not yet built. Design in `plans/news-editorial-architecture-plan.md`, build plan in `plans/news-editorial-build-plan.md`. |
+| `editorial/` | Block 2: editorial desk producing one edition per run (a Claude Code session under a skill, with deterministic Python tools) | Built: tools, desk and checker skills, and the runner; first scheduled runs pending. Design in `plans/news-editorial-architecture-plan.md`, build plan in `plans/news-editorial-build-plan.md`. |
 | `publisher/` | Block 3: web edition and TRMNL device page from an accepted edition (TypeScript, Astro, Playwright) | Built: web, store, and a single-composition device page. Spec in `plans/news-publishing-implementation-plan.md`. |
 
 Cross-block documents live in `plans/`. Repository-level agent skills live in `skills/`.
@@ -21,7 +21,7 @@ Cross-block documents live in `plans/`. Repository-level agent skills live in `s
 - `editorial/` is the only block that calls a language model. It has no browser, shell, or
   publishing credentials.
 - Every block exposes one self-locating POSIX `sh` wrapper (`ingest/gather_news.sh`,
-  `publisher/publish_news.sh`) that emits exactly one JSON object on stdout and diagnostics on stderr.
+  `editorial/edit_news.sh`, `publisher/publish_news.sh`) that emits exactly one JSON object on stdout and diagnostics on stderr.
   Use the wrapper; do not invoke `uv`, `npm`, `node`, or `astro` directly for routine work.
 - Published exports, editions, and bundles are immutable and atomically renamed into place. Never
   overwrite one.
