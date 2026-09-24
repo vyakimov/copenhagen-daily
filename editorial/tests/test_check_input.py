@@ -33,4 +33,5 @@ def test_check_input_attaches_the_evidence_from_the_window(policy):
     assert set(lead["evidence"][0]) == {"source", "source_id", "title", "description", "authors", "categories", "published_at", "url", "primary"}
     assert any(e["authors"] for story in doc["stories"] for e in story["evidence"])
     headline = lead["sentences"][0]
-    assert headline["location"] == "headline" and len(headline["cites"]) == len(lead["evidence"])
+    assert headline["location"] == "headline"
+    assert sorted(headline["cites"]) == sorted({e["source"] for e in lead["evidence"]})
