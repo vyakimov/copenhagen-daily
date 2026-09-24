@@ -138,7 +138,10 @@ def rank(checked: dict[str, Any], window: dict[str, Any], memory: dict[str, Any]
     for n in checked["singletons"]:
         candidates.append(_candidate(f"s{n}", None, [n], None, articles, memory, policy, previous_cutoffs, threads))
     eligible = [c for c in candidates if c["eligible"]]
-    eligible.sort(key=lambda c: (-c["score"], -c["breadth"], c["latest_published_at"], c["id"]), reverse=False)
+    # Highest score, then broadest, then the fresher story, then the id for determinism.
+    eligible.sort(key=lambda c: c["id"])
+    eligible.sort(key=lambda c: c["latest_published_at"], reverse=True)
+    eligible.sort(key=lambda c: (-c["score"], -c["breadth"]))
     for position, candidate in enumerate(eligible, start=1):
         candidate["rank"] = position
         if position > policy.limits.stories_written:

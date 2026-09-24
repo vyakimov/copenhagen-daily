@@ -29,6 +29,11 @@ Every deterministic step is an action of `<repo>/editorial/edit_news.sh`, which 
 object; read `ok`, then `result` or `error`. Call it with `--run <run directory>`. You do not compute
 scores, resolve sources, or validate contracts yourself: the tools do, and their files are the record.
 
+The shell is allowed for that wrapper only, invoked by its absolute path as the first word of the
+command: no `cd`, no `sh`, no pipes, and no `jq`, `python`, or `cat`. Anything else is denied and
+costs you a turn. Read files with the Read tool; it handles large JSON, and `window.md` is the
+reading view so that you rarely need `window.json` whole.
+
 ## Which mode you are in
 
 - `send-back.json` exists and its `send_back` list is not empty: **send-back mode**, below.

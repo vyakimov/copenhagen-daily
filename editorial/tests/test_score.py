@@ -133,3 +133,14 @@ def test_singletons_rank_too(policy):
     single = next(r for r in ranking["candidates"] if r["id"] == "s14")  # BBC drone: linked only
     assert single["members"] == [14] and single["decision"] == "not_in_danish_media"
     assert any(r["id"].startswith("s") and r["eligible"] for r in ranking["candidates"])
+
+
+def test_ties_break_towards_the_fresher_story(policy):
+    window = _window(policy)
+    memory = _memory(window)
+    checked = check_clusters(_clusters(), window)
+    ranking = rank(checked, window, memory, policy)
+    ranked = [c for c in ranking["candidates"] if c["rank"] is not None]
+    for earlier, later in zip(ranked, ranked[1:]):
+        if earlier["score"] == later["score"] and earlier["breadth"] == later["breadth"]:
+            assert earlier["latest_published_at"] >= later["latest_published_at"], (earlier["id"], later["id"])

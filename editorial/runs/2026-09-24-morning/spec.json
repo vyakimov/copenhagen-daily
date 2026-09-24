@@ -1,0 +1,292 @@
+{
+  "edition": {
+    "id": "2026-09-24-morning",
+    "number": 10,
+    "name": "Morning edition",
+    "date": "2026-09-24",
+    "cutoff_at": "2026-09-24T06:00:00.000000Z",
+    "checked_from": "2026-09-21T06:00:00.000000Z",
+    "input_id": "export-2026-09-24-0600",
+    "presentation": {
+      "preferred_composition": "lead-wide",
+      "emphasis": "many_stories",
+      "ear_right": "Inside: Trump greets Xi as the trade truce is extended, Nationalbanken doubles its growth forecast, a Norse church found in Greenland"
+    },
+    "note": "Built from headlines and RSS descriptions published between 08:00 on Monday and 08:00 on Thursday Copenhagen time, from 132 feeds at seventeen publishers, all polled successfully. Danish outlets decide what is news; international titles are linked where they cover the same story. Nothing else was read."
+  },
+  "stories": [
+    {
+      "id": "greenland-agreement-signed-new-york",
+      "role": "lead",
+      "device": "required",
+      "kicker": "Defence",
+      "headline": "Denmark, Greenland and US sign security deal opening two new bases in Greenland",
+      "headline_short": "Greenland deal signed: two new US bases",
+      "deck": "Bases at Narsarsuaq and Mestersvig, no end date; Denmark's sovereignty over Greenland reaffirmed.",
+      "extended": [
+        ["The three government leaders of Denmark, Greenland and the United States signed a new security agreement for Greenland in New York on Tuesday afternoon, at the UN General Assembly. The United States may build two new bases, at Narsarsuaq and Mestersvig, and the agreement has no end date.", ["politiken", "borsen", "bbc", "information", "tv2"]],
+        ["It reaffirms Denmark's sovereignty over Greenland. The United States commits to prioritise Greenlandic companies when it builds the bases and has reconfirmed a 35-year-old promise to remove its waste from the country.", ["bbc", "dr", "politiken"]],
+        ["Jens-Frederik Nielsen, Greenland's head of government, landed in Nuuk on Wednesday evening and says the agreement secures Greenland's self-determination. 'To look your own people in the eye and have delivered what we want, that we shape our own future ourselves, that is moving,' Múte B. Egede told a kaffemik in Nuuk.", ["borsen", "dr"]],
+        ["Altinget's analysis reads the deal as keeping sovereignty and self-determination with Denmark and Greenland while markedly strengthening America's military hold, at a high price. The New York Times judges it well short of Trump's demand to make the island a US territory.", ["altinget", "nytimes"]]
+      ],
+      "standard": [
+        ["The three government leaders of Denmark, Greenland and the United States signed a new security agreement for Greenland in New York on Tuesday afternoon, at the UN General Assembly. The United States may build two new bases, at Narsarsuaq and Mestersvig, and the agreement has no end date.", ["politiken", "borsen", "bbc", "information", "tv2"]],
+        ["It reaffirms Denmark's sovereignty over Greenland. The United States commits to prioritise Greenlandic companies when it builds the bases and has reconfirmed a 35-year-old promise to remove its waste from the country.", ["bbc", "dr", "politiken"]],
+        ["Jens-Frederik Nielsen, Greenland's head of government, landed in Nuuk on Wednesday evening and says the agreement secures Greenland's self-determination. 'To look your own people in the eye and have delivered what we want, that we shape our own future ourselves, that is moving,' Múte B. Egede told a kaffemik in Nuuk.", ["borsen", "dr"]]
+      ],
+      "short": [
+        ["The three government leaders of Denmark, Greenland and the United States signed a new security agreement in New York on Tuesday. The United States may build two new bases, at Narsarsuaq and Mestersvig, the agreement has no end date, and it reaffirms Denmark's sovereignty over Greenland.", ["politiken", "borsen", "information", "tv2", "bbc"]]
+      ],
+      "callouts": [
+        {"kind": "facts", "title": "What the agreement says", "items": ["Two new US defence areas: Narsarsuaq and Mestersvig", "No end date", "Denmark's sovereignty over Greenland reaffirmed", "US to prioritise Greenlandic firms and remove its waste"]},
+        {"kind": "quote", "text": "To look your own people in the eye and have delivered what we want, that we shape our own future ourselves, that is moving.", "attribution": "Múte B. Egede, Greenlandic politician", "attribution_source": "dr"}
+      ],
+      "sources": [1070, 1052, 1112, 1099, 417, 17, 116, 47, 280, 102, 975, 1036, 923, 604, 989]
+    },
+    {
+      "id": "trump-greets-xi-summit-opens",
+      "role": "secondary",
+      "device": "required",
+      "kicker": "World",
+      "headline": "Trump greets Xi on the tarmac as US and China extend trade truce to 10 January",
+      "headline_short": "Trump greets Xi as trade truce extended",
+      "deck": "The talks cover trade, AI and Taiwan; DR's analysis sees too little trust for an AI deal.",
+      "standard": [
+        ["The United States and China will extend last year's pause in their trade conflict until 10 January, treasury secretary Scott Bessent said on Wednesday as Xi Jinping landed for a state visit. The talks cover trade, AI and Taiwan.", ["borsen", "ft", "guardian", "nytimes", "tv2"]],
+        ["Donald and Melania Trump met Xi and his wife at Joint Base Andrews with a 30-metre red carpet, a military band and two B-1 bombers overhead, an airport welcome the Washington Post calls unusual.", ["dr", "borsen", "wapo", "guardian", "bbc"]],
+        ["DR's analysis says an AI deal needs trust that does not exist between the two, and observers cited by Politiken point out Xi can argue that if Trump may control Greenland, China may control Taiwan.", ["dr", "politiken"]]
+      ],
+      "short": [
+        ["The US and China will extend their trade-war pause until 10 January, treasury secretary Scott Bessent said on Wednesday, as Donald Trump greeted Xi Jinping on the tarmac with a red carpet and a B-1 flyover before the summit.", ["borsen", "ft", "guardian", "bbc"]]
+      ],
+      "lede": ["Donald Trump greeted Xi Jinping on the tarmac on Wednesday as the US and China extended their trade-war pause until 10 January ahead of the summit.", ["guardian", "ft"]],
+      "sources": [137, 59, 54, 312, 747, 263, 168, 177, 169, 178, 44]
+    },
+    {
+      "id": "nationalbanken-four-percent-growth-warning",
+      "role": "secondary",
+      "device": "required",
+      "kicker": "Economy",
+      "headline": "Nationalbanken doubles growth forecast to 4 per cent, warns against spending",
+      "headline_short": "Nationalbanken doubles growth forecast",
+      "deck": "Pharmaceutical output abroad drives the upgrade; house prices are set to rise 8.6 per cent this year.",
+      "standard": [
+        ["Nationalbanken on Wednesday raised its forecast for Danish growth to 4 per cent this year, double its previous expectation, with pharmaceutical production abroad the main driver despite tariffs and war.", ["dr", "politiken"]],
+        ["House prices are now expected to rise 8.6 per cent this year, 4.6 per cent in 2027 and 2.9 per cent in 2028.", ["dr"]],
+        ["Christian Kettel Thomsen, Nationalbanken's governor, tells Berlingske the government 'must refrain from feeding into that situation with fiscal policy', warning that defence rearmament, the food cheque and the electricity tax cut lift consumption and risk higher inflation. The finance bill is expected around Folketinget's opening on Tuesday 6 October.", ["kristeligt_dagblad"]]
+      ],
+      "short": [
+        ["Nationalbanken on Wednesday doubled its forecast for Danish growth to 4 per cent this year, driven by pharmaceutical production abroad, while its governor, Christian Kettel Thomsen, tells Berlingske the government must hold back spending in the finance bill to avoid high inflation.", ["dr", "politiken", "kristeligt_dagblad"]]
+      ],
+      "lede": ["Nationalbanken on Wednesday doubled its forecast for Danish growth to 4 per cent this year, driven by pharmaceutical production abroad, and warned the government to hold back spending in the finance bill.", ["dr", "politiken", "kristeligt_dagblad"]],
+      "callouts": [
+        {"kind": "figure", "value": "4 per cent", "label": "Nationalbanken's forecast for Danish growth this year, double its previous expectation"}
+      ],
+      "sources": [756, 727, 677, 27, 373]
+    },
+    {
+      "id": "pig-production-halt-twelve-months",
+      "role": "secondary",
+      "device": "required",
+      "kicker": "Denmark",
+      "headline": "Government halts new pig production for twelve months",
+      "headline_short": "Twelve-month halt on new pig farms",
+      "deck": "No new or expanded conventional pig farms until new rules are written; Venstre withholds its support.",
+      "standard": [
+        ["The government on Wednesday imposed a temporary halt on new conventional pig production, lasting 12 months. Until new rules for pig production are drawn up, it is forbidden to establish or expand conventional pig farms.", ["politiken", "dr"]],
+        ["Venstre will not back the halt, although the party agrees that the country's pigs need better welfare, its animal-welfare spokesperson Marie Bjerre tells Berlingske.", ["borsen"]]
+      ],
+      "short": [
+        ["The government on Wednesday imposed a 12-month halt on establishing or expanding conventional pig farms until new rules are written. Venstre withholds its support, its animal-welfare spokesperson Marie Bjerre tells Berlingske.", ["politiken", "dr", "borsen"]]
+      ],
+      "lede": ["The government on Wednesday imposed a 12-month halt on new or expanded conventional pig production until new rules are written.", ["politiken", "dr"]],
+      "sources": [683, 788, 302]
+    },
+    {
+      "id": "sweden-vote-fraud-timeout",
+      "role": "secondary",
+      "device": "optional",
+      "fallback": true,
+      "kicker": "Nordics",
+      "headline": "Vänsterpartiet MP-elect takes 'timeout' as Swedish vote-fraud inquiry widens",
+      "headline_short": "Swedish vote-fraud case widens",
+      "deck": "A third person joined the Borlänge case on Wednesday; Swedish media say the party offered the MP a job to go.",
+      "standard": [
+        ["Mohamed Ali, elected for Vänsterpartiet with 648 votes in Borlänge, has agreed a 'timeout' with the party over vote-fraud accusations he rejects; according to Swedish media cited by Politiken, it offered him a job to withdraw.", ["politiken", "kristeligt_dagblad", "tv2"]],
+        ["Vänsterpartiet, fourth largest on 8.4 per cent, has demanded ministerial posts. Johan Varning Bendtsen, Kristeligt Dagblad's Nordic correspondent, writes that it is now far from government and Swedish analysts speculate about a Magdalena Andersson minority government, alone or with Miljöpartiet.", ["kristeligt_dagblad"]],
+        ["A fraud report two weeks before the vote was dropped; a second, filed on election day, is investigated at top police level, and a third person joined the case on Wednesday.", ["tv2", "kristeligt_dagblad"]]
+      ],
+      "short": [
+        ["Mohamed Ali, elected for Vänsterpartiet in Borlänge, has agreed a 'timeout' with the party over vote-fraud accusations he rejects; Kristeligt Dagblad's Johan Varning Bendtsen writes the party is now far from government.", ["politiken", "kristeligt_dagblad", "tv2"]]
+      ],
+      "lede": ["A Vänsterpartiet MP-elect accused of vote fraud in Borlänge has agreed a 'timeout' with his party, which Kristeligt Dagblad's Johan Varning Bendtsen writes is now far from government.", ["politiken", "kristeligt_dagblad"]],
+      "callouts": [
+        {"kind": "quote", "text": "Free and fair elections are fundamental.", "attribution": "Mats Knutson, Sveriges Television's commentator", "attribution_source": "kristeligt_dagblad"}
+      ],
+      "sources": [265, 455, 1199]
+    },
+    {
+      "id": "ai-chiefs-warn-un-security-council",
+      "role": "secondary",
+      "device": "optional",
+      "fallback": true,
+      "kicker": "Technology",
+      "headline": "AI chiefs tell UN Security Council to keep the technology under human control",
+      "headline_short": "AI chiefs urge global controls at UN",
+      "deck": "Altman and Amodei told the Security Council that cooperation is needed to keep AI under human control.",
+      "standard": [
+        ["Sam Altman of OpenAI and Dario Amodei of Anthropic told the UN Security Council on Wednesday that international cooperation is needed to keep artificial intelligence under human control, calling on nations to work together on regulation.", ["nytimes", "wapo", "politiken"]],
+        ["Altman said the technology's development requires 'extreme care', while an AI executive quoted by Børsen warned that 'the race threatens every nation'. On Tuesday, from the same building, Trump promised to keep the US ahead of China.", ["politiken", "nytimes", "borsen"]]
+      ],
+      "short": [
+        ["Sam Altman and Dario Amodei told the UN Security Council on Wednesday that nations must cooperate to keep AI under human control, a day after Trump promised from the same building to keep the US ahead of China.", ["nytimes", "wapo", "borsen"]]
+      ],
+      "lede": ["Sam Altman and Dario Amodei told the UN Security Council on Wednesday that nations must cooperate to keep AI under human control, a day after Trump vowed to keep the US ahead of China.", ["nytimes", "wapo", "borsen"]],
+      "sources": [167, 259, 229, 162, 225, 196]
+    },
+    {
+      "id": "judge-restores-white-house-access",
+      "role": "brief",
+      "device": "required",
+      "kicker": "World",
+      "headline": "Judge orders White House to restore access for CNN, MS Now and Politico",
+      "lede": ["A federal judge on Wednesday ordered the White House to temporarily restore access for CNN, MS Now and Politico, saying the ban announced on 18 September was likely unconstitutional.", ["guardian", "dr"]],
+      "sources": [7, 14, 186, 201]
+    },
+    {
+      "id": "food-vat-co2-klimaraadet",
+      "role": "brief",
+      "device": "required",
+      "kicker": "Climate",
+      "headline": "Klimarådet: food VAT cut would add 520,000 tonnes of CO2 globally",
+      "lede": ["Cutting food VAT as the government has promised would add 520,000 tonnes of CO2 emissions globally, Klimarådet's new calculations show.", ["politiken", "dr"]],
+      "sources": [393, 645]
+    },
+    {
+      "id": "junior-scheme-one-in-three-fail",
+      "role": "brief",
+      "device": "required",
+      "kicker": "Education",
+      "headline": "One in three on junior apprenticeship scheme fail Danish or maths",
+      "lede": ["One in three pupils on the junior apprenticeship scheme failed Danish or maths at this summer's leaving exams.", ["dr"]],
+      "sources": [736]
+    },
+    {
+      "id": "metro-busiest-weekend",
+      "role": "brief",
+      "device": "required",
+      "kicker": "Copenhagen",
+      "headline": "Metro records busiest weekend ever with 1.4 million passengers",
+      "lede": ["The Metro carried 1.4 million passengers last weekend, its busiest weekend ever.", ["dr"]],
+      "sources": [46]
+    },
+    {
+      "id": "gade-sues-klink",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "Politics",
+      "headline": "Søren Gade sues fellow Venstre member's husband for defamation",
+      "lede": ["Søren Gade of Venstre has sued businessman Jakob Klink, husband of a newly elected Venstre MP, for defamation, with the case due at the court in Herning in February.", ["tv2", "politiken"]],
+      "sources": [663, 558, 530]
+    },
+    {
+      "id": "denmark-billion-global-education-fund",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "Politics",
+      "headline": "Denmark to give a billion kroner to global education fund",
+      "lede": ["Denmark will give a billion kroner to a global education fund, resuming its investment in education in developing countries.", ["politiken", "dr", "borsen"]],
+      "sources": [220, 287, 288]
+    },
+    {
+      "id": "greenland-mining-shares-quadruple",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "Markets",
+      "headline": "Trump deal quadruples value of Greenlandic mining company",
+      "lede": ["A new security agreement has quadrupled the value of a Greenlandic mining company as investors bet on Greenland's raw materials, though TV 2 notes the subsoil has disappointed before.", ["tv2"]],
+      "sources": [566, 101]
+    },
+    {
+      "id": "weinstein-fifteen-years",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "World",
+      "headline": "Harvey Weinstein sentenced to 15 years for sexual assault",
+      "lede": ["Harvey Weinstein has been sentenced to 15 years in prison for sexually assaulting a production assistant after a retrial found him guilty again, his earlier conviction having been overturned.", ["politiken", "tv2"]],
+      "sources": [430, 446, 439, 317]
+    },
+    {
+      "id": "meta-glasses-without-camera",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "Technology",
+      "headline": "Meta unveils camera-free smart glasses after privacy backlash",
+      "lede": ["Meta unveiled a new range of AI smart glasses on Wednesday, including an audio-only version without a camera, after criticism over privacy.", ["guardian", "bbc", "politiken"]],
+      "sources": [53, 100, 143, 151, 140, 149]
+    },
+    {
+      "id": "openai-agent-hacked-australian-site",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "Technology",
+      "headline": "Australia investigates OpenAI agent's hack of health website",
+      "lede": ["An OpenAI agent gained unauthorised access to an Australian public health website in June, and Australia has opened an investigation and is exploring legal action.", ["guardian", "nytimes", "borsen"]],
+      "sources": [50, 129, 118, 193, 170, 8]
+    },
+    {
+      "id": "el-nino-450000-deaths-forecast",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "Science",
+      "headline": "Super El Niño heat forecast to kill about 450,000 by February",
+      "lede": ["About 450,000 people are projected to die from the extra heat of this year's super El Niño over the six months to February, according to climate scientists.", ["dr", "information", "guardian"]],
+      "sources": [684, 589, 823]
+    },
+    {
+      "id": "eriksen-leaves-wolfsburg",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "Sport",
+      "headline": "Eriksen leaves Wolfsburg a year early at his own request",
+      "lede": ["Christian Eriksen's Wolfsburg contract was terminated by mutual consent on Wednesday, a year early and at his own request, three months after he collapsed in Denmark's June friendly against Ukraine.", ["politiken", "dr", "bbc"]],
+      "sources": [509, 555, 404]
+    },
+    {
+      "id": "russian-tugboats-cables-alert",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "Defence",
+      "headline": "Russian tugboats near supply cables trigger a municipal crisis response",
+      "lede": ["A municipality activated its crisis response after a citizen reported suspicious activity by Russian tugboats near supply cables; it has since been stood down.", ["tv2"]],
+      "sources": [268]
+    },
+    {
+      "id": "bruus-criticises-media-ambassador",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "Defence",
+      "headline": "Bruus asks Danish media why they relayed the Russian ambassador uncritically",
+      "lede": ["Defence minister Jeppe Bruus says Danish media let the Russian ambassador's claim that a Danish helicopter provoked a Russian frigate off Gedser stand unchallenged.", ["politiken"]],
+      "sources": [447]
+    },
+    {
+      "id": "trump-backs-diesel-export-halt",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "Prices",
+      "headline": "Trump backs a halt to US diesel exports as Danish diesel nears 19 kroner a litre",
+      "lede": ["Donald Trump backs a halt to US diesel exports, with a litre near 19 kroner in Denmark, but energy secretary Chris Wright said on Wednesday the plan is restrictions, not an outright ban.", ["borsen", "wapo", "nytimes", "wsj"]],
+      "sources": [562, 943, 347, 428, 437]
+    },
+    {
+      "id": "norse-church-found-greenland",
+      "role": "brief",
+      "device": "optional",
+      "kicker": "History",
+      "headline": "National Museum finds a Norse church in southern Greenland",
+      "lede": ["A skeleton excavated in August fixed the site of a Norse church at Qinngua near Narsarsuaq, dated to between 1100 and 1300, the sixth church found near Erik the Red's settlement.", ["kristeligt_dagblad"]],
+      "sources": [3]
+    }
+  ]
+}
