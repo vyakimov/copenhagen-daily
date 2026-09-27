@@ -4,7 +4,7 @@ publish_root: publisher/var/evaluation/site   # block 3's publish root; relative
 checker: claude                                # claude or codex; the brief is the same
 editor_command: claude                         # the Claude Code binary
 codex_command: codex
-editor_model: null                             # null keeps the CLI's default
-checker_model: null
+editor_model: claude-opus-5-5                            # null keeps the CLI's default
+checker_model: claude-opus-5-5
 collect_before_export: true                    # poll block 1 once before exporting the window
 commit_runs: true                              # git-commit the run directory after an activated publish

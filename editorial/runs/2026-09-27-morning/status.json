@@ -4,7 +4,7 @@
  "cutoff_at": "2026-09-27T01:25:00.000000Z",
  "started_at": "2026-09-27T01:26:44.332615Z",
  "dry_run": false,
- "outcome": "running",
+ "outcome": "published",
  "phases": [
   {
    "name": "collect",
@@ -86,6 +86,11 @@
    "finished_at": "2026-09-27T01:44:24.158659Z",
    "touched": 3,
    "total": 3
+  },
+  {
+   "name": "archive",
+   "finished_at": "2026-09-27T01:44:24.216251Z",
+   "committed": 13
   }
  ],
  "failure": null,
@@ -125,6 +130,6 @@
    ]
   }
  },
- "updated_at": "2026-09-27T01:44:24.158673Z",
- "elapsed_s": 1059.8
+ "updated_at": "2026-09-27T01:44:24.216663Z",
+ "elapsed_s": 1059.9
 }
