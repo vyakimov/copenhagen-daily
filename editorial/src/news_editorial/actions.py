@@ -289,3 +289,45 @@ def run_action(args: argparse.Namespace) -> dict[str, Any]:
         "published": status.get("published"),
         "elapsed_s": status.get("elapsed_s"),
     }
+
+
+def _publish_root(args: argparse.Namespace) -> Path:
+    from .run import load_desk_config
+
+    config = load_desk_config()
+    root = Path(args.publish_root or config["publish_root"])
+    return root if root.is_absolute() else REPO / root
+
+
+@action("deliver")
+def deliver_action(args: argparse.Namespace) -> dict[str, Any]:
+    from .deliver import deliver
+    from .run import load_desk_config
+
+    config = load_desk_config()
+    try:
+        return deliver(_publish_root(args), config.get("delivery") or {})
+    except Exception as exc:  # noqa: BLE001 -- the AWS CLI's failure is the message.
+        raise ActionError("delivery_failed", str(exc)) from exc
+
+
+@action("freshness")
+def freshness_action(args: argparse.Namespace) -> dict[str, Any]:
+    from .freshness import staleness
+    from .notify import notify
+    from .run import load_desk_config
+
+    config = load_desk_config()
+    max_age = args.max_age_hours or config.get("max_edition_age_hours", 30)
+    report = staleness(_publish_root(args), max_age_hours=max_age)
+    if report["stale"]:
+        if args.notify:
+            age = report["age_hours"]
+            body = (
+                f"The latest activated edition is {report['edition_id']} with cutoff {report['cutoff_at']}, "
+                f"{age} hours old; the limit is {max_age}.\nCheck editorial/runs and status.json, then rerun by hand."
+                if report["edition_id"] else "No edition has ever been activated at the publish root."
+            )
+            report["notification"] = notify("Copenhagen Daily: the paper is stale", body, config.get("notify") or {})
+        raise ActionError("stale_edition", "the latest activated edition is older than the limit", report)
+    return report

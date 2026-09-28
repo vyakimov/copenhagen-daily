@@ -120,8 +120,8 @@ the story's spec entry as JSON. Assemble the entries yourself. For a handful of 
 directly.
 
 **8. The spec.** Write `spec.json` to `editorial/contracts/spec.v1.schema.json`. The `edition`
-block: `id` is the run directory's name; `number` is memory's `next_edition_number`; `name` is
-"Morning edition" or as the policy's schedule says; `date` is the edition date; `cutoff_at` and
+block: `id` is the run directory's name; `number` is memory's `next_edition_number`; `name` is the weekday's edition, "Monday edition",
+from the edition date; `date` is the edition date; `cutoff_at` and
 `input_id` come from `window.json`; `checked_from` is the window's `since`; `presentation` carries
 an emphasis of `one_big_story`, `quiet_day`, or `many_stories`, and an
 `ear_right` line naming two or three inside stories; `note` is the coverage note in the golden

@@ -53,6 +53,8 @@ ACTIONS: dict[str, dict[str, Any]] = {
     },
     "run": {"description": "Produce one edition end to end under the policy's limits.", "mutates": True},
     "status": {"description": "Report the most recent run.", "mutates": False},
+    "deliver": {"description": "Sync block 3's live site to the configured bucket and invalidate the distribution.", "mutates": True},
+    "freshness": {"description": "Check the age of the latest activated edition; fail when it is stale.", "mutates": False},
 }
 
 Handler = Callable[[argparse.Namespace], dict[str, Any]]
@@ -120,6 +122,13 @@ def build_parser() -> JSONArgumentParser:
     p.add_argument("--dry-run", action="store_true", help="build and check, then publish --dry-run; no commit, no memory")
     p.add_argument("--no-collect", action="store_true", help="skip block 1's poll before the export")
     p.add_argument("--checker", choices=["claude", "codex"], help="which tool checks the copy; defaults to config/desk.yaml")
+    p.add_argument("--retry", action="store_true", help="run only if today's edition has not already succeeded")
+    p = sub.add_parser("deliver")
+    p.add_argument("--publish-root", help="block 3's publish root; defaults to config/desk.yaml")
+    p = sub.add_parser("freshness")
+    p.add_argument("--publish-root", help="block 3's publish root; defaults to config/desk.yaml")
+    p.add_argument("--max-age-hours", type=float, help="defaults to config/desk.yaml")
+    p.add_argument("--notify", action="store_true", help="send the failure notification when stale")
     return parser
 
 

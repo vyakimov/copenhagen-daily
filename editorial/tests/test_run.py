@@ -110,7 +110,8 @@ def make_runner(policy, tmp_path, fakes, **kwargs):
     return Runner(
         policy=policy, run_dir=run_dir, edition_id=EDITION_ID, cutoff=CUTOFF, publish_root=fakes.publish_root,
         registry=fakes.registry, ingest=fakes.ingest, publisher=fakes.publisher, editor=fakes.editor, checker=fakes.checker,
-        git=lambda *a: fakes.calls.append(("git", a[0])), collect=True, repo=tmp_path, **kwargs,
+        git=lambda *a: fakes.calls.append(("git", a[0])), collect=True, repo=tmp_path,
+        **{"stray_changes": lambda: [], "lock_path": tmp_path / "run.lock", **kwargs},
     )
 
 
@@ -120,7 +121,7 @@ def test_happy_path_publishes_and_records(policy, tmp_path):
     status = runner.run()
     assert status["outcome"] == "published", status
     assert [p["name"] for p in status["phases"]] == [
-        "collect", "window", "memory", "editor", "check", "preflight", "publish", "receipt", "threads", "archive"]
+        "collect", "window", "memory", "editor", "check", "preflight", "publish", "receipt", "threads", "deliver", "archive"]
     assert ("publisher", "publish") in fakes.calls and ("git", "commit") in fakes.calls
     assert read_json(runner.run_dir / "status.json")["outcome"] == "published"
     assert (runner.run_dir / "check-input.json").exists()
@@ -235,3 +236,54 @@ def test_a_second_run_finds_the_lock_busy(policy, tmp_path):
         status = make_runner(policy, tmp_path, fakes, lock_path=lock).run()
     assert status["outcome"] == "failed" and status["failure"]["type"] == "lock_busy"
     assert fakes.calls == []
+
+
+def test_failure_notifies(policy, tmp_path):
+    fakes = Fakes(tmp_path, editor_hangs=True)
+    notes = []
+    runner = make_runner(policy, tmp_path, fakes, notifier=lambda subject, body: notes.append((subject, body)))
+    status = runner.run()
+    assert status["outcome"] == "failed"
+    assert len(notes) == 1 and "editor_timeout" in notes[0][1] and EDITION_ID in notes[0][0]
+
+
+def test_success_does_not_notify(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    notes = []
+    make_runner(policy, tmp_path, fakes, notifier=lambda s, b: notes.append(s)).run()
+    assert notes == []
+
+
+def test_delivery_syncs_the_live_site_after_activation(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    delivered = []
+    runner = make_runner(policy, tmp_path, fakes, deliverer=lambda root: delivered.append(root) or {"synced": True})
+    status = runner.run()
+    assert status["outcome"] == "published"
+    assert delivered == [fakes.publish_root]
+    names = [p["name"] for p in status["phases"]]
+    assert names.index("deliver") > names.index("threads") and names.index("deliver") < names.index("archive")
+
+
+def test_delivery_is_skipped_on_a_dry_run(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    delivered = []
+    status = make_runner(policy, tmp_path, fakes, deliverer=lambda root: delivered.append(root), dry_run=True).run()
+    assert delivered == [] and next(p for p in status["phases"] if p["name"] == "deliver")["skipped"] is True
+
+
+def test_retry_skips_an_edition_that_already_succeeded(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    make_runner(policy, tmp_path, fakes, dry_run=True).run()
+    again = Fakes(tmp_path)
+    status = make_runner(policy, tmp_path, again, retry=True).run()
+    assert status["outcome"] == "skipped"
+    assert ("editor", "edition") not in again.calls
+
+
+def test_retry_resumes_a_failed_edition(policy, tmp_path):
+    fakes = Fakes(tmp_path, editor_hangs=True)
+    make_runner(policy, tmp_path, fakes).run()
+    again = Fakes(tmp_path)
+    status = make_runner(policy, tmp_path, again, retry=True).run()
+    assert status["outcome"] == "published"

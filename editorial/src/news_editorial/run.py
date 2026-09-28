@@ -27,6 +27,8 @@ from .blocks import BlockError
 from .bundle import BundleError, load_bundle
 from .clusters import check_clusters, write_checked  # noqa: F401 -- re-exported for the desk
 from .contract import validate_edition
+from .deliver import deliver
+from .notify import notify
 from .memory import build_memory, load_registry, save_registry, write_memory
 from .paths import EDITORIAL, REPO, RUNS, VAR
 from .policy import Policy
@@ -197,8 +199,14 @@ class Runner:
         dry_run: bool = False,
         commit: bool = True,
         repo: Path = REPO,
+        notifier: Callable[[str, str], Any] | None = None,
+        deliverer: Callable[[Path], dict[str, Any]] | None = None,
+        retry: bool = False,
     ):
         self.repo = repo
+        self.notifier = notifier
+        self.deliverer = deliverer
+        self.retry = retry
         self.stray_changes = stray_changes
         self.lock_path = lock_path
         self.policy = policy
@@ -266,6 +274,11 @@ class Runner:
     def run(self) -> dict[str, Any]:
         if (self.run_dir / "status.json").is_file():
             previous = json.loads((self.run_dir / "status.json").read_text(encoding="utf8"))
+            if self.retry and previous.get("outcome") in {"published", "dry_run", "skipped"}:
+                self.status = previous
+                self.status["outcome"] = "skipped"
+                self.status["skipped_reason"] = f"the edition already ended as {previous.get('outcome')}"
+                return self.status
             if previous.get("outcome") == "published":
                 raise RunFailure("conflict", f"{self.edition_id} is already published; an edition id is used once", {"run": str(self.run_dir)})
         self.lock_path.parent.mkdir(parents=True, exist_ok=True)
@@ -297,6 +310,7 @@ class Runner:
                 ("publish", self._publish),
                 ("receipt", self._receipt),
                 ("threads", self._threads),
+                ("deliver", self._deliver),
                 ("archive", self._archive),
             ):
                 step()
@@ -304,11 +318,13 @@ class Runner:
             self.status["outcome"] = "failed"
             self.status["failure"] = {"phase": phase, "type": exc.error_type, "message": str(exc), "details": exc.details}
             self._write_status()
+            self._notify_failure()
             return self.status
         except Exception as exc:  # noqa: BLE001 -- a run that dies must not leave status.json at "running".
             self.status["outcome"] = "failed"
             self.status["failure"] = {"phase": phase, "type": "internal_error", "message": f"{type(exc).__name__}: {exc}", "details": {"traceback": traceback.format_exc()[-4000:]}}
             self._write_status()
+            self._notify_failure()
             return self.status
         self.status["outcome"] = "dry_run" if self.dry_run else "published"
         self._write_status()
@@ -517,6 +533,28 @@ class Runner:
         save_registry(self.registry, registry)
         self._phase("threads", touched=touched, total=len(registry["threads"]))
 
+    def _notify_failure(self) -> None:
+        if not self.notifier:
+            return
+        failure = self.status["failure"] or {}
+        subject = f"Copenhagen Daily: {self.edition_id} failed in {failure.get('phase')}"
+        body = (
+            f"Edition {self.edition_id} stopped in phase {failure.get('phase')}: {failure.get('type')}.\n"
+            f"{failure.get('message')}\n\nRun directory: {self.run_dir}\nStatus: {self.run_dir / 'status.json'}\n"
+            "The last activated edition stays in place. A retry runs later in the morning; after that, read the status and rerun by hand."
+        )
+        try:
+            self.notifier(subject, body)
+        except Exception as exc:  # noqa: BLE001 -- a failed notification must not hide the failure it reports.
+            sys.stderr.write(f"notification failed: {exc}\n")
+
+    def _deliver(self) -> None:
+        if self.dry_run or self.deliverer is None:
+            self._phase("deliver", skipped=True)
+            return
+        result = self.deliverer(self.publish_root)
+        self._phase("deliver", **(result or {}))
+
     def _archive(self) -> None:
         if self.dry_run or not self.commit:
             self._phase("archive", skipped=True)
@@ -553,5 +591,8 @@ def run_edition(args: Any, policy: Policy) -> dict[str, Any]:
         collect=config.get("collect_before_export", True) and not args.no_collect,
         dry_run=args.dry_run,
         commit=config.get("commit_runs", True),
+        notifier=lambda subject, body: notify(subject, body, config.get("notify") or {}),
+        deliverer=lambda root: deliver(root, config.get("delivery") or {}),
+        retry=getattr(args, "retry", False),
     )
     return runner.run()

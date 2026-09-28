@@ -2,11 +2,51 @@
 
 ## The schedule
 
-`config/ai.copenhagen-daily.edition.plist` is the launchd job for the Mac: copy it to
-`~/Library/LaunchAgents/`, replace `REPO`, and load it. It runs `edit_news.sh run` a few minutes after
-the policy's cutoff. On a server, the same command under cron. Do not install scheduler entries
-automatically. Block 1's five-minute collector must already be scheduled; the run polls once more
-before exporting so the window is current to the minute.
+The Mac is the newsroom; AWS is delivery only. Four launchd jobs in `config/launchd/` run everything,
+with logs under `var/launchd/`:
+
+| Job | When | Command |
+|---|---|---|
+| `ai.copenhagen-daily.collect` | every five minutes | block 1 `collect --once` |
+| `ai.copenhagen-daily.edition` | 08:05 local | `edit_news.sh run` |
+| `ai.copenhagen-daily.retry` | 10:30 local | `edit_news.sh run --retry`: runs only if the morning edition has not already succeeded, resuming a failed run from its first missing file |
+| `ai.copenhagen-daily.freshness` | 11:30 local | `edit_news.sh freshness --notify`: fails and notifies when the latest activated edition is older than `max_edition_age_hours` |
+
+Install them once:
+
+```sh
+for f in editorial/config/launchd/*.plist; do cp "$f" ~/Library/LaunchAgents/; launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/$(basename "$f"); done
+launchctl list | grep copenhagen
+```
+
+To stop one: `launchctl bootout gui/$(id -u)/ai.copenhagen-daily.edition`. launchd runs a missed
+calendar job when the Mac wakes, so a closed lid at 08:05 means a late edition, not a lost one.
+
+## Delivery
+
+After an activated publish the run syncs block 3's `live/` directory to the bucket named in
+`config/desk.yaml` under `delivery` and invalidates the CloudFront distribution, through the AWS CLI
+and the named profile. With no bucket configured the phase is skipped. `edit_news.sh deliver` does the
+same by hand, for example after a manual `recover`. The site is served unlisted: every page carries a
+`noindex` meta tag and the release root has a `robots.txt` that disallows everything; CloudFront
+should add an `X-Robots-Tag: noindex` header for files that are not HTML.
+
+## Being told
+
+A run that fails notifies the owner once, and the freshness job notifies when no edition is fresh.
+`notify.command` in `config/desk.yaml` names a script that receives the subject as its argument and
+the body on stdin. Without one, `var/smtp.env` sends an email:
+
+```
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=you@gmail.com
+SMTP_PASSWORD=an app password
+MAIL_FROM=you@gmail.com
+MAIL_TO=you@gmail.com
+```
+
+With neither, a macOS notification appears and the message goes to the job's stderr log.
 
 ## What a run does
 
@@ -49,5 +89,5 @@ A published edition id is never rerun; the next edition corrects it.
 ## Rehearsing without publishing
 
 `edit_news.sh run --dry-run` does everything up to `publish --dry-run --skip-device`, which assembles and removes a
-release under the publish root, and skips the receipt, the thread registry, and the commit. Use it
+release under the publish root, and skips the receipt, the thread registry, delivery, and the commit. Use it
 after changing the handbook, the policy, or a skill.

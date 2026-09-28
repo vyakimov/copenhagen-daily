@@ -1,0 +1,45 @@
+{
+ "schema_version": 1,
+ "edition_id": "2026-09-28-morning",
+ "cutoff_at": "2026-09-28T06:00:00.000000Z",
+ "started_at": "2026-09-28T12:11:58.692374Z",
+ "dry_run": false,
+ "outcome": "running",
+ "phases": [
+  {
+   "name": "collect",
+   "finished_at": "2026-09-28T12:11:58.693182Z",
+   "skipped": true
+  },
+  {
+   "name": "window",
+   "finished_at": "2026-09-28T12:12:02.585158Z",
+   "articles": 1511,
+   "feeds": 132,
+   "failed_feeds": 0
+  },
+  {
+   "name": "memory",
+   "finished_at": "2026-09-28T12:12:02.601744Z",
+   "editions": [
+    "2026-09-27-evening",
+    "2026-09-27-morning",
+    "2026-09-21-evening",
+    "2026-09-19-evening",
+    "2026-09-18-afternoon",
+    "2026-09-17-midday",
+    "2026-09-16-morning",
+    "2026-09-15-morning",
+    "2026-09-14-midday",
+    "2026-09-13-morning",
+    "2026-09-12-morning"
+   ],
+   "threads": 3,
+   "next_edition_number": 12
+  }
+ ],
+ "failure": null,
+ "published": null,
+ "updated_at": "2026-09-28T12:12:02.601758Z",
+ "elapsed_s": 3.9
+}
