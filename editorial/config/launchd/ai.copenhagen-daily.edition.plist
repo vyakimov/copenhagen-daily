@@ -32,7 +32,5 @@
 	<string>/Users/vy/Library/Logs/copenhagen-daily/edition.stdout.log</string>
 	<key>StandardErrorPath</key>
 	<string>/Users/vy/Library/Logs/copenhagen-daily/edition.stderr.log</string>
-	<key>ProcessType</key>
-	<string>Background</string>
 </dict>
 </plist>
