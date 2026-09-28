@@ -3,7 +3,7 @@
 ## The schedule
 
 The Mac is the newsroom; AWS is delivery only. Four launchd jobs in `config/launchd/` run everything,
-with logs under `var/launchd/`:
+with logs under `~/Library/Logs/copenhagen-daily/`:
 
 | Job | When | Command |
 |---|---|---|
@@ -19,7 +19,11 @@ for f in editorial/config/launchd/*.plist; do cp "$f" ~/Library/LaunchAgents/; l
 launchctl list | grep copenhagen
 ```
 
-To stop one: `launchctl bootout gui/$(id -u)/ai.copenhagen-daily.edition`. launchd runs a missed
+The repository lives under `~/Documents`, which macOS protects from background jobs, so each job runs
+its command through `/bin/sh`, which forks the wrapper and stays its parent. Grant Full Disk Access to
+`/bin/sh` once (System Settings, Privacy & Security, Full Disk Access, the plus button, then
+Shift-Command-G and `/bin/sh`), and every process the job starts inherits it. Without that grant the
+job's stderr log says `Operation not permitted`. To stop one: `launchctl bootout gui/$(id -u)/ai.copenhagen-daily.edition`. launchd runs a missed
 calendar job when the Mac wakes, so a closed lid at 08:05 means a late edition, not a lost one.
 
 ## Delivery

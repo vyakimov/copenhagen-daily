@@ -6,12 +6,12 @@
 	<string>ai.copenhagen-daily.retry</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Users/vy/Documents/Development/news-gatherer/editorial/edit_news.sh</string>
-		<string>run</string>
-		<string>--retry</string>
+		<string>/bin/sh</string>
+		<string>-c</string>
+		<string>/Users/vy/Documents/Development/news-gatherer/editorial/edit_news.sh run --retry; exit $?</string>
 	</array>
 	<key>WorkingDirectory</key>
-	<string>/Users/vy/Documents/Development/news-gatherer</string>
+	<string>/Users/vy</string>
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>PATH</key>
@@ -29,9 +29,9 @@
 		<integer>30</integer>
 	</dict>
 	<key>StandardOutPath</key>
-	<string>/Users/vy/Documents/Development/news-gatherer/editorial/var/launchd/retry.stdout.log</string>
+	<string>/Users/vy/Library/Logs/copenhagen-daily/retry.stdout.log</string>
 	<key>StandardErrorPath</key>
-	<string>/Users/vy/Documents/Development/news-gatherer/editorial/var/launchd/retry.stderr.log</string>
+	<string>/Users/vy/Library/Logs/copenhagen-daily/retry.stderr.log</string>
 	<key>ProcessType</key>
 	<string>Background</string>
 </dict>

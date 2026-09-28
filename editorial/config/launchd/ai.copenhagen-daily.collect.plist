@@ -6,12 +6,12 @@
 	<string>ai.copenhagen-daily.collect</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Users/vy/Documents/Development/news-gatherer/ingest/gather_news.sh</string>
-		<string>collect</string>
-		<string>--once</string>
+		<string>/bin/sh</string>
+		<string>-c</string>
+		<string>/Users/vy/Documents/Development/news-gatherer/ingest/gather_news.sh collect --once; exit $?</string>
 	</array>
 	<key>WorkingDirectory</key>
-	<string>/Users/vy/Documents/Development/news-gatherer</string>
+	<string>/Users/vy</string>
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>PATH</key>
@@ -24,9 +24,9 @@
 	<key>StartInterval</key>
 	<integer>300</integer>
 	<key>StandardOutPath</key>
-	<string>/Users/vy/Documents/Development/news-gatherer/editorial/var/launchd/collect.stdout.log</string>
+	<string>/Users/vy/Library/Logs/copenhagen-daily/collect.stdout.log</string>
 	<key>StandardErrorPath</key>
-	<string>/Users/vy/Documents/Development/news-gatherer/editorial/var/launchd/collect.stderr.log</string>
+	<string>/Users/vy/Library/Logs/copenhagen-daily/collect.stderr.log</string>
 	<key>ProcessType</key>
 	<string>Background</string>
 </dict>

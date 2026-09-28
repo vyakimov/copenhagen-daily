@@ -6,11 +6,12 @@
 	<string>ai.copenhagen-daily.edition</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Users/vy/Documents/Development/news-gatherer/editorial/edit_news.sh</string>
-		<string>run</string>
+		<string>/bin/sh</string>
+		<string>-c</string>
+		<string>/Users/vy/Documents/Development/news-gatherer/editorial/edit_news.sh run; exit $?</string>
 	</array>
 	<key>WorkingDirectory</key>
-	<string>/Users/vy/Documents/Development/news-gatherer</string>
+	<string>/Users/vy</string>
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>PATH</key>
@@ -28,9 +29,9 @@
 		<integer>5</integer>
 	</dict>
 	<key>StandardOutPath</key>
-	<string>/Users/vy/Documents/Development/news-gatherer/editorial/var/launchd/edition.stdout.log</string>
+	<string>/Users/vy/Library/Logs/copenhagen-daily/edition.stdout.log</string>
 	<key>StandardErrorPath</key>
-	<string>/Users/vy/Documents/Development/news-gatherer/editorial/var/launchd/edition.stderr.log</string>
+	<string>/Users/vy/Library/Logs/copenhagen-daily/edition.stderr.log</string>
 	<key>ProcessType</key>
 	<string>Background</string>
 </dict>
