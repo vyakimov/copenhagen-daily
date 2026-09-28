@@ -1,0 +1,1117 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-09-28-morning",
+  "stories": [
+    {
+      "id": "greenland-deal-welcomed-uk-norway",
+      "role": "lead",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Britain and Norway welcome the Greenland agreement",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        },
+        {
+          "location": "headline_short",
+          "sentence": 0,
+          "text": "UK and Norway back Greenland deal",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        },
+        {
+          "location": "deck",
+          "sentence": 0,
+          "text": "The deal lets the US open defence areas at Narsarsuaq and Mestersvig, and it still needs approval from Inatsisartut and the Folketing.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        },
+        {
+          "location": "extended[0]",
+          "sentence": 0,
+          "text": "Britain and Norway welcome the agreement between Greenland, Denmark and the US, the British prime minister's office said, according to Reuters.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        },
+        {
+          "location": "extended[0]",
+          "sentence": 1,
+          "text": "Andy Burnham and Jonas Gahr Støre, the British and Norwegian prime ministers, met in Liverpool on Sunday, at the Labour conference.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        },
+        {
+          "location": "extended[1]",
+          "sentence": 0,
+          "text": "Denmark, Greenland and the US entered into the agreement on Tuesday 22 September.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "extended[1]",
+          "sentence": 1,
+          "text": "It amends and extends the 1951 defence agreement, confirms the Kingdom of Denmark's sovereignty over Greenland and recognises the Greenlandic people's right to self-determination.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "extended[2]",
+          "sentence": 0,
+          "text": "The US may set up defence areas at Narsarsuaq and Mestersvig and expand Pituffik Space Base, formerly the Thule base; other sites need Danish and Greenlandic approval.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "extended[2]",
+          "sentence": 1,
+          "text": "The agreement opens the way for the US Golden Dome missile defence in Greenland and restricts investment in sensitive sectors from countries outside the EU and NATO.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "extended[3]",
+          "sentence": 0,
+          "text": "It has no fixed end date.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "extended[3]",
+          "sentence": 1,
+          "text": "After signing, it must be approved first by Inatsisartut, Greenland's parliament, and then by the Folketing.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "extended[4]",
+          "sentence": 0,
+          "text": "Political forces and American money men are still trying to increase their influence in the far north, a leading US analyst tells DR.",
+          "cites": [
+            "dr"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 0,
+          "text": "Britain and Norway welcome the agreement between Greenland, Denmark and the US, the British prime minister's office said, according to Reuters.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 1,
+          "text": "Andy Burnham and Jonas Gahr Støre, the British and Norwegian prime ministers, met in Liverpool on Sunday, at the Labour conference.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 0,
+          "text": "Denmark, Greenland and the US entered into the agreement on Tuesday 22 September.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 1,
+          "text": "It amends and extends the 1951 defence agreement, confirms the Kingdom of Denmark's sovereignty over Greenland and recognises the Greenlandic people's right to self-determination.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 0,
+          "text": "The US may set up defence areas at Narsarsuaq and Mestersvig and expand Pituffik Space Base, formerly the Thule base; other sites need Danish and Greenlandic approval.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 1,
+          "text": "The agreement opens the way for the US Golden Dome missile defence in Greenland and restricts investment in sensitive sectors from countries outside the EU and NATO.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[3]",
+          "sentence": 0,
+          "text": "It has no fixed end date.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[3]",
+          "sentence": 1,
+          "text": "After signing, it must be approved first by Inatsisartut, Greenland's parliament, and then by the Folketing.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "callouts[0]",
+          "sentence": 0,
+          "text": "What the agreement does: New US defence areas at Narsarsuaq and Mestersvig | An expanded Pituffik Space Base | An opening for the Golden Dome missile defence | Other sites need Danish and Greenlandic approval",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "e15b1e0e-6f78-48a8-88c5-1df2f855bb21",
+          "title": "Storbritannien og Norge hilser ny Grønland-aftale velkommen",
+          "description": "<p>Storbritanniens premierminister, Andy Burnham, og Norges statsminister, Jonas Gahr Støre, hilser aftalen mellem Grønland, Danmark og USA velkommen.</p><p>Det oplyser det britiske premierministerkontor ifølge nyhedsbureauet Reuters.</p><p>Burnham og Støre mødtes søndag i Liverpool, hvor det britiske regeringsparti Labour holder partikonference.</p><p>Danmark, Grønland og USA indgik tirsdag en ny aftale om USA's forhold til Grønland.</p><p>Aftalen er en ændring og udvidelse af forsvarsaftalen fra 1951 mellem de tre parter.</p><p>Den bekræfter samtidig Kongeriget Danmarks suverænitet over Grønland og anerkender det grønlandske folks ret til selvbestemmelse.</p><p>USA får blandt andet tilladelse til at oprette nye forsvarsområder i Narsarsuaq og Mestersvig og udvide Pituffik Space Base, tidligere kaldet Thulebasen.</p><p>Eventuelle andre fremtidige lokationer kræver godkendelse fra Danmark og Grønland.</p><p>Aftalen åbner også for etableringen af det amerikanske missilforsvarssystem Golden Dome i Grønland.</p><p>Samtidig begrænses investeringer fra lande uden for EU og Nato i følsomme sektorer i Grønland.</p><p>Aftalen har ingen fast slutdato og skal efter underskrivelsen godkendes af først det grønlandske parlament, Inatsisartut, og Folketinget i Danmark.</p><p>Burnham og Støre drøftede søndag også forsvarsaftalen mellem Storbritannien og Norge, Lunna House-aftalen, fremgår det af meddelelsen.</p><p>Lunna House-aftalen er en forsvarsaftale mellem Storbritannien og Norge, som blev indgået i slutningen af 2025.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-27T18:39:34.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/storbritannien-og-norge-hilser-ny-groenland-aftale-velkommen",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:ae914349-dcdf-5aab-a33f-8606362521cf",
+          "title": "Storbritannien og Norge hilser ny Grønland-aftale velkommen",
+          "description": "Andy Burnham og Jonas Gahr Støre bakker op om ny aftale mellem Grønland, USA og Danmark.",
+          "authors": [],
+          "categories": [
+            "Internationalt",
+            "Samfund"
+          ],
+          "published_at": "2026-09-27T18:41:46.000000Z",
+          "url": "https://www.berlingske.dk/internationalt/storbritannien-og-norge-hilser-ny-groenland-aftale-velkommen",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:482f78fb-46eb-457f-ae43-745a1da976de",
+          "title": "Amerikansk topanalytiker i interview med DR: USA's drømme om Grønland lever videre",
+          "description": "Selv om Trump har indgået en aftale om Grønland, forsøger politiske kræfter og amerikanske pengemænd at øge deres indflydelse højt mod nord.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-27T17:30:00.000000Z",
+          "url": "https://www.dr.dk/nyheder/udland/amerikansk-topanalytiker-i-interview-med-dr-usa-s-droemme-om-groenland-lever-videre",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "uber-eats-couriers-tax",
+      "role": "secondary",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Uber Eats leaves its couriers to pay their own tax",
+          "cites": [
+            "berlingske"
+          ]
+        },
+        {
+          "location": "deck",
+          "sentence": 0,
+          "text": "Wolt has been made to withhold tax from couriers' pay; an expert warns Uber's couriers of large tax bills.",
+          "cites": [
+            "berlingske"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Uber Eats leaves its couriers with full responsibility for their own tax, documents seen by Berlingske show, while Wolt has been forced to withhold it; Uber denies anything is wrong.",
+          "cites": [
+            "berlingske"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 0,
+          "text": "Uber Eats runs a model in which its couriers carry the full responsibility for their own tax, according to documents Berlingske has seen, while its competitor Wolt has been forced by the authorities to withhold tax from couriers' pay.",
+          "cites": [
+            "berlingske"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 0,
+          "text": "An expert quoted by Berlingske calls the arrangement 'bold' and warns that couriers risk large tax bills.",
+          "cites": [
+            "berlingske"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 1,
+          "text": "Uber denies that anything is wrong with its tax model.",
+          "cites": [
+            "berlingske"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:19beebcd-ca90-5d7d-90e8-c8f723cc3fc8",
+          "title": "Amerikansk madgigant efterlader bude i total forvirring: »Lad være med at betale skat. Lad dem finde ud af det først«",
+          "description": "Mens konkurrenten Wolt er blevet tvunget af myndighederne til at trække skat af budenes løn, kører Uber Eats videre med en model, hvor det fulde skatteansvar ligger hos budet selv. Det viser dokumenter, som Berlingske har adgang til. Ekspert kalder manøvren »modig« og advarer om risikoen for store skatteregninger. Uber afviser, at der skulle være noget galt med selskabets skattemodel.",
+          "authors": [
+            "Signe Westermann Kühn",
+            "Julie Schneider",
+            "jusc@berlingske.dk (Julie Schneider)"
+          ],
+          "categories": [
+            "Kultur"
+          ],
+          "published_at": "2026-09-27T08:32:59.000000Z",
+          "url": "https://www.berlingske.dk/kultur/amerikansk-madgigant-efterlader-bude-i-total-forvirring-lad-vaere-med-at-betale-skat-lad-dem-finde-ud-af-det-foerst",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "wadephul-lavrov-meeting",
+      "role": "secondary",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Germany urges Russia to drop its 'course of escalation' at the first ministers' meeting since 2022",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "ft",
+            "guardian"
+          ]
+        },
+        {
+          "location": "headline_short",
+          "sentence": 0,
+          "text": "Germany tells Russia to de-escalate",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "ft",
+            "guardian"
+          ]
+        },
+        {
+          "location": "deck",
+          "sentence": 0,
+          "text": "Wadephul told Lavrov that attacks such as the attempt in Leipzig will not shake German support for Ukraine.",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "ft",
+            "guardian"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Germany's foreign minister, Johann Wadephul, urged Russia to drop its 'course of escalation' when he met Sergei Lavrov in New York, the first such meeting since the war in Ukraine began.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 0,
+          "text": "Germany's foreign minister, Johann Wadephul, urged Russia to abandon its 'course of escalation' with Germany, Europe and NATO when he met Sergei Lavrov in New York, an unnamed German official told AFP on Saturday.",
+          "cites": [
+            "kristeligt_dagblad",
+            "ft"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 1,
+          "text": "It was the two countries' first foreign ministers' meeting since Russia began the war in Ukraine in 2022.",
+          "cites": [
+            "kristeligt_dagblad",
+            "ft"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 0,
+          "text": "Wadephul made clear that incidents such as the recent attempted attack in Leipzig would not shake Germany's support for Ukraine, the official said.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 0,
+          "text": "Lavrov told the UN that Russia is not interested in war with Europe and that Europe is the one preparing for it.",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 1,
+          "text": "A peace researcher tells DR the meeting is 'very surprising'.",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "96c6b6fe-0a76-4080-91aa-f4c6c49f0285",
+          "title": "Tysk minister opfordrer Rusland til at droppe farlig kurs mod eskalering",
+          "description": "<p>Tysklands udenrigsminister Johann Wadephul opfordrer Rusland til at droppe sin \"kurs mod eskalering\".</p><p>Det fortæller en unavngiven tysk embedsmand lørdag, efter at den tyske minister har holdt et bilateralt møde med sin russiske modpart, Sergej Lavrov, skriver AFP.</p><p>- Han gjorde det klart, at hændelser som det seneste angrebsforsøg i Leipzig eller yderligere hybride angreb ikke vil ryste Tysklands støtte til Ukraine, lyder det.</p><p>Mødet fandt sted i forbindelse med FN's Generalforsamling i New York.</p><p>Den tyske regering har tidligere i september beskyldt Rusland for at have planlagt et droneangreb mod lufthavnen i Leipzig måneden inden.</p><p>- Wadephul opfordrede Rusland til at opgive sin farlige kurs mod eskalering med Tyskland, Europa og Nato, lyder det fra embedsmanden.</p><p>Mødet mellem de to landes udenrigsministre er det første, siden Rusland indledte krigen i Ukraine i 2022.</p><p>Lavrov mødtes i januar samme år med daværende udenrigsminister i Tyskland Annalena Baerbock.</p><p>Lavrov har anklaget Tyskland for at \"ønske krig igen\".</p><p>Ministeren understregede også endnu en gang på FN's talerstol, at Rusland ikke er interesseret i krig med Europa.</p><p>Det er ifølge ham derimod Europa, der gør sig klar til at indlede en krig mod Rusland.</p><p>- De bliver ved med at investere i våben og med at tale om krig med Rusland. Det kan ende med at blive en selvopfyldende profeti.</p><p>Den russiske præsident, Vladimir Putin, har også sagt, at Rusland ikke har noget \"reelt motiv\" for at optrappe spændingerne med Europa.</p><p>- Mange i Europa taler om, at de forventer et angreb fra Rusland, og derfor tror de, at de skal forberede sig på fjendtligheder og på en krig mod Rusland, sagde Putin.</p><p>- Jeg vil understrege endnu en gang, at vi ikke forbereder os på nogen form for fjendtligheder med Europa.</p><p>Så sent som torsdag advarede de danske efterretningstjenester FE og PET om øget risiko for blandt andet hybridkrig og sabotage fra russisk side.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-26T16:56:34.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/tysk-minister-opfordrer-rusland-til-droppe-farlig-kurs-mod-eskalering",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:e55492e0-1368-4ca4-9888-2d1914dd677f",
+          "title": "Fredsforsker kalder møde på højt niveau mellem Tyskland og Rusland for 'meget overraskende'",
+          "description": "Den tyske udenrigsminister, Johann Wadephul, fortæller, at han havde en \"intens diskussion\", med den russiske udenrigsminister, Sergej Lavrov.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-26T21:40:37.000000Z",
+          "url": "https://www.dr.dk/nyheder/udland/fredsforsker-kalder-moede-paa-hoejt-niveau-mellem-tyskland-og-rusland-meget-overraskende",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "ec92933f-7147-410e-8ade-ab09add476a7",
+          "title": "German and Russian foreign ministers meet for first time in over four years",
+          "description": "Johann Wadephul said he warned Sergei Lavrov about drone incursions and urged de-escalation in Ukraine in ‘intense conversation’",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-26T19:01:46.000000Z",
+          "url": "https://www.ft.com/content/ec92933f-7147-410e-8ade-ab09add476a7",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/sep/27/ukraine-war-briefing-german-foreign-minister-urges-russia-to-abandon-dangerous-escalation-in-rare-meeting",
+          "title": "Ukraine war briefing: German foreign minister urges Russia to abandon dangerous escalation in rare meeting",
+          "description": "The two foreign ministers met on the sidelines of the UN general assembly in New York even though relations have been frozen since the invasion. What we know on day 1,677 The foreign ministers of Russia and Germany met in New York on the sidelines of the ⁠UN general assembly , ⁠in the first such ​talks since Russia’s 2022 invasion of Ukraine. But Russia’s top diplomat dismissed Germany’s calls to ease off its “dangerous path of escalation” toward Europe, instead accusing Germany of being Ukraine’s main sponsor and seeking to be a leading military power in Europe. “Does Berlin understand what this could lead to?” the Russian foreign minister, Sergei Lavrov, asked in his speech at the gathering of world leaders on Saturday. “Didn’t they learn the lessons of world war two?” German foreign minister, Johann ‌Wadephul, used the talks to call on Russia “to abandon the dangerous path of escalation vis-a-vis Germany, Europe, and Nato” , according to a delegation source. Wadephul said incidents such as the attempted drone attack in Leipzig would not shake Germany’s resolve to support Ukraine, according to sources. Relations between Moscow and Berlin have been frozen since the Russian invasion , and tensions escalated further after the drone incident at Leipzig airport. In a sign of the continued frostiness, Lavrov told a press conference on Saturday “nothing new” came from the talks with his German counterpart. “I told him that frankly … you could just have called me and said: ‘read my statement’,” Lavrov said . “He simply reiterated his official public position condemning Russia … you can judge for yourself whether that counts as dialogue or not.” Still, the ​ministers discussed bilateral ties and the war in Ukraine, officials from ‌both sides said. Wadephul urged Lavrov to do “everything possible to reach an agreement on grain exports via the Black Sea”, a German ‌delegation source said. In a sign of the sensitivities around meeting the Russian foreign minister , Wadephul notified his European allies of the meeting afterwards in a message seen by Reuters. “I used this opportunity to reiterate our position on Russia’s war of aggression ⁠against Ukraine and to call for an immediate and complete ceasefire, most pressingly with a focus on grain ​exports, and the energy infrastructure,” he wrote. After the meeting Lavrov addressed world leaders at the assembly, where he defended Russia’s war in Ukraine and lobbed barbs at the west — including Germany – and criticised the militarisation of Japan. He made clear that Russia will veto any attempt by Germany and Japan for permanent seats on the UN security council. The two nations fought Russia, Britain and the US in the second world war. Writing on her personal Telegram channel, Maria Zakharova, a spokesperson for Russia’s foreign ministry, said that “tens of diplomats” had come to meet Lavrov to “shake his hand and thank Russia”. An overwhelming majority of general assembly member nations have repeatedly condemned Russia’s invasion of Ukraine , as Wadephul noted in his own address to the assembly Saturday. “Russia’s war targets the lives of millions of innocent people, the existence of the Ukrainian state and culture and the European peace order,” he said, urging Russia to negotiating toward ending the fighting. The talks came amid an intensifying aerial war and as Donald Trump said he hoped the Ukrainian president, Volodymyr Zelenskyy, would “settle” with Russia’s Vladimir Putin. With frontline positions largely unchanged since last year, Russia has hammered Ukraine with cruise and ballistic missiles, powerful glide bombs and jet-powered drones in recent months, while Ukraine’s long-range drones have targeted Russian oil refineries and businesses. “It is essential that our partners not forget: Russia is escalating every single day,” Zelenskyy wrote on Saturday. “If the Russians have chosen to make their strikes even more brutal, the world must choose stronger responses to keep the war from spreading further.” Ukrainian officials said Russian attacks killed four people on Saturday, as Russian authorities said a Ukrainian drone attack killed three. Residents of Kyiv are preparing for power cuts, drone attacks and a bitter cold winter by stocking up on generators, food and “dry showers”, as the Ukrainian capital becomes a frontline city . And Russia has opened a new front in its campaign against Ukraine , hitting several datacentres and internet providers in Kyiv this week in an apparent attempt to weaken the digital backbone of the economy. Continue reading...",
+          "authors": [
+            "Guardian staff and agencies"
+          ],
+          "categories": [
+            "Europe",
+            "Ukraine"
+          ],
+          "published_at": "2026-09-27T02:30:02.000000Z",
+          "url": "https://www.theguardian.com/world/2026/sep/27/ukraine-war-briefing-german-foreign-minister-urges-russia-to-abandon-dangerous-escalation-in-rare-meeting",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "bronderslev-girls-found",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Missing girls from Brønderslev found unharmed",
+          "cites": [
+            "berlingske",
+            "tv2",
+            "dr"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Two girls aged 12 and 14 from Brønderslev, reported missing on Saturday, were found unharmed on Sunday, police say.",
+          "cites": [
+            "berlingske",
+            "tv2"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:43c9fc00-4e28-5974-b97a-a77f219bee30",
+          "title": "Forsvundne piger fra Brønderslev fundet i god behold",
+          "description": "To piger på 12 og 14 år, der lørdag blev efterlyst, er søndag fundet, oplyser politiet.",
+          "authors": [],
+          "categories": [
+            "Indland",
+            "Samfund"
+          ],
+          "published_at": "2026-09-27T15:05:47.000000Z",
+          "url": "https://www.berlingske.dk/indland/forsvundne-piger-fra-broenderslev-fundet-i-god-behold",
+          "primary": true
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/samfund/2026-09-27-to-piger-er-fortsat-forsvundet-fra-deres-hjem-i-broenderslev",
+          "title": "Forsvundne piger fra Brønderslev fundet i god behold",
+          "description": "To piger på 12 og 14 år, der lørdag blev efterlyst, er søndag fundet, oplyser politiet.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-27T03:27:00.000000Z",
+          "url": "https://nyheder.tv2.dk/samfund/2026-09-27-to-piger-er-fortsat-forsvundet-fra-deres-hjem-i-broenderslev",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:7f49f87a-cd5e-4935-ab0c-7247cb0924df",
+          "title": "To piger, der forsvandt i Brønderslev, er fundet i god behold",
+          "description": null,
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-27T03:30:33.000000Z",
+          "url": "https://www.dr.dk/nyheder/seneste/piger-er-fortsat-forsvundet-fra-deres-hjem-i-broenderslev",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "trump-repeats-5000-dollar-promise",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Trump repeats his promise of 5,000 dollars to adult Americans",
+          "cites": [
+            "politiken",
+            "berlingske",
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Donald Trump again promises to pay 5,000 dollars to adult Americans if the Republicans win both chambers in the midterm elections.",
+          "cites": [
+            "politiken",
+            "berlingske",
+            "kristeligt_dagblad"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "politiken",
+          "source_id": "10998911",
+          "title": "Trump gentager løfte om 5.000 dollar, hvis Republikanerne får begge kamre",
+          "description": "Trump lover igen at udbetale 5000 dollar til voksne amerikanere, hvis Republikanerne vinder midtvejsvalget.",
+          "authors": [],
+          "categories": [
+            "Internationalt"
+          ],
+          "published_at": "2026-09-27T04:20:58.000000Z",
+          "url": "https://politiken.dk/internationalt/art10998911/Trump-gentager-l%C3%B8fte-om-5.000-dollar-hvis-Republikanerne-f%C3%A5r-begge-kamre",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:74e15c2c-17a7-57c1-a4af-e2da669ea058",
+          "title": "Trump gentager løfte om 5000 dollar til alle amerikanere",
+          "description": "Trump lover igen at udbetale 5000 dollar til voksne amerikanere, hvis Republikanerne vinder midtvejsvalget.",
+          "authors": [],
+          "categories": [
+            "Internationalt",
+            "Samfund"
+          ],
+          "published_at": "2026-09-26T23:57:47.000000Z",
+          "url": "https://www.berlingske.dk/internationalt/trump-gentager-loefte-om-5000-dollar-til-alle-amerikanere",
+          "primary": false
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "89528dd4-ab96-47ce-bb83-9074e174d434",
+          "title": "Trump gentager løfte om 5000 dollar til alle amerikanere",
+          "description": "<p>USA's præsident, Donald Trump, gentager natten til søndag dansk tid sit løfte om, at han vil udbetale 5000 dollar til alle voksne amerikanere, hvis Republikanerne vinder begge kamre i Kongressen ved midtvejsvalget den 3. november.</p><p>Det sker i et opslag på præsidentens sociale medie, Truth Social.</p><p>- Et udbytte på 5000 dollar til alle voksne, hvis Republikanerne vinder! Dummokraterne (\"Dumocrats\", red.) kan ikke gøre det her!, skriver Trump.</p><p>Beløbet svarer til godt 32.000 kroner.</p><p>Trump lovede første gang udbetalingen på et partimøde for Republikanerne i delstaten Texas tidligere på måneden.</p><p>- Hvis Republikanerne vinder Repræsentanternes Hus og det amerikanske Senat - på grund af vores enorme økonomiske succes - vil jeg udbetale et udbytte på 5000 dollar til alle voksne borgere i USA, sagde Trump.</p><p>- Den eneste betingelse, jeg stiller, er, at det udbytte, vi udbetaler, skal bruges i USA, tilføjede præsidenten.</p><p>Dengang skrev flere medier, at det er uklart, hvordan udbetalingen skal fungere, og om sådan en udbetaling overhovedet er lovlig.</p><p>Trump er ikke selv på valg ved midtvejsvalget, hvor alle medlemmer af Repræsentanternes Hus og en tredjedel af Senatets medlemmer skal vælges.</p><p>En måling foretaget af analyseinstituttet Ipsos for nyhedsbureauet Reuters blev tidligere på ugen offentliggjort og viste, at opbakningen til Trump er på sit laveste i hele hans politiske karriere.</p><p>Ifølge Reuters er Republikanerne nødt til at mobilisere vælgere, der ellers kunne finde på at blive hjemme ved midtvejsvalget.</p><p>Ved midtvejsvalget falder valgdeltagelsen typisk mere end 10 procentpoint sammenlignet med præsidentvalg.</p><p>En måling fra Ipsos viser ifølge Reuters også, at der er forskel på, hvor høj vælgernes motivation er, afhængigt af om man er demokrat eller republikaner.</p><p>Målingen blev offentliggjort lørdag og viste, at 42 procent af de adspurgte, der identificerede sig som demokrater, var \"meget begejstrede\" ved udsigten til at stemme. Hos republikanerne var andelen 28 procent.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-26T23:28:51.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/trump-gentager-loefte-om-5000-dollar-til-alle-amerikanere",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "eu-africa-aid-five-billion",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "EU gives 710 million euros to people hit by crises, most of it for Africa",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "The EU is giving 710 million euros, about 5.3 billion kroner, to people hit by crises, natural disasters and conflicts worldwide, and most of it will go to countries in Africa.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "6ddae657-91f0-49e3-80d6-23a8fb28f6f0",
+          "title": "EU sender milliardbeløb til kriseramte befolkninger i Afrika",
+          "description": "<p>EU tildeler 710 millioner euro til mennesker verden over, der er ramt af kriser, naturkatastrofer og konflikter. Størstedelen vil gå til lande i Afrika.</p><p>Det siger EU-Kommissionens formand, Ursula von der Leyen, ved FN's Generalforsamling ifølge nyhedsbureauet AFP.</p><p>- Konflikt, ekstremt vejr og stigende leveomkostninger forstyrrer livet for mange mennesker rundt om i verden, lyder det i en erklæring fra von der Leyen.</p><p>- Med dagens hjælpepakke vil vi støtte fordrevne befolkningsgrupper på tværs af Afrika samt de samfund, der tager imod dem.</p><p>Beløbet svarer til omkring 5,3 milliarder danske kroner.</p><p>Over halvdelen af pengene - 380 millioner euro - skal gå til, at man i Afrika syd for Sahara vil \"beskytte sårbare migranter, støtte frivillig tilbagevenden og reintegration, styrke migrationsforvaltningen og håndtere tvangsfordrivelse\".</p><p>Sådan fremgår det af erklæringen ifølge AFP.</p><p>Derudover har EU afsat 252 millioner euro fra sin nødhjælpsreserve til at hjælpe samfund, der er ramt af konflikter, tvangsfordrivelse, epidemier og naturkatastrofer.</p><p>Det omfatter også blandt andet støtte til mennesker i Afrika syd for Sahara.</p><p>Også de palæstinensiske områder, Libanon og Ukraine vil modtage en del af beløbet, blandt andet til forberedelserne til den kommende vinter.</p><p>Mindre beløb går til at fremme stabiliteten i det kriseramte De Store Søers region i Centralafrika samt til at hjælpe Den Demokratiske Republik Congo med at bekæmpe et ebolaudbrud i den østlige del af landet.</p><p>Udmeldingen kommer, mens FN i disse dage holder sin 81. Generalforsamling i New York.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-26T20:32:44.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/eu-sender-milliardbeloeb-til-kriseramte-befolkninger-i-afrika",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:e8e2fa5e-15ab-42c4-ae9f-a0156b642f7b",
+          "title": "EU sender særlig hjælpepakke til Afrika",
+          "description": "Et beløb fra EU svarende til fem milliarder kroner skal hjælpe mennesker i konflikt- og katastroferamte lande.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-27T06:06:37.000000Z",
+          "url": "https://www.dr.dk/nyheder/udland/eu-sender-saerlig-hjaelpepakke-til-afrika",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:94595886-2054-5cf9-a071-063dcb4dbca9",
+          "title": "EU sender milliardbeløb til kriseramte befolkninger i Afrika",
+          "description": "Et beløb fra EU svarende til fem milliarder kroner skal hjælpe mennesker i konflikt- og katastroferamte lande.",
+          "authors": [],
+          "categories": [
+            "Internationalt",
+            "Samfund"
+          ],
+          "published_at": "2026-09-26T20:59:46.000000Z",
+          "url": "https://www.berlingske.dk/internationalt/eu-sender-milliardbeloeb-til-kriseramte-befolkninger-i-afrika",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "scotus-voter-citizenship-database",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "US Supreme Court lets the Trump administration check voters' citizenship in a disputed database",
+          "cites": [
+            "dr",
+            "borsen",
+            "bbc"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "The US Supreme Court has allowed the Trump administration to use a disputed database to gather information on voters' citizenship; several critics question whether the database can be trusted.",
+          "cites": [
+            "dr",
+            "borsen"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:8cdfad7f-192a-4930-9890-c8bf2ce2fb88",
+          "title": "Nu må Trump-administrationen bruge omstridt database til at indsamle oplysninger om vælgeres statsborgerskab",
+          "description": "Flere kritikere sætter spørgsmålstegn ved, om databasen er til at stole på.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-26T18:30:03.000000Z",
+          "url": "https://www.dr.dk/nyheder/udland/nu-maa-trump-administrationen-bruge-omstridt-database-til-indsamle-oplysninger-om-vaelgeres",
+          "primary": true
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/hojesteret-giver-trump-gront-lys-til-omstridt-vaelgerdatabase",
+          "title": "Højesteret giver Trump grønt lys til omstridt vælgerdatabase",
+          "description": "USA's højesteret har fredag givet Trump-administrationen lov til at bruge en omstridt database til at kontrollere, om registrerede vælgere er amerikanske statsborgere. Det skriver Reuters. Afgørelsen kommer ikke længe inden midtvejsvalget i USA i starten af november.",
+          "authors": [
+            "Caroline Froulund",
+            "cafr@borsen.dk (Caroline Froulund)"
+          ],
+          "categories": [],
+          "published_at": "2026-09-25T19:52:54.000000Z",
+          "url": "https://borsen.dk/nyheder/udland/hojesteret-giver-trump-gront-lys-til-omstridt-vaelgerdatabase",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "ck05rrj3jeylo",
+          "title": "US Supreme Court allows Trump to use controversial database to check voter citizenship",
+          "description": "Critics have questioned the reliability of the data, warning it could result in US citizens being wrongly removed from electoral rolls.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-25T19:13:35.000000Z",
+          "url": "https://www.bbc.co.uk/news/articles/ck05rrj3jeylo?at_campaign=rss&at_medium=RSS",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "tiktok-alabama-settlement",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "TikTok to pay Alabama 100 million dollars over children's addiction",
+          "cites": [
+            "politiken",
+            "berlingske",
+            "dr",
+            "guardian",
+            "nytimes"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "TikTok has settled with Alabama in a case over children's addiction, agreeing to pay 100 million dollars and limit teenagers' use in the first such settlement with a US state.",
+          "cites": [
+            "politiken",
+            "guardian"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "politiken",
+          "source_id": "10998536",
+          "title": "TikTok indgår forlig med Alabama i sag om børns afhængighed",
+          "description": "TikTok vil som led i forlig indføre daglig tidsbegrænsning på to timer samt en pause efter 15 minutters brug.",
+          "authors": [],
+          "categories": [
+            "Internationalt"
+          ],
+          "published_at": "2026-09-26T04:27:41.000000Z",
+          "url": "https://politiken.dk/internationalt/art10998536/TikTok-indg%C3%A5r-forlig-med-Alabama-i-sag-om-b%C3%B8rns-afh%C3%A6ngighed",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:469adcf0-c49b-5797-9619-83700cd73e80",
+          "title": "TikTok indgår forlig med Alabama i sag om børns afhængighed",
+          "description": "TikTok vil som led i forlig indføre daglig tidsbegrænsning på to timer samt en pause efter 15 minutters brug.",
+          "authors": [],
+          "categories": [
+            "Business"
+          ],
+          "published_at": "2026-09-26T02:33:48.000000Z",
+          "url": "https://www.berlingske.dk/business/tiktok-indgaar-forlig-med-alabama-i-sag-om-boerns-afhaengighed",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:e55e5272-9130-493d-9b52-a4d24c35159d",
+          "title": "TikTok indgår forlig med delstaten Alabama",
+          "description": null,
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-26T00:52:32.000000Z",
+          "url": "https://www.dr.dk/nyheder/seneste/tiktok-indgaar-forlig-med-delstaten-alabama",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/technology/2026/sep/26/tiktok-alabama-pay-100m-teenage-limits-restrictions",
+          "title": "TikTok to pay Alabama $100m and limit teenage use in first state settlement",
+          "description": "Trial had been set for Monday over claims by Alabama that TikTok misled parents about tools meant to shield children from harmful content TikTok has agreed to pay Alabama at least $100m and enact time limits and other restrictions for teenage users, avoiding a trial with a settlement that was modelled on Instagram-owner Meta’s recent agreement with US states. Alabama described it as a “first-in-the-nation settlement” with a state in the sweeping litigation over social media’s affect on teen wellbeing. Continue reading...",
+          "authors": [
+            "Agencies"
+          ],
+          "categories": [
+            "Alabama",
+            "Social media",
+            "Technology",
+            "TikTok",
+            "US news"
+          ],
+          "published_at": "2026-09-26T04:19:20.000000Z",
+          "url": "https://www.theguardian.com/technology/2026/sep/26/tiktok-alabama-pay-100m-teenage-limits-restrictions",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/09/25/technology/tiktok-alabama-child-safety-settlement.html",
+          "title": "TikTok to Pay Alabama $100 Million to Settle Social Media Addiction Claims",
+          "description": "The settlement, which also includes changes to the platform’s features, is the latest in a string of agreements by companies to address child addiction.",
+          "authors": [
+            "Cecilia Kang"
+          ],
+          "categories": [
+            "Alabama",
+            "Children and Childhood",
+            "Computers and the Internet",
+            "Fines (Penalties)",
+            "Marshall, Steve (1964- )",
+            "Social Media",
+            "Suits and Litigation (Civil)",
+            "TikTok (ByteDance)"
+          ],
+          "published_at": "2026-09-26T14:48:22.000000Z",
+          "url": "https://www.nytimes.com/2026/09/25/technology/tiktok-alabama-child-safety-settlement.html",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "crypto-tax-rules-changes",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Tax minister signals changes to crypto tax rules",
+          "cites": [
+            "borsen"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Crypto tax rules cost Anders Nielsen his house and savings several years ago; the law is unchanged and his case still open, but the tax minister now signals changes.",
+          "cites": [
+            "borsen"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/politik/kryptoregler-kostede-anders-hus-og-opsparing-nu-varsler-minister-aendringer",
+          "title": "Kryptoregler kostede Anders hus og opsparing – nu varsler minister ændringer",
+          "description": "Selvom det er flere år siden, Anders Nielsen kom i klemme med kryptobeskatning, er hans sag endnu ikke afsluttet – og lovgivningen er fortsat den samme. Nu varsler skatteministeren ændringer – men hvad er den ideelle løsning?",
+          "authors": [
+            "Mai Fyhn",
+            "mai.fyhn@borsen.dk (Mai Fyhn)"
+          ],
+          "categories": [],
+          "published_at": "2026-09-27T15:00:00.000000Z",
+          "url": "https://borsen.dk/nyheder/politik/kryptoregler-kostede-anders-hus-og-opsparing-nu-varsler-minister-aendringer",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "greenwashing-rules-ombudsman",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Consumer Ombudsman lacks the resources to enforce new greenwashing rules",
+          "cites": [
+            "borsen"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "New rules on green marketing have taken effect, but after budget cuts the office lacks the strength to keep up its hard line, the Consumer Ombudsman, Torben Jensen, warns.",
+          "cites": [
+            "borsen"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/baeredygtig/nodrab-fra-forbrugerombudsmand-har-ikke-kraefter-til-at-handhaeve-nye-regler",
+          "title": "Nødråb fra Forbrugerombudsmand: Har ikke kræfter til at håndhæve nye regler",
+          "description": "I dag træder nye regler om grøn markedsføring i kraft for at forhindre greenwashing, men efter reduktion af budgettet har Forbrugerombudsmanden ikke kræfter til at fortsætte den hårde linje på området, advarer forbrugerombudsmand Torben Jensen",
+          "authors": [
+            "Christian Østergaard",
+            "chos@borsen.dk (Christian Østergaard)"
+          ],
+          "categories": [],
+          "published_at": "2026-09-27T11:00:02.000000Z",
+          "url": "https://borsen.dk/nyheder/baeredygtig/nodrab-fra-forbrugerombudsmand-har-ikke-kraefter-til-at-handhaeve-nye-regler",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "defence-companies-hiring",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Danish defence companies hire in large numbers",
+          "cites": [
+            "jp"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Danish defence companies are hiring in large numbers, growing at what Jyllands-Posten calls a rarely seen pace.",
+          "cites": [
+            "jp"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "jp",
+          "source_id": "19661492",
+          "title": "Forsvarsvirksomheder i medarbejderboom",
+          "description": "Danske forsvarsvirksomheder stormer frem i et sjældent set tempo og ansætter i massevis.",
+          "authors": [
+            "Magnus Lykke"
+          ],
+          "categories": [
+            "Erhverv"
+          ],
+          "published_at": "2026-09-27T13:30:00.000000Z",
+          "url": "https://jyllands-posten.dk/erhverv/ECE19661492/forsvarsvirksomheder-i-medarbejderboom/",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "seabed-extraction-seven-municipalities",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Seven municipalities want seabed extraction moved further away",
+          "cites": [
+            "tv2"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Enough seabed to fill 14 swimming pools was sucked up every day last year, and seven municipalities now want the extraction moved further away.",
+          "cites": [
+            "tv2"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/samfund/2026-09-27-syv-kommuner-slaar-alarm-mere-oedelaegges-end-nogensinde-foer",
+          "title": "Syv kommuner slår alarm – mere ødelægges end nogensinde før",
+          "description": "Sidste år blev der hver dag suget nok havbund op til at fylde 14 svømmebassiner. Nu vil syv kommuner flytte ødelæggelserne længere væk.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-27T12:45:00.000000Z",
+          "url": "https://nyheder.tv2.dk/samfund/2026-09-27-syv-kommuner-slaar-alarm-mere-oedelaegges-end-nogensinde-foer",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "faaborg-midtfyn-mayor-office",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Hard-pressed Faaborg-Midtfyn spends 108,000 kroner on the mayor's office",
+          "cites": [
+            "tv2"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Faaborg-Midtfyn Municipality, which recently received a special state grant as one of the 22 most financially pressed municipalities, is spending 108,000 kroner furnishing the mayor's office.",
+          "cites": [
+            "tv2"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/2026-09-27-presset-kommune-bruger-108000-kroner-paa-indretning-af-borgmesterkontor",
+          "title": "Presset kommune bruger 108.000 kroner på indretning af borgmesterkontor",
+          "description": "Faaborg-Midtfyn Kommune fik for nylig et særtilskud fra staten, fordi den er blandt de 22 mest økonomisk pressede kommuner.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-27T07:59:07.000000Z",
+          "url": "https://nyheder.tv2.dk/2026-09-27-presset-kommune-bruger-108000-kroner-paa-indretning-af-borgmesterkontor",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "df-tonder-councillors-quit",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Two of Dansk Folkeparti's three councillors in Tønder leave the party",
+          "cites": [
+            "dr"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Two of Dansk Folkeparti's three municipal councillors in Tønder are leaving the party after what DR calls a mysterious case.",
+          "cites": [
+            "dr"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:7d4023b0-e1ba-40ae-9ce0-7c577487c164",
+          "title": "DF’ere melder sig ud efter mystisk sag: 'Det er trist'",
+          "description": "To ud af tre kommunalbestyrelsesmedlemmer i Tønder siger farvel til partiet.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-27T10:54:39.000000Z",
+          "url": "https://www.dr.dk/nyheder/indland/df-ere-melder-sig-ud-efter-mystisk-sag-det-er-trist",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "unknown-wanderer-identified",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "'Unknown Wanderer' identified, and a US mass murder may be solved",
+          "cites": [
+            "berlingske"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "A man found dead in a church with a false identity and 30 keys, known as 'the Unknown Wanderer', has been identified, and one of the worst US mass murders may be solved.",
+          "cites": [
+            "berlingske"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:3827d749-3bab-57a1-b474-0ac6d26d48cd",
+          "title": "Han blev fundet død og kaldt »Den ukendte vandrer«. Nu er amerikansk massemord måske opklaret",
+          "description": "Han blev fundet død i en kirke og med en falsk identitet og 30 nøgler på sig. Han blev omtalt som »Den ukendte vandrer«. Nu er han identificeret, og et af USAs værste massemord er måske opklaret.",
+          "authors": [
+            "Poul Høi",
+            "phoi@berlingske.dk (Poul Høi)"
+          ],
+          "categories": [
+            "Internationalt",
+            "Samfund"
+          ],
+          "published_at": "2026-09-27T17:52:33.000000Z",
+          "url": "https://www.berlingske.dk/internationalt/han-blev-fundet-doed-og-kaldt-den-ukendte-vandrer-nu-er-amerikansk-massemord-maaske-opklaret",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "handball-women-beat-norway",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Danish handball women beat world champions Norway 34-30",
+          "cites": [
+            "politiken",
+            "dr"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Denmark's women beat world champions Norway 34-30 at handball on Sunday, led by goalkeeper Anna Kristensen and playmaker Helena Elver.",
+          "cites": [
+            "politiken",
+            "dr"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "politiken",
+          "source_id": "10999125",
+          "title": "Danske håndboldkvinder sprudler mod ærkerivalerne",
+          "description": "Anna Kristensen i målet og den offensive dirigent Helena Elver førte an, da Danmark vandt 34-30 over Norge.",
+          "authors": [],
+          "categories": [
+            "Håndbold"
+          ],
+          "published_at": "2026-09-27T15:43:29.000000Z",
+          "url": "https://politiken.dk/sport/haandbold/art10999125/Danske-h%C3%A5ndboldkvinder-sprudler-mod-%C3%A6rkerivalerne",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:fb2b77a7-a33e-4465-bd7f-89148a6e42f9",
+          "title": "Håndboldkvinderne storspiller - slår verdensmestrene sikkert",
+          "description": "Her i bloggen får du seneste nyt fra dansk og international håndbold i dag.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-27T15:35:00.000000Z",
+          "url": "https://www.dr.dk/sporten/haandbold/liveblog-med-seneste-nyt-om-dansk-og-international-haandbold",
+          "primary": false
+        }
+      ]
+    }
+  ]
+}
