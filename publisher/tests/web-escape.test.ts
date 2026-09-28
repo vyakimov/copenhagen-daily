@@ -23,8 +23,7 @@ function inject(doc: any): number {
       if (shown) rendered += 1;
     }
   };
-  set(doc.edition, "name");
-  rendered += 1; // the edition name appears in the masthead ear and again in <title>
+  set(doc.edition, "name"); // the edition name appears in <title>; the ear is derived from the cutoff
   doc.presentation = { ear_right: INJECT };
   rendered += 1;
   set(doc.coverage, "note");

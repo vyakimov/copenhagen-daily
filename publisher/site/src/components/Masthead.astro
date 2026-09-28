@@ -1,14 +1,14 @@
 ---
-import { formatCutoff, formatEditionDate } from "../../../assets/html/format.ts";
+import { formatEar, formatEditionDate } from "../../../assets/html/format.ts";
 // The masthead, the ruled dateline, and the navigation line. Prev/next go through the shell-owned
 // go/ stubs so an archived page never needs rewriting when a newer edition arrives.
 const { edition, masthead, earRight, leading, device } = Astro.props;
 const names = leading.names.join(" · ");
-const cutoff = formatCutoff(edition.cutoff_at, edition.language, edition.timezone);
+const ear = formatEar(edition.cutoff_at, edition.language, edition.timezone);
 const date = formatEditionDate(edition.date, edition.language);
 ---
 <header class="masthead">
-  <div class="ear"><span class="lbl">{edition.name}</span><br />News through {cutoff}</div>
+  <div class="ear"><span class="lbl">{ear.label}</span><br />{ear.through}</div>
   <div class="title">{masthead}</div>
   <div class="ear right">{earRight ?? `Edition ${edition.number}`}</div>
 </header>

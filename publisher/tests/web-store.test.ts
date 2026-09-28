@@ -1,11 +1,27 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { mkdir, mkdtemp, readdir, readFile, readlink, rm, stat } from "node:fs/promises";
+import {
+  mkdir,
+  mkdtemp,
+  readdir,
+  readFile,
+  readlink,
+  rm,
+  stat,
+} from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { spawnSync } from "node:child_process";
 import { tmpdir } from "node:os";
-import { readEdition, validateEdition } from "../src/contract/edition-contract.ts";
-import { publishEdition, recoverPublication, activatedReceipt, verifyBundle } from "../src/publish/store.ts";
+import {
+  readEdition,
+  validateEdition,
+} from "../src/contract/edition-contract.ts";
+import {
+  publishEdition,
+  recoverPublication,
+  activatedReceipt,
+  verifyBundle,
+} from "../src/publish/store.ts";
 import { hashFile } from "../src/publish/hash.ts";
 import { buildWeb, indexEntry } from "../src/publish/web.ts";
 
@@ -13,7 +29,9 @@ const projectRoot = resolve(import.meta.dirname, "..");
 const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 async function edition(name: string) {
-  const checked = validateEdition(await readEdition(resolve(projectRoot, "contracts/examples", name)));
+  const checked = validateEdition(
+    await readEdition(resolve(projectRoot, "contracts/examples", name)),
+  );
   assert.equal(checked.valid, true);
   if (!checked.valid) throw new Error("unreachable");
   return checked.value;
@@ -27,7 +45,8 @@ async function tree(root: string): Promise<string> {
       const rel = join(prefix, entry.name);
       const full = join(dir, entry.name);
       if (entry.isDirectory()) out.push(...(await walk(full, rel)));
-      else if (entry.isSymbolicLink()) out.push(`${rel}:link:${await readlink(full)}`);
+      else if (entry.isSymbolicLink())
+        out.push(`${rel}:link:${await readlink(full)}`);
       else out.push(`${rel}:${await hashFile(full)}`);
     }
     return out.sort();
@@ -45,7 +64,11 @@ async function htmlFiles(dir: string): Promise<string[]> {
   return out;
 }
 
-const publish = (root: string, doc: any, extra: Partial<Parameters<typeof publishEdition>[0]> = {}) =>
+const publish = (
+  root: string,
+  doc: any,
+  extra: Partial<Parameters<typeof publishEdition>[0]> = {},
+) =>
   publishEdition({
     root,
     projectRoot,
@@ -63,23 +86,38 @@ test("web publication is immutable, hardlinked, verifiable, and backdate safe", 
   assert.equal(first.status, "published");
 
   // Every story and callout, at full length, in the reader-facing page.
-  const html = await readFile(join(root, "live", "n", dense.edition.id, "index.html"), "utf8");
+  const html = await readFile(
+    join(root, "live", "n", dense.edition.id, "index.html"),
+    "utf8",
+  );
   for (const story of dense.stories) {
     assert.match(html, new RegExp(story.id));
-    assert.match(html.replaceAll("\u00ad", ""), new RegExp(escapeRegExp(story.copy.headline)));
+    assert.match(
+      html.replaceAll("\u00ad", ""),
+      new RegExp(escapeRegExp(story.copy.headline)),
+    );
     for (const c of story.callouts as any[]) {
       assert.match(
         html.replaceAll("\u00ad", ""),
-        new RegExp(escapeRegExp(String(c.text ?? c.value ?? c.title ?? c.label))),
+        new RegExp(
+          escapeRegExp(String(c.text ?? c.value ?? c.title ?? c.label)),
+        ),
       );
     }
   }
   // Body copy carries build-time soft hyphens; the stored contract never does.
   assert.ok(html.includes("\u00ad"));
-  assert.ok(!(await readFile(join(root, "store", "n", dense.edition.id, "edition.json"), "utf8")).includes("\u00ad"));
+  assert.ok(
+    !(
+      await readFile(
+        join(root, "store", "n", dense.edition.id, "edition.json"),
+        "utf8",
+      )
+    ).includes("\u00ad"),
+  );
   // Timestamps are formatted for readers, never raw ISO.
   assert.doesNotMatch(html, /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{6}Z<\//);
-  assert.match(html, /News through 05:00, Wednesday,? 9 September/);
+  assert.match(html, /Wednesday edition[\s\S]*News through 5am, 9 September/);
 
   // Store and release share inodes, files are read-only, and the manifest verifies.
   const stored = join(root, "store", "n", dense.edition.id, "index.html");
@@ -87,7 +125,10 @@ test("web publication is immutable, hardlinked, verifiable, and backdate safe", 
   assert.equal((await stat(stored)).ino, (await stat(live)).ino);
   assert.equal((await stat(stored)).mode & 0o777, 0o444);
   assert.equal((await verifyBundle(root, dense.edition.id)).valid, true);
-  assert.deepEqual(await readdir(root).then((n) => n.filter((x) => x.startsWith(".staging"))), []);
+  assert.deepEqual(
+    await readdir(root).then((n) => n.filter((x) => x.startsWith(".staging"))),
+    [],
+  );
 
   // Repeated id, conflicting bytes.
   await assert.rejects(
@@ -111,7 +152,9 @@ test("web publication is immutable, hardlinked, verifiable, and backdate safe", 
   // A backdated edition enters the archive without moving latest backwards.
   const minimal = await edition("minimal.json");
   await publish(root, minimal);
-  const latest = JSON.parse(await readFile(join(root, "live", "latest.json"), "utf8"));
+  const latest = JSON.parse(
+    await readFile(join(root, "live", "latest.json"), "utf8"),
+  );
   assert.equal(latest.web.edition_id, dense.edition.id);
   assert.equal(latest.device.edition_id, null);
   const receipt = await activatedReceipt(root, minimal.edition.id);
@@ -142,9 +185,20 @@ test("durable intent recovers after the intent and after the live swap, with has
     assert.equal(dry.status, "planned");
     const recovered = await recoverPublication(root, false);
     assert.equal(recovered.status, "recovered");
-    assert.equal((await activatedReceipt(root, doc.edition.id)).activated, true);
-    assert.deepEqual(await readdir(root).then((n) => n.filter((x) => x.startsWith(".staging"))), []);
-    assert.equal(await recoverPublication(root, false).then((r) => r.status), "nothing_to_recover");
+    assert.equal(
+      (await activatedReceipt(root, doc.edition.id)).activated,
+      true,
+    );
+    assert.deepEqual(
+      await readdir(root).then((n) =>
+        n.filter((x) => x.startsWith(".staging")),
+      ),
+      [],
+    );
+    assert.equal(
+      await recoverPublication(root, false).then((r) => r.status),
+      "nothing_to_recover",
+    );
   }
 });
 
@@ -152,12 +206,19 @@ test("a crash before the intent leaves nothing behind, and a held lock is report
   const root = await mkdtemp(join(tmpdir(), "publish-preintent-"));
   const doc = await edition("sparse.json");
   await assert.rejects(() => publish(root, doc, { crashAt: "before-intent" }));
-  assert.equal((await recoverPublication(root, false)).status, "nothing_to_recover");
-  assert.deepEqual(await readdir(root).then((n) => n.filter((x) => x.startsWith(".staging"))), []);
+  assert.equal(
+    (await recoverPublication(root, false)).status,
+    "nothing_to_recover",
+  );
+  assert.deepEqual(
+    await readdir(root).then((n) => n.filter((x) => x.startsWith(".staging"))),
+    [],
+  );
   await mkdir(join(root, ".lock"), { recursive: true });
   await assert.rejects(
     () => publish(root, doc),
-    (e: any) => e.type === "lock_busy" && typeof e.details.age_seconds === "number",
+    (e: any) =>
+      e.type === "lock_busy" && typeof e.details.age_seconds === "number",
   );
   await rm(join(root, ".lock"), { recursive: true });
 });
@@ -178,8 +239,17 @@ test("retention keeps the newest releases by activation sequence and never the l
 test("the other composition builds from the same story markup", async () => {
   const dense = await edition("dense.json");
   const work = await mkdtemp(join(tmpdir(), "publisher-layout-"));
-  const dist = await buildWeb(projectRoot, work, dense, [indexEntry(dense, "skipped")], { layout: "sheet" });
-  const html = await readFile(join(dist, "n", dense.edition.id, "index.html"), "utf8");
+  const dist = await buildWeb(
+    projectRoot,
+    work,
+    dense,
+    [indexEntry(dense, "skipped")],
+    { layout: "sheet" },
+  );
+  const html = await readFile(
+    join(dist, "n", dense.edition.id, "index.html"),
+    "utf8",
+  );
   assert.match(html, /class="page layout-sheet"/);
   assert.match(html, /class="sheet"/);
   for (const story of dense.stories) assert.match(html, new RegExp(story.id));
@@ -188,12 +258,19 @@ test("the other composition builds from the same story markup", async () => {
 test("standalone web builds are deterministic and load no remote resources", async () => {
   const work = await mkdtemp(join(tmpdir(), "publisher-determinism-"));
   const wrapper = resolve(projectRoot, "publish_news.sh");
-  const editionPath = resolve(projectRoot, "contracts/examples/all-callout-kinds.json");
+  const editionPath = resolve(
+    projectRoot,
+    "contracts/examples/all-callout-kinds.json",
+  );
   for (const name of ["one", "two"]) {
-    const r = spawnSync(wrapper, ["build-web", "--edition", editionPath, "--output", join(work, name)], {
-      cwd: "/tmp",
-      encoding: "utf8",
-    });
+    const r = spawnSync(
+      wrapper,
+      ["build-web", "--edition", editionPath, "--output", join(work, name)],
+      {
+        cwd: "/tmp",
+        encoding: "utf8",
+      },
+    );
     assert.equal(r.status, 0, r.stdout);
   }
   assert.equal(await tree(join(work, "one")), await tree(join(work, "two")));
@@ -202,7 +279,12 @@ test("standalone web builds are deterministic and load no remote resources", asy
     assert.doesNotMatch(html, /<script\b/i);
     for (const m of html.matchAll(/\b(?:src|href)="([^"]+)"/g)) {
       const url = m[1]!;
-      assert.ok(url.startsWith("/") || url.startsWith("./") || url.startsWith("https://"), url);
+      assert.ok(
+        url.startsWith("/") ||
+          url.startsWith("./") ||
+          url.startsWith("https://"),
+        url,
+      );
       if (url.startsWith("https://")) assert.match(m[0], /^href=/);
     }
   }

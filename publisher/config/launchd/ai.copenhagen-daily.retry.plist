@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>ai.copenhagen-daily.retry</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Users/vy/Documents/Development/news-gatherer/editorial/edit_news.sh</string>
+		<string>run --retry</string>
+	</array>
+	<key>WorkingDirectory</key>
+	<string>/Users/vy/Documents/Development/news-gatherer</string>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>PATH</key>
+		<string>/Users/vy/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+		<key>HOME</key>
+		<string>/Users/vy</string>
+		<key>PUBLISHER_MAGICK</key>
+		<string>/opt/homebrew/bin/magick</string>
+	</dict>
+	<key>StartCalendarInterval</key>
+	<dict>
+		<key>Hour</key>
+		<integer></integer>
+		<key>Minute</key>
+		<integer></integer>
+	</dict>
+	<key>StandardOutPath</key>
+	<string>/Users/vy/Documents/Development/news-gatherer/editorial/var/launchd/retry.stdout.log</string>
+	<key>StandardErrorPath</key>
+	<string>/Users/vy/Documents/Development/news-gatherer/editorial/var/launchd/retry.stderr.log</string>
+	<key>ProcessType</key>
+	<string>Background</string>
+</dict>
+</plist>
