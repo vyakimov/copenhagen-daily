@@ -326,8 +326,9 @@ class Runner:
             self._write_status()
             self._notify_failure()
             return self.status
-        self.status["outcome"] = "dry_run" if self.dry_run else "published"
-        self._write_status()
+        if self.status["outcome"] == "running":
+            self.status["outcome"] = "dry_run" if self.dry_run else "published"
+            self._write_status()
         return self.status
 
     def _collect(self) -> None:
@@ -564,10 +565,13 @@ class Runner:
         except ValueError:
             self._phase("archive", skipped=True, reason="run directory outside the repository")
             return
+        # The status committed with the run is the final one, so the outcome is settled here.
+        self.status["outcome"] = "published"
+        self.status["phases"].append({"name": "archive", "finished_at": _now(), "committed": len([n for n in SMALL_FILES if (self.run_dir / n).exists()])})
+        self._write_status()
         paths = [str(relative / name) for name in SMALL_FILES if (self.run_dir / name).exists()]
         self.git("add", *paths)
         self.git("commit", "-q", "-m", f"Archive the {self.edition_id} edition")
-        self._phase("archive", committed=len(paths))
 
 
 def run_edition(args: Any, policy: Policy) -> dict[str, Any]:

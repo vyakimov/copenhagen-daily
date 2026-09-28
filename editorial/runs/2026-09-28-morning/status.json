@@ -4,7 +4,7 @@
  "cutoff_at": "2026-09-28T06:00:00.000000Z",
  "started_at": "2026-09-28T12:27:40.030814Z",
  "dry_run": false,
- "outcome": "running",
+ "outcome": "published",
  "phases": [
   {
    "name": "collect",
@@ -77,6 +77,11 @@
    "finished_at": "2026-09-28T12:27:42.278161Z",
    "skipped": true,
    "reason": "no bucket configured"
+  },
+  {
+   "name": "archive",
+   "finished_at": "2026-09-28T12:27:42.320091Z",
+   "committed": 13
   }
  ],
  "failure": null,
@@ -111,6 +116,6 @@
    ]
   }
  },
- "updated_at": "2026-09-28T12:27:42.278167Z",
- "elapsed_s": 2.2
+ "updated_at": "2026-09-28T12:27:42.320521Z",
+ "elapsed_s": 2.3
 }

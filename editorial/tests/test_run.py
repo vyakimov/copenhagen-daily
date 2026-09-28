@@ -287,3 +287,19 @@ def test_retry_resumes_a_failed_edition(policy, tmp_path):
     again = Fakes(tmp_path)
     status = make_runner(policy, tmp_path, again, retry=True).run()
     assert status["outcome"] == "published"
+
+
+def test_archive_commits_the_final_status(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    committed = {}
+
+    def git(*args):
+        fakes.calls.append(("git", args[0]))
+        if args[0] == "commit":
+            committed["status"] = (tmp_path / "runs" / EDITION_ID / "status.json").read_text()
+
+    runner = make_runner(policy, tmp_path, fakes, git=git)
+    runner.run()
+    final = (tmp_path / "runs" / EDITION_ID / "status.json").read_text()
+    assert committed["status"] == final
+    assert json.loads(final)["outcome"] == "published"
