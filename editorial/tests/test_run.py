@@ -110,8 +110,8 @@ def make_runner(policy, tmp_path, fakes, **kwargs):
     return Runner(
         policy=policy, run_dir=run_dir, edition_id=EDITION_ID, cutoff=CUTOFF, publish_root=fakes.publish_root,
         registry=fakes.registry, ingest=fakes.ingest, publisher=fakes.publisher, editor=fakes.editor, checker=fakes.checker,
-        git=lambda *a: fakes.calls.append(("git", a[0])), collect=True, repo=tmp_path,
-        **{"stray_changes": lambda: [], "lock_path": tmp_path / "run.lock", **kwargs},
+        collect=True, repo=tmp_path,
+        **{"git": lambda *a: fakes.calls.append(("git", a[0])), "stray_changes": lambda: [], "lock_path": tmp_path / "run.lock", **kwargs},
     )
 
 
