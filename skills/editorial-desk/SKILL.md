@@ -21,7 +21,8 @@ else. You never publish; the runner does that after the copy has been checked.
    evidence" and "Writing guidelines": the eight guidelines and the attribution rule.
 4. `editorial/examples/2026-09-15-morning/NOTES.md` and `spec.json`: the quality bar and the voice.
    Read one story of each role closely. That is the paper.
-5. `editorial/STYLE.md` if it exists; until then the golden example is the style reference.
+5. `editorial/STYLE.md`: spelling, numbers, time, names, attribution forms. The golden example shows
+   them applied.
 
 ## The tools
 

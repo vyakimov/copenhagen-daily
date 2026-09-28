@@ -30,6 +30,7 @@ schedule and what to do when a run fails.
 - `policy.yaml`: the masthead's standing line: scoring publishers, section table, section weights,
   kicker vocabulary, budgets, limits, schedule. Read at every run.
 - `HANDBOOK.md`: the working method for the editor, person or model, and the hard rules.
+- `STYLE.md`: spelling, numbers, time, names, and attribution forms, drafted from the first editions.
 - `VERIFIER.md`: the checker's brief, tool-agnostic.
 - `config/desk.yaml`: where block 3's publish root is and which tools run the sessions.
 - `contracts/`: the spec schema and the verdicts schema, the two files the sessions must satisfy.

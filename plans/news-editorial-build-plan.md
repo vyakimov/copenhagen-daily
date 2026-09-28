@@ -166,9 +166,8 @@ Each package ends with a check the owner can show. Later packages depend on earl
    why.
 6. **The repair loop.** The verification send-back, bounded and recorded in the run directory.
 
-After package 6 the paper publishes itself every morning. The style guide, `STYLE.md`, is still to be
-written and should be written from the editorial log's first fortnight of complaints rather than in
-advance.
+After package 6 the paper publishes itself every morning. The style guide, `STYLE.md`, was drafted
+from the first three editions and grows from the editorial log.
 
 ## What this design gives up
 

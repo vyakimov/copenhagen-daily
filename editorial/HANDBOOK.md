@@ -109,5 +109,5 @@ paper, never a padded or a late one.
 - The coverage note says what was read and what failed.
 - The edition id has not been published before.
 
-A style guide will join this page; until it does, follow the golden example on spelling, numbers,
-institutions, and quotation marks.
+The [style guide](STYLE.md) settles spelling, numbers, time, names, institutions, and quotation
+marks; where it is silent, follow the golden example.
