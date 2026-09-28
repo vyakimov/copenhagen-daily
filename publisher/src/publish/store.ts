@@ -32,9 +32,20 @@ import { spawnSync } from "node:child_process";
 import type { EditionContractV1 } from "../contract/edition-contract.generated.ts";
 import { canonical, hashBytes, hashFile } from "./hash.ts";
 import { publisherError } from "./errors.ts";
-import { buildWeb, copyAssets, indexEntry, LAYOUT_VERSION, sortEntries, type IndexEntry } from "./web.ts";
+import {
+  buildWeb,
+  copyAssets,
+  indexEntry,
+  LAYOUT_VERSION,
+  sortEntries,
+  type IndexEntry,
+} from "./web.ts";
 import { loadTitleConfig } from "../contract/title-config.ts";
-import { buildDevice, DEVICE_INTEGRITY_ERRORS, type DeviceOutput } from "../device/index.ts";
+import {
+  buildDevice,
+  DEVICE_INTEGRITY_ERRORS,
+  type DeviceOutput,
+} from "../device/index.ts";
 
 export type PublishOptions = {
   root: string;
@@ -63,12 +74,24 @@ type Intent = {
   final: { bundle: string; assets: string; release: string };
 };
 
-type Activation = Intent & { activated: true; sequence: number; activated_at: string };
+type Activation = Intent & {
+  activated: true;
+  sequence: number;
+  activated_at: string;
+};
 
 type DeviceOutcome =
   | { status: "skipped" }
   | { status: "published"; output: DeviceOutput }
-  | { status: "failed"; error: { type: string; message: string; details: Record<string, unknown> }; report: unknown };
+  | {
+      status: "failed";
+      error: {
+        type: string;
+        message: string;
+        details: Record<string, unknown>;
+      };
+      report: unknown;
+    };
 
 const DEFAULT_KEEP_RELEASES = 5;
 
@@ -103,7 +126,8 @@ async function listFiles(dir: string, prefix = ""): Promise<string[]> {
   const out: string[] = [];
   for (const entry of await readdir(dir, { withFileTypes: true })) {
     const rel = join(prefix, entry.name);
-    if (entry.isDirectory()) out.push(...(await listFiles(join(dir, entry.name), rel)));
+    if (entry.isDirectory())
+      out.push(...(await listFiles(join(dir, entry.name), rel)));
     else out.push(rel);
   }
   return out.sort();
@@ -153,25 +177,42 @@ async function fileRecords(dir: string): Promise<FileRecord[]> {
   const records: FileRecord[] = [];
   for (const path of await listFiles(dir)) {
     const full = join(dir, path);
-    records.push({ path, bytes: (await stat(full)).size, sha256: await hashFile(full) });
+    records.push({
+      path,
+      bytes: (await stat(full)).size,
+      sha256: await hashFile(full),
+    });
   }
   return records;
 }
 
-async function verifyRecords(dir: string, records: FileRecord[], what: string): Promise<void> {
+async function verifyRecords(
+  dir: string,
+  records: FileRecord[],
+  what: string,
+): Promise<void> {
   for (const record of records) {
     const full = join(dir, record.path);
     if (!(await exists(full)) || (await hashFile(full)) !== record.sha256) {
-      throw publisherError("bundle_integrity_failed", `${what} does not match its recorded hash`, {
-        path: record.path,
-      });
+      throw publisherError(
+        "bundle_integrity_failed",
+        `${what} does not match its recorded hash`,
+        {
+          path: record.path,
+        },
+      );
     }
   }
 }
 
 function contained(root: string, path: string): boolean {
   const rel = relative(root, resolve(root, path));
-  return rel !== "" && rel !== ".." && !rel.startsWith(`..${sep}`) && !rel.includes("\0");
+  return (
+    rel !== "" &&
+    rel !== ".." &&
+    !rel.startsWith(`..${sep}`) &&
+    !rel.includes("\0")
+  );
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -187,10 +228,14 @@ async function withLock<T>(root: string, body: () => Promise<T>): Promise<T> {
     const ageSeconds = await stat(path)
       .then((s) => Math.round((Date.now() - s.mtimeMs) / 1000))
       .catch(() => null);
-    throw publisherError("lock_busy", "another publish or recover holds the publish-root lock", {
-      lock: ".lock",
-      age_seconds: ageSeconds,
-    });
+    throw publisherError(
+      "lock_busy",
+      "another publish or recover holds the publish-root lock",
+      {
+        lock: ".lock",
+        age_seconds: ageSeconds,
+      },
+    );
   }
   try {
     return await body();
@@ -248,18 +293,27 @@ async function readActivations(root: string): Promise<Activation[]> {
   if (!(await exists(dir))) return [];
   const records: Activation[] = [];
   for (const name of await readdir(dir)) {
-    if (name.endsWith(".json")) records.push(JSON.parse(await readFile(join(dir, name), "utf8")));
+    if (name.endsWith(".json"))
+      records.push(JSON.parse(await readFile(join(dir, name), "utf8")));
   }
   return records.sort((a, b) => a.sequence - b.sequence);
 }
 
-function environment(packageJson: Record<string, any>, fontsLock: string, device: DeviceOutcome) {
+function environment(
+  packageJson: Record<string, any>,
+  fontsLock: string,
+  device: DeviceOutcome,
+) {
   const magick = spawnSync("magick", ["-version"], { encoding: "utf8" });
   const imagemagick =
-    magick.status === 0 ? magick.stdout.split("\n")[0]!.replace(/^Version: ImageMagick /, "") : null;
-  const chromium = device.status === "published" ? device.output.environment : null;
+    magick.status === 0
+      ? magick.stdout.split("\n")[0]!.replace(/^Version: ImageMagick /, "")
+      : null;
+  const chromium =
+    device.status === "published" ? device.output.environment : null;
   const failures: Array<{ code: string; component: string }> = [];
-  if (device.status === "failed") failures.push({ code: device.error.type, component: "device" });
+  if (device.status === "failed")
+    failures.push({ code: device.error.type, component: "device" });
   return {
     node: process.version,
     icu: process.versions.icu,
@@ -279,15 +333,34 @@ function environment(packageJson: Record<string, any>, fontsLock: string, device
  */
 async function renderDevice(options: PublishOptions): Promise<DeviceOutcome> {
   if (options.skipDevice) return { status: "skipped" };
-  const config = loadTitleConfig(join(options.projectRoot, "config/title.yaml"));
+  const config = loadTitleConfig(
+    join(options.projectRoot, "config/title.yaml"),
+  );
   try {
-    return { status: "published", output: await buildDevice(options.projectRoot, options.edition, config) };
+    return {
+      status: "published",
+      output: await buildDevice(options.projectRoot, options.edition, config),
+    };
   } catch (caught) {
-    const error = caught as Error & { type?: string; details?: Record<string, unknown> };
-    if (!error.type || options.requireDevice || DEVICE_INTEGRITY_ERRORS.has(error.type)) throw caught;
+    const error = caught as Error & {
+      type?: string;
+      details?: Record<string, unknown>;
+    };
+    if (
+      !error.type ||
+      options.requireDevice ||
+      DEVICE_INTEGRITY_ERRORS.has(error.type)
+    )
+      throw caught;
     const { fit_report, ...details } = error.details ?? {};
-    process.stderr.write(`device edition failed: ${error.type}: ${error.message}\n`);
-    return { status: "failed", error: { type: error.type, message: error.message, details }, report: fit_report };
+    process.stderr.write(
+      `device edition failed: ${error.type}: ${error.message}\n`,
+    );
+    return {
+      status: "failed",
+      error: { type: error.type, message: error.message, details },
+      report: fit_report,
+    };
   }
 }
 
@@ -299,12 +372,18 @@ async function swapLive(root: string, intent: Intent): Promise<void> {
   const target = resolve(root, intent.final.release);
   const live = await currentRelease(root);
   if (live === target) return;
-  const expected = intent.predecessor ? resolve(root, intent.predecessor) : null;
+  const expected = intent.predecessor
+    ? resolve(root, intent.predecessor)
+    : null;
   if (live !== expected) {
-    throw publisherError("publish_conflict", "the live release is not the predecessor this run recorded", {
-      expected: intent.predecessor,
-      found: live ? relative(root, live) : null,
-    });
+    throw publisherError(
+      "publish_conflict",
+      "the live release is not the predecessor this run recorded",
+      {
+        expected: intent.predecessor,
+        found: live ? relative(root, live) : null,
+      },
+    );
   }
   const temp = join(root, `.live-${intent.release_id}`);
   await symlink(relative(root, target), temp);
@@ -312,13 +391,24 @@ async function swapLive(root: string, intent: Intent): Promise<void> {
   await fsync(root);
 }
 
-async function recordActivation(root: string, intent: Intent): Promise<Activation> {
+async function recordActivation(
+  root: string,
+  intent: Intent,
+): Promise<Activation> {
   const existing = await readActivations(root);
   const already = existing.find((a) => a.release_id === intent.release_id);
   if (already) return already;
   const sequence = (existing.at(-1)?.sequence ?? 0) + 1;
-  const record: Activation = { ...intent, activated: true, sequence, activated_at: new Date().toISOString() };
-  await atomicJson(join(root, "state", "activations", `${intent.release_id}.json`), record);
+  const record: Activation = {
+    ...intent,
+    activated: true,
+    sequence,
+    activated_at: new Date().toISOString(),
+  };
+  await atomicJson(
+    join(root, "state", "activations", `${intent.release_id}.json`),
+    record,
+  );
   await rm(join(root, "state", "pending.json"), { force: true });
   await fsync(join(root, "state"));
   return record;
@@ -329,7 +419,10 @@ async function retainReleases(root: string, keep: number): Promise<string[]> {
   const warnings: string[] = [];
   const live = await currentRelease(root);
   const records = await readActivations(root);
-  const doomed = records.slice(0, Math.max(0, records.length - Math.max(1, keep)));
+  const doomed = records.slice(
+    0,
+    Math.max(0, records.length - Math.max(1, keep)),
+  );
   for (const record of doomed) {
     const dir = resolve(root, record.final.release);
     if (dir === live || !(await exists(dir))) continue;
@@ -337,7 +430,9 @@ async function retainReleases(root: string, keep: number): Promise<string[]> {
       await thaw(dir);
       await rm(dir, { recursive: true, force: true });
     } catch (error) {
-      warnings.push(`retention: could not remove ${record.final.release}: ${(error as Error).message}`);
+      warnings.push(
+        `retention: could not remove ${record.final.release}: ${(error as Error).message}`,
+      );
     }
   }
   return warnings;
@@ -347,7 +442,9 @@ async function retainReleases(root: string, keep: number): Promise<string[]> {
 // publish
 // ---------------------------------------------------------------------------------------------
 
-export async function publishEdition(options: PublishOptions): Promise<Record<string, unknown>> {
+export async function publishEdition(
+  options: PublishOptions,
+): Promise<Record<string, unknown>> {
   const { root, projectRoot, edition, dryRun } = options;
   const editionId = edition.edition.id;
   const contract = canonical(edition);
@@ -358,7 +455,11 @@ export async function publishEdition(options: PublishOptions): Promise<Record<st
   return withLock(root, async () => {
     await probeSameFilesystem(root);
     if (await readPending(root)) {
-      throw publisherError("recovery_required", "a pending activation exists; run recover first", {});
+      throw publisherError(
+        "recovery_required",
+        "a pending activation exists; run recover first",
+        {},
+      );
     }
 
     const releaseBefore = await currentRelease(root);
@@ -367,11 +468,21 @@ export async function publishEdition(options: PublishOptions): Promise<Record<st
     const finalAssets = join(root, "store", "a", LAYOUT_VERSION);
 
     if (await exists(finalBundle)) {
-      const prior = JSON.parse(await readFile(join(finalBundle, "manifest.json"), "utf8"));
+      const prior = JSON.parse(
+        await readFile(join(finalBundle, "manifest.json"), "utf8"),
+      );
       if (prior.contract_sha256 === contractDigest) {
-        throw publisherError("bundle_exists", "edition id was already published", { edition_id: editionId });
+        throw publisherError(
+          "bundle_exists",
+          "edition id was already published",
+          { edition_id: editionId },
+        );
       }
-      throw publisherError("publish_conflict", "edition id exists with different bytes", { edition_id: editionId });
+      throw publisherError(
+        "publish_conflict",
+        "edition id exists with different bytes",
+        { edition_id: editionId },
+      );
     }
 
     const releaseId = `release-${editionId}-${randomUUID()}`;
@@ -380,22 +491,32 @@ export async function publishEdition(options: PublishOptions): Promise<Record<st
     try {
       await mkdir(work, { recursive: true });
       const device = await renderDevice(options);
-      const entries = sortEntries([...priorEntries, indexEntry(edition, device.status)]);
+      const entries = sortEntries([
+        ...priorEntries,
+        indexEntry(edition, device.status),
+      ]);
       const latest = entries.at(-1)!;
-      const latestDevice = entries.filter((e) => e.device_status === "published").at(-1) ?? null;
+      const latestDevice =
+        entries.filter((e) => e.device_status === "published").at(-1) ?? null;
 
       // Web build and bundle.
       const dist = await buildWeb(projectRoot, work, edition, entries);
       const bundle = join(work, "bundle");
       await mkdir(bundle, { recursive: true });
       await writeFile(join(bundle, "edition.json"), contract);
-      await copyFile(join(dist, "n", editionId, "index.html"), join(bundle, "index.html"));
+      await copyFile(
+        join(dist, "n", editionId, "index.html"),
+        join(bundle, "index.html"),
+      );
       if (device.status === "published") {
         const { output } = device;
         await mkdir(join(bundle, "device"), { recursive: true });
         await writeFile(join(bundle, "device", "page-1.html"), output.html);
         await writeFile(join(bundle, "device", "page-1.png"), output.png);
-        await writeFile(join(bundle, "fit-report.json"), canonical(output.report));
+        await writeFile(
+          join(bundle, "fit-report.json"),
+          canonical(output.report),
+        );
         await writeFile(
           join(bundle, "composition.json"),
           canonical({
@@ -404,12 +525,17 @@ export async function publishEdition(options: PublishOptions): Promise<Record<st
             composition: output.plan.composition,
             stories: output.plan.placements,
             contract_sha256: contractDigest,
-            config_sha256: await hashFile(join(projectRoot, "config/title.yaml")),
+            config_sha256: await hashFile(
+              join(projectRoot, "config/title.yaml"),
+            ),
             assets_sha256: output.stylesheet_sha256,
           }),
         );
       } else if (device.status === "failed" && device.report) {
-        await writeFile(join(bundle, "fit-report.json"), canonical(device.report));
+        await writeFile(
+          join(bundle, "fit-report.json"),
+          canonical(device.report),
+        );
       }
       const receiptDevice =
         device.status === "published"
@@ -425,11 +551,19 @@ export async function publishEdition(options: PublishOptions): Promise<Record<st
           : {
               status: device.status,
               story_ids: [],
-              omitted: edition.stories.map((s) => ({ story_id: s.id, reason: `device_${device.status}` })),
+              omitted: edition.stories.map((s) => ({
+                story_id: s.id,
+                reason: `device_${device.status}`,
+              })),
               dropped_callouts: [],
               structural_elements: [],
               ...(device.status === "failed"
-                ? { error: { type: device.error.type, message: device.error.message } }
+                ? {
+                    error: {
+                      type: device.error.type,
+                      message: device.error.message,
+                    },
+                  }
                 : {}),
             };
       const receipt = {
@@ -439,23 +573,30 @@ export async function publishEdition(options: PublishOptions): Promise<Record<st
         device: receiptDevice,
         bundle: { path: `n/${editionId}/` },
       };
-      await writeFile(join(bundle, "publication-receipt.json"), canonical(receipt));
+      await writeFile(
+        join(bundle, "publication-receipt.json"),
+        canonical(receipt),
+      );
 
       // Shared assets.
       const assets = join(work, "assets");
       await copyAssets(projectRoot, assets);
       const assetRecords = await fileRecords(assets);
       if (await exists(finalAssets))
-        await verifyRecords(finalAssets, assetRecords, "shared asset").catch((error) => {
-          throw publisherError(
-            "asset_version_conflict",
-            "layout version already exists with different assets",
-            error.details,
-          );
-        });
+        await verifyRecords(finalAssets, assetRecords, "shared asset").catch(
+          (error) => {
+            throw publisherError(
+              "asset_version_conflict",
+              "layout version already exists with different assets",
+              error.details,
+            );
+          },
+        );
 
       // Manifest (hashes the receipt; never hashes itself).
-      const packageJson = JSON.parse(await readFile(join(projectRoot, "package.json"), "utf8"));
+      const packageJson = JSON.parse(
+        await readFile(join(projectRoot, "package.json"), "utf8"),
+      );
       const manifest = {
         schema_version: 1,
         edition_id: editionId,
@@ -488,16 +629,46 @@ export async function publishEdition(options: PublishOptions): Promise<Record<st
       await cp(dist, release, { recursive: true });
       await rm(join(release, "n"), { recursive: true, force: true });
       for (const entry of priorEntries)
-        await hardlinkTree(join(root, "store", "n", entry.id), join(release, "n", entry.id));
+        await hardlinkTree(
+          join(root, "store", "n", entry.id),
+          join(release, "n", entry.id),
+        );
       await hardlinkTree(bundle, join(release, "n", editionId));
-      await hardlinkTree((await exists(finalAssets)) ? finalAssets : assets, join(release, "a", LAYOUT_VERSION));
-      await writeFile(join(release, "index.json"), canonical({ editions: entries }));
+      await hardlinkTree(
+        (await exists(finalAssets)) ? finalAssets : assets,
+        join(release, "a", LAYOUT_VERSION),
+      );
+      // Archived editions link the layout version they were published with, so every version the
+      // store holds rides along in the release.
+      const assetRoot = join(root, "store", "a");
+      if (await exists(assetRoot)) {
+        for (const version of await readdir(assetRoot)) {
+          if (version !== LAYOUT_VERSION && !version.startsWith("."))
+            await hardlinkTree(
+              join(assetRoot, version),
+              join(release, "a", version),
+            );
+        }
+      }
+      await writeFile(
+        join(release, "index.json"),
+        canonical({ editions: entries }),
+      );
       await writeFile(
         join(release, "latest.json"),
         canonical({
-          web: { edition_id: latest.id, date: latest.date, name: latest.name, status: "published" },
+          web: {
+            edition_id: latest.id,
+            date: latest.date,
+            name: latest.name,
+            status: "published",
+          },
           device: latestDevice
-            ? { edition_id: latestDevice.id, date: latestDevice.date, status: "published" }
+            ? {
+                edition_id: latestDevice.id,
+                date: latestDevice.date,
+                status: "published",
+              }
             : { edition_id: null, date: null, status: "none" },
         }),
       );
@@ -513,7 +684,9 @@ export async function publishEdition(options: PublishOptions): Promise<Record<st
       // "/" is the latest edition's own immutable page, which may be an older edition on a backdated run.
       await rm(join(release, "index.html"), { force: true });
       const latestPage =
-        latest.id === editionId ? join(bundle, "index.html") : join(root, "store", "n", latest.id, "index.html");
+        latest.id === editionId
+          ? join(bundle, "index.html")
+          : join(root, "store", "n", latest.id, "index.html");
       await link(latestPage, join(release, "index.html"));
 
       if (dryRun) {
@@ -529,7 +702,11 @@ export async function publishEdition(options: PublishOptions): Promise<Record<st
       // Durable intent.
       await syncTree(work);
       if (options.crashAt === "before-intent") {
-        throw publisherError("publication_outcome_uncertain", "injected crash", { durable_intent: false });
+        throw publisherError(
+          "publication_outcome_uncertain",
+          "injected crash",
+          { durable_intent: false },
+        );
       }
       const intent: Intent = {
         version: 1,
@@ -539,7 +716,11 @@ export async function publishEdition(options: PublishOptions): Promise<Record<st
         manifest_sha256: manifestDigest,
         predecessor: releaseBefore ? relative(root, releaseBefore) : null,
         work: relative(root, work),
-        staged: { bundle: relative(root, bundle), assets: relative(root, assets), release: relative(root, release) },
+        staged: {
+          bundle: relative(root, bundle),
+          assets: relative(root, assets),
+          release: relative(root, release),
+        },
         final: {
           bundle: relative(root, finalBundle),
           assets: relative(root, finalAssets),
@@ -549,14 +730,22 @@ export async function publishEdition(options: PublishOptions): Promise<Record<st
       await atomicJson(join(root, "state", "pending.json"), intent);
       intentDurable = true;
       if (options.crashAt === "after-intent") {
-        throw publisherError("publication_outcome_uncertain", "injected crash", { durable_intent: true });
+        throw publisherError(
+          "publication_outcome_uncertain",
+          "injected crash",
+          { durable_intent: true },
+        );
       }
 
       // Promotion, activation, acknowledgment.
       await promote(root, intent);
       await swapLive(root, intent);
       if (options.crashAt === "after-live") {
-        throw publisherError("publication_outcome_uncertain", "injected crash", { durable_intent: true, live: true });
+        throw publisherError(
+          "publication_outcome_uncertain",
+          "injected crash",
+          { durable_intent: true, live: true },
+        );
       }
       await recordActivation(root, intent);
       await rm(work, { recursive: true, force: true });
@@ -605,14 +794,25 @@ async function promote(root: string, intent: Intent): Promise<void> {
 // recover
 // ---------------------------------------------------------------------------------------------
 
-export async function recoverPublication(root: string, dryRun: boolean): Promise<Record<string, unknown>> {
+export async function recoverPublication(
+  root: string,
+  dryRun: boolean,
+): Promise<Record<string, unknown>> {
   return withLock(root, async () => {
     const intent = await readPending(root);
     if (!intent) return { status: "nothing_to_recover" };
 
-    for (const path of [intent.work, ...Object.values(intent.staged), ...Object.values(intent.final)]) {
+    for (const path of [
+      intent.work,
+      ...Object.values(intent.staged),
+      ...Object.values(intent.final),
+    ]) {
       if (!contained(root, path)) {
-        throw publisherError("publish_conflict", "intent names a path outside the publish root", { path });
+        throw publisherError(
+          "publish_conflict",
+          "intent names a path outside the publish root",
+          { path },
+        );
       }
     }
 
@@ -622,31 +822,64 @@ export async function recoverPublication(root: string, dryRun: boolean): Promise
       if (await exists(final)) return { path: final, promoted: true };
       const staged = resolve(root, intent.staged[key]);
       if (await exists(staged)) return { path: staged, promoted: false };
-      throw publisherError("bundle_integrity_failed", `neither staged nor final ${key} exists`, { key });
+      throw publisherError(
+        "bundle_integrity_failed",
+        `neither staged nor final ${key} exists`,
+        { key },
+      );
     };
     const bundle = await locate("bundle");
     const assets = await locate("assets");
     const release = await locate("release");
     const manifestPath = join(bundle.path, "manifest.json");
-    if (!(await exists(manifestPath)) || (await hashFile(manifestPath)) !== intent.manifest_sha256) {
-      throw publisherError("bundle_integrity_failed", "manifest does not match the intent", {});
+    if (
+      !(await exists(manifestPath)) ||
+      (await hashFile(manifestPath)) !== intent.manifest_sha256
+    ) {
+      throw publisherError(
+        "bundle_integrity_failed",
+        "manifest does not match the intent",
+        {},
+      );
     }
     const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
     if (manifest.contract_sha256 !== intent.contract_sha256) {
-      throw publisherError("bundle_integrity_failed", "contract digest does not match the intent", {});
+      throw publisherError(
+        "bundle_integrity_failed",
+        "contract digest does not match the intent",
+        {},
+      );
     }
     await verifyRecords(bundle.path, manifest.files, "bundle file");
-    await verifyRecords(assets.path, manifest.shared_assets.files, "shared asset");
-    const releaseManifest = join(release.path, "n", intent.edition_id, "manifest.json");
-    if (!(await exists(releaseManifest)) || (await hashFile(releaseManifest)) !== intent.manifest_sha256) {
-      throw publisherError("bundle_integrity_failed", "staged release does not carry the intended bundle", {});
+    await verifyRecords(
+      assets.path,
+      manifest.shared_assets.files,
+      "shared asset",
+    );
+    const releaseManifest = join(
+      release.path,
+      "n",
+      intent.edition_id,
+      "manifest.json",
+    );
+    if (
+      !(await exists(releaseManifest)) ||
+      (await hashFile(releaseManifest)) !== intent.manifest_sha256
+    ) {
+      throw publisherError(
+        "bundle_integrity_failed",
+        "staged release does not carry the intended bundle",
+        {},
+      );
     }
 
     const live = await currentRelease(root);
     const plan = {
       edition_id: intent.edition_id,
       release_id: intent.release_id,
-      promote: (["bundle", "assets", "release"] as const).filter((k) => !{ bundle, assets, release }[k].promoted),
+      promote: (["bundle", "assets", "release"] as const).filter(
+        (k) => !{ bundle, assets, release }[k].promoted,
+      ),
       swap_live: live !== resolve(root, intent.final.release),
     };
     if (dryRun) return { status: "planned", ...plan };
@@ -670,39 +903,74 @@ export async function recoverPublication(root: string, dryRun: boolean): Promise
 // receipt, verify
 // ---------------------------------------------------------------------------------------------
 
-export async function activatedReceipt(root: string, editionId: string): Promise<Record<string, unknown>> {
+export async function activatedReceipt(
+  root: string,
+  editionId: string,
+): Promise<Record<string, unknown>> {
   const pending = await readPending(root);
   if (pending?.edition_id === editionId) {
-    throw publisherError("recovery_required", "this edition has a pending activation; run recover", {
-      edition_id: editionId,
-    });
+    throw publisherError(
+      "recovery_required",
+      "this edition has a pending activation; run recover",
+      {
+        edition_id: editionId,
+      },
+    );
   }
-  const activation = (await readActivations(root)).find((a) => a.edition_id === editionId);
+  const activation = (await readActivations(root)).find(
+    (a) => a.edition_id === editionId,
+  );
   const bundle = join(root, "store", "n", editionId);
   if (!activation) {
     if (await exists(bundle)) {
-      throw publisherError("edition_not_activated", "the bundle is stored but was never activated", {
-        edition_id: editionId,
-      });
+      throw publisherError(
+        "edition_not_activated",
+        "the bundle is stored but was never activated",
+        {
+          edition_id: editionId,
+        },
+      );
     }
-    throw publisherError("resource_not_found", "no such edition", { edition_id: editionId });
+    throw publisherError("resource_not_found", "no such edition", {
+      edition_id: editionId,
+    });
   }
-  const receipt = JSON.parse(await readFile(join(bundle, "publication-receipt.json"), "utf8"));
+  const receipt = JSON.parse(
+    await readFile(join(bundle, "publication-receipt.json"), "utf8"),
+  );
   return {
     receipt,
     manifest_sha256: await hashFile(join(bundle, "manifest.json")),
     activated: true,
-    activation: { release_id: activation.release_id, sequence: activation.sequence },
+    activation: {
+      release_id: activation.release_id,
+      sequence: activation.sequence,
+    },
   };
 }
 
-export async function verifyBundle(root: string, editionId: string): Promise<Record<string, unknown>> {
+export async function verifyBundle(
+  root: string,
+  editionId: string,
+): Promise<Record<string, unknown>> {
   const bundle = join(root, "store", "n", editionId);
   if (!(await exists(bundle))) {
-    throw publisherError("resource_not_found", "bundle not found", { edition_id: editionId });
+    throw publisherError("resource_not_found", "bundle not found", {
+      edition_id: editionId,
+    });
   }
-  const manifest = JSON.parse(await readFile(join(bundle, "manifest.json"), "utf8"));
+  const manifest = JSON.parse(
+    await readFile(join(bundle, "manifest.json"), "utf8"),
+  );
   await verifyRecords(bundle, manifest.files, "bundle file");
-  await verifyRecords(join(root, "store", manifest.shared_assets.path), manifest.shared_assets.files, "shared asset");
-  return { valid: true, edition_id: editionId, manifest_sha256: await hashFile(join(bundle, "manifest.json")) };
+  await verifyRecords(
+    join(root, "store", manifest.shared_assets.path),
+    manifest.shared_assets.files,
+    "shared asset",
+  );
+  return {
+    valid: true,
+    edition_id: editionId,
+    manifest_sha256: await hashFile(join(bundle, "manifest.json")),
+  };
 }

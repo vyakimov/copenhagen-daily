@@ -289,3 +289,23 @@ test("standalone web builds are deterministic and load no remote resources", asy
     }
   }
 });
+
+test("a release carries every layout version the store holds, so archived pages keep their stylesheet", async () => {
+  const root = await mkdtemp(join(tmpdir(), "publish-assets-"));
+  const older = join(root, "store", "a", "broadsheet-v0");
+  await mkdir(older, { recursive: true });
+  const { writeFile } = await import("node:fs/promises");
+  await writeFile(join(older, "web.css"), "body{}\n");
+  const doc = await edition("minimal.json");
+  const result = await publish(root, doc);
+  assert.equal(result.status, "published");
+  assert.equal(
+    await readFile(join(root, "live", "a", "broadsheet-v0", "web.css"), "utf8"),
+    "body{}\n",
+  );
+  const html = await readFile(
+    join(root, "live", "n", doc.edition.id, "index.html"),
+    "utf8",
+  );
+  assert.match(html, /href="\/a\/broadsheet-v2\/web.css"/);
+});

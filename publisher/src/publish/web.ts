@@ -6,7 +6,7 @@ import type { EditionContractV1 } from "../contract/edition-contract.generated.t
 import { canonical } from "./hash.ts";
 import { publisherError } from "./errors.ts";
 
-export const LAYOUT_VERSION = "broadsheet-v1";
+export const LAYOUT_VERSION = "broadsheet-v2";
 
 export type IndexEntry = {
   id: string;
@@ -18,7 +18,10 @@ export type IndexEntry = {
   device_status: "published" | "failed" | "skipped";
 };
 
-export function indexEntry(edition: EditionContractV1, deviceStatus: IndexEntry["device_status"]): IndexEntry {
+export function indexEntry(
+  edition: EditionContractV1,
+  deviceStatus: IndexEntry["device_status"],
+): IndexEntry {
   const e = edition.edition;
   return {
     id: e.id,
@@ -37,7 +40,9 @@ export function orderKey(entry: IndexEntry): string {
 }
 
 export function sortEntries(entries: IndexEntry[]): IndexEntry[] {
-  return [...entries].sort((a, b) => (orderKey(a) < orderKey(b) ? -1 : orderKey(a) > orderKey(b) ? 1 : 0));
+  return [...entries].sort((a, b) =>
+    orderKey(a) < orderKey(b) ? -1 : orderKey(a) > orderKey(b) ? 1 : 0,
+  );
 }
 
 /**
@@ -64,30 +69,51 @@ export async function buildWeb(
     recursive: true,
     filter: (source) => !source.startsWith(resolve(sourceSite, ".astro")),
   });
-  await cp(resolve(projectRoot, "assets/html"), resolve(run, "generated", "assets", "html"), { recursive: true });
-  await symlink(resolve(projectRoot, "node_modules"), resolve(run, "node_modules"));
+  await cp(
+    resolve(projectRoot, "assets/html"),
+    resolve(run, "generated", "assets", "html"),
+    { recursive: true },
+  );
+  await symlink(
+    resolve(projectRoot, "node_modules"),
+    resolve(run, "node_modules"),
+  );
 
-  await writeFile(resolve(input, "editions", `${edition.edition.id}.json`), canonical(edition));
-  await writeFile(resolve(input, "index.json"), canonical({ editions: sortEntries(entries) }));
-  const title = parse(await readFile(resolve(projectRoot, "config/title.yaml"), "utf8"));
+  await writeFile(
+    resolve(input, "editions", `${edition.edition.id}.json`),
+    canonical(edition),
+  );
+  await writeFile(
+    resolve(input, "index.json"),
+    canonical({ editions: sortEntries(entries) }),
+  );
+  const title = parse(
+    await readFile(resolve(projectRoot, "config/title.yaml"), "utf8"),
+  );
   // A layout override exists for previews only; publish never passes one.
   if (options.layout) title.web_layout = options.layout;
+  // The page links its stylesheet by layout version, so the version is declared once, here.
+  title.layout_version = LAYOUT_VERSION;
   await writeFile(resolve(input, "config.json"), canonical(title));
 
-  const result = spawnSync(resolve(projectRoot, "node_modules/.bin/astro"), ["build", "--root", generatedSite], {
-    cwd: run,
-    encoding: "utf8",
-    env: {
-      ...process.env,
-      ASTRO_TELEMETRY_DISABLED: "1",
-      PUBLISHER_BUILD_INPUT: input,
-      PUBLISHER_ASTRO_OUT: out,
-      PUBLISHER_ASTRO_CACHE: cache,
-      PUBLISHER_HYPHENATION: resolve(projectRoot, "config/hyphenation.json"),
-      TZ: "Europe/Copenhagen",
-      SOURCE_DATE_EPOCH: "0",
+  const result = spawnSync(
+    resolve(projectRoot, "node_modules/.bin/astro"),
+    ["build", "--root", generatedSite],
+    {
+      cwd: run,
+      encoding: "utf8",
+      env: {
+        ...process.env,
+        ASTRO_TELEMETRY_DISABLED: "1",
+        PUBLISHER_BUILD_INPUT: input,
+        PUBLISHER_ASTRO_OUT: out,
+        PUBLISHER_ASTRO_CACHE: cache,
+        PUBLISHER_HYPHENATION: resolve(projectRoot, "config/hyphenation.json"),
+        TZ: "Europe/Copenhagen",
+        SOURCE_DATE_EPOCH: "0",
+      },
     },
-  });
+  );
   if (result.status !== 0) {
     throw publisherError("web_build_failed", "Astro web build failed", {
       output_tail: `${result.stdout}${result.stderr}`.slice(-4000),
@@ -97,11 +123,23 @@ export async function buildWeb(
 }
 
 /** Concatenate tokens + each output stylesheet and copy the vendored fonts into one asset directory. */
-export async function copyAssets(projectRoot: string, dest: string): Promise<void> {
+export async function copyAssets(
+  projectRoot: string,
+  dest: string,
+): Promise<void> {
   await mkdir(dest, { recursive: true });
-  const css = (name: string) => readFile(resolve(projectRoot, "assets/css", name), "utf8");
+  const css = (name: string) =>
+    readFile(resolve(projectRoot, "assets/css", name), "utf8");
   const tokens = await css("tokens.css");
-  await writeFile(resolve(dest, "web.css"), `${tokens}\n${await css("web.css")}`);
-  await writeFile(resolve(dest, "device.css"), `${tokens}\n${await css("device.css")}`);
-  await cp(resolve(projectRoot, "assets/fonts"), resolve(dest, "fonts"), { recursive: true });
+  await writeFile(
+    resolve(dest, "web.css"),
+    `${tokens}\n${await css("web.css")}`,
+  );
+  await writeFile(
+    resolve(dest, "device.css"),
+    `${tokens}\n${await css("device.css")}`,
+  );
+  await cp(resolve(projectRoot, "assets/fonts"), resolve(dest, "fonts"), {
+    recursive: true,
+  });
 }

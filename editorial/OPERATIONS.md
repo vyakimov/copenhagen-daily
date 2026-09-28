@@ -7,7 +7,7 @@ with logs under `~/Library/Logs/copenhagen-daily/`:
 
 | Job | When | Command |
 |---|---|---|
-| `ai.copenhagen-daily.collect` | every five minutes | block 1 `collect --once` |
+| `ai.copenhagen-daily.collect` | every fifteen minutes | block 1 `collect --once` |
 | `ai.copenhagen-daily.edition` | 08:05 local | `edit_news.sh run` |
 | `ai.copenhagen-daily.retry` | 10:30 local | `edit_news.sh run --retry`: runs only if the morning edition has not already succeeded, resuming a failed run from its first missing file |
 | `ai.copenhagen-daily.freshness` | 11:30 local | `edit_news.sh freshness --notify`: fails and notifies when the latest activated edition is older than `max_edition_age_hours` |

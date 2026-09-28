@@ -53,10 +53,7 @@ test("every page refuses indexing and the release carries a robots file", async 
       page,
       /<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">/,
     );
-    assert.match(
-      page,
     assert.match(page, /(Mon|Tues|Wednes|Thurs|Fri|Satur|Sun)day edition/);
-    );
     const robots = await readFile(join(dist, "robots.txt"), "utf8");
     assert.equal(robots, "User-agent: *\nDisallow: /\n");
   } finally {

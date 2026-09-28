@@ -1,5 +1,7 @@
 ---
+import { config } from "../lib.ts";
 const { title = "Copenhagen Daily", language = "en", redirect } = Astro.props;
+const stylesheet = `/a/${config.layout_version}/web.css`;
 const csp = [
   "default-src 'none'", "style-src 'self'", "font-src 'self'", "img-src 'self'",
   "base-uri 'none'", "form-action 'none'",
@@ -13,7 +15,7 @@ const csp = [
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta http-equiv="Content-Security-Policy" content={csp}>
     {redirect && <meta http-equiv="refresh" content={`0;url=${redirect}`} />}
-    <link rel="stylesheet" href="/a/broadsheet-v1/web.css">
+    <link rel="stylesheet" href={stylesheet}>
     <title>{title}</title>
   </head>
   <body><slot /></body>
