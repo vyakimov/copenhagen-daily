@@ -204,9 +204,13 @@ class Runner:
         retry: bool = False,
         collect_wait_seconds: int = 30,
         collect_max_attempts: int = 20,
+        collect_max_age_minutes: int = 20,
+        now: Callable[[], str] = _now,
     ):
         self.collect_wait_seconds = collect_wait_seconds
         self.collect_max_attempts = collect_max_attempts
+        self.collect_max_age_minutes = collect_max_age_minutes
+        self.now = now
         self.repo = repo
         self.notifier = notifier
         self.deliverer = deliverer
@@ -341,6 +345,15 @@ class Runner:
         if not self.collect:
             self._phase("collect", skipped=True)
             return
+        # The scheduled collector polls every few minutes; when its last poll is recent enough, a
+        # second poll buys nothing and only competes for the lock.
+        health = self.ingest("health", timeout=self._budget(2))
+        last = max((f.get("last_successful_poll_at") or "" for f in health.get("feeds", [])), default="")
+        if last:
+            age = dt.datetime.fromisoformat(self.now().replace("Z", "+00:00")) - dt.datetime.fromisoformat(last.replace("Z", "+00:00"))
+            if age <= dt.timedelta(minutes=self.collect_max_age_minutes):
+                self._phase("collect", skipped=True, reason="recent_poll", last_poll_at=last, age_minutes=round(age.total_seconds() / 60, 1))
+                return
         waited = 0
         while True:
             try:

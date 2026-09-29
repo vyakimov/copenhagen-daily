@@ -341,3 +341,47 @@ def test_collect_gives_up_on_a_held_lock_and_uses_the_last_poll(policy, tmp_path
     assert status["outcome"] == "published", status["failure"]
     collect = next(p for p in status["phases"] if p["name"] == "collect")
     assert collect["skipped"] is True and collect["reason"] == "lock_busy"
+
+
+def test_collect_is_skipped_when_the_collector_polled_recently(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    real_ingest = fakes.ingest
+    calls = []
+
+    def ingest(action, *args, timeout=0):
+        calls.append(action)
+        if action == "health":
+            result = real_ingest(action, *args, timeout=timeout)
+            for feed in result["feeds"]:
+                feed["last_successful_poll_at"] = "2026-09-15T07:55:00.000000Z"
+            return result
+        return real_ingest(action, *args, timeout=timeout)
+
+    fakes.ingest = ingest
+    runner = make_runner(policy, tmp_path, fakes, now=lambda: "2026-09-15T08:05:00.000000Z", collect_max_age_minutes=20)
+    status = runner.run()
+    assert status["outcome"] == "published", status["failure"]
+    collect = next(p for p in status["phases"] if p["name"] == "collect")
+    assert collect["skipped"] is True and collect["reason"] == "recent_poll"
+    assert "collect" not in calls
+
+
+def test_collect_runs_when_the_last_poll_is_old(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    real_ingest = fakes.ingest
+    calls = []
+
+    def ingest(action, *args, timeout=0):
+        calls.append(action)
+        if action == "health":
+            result = real_ingest(action, *args, timeout=timeout)
+            for feed in result["feeds"]:
+                feed["last_successful_poll_at"] = "2026-09-15T06:00:00.000000Z"
+            return result
+        return real_ingest(action, *args, timeout=timeout)
+
+    fakes.ingest = ingest
+    runner = make_runner(policy, tmp_path, fakes, now=lambda: "2026-09-15T08:05:00.000000Z", collect_max_age_minutes=20)
+    status = runner.run()
+    assert status["outcome"] == "published", status["failure"]
+    assert "collect" in calls
