@@ -41,7 +41,7 @@ LOCK_PATH = VAR / "run.lock"
 # start another run, publish, or reach block 1 or block 3 through the wrapper.
 EDITOR_ACTIONS = ("check-clusters", "score", "build")
 SMALL_FILES = [
-    "feeds.json", "clusters.json", "clusters-checked.json", "ranking.json", "selection.json", "spec.json",
+    "feeds.json", "memory.json", "clusters.json", "clusters-checked.json", "ranking.json", "selection.json", "spec.json",
     "edition.json", "check-input.json", "verdicts.json", "send-back.json", "edition-checked.json",
     "NOTES.md", "status.json",
 ]

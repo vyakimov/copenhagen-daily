@@ -7,3 +7,5 @@ runs/*/bundle/
 runs/*/window.json
 runs/*/window.md
 runs/*/sessions/
+runs/*/*.draft.json
+runs/*/*.draft.md
