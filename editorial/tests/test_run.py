@@ -5,6 +5,7 @@ from pathlib import Path
 import pytest
 
 from conftest import BUNDLE, EDITORIAL_EXAMPLES, FIXTURES, read_json
+from news_editorial.blocks import BlockError
 from news_editorial.run import RunFailure, Runner, cutoff_for
 
 GOLDEN = EDITORIAL_EXAMPLES / "2026-09-15-morning"
@@ -303,3 +304,40 @@ def test_archive_commits_the_final_status(policy, tmp_path):
     final = (tmp_path / "runs" / EDITION_ID / "status.json").read_text()
     assert committed["status"] == final
     assert json.loads(final)["outcome"] == "published"
+
+
+def test_collect_waits_for_the_lock_then_proceeds(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    attempts = []
+    real_ingest = fakes.ingest
+
+    def busy_then_free(action, *args, timeout=0):
+        if action == "collect":
+            attempts.append(1)
+            if len(attempts) < 3:
+                raise BlockError("lock_busy", "Another writer holds the process lock.")
+        return real_ingest(action, *args, timeout=timeout)
+
+    fakes.ingest = busy_then_free
+    runner = make_runner(policy, tmp_path, fakes, collect_wait_seconds=0)
+    status = runner.run()
+    assert status["outcome"] == "published", status["failure"]
+    assert len(attempts) == 3
+    assert next(p for p in status["phases"] if p["name"] == "collect")["waited_attempts"] == 2
+
+
+def test_collect_gives_up_on_a_held_lock_and_uses_the_last_poll(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    real_ingest = fakes.ingest
+
+    def always_busy(action, *args, timeout=0):
+        if action == "collect":
+            raise BlockError("lock_busy", "Another writer holds the process lock.")
+        return real_ingest(action, *args, timeout=timeout)
+
+    fakes.ingest = always_busy
+    runner = make_runner(policy, tmp_path, fakes, collect_wait_seconds=0, collect_max_attempts=3)
+    status = runner.run()
+    assert status["outcome"] == "published", status["failure"]
+    collect = next(p for p in status["phases"] if p["name"] == "collect")
+    assert collect["skipped"] is True and collect["reason"] == "lock_busy"

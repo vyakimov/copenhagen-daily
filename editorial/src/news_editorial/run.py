@@ -202,7 +202,11 @@ class Runner:
         notifier: Callable[[str, str], Any] | None = None,
         deliverer: Callable[[Path], dict[str, Any]] | None = None,
         retry: bool = False,
+        collect_wait_seconds: int = 30,
+        collect_max_attempts: int = 20,
     ):
+        self.collect_wait_seconds = collect_wait_seconds
+        self.collect_max_attempts = collect_max_attempts
         self.repo = repo
         self.notifier = notifier
         self.deliverer = deliverer
@@ -332,11 +336,25 @@ class Runner:
         return self.status
 
     def _collect(self) -> None:
+        """Poll once more so the window is current. The scheduled collector may hold block 1's lock;
+        wait for it, and if it never frees, go on with its poll, which is at most an interval old."""
         if not self.collect:
             self._phase("collect", skipped=True)
             return
-        result = self.ingest("collect", "--once", timeout=self._budget(15))
-        self._phase("collect", status=result.get("status"))
+        waited = 0
+        while True:
+            try:
+                result = self.ingest("collect", "--once", timeout=self._budget(15))
+                self._phase("collect", status=result.get("status"), waited_attempts=waited)
+                return
+            except BlockError as exc:
+                if exc.error_type != "lock_busy":
+                    raise
+                waited += 1
+                if waited >= self.collect_max_attempts:
+                    self._phase("collect", skipped=True, reason="lock_busy", waited_attempts=waited)
+                    return
+                time.sleep(self.collect_wait_seconds)
 
     def _window(self) -> None:
         if (self.run_dir / "window.json").is_file():

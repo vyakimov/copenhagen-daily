@@ -1,0 +1,25 @@
+{
+ "schema_version": 1,
+ "edition_id": "2026-09-29-morning",
+ "cutoff_at": "2026-09-29T06:00:00.000000Z",
+ "started_at": "2026-09-29T08:30:05.423749Z",
+ "dry_run": false,
+ "outcome": "failed",
+ "phases": [],
+ "failure": {
+  "phase": "collect",
+  "type": "lock_busy",
+  "message": "gather_news.sh collect: Another writer holds the process lock. Retry later.",
+  "details": {
+   "upstream": {
+    "details": {},
+    "message": "Another writer holds the process lock. Retry later.",
+    "type": "lock_busy"
+   },
+   "exit_code": 1
+  }
+ },
+ "published": null,
+ "updated_at": "2026-09-29T08:30:05.711271Z",
+ "elapsed_s": 0.3
+}
