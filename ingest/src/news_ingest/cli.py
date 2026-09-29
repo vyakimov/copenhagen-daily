@@ -16,6 +16,7 @@ import httpx
 from . import __version__
 from .collect import collect_once
 from .config import ConfigError, config_hash, load_config
+from .db import RebuildError
 from .export import export_bundle, plan_export
 from .fixture import capture_fixture
 from .health import health
@@ -345,14 +346,14 @@ def build_parser() -> JSONArgumentParser:
     return parser
 
 
-def _validate_source(config: Any, source: str | None) -> None:
+def _validate_source(config: Any, source: str | None, include_disabled: bool = False) -> None:
     if source is None:
         return
-    valid = sorted(config.enabled_sources())
+    valid = sorted(config.sources if include_disabled else config.enabled_sources())
     if source not in valid:
         raise ActionError(
             "invalid_arguments",
-            f"Unknown or disabled --source '{source}'. Choose one of: {', '.join(valid)}.",
+            f"Unavailable --source '{source}'. Choose one of: {', '.join(valid)}.",
             {"parameter": "source", "value": source, "valid_values": valid},
         )
 
@@ -458,7 +459,7 @@ def _dispatch(args: argparse.Namespace) -> dict[str, Any]:
 
     config = load_config(args.config)
     source = getattr(args, "source", None)
-    _validate_source(config, source)
+    _validate_source(config, source, include_disabled=action == "rebuild-articles")
 
     if action == "validate-config":
         return {
@@ -515,7 +516,14 @@ def _dispatch(args: argparse.Namespace) -> dict[str, Any]:
         return {"backup": str(target)}
     if action == "rebuild-articles":
         database = _require_database(config.database_path)
-        return rebuild_articles(database, source, args.dry_run)
+        priorities = {
+            feed.id: (feed.description_priority, feed.order)
+            for sc in config.sources.values()
+            for feed in sc.feeds
+        }
+        return rebuild_articles(
+            database, source, args.dry_run, priorities=priorities, lock_path=config.lock_path
+        )
     if action == "capture-fixture":
         return asyncio.run(capture_fixture(config, args.feed_id, args.output, dry_run=args.dry_run))
     if action == "check":
@@ -524,6 +532,8 @@ def _dispatch(args: argparse.Namespace) -> dict[str, Any]:
 
 
 def _map_exception(exc: Exception) -> tuple[str, str, dict[str, Any]]:
+    if isinstance(exc, RebuildError):
+        return exc.code, str(exc), exc.details
     if isinstance(exc, ActionError):
         return exc.error_type, str(exc), exc.details
     if isinstance(exc, ConfigError):

@@ -31,6 +31,7 @@ returns a JSON envelope.
 ./gather_news.sh collect --once --dry-run
 ./gather_news.sh collect --once
 ./gather_news.sh health
+./gather_news.sh rebuild-articles --dry-run
 ./gather_news.sh export --since 2026-01-01T00:00:00.000000Z --until 2027-01-01T00:00:00.000000Z --output exports/initial --dry-run
 ```
 

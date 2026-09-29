@@ -3,7 +3,8 @@ from __future__ import annotations
 import sqlite3
 from pathlib import Path
 
-from .db import connect
+from .collect import process_lock
+from .db import connect, rebuild_projection
 
 
 def backup(database, output):
@@ -26,18 +27,13 @@ def restore_check(backup_path):
     return {"integrity": result, "ok": result == "ok"}
 
 
-def rebuild_articles(database, source=None, dry_run=False):
-    # Live ingestion and rebuild share merge rules; a full materialized rebuild is intentionally conservative here.
-    con = connect(database)
-    count = con.execute(
-        "SELECT count(*) FROM articles" + (" WHERE source=?" if source else ""),
-        (source,) if source else (),
-    ).fetchone()[0]
-    con.close()
-    return {
-        "dry_run": dry_run,
-        "rows_added": 0,
-        "rows_removed": 0,
-        "rows_changed": 0,
-        "article_count": count,
-    }
+def rebuild_articles(database, source=None, dry_run=False, *, priorities, lock_path):
+    from contextlib import nullcontext
+
+    # Dry-run uses a read-only database snapshot and writes only connection-local TEMP tables.
+    with nullcontext() if dry_run else process_lock(lock_path):
+        con = connect(database, readonly=dry_run)
+        try:
+            return rebuild_projection(con, priorities, source, dry_run)
+        finally:
+            con.close()

@@ -42,6 +42,191 @@ def migrate(con: sqlite3.Connection) -> None:
                 )
 
 
+class RebuildError(ValueError):
+    def __init__(self, code, message, details):
+        super().__init__(message)
+        self.code = code
+        self.details = details
+
+
+def rebuild_projection(con, priorities, source=None, dry_run=False):
+    """Stage a complete projection in a consistent snapshot, then atomically reconcile it."""
+    from datetime import datetime
+    from itertools import groupby
+
+    from .feed import SightingCandidate
+    from .merge import MergeAccumulator
+
+    counts = {}
+
+    def source_counts(sid):
+        return counts.setdefault(
+            sid,
+            {
+                "rows_added": 0,
+                "rows_removed": 0,
+                "rows_changed": 0,
+                "article_count": 0,
+                "blocked_removals": 0,
+            },
+        )
+
+    if source is not None:
+        source_counts(source)
+    con.execute("BEGIN" if dry_run else "BEGIN IMMEDIATE")
+    try:
+        con.execute(
+            "CREATE TEMP TABLE rebuilt_articles ("
+            "source TEXT NOT NULL, source_id TEXT NOT NULL, snapshot_json TEXT NOT NULL,"
+            "published_at TEXT NOT NULL, last_changed_at TEXT NOT NULL, canonical_url TEXT,"
+            "content_hash TEXT NOT NULL, needs_write INTEGER NOT NULL, PRIMARY KEY(source,source_id))"
+        )
+        rows = con.execute(
+            "SELECT sighting_id,source,source_id,normalized_json,feed_id,item_position,"
+            "publisher_order,observed_at FROM sightings "
+            + ("WHERE source=? " if source is not None else "")
+            + "ORDER BY source,source_id,sighting_id",
+            (source,) if source is not None else (),
+        )
+        sightings_read = 0
+        for (sid, aid), history in groupby(rows, key=lambda row: (row["source"], row["source_id"])):
+            state = MergeAccumulator(priorities)
+            last_hash = last_changed_at = None
+            for row in history:
+                if row["feed_id"] not in priorities:
+                    raise RebuildError(
+                        "rebuild_unknown_feed",
+                        "Retained sighting references a feed missing from configuration.",
+                        {"feed_id": row["feed_id"], "sighting_id": row["sighting_id"]},
+                    )
+                try:
+                    article = ArticleSnapshot.model_validate_json(row["normalized_json"])
+                    if (article.source, article.source_id) != (sid, aid) or row[
+                        "item_position"
+                    ] < 1:
+                        raise ValueError("sighting identity or position mismatch")
+                    # Enforce usable timezone-aware timestamps, including historical commit time.
+                    for value in (
+                        article.published_at,
+                        article.first_seen_at,
+                        article.last_seen_at,
+                        article.last_checked_at,
+                        article.modified_at,
+                    ):
+                        if value is not None:
+                            format_utc(value)
+                    observed_at = format_utc(datetime.fromisoformat(row["observed_at"]))
+                    state.add(
+                        SightingCandidate(
+                            article,
+                            row["feed_id"],
+                            row["item_position"],
+                            row["publisher_order"],
+                            {},
+                        )
+                    )
+                    merged = ArticleSnapshot.model_validate(state.snapshot().model_dump())
+                except (ValueError, TypeError) as exc:
+                    raise RebuildError(
+                        "rebuild_invalid_sighting",
+                        "A retained sighting cannot produce a valid article; projection unchanged.",
+                        {"sighting_id": row["sighting_id"]},
+                    ) from exc
+                if merged.content_hash != last_hash:
+                    last_changed_at = observed_at
+                    last_hash = merged.content_hash
+                sightings_read += 1
+            snapshot = merged.model_dump_json()
+            published_at = format_utc(merged.published_at)
+            old = con.execute(
+                "SELECT * FROM articles WHERE source=? AND source_id=?", (sid, aid)
+            ).fetchone()
+            changed = old is not None and (
+                json.dumps(json.loads(old["snapshot_json"]), sort_keys=True)
+                != json.dumps(json.loads(snapshot), sort_keys=True)
+                or old["published_at"] != published_at
+                or old["last_changed_at"] != last_changed_at
+                or old["canonical_url"] != merged.canonical_url
+                or old["content_hash"] != merged.content_hash
+            )
+            count = source_counts(sid)
+            count["article_count"] += 1
+            count["rows_added"] += int(old is None)
+            count["rows_changed"] += int(changed)
+            con.execute(
+                "INSERT INTO rebuilt_articles VALUES(?,?,?,?,?,?,?,?)",
+                (
+                    sid,
+                    aid,
+                    snapshot,
+                    published_at,
+                    last_changed_at,
+                    merged.canonical_url,
+                    merged.content_hash,
+                    int(old is None or changed),
+                ),
+            )
+        con.execute(
+            "CREATE TEMP TABLE rebuild_removed (source TEXT,source_id TEXT,PRIMARY KEY(source,source_id))"
+        )
+        con.execute(
+            "INSERT INTO rebuild_removed SELECT a.source,a.source_id FROM articles a "
+            "LEFT JOIN rebuilt_articles r USING(source,source_id) "
+            "WHERE r.source IS NULL" + (" AND a.source=?" if source is not None else ""),
+            (source,) if source is not None else (),
+        )
+        for row in con.execute("SELECT source,count(*) FROM rebuild_removed GROUP BY source"):
+            source_counts(row[0])["rows_removed"] = row[1]
+        for row in con.execute(
+            "SELECT source,count(*) FROM (SELECT DISTINCT v.source,v.source_id "
+            "FROM article_versions v JOIN rebuild_removed r USING(source,source_id)) GROUP BY source"
+        ):
+            source_counts(row[0])["blocked_removals"] = row[1]
+        result = {
+            "dry_run": dry_run,
+            **{
+                key: sum(count[key] for count in counts.values())
+                for key in (
+                    "rows_added",
+                    "rows_removed",
+                    "rows_changed",
+                    "article_count",
+                    "blocked_removals",
+                )
+            },
+            "sightings_read": sightings_read,
+            "by_source": {sid: counts[sid] for sid in sorted(counts)},
+        }
+        if dry_run:
+            con.rollback()
+            return result
+        if result["blocked_removals"]:
+            raise RebuildError(
+                "rebuild_conflict",
+                "Articles without sightings still have historical versions; refusing to remove them.",
+                result,
+            )
+        con.execute(
+            "INSERT INTO articles(source,source_id,snapshot_json,published_at,last_changed_at,"
+            "canonical_url,content_hash) SELECT source,source_id,snapshot_json,published_at,"
+            "last_changed_at,canonical_url,content_hash FROM rebuilt_articles WHERE needs_write=1 "
+            "ON CONFLICT(source,source_id) DO UPDATE SET snapshot_json=excluded.snapshot_json,"
+            "published_at=excluded.published_at,last_changed_at=excluded.last_changed_at,"
+            "canonical_url=excluded.canonical_url,content_hash=excluded.content_hash"
+        )
+        con.execute(
+            "DELETE FROM articles WHERE (source,source_id) IN "
+            "(SELECT source,source_id FROM rebuild_removed)"
+        )
+        con.execute("DROP TABLE rebuilt_articles")
+        con.execute("DROP TABLE rebuild_removed")
+        con.commit()
+        return result
+    except Exception:
+        con.rollback()
+        raise
+
+
 class Database:
     def __init__(self, path):
         self.path = path

@@ -71,9 +71,11 @@ parsing, and network costs rather than inferring their proportions from process 
 2. **Bound historical merge work if still necessary.** Preserve historical category/keyword unions,
    priority rules, nonempty-field fallbacks, timestamps, and per-feed atomic transactions. Skipping
    unchanged content entirely would miss observation timestamp updates.
-3. **Implement and verify rebuild.** `rebuild-articles` currently only counts articles and returns
-   zero changes. Build a deterministic reconstruction and compare with incremental results before
-   relying on it as the recovery path for a storage migration.
+3. **Use the implemented rebuild as a correctness reference.** `rebuild-articles` now reconstructs
+   from retained sightings, previews differences by source, and repairs atomically while preserving
+   versions. Its shared streaming merge accumulator avoids merging every historical prefix from
+   scratch. Collection still reads full histories; the accumulator is not yet persisted between
+   polls. See `operations.md` for validation, locking, and missing-evidence behavior.
 4. **Deduplicate reusable content losslessly.** Use a separate storage digest: article `content_hash`
    excludes raw URLs and raw metadata. Separate observation timestamps and placement from reusable
    content; retain every sighting and prove reconstruction equality and `A -> B -> A` preservation.
