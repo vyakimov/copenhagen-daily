@@ -68,7 +68,10 @@ parsing, and network costs rather than inferring their proportions from process 
 
 1. **Keep observing scheduled collections.** The first post-migration poll is above; watch the
    database phase and `historical_rows_read` over the coming days, since both still grow with history.
-2. **Observe the implemented persistent merge state.** Migration 004 caches per-article/per-feed
+2. **Measured live, 29 September afternoon.** The bootstrap poll initialised 3,010 identities from
+   144,775 history rows in 19.7 seconds of database time; the next poll read 3,256 history rows for
+   3,156 sightings inserted, 14 bootstraps for new articles, and spent 3.0 seconds in the database of
+   26.7 in total. The database phase is no longer the cost; fetch is. **Observe the implemented persistent merge state.** Migration 004 caches per-article/per-feed
    field winners and aggregates. The first observation initializes an article from history; later
    polls read only new sightings after its watermark. Monitor `merge_state_bootstraps`,
    `merge_state_rows_read`, and `historical_rows_read`. All history remains retained. The offline
