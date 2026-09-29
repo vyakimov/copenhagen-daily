@@ -11,9 +11,9 @@ commit_runs: true                              # git-commit the run directory af
 
 # Delivery to AWS. Leave bucket empty until the bucket and distribution exist; the run then skips it.
 delivery:
-  bucket: null                                 # e.g. copenhagen-daily-live
-  distribution_id: null                        # e.g. E1ABCDEFGHIJKL
-  profile: null                                # an AWS CLI profile, or null for the default
+  bucket: copenhagen-daily-live
+  distribution_id: E67FD57M9R899
+  profile: copenhagen-daily                    # an AWS CLI profile, or null for the default
   aws_command: aws
 
 # How the owner hears about a failure. `command` gets the subject as its argument and the body on
