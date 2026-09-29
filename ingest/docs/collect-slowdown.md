@@ -12,10 +12,11 @@ is a block 1 problem to fix on its own terms.
 | 28 September, 14:21 | 17 minutes | launchd, `ProcessType: Background` (throttled) |
 | 28 September, 14:44 | about 3.5 minutes | launchd, standard priority |
 | 29 September, 09:00 | over 15 minutes, killed by block 2's budget | block 2 subprocess, while the scheduled collector was also running |
-| 29 September, 11:16 | over 19 minutes and still running when this was written | shell, alone |
+| 29 September, 11:16 | 31 minutes (2 minutes of user CPU, 9 of system) | shell, alone, `/usr/bin/time -l` |
 
-The process spends most of its time in uninterruptible wait (state `U` in `ps`), that is, on disk, with
-CPU time around a third of wall time. So this is I/O against the database, not parsing or the network.
+The process spends most of its time in uninterruptible wait (state `U` in `ps`), that is, on disk, and
+of its CPU time four fifths is system time, not user time. So this is I/O against the database, not
+parsing or the network. The timed run also reported one feed failed of 132, which is unrelated.
 
 ## Where the bytes are
 
