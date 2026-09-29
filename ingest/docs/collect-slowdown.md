@@ -1,6 +1,8 @@
 # The collect slowdown
 
-Status: diagnosis, 29 September 2026. Nothing here is built. Block 2 no longer depends on the poll's
+Status: index fix and metrics implemented, 29 September 2026, and measured live: the first scheduled
+collect after migration 003 took 37 seconds (25 database, 11 fetch, 1 parse) against 31 minutes
+before, inserting 3,103 sightings and reading 158,185 historical rows. Block 2 no longer depends on the poll's
 speed (a run skips its own poll when the scheduled collector has polled within twenty minutes), so this
 is a block 1 problem to fix on its own terms.
 
@@ -38,29 +40,47 @@ history.
 
 ## Why it gets slower
 
-Two things grow with every poll. The `sightings` table grows by the full content of every item seen,
-whether or not it changed, so writes and the indexes over them get heavier. And whatever the collect
-does over all sightings on each run, the projection rebuild and the appearance refresh being the
-candidates, scans a table that is now nearly two gigabytes. Fifteen-minute polls make both curves
-steeper than the five-minute schedule the plan assumed, because idle days no longer thin the history.
-Left alone, a poll will exceed its own interval within weeks.
+Code inspection identified an unsupported lookup: for every identity in a successful feed response,
+ingestion reads all sightings matching `(source, source_id)`. The existing unique index starts with
+`feed_id`, so this produced `SCAN sightings`, potentially thousands of full-table scans per run.
+Collection already limits projection work to affected identities and inserts only current
+appearances; it does not rebuild all articles or refresh historical appearances.
 
-## Proposed fixes, in order of payoff
+Even with the new index, historical rows read and deserialized per affected identity grow with
+retained observations. Continuous operation increases history; a fifteen-minute cadence alone grows
+it more slowly than a five-minute cadence. Phase timings are needed to distinguish database,
+parsing, and network costs rather than inferring their proportions from process state alone.
 
-1. **Store sighting content once, by content hash.** Split `sightings` into a content table keyed by
-   `content_hash` (title, description, metadata, everything that is a property of the item) and a
-   thin sighting table of `(poll_id, feed_id, content_hash, position, observed_at)`. An item seen a
-   hundred times is stored once and referenced a hundred times. Expected size: tens of megabytes rather
-   than gigabytes. This is the change that matters; the rest are minor next to it. It needs a
-   forward-only migration and a rebuild of the projection from the migrated tables, and it keeps the
-   invariant that sightings are facts and `articles` is a projection.
-2. **Make the projection incremental.** Rebuild only articles whose content hash or placement changed
-   in this poll, keyed off the poll's own sightings, rather than scanning history. The full rebuild
-   stays available as `rebuild-articles`.
-3. **Checkpoint and vacuum.** After the migration, `VACUUM` to return the space, and confirm the WAL is
-   checkpointed on each collect so it does not grow between polls.
-4. **Measure before and after.** Add the poll's wall time and rows written to the `collect` envelope,
-   so the next slowdown is visible in the logs instead of in a missed edition.
+## Implemented first step
+
+- Migration 003 adds `sightings_article_idx(source, source_id)`. Lookup now uses an indexed search.
+  Explicit sighting-ID ordering and sorted identity processing keep merge ordering deterministic.
+- Collection reports fetch, parse, database, and total seconds, committed sightings inserted, and
+  historical rows read. The README defines timing boundaries and counter semantics.
+- `./gather_news.sh benchmark-collect` compares identical disposable synthetic histories: 10,000
+  sightings, 500 identities, and a new 20-item response. The first local result was 0.228252 seconds
+  unindexed versus 0.024760 seconds indexed (about 9×), with identical article projections and 420
+  historical rows read in each case. This is not a live workload estimate.
+- Offline checks and temporary-database CLI tests cover successful, failed, partial, rolled-back,
+  and `304` responses. No production collection was started for verification.
+
+## Remaining work, in order
+
+1. **Keep observing scheduled collections.** The first post-migration poll is above; watch the
+   database phase and `historical_rows_read` over the coming days, since both still grow with history.
+2. **Bound historical merge work if still necessary.** Preserve historical category/keyword unions,
+   priority rules, nonempty-field fallbacks, timestamps, and per-feed atomic transactions. Skipping
+   unchanged content entirely would miss observation timestamp updates.
+3. **Implement and verify rebuild.** `rebuild-articles` currently only counts articles and returns
+   zero changes. Build a deterministic reconstruction and compare with incremental results before
+   relying on it as the recovery path for a storage migration.
+4. **Deduplicate reusable content losslessly.** Use a separate storage digest: article `content_hash`
+   excludes raw URLs and raw metadata. Separate observation timestamps and placement from reusable
+   content; retain every sighting and prove reconstruction equality and `A -> B -> A` preservation.
+   Measure storage savings rather than assuming a final size. Use a forward-only migration and
+   verified backup.
+5. **Reclaim space after migration validation.** Schedule compaction with sufficient disk headroom.
+   Measure WAL/checkpoint behavior before adding mandatory per-collection checkpoints.
 
 ## What not to do
 
@@ -73,4 +93,5 @@ should not bend to a storage defect.
 
 The collector runs every fifteen minutes under launchd. Overlapping polls fail fast on the process lock
 and are harmless. Block 2's morning run uses the last completed poll rather than starting one, so the
-paper is at most fifteen minutes behind the feeds and is not delayed by this.
+paper avoids that synchronous collection delay. Freshness depends on the last successful completed
+collection; a fifteen-minute schedule does not guarantee a fifteen-minute freshness bound.

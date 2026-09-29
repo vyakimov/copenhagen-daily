@@ -102,6 +102,12 @@ DRY_RUN_PARAM = {
 }
 
 ACTIONS: dict[str, dict[str, Any]] = {
+    "benchmark-collect": {
+        "description": "Compare indexed and unindexed ingestion on disposable synthetic history.",
+        "mutates": False,
+        "network": False,
+        "params": [],
+    },
     "backup": {
         "description": "Create a new SQLite backup file; refuses to overwrite.",
         "mutates": True,
@@ -258,6 +264,7 @@ def build_parser() -> JSONArgumentParser:
     sub = parser.add_subparsers(dest="cmd", parser_class=JSONArgumentParser)
 
     _command(sub, "list-actions", "./gather_news.sh list-actions")
+    _command(sub, "benchmark-collect", "./gather_news.sh benchmark-collect")
 
     p = _command(sub, "validate-config", "./gather_news.sh validate-config")
     _add_config(p)
@@ -435,6 +442,10 @@ def _dispatch(args: argparse.Namespace) -> dict[str, Any]:
     action = args.cmd
     if action == "list-actions":
         return _list_actions()
+    if action == "benchmark-collect":
+        from .db import benchmark_sightings
+
+        return benchmark_sightings()
     if action == "restore-check":
         path = Path(args.backup)
         if not path.is_file():

@@ -43,3 +43,30 @@ file covers daily use; optional references hold operations, development, and
 data-contract details.
 
 See `docs/operations.md` and `docs/scheduling.md` for operations and scheduling.
+
+## Collection performance
+
+`collect --once` returns `timings_seconds` (`fetch`, `parse`, `database`, and
+`total`), `sightings_inserted`, and `historical_rows_read`, also saved in the
+fetch-run summary. Times use a monotonic clock. Database time includes startup,
+migrations, poll allocation, feed transactions, and failure recording. Total runs
+from collection entry until summary construction, excluding the final summary
+commit and connection close. Fetch includes retries and client setup. Counters
+include only committed successful `200` feeds; historical rows include the current
+poll's new sightings. Failed transactions contribute time but no counters, and
+`304` responses contribute no sighting rows.
+
+Migration 003 automatically adds the article-identity lookup index on the next
+collection. Its first creation can take extra time and disk space. Subsequent
+collections still merge each affected article's retained history.
+
+```sh
+./gather_news.sh benchmark-collect
+```
+
+This network-free comparison builds 10,000 synthetic sightings in temporary
+databases, ingests the same 20-item RSS response with and without the index,
+reports query plans and elapsed times, and checks identical article projections.
+Temporary files are removed on completion; the configured database is never
+opened. Allow roughly 300 MB of temporary disk space. Timings are diagnostic,
+not a test threshold or a prediction of live collection speed.
