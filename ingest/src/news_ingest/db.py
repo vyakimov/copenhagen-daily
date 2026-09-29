@@ -6,7 +6,7 @@ import sqlite3
 import uuid
 from pathlib import Path
 
-from .models import ArticleSnapshot
+from .models import ArticleSnapshot, FeedMergeState
 from .time import format_utc, now_utc
 
 
@@ -55,7 +55,7 @@ def rebuild_projection(con, priorities, source=None, dry_run=False):
     from itertools import groupby
 
     from .feed import SightingCandidate
-    from .merge import MergeAccumulator
+    from .merge import MergeAccumulator, merge_feed_states, update_feed_state
 
     counts = {}
 
@@ -81,6 +81,14 @@ def rebuild_projection(con, priorities, source=None, dry_run=False):
             "published_at TEXT NOT NULL, last_changed_at TEXT NOT NULL, canonical_url TEXT,"
             "content_hash TEXT NOT NULL, needs_write INTEGER NOT NULL, PRIMARY KEY(source,source_id))"
         )
+        con.execute(
+            "CREATE TEMP TABLE rebuilt_feed_states (source TEXT,source_id TEXT,feed_id TEXT,"
+            "state_json TEXT,PRIMARY KEY(source,source_id,feed_id))"
+        )
+        con.execute(
+            "CREATE TEMP TABLE rebuilt_merge_heads (source TEXT,source_id TEXT,last_sighting_id INTEGER,"
+            "state_count INTEGER,PRIMARY KEY(source,source_id))"
+        )
         rows = con.execute(
             "SELECT sighting_id,source,source_id,normalized_json,feed_id,item_position,"
             "publisher_order,observed_at FROM sightings "
@@ -89,8 +97,10 @@ def rebuild_projection(con, priorities, source=None, dry_run=False):
             (source,) if source is not None else (),
         )
         sightings_read = 0
+        states_rebuilt = 0
         for (sid, aid), history in groupby(rows, key=lambda row: (row["source"], row["source_id"])):
             state = MergeAccumulator(priorities)
+            feed_states = {}
             last_hash = last_changed_at = None
             for row in history:
                 if row["feed_id"] not in priorities:
@@ -126,6 +136,9 @@ def rebuild_projection(con, priorities, source=None, dry_run=False):
                         )
                     )
                     merged = ArticleSnapshot.model_validate(state.snapshot().model_dump())
+                    feed_states[row["feed_id"]] = update_feed_state(
+                        feed_states.get(row["feed_id"]), row["feed_id"], row["sighting_id"], article
+                    )
                 except (ValueError, TypeError) as exc:
                     raise RebuildError(
                         "rebuild_invalid_sighting",
@@ -136,6 +149,22 @@ def rebuild_projection(con, priorities, source=None, dry_run=False):
                     last_changed_at = observed_at
                     last_hash = merged.content_hash
                 sightings_read += 1
+            if merge_feed_states(list(feed_states.values()), priorities) != merged:
+                raise RebuildError(
+                    "rebuild_merge_state_mismatch",
+                    "Merge state differs from full history; projection unchanged.",
+                    {"source": sid, "source_id": aid},
+                )
+            for feed_id, feed_state in sorted(feed_states.items()):
+                con.execute(
+                    "INSERT INTO rebuilt_feed_states VALUES(?,?,?,?)",
+                    (sid, aid, feed_id, feed_state.model_dump_json()),
+                )
+                states_rebuilt += 1
+            con.execute(
+                "INSERT INTO rebuilt_merge_heads VALUES(?,?,?,?)",
+                (sid, aid, row["sighting_id"], len(feed_states)),
+            )
             snapshot = merged.model_dump_json()
             published_at = format_utc(merged.published_at)
             old = con.execute(
@@ -195,6 +224,7 @@ def rebuild_projection(con, priorities, source=None, dry_run=False):
                 )
             },
             "sightings_read": sightings_read,
+            "merge_states_rebuilt": states_rebuilt,
             "by_source": {sid: counts[sid] for sid in sorted(counts)},
         }
         if dry_run:
@@ -218,6 +248,15 @@ def rebuild_projection(con, priorities, source=None, dry_run=False):
             "DELETE FROM articles WHERE (source,source_id) IN "
             "(SELECT source,source_id FROM rebuild_removed)"
         )
+        for table in ("article_feed_merge_state", "article_merge_heads"):
+            con.execute(
+                f"DELETE FROM {table}" + (" WHERE source=?" if source is not None else ""),
+                (source,) if source is not None else (),
+            )
+        con.execute("INSERT INTO article_feed_merge_state SELECT * FROM rebuilt_feed_states")
+        con.execute("INSERT INTO article_merge_heads SELECT * FROM rebuilt_merge_heads")
+        con.execute("DROP TABLE rebuilt_feed_states")
+        con.execute("DROP TABLE rebuilt_merge_heads")
         con.execute("DROP TABLE rebuilt_articles")
         con.execute("DROP TABLE rebuild_removed")
         con.commit()
@@ -235,6 +274,82 @@ class Database:
 
     def close(self):
         self.con.close()
+
+    def merge_article(self, source, source_id, priorities):
+        """Advance disposable per-feed state using only sightings beyond its durable watermark."""
+        from .merge import merge_feed_states, update_feed_state
+
+        head = self.con.execute(
+            "SELECT last_sighting_id,state_count FROM article_merge_heads WHERE source=? AND source_id=?",
+            (source, source_id),
+        ).fetchone()
+        cached = self.con.execute(
+            "SELECT feed_id,state_json FROM article_feed_merge_state "
+            "WHERE source=? AND source_id=? ORDER BY feed_id",
+            (source, source_id),
+        ).fetchall()
+        states = {}
+        through = 0
+        if head is not None and len(cached) == head["state_count"]:
+            try:
+                for row in cached:
+                    state = FeedMergeState.model_validate_json(row["state_json"])
+                    if (state.source, state.source_id, state.feed_id) != (
+                        source,
+                        source_id,
+                        row["feed_id"],
+                    ):
+                        raise ValueError("merge state identity mismatch")
+                    for representative in state.representatives:
+                        if representative.sighting_id > head["last_sighting_id"] or (
+                            representative.article.source,
+                            representative.article.source_id,
+                        ) != (source, source_id):
+                            raise ValueError("merge representative identity or watermark mismatch")
+                    states[row["feed_id"]] = state
+                through = head["last_sighting_id"]
+            except ValueError:
+                states = {}
+        bootstrapped = through == 0
+        if bootstrapped:
+            self.con.execute(
+                "DELETE FROM article_feed_merge_state WHERE source=? AND source_id=?",
+                (source, source_id),
+            )
+        rows_read = 0
+        changed_feeds = set()
+        for row in self.con.execute(
+            "SELECT sighting_id,feed_id,normalized_json FROM sightings "
+            "WHERE source=? AND source_id=? AND sighting_id>? ORDER BY sighting_id",
+            (source, source_id, through),
+        ):
+            article = ArticleSnapshot.model_validate_json(row["normalized_json"])
+            if (article.source, article.source_id) != (source, source_id):
+                raise ValueError("sighting identity mismatch")
+            feed_id = row["feed_id"]
+            states[feed_id] = update_feed_state(
+                states.get(feed_id), feed_id, row["sighting_id"], article
+            )
+            through = row["sighting_id"]
+            changed_feeds.add(feed_id)
+            rows_read += 1
+        merged = merge_feed_states(list(states.values()), priorities)
+        for feed_id in sorted(changed_feeds):
+            self.con.execute(
+                "INSERT INTO article_feed_merge_state VALUES(?,?,?,?) "
+                "ON CONFLICT(source,source_id,feed_id) DO UPDATE SET state_json=excluded.state_json",
+                (source, source_id, feed_id, states[feed_id].model_dump_json()),
+            )
+        self.con.execute(
+            "INSERT INTO article_merge_heads VALUES(?,?,?,?) ON CONFLICT(source,source_id) "
+            "DO UPDATE SET last_sighting_id=excluded.last_sighting_id,state_count=excluded.state_count",
+            (source, source_id, through, len(states)),
+        )
+        return merged, {
+            "historical_rows_read": rows_read,
+            "merge_state_rows_read": len(cached),
+            "merge_state_bootstraps": int(bootstrapped),
+        }
 
     def start_run(self, source=None):
         run = str(uuid.uuid4())
@@ -291,9 +406,12 @@ class Database:
             )
 
     def ingest(self, poll, feed, source, url, result, parsed, priorities, surface="section_rss"):
-        from .merge import merge_sightings
-
-        metrics = {"sightings_inserted": 0, "historical_rows_read": 0}
+        metrics = {
+            "sightings_inserted": 0,
+            "historical_rows_read": 0,
+            "merge_state_rows_read": 0,
+            "merge_state_bootstraps": 0,
+        }
         now = format_utc(now_utc())
         body = result.body
         digest = "sha256:" + __import__("hashlib").sha256(body).hexdigest()
@@ -360,27 +478,9 @@ class Database:
                 )
             keys = {(x.article.source, x.article.source_id) for x in parsed.entries}
             for sid, aid in sorted(keys):
-                rows = self.con.execute(
-                    "SELECT normalized_json,feed_id,item_position,publisher_order FROM sightings WHERE source=? AND source_id=? ORDER BY sighting_id",
-                    (sid, aid),
-                ).fetchall()
-                metrics["historical_rows_read"] += len(rows)
-                candidates = []
-                for row in rows:
-                    a = ArticleSnapshot.model_validate_json(row["normalized_json"])
-                    candidates.append(
-                        type(
-                            "C",
-                            (),
-                            {
-                                "article": a,
-                                "feed_id": row["feed_id"],
-                                "position": row["item_position"],
-                                "publisher_order": row["publisher_order"],
-                            },
-                        )()
-                    )
-                merged = merge_sightings(candidates, priorities)
+                merged, merge_metrics = self.merge_article(sid, aid, priorities)
+                for key, value in merge_metrics.items():
+                    metrics[key] += value
                 payload = merged.model_dump_json()
                 old = self.con.execute(
                     "SELECT content_hash FROM articles WHERE source=? AND source_id=?", (sid, aid)
@@ -468,110 +568,3 @@ class Database:
                 ),
             )
         return metrics
-
-
-def benchmark_sightings():
-    """Compare ingestion on identical disposable histories; never open the live database."""
-    from datetime import UTC, datetime
-    from tempfile import TemporaryDirectory
-    from time import perf_counter
-
-    from .config import FeedConfig, SourceConfig
-    from .feed import parse_feed
-    from .http import FetchResult
-
-    feed = FeedConfig(
-        id="benchmark",
-        name="Benchmark",
-        url="https://example.com/rss",
-        surface="latest_rss",
-        order=0,
-        description_priority=10,
-    )
-    source = SourceConfig(enabled=True, identity="guid", feeds=[feed])
-
-    def response(size):
-        return (
-            '<rss version="2.0"><channel><title>Benchmark</title>'
-            + "".join(
-                f"<item><guid>article-{i}</guid><title>Article {i}</title>"
-                f"<link>https://example.com/{i}</link><description>{'x' * 2500}</description>"
-                "<pubDate>Mon, 14 Sep 2026 03:38:13 GMT</pubDate></item>"
-                for i in range(size)
-            )
-            + "</channel></rss>"
-        ).encode()
-
-    def ingest(db, poll, body):
-        parsed = parse_feed(body, feed, datetime(2026, 9, 29, tzinfo=UTC), "benchmark", source)
-        reply = FetchResult(200, body, 1, str(feed.url), None, None, [])
-        return db.ingest(
-            poll, feed.id, "benchmark", str(feed.url), reply, parsed, {feed.id: (10, 0)}
-        )
-
-    with TemporaryDirectory(prefix="news-ingest-benchmark-") as directory:
-        seed = Database(Path(directory) / "seed.sqlite3")
-        try:
-            run = seed.start_run("benchmark")
-            first = seed.preallocate_poll(run, feed.id, "benchmark", None)
-            ingest(seed, first, response(500))
-            # Replicate retained observations cheaply; the measured path is real ingestion.
-            for _ in range(19):
-                poll = seed.preallocate_poll(run, feed.id, "benchmark", None)
-                with seed.con:
-                    seed.con.execute(
-                        "INSERT INTO sightings(poll_id,feed_id,source,source_id,item_position,"
-                        "publisher_order,observed_at,normalized_json,raw_metadata_json,raw_item_json) "
-                        "SELECT ?,feed_id,source,source_id,item_position,publisher_order,observed_at,"
-                        "normalized_json,raw_metadata_json,raw_item_json FROM sightings WHERE poll_id=?",
-                        (poll, first),
-                    )
-            measurements = {}
-            outputs = []
-            body = response(20)
-            for label in ("unindexed", "indexed"):
-                db = Database(Path(directory) / f"{label}.sqlite3")
-                try:
-                    seed.con.backup(db.con)
-                    if label == "unindexed":
-                        db.con.execute("DROP INDEX sightings_article_idx")
-                        db.con.commit()
-                    plan = [
-                        row[3]
-                        for row in db.con.execute(
-                            "EXPLAIN QUERY PLAN SELECT normalized_json,feed_id,item_position,"
-                            "publisher_order FROM sightings WHERE source=? AND source_id=? "
-                            "ORDER BY sighting_id",
-                            ("benchmark", "article-0"),
-                        )
-                    ]
-                    trial = db.preallocate_poll(run, feed.id, "benchmark", None)
-                    started = perf_counter()
-                    counts = ingest(db, trial, body)
-                    measurements[label] = {
-                        "parse_and_ingest_seconds": round(perf_counter() - started, 6),
-                        "query_plan": plan,
-                        **counts,
-                    }
-                    outputs.append(
-                        [
-                            tuple(row)
-                            for row in db.con.execute(
-                                "SELECT source,source_id,snapshot_json FROM articles "
-                                "ORDER BY source,source_id"
-                            )
-                        ]
-                    )
-                finally:
-                    db.close()
-            if outputs[0] != outputs[1]:
-                raise RuntimeError("benchmark projection mismatch")
-            return {
-                "history_rows": 10000,
-                "items_per_response": 20,
-                "fixture": "synthetic RSS; 500 identities, 20 observations each",
-                "projection_equal": True,
-                "measurements": measurements,
-            }
-        finally:
-            seed.close()

@@ -50,7 +50,9 @@ def test_collect_cli_metrics_offline(mode, tmp_path, config_path, monkeypatch, c
         result = envelope["result"] if code == 0 else envelope["error"]["details"]
         expected = 1 if mode in ("success", "partial") else 0
         assert result["sightings_inserted"] == expected
-        assert result["historical_rows_read"] == iteration * expected
+        assert result["historical_rows_read"] == expected
+        assert result["merge_state_rows_read"] == (iteration - 1) * expected
+        assert result["merge_state_bootstraps"] == (2 - iteration) * expected
         assert set(result["timings_seconds"]) == {"fetch", "parse", "database", "total"}
         assert all(value >= 0 for value in result["timings_seconds"].values())
         assert result["timings_seconds"]["total"] >= sum(

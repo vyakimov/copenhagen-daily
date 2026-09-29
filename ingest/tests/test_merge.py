@@ -3,8 +3,13 @@ from random import Random
 
 from news_ingest.feed import SightingCandidate
 from news_ingest.hashing import content_hash
-from news_ingest.merge import MergeAccumulator, merge_sightings
-from news_ingest.models import ArticleSnapshot
+from news_ingest.merge import (
+    MergeAccumulator,
+    merge_feed_states,
+    merge_sightings,
+    update_feed_state,
+)
+from news_ingest.models import ArticleSnapshot, FeedMergeState
 
 
 def historical_reference(sightings, priorities):
@@ -52,6 +57,7 @@ def test_streaming_merge_matches_historical_algorithm_at_every_prefix():
     priorities = {"latest": (10, 0), "section-a": (20, 1), "section-b": (20, 1)}
     base = datetime(2026, 9, 29, tzinfo=UTC)
     history = []
+    persisted = {}
     accumulator = MergeAccumulator(priorities)
     for index in range(100):
         feed = random.choice(list(priorities))
@@ -80,3 +86,12 @@ def test_streaming_merge_matches_historical_algorithm_at_every_prefix():
         expected = historical_reference(history, priorities)
         assert accumulator.snapshot() == expected
         assert merge_sightings(history, priorities) == expected
+        state = update_feed_state(persisted.get(feed), feed, index + 1, article)
+        # Every observation crosses the real JSON boundary, as it does between polls.
+        persisted[feed] = FeedMergeState.model_validate_json(state.model_dump_json())
+        assert merge_feed_states(list(persisted.values()), priorities) == expected
+        changed_priorities = {"latest": (30, 2), "section-a": (10, 0), "section-b": (10, 1)}
+        assert merge_feed_states(
+            list(persisted.values()), changed_priorities
+        ) == historical_reference(history, changed_priorities)
+        assert all(len(state.representatives) <= 10 for state in persisted.values())

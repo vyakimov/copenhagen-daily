@@ -48,7 +48,8 @@ See `docs/operations.md` and `docs/scheduling.md` for operations and scheduling.
 ## Collection performance
 
 `collect --once` returns `timings_seconds` (`fetch`, `parse`, `database`, and
-`total`), `sightings_inserted`, and `historical_rows_read`, also saved in the
+`total`), `sightings_inserted`, `historical_rows_read`, `merge_state_rows_read`,
+and `merge_state_bootstraps`, also saved in the
 fetch-run summary. Times use a monotonic clock. Database time includes startup,
 migrations, poll allocation, feed transactions, and failure recording. Total runs
 from collection entry until summary construction, excluding the final summary
@@ -59,15 +60,28 @@ poll's new sightings. Failed transactions contribute time but no counters, and
 
 Migration 003 automatically adds the article-identity lookup index on the next
 collection. Its first creation can take extra time and disk space. Subsequent
-collections still merge each affected article's retained history.
+collections use migration 004's persistent per-article/per-feed merge state.
+Each article's first post-upgrade observation initializes its state from retained
+history. Later observations read only sightings after its saved watermark, plus
+one cache row per contributing feed. The cache and watermark commit atomically
+with the feed's sightings, projection, versions, and validators.
+
+`historical_rows_read` counts normalized sightings actually read, including current
+observations; it should approach `sightings_inserted` after initialization.
+`merge_state_rows_read` counts loaded per-feed cache rows, and
+`merge_state_bootstraps` counts identities initialized or recovered from history
+(including brand-new articles). `rebuild-articles` independently checks against
+full history and refreshes the selected cache on apply.
 
 ```sh
 ./gather_news.sh benchmark-collect
 ```
 
 This network-free comparison builds 10,000 synthetic sightings in temporary
-databases, ingests the same 20-item RSS response with and without the index,
+databases, ingests the same 20-item RSS response without the index, with the index
+and a cold cache, and with the index and a warm cache,
 reports query plans and elapsed times, and checks identical article projections.
 Temporary files are removed on completion; the configured database is never
-opened. Allow roughly 300 MB of temporary disk space. Timings are diagnostic,
+opened. Allow roughly 400 MB of temporary disk space. Cache warm-up is outside the
+timed warm-cache trial. Timings are diagnostic,
 not a test threshold or a prediction of live collection speed.

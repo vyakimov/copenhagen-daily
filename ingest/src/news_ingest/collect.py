@@ -34,7 +34,12 @@ def process_lock(path):
 async def collect_once(config: AppConfig, source: str | None = None) -> dict:
     started = perf_counter()
     timings = {"fetch": 0.0, "parse": 0.0, "database": 0.0}
-    counts = {"sightings_inserted": 0, "historical_rows_read": 0}
+    counts = {
+        "sightings_inserted": 0,
+        "historical_rows_read": 0,
+        "merge_state_rows_read": 0,
+        "merge_state_bootstraps": 0,
+    }
     with process_lock(config.lock_path):
         database_started = perf_counter()
         db = Database(config.database_path)
@@ -75,7 +80,8 @@ async def collect_once(config: AppConfig, source: str | None = None) -> dict:
             successes = failures = 0
             priorities = {
                 feed.id: (feed.description_priority, feed.order)
-                for _, _, feed in config.enabled_feeds()
+                for sc in config.sources.values()
+                for feed in sc.feeds
             }
             for (sid, sc, feed, poll), reply in zip(polls, replies):
                 try:

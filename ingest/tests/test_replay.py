@@ -287,3 +287,143 @@ def test_disabled_source_remains_rebuildable(history, capsys):
     assert code == 0
     assert envelope["result"]["article_count"] == 1
     assert envelope["result"]["rows_changed"] == 0
+
+
+def repeat_observation(db, config, monkeypatch, title="Next"):
+    latest = db.con.execute(
+        "SELECT normalized_json FROM sightings WHERE source='bbc' ORDER BY sighting_id DESC LIMIT 1"
+    ).fetchone()
+    article = ArticleSnapshot.model_validate_json(latest[0])
+    observed = article.last_seen_at + timedelta(minutes=1)
+    article = article.model_copy(
+        update={
+            "title": title,
+            "first_seen_at": observed,
+            "last_seen_at": observed,
+            "last_checked_at": observed,
+        }
+    )
+    monkeypatch.setattr("news_ingest.db.now_utc", lambda: observed)
+    feed = config.sources["bbc"].feeds[0]
+    run = db.start_run("bbc")
+    poll = db.preallocate_poll(run, feed.id, "bbc", None)
+    parsed = ParsedFeed([SightingCandidate(article, feed.id, 1, None, {})], [], 1, 1, [], None)
+    reply = FetchResult(200, title.encode(), 1, str(feed.url), "new-etag", None, [])
+    priorities = {
+        f.id: (f.description_priority, f.order) for sc in config.sources.values() for f in sc.feeds
+    }
+    return db.ingest(poll, feed.id, "bbc", str(feed.url), reply, parsed, priorities, feed.surface)
+
+
+def test_persistent_state_survives_restart_and_matches_rebuild(history, capsys, monkeypatch):
+    db, config_file, config = history
+    restarted = Database(db.path)
+    try:
+        for title in ("A", "B", "A", "A"):
+            metrics = repeat_observation(restarted, config, monkeypatch, title)
+            assert metrics["historical_rows_read"] == 1
+            assert metrics["merge_state_rows_read"] == 1
+            assert metrics["merge_state_bootstraps"] == 0
+            code, envelope = invoke(capsys, config_file, "--dry-run")
+            assert code == 0
+            assert envelope["result"]["rows_changed"] == 0
+    finally:
+        restarted.close()
+
+
+@pytest.mark.parametrize("damage", ["missing_head", "missing_state", "invalid_state"])
+def test_cache_bootstraps_once_from_history(history, capsys, monkeypatch, damage):
+    db, config_file, config = history
+    if damage == "missing_head":
+        db.con.execute("DELETE FROM article_merge_heads WHERE source='bbc'")
+    elif damage == "missing_state":
+        db.con.execute("DELETE FROM article_feed_merge_state WHERE source='bbc'")
+    else:
+        db.con.execute("UPDATE article_feed_merge_state SET state_json='{}' WHERE source='bbc'")
+    db.con.commit()
+    metrics = repeat_observation(db, config, monkeypatch)
+    assert metrics["historical_rows_read"] == 5
+    assert metrics["merge_state_bootstraps"] == 1
+    metrics = repeat_observation(db, config, monkeypatch)
+    assert metrics["historical_rows_read"] == 1
+    assert metrics["merge_state_bootstraps"] == 0
+    code, envelope = invoke(capsys, config_file, "--dry-run")
+    assert code == 0
+    assert envelope["result"]["rows_changed"] == 0
+
+
+def test_cache_and_watermark_roll_back_with_failed_feed(history, monkeypatch):
+    import sqlite3
+
+    db, _, config = history
+    tables = (
+        "article_feed_merge_state",
+        "article_merge_heads",
+        "sightings",
+        "articles",
+        "article_versions",
+        "raw_payloads",
+        "appearances",
+        "feed_state",
+    )
+    before = {table: dump(db, table) for table in tables}
+    db.con.execute(
+        "CREATE TRIGGER reject_projection BEFORE INSERT ON articles "
+        "BEGIN SELECT RAISE(ABORT, 'simulated failure after cache update'); END"
+    )
+    db.con.commit()
+    with pytest.raises(sqlite3.IntegrityError):
+        repeat_observation(db, config, monkeypatch)
+    assert {table: dump(db, table) for table in tables} == before
+    db.con.execute("DROP TRIGGER reject_projection")
+    db.con.commit()
+    assert repeat_observation(db, config, monkeypatch)["historical_rows_read"] == 1
+
+
+def test_rebuild_repairs_cache_only_and_respects_source_scope(history, capsys, monkeypatch):
+    db, config_file, config = history
+    dr_state = tuple(
+        db.con.execute("SELECT * FROM article_merge_heads WHERE source='dr'").fetchone()
+    )
+    db.con.execute("DELETE FROM article_feed_merge_state WHERE source='bbc'")
+    db.con.execute("DELETE FROM article_merge_heads WHERE source='bbc'")
+    db.con.commit()
+    for args in (("--source", "bbc", "--dry-run"), ("--source", "bbc")):
+        code, envelope = invoke(capsys, config_file, *args)
+        assert code == 0
+        assert envelope["result"]["rows_changed"] == 0
+        assert envelope["result"]["merge_states_rebuilt"] == 1
+        if "--dry-run" in args:
+            assert (
+                db.con.execute(
+                    "SELECT count(*) FROM article_merge_heads WHERE source='bbc'"
+                ).fetchone()[0]
+                == 0
+            )
+    assert (
+        tuple(db.con.execute("SELECT * FROM article_merge_heads WHERE source='dr'").fetchone())
+        == dr_state
+    )
+    assert repeat_observation(db, config, monkeypatch)["historical_rows_read"] == 1
+
+
+def test_upgrade_initializes_cache_without_rewriting_history(history, capsys, monkeypatch):
+    db, config_file, config = history
+    tables = ("sightings", "articles", "article_versions", "appearances", "raw_payloads")
+    before = {table: dump(db, table) for table in tables}
+    db.con.execute("DROP TABLE article_feed_merge_state")
+    db.con.execute("DROP TABLE article_merge_heads")
+    db.con.execute("DELETE FROM schema_migrations WHERE version=4")
+    db.con.commit()
+    # Preview on an older schema must not apply migrations or populate persistent state.
+    assert invoke(capsys, config_file, "--dry-run")[0] == 0
+    assert db.con.execute("SELECT count(*) FROM schema_migrations").fetchone()[0] == 3
+    upgraded = Database(db.path)
+    try:
+        assert {table: dump(upgraded, table) for table in tables} == before
+        assert upgraded.con.execute("SELECT count(*) FROM article_merge_heads").fetchone()[0] == 0
+        assert repeat_observation(upgraded, config, monkeypatch)["historical_rows_read"] == 5
+        assert repeat_observation(upgraded, config, monkeypatch)["historical_rows_read"] == 1
+    finally:
+        upgraded.close()
+    assert invoke(capsys, config_file, "--dry-run")[1]["result"]["rows_changed"] == 0

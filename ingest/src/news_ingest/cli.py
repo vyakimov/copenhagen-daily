@@ -444,9 +444,10 @@ def _dispatch(args: argparse.Namespace) -> dict[str, Any]:
     if action == "list-actions":
         return _list_actions()
     if action == "benchmark-collect":
-        from .db import benchmark_sightings
+        from runpy import run_path
 
-        return benchmark_sightings()
+        benchmark = run_path(str(REPOSITORY_ROOT / "tools" / "benchmark_collect.py"))
+        return benchmark["benchmark_collect"]()
     if action == "restore-check":
         path = Path(args.backup)
         if not path.is_file():

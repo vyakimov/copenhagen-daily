@@ -65,3 +65,33 @@ history or breaking its references. Investigate the missing evidence first.
 Rebuild uses normalized sightings, not a fresh parse of raw RSS. It cannot repair
 lost or incorrectly normalized sightings; raw-payload replay remains a separate,
 currently disabled command.
+
+## Persistent merge state
+
+Migration 004 creates two disposable derived tables: `article_feed_merge_state`
+and `article_merge_heads`. No original observations are rewritten or removed.
+Initialization is lazy: the next successful `200` observation of an article reads
+its retained history once and records all contributing feeds. Further observations
+read only new sightings after the article's saved sighting-ID watermark. A `304`
+does not initialize or change merge state. Expect elevated history reads during
+the first collections after upgrading, including when an old article reappears.
+
+Each feed state stores at most ten distinct representative snapshots (the overall
+winner and nonempty field winners), plus category/keyword unions and observation
+timestamp bounds. Usually one snapshot supplies most fields. Storage scales with
+contributing feeds and distinct retained categories/keywords, not the number of
+repeated observations. Original timestamps and stable sighting order are retained
+so field ties, missing-value fallbacks, authors, and raw metadata remain exact.
+Priorities are applied when combining feeds, not baked into the cache. Changing
+priorities therefore reevaluates each article on its next observation without
+rereading its history. Configured disabled feeds remain part of that history;
+removing a historical feed's configuration still requires explicit resolution.
+
+State, watermark, sightings, projection, versions, appearances, and HTTP validators
+share the same per-feed transaction. Failed ingestion rolls all of them back.
+A missing cache/head or structurally invalid cache triggers reconstruction for
+that identity. A full rebuild always derives from original sightings, independently
+compares the cached algorithm's result, and replaces the selected source's cache
+on apply. Dry-run reports `merge_states_rebuilt` (the number staged) but makes no
+persistent changes; projection difference counts do not measure cache differences.
+Apply installs missing schema migrations before staging; dry-run never migrates.

@@ -4,7 +4,7 @@ import sqlite3
 from pathlib import Path
 
 from .collect import process_lock
-from .db import connect, rebuild_projection
+from .db import connect, migrate, rebuild_projection
 
 
 def backup(database, output):
@@ -34,6 +34,8 @@ def rebuild_articles(database, source=None, dry_run=False, *, priorities, lock_p
     with nullcontext() if dry_run else process_lock(lock_path):
         con = connect(database, readonly=dry_run)
         try:
+            if not dry_run:
+                migrate(con)
             return rebuild_projection(con, priorities, source, dry_run)
         finally:
             con.close()

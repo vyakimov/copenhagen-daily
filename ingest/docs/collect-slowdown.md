@@ -68,14 +68,17 @@ parsing, and network costs rather than inferring their proportions from process 
 
 1. **Keep observing scheduled collections.** The first post-migration poll is above; watch the
    database phase and `historical_rows_read` over the coming days, since both still grow with history.
-2. **Bound historical merge work if still necessary.** Preserve historical category/keyword unions,
-   priority rules, nonempty-field fallbacks, timestamps, and per-feed atomic transactions. Skipping
-   unchanged content entirely would miss observation timestamp updates.
+2. **Observe the implemented persistent merge state.** Migration 004 caches per-article/per-feed
+   field winners and aggregates. The first observation initializes an article from history; later
+   polls read only new sightings after its watermark. Monitor `merge_state_bootstraps`,
+   `merge_state_rows_read`, and `historical_rows_read`. All history remains retained. The offline
+   20-item trial read 20 sightings with a warm cache versus 420 during indexed initialization,
+   taking 0.013486 versus 0.024541 seconds with identical projections. This is not a live estimate.
 3. **Use the implemented rebuild as a correctness reference.** `rebuild-articles` now reconstructs
    from retained sightings, previews differences by source, and repairs atomically while preserving
    versions. Its shared streaming merge accumulator avoids merging every historical prefix from
-   scratch. Collection still reads full histories; the accumulator is not yet persisted between
-   polls. See `operations.md` for validation, locking, and missing-evidence behavior.
+   scratch. It also checks the per-feed cache algorithm against the full-history result and refreshes
+   caches on apply. See `operations.md` for validation, locking, and missing-evidence behavior.
 4. **Deduplicate reusable content losslessly.** Use a separate storage digest: article `content_hash`
    excludes raw URLs and raw metadata. Separate observation timestamps and placement from reusable
    content; retain every sighting and prove reconstruction equality and `A -> B -> A` preservation.

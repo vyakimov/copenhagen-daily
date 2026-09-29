@@ -56,6 +56,24 @@ class ArticleSnapshot(Model):
     publisher_prominence: PublisherProminence | None = None
 
 
+class MergeRepresentative(Model):
+    sighting_id: int = Field(gt=0)
+    article: ArticleSnapshot
+
+
+class FeedMergeState(Model):
+    schema_version: Literal[1] = 1
+    source: str
+    source_id: str
+    feed_id: str
+    representatives: list[MergeRepresentative] = Field(min_length=1, max_length=10)
+    categories: list[str]
+    keywords: list[str]
+    first_seen_at: datetime
+    last_seen_at: datetime
+    last_checked_at: datetime
+
+
 class AppearanceRecord(Model):
     schema_version: Literal[1] = 1
     poll_id: int

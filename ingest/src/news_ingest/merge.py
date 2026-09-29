@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from .feed import SightingCandidate
 from .hashing import content_hash
-from .models import ArticleSnapshot
+from .models import ArticleSnapshot, FeedMergeState, MergeRepresentative
 
 
 class MergeAccumulator:
@@ -94,3 +94,46 @@ def merge_sightings(
     for sighting in sightings:
         state.add(sighting)
     return state.snapshot()
+
+
+def absorb_feed_state(accumulator: MergeAccumulator, state: FeedMergeState) -> None:
+    for representative in sorted(state.representatives, key=lambda item: item.sighting_id):
+        accumulator.add(SightingCandidate(representative.article, state.feed_id, 1, None, {}))
+    accumulator.categories.update(state.categories)
+    accumulator.keywords.update(state.keywords)
+    accumulator.first_seen_at = min(accumulator.first_seen_at, state.first_seen_at)
+    accumulator.last_seen_at = max(accumulator.last_seen_at, state.last_seen_at)
+    accumulator.last_checked_at = max(accumulator.last_checked_at, state.last_checked_at)
+
+
+def update_feed_state(
+    previous: FeedMergeState | None, feed_id: str, sighting_id: int, article: ArticleSnapshot
+) -> FeedMergeState:
+    # Within one feed, only observation time and stable sighting order select winners.
+    # Keep original winner timestamps: synthesizing one "latest" row loses field provenance.
+    accumulator = MergeAccumulator({feed_id: (0, 0)})
+    representatives = [] if previous is None else list(previous.representatives)
+    if previous is not None:
+        absorb_feed_state(accumulator, previous)
+    representatives.append(MergeRepresentative(sighting_id=sighting_id, article=article))
+    accumulator.add(SightingCandidate(article, feed_id, 1, None, {}))
+    retained = {id(accumulator.winner.article)}
+    retained.update(id(candidate.article) for candidate in accumulator.chosen.values())
+    return FeedMergeState(
+        source=article.source,
+        source_id=article.source_id,
+        feed_id=feed_id,
+        representatives=[item for item in representatives if id(item.article) in retained],
+        categories=sorted(accumulator.categories),
+        keywords=sorted(accumulator.keywords),
+        first_seen_at=accumulator.first_seen_at,
+        last_seen_at=accumulator.last_seen_at,
+        last_checked_at=accumulator.last_checked_at,
+    )
+
+
+def merge_feed_states(states: list[FeedMergeState], priorities) -> ArticleSnapshot:
+    accumulator = MergeAccumulator(priorities)
+    for state in sorted(states, key=lambda item: item.feed_id):
+        absorb_feed_state(accumulator, state)
+    return accumulator.snapshot()
