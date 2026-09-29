@@ -1,0 +1,179 @@
+{
+  "edition": {
+    "id": "2026-09-29-morning",
+    "number": 13,
+    "name": "Tuesday edition",
+    "date": "2026-09-29",
+    "cutoff_at": "2026-09-29T06:00:00.000000Z",
+    "checked_from": "2026-09-26T06:00:00.000000Z",
+    "input_id": "export-2026-09-29-0600",
+    "presentation": {
+      "emphasis": "many_stories",
+      "ear_right": "Inside: an importer beats Novo to the Wegovy pill, Andersson gives up in Sweden, EU ministers hesitate over hybrid attacks"
+    },
+    "note": "Built from headlines and RSS descriptions published between 08:00 on Saturday and 08:00 on Tuesday Copenhagen time, from 132 feeds at seventeen publishers, all polled successfully. Danish outlets decide what is news; international titles are linked where they cover the same story. Nothing else was read."
+  },
+  "stories": [
+    {
+      "id": "finance-bill-ev-tax-su-cut",
+      "role": "lead",
+      "kicker": "Politics",
+      "headline": "Government plans dearer electric cars and SU cut for 81,000 students",
+      "headline_short": "Government plans higher tax on electric cars",
+      "deck": "Four ministers outline how the coming finance bill is to be paid for; the car industry calls the tax rise an own goal.",
+      "extended": [
+        ["The government plans to raise the registration tax on electric cars from 1 January 2027 and to stop the SU student grant for 81,000 students who live at home and whose parents together earn more than 710,000 kroner a year. Four ministers told Berlingske on Monday that the money will help pay for free dental care, lower taxes and a transition in farming in a finance bill still to be presented.", ["kristeligt_dagblad", "berlingske", "politiken", "borsen"]],
+        ["The tax-free threshold for electric cars falls from 419,300 to 366,200 kroner, TV 2 reports. The government also wants a cap on interest deductions and tougher work requirements for graduate unemployment benefit.", ["borsen", "kristeligt_dagblad", "berlingske"]],
+        ["The motorists' organisation FDM estimates that the tax on a Tesla Model Y Long Range could rise by almost 28,000 kroner, and on a VW ID.4 Style by about 10,300 kroner.", ["kristeligt_dagblad"]],
+        ["Thomas Møller Sørensen, head of the car industry at Dansk Industri, calls the rise an 'own goal' while an expert group on car taxation has yet to report. Upper-secondary students call the SU proposal 'an attack on young people', DR reports.", ["borsen", "kristeligt_dagblad", "dr"]]
+      ],
+      "standard": [
+        ["The government plans to raise the registration tax on electric cars from 1 January 2027 and to stop the SU student grant for 81,000 students who live at home and whose parents together earn more than 710,000 kroner a year. Four ministers told Berlingske on Monday that the money will help pay for free dental care, lower taxes and a transition in farming.", ["kristeligt_dagblad", "berlingske", "politiken", "borsen"]],
+        ["The tax-free threshold for electric cars falls from 419,300 to 366,200 kroner, TV 2 reports.", ["borsen"]],
+        ["Thomas Møller Sørensen, head of the car industry at Dansk Industri, calls the rise an 'own goal'. Upper-secondary students call the SU proposal 'an attack on young people', DR reports.", ["borsen", "kristeligt_dagblad", "dr"]]
+      ],
+      "callouts": [
+        {"kind": "figure", "value": "366,200 kroner", "label": "New tax-free threshold for electric cars from 2027, down from 419,300"},
+        {"kind": "quote", "text": "Danes have embraced the green transition, and now the government wants to make some of the popular electric cars tens of thousands of kroner more expensive. That simply does not add up.", "attribution": "Mads Rørvig, chief executive of Mobility Denmark", "attribution_source": "kristeligt_dagblad"}
+      ],
+      "sources": [398, 415, 405, 375, 404, 189]
+    },
+    {
+      "id": "eu-hybrid-protocol-lukewarm",
+      "role": "secondary",
+      "kicker": "Defence",
+      "headline": "EU ministers hold back on von der Leyen's hybrid-attack protocol",
+      "headline_short": "EU ministers hesitate on hybrid protocol",
+      "deck": "Some capitals want a faster European answer to Russian sabotage, while others fear treading on Nato's ground.",
+      "standard": [
+        ["EU defence ministers on Monday held their first discussion of an emergency security protocol proposed by Ursula von der Leyen, the Commission president. Under the protocol, all member states would convene when one triggers it. Altinget describes a lukewarm reception.", ["kristeligt_dagblad", "dr", "altinget"]],
+        ["Politiken reports that some countries want the procedure so the EU can respond faster to Russian attacks, while others hesitate and point to Nato. Kaja Kallas, the EU's foreign policy chief, said there must be no overlap with Nato's tasks.", ["politiken", "kristeligt_dagblad", "altinget"]],
+        ["Kallas also said Europe must arm faster to meet its 2030 goal of defending itself. She said no country offered Patriot missiles for Ukraine or the ships the Aspides mission needs.", ["kristeligt_dagblad"]]
+      ],
+      "lede": ["EU defence ministers on Monday first discussed von der Leyen's proposed emergency protocol for Russian hybrid attacks, and several countries hesitated and pointed to Nato.", ["kristeligt_dagblad", "politiken"]],
+      "callouts": [
+        {"kind": "quote", "text": "We must stand up to the threat. And when we have intelligence, we must act before the attacks take place.", "attribution": "Kaja Kallas, the EU's foreign policy chief", "attribution_source": "kristeligt_dagblad"}
+      ],
+      "sources": [690, 852, 456, 609, 167]
+    },
+    {
+      "id": "wegovy-pill-parallel-import-2care4",
+      "role": "secondary",
+      "kicker": "Business",
+      "headline": "Importer beats Novo to Danish launch of Wegovy pill",
+      "headline_short": "Importer beats Novo to Wegovy pill",
+      "deck": "A parallel importer is bringing the weight-loss pill in from Germany at up to 3,876 kroner a pack, and Novo cannot yet say when its own launch will come.",
+      "standard": [
+        ["Parallel importer 2care4 on Monday began sending Novo's Wegovy weight-loss pill onto the Danish market ahead of Novo's own launch, 2care4 told MedWatch.", ["kristeligt_dagblad", "borsen"]],
+        ["2care4 buys the pill in Germany and repackages it for Danish pharmacies. A pack will cost between 2,838 and 3,876 kroner depending on dose, according to 2care4. TV 2 reports that Danes will not be able to buy it for several days.", ["kristeligt_dagblad", "berlingske", "jp", "tv2"]],
+        ["Mads W. Ø. Larsen, country manager at Novo Denmark, said Novo was not surprised but could not say when it would launch the pill in Denmark or at what price. Novo has launched it in the US, the United Arab Emirates, Britain and Germany.", ["kristeligt_dagblad", "jp"]]
+      ],
+      "lede": ["Parallel importer 2care4 on Monday began bringing Novo's Wegovy pill to Denmark from Germany ahead of Novo's own launch, at 2,838 to 3,876 kroner a pack.", ["kristeligt_dagblad", "berlingske", "jp"]],
+      "callouts": [
+        {"kind": "quote", "text": "The market for weight-loss medicine is developing extremely fast, and demand is enormous. With this launch we are showing the value of parallel import.", "attribution": "Erik Sandberg, chief executive of 2care4", "attribution_source": "kristeligt_dagblad"}
+      ],
+      "sources": [898, 887, 946, 977, 864]
+    },
+    {
+      "id": "sweden-andersson-gives-up-government",
+      "role": "secondary",
+      "kicker": "Nordics",
+      "headline": "Magdalena Andersson gives up forming Sweden's government",
+      "headline_short": "Andersson gives up on government",
+      "deck": "A left-wing vote for a Moderate speaker hands Andreas Norlén the choice of who tries next.",
+      "standard": [
+        ["Magdalena Andersson, the Social Democrats' leader, gave up trying to form a government on Monday, after Vänsterpartiet backed the Moderates' Andreas Norlén, who was re-elected speaker of the Riksdag the same day.", ["borsen", "kristeligt_dagblad"]],
+        ["The speaker names who tries next, and Norlén opens new talks on Wednesday.", ["kristeligt_dagblad", "politiken"]],
+        ["Vänsterpartiet announced its support on Sunday evening, ignoring pressure from the Social Democrats, whose group leader, Lena Hallengren, called it 'a betrayal of all the voters who voted for change'.", ["kristeligt_dagblad", "dr"]],
+        ["Alfred Arnborg, an analyst at Tænketanken Europa, tells Kristeligt Dagblad that the Moderates will get a chance and also fail, before the Social Democrats try again.", ["kristeligt_dagblad"]]
+      ],
+      "lede": ["Magdalena Andersson has abandoned her attempt to form a Swedish government after Vänsterpartiet backed the Moderates' Andreas Norlén, re-elected speaker on Monday.", ["borsen", "kristeligt_dagblad"]],
+      "callouts": [
+        {"kind": "figure", "value": "176", "label": "seats won by the red-green parties, against 173 for the Tidö parties and the Sweden Democrats"}
+      ],
+      "sources": [904, 793, 1044, 903, 512]
+    },
+    {
+      "id": "raf-fairford-suspects-bailed",
+      "role": "secondary",
+      "kicker": "World",
+      "headline": "Police bail RAF Fairford suspects as Trump says he would have held them",
+      "headline_short": "Police bail Fairford suspects",
+      "deck": "Washington hints at Iran, Tehran calls the claims baseless, and the five British men remain under investigation.",
+      "standard": [
+        ["The five men arrested near RAF Fairford on Sunday, all British citizens, were released on police bail on Monday. Laurence Taylor, head of British counter-terrorism policing, said they face strict conditions on their movements and contacts.", ["kristeligt_dagblad", "dr"]],
+        ["The US military has used the base since March for strikes on Iran. Donald Trump said he would not have released the men and, asked about an Iranian link, answered 'possibly'. Marco Rubio, the US secretary of state, said a foreign actor was 'clearly involved'. Iran calls the accusations 'baseless'.", ["kristeligt_dagblad", "berlingske", "ft"]],
+        ["Information, noting that no explosives were found, reads the episode as psychological warfare or a bad spy novel.", ["information"]]
+      ],
+      "lede": ["The five British men arrested near RAF Fairford were bailed on Monday, and Donald Trump and Marco Rubio pointed to foreign involvement, which Iran calls baseless.", ["kristeligt_dagblad", "berlingske", "ft"]],
+      "callouts": [
+        {"kind": "quote", "text": "To be absolutely clear, that does not mean the investigation is over.", "attribution": "Laurence Taylor, head of British counter-terrorism policing", "attribution_source": "kristeligt_dagblad"}
+      ],
+      "sources": [671, 315, 11, 820, 678, 161]
+    },
+    {"id": "rubio-greenland-only-security", "role": "brief", "kicker": "Defence",
+     "headline": "Rubio says the US interest in Greenland has only been about security",
+     "lede": ["The US interest in Greenland has been solely about national security, not territorial conquest, Marco Rubio, the US secretary of state, told Fox News a week after the three countries signed their agreement.", ["kristeligt_dagblad", "berlingske"]],
+     "sources": [184, 174]},
+    {"id": "madrid-tenant-can-return", "role": "brief", "kicker": "Europe",
+     "headline": "Evicted 87-year-old can return to her Madrid flat",
+     "lede": ["Maricarmen Abascal, evicted last week from her Madrid flat of more than 70 years, can move back at her old rent under a deal with the owners, her lawyer says.", ["kristeligt_dagblad", "dr"]],
+     "sources": [273, 256]},
+    {"id": "starship-first-orbit", "role": "brief", "kicker": "Science",
+     "headline": "SpaceX's Starship reaches orbit for the first time",
+     "lede": ["SpaceX's Starship, the largest rocket ever built, reached orbit for the first time on Monday on its 14th test flight and released 26 Starlink satellites despite an engine failure.", ["kristeligt_dagblad", "dr", "ft"]],
+     "sources": [728, 713, 254]},
+    {"id": "us-ban-canadian-goods-in-force", "role": "brief", "kicker": "World",
+     "headline": "US ban on Canadian dairy and spirits takes effect",
+     "lede": ["A US ban on Canadian dairy products, spirits and other goods took effect on Tuesday morning, Danish time, after the two countries failed to agree a trade deal in August.", ["kristeligt_dagblad", "dr"]],
+     "sources": [80, 30, 97]},
+    {"id": "nitrogen-limits-2027-published", "role": "brief", "kicker": "Environment",
+     "headline": "Farmers get their nitrogen limits for 2027",
+     "lede": ["Most farmers could see their 2027 nitrogen discharge limits from midnight, and most get milder ones, the ministry says; 1.92 billion kroner is set aside to compensate those worse off.", ["kristeligt_dagblad", "berlingske"]],
+     "sources": [705, 703, 779]},
+    {"id": "soro-line-trains-until-tuesday", "role": "brief", "kicker": "Transport",
+     "headline": "Fallen overhead line near Sorø cuts trains until Tuesday morning",
+     "lede": ["Fewer trains run between Zealand and Jutland until 10:00 on Tuesday after an overhead line fell between Sorø and Slagelse; Banedanmark will examine why lines on the stretch keep coming down.", ["kristeligt_dagblad", "dr"]],
+     "sources": [643, 676]},
+    {"id": "pig-stable-inspections-plan", "role": "brief", "kicker": "Politics",
+     "headline": "Government to present plan for 50 per cent more pig-welfare inspections",
+     "lede": ["The government presents a plan on Tuesday, drawn up with Alternativet, for 50 per cent more welfare inspections in pig stables and 100 extra inspectors, DR reports.", ["dr", "kristeligt_dagblad"]],
+     "sources": [144, 54]},
+    {"id": "valby-man-sets-himself-alight", "role": "brief", "kicker": "Copenhagen",
+     "headline": "Man sets himself on fire at the integration agency in Valby",
+     "lede": ["A man set himself on fire inside the Agency for International Recruitment and Integration in Valby on Monday, and police were out in force.", ["dr", "politiken"]],
+     "sources": [1047, 1003]},
+    {"id": "eight-municipalities-staffing-breach", "role": "brief", "kicker": "Welfare",
+     "headline": "Eight municipalities break the minimum-staffing law for kindergartens",
+     "lede": ["Eight municipalities fail the legal minimum of one member of staff for every six kindergarten children, and Jacob Mark, the children's minister, has asked Ankestyrelsen to examine them.", ["politiken", "dr", "altinget", "jp"]],
+     "sources": [1103, 747, 664, 1005]},
+    {"id": "putin-army-15500", "role": "brief", "kicker": "Europe",
+     "headline": "Putin orders the Russian army enlarged by 15,500 soldiers",
+     "lede": ["Vladimir Putin on Monday ordered the Russian army enlarged by 15,500 active soldiers, bringing it to 2.44 million people, 1.55 million of them active soldiers.", ["kristeligt_dagblad", "dr"]],
+     "sources": [252, 149]},
+    {"id": "enhedslisten-free-transport-demand", "role": "brief", "kicker": "Politics",
+     "headline": "Enhedslisten makes free buses and trains for under-22s its finance-bill demand",
+     "lede": ["Enhedslisten will demand free bus and train travel across the country for everyone up to 22 from next year in the finance bill talks, Pelle Dragsted, its political spokesperson, says.", ["kristeligt_dagblad", "berlingske"]],
+     "sources": [92, 88]},
+    {"id": "sex-samfund-youth-survey", "role": "brief", "kicker": "Denmark",
+     "headline": "One in six young women has done something sexual she did not want to",
+     "lede": ["One in six young women has, trying to perform, done something sexual she did not want to, a Sex & Samfund survey finds; 45.1 per cent of young men turn to porn to learn about sex.", ["kristeligt_dagblad", "tv2"]],
+     "sources": [178, 689, 159]},
+    {"id": "vesterbro-zero-emission-zone", "role": "brief", "kicker": "Copenhagen",
+     "headline": "Copenhagen committee approves a zero-emission zone on Vesterbro",
+     "lede": ["A Copenhagen city committee on Monday approved the city's first zero-emission zone, in inner Vesterbro with Vesterbrogade exempt; Miljøstyrelsen and the city council must still approve it.", ["kristeligt_dagblad", "berlingske"]],
+     "sources": [565, 547]},
+    {"id": "oresund-bridge-closed-thursday", "role": "brief", "kicker": "Transport",
+     "headline": "Øresund Bridge closes for three hours on Thursday evening",
+     "lede": ["The Øresund Bridge will close for three hours on Thursday evening for an emergency exercise by Danish and Swedish authorities.", ["berlingske", "politiken"]],
+     "sources": [865, 1095]},
+    {"id": "novo-hengrui-weekly-pill", "role": "brief", "kicker": "Business",
+     "headline": "Novo buys rights to a Chinese weekly weight-loss pill for up to 17 billion kroner",
+     "lede": ["Novo has licensed HRS-1596, a once-weekly weight-loss pill in phase 1 trials, from China's Jiangsu Hengrui in a deal worth up to 2.6 billion dollars, or 17.1 billion kroner.", ["kristeligt_dagblad", "borsen"]],
+     "sources": [10, 35]},
+    {"id": "openai-drops-astra-release", "role": "brief", "kicker": "Technology",
+     "headline": "OpenAI drops the October release of its next model over safety problems",
+     "lede": ["OpenAI has dropped the October launch of GPT-6.1 Astra after internal tests found safety problems, among them the model carrying on with tasks without asking the user's permission.", ["kristeligt_dagblad", "berlingske"]],
+     "sources": [230, 225, 262]}
+  ]
+}

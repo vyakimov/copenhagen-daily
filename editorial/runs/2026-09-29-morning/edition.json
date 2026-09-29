@@ -1,0 +1,2207 @@
+{
+  "schema_version": 1,
+  "title": "copenhagen-daily",
+  "edition": {
+    "id": "2026-09-29-morning",
+    "number": 13,
+    "name": "Tuesday edition",
+    "date": "2026-09-29",
+    "timezone": "Europe/Copenhagen",
+    "language": "en",
+    "cutoff_at": "2026-09-29T06:00:00.000000Z",
+    "generated_at": "2026-09-29T09:27:16.057336Z"
+  },
+  "presentation": {
+    "emphasis": "many_stories",
+    "ear_right": "Inside: an importer beats Novo to the Wegovy pill, Andersson gives up in Sweden, EU ministers hesitate over hybrid attacks"
+  },
+  "coverage": {
+    "status": "complete",
+    "checked_from": "2026-09-26T06:00:00.000000Z",
+    "checked_until": "2026-09-29T06:00:00.000000Z",
+    "feeds": [
+      {
+        "feed_id": "altinget.arbejdsmarked",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:11:11.425044Z"
+      },
+      {
+        "feed_id": "altinget.by",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:11:31.830820Z"
+      },
+      {
+        "feed_id": "altinget.christiansborg",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:10:56.298721Z"
+      },
+      {
+        "feed_id": "altinget.eu",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:11:01.457078Z"
+      },
+      {
+        "feed_id": "altinget.forside",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:10:54.133040Z"
+      },
+      {
+        "feed_id": "altinget.forsvar",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:11:15.451707Z"
+      },
+      {
+        "feed_id": "altinget.klima",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:11:04.187294Z"
+      },
+      {
+        "feed_id": "altinget.kommunal",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:11:20.541182Z"
+      },
+      {
+        "feed_id": "altinget.sundhed",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:11:06.316674Z"
+      },
+      {
+        "feed_id": "altinget.uddannelse",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:11:26.295241Z"
+      },
+      {
+        "feed_id": "bbc.business",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:12:10.459782Z"
+      },
+      {
+        "feed_id": "bbc.culture",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:13:15.727314Z"
+      },
+      {
+        "feed_id": "bbc.europe",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:11:58.969840Z"
+      },
+      {
+        "feed_id": "bbc.health",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:12:40.038412Z"
+      },
+      {
+        "feed_id": "bbc.politics",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:12:56.413030Z"
+      },
+      {
+        "feed_id": "bbc.science",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:12:28.347589Z"
+      },
+      {
+        "feed_id": "bbc.technology",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:12:19.704487Z"
+      },
+      {
+        "feed_id": "bbc.top",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:11:44.013800Z"
+      },
+      {
+        "feed_id": "bbc.world",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:11:52.920061Z"
+      },
+      {
+        "feed_id": "berlingske.business",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:08:26.799094Z"
+      },
+      {
+        "feed_id": "berlingske.kultur",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:08:28.180282Z"
+      },
+      {
+        "feed_id": "berlingske.latest",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:08:21.695957Z"
+      },
+      {
+        "feed_id": "berlingske.opinion",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:08:32.453165Z"
+      },
+      {
+        "feed_id": "berlingske.samfund",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:08:24.576687Z"
+      },
+      {
+        "feed_id": "borsen.baeredygtig",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:05:11.122975Z"
+      },
+      {
+        "feed_id": "borsen.breaking",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:05:11.117819Z"
+      },
+      {
+        "feed_id": "borsen.ejendomme",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:05:31.474172Z"
+      },
+      {
+        "feed_id": "borsen.executive",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:05:53.744934Z"
+      },
+      {
+        "feed_id": "borsen.finans",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:05:45.142980Z"
+      },
+      {
+        "feed_id": "borsen.homepage",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:04:52.279666Z"
+      },
+      {
+        "feed_id": "borsen.investor",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:05:51.123072Z"
+      },
+      {
+        "feed_id": "borsen.longread",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:06:09.721685Z"
+      },
+      {
+        "feed_id": "borsen.markedsberetninger",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:06:28.092962Z"
+      },
+      {
+        "feed_id": "borsen.okonomi",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:07:10.311202Z"
+      },
+      {
+        "feed_id": "borsen.opinion",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:06:30.804650Z"
+      },
+      {
+        "feed_id": "borsen.pleasure",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:06:33.867075Z"
+      },
+      {
+        "feed_id": "borsen.politik",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:06:47.560677Z"
+      },
+      {
+        "feed_id": "borsen.tech",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:06:56.161620Z"
+      },
+      {
+        "feed_id": "borsen.udland",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:07:01.852107Z"
+      },
+      {
+        "feed_id": "borsen.virksomheder",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:07:07.666148Z"
+      },
+      {
+        "feed_id": "dr.indland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:08:45.182703Z"
+      },
+      {
+        "feed_id": "dr.kultur",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:09:19.265923Z"
+      },
+      {
+        "feed_id": "dr.latest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:08:33.844609Z"
+      },
+      {
+        "feed_id": "dr.musik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:09:27.514749Z"
+      },
+      {
+        "feed_id": "dr.penge",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:08:57.118416Z"
+      },
+      {
+        "feed_id": "dr.politik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:09:03.062090Z"
+      },
+      {
+        "feed_id": "dr.regionale",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:09:38.758423Z"
+      },
+      {
+        "feed_id": "dr.regionale_bornholm",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:09:46.730100Z"
+      },
+      {
+        "feed_id": "dr.regionale_fyn",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:09:55.045060Z"
+      },
+      {
+        "feed_id": "dr.regionale_kbh",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:09:44.039037Z"
+      },
+      {
+        "feed_id": "dr.regionale_nord",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:10:06.901151Z"
+      },
+      {
+        "feed_id": "dr.regionale_oestjylland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:10:23.468560Z"
+      },
+      {
+        "feed_id": "dr.regionale_sjaelland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:10:17.728615Z"
+      },
+      {
+        "feed_id": "dr.regionale_syd",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:09:49.363239Z"
+      },
+      {
+        "feed_id": "dr.regionale_trekanten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:10:11.611847Z"
+      },
+      {
+        "feed_id": "dr.regionale_vest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:09:57.692157Z"
+      },
+      {
+        "feed_id": "dr.senestesport",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:09:09.289295Z"
+      },
+      {
+        "feed_id": "dr.sporten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:09:06.644822Z"
+      },
+      {
+        "feed_id": "dr.udland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:08:48.493496Z"
+      },
+      {
+        "feed_id": "dr.vejret",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:09:32.102378Z"
+      },
+      {
+        "feed_id": "dr.viden",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:09:11.954992Z"
+      },
+      {
+        "feed_id": "economist.briefing",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:13:24.417958Z"
+      },
+      {
+        "feed_id": "economist.business",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:40:46.596610Z"
+      },
+      {
+        "feed_id": "economist.culture",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:40:46.648855Z"
+      },
+      {
+        "feed_id": "economist.europe",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:13:24.418085Z"
+      },
+      {
+        "feed_id": "economist.finance",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:13:24.418318Z"
+      },
+      {
+        "feed_id": "economist.international",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:13:24.418135Z"
+      },
+      {
+        "feed_id": "economist.latest",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:13:24.417481Z"
+      },
+      {
+        "feed_id": "economist.leaders",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:13:24.417891Z"
+      },
+      {
+        "feed_id": "economist.science",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:40:46.596724Z"
+      },
+      {
+        "feed_id": "ft.climate_capital",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:04:21.215490Z"
+      },
+      {
+        "feed_id": "ft.companies",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:03:59.918541Z"
+      },
+      {
+        "feed_id": "ft.global_economy",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:03:56.558435Z"
+      },
+      {
+        "feed_id": "ft.homepage.international",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:03:48.787969Z"
+      },
+      {
+        "feed_id": "ft.life_arts",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:04:43.130883Z"
+      },
+      {
+        "feed_id": "ft.markets",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:04:06.147485Z"
+      },
+      {
+        "feed_id": "ft.opinion",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:04:31.752358Z"
+      },
+      {
+        "feed_id": "ft.technology",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:04:14.739789Z"
+      },
+      {
+        "feed_id": "ft.work_careers",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:04:36.566726Z"
+      },
+      {
+        "feed_id": "ft.world",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:03:52.147683Z"
+      },
+      {
+        "feed_id": "guardian.business",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:43:40.573671Z"
+      },
+      {
+        "feed_id": "guardian.culture",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:44:48.027707Z"
+      },
+      {
+        "feed_id": "guardian.environment",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:43:56.256832Z"
+      },
+      {
+        "feed_id": "guardian.europe",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:43:32.145390Z"
+      },
+      {
+        "feed_id": "guardian.international",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:41:54.950454Z"
+      },
+      {
+        "feed_id": "guardian.opinion",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:45:27.248427Z"
+      },
+      {
+        "feed_id": "guardian.science",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:44:37.296039Z"
+      },
+      {
+        "feed_id": "guardian.technology",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:43:52.027828Z"
+      },
+      {
+        "feed_id": "guardian.world",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:42:56.018748Z"
+      },
+      {
+        "feed_id": "information.feed",
+        "source": "information",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:10:45.573091Z"
+      },
+      {
+        "feed_id": "jp.seneste",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:10:42.115917Z"
+      },
+      {
+        "feed_id": "jp.topnyheder",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:10:39.535153Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.artikler",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:11:39.045327Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.nyheder",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:11:35.097330Z"
+      },
+      {
+        "feed_id": "nytimes.arts",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:02:54.579072Z"
+      },
+      {
+        "feed_id": "nytimes.books",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:03:17.371817Z"
+      },
+      {
+        "feed_id": "nytimes.business",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:01:25.466927Z"
+      },
+      {
+        "feed_id": "nytimes.climate",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:02:32.406827Z"
+      },
+      {
+        "feed_id": "nytimes.europe",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:01:22.785037Z"
+      },
+      {
+        "feed_id": "nytimes.health",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:02:11.712336Z"
+      },
+      {
+        "feed_id": "nytimes.homepage",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:16:08.934906Z"
+      },
+      {
+        "feed_id": "nytimes.opinion",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:03:32.227845Z"
+      },
+      {
+        "feed_id": "nytimes.science",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:02:01.892581Z"
+      },
+      {
+        "feed_id": "nytimes.technology",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:01:57.909624Z"
+      },
+      {
+        "feed_id": "nytimes.world",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:00:45.313331Z"
+      },
+      {
+        "feed_id": "politiken.debat",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:07:56.828156Z"
+      },
+      {
+        "feed_id": "politiken.forbrugogliv",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:08:03.772561Z"
+      },
+      {
+        "feed_id": "politiken.ibyen",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:08:09.037098Z"
+      },
+      {
+        "feed_id": "politiken.indland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:07:19.278848Z"
+      },
+      {
+        "feed_id": "politiken.kultur",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:07:45.819632Z"
+      },
+      {
+        "feed_id": "politiken.latest",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:07:11.664148Z"
+      },
+      {
+        "feed_id": "politiken.oekonomi",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:07:39.848672Z"
+      },
+      {
+        "feed_id": "politiken.politik",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:07:34.079252Z"
+      },
+      {
+        "feed_id": "politiken.rejser",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:08:15.160794Z"
+      },
+      {
+        "feed_id": "politiken.sport",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:07:48.502019Z"
+      },
+      {
+        "feed_id": "politiken.udland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:07:28.181386Z"
+      },
+      {
+        "feed_id": "politiken.viden",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:07:52.461797Z"
+      },
+      {
+        "feed_id": "tv2.nyheder",
+        "source": "tv2",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:10:27.964628Z"
+      },
+      {
+        "feed_id": "via_ritzau.latest",
+        "source": "via_ritzau",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T09:11:40.643979Z"
+      },
+      {
+        "feed_id": "wapo.business",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:46:27.665517Z"
+      },
+      {
+        "feed_id": "wapo.national",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:46:09.338626Z"
+      },
+      {
+        "feed_id": "wapo.opinions",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:46:38.363018Z"
+      },
+      {
+        "feed_id": "wapo.politics",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:46:15.819146Z"
+      },
+      {
+        "feed_id": "wapo.technology",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:46:33.692057Z"
+      },
+      {
+        "feed_id": "wapo.world",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:45:54.387413Z"
+      },
+      {
+        "feed_id": "wsj.business",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:47:14.561552Z"
+      },
+      {
+        "feed_id": "wsj.economy",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:49:11.869011Z"
+      },
+      {
+        "feed_id": "wsj.markets",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:48:23.591856Z"
+      },
+      {
+        "feed_id": "wsj.opinion",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:50:16.423611Z"
+      },
+      {
+        "feed_id": "wsj.politics",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:49:38.880631Z"
+      },
+      {
+        "feed_id": "wsj.technology",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:50:00.804726Z"
+      },
+      {
+        "feed_id": "wsj.world",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-09-29T08:46:41.236402Z"
+      }
+    ],
+    "note": "Built from headlines and RSS descriptions published between 08:00 on Saturday and 08:00 on Tuesday Copenhagen time, from 132 feeds at seventeen publishers, all polled successfully. Danish outlets decide what is news; international titles are linked where they cover the same story. Nothing else was read."
+  },
+  "inputs": [
+    {
+      "id": "export-2026-09-29-0600",
+      "sha256": "sha256:b57330e9af0c4acb0edc1774d85f6e38bbbb6aa180480aaeae6938f3f108b0f1"
+    }
+  ],
+  "stories": [
+    {
+      "id": "finance-bill-ev-tax-su-cut",
+      "device_participation": "required",
+      "role": "lead",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Government plans dearer electric cars and SU cut for 81,000 students",
+        "body": {
+          "extended": [
+            {
+              "text": "The government plans to raise the registration tax on electric cars from 1 January 2027 and to stop the SU student grant for 81,000 students who live at home and whose parents together earn more than 710,000 kroner a year. Four ministers told Berlingske on Monday that the money will help pay for free dental care, lower taxes and a transition in farming in a finance bill still to be presented.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "politiken",
+                "borsen"
+              ]
+            },
+            {
+              "text": "The tax-free threshold for electric cars falls from 419,300 to 366,200 kroner, TV 2 reports. The government also wants a cap on interest deductions and tougher work requirements for graduate unemployment benefit.",
+              "sources": [
+                "borsen",
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "The motorists' organisation FDM estimates that the tax on a Tesla Model Y Long Range could rise by almost 28,000 kroner, and on a VW ID.4 Style by about 10,300 kroner.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Thomas Møller Sørensen, head of the car industry at Dansk Industri, calls the rise an 'own goal' while an expert group on car taxation has yet to report. Upper-secondary students call the SU proposal 'an attack on young people', DR reports.",
+              "sources": [
+                "borsen",
+                "kristeligt_dagblad",
+                "dr"
+              ]
+            }
+          ],
+          "standard": [
+            {
+              "text": "The government plans to raise the registration tax on electric cars from 1 January 2027 and to stop the SU student grant for 81,000 students who live at home and whose parents together earn more than 710,000 kroner a year. Four ministers told Berlingske on Monday that the money will help pay for free dental care, lower taxes and a transition in farming.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "politiken",
+                "borsen"
+              ]
+            },
+            {
+              "text": "The tax-free threshold for electric cars falls from 419,300 to 366,200 kroner, TV 2 reports.",
+              "sources": [
+                "borsen"
+              ]
+            },
+            {
+              "text": "Thomas Møller Sørensen, head of the car industry at Dansk Industri, calls the rise an 'own goal'. Upper-secondary students call the SU proposal 'an attack on young people', DR reports.",
+              "sources": [
+                "borsen",
+                "kristeligt_dagblad",
+                "dr"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Government plans higher tax on electric cars",
+        "deck": "Four ministers outline how the coming finance bill is to be paid for; the car industry calls the tax rise an own goal."
+      },
+      "callouts": [
+        {
+          "kind": "figure",
+          "value": "366,200 kroner",
+          "label": "New tax-free threshold for electric cars from 2027, down from 419,300"
+        },
+        {
+          "kind": "quote",
+          "text": "Danes have embraced the green transition, and now the government wants to make some of the popular electric cars tens of thousands of kroner more expensive. That simply does not add up.",
+          "attribution": "Mads Rørvig, chief executive of Mobility Denmark",
+          "attribution_source": "kristeligt_dagblad"
+        }
+      ],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "e31f59dc-1a66-4292-9a4b-673196e36159",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Regeringen vil gøre elbiler dyrere fra årsskiftet",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/regeringen-vil-haeve-afgift-paa-elbiler",
+          "published_at": "2026-09-28T19:21:22.000000Z",
+          "content_hash": "sha256:2ff588627e2fac70562651f87dd072b14740cfae57c5dcc300ab149dd9d7875d",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:2cd0c26b-9978-505a-a46d-7c80bcf12388",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Dyrere elbiler, loft over rentefradrag og afskaffelse af SU: Sådan vil regeringen finansiere dyre løfter",
+          "url": "https://www.berlingske.dk/politik/dyrere-elbiler-loft-over-rentefradrag-og-afskaffelse-af-su-saadan-vil-regeringen-finansiere-dyre-loefter",
+          "published_at": "2026-09-28T19:01:06.000000Z",
+          "content_hash": "sha256:5107a48da11ab954f5ba1950d4d5a78195c2c27113606c2eafed51b47d4c7c9a",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/politik/medie-regeringen-haever-afgiften-pa-elbiler",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Medie: Regeringen hæver afgiften på elbiler",
+          "url": "https://borsen.dk/nyheder/politik/medie-regeringen-haever-afgiften-pa-elbiler",
+          "published_at": "2026-09-28T19:16:24.000000Z",
+          "content_hash": "sha256:c01ba22b4e641dd681e00e85ebf6fa000b40819d1ac3617317b94ced5c624bc8",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11000783",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Regeringen vil hæve afgiften på elbiler og tage SU'en fra 81.000 unge",
+          "url": "https://politiken.dk/danmark/politik/art11000783/Regeringen-vil-h%C3%A6ve-afgiften-p%C3%A5-elbiler-og-tage-SUen-fra-81.000-unge",
+          "published_at": "2026-09-28T19:54:14.000000Z",
+          "content_hash": "sha256:6ac95613b875fbe56ff4586902f479ce70adb8f20e72debfc89d0726ae42d57f",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/politik/regeringen-vil-haeve-afgiften-pa-elbiler",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Regeringen vil hæve afgiften på elbiler",
+          "url": "https://borsen.dk/nyheder/politik/regeringen-vil-haeve-afgiften-pa-elbiler",
+          "published_at": "2026-09-28T19:16:24.000000Z",
+          "content_hash": "sha256:1680dd363d3ed5c8abbb4fcfca554fa3613d8478e5f49afd62add5c3da47924d",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:reel:0adfb813-e858-4935-b791-7b8fb1850148",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Danske gymnasieelever ser SU-forslag som 'et angreb på unge'",
+          "url": "https://www.dr.dk/nyheder/indland/reels/danske-gymnasieelever-ser-su-forslag-som-et-angreb-paa-unge",
+          "published_at": "2026-09-29T02:00:07.000000Z",
+          "content_hash": "sha256:2fcb8c3c4575a1ee0c8a12fa23d617e74d3d4da5dd0b8a9fad2bed052157ad37",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "eu-hybrid-protocol-lukewarm",
+      "device_participation": "required",
+      "role": "secondary",
+      "kicker": "Defence",
+      "copy": {
+        "headline": "EU ministers hold back on von der Leyen's hybrid-attack protocol",
+        "body": {
+          "standard": [
+            {
+              "text": "EU defence ministers on Monday held their first discussion of an emergency security protocol proposed by Ursula von der Leyen, the Commission president. Under the protocol, all member states would convene when one triggers it. Altinget describes a lukewarm reception.",
+              "sources": [
+                "kristeligt_dagblad",
+                "dr",
+                "altinget"
+              ]
+            },
+            {
+              "text": "Politiken reports that some countries want the procedure so the EU can respond faster to Russian attacks, while others hesitate and point to Nato. Kaja Kallas, the EU's foreign policy chief, said there must be no overlap with Nato's tasks.",
+              "sources": [
+                "politiken",
+                "kristeligt_dagblad",
+                "altinget"
+              ]
+            },
+            {
+              "text": "Kallas also said Europe must arm faster to meet its 2030 goal of defending itself. She said no country offered Patriot missiles for Ukraine or the ships the Aspides mission needs.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ]
+        },
+        "headline_short": "EU ministers hesitate on hybrid protocol",
+        "deck": "Some capitals want a faster European answer to Russian sabotage, while others fear treading on Nato's ground.",
+        "lede": {
+          "text": "EU defence ministers on Monday first discussed von der Leyen's proposed emergency protocol for Russian hybrid attacks, and several countries hesitated and pointed to Nato.",
+          "sources": [
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        }
+      },
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "We must stand up to the threat. And when we have intelligence, we must act before the attacks take place.",
+          "attribution": "Kaja Kallas, the EU's foreign policy chief",
+          "attribution_source": "kristeligt_dagblad"
+        }
+      ],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "f3aedb64-b8c3-4c05-a7be-7caaa4ec040f",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Europa frygter Rusland vil slå civile europæere ihjel i hybridangreb",
+          "url": "https://www.kristeligt-dagblad.dk/udland/europa-frygter-rusland-vil-slaa-civile-europaeere-ihjel-i-hybridangreb-0",
+          "published_at": "2026-09-28T14:30:02.000000Z",
+          "content_hash": "sha256:158f880e38504f3b1940809f5f8aafa590e0ed2cfba2252402cd76155663b610",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "b946badc-d560-467a-bf53-283b2427c3fb",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Kallas: EU har svært ved at nå mål om eget forsvar i 2030",
+          "url": "https://www.kristeligt-dagblad.dk/udland/kallas-eu-har-svaert-ved-naa-maal-om-eget-forsvar-i-2030",
+          "published_at": "2026-09-28T11:54:28.000000Z",
+          "content_hash": "sha256:329ed9a1aa8d7a42fefd22644d0323249c0d8912b2562f28e53f50ecfe3d8523",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:abdcedc3-fcda-44a5-9a09-0a40f4b6907e",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "EU vil finde fælles svar på hybridangreb: 'Det bliver utroligt svært'",
+          "url": "https://www.dr.dk/nyheder/udland/eu-vil-finde-faelles-svar-paa-hybridangreb-det-bliver-utroligt-svaert",
+          "published_at": "2026-09-28T18:02:42.000000Z",
+          "content_hash": "sha256:6a1262a6a131268859cb447e087e121ccb46ee241bf8269dcb6774455b6c7df5",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "10999741",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Forsvarsministre er nølende over for von der Leyens forslag",
+          "url": "https://politiken.dk/internationalt/art10999741/Forsvarsministre-er-n%C3%B8lende-over-for-von-der-Leyens-forslag",
+          "published_at": "2026-09-28T15:54:29.000000Z",
+          "content_hash": "sha256:5fadc97d166fef28ea48059a7ae85a7b355dc3424fecaaa3cf81df2369aea068",
+          "primary": false
+        },
+        {
+          "source": "altinget",
+          "source_id": "https://www.altinget.dk/eu/artikel/eus-nye-hybridkrigsinstrument-faar-lunken-modtagelse-blandt-europas-forsvarsministre",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "EU’s nye hybridkrigsinstrument får lunken modtagelse blandt Europas forsvarsministre",
+          "url": "https://www.altinget.dk/eu/artikel/eus-nye-hybridkrigsinstrument-faar-lunken-modtagelse-blandt-europas-forsvarsministre",
+          "published_at": "2026-09-29T03:00:00.000000Z",
+          "content_hash": "sha256:fbd4aa194eb09076977014efac71208a2f980680078fe14941ff28232ad8bfdb",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "wegovy-pill-parallel-import-2care4",
+      "device_participation": "required",
+      "role": "secondary",
+      "kicker": "Business",
+      "copy": {
+        "headline": "Importer beats Novo to Danish launch of Wegovy pill",
+        "body": {
+          "standard": [
+            {
+              "text": "Parallel importer 2care4 on Monday began sending Novo's Wegovy weight-loss pill onto the Danish market ahead of Novo's own launch, 2care4 told MedWatch.",
+              "sources": [
+                "kristeligt_dagblad",
+                "borsen"
+              ]
+            },
+            {
+              "text": "2care4 buys the pill in Germany and repackages it for Danish pharmacies. A pack will cost between 2,838 and 3,876 kroner depending on dose, according to 2care4. TV 2 reports that Danes will not be able to buy it for several days.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "jp",
+                "tv2"
+              ]
+            },
+            {
+              "text": "Mads W. Ø. Larsen, country manager at Novo Denmark, said Novo was not surprised but could not say when it would launch the pill in Denmark or at what price. Novo has launched it in the US, the United Arab Emirates, Britain and Germany.",
+              "sources": [
+                "kristeligt_dagblad",
+                "jp"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Importer beats Novo to Wegovy pill",
+        "deck": "A parallel importer is bringing the weight-loss pill in from Germany at up to 3,876 kroner a pack, and Novo cannot yet say when its own launch will come.",
+        "lede": {
+          "text": "Parallel importer 2care4 on Monday began bringing Novo's Wegovy pill to Denmark from Germany ahead of Novo's own launch, at 2,838 to 3,876 kroner a pack.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "jp"
+          ]
+        }
+      },
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "The market for weight-loss medicine is developing extremely fast, and demand is enormous. With this launch we are showing the value of parallel import.",
+          "attribution": "Erik Sandberg, chief executive of 2care4",
+          "attribution_source": "kristeligt_dagblad"
+        }
+      ],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "f387c12b-ca2a-4df5-ba3c-86520ad029ad",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Novos vægttabspille lanceres i Danmark ad omveje",
+          "url": "https://www.kristeligt-dagblad.dk/novo-nordisks-vaegttabspille-lanceres-i-danmark-ad-omveje",
+          "published_at": "2026-09-28T11:08:53.000000Z",
+          "content_hash": "sha256:dc0963888bced8ae069799b388e1fe999a08df66298a1fcf75bbbe8800970b4d",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:169e26c6-7676-50dd-9bcd-1d5d3393720c",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Wegovy-pillen på vej til Danmark – importeres fra Tyskland",
+          "url": "https://www.berlingske.dk/virksomheder/wegovy-pillen-paa-vej-til-danmark--importeres-fra-tyskland",
+          "published_at": "2026-09-28T11:16:59.000000Z",
+          "content_hash": "sha256:6e97b724729c2141eaf264e923365d9fb25623c97558abbc8966cb8fec2e13b3",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19684637",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Novo snigløbet af importør: Det er ikke overraskende",
+          "url": "https://jyllands-posten.dk/erhverv/ECE19684637/wegovypille-triller-til-danmark-ad-omveje/",
+          "published_at": "2026-09-28T10:20:00.000000Z",
+          "content_hash": "sha256:e3b8d590dd11289b2005146df60f437f118abbec8ea226cc39dbdf95519c3f8d",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/business/2026-09-28-wegovy-pillen-er-kommet-til-danmark-men-den-er-svaer-at-faa-fat-i",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Wegovy-pillen er kommet til Danmark – men den er svær at få fat i",
+          "url": "https://nyheder.tv2.dk/business/2026-09-28-wegovy-pillen-er-kommet-til-danmark-men-den-er-svaer-at-faa-fat-i",
+          "published_at": "2026-09-28T09:50:46.000000Z",
+          "content_hash": "sha256:579a0f1fd79bc200a6c8e96646465a86b54c69d0ad55e2d464dbb02b2c23c661",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/virksomheder/novos-vaegttabspille-lanceres-i-danmark-ad-omveje",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Novos vægttabspille lanceres i Danmark ad omveje",
+          "url": "https://borsen.dk/nyheder/virksomheder/novos-vaegttabspille-lanceres-i-danmark-ad-omveje",
+          "published_at": "2026-09-28T11:37:54.000000Z",
+          "content_hash": "sha256:9954d46ed9c453355ff685783f5d066d7db676edd75436bc9f576485159a826b",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "sweden-andersson-gives-up-government",
+      "device_participation": "required",
+      "role": "secondary",
+      "kicker": "Nordics",
+      "copy": {
+        "headline": "Magdalena Andersson gives up forming Sweden's government",
+        "body": {
+          "standard": [
+            {
+              "text": "Magdalena Andersson, the Social Democrats' leader, gave up trying to form a government on Monday, after Vänsterpartiet backed the Moderates' Andreas Norlén, who was re-elected speaker of the Riksdag the same day.",
+              "sources": [
+                "borsen",
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "The speaker names who tries next, and Norlén opens new talks on Wednesday.",
+              "sources": [
+                "kristeligt_dagblad",
+                "politiken"
+              ]
+            },
+            {
+              "text": "Vänsterpartiet announced its support on Sunday evening, ignoring pressure from the Social Democrats, whose group leader, Lena Hallengren, called it 'a betrayal of all the voters who voted for change'.",
+              "sources": [
+                "kristeligt_dagblad",
+                "dr"
+              ]
+            },
+            {
+              "text": "Alfred Arnborg, an analyst at Tænketanken Europa, tells Kristeligt Dagblad that the Moderates will get a chance and also fail, before the Social Democrats try again.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Andersson gives up on government",
+        "deck": "A left-wing vote for a Moderate speaker hands Andreas Norlén the choice of who tries next.",
+        "lede": {
+          "text": "Magdalena Andersson has abandoned her attempt to form a Swedish government after Vänsterpartiet backed the Moderates' Andreas Norlén, re-elected speaker on Monday.",
+          "sources": [
+            "borsen",
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [
+        {
+          "kind": "figure",
+          "value": "176",
+          "label": "seats won by the red-green parties, against 173 for the Tidö parties and the Sweden Democrats"
+        }
+      ],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "c7494b14-72ee-4722-bdac-a23dacbf9ea6",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Svensk parlament genvælger formand til Riksdagen",
+          "url": "https://www.kristeligt-dagblad.dk/udland/svensk-parlament-genvaelger-formand-til-riksdagen",
+          "published_at": "2026-09-28T11:03:27.000000Z",
+          "content_hash": "sha256:639dc085fcdc1ec31b97e9fdd900fbbb52ecae9ec7e8bcc0e4bd06790f623548",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "5d16b0c6-adb4-4231-af45-2ee5b35629ea",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Åbne skænderier på venstrefløjen forsinker svensk regeringsdannelse",
+          "url": "https://www.kristeligt-dagblad.dk/udland/aabne-skaenderier-paa-venstrefloejen-forsinker-svensk-regeringsdannelse",
+          "published_at": "2026-09-28T12:55:00.000000Z",
+          "content_hash": "sha256:17c8e9cdbe210b60e6b878155d8ccbfe0b444a60b8fd41552097c26b8c48e8ec",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/magdalena-andersson-opgiver-at-danne-regering",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Magdalena Andersson opgiver at danne regering",
+          "url": "https://borsen.dk/nyheder/udland/magdalena-andersson-opgiver-at-danne-regering",
+          "published_at": "2026-09-28T08:53:57.000000Z",
+          "content_hash": "sha256:974e843d17fc235224e46fa4e8bd0d2e921fc5f214a9d257e4259f46dd6659b0",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:ee9e2993-d1a9-43b2-92b5-e19777179861",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Sveriges venstrefløj er i åben konflikt efter omstridt formandsafstemning",
+          "url": "https://www.dr.dk/nyheder/udland/sveriges-venstrefloej-er-i-aaben-konflikt-efter-omstridt-formandsafstemning",
+          "published_at": "2026-09-28T11:04:44.000000Z",
+          "content_hash": "sha256:696f391efaca95b7a26b4081a49eb33ec88f75c1fb52d475faa677a8cf5661be",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "10999786",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Rød-grøn guerillakrig udløser konservativ delsejr i svensk regeringsdrama",
+          "url": "https://politiken.dk/internationalt/art10999786/R%C3%B8d-gr%C3%B8n-guerillakrig-udl%C3%B8ser-konservativ-delsejr-i-svensk-regeringsdrama",
+          "published_at": "2026-09-28T17:05:09.000000Z",
+          "content_hash": "sha256:89a304663c02a24bb701448450ae8bcb45ae057b91ae527473f08e2777a26ae4",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "raf-fairford-suspects-bailed",
+      "device_participation": "required",
+      "role": "secondary",
+      "kicker": "World",
+      "copy": {
+        "headline": "Police bail RAF Fairford suspects as Trump says he would have held them",
+        "body": {
+          "standard": [
+            {
+              "text": "The five men arrested near RAF Fairford on Sunday, all British citizens, were released on police bail on Monday. Laurence Taylor, head of British counter-terrorism policing, said they face strict conditions on their movements and contacts.",
+              "sources": [
+                "kristeligt_dagblad",
+                "dr"
+              ]
+            },
+            {
+              "text": "The US military has used the base since March for strikes on Iran. Donald Trump said he would not have released the men and, asked about an Iranian link, answered 'possibly'. Marco Rubio, the US secretary of state, said a foreign actor was 'clearly involved'. Iran calls the accusations 'baseless'.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "ft"
+              ]
+            },
+            {
+              "text": "Information, noting that no explosives were found, reads the episode as psychological warfare or a bad spy novel.",
+              "sources": [
+                "information"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Police bail Fairford suspects",
+        "deck": "Washington hints at Iran, Tehran calls the claims baseless, and the five British men remain under investigation.",
+        "lede": {
+          "text": "The five British men arrested near RAF Fairford were bailed on Monday, and Donald Trump and Marco Rubio pointed to foreign involvement, which Iran calls baseless.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "ft"
+          ]
+        }
+      },
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "To be absolutely clear, that does not mean the investigation is over.",
+          "attribution": "Laurence Taylor, head of British counter-terrorism policing",
+          "attribution_source": "kristeligt_dagblad"
+        }
+      ],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "2708d4de-45b7-44a5-b10c-71bdbd1fc45a",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Fem anholdte ved flybase løslades mod kaution",
+          "url": "https://www.kristeligt-dagblad.dk/udland/fem-anholdte-ved-flybase-loeslades-mod-kaution",
+          "published_at": "2026-09-28T14:53:14.000000Z",
+          "content_hash": "sha256:e511d06f335ecdc3ef001f8fee5ce224c53d0f186df6e19057a0558f5dc07061",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "8e513018-2c0a-43b9-9d28-a14ae81a84e9",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Trump overrasket over løsladelse af anholdte ved britisk flybase",
+          "url": "https://www.kristeligt-dagblad.dk/udland/trump-overrasket-over-loesladelse-af-anholdte-ved-britisk-flybase",
+          "published_at": "2026-09-28T21:21:16.000000Z",
+          "content_hash": "sha256:7e100a183423f627c351322a5de84facb1926e0e4a58cad8e62a0d795dbf4ce1",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:99f31395-d39d-527b-8ded-fcbc2be5d83d",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Rubio om formodet terrorangreb på britisk base: En udenlandsk aktør er »helt klart involveret«",
+          "url": "https://www.berlingske.dk/internationalt/rubio-om-formodet-terrorangreb-paa-britisk-base-en-udenlandsk-aktoer-er-helt-klart-involveret",
+          "published_at": "2026-09-29T05:37:15.000000Z",
+          "content_hash": "sha256:212d8c82fb16f4d6028d5141f8beb9087b47d55777103baabcd3eb7653a570a8",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:40d8e114-676b-42b8-90bc-b9653c9659c6",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Anholdte mistænkt for terrorplaner i Storbritannien er alle britiske statsborgere",
+          "url": "https://www.dr.dk/nyheder/udland/anholdte-mistaenkt-terrorplaner-i-storbritannien-er-alle-britiske-statsborgere",
+          "published_at": "2026-09-28T12:16:45.000000Z",
+          "content_hash": "sha256:3797c281ecbed5f321f3429bfc68ad8cf59fbf23b1adf56233ffcc63d7793386",
+          "primary": false
+        },
+        {
+          "source": "information",
+          "source_id": "842960 at https://www.information.dk",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Mystisk episode ved engelsk luftbase: Et attentatforsøg, der alligevel ikke var det",
+          "url": "https://www.information.dk/udland/2026/09/mystisk-episode-ved-engelsk-luftbase-attentatforsoeg-alligevel",
+          "published_at": "2026-09-28T14:49:24.000000Z",
+          "content_hash": "sha256:9ffb040d2335cec64eb9039eefd5ea3bfbe0eaddab6f7c2da5dc147430b16798",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "262f5234-3d66-4187-a844-b52c29cb0e9b",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Rubio says UK air base incident involved ‘foreign actor’",
+          "url": "https://www.ft.com/content/262f5234-3d66-4187-a844-b52c29cb0e9b",
+          "published_at": "2026-09-29T03:08:11.000000Z",
+          "content_hash": "sha256:5024f749dbf1b599de49f5f8723d8693dc24c66209f9dee2911ae6450277e16c",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "rubio-greenland-only-security",
+      "device_participation": "required",
+      "role": "brief",
+      "kicker": "Defence",
+      "copy": {
+        "headline": "Rubio says the US interest in Greenland has only been about security",
+        "body": {},
+        "lede": {
+          "text": "The US interest in Greenland has been solely about national security, not territorial conquest, Marco Rubio, the US secretary of state, told Fox News a week after the three countries signed their agreement.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "31067aa3-5171-4fc1-8d18-40ade722164d",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Rubio: USA's interesse i Grønland handler kun om sikkerhed",
+          "url": "https://www.kristeligt-dagblad.dk/udland/rubio-usas-interesse-i-groenland-handler-kun-om-sikkerhed",
+          "published_at": "2026-09-29T02:20:47.000000Z",
+          "content_hash": "sha256:2690c98ca91bd6207b84a1c6eab6295818246417ce64b803c6fa168d95664944",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:d3d4ac5a-64f8-5db7-9d78-3442ff42c540",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Rubio: USA's interesse i Grønland handler kun om sikkerhed",
+          "url": "https://www.berlingske.dk/internationalt/rubio-usas-interesse-i-groenland-handler-kun-om-sikkerhed",
+          "published_at": "2026-09-29T02:41:49.000000Z",
+          "content_hash": "sha256:ccf7aedddd375d7cae66eef1a52fc552d6860189fccc0c7c828ab0883687d814",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "madrid-tenant-can-return",
+      "device_participation": "required",
+      "role": "brief",
+      "kicker": "Europe",
+      "copy": {
+        "headline": "Evicted 87-year-old can return to her Madrid flat",
+        "body": {},
+        "lede": {
+          "text": "Maricarmen Abascal, evicted last week from her Madrid flat of more than 70 years, can move back at her old rent under a deal with the owners, her lawyer says.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "97574d51-46a2-461b-999c-3932a9ab9eca",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Tvangsflyttet 87-årig kan blive boende efter demonstrationer i Spanien",
+          "url": "https://www.kristeligt-dagblad.dk/udland/tvangsflyttet-87-aarig-kan-blive-boende-efter-demonstrationer-i-spanien",
+          "published_at": "2026-09-28T22:39:20.000000Z",
+          "content_hash": "sha256:8d29cd35d369de343ebb8168bd5093aa49f9a12d1f660dd68872624fd6c0af6d",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:2ec19ecc-a844-4995-bc80-dc6e7d8c79bd",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "87-årig kan blive boende i sin lejlighed efter store demonstrationer i Spanien",
+          "url": "https://www.dr.dk/nyheder/udland/87-aarig-kan-blive-boende-i-sin-lejlighed-efter-store-demonstrationer-i-spanien",
+          "published_at": "2026-09-28T23:33:14.000000Z",
+          "content_hash": "sha256:3ea2565a83865e09166b56b755091c1232461d399be838e86e5e096262ee3d1f",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "starship-first-orbit",
+      "device_participation": "required",
+      "role": "brief",
+      "kicker": "Science",
+      "copy": {
+        "headline": "SpaceX's Starship reaches orbit for the first time",
+        "body": {},
+        "lede": {
+          "text": "SpaceX's Starship, the largest rocket ever built, reached orbit for the first time on Monday on its 14th test flight and released 26 Starlink satellites despite an engine failure.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr",
+            "ft"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "98c6102f-e189-4907-9c8b-274aabb3803f",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Kæmperaket lastet med satellitter er sendt i kredsløb om Jorden",
+          "url": "https://www.kristeligt-dagblad.dk/udland/kaemperaket-lastet-med-satellitter-er-sendt-i-kredsloeb-om-jorden",
+          "published_at": "2026-09-28T14:00:04.000000Z",
+          "content_hash": "sha256:c0224dfad844157ea7c02a048abe6ddae8eea57f7895b5da2f8bee3c4098c3f6",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:f187e1c5-9347-46e6-90f5-50bd6981fc5b",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "SpaceX's megaraket Starship i kredsløb om Jorden",
+          "url": "https://www.dr.dk/nyheder/udland/spacex-s-megaraket-starship-i-kredsloeb-om-jorden",
+          "published_at": "2026-09-28T14:09:34.000000Z",
+          "content_hash": "sha256:49f9d8634f99e5ded06d37b16f9626470bbfb5a64d36e609ccc9b0b54f3948af",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "6729bceb-2480-42b4-9308-51ef7728c181",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "SpaceX’s Starship rocket reaches orbit for the first time despite engine failure",
+          "url": "https://www.ft.com/content/6729bceb-2480-42b4-9308-51ef7728c181",
+          "published_at": "2026-09-28T23:41:30.000000Z",
+          "content_hash": "sha256:74a4e2480832fd9806c9baa2d9e0d4f652fb8a000b80c79f038ca944ac88d124",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "us-ban-canadian-goods-in-force",
+      "device_participation": "required",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "US ban on Canadian dairy and spirits takes effect",
+        "body": {},
+        "lede": {
+          "text": "A US ban on Canadian dairy products, spirits and other goods took effect on Tuesday morning, Danish time, after the two countries failed to agree a trade deal in August.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "46bfd613-e53d-40e7-862f-8070debf65b8",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Trumps importforbud mod canadiske varer træder i kraft",
+          "url": "https://www.kristeligt-dagblad.dk/udland/trumps-importforbud-mod-canadiske-varer-traeder-i-kraft",
+          "published_at": "2026-09-29T04:16:17.000000Z",
+          "content_hash": "sha256:4871b8dafababf07993039020bfc2190647d91e50a91496b5192aac72acac9be",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:0c3fedbe-f508-47be-bc16-8571314fba53",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Trumps importforbud på canadiske varer træder i kraft",
+          "url": "https://www.dr.dk/nyheder/udland/trumps-importforbud-paa-canadiske-varer-traeder-i-kraft",
+          "published_at": "2026-09-29T05:10:29.000000Z",
+          "content_hash": "sha256:363ba0573519e84419e9f6966d926910bd54824fb8ec7b131b4ab8be7e17280d",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/09/29/business/economy/canada-tariffs-ban.html",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "US Hits Canada With Ban on Some Dairy and Liquor Products",
+          "url": "https://www.nytimes.com/2026/09/29/business/economy/canada-tariffs-ban.html",
+          "published_at": "2026-09-29T04:01:13.000000Z",
+          "content_hash": "sha256:83b4f5be459eabdb629783a26347624e4cc03b583f728a1f45913201324a5669",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "nitrogen-limits-2027-published",
+      "device_participation": "required",
+      "role": "brief",
+      "kicker": "Environment",
+      "copy": {
+        "headline": "Farmers get their nitrogen limits for 2027",
+        "body": {},
+        "lede": {
+          "text": "Most farmers could see their 2027 nitrogen discharge limits from midnight, and most get milder ones, the ministry says; 1.92 billion kroner is set aside to compensate those worse off.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "9e2e0563-0e1b-43ca-94ec-0c65a9ef0b42",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Landmænd kan fra midnat se udledningsgrænser for kvælstof",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/landmaend-kan-fra-midnat-se-udledningsgraenser-kvaelstof",
+          "published_at": "2026-09-28T14:18:56.000000Z",
+          "content_hash": "sha256:665eed4342ded0867718986e09853cdbbfeafde2514f155037bd55342472f21f",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:3d7cfd44-3e75-578a-be67-3d78c115bd0f",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Landmænd kan fra midnat se udledningsgrænser for kvælstof",
+          "url": "https://www.berlingske.dk/politik/landmaend-kan-fra-midnat-se-udledningsgraenser-for-kvaelstof",
+          "published_at": "2026-09-28T14:19:50.000000Z",
+          "content_hash": "sha256:ae4c3a135c2a9e748391c46ae3f0b99bd87d816f2795f8f4ebd641abf2cbdfa7",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15188906/?publisherId=13562216&lang=da",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Udledningsgrænserne for kvælstof 2027 er klar fra midnat",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15188906/udledningsgraenserne-for-kvaelstof-2027-er-klar-fra-midnat?lang=da",
+          "published_at": "2026-09-28T13:07:44.000000Z",
+          "content_hash": "sha256:149c4bdb5625810f01a05457d21b2b974635f7ea6ecc47dfb7957cbeda80415f",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "soro-line-trains-until-tuesday",
+      "device_participation": "required",
+      "role": "brief",
+      "kicker": "Transport",
+      "copy": {
+        "headline": "Fallen overhead line near Sorø cuts trains until Tuesday morning",
+        "body": {},
+        "lede": {
+          "text": "Fewer trains run between Zealand and Jutland until 10:00 on Tuesday after an overhead line fell between Sorø and Slagelse; Banedanmark will examine why lines on the stretch keep coming down.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "57afbfb9-e31d-4a77-9ec6-6e1deb2fb8e1",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Store togudfordringer mellem landsdelene ventes at vare til tirsdag",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/store-togudfordringer-ventes-vare-til-tirsdag",
+          "published_at": "2026-09-28T15:12:30.000000Z",
+          "content_hash": "sha256:dcaeb4510eb6849caae4f9d86ac445ad921b74127120fe36ec7833163af6a9b1",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:0e377a6f-4b7d-43e5-b190-3d8337b013b1",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Togudfordringerne ved Sorø og mellem landsdelene vil vare til i morgen",
+          "url": "https://www.dr.dk/nyheder/seneste/banedanmark-arbejder-paa-faa-overblik-over-koereledningsskade-ved-soroe",
+          "published_at": "2026-09-28T14:50:05.000000Z",
+          "content_hash": "sha256:a5fb824cf1b72c6a94bd7d39df7094b750d7f8ffbad3b853604684e4ccff5570",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "pig-stable-inspections-plan",
+      "device_participation": "required",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Government to present plan for 50 per cent more pig-welfare inspections",
+        "body": {},
+        "lede": {
+          "text": "The government presents a plan on Tuesday, drawn up with Alternativet, for 50 per cent more welfare inspections in pig stables and 100 extra inspectors, DR reports.",
+          "sources": [
+            "dr",
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:bff200fc-5f40-4391-818a-2ef009618fd6",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Nu skal grebet strammes om kontrollen i svinestaldene",
+          "url": "https://www.dr.dk/nyheder/indland/nu-skal-grebet-strammes-om-kontrollen-i-svinestaldene",
+          "published_at": "2026-09-29T04:00:00.000000Z",
+          "content_hash": "sha256:158ed77269edb2177c79f08b115962e37d208dce70027c9e7384b496a18964d9",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "32c39a74-1a4a-4271-bc3e-727b487a0d36",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Plan for strammere kontrol i grisestalde præsenteres tirsdag",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/plan-strammere-kontrol-i-grisestalde-praesenteres-tirsdag",
+          "published_at": "2026-09-29T04:55:27.000000Z",
+          "content_hash": "sha256:074c60dbdef5018ccb90a12074175b978f875634760ee1cc606dcc150eb12e7c",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "valby-man-sets-himself-alight",
+      "device_participation": "required",
+      "role": "brief",
+      "kicker": "Copenhagen",
+      "copy": {
+        "headline": "Man sets himself on fire at the integration agency in Valby",
+        "body": {},
+        "lede": {
+          "text": "A man set himself on fire inside the Agency for International Recruitment and Integration in Valby on Monday, and police were out in force.",
+          "sources": [
+            "dr",
+            "politiken"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:a9571e68-ece9-4b63-8eb6-6572a980540f",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Politi massivt til stede i Valby efter mand har sat ild til sig selv",
+          "url": "https://www.dr.dk/nyheder/indland/politi-massivt-til-stede-i-valby-efter-mand-har-sat-ild-til-sig-selv",
+          "published_at": "2026-09-28T08:48:11.000000Z",
+          "content_hash": "sha256:3ed247b78a852dc2f2296a52b451f1f33713fd0a597da60f807835759c641380",
+          "primary": true
+        },
+        {
+          "source": "politiken",
+          "source_id": "10999639",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Mand satte ild til sig selv hos integrationsstyrelse",
+          "url": "https://politiken.dk/danmark/art10999639/Mand-satte-ild-til-sig-selv-hos-integrationsstyrelse",
+          "published_at": "2026-09-28T09:18:05.000000Z",
+          "content_hash": "sha256:04b57a451b0905377d514241c4fbefcfca397159a71a4f04b1abe040b8de68d8",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "eight-municipalities-staffing-breach",
+      "device_participation": "required",
+      "role": "brief",
+      "kicker": "Welfare",
+      "copy": {
+        "headline": "Eight municipalities break the minimum-staffing law for kindergartens",
+        "body": {},
+        "lede": {
+          "text": "Eight municipalities fail the legal minimum of one member of staff for every six kindergarten children, and Jacob Mark, the children's minister, has asked Ankestyrelsen to examine them.",
+          "sources": [
+            "politiken",
+            "dr",
+            "altinget",
+            "jp"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "politiken",
+          "source_id": "10999397",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Otte kommuner dumper krav om antal ansatte i børnehaverne",
+          "url": "https://politiken.dk/danmark/art10999397/Otte-kommuner-dumper-krav-om-antal-ansatte-i-b%C3%B8rnehaverne",
+          "published_at": "2026-09-28T07:26:20.000000Z",
+          "content_hash": "sha256:f8f42aad1ee5cb280941e45825f65e5b89d1228d3f6017090463daa98853af43",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:f5d56e9a-6243-4595-9b31-9c73dc54be88",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Flere kommuner overholder ikke lov om minimumsnormeringer: ’Helt uacceptabelt,’ siger minister",
+          "url": "https://www.dr.dk/nyheder/politik/flere-kommuner-overholder-ikke-lov-om-minimumsnormeringer-helt-uacceptabelt-siger-minister",
+          "published_at": "2026-09-28T13:43:00.000000Z",
+          "content_hash": "sha256:3a9ea4f5e53f525fc4fe3ec65a6ef4b3bc3702c82ed7ca99e16a3d4abe8692b3",
+          "primary": false
+        },
+        {
+          "source": "altinget",
+          "source_id": "https://www.altinget.dk/artikel/otte-kommuner-bryder-lov-om-minimumsnormeringer-mark-springer-op-til-hoejeste-trin-for-at-stoppe-det",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Otte kommuner bryder lov om minimumsnormeringer. Mark springer \"op til højeste trin\" for at stoppe det",
+          "url": "https://www.altinget.dk/artikel/otte-kommuner-bryder-lov-om-minimumsnormeringer-mark-springer-op-til-hoejeste-trin-for-at-stoppe-det",
+          "published_at": "2026-09-28T15:00:00.000000Z",
+          "content_hash": "sha256:ea35bbf2f6bc603fb9aacef06315c5f7d5aee79973a581f9cd03c723a2f59d8f",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19683663",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Minister »reagerer voldsomt« på nye tal: »Jeg er jo selv småbørnsforælder, og jeg kan da mærke, at det påvirker mig helt vildt«",
+          "url": "https://jyllands-posten.dk/politik/ECE19683663/minister-har-taget-et-lidt-drastisk-skridt-efter-nye-tal-om-boernehaver-og-vuggestuer/",
+          "published_at": "2026-09-28T09:17:00.000000Z",
+          "content_hash": "sha256:c81c56d2cc43611b137cbf64c66a2e98e257e7a9d4350cd90e108e361c9318e1",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "putin-army-15500",
+      "device_participation": "required",
+      "role": "brief",
+      "kicker": "Europe",
+      "copy": {
+        "headline": "Putin orders the Russian army enlarged by 15,500 soldiers",
+        "body": {},
+        "lede": {
+          "text": "Vladimir Putin on Monday ordered the Russian army enlarged by 15,500 active soldiers, bringing it to 2.44 million people, 1.55 million of them active soldiers.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "10a88802-c5ba-40df-a4dc-674be13627cb",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Rusland udvider landets hær med 15.500 soldater",
+          "url": "https://www.kristeligt-dagblad.dk/udland/rusland-udvider-landets-haer-med-15500-soldater",
+          "published_at": "2026-09-28T23:47:54.000000Z",
+          "content_hash": "sha256:23728946fa3ea40242152688889dc9956286abe53700d27c40a0638e11694873",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:49b804e6-3ae2-4179-bc6b-0a949776292a",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Rusland udvider landets hær med 15.500 soldater",
+          "url": "https://www.dr.dk/nyheder/udland/rusland-udvider-landets-haer-med-15-500-soldater",
+          "published_at": "2026-09-29T03:48:48.000000Z",
+          "content_hash": "sha256:60873aab35a0de36485499036c6059d2cff6cdb5233d35504ed20231c77df040",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "enhedslisten-free-transport-demand",
+      "device_participation": "required",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Enhedslisten makes free buses and trains for under-22s its finance-bill demand",
+        "body": {},
+        "lede": {
+          "text": "Enhedslisten will demand free bus and train travel across the country for everyone up to 22 from next year in the finance bill talks, Pelle Dragsted, its political spokesperson, says.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "8a3fba5c-8550-4d51-8be9-98c05fd4ef20",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Støtteparti har gratis bus og tog for unge som hovedkrav til finanslov",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/stoetteparti-har-gratis-bus-og-tog-unge-som-hovedkrav-til-finanslov",
+          "published_at": "2026-09-29T04:05:01.000000Z",
+          "content_hash": "sha256:c10c78809b11092d690b88529fadb4f66bfbaa68193777410876630bfedcef03",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:31d088db-ef55-562b-9f4b-de825e06976e",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Støtteparti har gratis bus og tog for unge som hovedkrav til finanslov",
+          "url": "https://www.berlingske.dk/politik/stoetteparti-har-gratis-bus-og-tog-for-unge-som-hovedkrav-til-finanslov",
+          "published_at": "2026-09-29T04:09:49.000000Z",
+          "content_hash": "sha256:24f28c2f743de74c929df81e81c2e18fd674bdfc0eb39de0c130171ca34f4018",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "sex-samfund-youth-survey",
+      "device_participation": "required",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "One in six young women has done something sexual she did not want to",
+        "body": {},
+        "lede": {
+          "text": "One in six young women has, trying to perform, done something sexual she did not want to, a Sex & Samfund survey finds; 45.1 per cent of young men turn to porn to learn about sex.",
+          "sources": [
+            "kristeligt_dagblad",
+            "tv2"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "2922c9ac-0f53-4a13-bf1d-121ba6a24723",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Hver sjette unge kvinde indvilliger i seksuelle handlinger mod sin lyst",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/hver-sjette-unge-kvinde-indvilliger-i-seksuelle-handlinger-mod-sin-lyst",
+          "published_at": "2026-09-29T02:30:01.000000Z",
+          "content_hash": "sha256:92d0b46d52b2b04e05034ef32e7af7749a87c419cc035355d6467817f14ff88d",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "3fb7bd12-d250-4ea4-9ebd-d8dbe3608de8",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Ny undersøgelse: Unge søger viden om sex hos venner og i porno",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/ny-undersoegelse-unge-soeger-viden-om-sex-hos-venner-og-i-porno",
+          "published_at": "2026-09-28T14:30:14.000000Z",
+          "content_hash": "sha256:e97b5a6266d640ce58f8e395611fe1df0bb1c5dd0c5bc0137ebdc49a8a6176b3",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/samfund/2026-09-29-hver-sjette-unge-kvinde-indvilliger-i-seksuelle-handlinger-mod-sin-lyst",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Stor del af unge mænd henter deres viden om sex i porno",
+          "url": "https://nyheder.tv2.dk/samfund/2026-09-29-hver-sjette-unge-kvinde-indvilliger-i-seksuelle-handlinger-mod-sin-lyst",
+          "published_at": "2026-09-29T03:22:05.000000Z",
+          "content_hash": "sha256:962740e540c8202d323e0b9f48d9d5a0340febeeaed3c062858d740b3c2866d9",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "vesterbro-zero-emission-zone",
+      "device_participation": "required",
+      "role": "brief",
+      "kicker": "Copenhagen",
+      "copy": {
+        "headline": "Copenhagen committee approves a zero-emission zone on Vesterbro",
+        "body": {},
+        "lede": {
+          "text": "A Copenhagen city committee on Monday approved the city's first zero-emission zone, in inner Vesterbro with Vesterbrogade exempt; Miljøstyrelsen and the city council must still approve it.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "06755d40-655b-45c6-a260-fddbc692c63b",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Københavnsk bydel nærmer sig afsked med benzinbiler",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/koebenhavnsk-bydel-naermer-sig-afsked-med-benzinbiler",
+          "published_at": "2026-09-28T16:18:24.000000Z",
+          "content_hash": "sha256:e4fd90f84a9e9e2984d6a3cfa75fcf316ccdfc364ce24746cbfd68b14ecb3ded",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:89983b0f-f7d3-59c3-98e7-c8451dc475af",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Københavnsk bydel nærmer sig afsked med benzinbiler",
+          "url": "https://www.berlingske.dk/danmark/koebenhavnsk-bydel-naermer-sig-afsked-med-benzinbiler",
+          "published_at": "2026-09-28T16:36:47.000000Z",
+          "content_hash": "sha256:e996940fefcb000033ba2494a8b6ee009dc346ca7424b8d4e6a08923e42f05ce",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "oresund-bridge-closed-thursday",
+      "device_participation": "required",
+      "role": "brief",
+      "kicker": "Transport",
+      "copy": {
+        "headline": "Øresund Bridge closes for three hours on Thursday evening",
+        "body": {},
+        "lede": {
+          "text": "The Øresund Bridge will close for three hours on Thursday evening for an emergency exercise by Danish and Swedish authorities.",
+          "sources": [
+            "berlingske",
+            "politiken"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:95b82fed-b9a7-539a-91f1-57094d3f7f28",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Øresundsbroen lukkes i tre timer torsdag aften",
+          "url": "https://www.berlingske.dk/indland/oeresundsbroen-lukkes-i-tre-timer-torsdag-aften",
+          "published_at": "2026-09-28T11:34:52.000000Z",
+          "content_hash": "sha256:a43967c9edc590dad3d5e456b33b93743f628b92e82053eda5080545ee7568c7",
+          "primary": true
+        },
+        {
+          "source": "politiken",
+          "source_id": "10999409",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Øresundsbroen lukkes i tre timer torsdag aften",
+          "url": "https://politiken.dk/danmark/art10999409/%C3%98resundsbroen-lukkes-i-tre-timer-torsdag-aften",
+          "published_at": "2026-09-28T07:43:03.000000Z",
+          "content_hash": "sha256:5dfda78fb73a429384e20b2907f993bd112a6b62e45445fb1785c0ab9e8d675d",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "novo-hengrui-weekly-pill",
+      "device_participation": "required",
+      "role": "brief",
+      "kicker": "Business",
+      "copy": {
+        "headline": "Novo buys rights to a Chinese weekly weight-loss pill for up to 17 billion kroner",
+        "body": {},
+        "lede": {
+          "text": "Novo has licensed HRS-1596, a once-weekly weight-loss pill in phase 1 trials, from China's Jiangsu Hengrui in a deal worth up to 2.6 billion dollars, or 17.1 billion kroner.",
+          "sources": [
+            "kristeligt_dagblad",
+            "borsen"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "be9aafa4-a739-42f5-8369-a9da2d2ad518",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Novo indgår milliardaftale om kinesisk vægttabspille",
+          "url": "https://www.kristeligt-dagblad.dk/novo-indgaar-milliardaftale-om-kinesisk-vaegttabspille",
+          "published_at": "2026-09-29T05:38:25.000000Z",
+          "content_hash": "sha256:5f602ca2eeb4ae9347736cb5a78b51b7ed949cbfa555c176a94c9facca49a21d",
+          "primary": true
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/virksomheder/novo-kober-vaegttabspille-for-op-til-17-mia-kr",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "Novo køber vægttabspille for op til 17 mia. kr.",
+          "url": "https://borsen.dk/nyheder/virksomheder/novo-kober-vaegttabspille-for-op-til-17-mia-kr",
+          "published_at": "2026-09-29T05:05:55.000000Z",
+          "content_hash": "sha256:03b00bb8e9093e0ebad411e54c3aa98c0f8cac86f7b9e1c10ddcd8da1640c1cf",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "openai-drops-astra-release",
+      "device_participation": "required",
+      "role": "brief",
+      "kicker": "Technology",
+      "copy": {
+        "headline": "OpenAI drops the October release of its next model over safety problems",
+        "body": {},
+        "lede": {
+          "text": "OpenAI has dropped the October launch of GPT-6.1 Astra after internal tests found safety problems, among them the model carrying on with tasks without asking the user's permission.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "e189e347-8309-47e5-bf6d-d71fc08ed074",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "OpenAI udskyder ny AI-model på grund af sikkerhedsbekymringer",
+          "url": "https://www.kristeligt-dagblad.dk/openai-udskyder-ny-ai-model-paa-grund-af-sikkerhedsbekymringer",
+          "published_at": "2026-09-29T00:11:48.000000Z",
+          "content_hash": "sha256:b622c739aee50319e4627fc423c5d5b87089fcf0446b4d704532d2dd96769dd6",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:4fcb1b3a-2da6-57a8-82de-080f2c4ef687",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "OpenAI udskyder ny AI-model på grund af sikkerhedsbekymringer",
+          "url": "https://www.berlingske.dk/business/openai-udskyder-ny-ai-model-paa-grund-af-sikkerhedsbekymringer",
+          "published_at": "2026-09-29T00:35:47.000000Z",
+          "content_hash": "sha256:32248a760d0eb31b84b4644d1c9d97557276674818648ec847fe48fe5eda81cd",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003930521",
+          "input_id": "export-2026-09-29-0600",
+          "original_title": "OpenAI Scraps Release of New AI Model Over Safety Concerns",
+          "url": "https://www.wsj.com/tech/ai/openai-chatgpt-model-release-cancel-safety-5a2f9f42?mod=rss_Technology",
+          "published_at": "2026-09-28T23:07:00.000000Z",
+          "content_hash": "sha256:68e1fca25c4c307e83c93e3ddbaff3e0dfb6bae939c0f74f2a6c450ed70b440f",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    }
+  ],
+  "fit_policy": {
+    "allow_role_fallback": true,
+    "allow_composition_substitution": true,
+    "reserve_story_ids": [],
+    "omittable_story_ids": []
+  }
+}

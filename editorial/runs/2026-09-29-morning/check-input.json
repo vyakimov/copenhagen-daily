@@ -1,0 +1,1922 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-09-29-morning",
+  "stories": [
+    {
+      "id": "finance-bill-ev-tax-su-cut",
+      "role": "lead",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Government plans dearer electric cars and SU cut for 81,000 students",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "borsen",
+            "politiken",
+            "dr"
+          ]
+        },
+        {
+          "location": "headline_short",
+          "sentence": 0,
+          "text": "Government plans higher tax on electric cars",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "borsen",
+            "politiken",
+            "dr"
+          ]
+        },
+        {
+          "location": "deck",
+          "sentence": 0,
+          "text": "Four ministers outline how the coming finance bill is to be paid for; the car industry calls the tax rise an own goal.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "borsen",
+            "politiken",
+            "dr"
+          ]
+        },
+        {
+          "location": "extended[0]",
+          "sentence": 0,
+          "text": "The government plans to raise the registration tax on electric cars from 1 January 2027 and to stop the SU student grant for 81,000 students who live at home and whose parents together earn more than 710,000 kroner a year.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "politiken",
+            "borsen"
+          ]
+        },
+        {
+          "location": "extended[0]",
+          "sentence": 1,
+          "text": "Four ministers told Berlingske on Monday that the money will help pay for free dental care, lower taxes and a transition in farming in a finance bill still to be presented.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "politiken",
+            "borsen"
+          ]
+        },
+        {
+          "location": "extended[1]",
+          "sentence": 0,
+          "text": "The tax-free threshold for electric cars falls from 419,300 to 366,200 kroner, TV 2 reports.",
+          "cites": [
+            "borsen",
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        },
+        {
+          "location": "extended[1]",
+          "sentence": 1,
+          "text": "The government also wants a cap on interest deductions and tougher work requirements for graduate unemployment benefit.",
+          "cites": [
+            "borsen",
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        },
+        {
+          "location": "extended[2]",
+          "sentence": 0,
+          "text": "The motorists' organisation FDM estimates that the tax on a Tesla Model Y Long Range could rise by almost 28,000 kroner, and on a VW ID.4 Style by about 10,300 kroner.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "extended[3]",
+          "sentence": 0,
+          "text": "Thomas Møller Sørensen, head of the car industry at Dansk Industri, calls the rise an 'own goal' while an expert group on car taxation has yet to report.",
+          "cites": [
+            "borsen",
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        },
+        {
+          "location": "extended[3]",
+          "sentence": 1,
+          "text": "Upper-secondary students call the SU proposal 'an attack on young people', DR reports.",
+          "cites": [
+            "borsen",
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 0,
+          "text": "The government plans to raise the registration tax on electric cars from 1 January 2027 and to stop the SU student grant for 81,000 students who live at home and whose parents together earn more than 710,000 kroner a year.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "politiken",
+            "borsen"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 1,
+          "text": "Four ministers told Berlingske on Monday that the money will help pay for free dental care, lower taxes and a transition in farming.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "politiken",
+            "borsen"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 0,
+          "text": "The tax-free threshold for electric cars falls from 419,300 to 366,200 kroner, TV 2 reports.",
+          "cites": [
+            "borsen"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 0,
+          "text": "Thomas Møller Sørensen, head of the car industry at Dansk Industri, calls the rise an 'own goal'.",
+          "cites": [
+            "borsen",
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 1,
+          "text": "Upper-secondary students call the SU proposal 'an attack on young people', DR reports.",
+          "cites": [
+            "borsen",
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        },
+        {
+          "location": "callouts[0]",
+          "sentence": 0,
+          "text": "366,200 kroner: New tax-free threshold for electric cars from 2027, down from 419,300",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "borsen",
+            "politiken",
+            "dr"
+          ]
+        },
+        {
+          "location": "callouts[1]",
+          "sentence": 0,
+          "text": "Danes have embraced the green transition, and now the government wants to make some of the popular electric cars tens of thousands of kroner more expensive. That simply does not add up. (Mads Rørvig, chief executive of Mobility Denmark)",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "e31f59dc-1a66-4292-9a4b-673196e36159",
+          "title": "Regeringen vil gøre elbiler dyrere fra årsskiftet",
+          "description": "<p>Hvis det står til regeringen bliver det efter nytår dyrere at købe en elbil over et vist prisniveau.</p><p>Regeringen vil nemlig undlade at forlænge elbilers undtagelse fra registreringsafgift endnu en gang.</p><p>Det er en del af finansieringen til det finanslovsforslag, som regeringen snart ventes at præsentere, siger fire af regeringens ministre til Berlingske.</p><p>Det er penge, der blandt andet skal gå til gratis tandlæge, lavere skat og omstilling af landbruget.</p><p>Forslaget vil blandt andet betyde, at elbiler, der har et prisskilt på mere end 366.000 kroner, vil blive dyrere fra 2027.</p><p>På nuværende tidspunkt er elbiler i Danmark begunstiget af lavere registreringsafgifter end benzin- og dieselbiler.</p><p>Det har været en del af en tidligere politisk aftale, der har haft til formål at få flere danskere over i elbilerne for at fremme den grønne omstilling.</p><p>Oprindeligt var der planlagt en gradvis indfasning af registreringsafgift på elbiler fra 1. januar 2026.</p><p>Men med aftalen om finansloven for 2026, der blev indgået sidste år mellem den daværende regering og De Konservative, blev afgiftsstigningen udsat et år.</p><p>I stedet blev aftaleparterne enige om at nedsætte en ekspertgruppe, der skulle se på modeller for at omlægge beskatningen på biler.</p><p>De skulle blandt andet opstille konkrete modeller for en permanent afskaffelse af registreringsafgift for elbiler.</p><p>Det arbejde er endnu ikke blevet fremlagt. Det ventes, at arbejdsgruppen kan fremlægge det i andet halvår af 2026.</p><p>Dansk Industri (DI) hæfter sig ved, at den nye regering endnu ikke har hørt fra ekspertgruppen.</p><p>Direktør for bilbranchen i DI Thomas Sørensen kalder det et \"selvmål at lade afgifterne på elbiler stige fra nytår\".</p><p>- Vi venter på anbefalinger fra en ekspertgruppe, der netop har fået til opgave at se på, hvordan vi kan indrette en mere effektiv og intelligent bilbeskatning. Den opgave gør vi unødigt kompliceret, hvis vi igen hæver den gamle registreringsafgift, skriver han i en kommentar.</p><p>Ifølge bilejernes organisation, FDM, kan en VW ID.4 Style få omkring 10.300 kroner mere i afgift, mens stigningen for en Tesla Model Y Long Range med firehjulstræk kan blive knap 28.000 kroner.</p><p>Forslaget straffer de danskere, der vælger elbilen, mener Mads Rørvig, der er administrerende direktør i den danske brancheorganisation Mobility Denmark.</p><p>- Danskerne har taget den grønne omstilling til sig, og nu vil regeringen gøre nogle af de populære elbiler titusindvis af kroner dyrere. Det hænger simpelthen ikke sammen, siger han i en pressemeddelelse.</p><p>Foruden forslaget om registreringsafgift, vil regeringen også tage SU'en fra 81.000 hjemmeboende studerende, hvis forældre har en samlet årlig indkomst på over 710.000 kroner, skriver Berlingske.</p><p>Samtidig ønsker regeringen at hæve beskæftigelseskravene for at få dimittenddagpenge og indføre et loft over rentefradraget.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T19:21:22.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/regeringen-vil-haeve-afgift-paa-elbiler",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:2cd0c26b-9978-505a-a46d-7c80bcf12388",
+          "title": "Dyrere elbiler, loft over rentefradrag og afskaffelse af SU: Sådan vil regeringen finansiere dyre løfter",
+          "description": "Det kommer til at gøre ondt på unge studerende og tusindvis af boligejere i hovedstaden, når regeringen lige om lidt præsenterer sit finanslovsudspil. Sådan lyder det i et større interview til Berlingske, hvor regeringstoppen varsler tilbagevenden til en normal, hvor der skal prioriteres i dansk økonomi.",
+          "authors": [
+            "Mathias Svold",
+            "Mads Hørkilde",
+            "Kalle Kehlet",
+            "kake@berlingske.dk (Kalle Kehlet)"
+          ],
+          "categories": [
+            "Politik",
+            "Samfund"
+          ],
+          "published_at": "2026-09-28T19:01:06.000000Z",
+          "url": "https://www.berlingske.dk/politik/dyrere-elbiler-loft-over-rentefradrag-og-afskaffelse-af-su-saadan-vil-regeringen-finansiere-dyre-loefter",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/politik/medie-regeringen-haever-afgiften-pa-elbiler",
+          "title": "Medie: Regeringen hæver afgiften på elbiler",
+          "description": "Regeringen hæver afgiften på elbiler. Det erfarer TV 2 . Ifølge mediet vil afgiften på elbiler stige fra 1. januar 2027. Det sker, da den afgiftsfri grænse reduceres fra 419.300 kr. til 366.200 kr., lyder det.",
+          "authors": [
+            "Sara Lindberg",
+            "sali@borsen.dk (Sara Lindberg)"
+          ],
+          "categories": [],
+          "published_at": "2026-09-28T19:16:24.000000Z",
+          "url": "https://borsen.dk/nyheder/politik/medie-regeringen-haever-afgiften-pa-elbiler",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11000783",
+          "title": "Regeringen vil hæve afgiften på elbiler og tage SU'en fra 81.000 unge",
+          "description": "Regeringen ventes snart at præsentere et finanslovsforslag. Ministre løfter sløret for dele af det.",
+          "authors": [],
+          "categories": [
+            "Politik"
+          ],
+          "published_at": "2026-09-28T19:54:14.000000Z",
+          "url": "https://politiken.dk/danmark/politik/art11000783/Regeringen-vil-h%C3%A6ve-afgiften-p%C3%A5-elbiler-og-tage-SUen-fra-81.000-unge",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/politik/regeringen-vil-haeve-afgiften-pa-elbiler",
+          "title": "Regeringen vil hæve afgiften på elbiler",
+          "description": "Direktør for bilbranchen i Dansk Industri Thomas Møller Sørensen kalder det et “selvmål” at lade afgifterne på elbiler stige fra nytår",
+          "authors": [
+            "Sara Lindberg",
+            "sali@borsen.dk (Sara Lindberg)"
+          ],
+          "categories": [],
+          "published_at": "2026-09-28T19:16:24.000000Z",
+          "url": "https://borsen.dk/nyheder/politik/regeringen-vil-haeve-afgiften-pa-elbiler",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:reel:0adfb813-e858-4935-b791-7b8fb1850148",
+          "title": "Danske gymnasieelever ser SU-forslag som 'et angreb på unge'",
+          "description": null,
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T02:00:07.000000Z",
+          "url": "https://www.dr.dk/nyheder/indland/reels/danske-gymnasieelever-ser-su-forslag-som-et-angreb-paa-unge",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "eu-hybrid-protocol-lukewarm",
+      "role": "secondary",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "EU ministers hold back on von der Leyen's hybrid-attack protocol",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "politiken",
+            "altinget"
+          ]
+        },
+        {
+          "location": "headline_short",
+          "sentence": 0,
+          "text": "EU ministers hesitate on hybrid protocol",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "politiken",
+            "altinget"
+          ]
+        },
+        {
+          "location": "deck",
+          "sentence": 0,
+          "text": "Some capitals want a faster European answer to Russian sabotage, while others fear treading on Nato's ground.",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "politiken",
+            "altinget"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "EU defence ministers on Monday first discussed von der Leyen's proposed emergency protocol for Russian hybrid attacks, and several countries hesitated and pointed to Nato.",
+          "cites": [
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 0,
+          "text": "EU defence ministers on Monday held their first discussion of an emergency security protocol proposed by Ursula von der Leyen, the Commission president.",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "altinget"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 1,
+          "text": "Under the protocol, all member states would convene when one triggers it.",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "altinget"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 2,
+          "text": "Altinget describes a lukewarm reception.",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "altinget"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 0,
+          "text": "Politiken reports that some countries want the procedure so the EU can respond faster to Russian attacks, while others hesitate and point to Nato.",
+          "cites": [
+            "politiken",
+            "kristeligt_dagblad",
+            "altinget"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 1,
+          "text": "Kaja Kallas, the EU's foreign policy chief, said there must be no overlap with Nato's tasks.",
+          "cites": [
+            "politiken",
+            "kristeligt_dagblad",
+            "altinget"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 0,
+          "text": "Kallas also said Europe must arm faster to meet its 2030 goal of defending itself.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 1,
+          "text": "She said no country offered Patriot missiles for Ukraine or the ships the Aspides mission needs.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "callouts[0]",
+          "sentence": 0,
+          "text": "We must stand up to the threat. And when we have intelligence, we must act before the attacks take place. (Kaja Kallas, the EU's foreign policy chief)",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "f3aedb64-b8c3-4c05-a7be-7caaa4ec040f",
+          "title": "Europa frygter Rusland vil slå civile europæere ihjel i hybridangreb",
+          "description": "<p>Kan Europa vende den anden kind til og fortsætte som hidtil, hvis Rusland ender med at dræbe civile europæere i et hybridangreb?</p><p>Det spørgsmål skaber stigende bekymring i Bruxelles, efter at flere efterretningsrapporter har peget på, at Rusland vil fortsætte og formentlig optrappe sine hybridangreb mod Danmark og andre EU-lande i den kommende tid.</p><p>Mandag erkendte EU's udenrigschef, Kaja Kallas, alvoren i forbindelse med et møde for EU-landenes forsvarsministre.</p><p>- Vi skal være årvågne, for vi ser i efterretningsrapporterne, at Rusland planlægger flere sabotagehandlinger og angreb på vores demokratier.</p><p>- Vi skal stå op imod truslen. Og når vi har efterretninger, så skal vi handle, før angrebene finder sted, sagde Kaja Kallas.</p><p>Udmeldingen kommer efter en eskalerende bølge af russisk sabotage, cyberangreb og fysiske hybridangreb i Europa.</p><p>Mindst ti europæiske lande har nu givet Rusland ansvaret for hybridangreb på deres jord.</p><p>Ud over Danmark er det Tyskland, Polen, Estland, Letland, Litauen, Finland, Sverige, Tjekkiet og Belgien.</p><p>Senest skød personer på en russisk fregat nødblus mod en af Forsvarets Fennec-helikoptere i en afstand på 10-15 meter.</p><p>Hvis Ruslands hybridangreb på et tidspunkt får dødelig udgang, vil det sætte Europa i en svær situation.</p><p>For hvis man giver Rusland ansvaret for et dødeligt angreb, hvad er så det rigtige modsvar?</p><p>- Jeg ser frem til at diskutere det med mine kolleger, for det er ikke nogen hemmelighed, at vi ser, at Rusland rykker på sig, sagde forsvarsminister Jeppe Bruus (S) ved ankomsten til mandagens møde.</p><p>Her havde forsvarsministrene den indledende diskussion om et forslag fra EU-Kommissionens formand, Ursula von der Leyen, om en ny \"Emergency Security Protocol\" (Sikkerhedsnødprotokol).</p><p>Det forslag fremsatte von der Leyen i den såkaldte State of the Union-tale tidligere på måneden. Her sagde von der Leyen om forslaget:</p><p>- Jeg mener, at det er på tide, at Europa får sin egen artikel 4 eller en sikkerhedsprotokol til nødsituationer.</p><p>- Når en medlemsstat udløser den, vil alle medlemsstater træde sammen. For at koordinere en europæisk indsats. For at forhindre yderligere eskalering. Og for at afbøde konsekvenserne, sagde von der Leyen i talen.</p><p>Hun lavede dermed en vigtig skelnen i forhold til Natos artikel 5, den såkaldte musketered.</p><p>Den kræver, at Nato-landene militært forsvarer ethvert Nato-land, der kommer under angreb.</p><p>Natos artikel 4 handler derimod alene om konsultationer. Det samme skal EU's modsvar gøre.</p><p>- Der må ikke være noget overlap med Natos opgaver, det er alle enige om, sagde Kallas.</p><p>På spørgsmålet om, hvad modsvaret på et dødeligt russisk hybridangreb bør være, siger Jeppe Bruus:</p><p>- Vores modsvar er, at vi arbejder meget tæt sammen om at opruste. Det kan man se, at vi gør i Europa. Og det er også den danske strategi, siger han.</p><p>Han undlader dermed at gå ind i diskussionen om, hvorvidt Europa vil fortsætte som hidtil med oprustning og sanktioner mod Rusland, hvis Rusland ender med at slå EU-borgere ihjel.</p><p>Europa er dog afskåret fra militær gengældelse, hvis man ikke vil involvere sig direkte i Ukraines krig mod Rusland.</p><p>Estlands forsvarsminister, Martin Herem, mener på den baggrund, at Europas bedste svar vil være at øge støtte til Ukraine.</p><p>- Ruslands udenrigsminister truer os, og vi ser, at russiske specialstyrker gennemfører sabotagehandlinger, siger Martin Herem.</p><p>Han henviser til, at Estland officielt anklager russiske efterretnings- og specialtjenester for at gennemføre sabotageaktioner på estisk jord.</p><p>- Når angrebene sker, skal vi finde ud af, hvem der står bag, og så offentliggøre det. Og så skal vi handle.</p><p>- Sanktioner og øget støtte til Ukraine er det vigtigste, siger Martin Herem.</p><p>Han mener, at EU bør samle sig om at tage de indefrosne russiske midler og give dem til Ukraine.</p><p>Det siger Belgien, hvor hovedparten af midlerne er indefrosset, dog blankt nej til. Andre EU-lande som Italien er også skeptiske over for forslaget, som kan udløse søgsmål fra Rusland.</p><p>Dermed er det fortsat et åbent spørgsmål, hvad Europas modsvar bliver på et eventuelt dødeligt russisk hybridangreb.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T14:30:02.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/europa-frygter-rusland-vil-slaa-civile-europaeere-ihjel-i-hybridangreb-0",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "b946badc-d560-467a-bf53-283b2427c3fb",
+          "title": "Kallas: EU har svært ved at nå mål om eget forsvar i 2030",
+          "description": "<p>Europa skal skrue markant op for tempoet, hvis man vil indfri målet om at kunne forsvare sig selv i 2030.</p><p>Det siger EU's udenrigschef, Kaja Kallas.</p><p>Udmeldingen kommer, på et pressemøde efter mandagens forsvarsministermøde i Bruxelles.</p><p>- Europa har brug for at opruste hurtigere og mere effektivt, hvis vi skal nå 2030-målet, siger Kaja Kallas.</p><p>På mandagens møde diskuterede EU-landenes forsvarsministre den første årlige rapport om EU's forsvarsparathed.</p><p>Rapporten, som endnu ikke er offentliggjort, skal give et indblik i om Europa kan nå målet om at kunne stå på egne ben i 2030.</p><p>Det indblik er ikke opløftende, lader Kallas forstå.</p><p>- Europa har brug for afgørende forandringer i omfanget og hastigheden af investeringer i forsvar, innovation og industriel formåen, siger Kaja Kallas.</p><p>Udmeldingen kommer, mens flere EU-landes efterretningstjenester advarer om, at Rusland udgør en stadig stigende trussel.</p><p>I sidste uge fremlagde Forsvarets Efterretningstjeneste (FE) en rapport, hvor man ikke længere vil udelukke, at Rusland invaderer et Nato-land, selv om scenariet blev anset for at være usandsynligt.</p><p>Rapporten fastslog samtidig, at Rusland vil intensivere og eskalere sin hybridkrig mod Nato og Vesten i de kommende måneder.</p><p>Statsminister Mette Frederiksen (S) har længe presset på for, at Europa skal kunne forsvarer sig selv i 2030.</p><p>Samtidig har regeringen med opbakning fra Folketinget sat gang i en omfattende oprustning.</p><p>Allerede i år ventes Danmark på den baggrund at leve op til Natos målsætning om at bruge 3,5 procent af bnp på forsvar.</p><p>Men resten af Europa kan ikke følge det danske tempo.</p><p>Det blev indirekte understreget på mandagens møde for forsvarsministrene.</p><p>Her meldte ingen EU-lande sig ifølge Kallas klar til at sende de livsvigtige Patriot-missiler til Ukraine.</p><p>De udgør Ukraines mest effektive forsvar mod Ruslands tunge ballistiske missiler.</p><p>Selvom de russiske missiler koster ukrainske civile livet og ødelægger vigtig infrastruktur, er ingen EU-lande lige nu parate - eller i stand til - at sende de efterspurgte missiler til Ukraines luftforsvar.</p><p>På mandagens møde måtte Kallas desuden gå tiggergang for at få EU-landene til at sende de lovede krigsskibe til EU's Aspides-mission i Mellemøsten.</p><p>Missionen kan kun operere og indfri sine mål, hvis den råder over mindst ti skibe, lød det fra Kallas.</p><p>Heller ikke her lykkedes det at få EU-landene til at levere. To EU-lande diskuterer dog ifølge Kallas nu, om de på et tidspunkt kan sende ekstra flådefartøjer.</p><p>Tidligere har Den Europæiske Revisionsret også i en særskilt rapport peget på, at EU ikke er på vej til at indfri målet om at blive forsvarsparat i 2030.</p><p>Mange års underinvestering har ifølge revisionsretten ført til utilstrækkelige ammunitions- og missillagre, lange produktionstider, afhængighed af leverandører uden for EU og logistiske flaskehalse.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T11:54:28.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/kallas-eu-har-svaert-ved-naa-maal-om-eget-forsvar-i-2030",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:abdcedc3-fcda-44a5-9a09-0a40f4b6907e",
+          "title": "EU vil finde fælles svar på hybridangreb: 'Det bliver utroligt svært'",
+          "description": "EU's forsvarsministre har mandag været samlet for at diskutere, hvordan medlemslandene skal reagere og stå sammen i tilfælde af sabotage.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T18:02:42.000000Z",
+          "url": "https://www.dr.dk/nyheder/udland/eu-vil-finde-faelles-svar-paa-hybridangreb-det-bliver-utroligt-svaert",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "10999741",
+          "title": "Forsvarsministre er nølende over for von der Leyens forslag",
+          "description": "EU bør have sin egen nødprocedure, så man kan reagere hurtigere på russiske angreb, mener flere lande. Andre tøver og peger på Nato.",
+          "authors": [],
+          "categories": [
+            "Internationalt"
+          ],
+          "published_at": "2026-09-28T15:54:29.000000Z",
+          "url": "https://politiken.dk/internationalt/art10999741/Forsvarsministre-er-n%C3%B8lende-over-for-von-der-Leyens-forslag",
+          "primary": false
+        },
+        {
+          "source": "altinget",
+          "source_id": "https://www.altinget.dk/eu/artikel/eus-nye-hybridkrigsinstrument-faar-lunken-modtagelse-blandt-europas-forsvarsministre",
+          "title": "EU’s nye hybridkrigsinstrument får lunken modtagelse blandt Europas forsvarsministre",
+          "description": "EU’s forsvarsministre tøver med at støtte von der Leyens nye planer om en fælles europæisk drejebog for hybride angreb. Særligt bekymringen for, at værktøjet vil overlappe med Nato, præger diskussionen.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T03:00:00.000000Z",
+          "url": "https://www.altinget.dk/eu/artikel/eus-nye-hybridkrigsinstrument-faar-lunken-modtagelse-blandt-europas-forsvarsministre",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "wegovy-pill-parallel-import-2care4",
+      "role": "secondary",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Importer beats Novo to Danish launch of Wegovy pill",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "jp",
+            "tv2",
+            "borsen"
+          ]
+        },
+        {
+          "location": "headline_short",
+          "sentence": 0,
+          "text": "Importer beats Novo to Wegovy pill",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "jp",
+            "tv2",
+            "borsen"
+          ]
+        },
+        {
+          "location": "deck",
+          "sentence": 0,
+          "text": "A parallel importer is bringing the weight-loss pill in from Germany at up to 3,876 kroner a pack, and Novo cannot yet say when its own launch will come.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "jp",
+            "tv2",
+            "borsen"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Parallel importer 2care4 on Monday began bringing Novo's Wegovy pill to Denmark from Germany ahead of Novo's own launch, at 2,838 to 3,876 kroner a pack.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "jp"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 0,
+          "text": "Parallel importer 2care4 on Monday began sending Novo's Wegovy weight-loss pill onto the Danish market ahead of Novo's own launch, 2care4 told MedWatch.",
+          "cites": [
+            "kristeligt_dagblad",
+            "borsen"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 0,
+          "text": "2care4 buys the pill in Germany and repackages it for Danish pharmacies.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "jp",
+            "tv2"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 1,
+          "text": "A pack will cost between 2,838 and 3,876 kroner depending on dose, according to 2care4.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "jp",
+            "tv2"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 2,
+          "text": "TV 2 reports that Danes will not be able to buy it for several days.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "jp",
+            "tv2"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 0,
+          "text": "Mads W.",
+          "cites": [
+            "kristeligt_dagblad",
+            "jp"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 1,
+          "text": "Ø.",
+          "cites": [
+            "kristeligt_dagblad",
+            "jp"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 2,
+          "text": "Larsen, country manager at Novo Denmark, said Novo was not surprised but could not say when it would launch the pill in Denmark or at what price.",
+          "cites": [
+            "kristeligt_dagblad",
+            "jp"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 3,
+          "text": "Novo has launched it in the US, the United Arab Emirates, Britain and Germany.",
+          "cites": [
+            "kristeligt_dagblad",
+            "jp"
+          ]
+        },
+        {
+          "location": "callouts[0]",
+          "sentence": 0,
+          "text": "The market for weight-loss medicine is developing extremely fast, and demand is enormous. With this launch we are showing the value of parallel import. (Erik Sandberg, chief executive of 2care4)",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "f387c12b-ca2a-4df5-ba3c-86520ad029ad",
+          "title": "Novos vægttabspille lanceres i Danmark ad omveje",
+          "description": "<p>Medicinalselskabet Novos vægttabspille Wegovy bliver mandag sendt på det danske marked af parallelimportøren 2care4. Det oplyser 2care4 i en mail til mediet MedWatch.</p><p>Parallelimportøren sender pillen på det danske marked, før Novo selv har nået at lancere den på sin hjemmebane.</p><p>Det kan lade sig gøre, fordi 2care4 køber de originale lægemidler i andre EU-lande og ompakker dem for at sælge dem til danskerne, skriver MedWatch.</p><p>Mediet har forsøgt at få et interview med 2care4 i forbindelse med lanceringen, men det er blevet afvist. I stedet har den administrerende direktør, Erik Sandberg, sendt et skriftligt svar.</p><p>- Markedet for vægttabsmedicin udvikler sig ekstremt hurtigt, og efterspørgslen er enorm. Med denne lancering viser vi værdien af parallelimport, lyder det i en mail til Medwatch.</p><p>- Vi reagerer proaktivt på markedets behov og sikrer gennem et stærkt europæisk netværk, at et nyt produkt bliver tilgængeligt i Danmark.</p><p>Hos Novo er man ikke overrasket over, at parallelimportører ser en mulighed for at gøre pillen tilgængelig i Danmark.</p><p>Det siger Mads W. Ø. Larsen, der er landechef i Novo Danmark, i en skriftlig kommentar til Ritzau.</p><p>Han kan dog ikke komme selskabets egne lanceringsplaner nærmere.</p><p>- Hos Novo følger vi vores plan for lancering på nye markeder, men vi kan endnu ikke oplyse, hvornår vi selv lancerer pillen i Danmark, eller hvad prisen bliver til den tid, siger han.</p><p>Det amerikanske marked var det første, hvor pillen blev lanceret. Det skete i begyndelsen af året. Siden er det også sket i De Forenede Arabiske Emirater, Storbritannien og Tyskland.</p><p>I sidste uge kom det også frem, at Novo kigger mod det mexicanske marked.</p><p>Pillen er et GLP-1-produkt. GLP-1 er et hormon, der sænker blodsukkeret og hæmmer appetitten.</p><p>Den er et alternativ til Wegovy i injektionsform, som allerede er godkendt til salg i EU. Den er tilgængelig med en recept.</p><p>Ifølge 2care4 kommer prisen på en pakke Wegovy-piller til at koste danskerne mellem 2838 og 3876 kroner. Prisen afhænger af størrelsen på pillernes dosis.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T11:08:53.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/novo-nordisks-vaegttabspille-lanceres-i-danmark-ad-omveje",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:169e26c6-7676-50dd-9bcd-1d5d3393720c",
+          "title": "Wegovy-pillen på vej til Danmark – importeres fra Tyskland",
+          "description": "Ad omveje kan Wegovy-pillen måske snart købes i Danmark. Det sker, da den danske parallelimportør 2Care4 køber pillen i Tyskland og agter at sælge den videre til danske apoteker. Det er uvist, hvornår danskerne kan købe pillen",
+          "authors": [
+            "Tobias Lind Larsen",
+            "tola@berlingske.dk (Tobias Lind Larsen)"
+          ],
+          "categories": [
+            "Business",
+            "Virksomheder"
+          ],
+          "published_at": "2026-09-28T11:16:59.000000Z",
+          "url": "https://www.berlingske.dk/virksomheder/wegovy-pillen-paa-vej-til-danmark--importeres-fra-tyskland",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19684637",
+          "title": "Novo snigløbet af importør: Det er ikke overraskende",
+          "description": "Novos nye vægttabspille har fundet vej til landet, efter parallelimportøren 2Care4 har indkøbt den i Tyskland. Novos næste lancering er i Mexico.",
+          "authors": [
+            "Nick Sturm"
+          ],
+          "categories": [
+            "Erhverv"
+          ],
+          "published_at": "2026-09-28T10:20:00.000000Z",
+          "url": "https://jyllands-posten.dk/erhverv/ECE19684637/wegovypille-triller-til-danmark-ad-omveje/",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/business/2026-09-28-wegovy-pillen-er-kommet-til-danmark-men-den-er-svaer-at-faa-fat-i",
+          "title": "Wegovy-pillen er kommet til Danmark – men den er svær at få fat i",
+          "description": "Slankepillen er på vej til apotekerne, men vil først om flere dage være til at købe for danskerne. Og den kommer med en høj pris.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T09:50:46.000000Z",
+          "url": "https://nyheder.tv2.dk/business/2026-09-28-wegovy-pillen-er-kommet-til-danmark-men-den-er-svaer-at-faa-fat-i",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/virksomheder/novos-vaegttabspille-lanceres-i-danmark-ad-omveje",
+          "title": "Novos vægttabspille lanceres i Danmark ad omveje",
+          "description": "Novos vægttabspille Wegovy bliver mandag sendt på det danske marked af parallelimportøren 2care4. Det oplyser 2care4 i en mail til mediet Medwatch. Parallelimportøren sender pillen på det danske marked, før Novo selv har nået at lancere den på sin hjemmebane.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T11:37:54.000000Z",
+          "url": "https://borsen.dk/nyheder/virksomheder/novos-vaegttabspille-lanceres-i-danmark-ad-omveje",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "sweden-andersson-gives-up-government",
+      "role": "secondary",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Magdalena Andersson gives up forming Sweden's government",
+          "cites": [
+            "kristeligt_dagblad",
+            "borsen",
+            "dr",
+            "politiken"
+          ]
+        },
+        {
+          "location": "headline_short",
+          "sentence": 0,
+          "text": "Andersson gives up on government",
+          "cites": [
+            "kristeligt_dagblad",
+            "borsen",
+            "dr",
+            "politiken"
+          ]
+        },
+        {
+          "location": "deck",
+          "sentence": 0,
+          "text": "A left-wing vote for a Moderate speaker hands Andreas Norlén the choice of who tries next.",
+          "cites": [
+            "kristeligt_dagblad",
+            "borsen",
+            "dr",
+            "politiken"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Magdalena Andersson has abandoned her attempt to form a Swedish government after Vänsterpartiet backed the Moderates' Andreas Norlén, re-elected speaker on Monday.",
+          "cites": [
+            "borsen",
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 0,
+          "text": "Magdalena Andersson, the Social Democrats' leader, gave up trying to form a government on Monday, after Vänsterpartiet backed the Moderates' Andreas Norlén, who was re-elected speaker of the Riksdag the same day.",
+          "cites": [
+            "borsen",
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 0,
+          "text": "The speaker names who tries next, and Norlén opens new talks on Wednesday.",
+          "cites": [
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 0,
+          "text": "Vänsterpartiet announced its support on Sunday evening, ignoring pressure from the Social Democrats, whose group leader, Lena Hallengren, called it 'a betrayal of all the voters who voted for change'.",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        },
+        {
+          "location": "standard[3]",
+          "sentence": 0,
+          "text": "Alfred Arnborg, an analyst at Tænketanken Europa, tells Kristeligt Dagblad that the Moderates will get a chance and also fail, before the Social Democrats try again.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "callouts[0]",
+          "sentence": 0,
+          "text": "176: seats won by the red-green parties, against 173 for the Tidö parties and the Sweden Democrats",
+          "cites": [
+            "kristeligt_dagblad",
+            "borsen",
+            "dr",
+            "politiken"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "c7494b14-72ee-4722-bdac-a23dacbf9ea6",
+          "title": "Svensk parlament genvælger formand til Riksdagen",
+          "description": "<p>Moderaternas Andreas Norlén fortsætter som talman (formand) for Sveriges Riksdag.</p><p>Det har en afstemning i det svenske parlament afgjort mandag, skriver nyhedsbureauet TT.</p><p>Efter valgsejren til Socialdemokraterna og den rød-grønne fløj tidligere på måneden var forventningen ellers, at en ny formand ville komme fra Socialdemokraterna, men søndag aften meddelte Vänsterpartiet, at de ville støtte deres politiske modstandere Moderaternas kandidat.</p><p>Meldingen fra Vänsterpartiet fik Magdalena Andersson, der er formand for Socialdemokraterna, til for nuværende at opgive at danne en regering.</p><p>Det meddelte hun tidligere mandag.</p><p>- Vänsterpartiet gik sammen med Moderaterna. Der findes nu en ny konstellation, og så er det rimeligt, at et af partierne i den nye konstellation får muligheden, sagde Andersson ifølge det svenske medie Expressen.</p><p>Det er talmannen, der udpeger, hvem som skal prøve at danne en regering, og med genvalget af Norlén er det ham, der nu skal pege på, hvem der skal prøve sig med opgaven.</p><p>Norlén blev ifølge TT valgt til posten i 2018 og har dermed siddet som talman i det svenske parlament i otte år.</p><p>Lena Hallengren, der er gruppeleder i Socialdemokraterna, kritiserede inden afstemningen Vänsterpartiets beslutning.</p><p>- Det er et politisk spil, som jeg tror, er uforståeligt for langt de fleste. Det er selvfølgelig også et svigt over for alle de vælgere, der stemte for forandring, sagde hun ifølge TT.</p><p>Ved det svenske valg tidligere på måneden fik de rød-grønne partier samlet 176 mandater, mens de såkaldte Tidö-partier, der udgøres af den afgående borgerlige regering, Moderaterna, Liberalerna og Kristdemokraterna, sammen med Sverigedemokraterna fik 173 mandater.</p><p>Sverigedemokraterna er den afgående regerings støtteparti. Partiet, der har en stram indvandringspolitik som sin primære mærkesag, har fået 17,5 procent af stemmerne og bliver dermed det tredjestørste parti i Riksdagen.</p><p>Socialdemokraterna blev det største parti med 28 procent af stemmerne.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T11:03:27.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/svensk-parlament-genvaelger-formand-til-riksdagen",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "5d16b0c6-adb4-4231-af45-2ee5b35629ea",
+          "title": "Åbne skænderier på venstrefløjen forsinker svensk regeringsdannelse",
+          "description": "Mandag formiddag fortalte formanden for Sveriges socialdemokrater, Magdalena Andersson, at hendes parti opgiver at danne regering. Udmeldingen kommer 15 dage efter, der var rigsdagsvalg i Sverige , hvor den rød-grønne blok med Socialdemokraterne som det største parti fik flertallet af stemmerne. Men ifølge Magdalena Andersson har hun nu opgivet at danne regering, fordi det venstreorienterede parti Venstrepartiet har valgt at anbefale, at Andreas Norlén fra det borgerlige parti Moderaterne skal fortsætte på posten som formand for Sveriges Rigsdag. \"Jeg vil senere i dag meddele talmannen [formanden for parlamentet], at jeg opgiver at forsøge at danne regering. Begrundelsen er enkel: I Sveriges Rigsdag er det det største parti i regeringen, der sidder på posten som talman,\" udtalte Magdalena Andersson ifølge DR. Talmannen er formelt den næsthøjeste post i Sverige efter kongen, og det er også talmannen, der leder forhandlingen om regeringsdannelsen. Kristeligt Dagblad har talt med Alfred Arnborg, der er analytiker ved Tænketanken Europa med ekspertise i svensk politik, for at blive klogere på, hvad Magdalena Anderssons udmelding kommer til at betyde for de fortsatte regeringsforhandlinger i Sverige. Hvorfor peger Venstrepartiet på en borgerlig kandidat til posten som talman, når partiet gerne vil i regering med Socialdemokraterne? Jeg tror, der er to grunde. Den første del handler om forhandling. Man vil lægge pres på Socialdemokraterne og vise, at man mener det alvorligt, når man siger, at man gør krav på at få indflydelse i den næste regering. Den anden del handler om, at man gerne vil have Moderaterne og Andreas Norlén som talman og dermed leder af forhandlingsprocessen. Hvis det var Socialdemokraterne, som skulle lede forhandlingsprocessen, kunne det ændre magtdynamikkerne i forhandlingen. Venstrefløjspartierne bliver nødt til at vise deres vælgere, at de har forhandlet så hårdt som muligt, vurderer Alfred Arnborg. Foto: Claudio Bresciani/TT/Ritzau Scanpix Hvad kommer det her til at betyde for regeringsforhandlingerne i Sverige? Forhandlingerne er startet ret dårligt for venstrefløjen. De her åbne skænderier kunne indikere, at forhandlingsprocessen kommer til at tage endnu længere tid, end man på forhånd havde troet. På den anden side, så forventede jeg allerede fra start, at den første runde i de her forhandlinger ikke ville lede til noget. Venstrefløjspartierne bliver nødt til at vise deres vælgere, at de har forhandlet så hårdt som muligt. Efterfølgende vil Moderaterne få muligheden for at danne en regering, men dette vil også mislykkes. I tredje runde vil Socialdemokraterne så få muligheden igen. Måske kan det fremskynde processen, at man allerede nu giver op, fordi man så får chancen igen om en til to måneder. Er det realistisk, at Venstrepartiet begynder at samarbejde med de borgerlige yderligere? Nej. Det her er en del af et større forhandlingsspil, der foregår mellem Socialdemokraterne og Venstrepartiet. Venstrepartiet har også været tydelige om, at de kun vil gøre en socialdemokrat til statsminister. Den tidligere [borgerlige] regering og Venstrepartiet [der er Enhedslistens svenske søsterparti] står meget langt fra hinanden. Er det stadig en realistisk mulighed, at Socialdemokraterne og Venstrepartiet kommer til at sidde i regering sammen? Det er mere sandsynligt, at de ikke ender i regering sammen, og at Venstrepartiet bliver et støtteparti uden for regeringen. Ikke primært på baggrund af det her, men mere på grund af de skandaler, der har været op til valget og bagefter. Det handler om islamistiske politikere fra Venstrepartiet på stemmesedlen og en sag om potentiel valgsvindel . Socialdemokraterne har i lang tid sagt, at Venstrepartiet ikke er stuerent. Rent politisk er de ikke langt fra hinanden, men det vil være virkelig svært for Socialdemokraterne at sidde i regering med Venstrepartiet. Hvad kommer du til at holde øje med fremadrettet? Jeg kommer til at holde øje med, hvem den næste talman peger på som første statsministerkandidat. Om det bliver Magdalena Andersson på trods af hendes udmelding om at give op, eller om det bliver de borgerlige, som får den første chance.",
+          "authors": [
+            "Frederik Schiøtt Mortensen"
+          ],
+          "categories": [],
+          "published_at": "2026-09-28T12:55:00.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/aabne-skaenderier-paa-venstrefloejen-forsinker-svensk-regeringsdannelse",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/magdalena-andersson-opgiver-at-danne-regering",
+          "title": "Magdalena Andersson opgiver at danne regering",
+          "description": "Den socialdemokratiske partiformand Magdalena Andersson opgiver at danne regering. Det oplyser hun på et pressemøde mandag ifølge det svenske nyhedsbureau TT.",
+          "authors": [
+            "Sebastian Persson",
+            "sepe@borsen.dk (Sebastian Persson)"
+          ],
+          "categories": [],
+          "published_at": "2026-09-28T08:53:57.000000Z",
+          "url": "https://borsen.dk/nyheder/udland/magdalena-andersson-opgiver-at-danne-regering",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:ee9e2993-d1a9-43b2-92b5-e19777179861",
+          "title": "Sveriges venstrefløj er i åben konflikt efter omstridt formandsafstemning",
+          "description": "Venstrepartiet så stort på pres fra Socialdemokraterne og stemte for borgerlig politiker som formand for det svenske parlament.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T11:04:44.000000Z",
+          "url": "https://www.dr.dk/nyheder/udland/sveriges-venstrefloej-er-i-aaben-konflikt-efter-omstridt-formandsafstemning",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "10999786",
+          "title": "Rød-grøn guerillakrig udløser konservativ delsejr i svensk regeringsdrama",
+          "description": "Magdalena Andersson (S) opgav sit første forsøg på at danne regering i Sverige. Riksdagens konservative formand indleder nye forhandlinger onsdag, skriver Kristian Klarskov i denne analyse.",
+          "authors": [],
+          "categories": [
+            "Internationalt"
+          ],
+          "published_at": "2026-09-28T17:05:09.000000Z",
+          "url": "https://politiken.dk/internationalt/art10999786/R%C3%B8d-gr%C3%B8n-guerillakrig-udl%C3%B8ser-konservativ-delsejr-i-svensk-regeringsdrama",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "raf-fairford-suspects-bailed",
+      "role": "secondary",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Police bail RAF Fairford suspects as Trump says he would have held them",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr",
+            "information",
+            "ft"
+          ]
+        },
+        {
+          "location": "headline_short",
+          "sentence": 0,
+          "text": "Police bail Fairford suspects",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr",
+            "information",
+            "ft"
+          ]
+        },
+        {
+          "location": "deck",
+          "sentence": 0,
+          "text": "Washington hints at Iran, Tehran calls the claims baseless, and the five British men remain under investigation.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr",
+            "information",
+            "ft"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "The five British men arrested near RAF Fairford were bailed on Monday, and Donald Trump and Marco Rubio pointed to foreign involvement, which Iran calls baseless.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "ft"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 0,
+          "text": "The five men arrested near RAF Fairford on Sunday, all British citizens, were released on police bail on Monday.",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 1,
+          "text": "Laurence Taylor, head of British counter-terrorism policing, said they face strict conditions on their movements and contacts.",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 0,
+          "text": "The US military has used the base since March for strikes on Iran.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "ft"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 1,
+          "text": "Donald Trump said he would not have released the men and, asked about an Iranian link, answered 'possibly'.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "ft"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 2,
+          "text": "Marco Rubio, the US secretary of state, said a foreign actor was 'clearly involved'.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "ft"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 3,
+          "text": "Iran calls the accusations 'baseless'.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "ft"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 0,
+          "text": "Information, noting that no explosives were found, reads the episode as psychological warfare or a bad spy novel.",
+          "cites": [
+            "information"
+          ]
+        },
+        {
+          "location": "callouts[0]",
+          "sentence": 0,
+          "text": "To be absolutely clear, that does not mean the investigation is over. (Laurence Taylor, head of British counter-terrorism policing)",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "2708d4de-45b7-44a5-b10c-71bdbd1fc45a",
+          "title": "Fem anholdte ved flybase løslades mod kaution",
+          "description": "<p>Fem mænd, der søndag morgen blev anholdt nær flybasen RAF Fairford i Storbritannien, løslades mod kaution mandag.</p><p>De løslades efter \"omfattende afhøringer\".</p><p>Det meddeler chefen for britisk politis antiterrorenhed, Laurence Taylor, ifølge tv-stationen BBC og nyhedsbureauet Reuters.</p><p>- Efter omfattende afhøringer og undersøgelser bliver de fem mænd, som blev anholdt, løsladt mod politimæssig kaution i eftermiddag, siger han på et pressemøde mandag eftermiddag.</p><p>De fem mænd er stadig under efterforskning, understreger Taylor.</p><p>- For at gøre det helt klart betyder det ikke, at efterforskningen er afsluttet. De er underlagt strenge betingelser for deres færden og kontakt med andre, siger han.</p><p>Tidligere har britisk politi oplyst, at de fem er mistænkt for at have forberedt et terrorangreb.</p><p>Antiterrorpolitiet oplyste tidligere mandag, at en \"meget kompleks og omfattende operation\" endnu er i gang.</p><p>Politiet er imidlertid tilbageholdende med oplysninger i sagen.</p><p>Men mandag eftermiddag siger chefen for antiterrorenheden ifølge BBC, at der kan være en \"geopolitisk kontekst\" at se på - og at sagen vil blive overvejet fra enhver tænkelig vinkel.</p><p>Basen, som mændene blev anholdt nær, bruges af det amerikanske militær.</p><p>USA's præsident, Donald Trump, udtalte søndag, at de anholdte var \"ude på at gøre stor skade\".</p><p>- Vi havde dem under observation i lang tid, sagde Trump til journalister søndag eftermiddag dansk tid ifølge nyhedsbureauet dpa.</p><p>Den britiske regering har ifølge Reuters tidligere givet USA's militær tilladelse til at bruge flybasen til at gennemføre angreb på iranske missilanlæg, der igen bruges til angreb på skibe i Hormuzstrædet.</p><p>Det har ført til spekulationer i britiske medier og på internettet om, hvorvidt Iran har spillet en rolle i det formodede forsøg på at angribe basen.</p><p>Iran afviste tidligere mandag at have nogen forbindelse til de fem anholdte mænd.</p><p>Den britiske premierminister, Andy Burnham, har indkaldt til hastemøde i sagen. Ifølge Reuters er der tale om møde i COBR-regi, som er et møde i den britiske regerings centrale kriseberedskab.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T14:53:14.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/fem-anholdte-ved-flybase-loeslades-mod-kaution",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "8e513018-2c0a-43b9-9d28-a14ae81a84e9",
+          "title": "Trump overrasket over løsladelse af anholdte ved britisk flybase",
+          "description": "<p>Britisk politi burde ikke have løsladt fem mænd, der søndag blev anholdt nær flybasen RAF Fairford i Storbritannien.</p><p>Det siger USA's præsident, Donald Trump, mandag ifølge nyhedsbureauet AFP til journalister i Det Ovale Værelse.</p><p>- Jeg er overrasket over, at de løslod dem. Det ville jeg ikke have gjort.</p><p>- Vi ved alt om dem. Vi ville ikke have løsladt dem, siger Trump.</p><p>USA's militær har siden marts benyttet flybasen i Fairford i det sydvestlige England til at gennemføre angreb mod Iran, skriver AFP.</p><p>De fem mænd blev anholdt søndag morgen. Efterfølgende lød det fra britisk politi, at de er mistænkt for at have forberedt et terrorangreb.</p><p>Chefen for britisk politis antiterrorenhed, Laurence Taylor, oplyste tidligere mandag, at de fem mænd mandag eftermiddag ville blive løsladt efter \"omfattende afhøringer\".</p><p>I forbindelse med løsladelsen understregede Taylor, at de fem mænd stadig er under efterforskning.</p><p>- For at gøre det helt klart betyder det ikke, at efterforskningen er afsluttet. De er underlagt strenge betingelser for deres færden og kontakt med andre, sagde han ifølge tv-stationen BBC.</p><p>Britisk politi har været tilbageholdende med oplysninger i sagen. Men mandag eftermiddag sagde Taylor ifølge BBC, at der kan være en \"geopolitisk kontekst\" at se på - og at sagen vil blive overvejet fra enhver tænkelig vinkel.</p><p>Trump bliver i Det Ovale Værelse mandag direkte adspurgt, om hændelsen har en relation til Iran.</p><p>- Muligvis, svarer han.</p><p>Adspurgt om at uddybe den melding, siger præsidenten:</p><p>- Det vil jeg helst ikke svare på. Jeg mener, jeg kender svaret, og jeg kunne være meget konkret, men jeg vil helst ikke sige noget. Jeg ville ikke have løsladt dem.</p><p>Iran afviste tidligere mandag at have nogen forbindelse til de fem anholdte mænd.</p><p>Den britiske premierminister, Andy Burnham, har indkaldt til hastemøde i sagen.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T21:21:16.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/trump-overrasket-over-loesladelse-af-anholdte-ved-britisk-flybase",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:99f31395-d39d-527b-8ded-fcbc2be5d83d",
+          "title": "Rubio om formodet terrorangreb på britisk base: En udenlandsk aktør er »helt klart involveret«",
+          "description": "Fem mænd blev under stort postyr anholdt og mistænkt for at planlægge et angreb på den britiske flybase RAF Fairford – for kort efter at blive løsladt mod kaution. Både den amerikanske udenrigsminister og præsident Donald Trump hentyder til iransk indblanding, mens Iran kalder anklagerne »grundløse«.",
+          "authors": [
+            "Maria Hindsberger",
+            "mahi@berlingske.dk (Maria Hindsberger)"
+          ],
+          "categories": [
+            "Internationalt",
+            "Samfund"
+          ],
+          "published_at": "2026-09-29T05:37:15.000000Z",
+          "url": "https://www.berlingske.dk/internationalt/rubio-om-formodet-terrorangreb-paa-britisk-base-en-udenlandsk-aktoer-er-helt-klart-involveret",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:40d8e114-676b-42b8-90bc-b9653c9659c6",
+          "title": "Anholdte mistænkt for terrorplaner i Storbritannien er alle britiske statsborgere",
+          "description": "Britisk politi arbejder fortsat på at fastslå et eventuelt motiv.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T12:16:45.000000Z",
+          "url": "https://www.dr.dk/nyheder/udland/anholdte-mistaenkt-terrorplaner-i-storbritannien-er-alle-britiske-statsborgere",
+          "primary": false
+        },
+        {
+          "source": "information",
+          "source_id": "842960 at https://www.information.dk",
+          "title": "Mystisk episode ved engelsk luftbase: Et attentatforsøg, der alligevel ikke var det",
+          "description": "Fem maskerede mænd i tre varevogne uden sprængstof. Alle løsladt efter et døgn. Mysteriet på den britisk-amerikanske flyvestation peger i retning af psykologisk krigsførelse eller en dårlig spionroman",
+          "authors": [
+            "Martin Burcharth"
+          ],
+          "categories": [],
+          "published_at": "2026-09-28T14:49:24.000000Z",
+          "url": "https://www.information.dk/udland/2026/09/mystisk-episode-ved-engelsk-luftbase-attentatforsoeg-alligevel",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "262f5234-3d66-4187-a844-b52c29cb0e9b",
+          "title": "Rubio says UK air base incident involved ‘foreign actor’",
+          "description": "RAF Fairford was being used by US Air Force for strikes on Iran",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T03:08:11.000000Z",
+          "url": "https://www.ft.com/content/262f5234-3d66-4187-a844-b52c29cb0e9b",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "rubio-greenland-only-security",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Rubio says the US interest in Greenland has only been about security",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "The US interest in Greenland has been solely about national security, not territorial conquest, Marco Rubio, the US secretary of state, told Fox News a week after the three countries signed their agreement.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "31067aa3-5171-4fc1-8d18-40ade722164d",
+          "title": "Rubio: USA's interesse i Grønland handler kun om sikkerhed",
+          "description": "<p>Den amerikanske regerings interesse i Grønland har udelukkende handlet om national sikkerhed.</p><p>Det siger USA's udenrigsminister, Marco Rubio, natten til tirsdag dansk tid i et interview på tv-stationen Fox News.</p><p>- Vores præsident har gjort det klart, at spørgsmålet om Grønland ikke handler om territorial erobring, men om national sikkerhed, siger Marco Rubio.</p><p>Udenrigsministeren bliver interviewet, efter at USA, Danmark og Grønland i sidste uge underskrev en aftale om Grønland.</p><p>Aftalen kom i stand, efter at USA's præsident, Donald Trump, tidligere havde presset på for, at USA skulle købe Grønland. Det blev afvist af både Grønland og Danmark.</p><p>Sidste år ville Trump ikke afvise, at USA kunne annektere Grønland.</p><p>Aftalen, der blev underskrevet i sidste uge, giver USA tilladelse til at oprette nye forsvarsområder i Narsarsuaq og Mestersvig og udvide Pituffik Space Base, tidligere kaldet Thulebasen.</p><p>Aftalen åbner også for etableringen af det amerikanske missilforsvarssystem Golden Dome i Grønland.</p><p>Derudover må stater eller investorer fra stater, der ikke er medlem af Nato eller EU, ifølge aftalen ikke få væsentlig indflydelse inden for det, der betegnes som følsomme sektorer.</p><p>Marco Rubio siger i interviewet med Fox News, at Grønland i dag er vigtigere end nogensinde af to årsager.</p><p>Den ene er ifølge Rubio, at flere lande - deriblandt Kina - forsøger at få kontrol over sejlruter, som er vigtige for international handel og skibsfart.</p><p>- Den anden årsag er krigsførelse i Rummet.</p><p>- Hvis man skal opbygge den form for missilforsvar, som USA har brug for for at beskytte sig selv, er Grønland utrolig vigtig. For hele Nordamerika, siger Marco Rubio.</p><p>Udenrigsministeren siger, at der i USA's administration er en frygt for, at andre lande og potentielle modstandere gennem investeringer kan bygge eksempelvis en lufthavn, som i virkeligheden kan have et andet formål.</p><p>- Det kan ligne en havn eller lufthavn, men være bygget på en måde, så det i virkeligheden ligner en militærbase, siger Marco Rubio.</p><p>Efter at aftalen mellem USA, Danmark og Grønland blev underskrevet tirsdag i sidste uge, vil der være godkendelsesproces i parlamenterne i Grønland og Danmark.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T02:20:47.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/rubio-usas-interesse-i-groenland-handler-kun-om-sikkerhed",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:d3d4ac5a-64f8-5db7-9d78-3442ff42c540",
+          "title": "Rubio: USA's interesse i Grønland handler kun om sikkerhed",
+          "description": "USA har aldrig været interesseret i at gøre Grønland til en del af USA, siger udenrigsminister Marco Rubio.",
+          "authors": [],
+          "categories": [
+            "Internationalt",
+            "Samfund"
+          ],
+          "published_at": "2026-09-29T02:41:49.000000Z",
+          "url": "https://www.berlingske.dk/internationalt/rubio-usas-interesse-i-groenland-handler-kun-om-sikkerhed",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "madrid-tenant-can-return",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Evicted 87-year-old can return to her Madrid flat",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Maricarmen Abascal, evicted last week from her Madrid flat of more than 70 years, can move back at her old rent under a deal with the owners, her lawyer says.",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "97574d51-46a2-461b-999c-3932a9ab9eca",
+          "title": "Tvangsflyttet 87-årig kan blive boende efter demonstrationer i Spanien",
+          "description": "<p>En 87-årig spansk kvinde kan blive boende i sin lejlighed i Spaniens hovedstad, Madrid, efter at hendes sag de seneste dage har sat gang i landsdækkende demonstrationer.</p><p>Det oplyser kvindens advokat, Beatriz Duro, ifølge nyhedsbureauet AFP.</p><p>Advokaten siger, at der er indgået en aftale med bygningens ejere, der ville sætte huslejen markant op. Det førte til, at Maricarmen Abascal i midten af sidste uge blev tvangsflyttet.</p><p>Maricarmen Abascal skal ifølge advokaten betale en husleje, der svarer til det niveau, hun hidtil har betalt.</p><p>- Hvis den aftale, vi har indgået, bliver underskrevet, vil det naturligvis være et bedre og mere opløftende resultat for alle, siger Beatriz Duro.</p><p>Advokaten siger, at aftalen er et resultat af den sociale mobilisering, som sagen har afstedkommet.</p><p>Maricarmen Abascal, der sidder i kørestol, blev onsdag i sidste uge fjernet fra sin lejlighed gennem mere end 70 år, efter at spansk politi havde brudt døren op.</p><p>En ny udlejer ville hæve den månedlige husleje med 275 procent til 2650 euro. Det svarer til omkring 19.800 kroner.</p><p>Kvinden blev kørt ud af lejligheden på en båre og blev efterfølgende indlagt på et hospital med udmattelse.</p><p>Maricarmen Abascal er hurtigt blevet et symbol på en boligkrise i Spanien.</p><p>Lørdag var der arrangeret en demonstration i Madrid, hvor folk gik på gaden for at kræve bedre forhold for lejere.</p><p>Demonstranter satte lørdag telte op på den centrale plads Puerto del Sol. Siden weekenden har der stået omkring 100 telte på pladsen, der blandt andet ligger ud til en bygning, der huser Madrids regionale regering.</p><p>Huslejen er for mange spaniere steget de senere år på grund af øget efterspørgsel. Det skyldes ifølge analytikere turisme og befolkningstilvækst som følge af immigration.</p><p>Den spanske nationalbank vurderer, at der mangler omkring 700.000 boliger i Spanien, der har omkring 50 millioner indbyggere.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T22:39:20.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/tvangsflyttet-87-aarig-kan-blive-boende-efter-demonstrationer-i-spanien",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:2ec19ecc-a844-4995-bc80-dc6e7d8c79bd",
+          "title": "87-årig kan blive boende i sin lejlighed efter store demonstrationer i Spanien",
+          "description": "Maricarmen Abascal kan vende tilbage til sin lejlighed gennem mere end 70 år, efter at der er blevet indgået en aftale med udlejeren.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T23:33:14.000000Z",
+          "url": "https://www.dr.dk/nyheder/udland/87-aarig-kan-blive-boende-i-sin-lejlighed-efter-store-demonstrationer-i-spanien",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "starship-first-orbit",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "SpaceX's Starship reaches orbit for the first time",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "ft"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "SpaceX's Starship, the largest rocket ever built, reached orbit for the first time on Monday on its 14th test flight and released 26 Starlink satellites despite an engine failure.",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "ft"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "98c6102f-e189-4907-9c8b-274aabb3803f",
+          "title": "Kæmperaket lastet med satellitter er sendt i kredsløb om Jorden",
+          "description": "<p>Raketten Starship, der er produceret af SpaceX, er mandag eftermiddag dansk tid for første gang sendt i kredsløb omkring Jorden.</p><p>Starship er den største rumraket, der nogensinde er bygget. Den blev affyret fra Texas og sendt i kredsløb med en hastighed på 26.300 kilometer i timen.</p><p>Det skriver nyhedsbureauet AFP.</p><p>Der er tale om Starships 14. testflyvning.</p><p>Kort efter at den ubemandede raket blev sendt op, udsendte den 26 Starlink-satellitter.</p><p>Det skete, selv om en af rakettens motorer var ude af drift.</p><p>Da det stod klart, at en af motorerne var ude af drift, meddelte en talsmand for SpaceX, at raketten ikke ville kunne sendes i kredsløb om Jorden.</p><p>Men kort tid efter blev den vurdering ændret.</p><p>Starlink-satellitter bruges til at levere internet til brugere på hele Jorden.</p><p>På det sociale medie X roser den øverste chef for USA's rumagentur, Nasa, opsendelsen af Starship.</p><p>- Tillykke, SpaceX! Flot opsendelse, hvor det lykkedes at få fartøjet i kredsløb og håndtere hvert skridt på en sikker, ansvarlig og ikke mindst inspirerende måde, skriver Nasa-chef Jared Isaacman.</p><p>- Nasa ser sammen med resten af den interesserede offentlighed frem til at hjælpe, hvor vi kan, og til at Starships missioner bliver rutine!</p><p>Den øverste del af raketten blev frigivet fra løfteraketten 26 minutter efter affyringen.</p><p>Testflyvningen skulle have varet ti timer, og i løbet af den tid skulle Spaceship have været rundt om Jorden seks gange.</p><p>Men efter en analyse er SpaceX kommet frem til, at raketten skal tidligere tilbage til Jorden, oplyser en talsmand for selskabet ifølge CNN.</p><p>Rejsen skal efter planen ende med en landing i Stillehavet, og det sker omkring klokken 18 dansk, når raketten har været cirka tre timer i luften.</p><p>Selve løfteraketten faldt ned i Den Mexicanske Golf, da den havde løsrevet sig fra resten af raketten.</p><p>Starship blev for første gang sendt til Rummet i 2023 efter flere års udvikling.</p><p>Milliardæren og forretningsmanden Elon Musk står bag SpaceX, som foruden Starship producerer Starlink-satellitter.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T14:00:04.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/kaemperaket-lastet-med-satellitter-er-sendt-i-kredsloeb-om-jorden",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:f187e1c5-9347-46e6-90f5-50bd6981fc5b",
+          "title": "SpaceX's megaraket Starship i kredsløb om Jorden",
+          "description": "Megaraketten havde dog et problem med en motor kort efter opsendelsen.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T14:09:34.000000Z",
+          "url": "https://www.dr.dk/nyheder/udland/spacex-s-megaraket-starship-i-kredsloeb-om-jorden",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "6729bceb-2480-42b4-9308-51ef7728c181",
+          "title": "SpaceX’s Starship rocket reaches orbit for the first time despite engine failure",
+          "description": "Milestone for Musk because the system is pivotal to winning more Nasa contracts and to transport humans to space",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T23:41:30.000000Z",
+          "url": "https://www.ft.com/content/6729bceb-2480-42b4-9308-51ef7728c181",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "us-ban-canadian-goods-in-force",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "US ban on Canadian dairy and spirits takes effect",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "nytimes"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "A US ban on Canadian dairy products, spirits and other goods took effect on Tuesday morning, Danish time, after the two countries failed to agree a trade deal in August.",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "46bfd613-e53d-40e7-862f-8070debf65b8",
+          "title": "Trumps importforbud mod canadiske varer træder i kraft",
+          "description": "<p>Et amerikansk importforbud mod canadiske mejeriprodukter, spiritus og andre varer er tirsdag morgen dansk tid trådt i kraft.</p><p>Det skriver nyhedsbureauet AFP.</p><p>Importforbuddet blev annonceret for tre uger siden, efter at det ikke var lykkedes de to nordamerikanske nabolande at nå til enighed om en handelsaftale efter forhandlinger i august.</p><p>På listen over canadiske varer, som ikke må importeres til USA, er øl, vin, cider, whisky, vodka og andre former for spiritus, fremgik det af meddelelser fra Det Hvide Hus.</p><p>Også valleprodukter og alkoholfri øl er på listen. Det samme er melasse, som er et biprodukt fra fremstilling af sukker.</p><p>Handelskrigen mellem Canada og USA er eskaleret de seneste uger efter de sammenbrudte forhandlinger om en handelsaftale i slutningen af august.</p><p>Forhandlingerne foregik under pres fra USA's præsident, Donald Trump, der havde varslet en amerikansk importtold på op til 50 procent på canadiske varer.</p><p>Den amerikanske importtold ville træde i kraft, hvis der ikke var indgået en handelsaftale inden 22. august.</p><p>Fra Canadas premierminister, Mark Carney, lød det dengang, at USA havde ændret vilkårene i sidste øjeblik og skabt usikkerhed om aftalens pålidelighed.</p><p>Carney sagde, at Canada ville gengælde den amerikanske importtold dollar for dollar.</p><p>Det førte til, at omkring 700 forskellige produkter fra USA - blandt andet elektronik, stål, træ og mælkeprodukter - fra 8. september blev pålagt en canadisk importtold på mellem 15 og 50 procent.</p><p>Donald Trump svarede igen stort set med det samme, da han 9. september annoncerede amerikansk importforbud på flere canadiske produkter. Det er dette forbud, der er trådt i kraft tirsdag morgen.</p><p>USA er Canadas største handelspartner. Den canadiske eksport til nabolandet udgør 70 procent af den samlede canadiske eksport.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T04:16:17.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/trumps-importforbud-mod-canadiske-varer-traeder-i-kraft",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:0c3fedbe-f508-47be-bc16-8571314fba53",
+          "title": "Trumps importforbud på canadiske varer træder i kraft",
+          "description": "Alkohol og mejerivarer er blandt de canadiske produkter, der nu er et amerikansk importforbud mod.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T05:10:29.000000Z",
+          "url": "https://www.dr.dk/nyheder/udland/trumps-importforbud-paa-canadiske-varer-traeder-i-kraft",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/09/29/business/economy/canada-tariffs-ban.html",
+          "title": "US Hits Canada With Ban on Some Dairy and Liquor Products",
+          "description": "An outright ban on certain Canadian products took effect Tuesday, escalating a damaging trade fight between the two North American allies.",
+          "authors": [
+            "Ana Swanson"
+          ],
+          "categories": [
+            "Canada",
+            "Carney, Mark J",
+            "Customs (Tariff)",
+            "Customs and Border Protection (US)",
+            "Embargoes and Sanctions",
+            "Gillibrand, Kirsten E",
+            "Greer, Jamieson L",
+            "International Trade and World Market",
+            "Mexico",
+            "Smoot-Hawley Tariff Act (1930)",
+            "Supreme Court (US)",
+            "Trump, Donald J",
+            "United States",
+            "United States-Mexico-Canada Agreement"
+          ],
+          "published_at": "2026-09-29T04:01:13.000000Z",
+          "url": "https://www.nytimes.com/2026/09/29/business/economy/canada-tariffs-ban.html",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "nitrogen-limits-2027-published",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Farmers get their nitrogen limits for 2027",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "via_ritzau"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Most farmers could see their 2027 nitrogen discharge limits from midnight, and most get milder ones, the ministry says; 1.92 billion kroner is set aside to compensate those worse off.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "9e2e0563-0e1b-43ca-94ec-0c65a9ef0b42",
+          "title": "Landmænd kan fra midnat se udledningsgrænser for kvælstof",
+          "description": "<p>Fra midnat kan de fleste af landets landmænd se deres udledningsgrænser for kvælstof for 2027.</p><p>Det vil sige, hvor meget kvælstof der må udledes fra landbrugsareal til kystvandet.</p><p>Det oplyser Ministeriet for Natur og Dyrevelfærd i en pressemeddelelse.</p><p>De nye tal bygger oven på de foreløbige udledningsgrænser, der kom i starten af sommeren.</p><p>- De fleste vil opleve lempeligere udledningsgrænser, men nogle vil opleve, at forholdene har forværret sig, lyder det i pressemeddelelsen.</p><p>Derfor er der fra politisk side afsat en kompensationsramme på 1,92 milliarder kroner.</p><p>Puljen blev hævet med 692 millioner kroner for en uge siden efter nye vurderinger fra Københavns Universitet om landbrugets omkostninger ved kvælstofreguleringen næste år.</p><p>Det er dog ikke alle landmænd, der kan se deres udledningsgrænser ved midnat.</p><p>En mindre gruppe landmænd får først tallene senere i oktober, da en række udtagningsprojekter og minivådområder ikke er \"blevet indarbejdet i beregningen af udledningsgrænser endnu\".</p><p>- Det er selvfølgelig rigtig ærgerligt, men al arealudtag skal regnes med som aftalt, og vi har fundet en løsning, som gør, at Styrelsen for Grøn Arealomlægning og Vandmiljø i oktober forventes at justere udledningsgrænserne for de pågældende oplande, siger minister for natur og dyrevelfærd Christian Rabjerg Madsen (S) i pressemeddelelsen.</p><p>- Heldigvis vil det betyde, at reguleringstrykket generelt vil blive mindre. Så landbrugerne kan godt gå i gang med at planlægge allerede nu.</p><p>Den nye kvælstoflov og datagrundlaget bag de nye udledningsgrænser har igennem længere tid mødt voldsom kritik fra landbruget selv.</p><p>Landbruget har også kritiseret, at udledningsgrænserne kommer så kort tid, før de træder i kraft.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T14:18:56.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/landmaend-kan-fra-midnat-se-udledningsgraenser-kvaelstof",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:3d7cfd44-3e75-578a-be67-3d78c115bd0f",
+          "title": "Landmænd kan fra midnat se udledningsgrænser for kvælstof",
+          "description": "De fleste landmænd vil få lempeligere udledningsgrænser, når de offentliggøres ved midnat, skriver ministerium.",
+          "authors": [],
+          "categories": [
+            "Politik",
+            "Samfund"
+          ],
+          "published_at": "2026-09-28T14:19:50.000000Z",
+          "url": "https://www.berlingske.dk/politik/landmaend-kan-fra-midnat-se-udledningsgraenser-for-kvaelstof",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15188906/?publisherId=13562216&lang=da",
+          "title": "Udledningsgrænserne for kvælstof 2027 er klar fra midnat",
+          "description": "Langt de fleste landbrugere kan fra midnat se udledningsgrænserne for kvælstof i 2027 og tilgå det værktøj, som skal hjælpe dem med planlægningen af deres produktion, og hvordan de overholder deres udledningsgrænse.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T13:07:44.000000Z",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15188906/udledningsgraenserne-for-kvaelstof-2027-er-klar-fra-midnat?lang=da",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "soro-line-trains-until-tuesday",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Fallen overhead line near Sorø cuts trains until Tuesday morning",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Fewer trains run between Zealand and Jutland until 10:00 on Tuesday after an overhead line fell between Sorø and Slagelse; Banedanmark will examine why lines on the stretch keep coming down.",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "57afbfb9-e31d-4a77-9ec6-6e1deb2fb8e1",
+          "title": "Store togudfordringer mellem landsdelene ventes at vare til tirsdag",
+          "description": "<p>Der kører færre tog mellem landsdelene foreløbig frem til tirsdag formiddag klokken 10 som følge af nedfalden køreledning mellem Sorø og Slagelse.</p><p>Det oplyser Banedanmark i et opslag på det sociale medie X mandag eftermiddag.</p><p>Ifølge DSB kører intercitylyntog og intercitytog mellem København og Esbjerg, men \"der må forventes længere rejsetid\".</p><p>Selv om køreledningen er faldet ned i vestgående retning, er det stadig muligt for tog at køre i det andet spor, oplyste DSB tidligere på eftermiddagen til Ritzau.</p><p>Som supplement til togene kører der ifølge DSB togbusser \"i pendulfart mellem Ringsted, Sorø og Slagelse\".</p><p>DSB oplyste tidligere på dagen, at der var bestilt 50 togbusser.</p><p>Banedanmark \"er i fuld gang med at udbedre skaderne på vores kørestrømsanlæg ved Sorø\", lyder den seneste melding på X.</p><p>Først lød forventningen, at der ville køre færre tog frem til klokken 20 mandag aften, men den prognose er således rykket 14 timer længere frem til tirsdag klokken 10.</p><p>Undervejs har man også måttet evakuere det tog, som holdt under den nedfaldne køreledning, ved at et andet tog blev koblet på og således kunne trække det stillestående tog til den nærmeste station.</p><p>Banedanmarks direktør for vedligehold, Nicolai Smidt Sigsgaard, oplyste tidligere på eftermiddagen til Ritzau, at Banedanmark tager situationen meget alvorligt.</p><p>- Vi er jo godt klar over, at det ikke er første gang, at vi kan konstatere en nedfalden køreledning på samme strækning inden for relativt kort tid.</p><p>I midten af september var et beskadiget køreanlæg ved Sorø skyld i aflysninger og forsinkelser.</p><p>Banedanmark vil derfor undersøge nærmere, hvorfor køreledninger på denne strækning falder ned, lyder det nu.</p><p>Tidligere mandag oplyste Banedanmark til TV 2, at der også er en nedrevet køreledning ved Københavns Lufthavn.</p><p>- Heldigvis var der ikke noget tog, men vi kører med reduceret drift, og der er forsinkelser, sagde Nicolai Schmidt Sigsgaard til TV 2.</p><p>Både DSB og Banedanmark opfordrer passagererne til at tjekke Rejseplanen.</p><p>DSB gør desuden på sin hjemmeside opmærksom på, at rejsegarantien træder i kraft, hvis man er mere end 30 minutter forsinket.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T15:12:30.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/store-togudfordringer-ventes-vare-til-tirsdag",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:0e377a6f-4b7d-43e5-b190-3d8337b013b1",
+          "title": "Togudfordringerne ved Sorø og mellem landsdelene vil vare til i morgen",
+          "description": "En nedfalden køreledning ved Sorø generer togtrafikken på Sjælland og mellem landsdelene. Tidligst i morgen klokken 10 er fejlen rettet.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T14:50:05.000000Z",
+          "url": "https://www.dr.dk/nyheder/seneste/banedanmark-arbejder-paa-faa-overblik-over-koereledningsskade-ved-soroe",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "pig-stable-inspections-plan",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Government to present plan for 50 per cent more pig-welfare inspections",
+          "cites": [
+            "dr",
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "The government presents a plan on Tuesday, drawn up with Alternativet, for 50 per cent more welfare inspections in pig stables and 100 extra inspectors, DR reports.",
+          "cites": [
+            "dr",
+            "kristeligt_dagblad"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:bff200fc-5f40-4391-818a-2ef009618fd6",
+          "title": "Nu skal grebet strammes om kontrollen i svinestaldene",
+          "description": "Statsrevisorerne rejste kritik af kontrollen med dyrevelfærden hos danske grise. Nu kommer nye politiske initiativer.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T04:00:00.000000Z",
+          "url": "https://www.dr.dk/nyheder/indland/nu-skal-grebet-strammes-om-kontrollen-i-svinestaldene",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "32c39a74-1a4a-4271-bc3e-727b487a0d36",
+          "title": "Plan for strammere kontrol i grisestalde præsenteres tirsdag",
+          "description": "<p>Der skal fremover være 50 procent flere kontroller med dyrevelfærden i landets grisestalde.</p><p>Og antallet af tilsynsførende på kontrol skal som hovedregel øges fra en til to.</p><p>Det skriver DR tirsdag morgen.</p><p>De nye initiativer præsenteres på et pressemøde klokken 12 i Justitsministeriet, hvor justitsminister Nicolai Wammen (S), minister for natur og dyrevelfærd Christian Rabjerg Madsen (S) og politisk leder for Alternativet, Franciska Rosenkilde, deltager. Det oplyser ministeriet i en pressemeddelelse.</p><p>Det er Franciska Rosenkilde, der har præsenteret planerne hos DR.</p><p>Alternativet er støtteparti til regeringen, og ifølge DR har partiet været med til at udarbejde en plan for strammere kontrol i grisestaldene.</p><p>Det fremgår også af regeringsgrundlaget, som Alternativet har haft en vis indflydelse på, at der skal gennemføres \"en akutplan for dyrevelfærd, hvor kontrollen, regelefterlevelsen og sanktionerne for omgåelse styrkes markant\".</p><p>- Jeg er fuldstændig overbevist om, at det her kommer til at løfte dyrevelfærden i de danske stalde enormt, siger Franciska Rosenkilde til DR.</p><p>For at kunne gennemføre de flere kontroller i staldene skal der ansættes 100 ekstra medarbejdere til kontroller, skriver DR videre.</p><p>- Vi har hele tiden sagt, at vi ikke har noget at skjule på vores bedrifter, så derfor har vi generelt ikke noget imod kontrol. Men at øge kontrollen så massivt på et i forvejen ret omkostningstungt system, så kommer der store konsekvenser for den danske fødevareproduktion, siger han.</p><p>Med den nye regerings tiltræden er ansvaret for dyrevelfærdskontrollen flyttet til Justitsministeriet, hvorfor det er der, at de nye initiativer præsenteres.</p><p>I starten af september offentliggjorde ministeriet et kasseeftersyn af området. Her lød det, at der udestår omkring 1500 opfølgende kontroller fra 2025 og første halvdel af 2026.</p><p>Tidligere på året konkluderede Rigsrevisionen også, at kontrollen med dyrevelfærd i landets stalde er stærkt mangelfuld, og myndigheder opdager og straffer ikke alvorlige problemer effektivt.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T04:55:27.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/plan-strammere-kontrol-i-grisestalde-praesenteres-tirsdag",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "valby-man-sets-himself-alight",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Man sets himself on fire at the integration agency in Valby",
+          "cites": [
+            "dr",
+            "politiken"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "A man set himself on fire inside the Agency for International Recruitment and Integration in Valby on Monday, and police were out in force.",
+          "cites": [
+            "dr",
+            "politiken"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:a9571e68-ece9-4b63-8eb6-6572a980540f",
+          "title": "Politi massivt til stede i Valby efter mand har sat ild til sig selv",
+          "description": "En mand har sat ild til sig selv inde hos Styrelsen for International Rekruttering og Integration.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T08:48:11.000000Z",
+          "url": "https://www.dr.dk/nyheder/indland/politi-massivt-til-stede-i-valby-efter-mand-har-sat-ild-til-sig-selv",
+          "primary": true
+        },
+        {
+          "source": "politiken",
+          "source_id": "10999639",
+          "title": "Mand satte ild til sig selv hos integrationsstyrelse",
+          "description": "Politiet er massivt til stede i København, hvor en mand tilsyneladende har sat ild til sig selv.",
+          "authors": [],
+          "categories": [
+            "Danmark"
+          ],
+          "published_at": "2026-09-28T09:18:05.000000Z",
+          "url": "https://politiken.dk/danmark/art10999639/Mand-satte-ild-til-sig-selv-hos-integrationsstyrelse",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "eight-municipalities-staffing-breach",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Eight municipalities break the minimum-staffing law for kindergartens",
+          "cites": [
+            "politiken",
+            "dr",
+            "altinget",
+            "jp"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Eight municipalities fail the legal minimum of one member of staff for every six kindergarten children, and Jacob Mark, the children's minister, has asked Ankestyrelsen to examine them.",
+          "cites": [
+            "politiken",
+            "dr",
+            "altinget",
+            "jp"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "politiken",
+          "source_id": "10999397",
+          "title": "Otte kommuner dumper krav om antal ansatte i børnehaverne",
+          "description": "Der skal være mindst én pædagogisk ansat til seks børn i børnehaverne. Otte kommuner dumper kravet.",
+          "authors": [],
+          "categories": [
+            "Danmark"
+          ],
+          "published_at": "2026-09-28T07:26:20.000000Z",
+          "url": "https://politiken.dk/danmark/art10999397/Otte-kommuner-dumper-krav-om-antal-ansatte-i-b%C3%B8rnehaverne",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:f5d56e9a-6243-4595-9b31-9c73dc54be88",
+          "title": "Flere kommuner overholder ikke lov om minimumsnormeringer: ’Helt uacceptabelt,’ siger minister",
+          "description": "Otte kommuner overholder ikke kravet om antallet af pædagoger i vuggestuer og børnehaver.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T13:43:00.000000Z",
+          "url": "https://www.dr.dk/nyheder/politik/flere-kommuner-overholder-ikke-lov-om-minimumsnormeringer-helt-uacceptabelt-siger-minister",
+          "primary": false
+        },
+        {
+          "source": "altinget",
+          "source_id": "https://www.altinget.dk/artikel/otte-kommuner-bryder-lov-om-minimumsnormeringer-mark-springer-op-til-hoejeste-trin-for-at-stoppe-det",
+          "title": "Otte kommuner bryder lov om minimumsnormeringer. Mark springer \"op til højeste trin\" for at stoppe det",
+          "description": "Jacob Mark beder Ankestyrelsen granske kommuner, der ikke overholder minimumsnormeringer. KL anerkender, at kommuner skal rette ind, men \"foretrækker samarbejde og dialog,\" lyder det.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T15:00:00.000000Z",
+          "url": "https://www.altinget.dk/artikel/otte-kommuner-bryder-lov-om-minimumsnormeringer-mark-springer-op-til-hoejeste-trin-for-at-stoppe-det",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19683663",
+          "title": "Minister »reagerer voldsomt« på nye tal: »Jeg er jo selv småbørnsforælder, og jeg kan da mærke, at det påvirker mig helt vildt«",
+          "description": "Børneministeren varsler flere tiltag og udtrykker forståelse for den bekymring, der er blevet delt om pressede forældre. Men »det vigtigste er faktisk ikke samfundskontrakten«, siger Jacob Mark om risikoen for, at arbejdsmarkedet bliver ramt af kvaliteten i daginstitutionerne.",
+          "authors": [
+            "Jesper Haue Hansen"
+          ],
+          "categories": [
+            "Politik"
+          ],
+          "published_at": "2026-09-28T09:17:00.000000Z",
+          "url": "https://jyllands-posten.dk/politik/ECE19683663/minister-har-taget-et-lidt-drastisk-skridt-efter-nye-tal-om-boernehaver-og-vuggestuer/",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "putin-army-15500",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Putin orders the Russian army enlarged by 15,500 soldiers",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Vladimir Putin on Monday ordered the Russian army enlarged by 15,500 active soldiers, bringing it to 2.44 million people, 1.55 million of them active soldiers.",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "10a88802-c5ba-40df-a4dc-674be13627cb",
+          "title": "Rusland udvider landets hær med 15.500 soldater",
+          "description": "<p>Ruslands præsident, Vladimir Putin, har mandag givet ordre til en udvidelse af den russiske hær med 15.500 aktive soldater.</p><p>Det fremgår ifølge nyhedsbureauet Reuters af et præsidentielt dekret.</p><p>Udvidelsen betyder, at den russiske hær samlet vil bestå af 2,44 millioner personer, hvoraf 1,55 millioner betegnes som aktive soldater.</p><p>Senest i august udstedte den russiske præsident et lignende dekret, der skulle øge antallet af aktive soldater.</p><p>Samme dag lyder det fra Ukraines præsident, Volodymyr Zelenskyj, at han har modtaget oplysninger om, at Nordkorea er ved at gøre klar til at sende 10.000 nordkoreanske soldater til Rusland.</p><p>Ifølge den ukrainske præsident befinder flere end 8000 soldater fra Nordkorea sig i øjeblikket på russisk territorium.</p><p>Zelenskyj sagde i august, at op mod 50.000 nordkoreanske soldater kan blive sendt afsted for at kæmpe på russisk side. Samtidig opfordrede han Sydkorea til at yde støtte til det ukrainske luftforsvar, skriver Reuters.</p><p>Sydkorea annoncerede i juli en hjælpepakke til Ukraine til en værdi af 100 millioner dollar, hvilket svarer til lige knap 660 millioner kroner. Pakken omfattede dog ikke såkaldte dødbringende våben.</p><p>Ifølge vurderinger fra ukrainske og sydkoreanske efterretningstjenester har Nordkorea siden 2024 sendt mellem 14.000 og 15.000 soldater til Rusland.</p><p>Størstedelen af de nordkoreanske soldater havnede ved frontlinjen i den russiske region Kursk.</p><p>Kursk-regionen ligger i det sydvestlige Rusland. I august 2024 trængte ukrainske styrker ind i regionen og overtog en række landsbyer.</p><p>Rusland sendte siden forstærkninger til regionen. I løbet af foråret i 2025 meldte Rusland på ny at have fuld kontrol over Kursk.</p><p>Sydkoreas efterretningstjeneste (Nis) har tidligere vurderet, at 2000 nordkoreanske soldater har mistet livet i kampene.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T23:47:54.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/rusland-udvider-landets-haer-med-15500-soldater",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:49b804e6-3ae2-4179-bc6b-0a949776292a",
+          "title": "Rusland udvider landets hær med 15.500 soldater",
+          "description": "Rusland råder efter et nyt præsidentielt dekret over en hær, der samlet består af 2,44 millioner personer.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T03:48:48.000000Z",
+          "url": "https://www.dr.dk/nyheder/udland/rusland-udvider-landets-haer-med-15-500-soldater",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "enhedslisten-free-transport-demand",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Enhedslisten makes free buses and trains for under-22s its finance-bill demand",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Enhedslisten will demand free bus and train travel across the country for everyone up to 22 from next year in the finance bill talks, Pelle Dragsted, its political spokesperson, says.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "8a3fba5c-8550-4d51-8be9-98c05fd4ef20",
+          "title": "Støtteparti har gratis bus og tog for unge som hovedkrav til finanslov",
+          "description": "<p>Når Folketingets partier inden længe skal forbi regeringens bord og forhandle om en finanslov for 2027, har et af regeringens støttepartier et hovedkrav med.</p><p>- Vi kommer til at kræve i de her forhandlinger, at børn og unge op til 22 år allerede fra næste år kan køre i bus og tog gratis på tværs af landet, siger Enhedslistens politiske ordfører, Pelle Dragsted.</p><p>Det skal skabe \"mere frihed for de unge og gøre afstandene mindre\" i Danmark.</p><p>Kravet er ikke grebet ud af den blå luft.</p><p>Det fremgår af regeringsgrundlaget, som Enhedslisten havde en vis indflydelse på som parlamentarisk grundlag, at der skal afsættes en ramme på to milliarder kroner til netop \"gratis offentlig transport for unge under 22 år\".</p><p>Men hvornår den skatteyderbetalte transport skal indføres, fremgår ikke af regeringsgrundlaget.</p><p>Og her kommer Enhedslisten så med sit krav til de kommende finanslovsforhandlinger om, at det skal indføres i løbet af næste år i hele landet.</p><p>Spørgsmål: Så hvis Enhedslisten er med i en finanslov, så er det her en del af den?</p><p>- Ja, lyder det fra Pelle Dragsted.</p><p>Han siger, at de skatteyderbetalte tog- og busrejser til børn og unge skal \"være en balance\" til regeringens planer om skattelettelser.</p><p>- Vi synes, at det er helt på sin plads, at hvis man går den vej med højrefløjen, så skal man også levere noget til helt almindelige danskere sammen med Enhedslisten, siger Pelle Dragsted.</p><p>Regeringen ønsker eksempelvis at afskaffe mellemskatten i 2027 for 619.000 borgere og forsøger at få borgerlige partier med til det.</p><p>Pelle Dragsted er dog ikke bange for, at regeringen kan finde på at lave finansloven sammen med andre partier end det parlamentariske grundlag.</p><p>- Jeg forventer selvfølgelig, at når det er Enhedslisten, der har lagt mandater til, at den her regering kan træde til, så laver man selvfølgelig også den her finanslov sammen med Enhedslisten.</p><p>- Det har jeg heller ikke nogen grund til at tro ikke vil ske, siger Pelle Dragsted.</p><p>Det vides endnu ikke, hvornår regeringen præcis vil fremlægge sit finanslovsforslag og indkalde til de efterfølgende forhandlinger.</p><p>Men det bliver en gang i oktober, har finansminister Peter Hummelgaard (S) tidligere sagt.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T04:05:01.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/stoetteparti-har-gratis-bus-og-tog-unge-som-hovedkrav-til-finanslov",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:31d088db-ef55-562b-9f4b-de825e06976e",
+          "title": "Støtteparti har gratis bus og tog for unge som hovedkrav til finanslov",
+          "description": "Enhedslisten forventer at lave finanslov med regeringen og har gratis offentlig transport til unge som krav.",
+          "authors": [],
+          "categories": [
+            "Politik",
+            "Samfund"
+          ],
+          "published_at": "2026-09-29T04:09:49.000000Z",
+          "url": "https://www.berlingske.dk/politik/stoetteparti-har-gratis-bus-og-tog-for-unge-som-hovedkrav-til-finanslov",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "sex-samfund-youth-survey",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "One in six young women has done something sexual she did not want to",
+          "cites": [
+            "kristeligt_dagblad",
+            "tv2"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "One in six young women has, trying to perform, done something sexual she did not want to, a Sex & Samfund survey finds; 45.1 per cent of young men turn to porn to learn about sex.",
+          "cites": [
+            "kristeligt_dagblad",
+            "tv2"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "2922c9ac-0f53-4a13-bf1d-121ba6a24723",
+          "title": "Hver sjette unge kvinde indvilliger i seksuelle handlinger mod sin lyst",
+          "description": "<p>Ønsket om at præstere i sengen får i højere grad unge kvinder til at indgå i seksuelle handlinger, som de ikke har lyst til, end tilfældet er med unge mænd.</p><p>Mere end hver tredje unge kvinde fortæller, at de i forsøget på at præstere har foregivet at nyde en seksuel handling mere, end de reelt gjorde.</p><p>Hver sjette angiver, at præstationsfølelsen har drevet dem til at gøre noget, som de decideret ikke havde lyst til.</p><p>Til sammenligning svarer knap hver tiende af de unge mænd, at de under sex har udtrykt større nydelse, end de oplevede, mens 4,7 procent fortæller, at de har indvilget i at gøre noget mod deres lyst.</p><p>Ifølge Majbrit Berlau har de fleste unge en stærk forståelse af, at sex kræver samtykke og skal være gensidig.</p><p>Alligevel opstår situationer, der kan forekomme grænseoverskridende.</p><p>- Man kan have så meget fokus på at gøre det godt for den anden eller leve op til bestemte forventninger, at ens egen lyst og egne grænser kommer i baggrunden, udtaler hun.</p><p>Flere unge mænd og kvinder oplever usikkerhed omkring at udtrykke, aflæse og respektere samtykke i praksis.</p><p>Undersøgelsens fund kalder ifølge Majbrit Berlau på mere viden om sex og seksualitet blandt unge.</p><p>- Det at få seksualundervisning og oplysning er totalt afgørende for, at man er i stand til at starte samtalen hos sig selv om, hvad man kan lide, og hvad man ikke kan lide, forklarer hun.</p><p>Seksualundervisning er blandt de unges mest foretrukne kilder til viden om sex, men hver tredje unge oplever ikke undervisningen som brugbar.</p><p>Samtidig får unge i høj grad viden fra venner og sociale medier, mens hver tredje unge angiver porno som deres kilde til viden om sex.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T02:30:01.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/hver-sjette-unge-kvinde-indvilliger-i-seksuelle-handlinger-mod-sin-lyst",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "3fb7bd12-d250-4ea4-9ebd-d8dbe3608de8",
+          "title": "Ny undersøgelse: Unge søger viden om sex hos venner og i porno",
+          "description": "<p>Hvad er nydelse, hvordan taler man om det, og hvordan gør jeg?</p><p>Unge mennesker søger rigtig meget viden om sex og emnerne, der relaterer sig hertil.</p><p>Men de får det ikke fra udelukkende saglige kilder.</p><p>Undersøgelsen tager udgangspunkt i unge mellem 15 og 25 år.</p><p>Det fremgår, at den største kilde til viden om sex er venner, og det er ifølge Majbrit Berlau, der er generalsekretær i organisationen, godt.</p><p>- Det er positivt, at man taler med sine venner om det, fordi man allerede her begynder at øve sig på at få sagt sine behov og lyster højt, siger hun.</p><p>Hvad der er mindre positivt, er, at det i rapporten fremgår, at også porno er en stor kilde til viden om sex.</p><p>Sammenlagt er det 30,2 procent af de adspurgte, der søger oplysning her.</p><p>Kigges der isoleret på mændene, er tallet dog langt højere.</p><p>45,1 procent af de adspurgte mænd tyer til porno i søgen efter viden om sex.</p><p>Det er problematisk, fordi det ifølge Majbrit Berlau ikke er en god \"videnskanal\".</p><p>- Det er ikke en specielt saglig kilde. Sex i porno portrætteres meget stereotypt med få nuancer, der er dårlig viden om samtykke, der er dårlige kropsidealer, fordi de er uopnåelige, og så er der meget lidt fokus på sikker sex, siger hun.</p><p>Konsekvensen kan være, at de unge bliver misinformeret, og at myter bliver opretholdt. Majbrit Berlau fremhæver selv myten om, at kvinder har en jomfruhinde, der sprænger første gang, hun har sex.</p><p>Generalsekretæren understreger, at der ikke er noget galt i at se porno, men at det ikke egner sig som oplysningskilde.</p><p>Det bør i stedet være seksualundervisningen, der udfylder den rolle.</p><p>Ifølge Majbrit Berlau er det \"tydeligt\", at denne ikke er tilstrækkelig i forhold til, hvad eleverne synes, at de har brug for viden om.</p><p>- Det er et meget bredt emne, og de unge har i høj grad appetit på bredere undervisning, der ikke kun handler om sikker sex og samtykke.</p><p>Det blev i 2022 obligatorisk at undervise i faget. Der blev dog hverken fastlagt timer eller rammer for undervisningen.</p><p>Det er altså op til den enkelte skole at tilrettelægge undervisningen, og det er ifølge Oscar Tønsberg Hoffmann, som er forperson for Danske Gymnasieelevers Sammenslutning, problematisk.</p><p>- Skolerne bestemmer selv, hvor mange penge og hvor meget tid de bruger. Der er heller ikke krav til, hvad seksualundervisningen skal indeholde, eller hvilket pensum der skal være.</p><p>Det resulterer blandt andet i, at undervisningen kan være meget varierende, alt efter hvor eleverne går i skole.</p><p>- Så i virkeligheden får vi relativt dårlig undervisning.</p><p>Ifølge Oscar Tønsberg Hoffmann understreger det blot behovet for en kvalitetssikring af undervisningen.</p><p>- Der skal indføres krav til, hvad man skal lære.</p><p>- Det er også vigtigt, at lærerne enten er klædt ordentligt på, eller at det er organisationer udefra, som ved, hvad de snakker om, siger han.</p><p>Ritzau har efterspurgt en kommentar fra undervisningsminister Magnus Heunicke (S), men det har ikke været muligt før deadline.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T14:30:14.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/ny-undersoegelse-unge-soeger-viden-om-sex-hos-venner-og-i-porno",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/samfund/2026-09-29-hver-sjette-unge-kvinde-indvilliger-i-seksuelle-handlinger-mod-sin-lyst",
+          "title": "Stor del af unge mænd henter deres viden om sex i porno",
+          "description": "Sex & Samfund kalder på en styrket seksualoplysning til unge.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T03:22:05.000000Z",
+          "url": "https://nyheder.tv2.dk/samfund/2026-09-29-hver-sjette-unge-kvinde-indvilliger-i-seksuelle-handlinger-mod-sin-lyst",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "vesterbro-zero-emission-zone",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Copenhagen committee approves a zero-emission zone on Vesterbro",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "A Copenhagen city committee on Monday approved the city's first zero-emission zone, in inner Vesterbro with Vesterbrogade exempt; Miljøstyrelsen and the city council must still approve it.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "06755d40-655b-45c6-a260-fddbc692c63b",
+          "title": "Københavnsk bydel nærmer sig afsked med benzinbiler",
+          "description": "<p>Benzin- og dieselbiler bliver formentlig i fremtiden et mere sjældent syn i den københavnske bydel Vesterbro.</p><p>Planerne om en såkaldt nulemissionszone i en del af bydelen er i hvert fald kommet et skridt nærmere.</p><p>Et flertal i Klima-, Miljø- og Teknikudvalget i Københavns Kommune har mandag eftermiddag vedtaget nulemissionszonen.</p><p>Det siger Kristine Ammitzbøll-Bille fra De Radikale til TV 2 Kosmopol.</p><p>- Det er rigtig godt, at København nu får sin første nulemissionszone. Det er godt for klimaet og for at nedbringe den lokale luftforurening, siger hun til mediet.</p><p>Nulemissionszoner er afgrænsede områder i byer, hvor biler og køretøjer med benzin- og dieselmotorer som udgangspunkt ikke må køre.</p><p>Forslaget dækkede dog oprindeligt over et større område, end det der mandag eftermiddag er blevet vedtaget.</p><p>Det er nemlig blevet revideret efter 768 høringssvar fra blandt andet borgere, virksomheder og interesseorganisationer.</p><p>Omkring 80 procent af de høringssvar var enten kritiske eller forbeholdne i forhold til forslaget, fremgår det af dagsordenen for udvalgets møde mandag.</p><p>Derfor har Klima-, Miljø- og Teknikforvaltningen justeret i forslaget, så blandt andet hele Vesterbrogade er undtaget fra nulemissionszonen.</p><p>Det samme gør sig gældende for området omkring Københavns Hovedbanegård, Skelbækgade og Halmtorvet fra Skelbækgade op til Slagterboderne.</p><p>Derudover skal Vesterbro-borgere med beboerlicens til andre dele af Vesterbro, som ikke er en del af nulemissionszonen, kunne søge om dispensation, så de kan køre og parkere i nulemissionszonen med fossile biler.</p><p>Den nye justerede nulemissionszone dækker Indre Vesterbro på nær de førnævnte områder, der er undtaget.</p><p>Den justerede zone skal til godkendelse hos Miljøstyrelsen, før det kan blive endeligt vedtaget af Københavns Borgerrepræsentation. Det ventes at ske i ultimo 2026.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-28T16:18:24.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/koebenhavnsk-bydel-naermer-sig-afsked-med-benzinbiler",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:89983b0f-f7d3-59c3-98e7-c8451dc475af",
+          "title": "Københavnsk bydel nærmer sig afsked med benzinbiler",
+          "description": "Forslag om nulemissionszone på Vesterbro er blevet stemt igennem i udvalg. Det mangler endelig godkendelse.",
+          "authors": [],
+          "categories": [
+            "Danmark",
+            "Indland",
+            "Samfund"
+          ],
+          "published_at": "2026-09-28T16:36:47.000000Z",
+          "url": "https://www.berlingske.dk/danmark/koebenhavnsk-bydel-naermer-sig-afsked-med-benzinbiler",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "oresund-bridge-closed-thursday",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Øresund Bridge closes for three hours on Thursday evening",
+          "cites": [
+            "berlingske",
+            "politiken"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "The Øresund Bridge will close for three hours on Thursday evening for an emergency exercise by Danish and Swedish authorities.",
+          "cites": [
+            "berlingske",
+            "politiken"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:95b82fed-b9a7-539a-91f1-57094d3f7f28",
+          "title": "Øresundsbroen lukkes i tre timer torsdag aften",
+          "description": "I forbindelse med en beredskabsøvelse for danske og svenske myndigheder afspærres Øresundsbroen torsdag aften.",
+          "authors": [],
+          "categories": [
+            "Indland",
+            "Samfund"
+          ],
+          "published_at": "2026-09-28T11:34:52.000000Z",
+          "url": "https://www.berlingske.dk/indland/oeresundsbroen-lukkes-i-tre-timer-torsdag-aften",
+          "primary": true
+        },
+        {
+          "source": "politiken",
+          "source_id": "10999409",
+          "title": "Øresundsbroen lukkes i tre timer torsdag aften",
+          "description": "I forbindelse med en beredskabsøvelse for danske og svenske myndigheder afspærres Øresundsbroen torsdag aften.",
+          "authors": [],
+          "categories": [
+            "Danmark"
+          ],
+          "published_at": "2026-09-28T07:43:03.000000Z",
+          "url": "https://politiken.dk/danmark/art10999409/%C3%98resundsbroen-lukkes-i-tre-timer-torsdag-aften",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "novo-hengrui-weekly-pill",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Novo buys rights to a Chinese weekly weight-loss pill for up to 17 billion kroner",
+          "cites": [
+            "kristeligt_dagblad",
+            "borsen"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Novo has licensed HRS-1596, a once-weekly weight-loss pill in phase 1 trials, from China's Jiangsu Hengrui in a deal worth up to 2.6 billion dollars, or 17.1 billion kroner.",
+          "cites": [
+            "kristeligt_dagblad",
+            "borsen"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "be9aafa4-a739-42f5-8369-a9da2d2ad518",
+          "title": "Novo indgår milliardaftale om kinesisk vægttabspille",
+          "description": "<p>Medicinalselskabet Novo har indgået en licensaftale med det kinesiske selskab Jiangsu Hengrui Pharmaceuticals om en vægttabspille.</p><p>Det oplyser Novo i en pressemeddelelse tirsdag morgen.</p><p>Aftalen giver det danske selskab eksklusive rettigheder til at udvikle, producere og sælge midlet i det meste af verden.</p><p>Kina, Hongkong, Macao og Taiwan er markeder, der er undtaget fra aftalen.</p><p>Pillen, der bliver afprøvet i fase 1 og indtil videre går under navnet HRS-1596, er designet til behandling af fedme og understøtter potentielt også behandling af type 2-diabetes.</p><p>I et fase 1-studie laver man typisk de indledende undersøgelser af, om et lægemiddel er sikkert, eller om det fører til bivirkninger. Som regel er der tale om en lille testgruppe.</p><p>Såfremt man vælger at gå videre med fase 2-studiet, udvides testgruppen som regel, og til sidst kan et fase 3-studie være med til endeligt at bekræfte en behandlingseffekt i stor skala.</p><p>Efter vellykkede fase 3-studier kan man søge om at få godkendt et lægemiddel til salg.</p><p>Novo ser en mulighed for, at pillen skal tages én gang om ugen.</p><p>Aftalen har en værdi af op mod 2,6 milliarder dollar, hvilket svarer til 17,1 milliard kroner. Det inkluderer en forudbetaling til det kinesiske selskab på 300 millioner dollar.</p><p>Derudover er Hengrui Pharma berettiget til at modtage royalties, der afhænger af, hvordan midlet i fremtiden klarer sig kommercielt.</p><p>Per Hansen, der er investeringsøkonom hos Nordnet, skriver i en kommentar, at Novo i øjeblikket har gang i 130 forskellige projekter.</p><p>Men ifølge ham er det ikke vigtigt for investorerne, hvor mange gange et selskab skyder, men derimod hvor mange gange det rammer plet.</p><p>- HRS-1596 er i fase 1, og hvis det går, som det plejer med tiden (under forudsætning af at data bliver gode), vil der gå 7-9 år fra nu fra projekt til produkt, skriver han i en kommentar.</p><p>- Samarbejdet er endnu et i Kina, og det er nok også et signal. Det styrker pipeline og muligheder, men for pressede investorer er det mere fremtidsmusik og snarere en ny fugl på taget end én i hånden.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T05:38:25.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/novo-indgaar-milliardaftale-om-kinesisk-vaegttabspille",
+          "primary": true
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/virksomheder/novo-kober-vaegttabspille-for-op-til-17-mia-kr",
+          "title": "Novo køber vægttabspille for op til 17 mia. kr.",
+          "description": "Novo køber rettighederne til en diabetes- og vægttabspille, som kun skal tages én gang om ugen, af Kinas største medicinalfirma.",
+          "authors": [
+            "Kevin Grønnemann",
+            "kegr@borsen.dk (Kevin Grønnemann)"
+          ],
+          "categories": [],
+          "published_at": "2026-09-29T05:05:55.000000Z",
+          "url": "https://borsen.dk/nyheder/virksomheder/novo-kober-vaegttabspille-for-op-til-17-mia-kr",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "openai-drops-astra-release",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "OpenAI drops the October release of its next model over safety problems",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "wsj"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "OpenAI has dropped the October launch of GPT-6.1 Astra after internal tests found safety problems, among them the model carrying on with tasks without asking the user's permission.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "e189e347-8309-47e5-bf6d-d71fc08ed074",
+          "title": "OpenAI udskyder ny AI-model på grund af sikkerhedsbekymringer",
+          "description": "<p>Det amerikanske selskab OpenAI dropper en lancering i oktober af en ny AI-model på grund af bekymringer for sikkerheden.</p><p>Det oplyser OpenAI til mediet The Wall Street Journal.</p><p>Under interne test er der opdaget sikkerhedsproblemer med den nye model GPT-6.1 Astra.</p><p>Saachi Jain, der er chef for sikkerhedssystemer hos OpenAI, bekræfter, at lanceringen indtil videre er udskudt.</p><p>- Vi vil sikre, at vores modeludvikling er sikker, uanset om det sker internt i virksomheden, eller når vi leverer den til brugerne, siger Saachi Jain ifølge det svenske nyhedsbureau TT til The Wall Street Journal.</p><p>Det var meningen, at GPT-6.1 Astra skulle lanceres inden for de næste dage eller uger, skriver nyhedsbureauet Reuters.</p><p>En af manglerne skulle være modellens efterlevelse, hvilket vil sige, hvor god den er til at følge brugerens instruktioner, skriver TT.</p><p>Derudover er der opdaget problemer med, at modellen fortsatte med en opgave uden at bede brugeren om tilladelse. I nogle tilfælde benyttede den også potentielt usikre eksterne værktøjer og tjenester.</p><p>Det fremgår ikke, hvornår OpenAI forventer at lancere GPT-6.1 Astra.</p><p>OpenAI rullede den nuværende model GPT-6 Astra ud i begyndelsen af september.</p><p>GPT-6 er den model, der i øjeblikket benyttes i selskabets chatbot ChatGPT.</p><p>Bekymringer for sikkerheden ved kunstig intelligens er de seneste uger taget til. Flere ansatte hos store AI-udviklere har sagt op på grund af bekymringer om de farer, teknologien udgør.</p><p>Dario Amodei, som er topchef i den amerikanske teknologivirksomhed Anthropic, der er en konkurrent til OpenAI og står bag chatbotten Claude, har i et essay opfordret til forsigtighed.</p><p>De seneste måneder har der været flere eksempler på løsslupne AI-agenter, der har hacket sig ind hos virksomheder.</p><p>I sidste uge kom det frem, at AI-agenter havde skaffet sig adgang til en australsk myndighedshjemmeside. Her fik AI-agenterne adgang til filer, der ikke var offentligt tilgængelige.</p><p>Ifølge Reuters var hændelsen i Australien det første kendte tilfælde, hvor AI-agenter har skaffet sig adgang til en myndighedshjemmeside.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T00:11:48.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/openai-udskyder-ny-ai-model-paa-grund-af-sikkerhedsbekymringer",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:4fcb1b3a-2da6-57a8-82de-080f2c4ef687",
+          "title": "OpenAI udskyder ny AI-model på grund af sikkerhedsbekymringer",
+          "description": "Der er opdaget sikkerhedsproblemer i intern test af OpenAI's nye AI-model, der derfor ikke lanceres i oktober.",
+          "authors": [],
+          "categories": [
+            "Business"
+          ],
+          "published_at": "2026-09-29T00:35:47.000000Z",
+          "url": "https://www.berlingske.dk/business/openai-udskyder-ny-ai-model-paa-grund-af-sikkerhedsbekymringer",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003930521",
+          "title": "OpenAI Scraps Release of New AI Model Over Safety Concerns",
+          "description": "The model, dubbed GPT-6.1 Astra, was due to debut inside ChatGPT and Codex in October.",
+          "authors": [
+            "Maxwell Zeff"
+          ],
+          "categories": [],
+          "published_at": "2026-09-28T23:07:00.000000Z",
+          "url": "https://www.wsj.com/tech/ai/openai-chatgpt-model-release-cancel-safety-5a2f9f42?mod=rss_Technology",
+          "primary": false
+        }
+      ]
+    }
+  ]
+}
