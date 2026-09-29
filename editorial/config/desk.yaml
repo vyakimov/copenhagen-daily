@@ -13,7 +13,7 @@ commit_runs: true                              # git-commit the run directory af
 delivery:
   bucket: copenhagen-daily-live
   distribution_id: E67FD57M9R899
-  profile: copenhagen-daily                    # an AWS CLI profile, or null for the default
+  profile: copenhagen-daily-deliver            # an IAM user scoped to this bucket and distribution; the SSO profile is for people
   aws_command: aws
 
 # How the owner hears about a failure. `command` gets the subject as its argument and the body on

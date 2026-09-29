@@ -30,7 +30,10 @@ calendar job when the Mac wakes, so a closed lid at 08:05 means a late edition, 
 
 After an activated publish the run syncs block 3's `live/` directory to the bucket named in
 `config/desk.yaml` under `delivery` and invalidates the CloudFront distribution, through the AWS CLI
-and the named profile. With no bucket configured the phase is skipped. `edit_news.sh deliver` does the
+and the named profile. That profile is `copenhagen-daily-deliver`, an IAM user whose only rights are
+listing and writing the one bucket and invalidating the one distribution; its key lives in
+`~/.aws/credentials` and never needs a browser, which is what lets the launchd job deliver. The SSO
+profile `copenhagen-daily` is for a person at the keyboard. With no bucket configured the phase is skipped. `edit_news.sh deliver` does the
 same by hand, for example after a manual `recover`. The site is served unlisted: every page carries a
 `noindex` meta tag and the release root has a `robots.txt` that disallows everything; CloudFront
 should add an `X-Robots-Tag: noindex` header for files that are not HTML.
