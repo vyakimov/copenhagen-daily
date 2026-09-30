@@ -33,7 +33,7 @@ from .notify import notify
 from .memory import build_memory, load_registry, save_registry, write_memory
 from .paths import EDITORIAL, REPO, RUNS, VAR
 from .policy import Policy
-from .verdicts import apply_verdicts, check_input, coverage_problems, strict_verdicts_schema, without_nulls
+from .verdicts import apply_verdicts, check_input, coverage_problems, strict_verdicts_schema, validate_verdicts, without_nulls
 from .window import build_window, write_window
 
 DESK_CONFIG = EDITORIAL / "config" / "desk.yaml"
@@ -176,9 +176,9 @@ def _git(*args: str) -> None:
     subprocess.run(["git", *args], cwd=REPO, check=True, capture_output=True, text=True)
 
 
-def _stray_changes() -> list[str]:
+def _stray_changes(repo: Path = REPO) -> list[str]:
     """Paths the working tree has changed, relative to the repository root, as git reports them."""
-    proc = subprocess.run(["git", "status", "--porcelain", "--untracked-files=all"], cwd=REPO, check=True, capture_output=True, text=True)
+    proc = subprocess.run(["git", "status", "--porcelain", "--untracked-files=all"], cwd=repo, check=True, capture_output=True, text=True)
     return [line[3:].split(" -> ")[-1] for line in proc.stdout.splitlines() if line.strip()]
 
 
@@ -326,6 +326,7 @@ class Runner:
         try:
             for phase, step in (
                 ("reconcile", self._reconcile),
+                ("inputs", self._verify_inputs),
                 ("collect", self._collect),
                 ("window", self._window),
                 ("memory", self._memory),
@@ -360,7 +361,7 @@ class Runner:
             self._write_status()
         return self.status
 
-    BEFORE_ACTIVATION = ("collect", "window", "memory", "editor", "check", "preflight", "publish")
+    BEFORE_ACTIVATION = ("inputs", "collect", "window", "memory", "editor", "check", "preflight", "publish")
 
     def _reconcile(self) -> None:
         """Ask block 3 whether this edition is already activated. If it is, a previous run got as far
@@ -450,6 +451,7 @@ class Runner:
         previous = self._previous_cutoff()
         window = build_window(bundle, self.policy, cutoff=self.cutoff, previous_cutoff=previous)
         write_window(window, self.run_dir)
+        self._record_inputs()
         self._phase("window", articles=len(window["articles"]), feeds=len(feeds), failed_feeds=sum(1 for f in feeds if f["outcome"] != "checked"))
 
     def _previous_cutoff(self) -> str | None:
@@ -459,6 +461,7 @@ class Runner:
     def _memory(self) -> None:
         memory = build_memory(self.publish_root, self.registry, self.policy, cutoff=self.cutoff)
         write_memory(memory, self.run_dir)
+        self._record_inputs()
         self._phase("memory", editions=[e["id"] for e in memory["editions"]], threads=len(memory["threads"]), next_edition_number=memory["next_edition_number"])
 
     def _edition_on_disk_is_usable(self) -> bool:
@@ -503,7 +506,7 @@ class Runner:
             if json.loads(previous.read_text(encoding="utf8")) != check_input_doc:
                 return False
             doc = without_nulls(json.loads(verdicts.read_text(encoding="utf8")))
-            if doc.get("edition_id") != check_input_doc["edition_id"]:
+            if validate_verdicts(doc) or doc.get("edition_id") != check_input_doc["edition_id"]:
                 return False
             return not any(coverage_problems(check_input_doc, doc).values())
         except (json.JSONDecodeError, KeyError, TypeError, ValueError):
@@ -516,6 +519,7 @@ class Runner:
             self.resumed_checks += 1
         else:
             self._write("check-input.json", check_input_doc)
+            self._record_inputs()
             (self.run_dir / "verdicts.json").unlink(missing_ok=True)
             self._session(lambda: self.checker(self.run_dir, self._budget(self.policy.limits.checker_minutes)))
         verdicts = without_nulls(self._read("verdicts.json"))
@@ -601,6 +605,13 @@ class Runner:
 
     # Files the runner writes and the sessions only read: the evidence the checker is judged against.
     INPUT_FILES = ("window.json", "window.md", "memory.json", "feeds.json", "check-input.json")
+    INPUTS_RECORD = "inputs.json"
+    # What the sessions produce. When the evidence is found changed, these go with it: they were
+    # made beside evidence that can no longer be trusted.
+    MODEL_OUTPUTS = (
+        "clusters.json", "clusters-checked.json", "ranking.json", "selection.json", "spec.json",
+        "edition.json", "edition-checked.json", "NOTES.md", "verdicts.json", "send-back.json",
+    )
 
     def _input_digests(self) -> dict[str, str | None]:
         digests: dict[str, str | None] = {name: _digest(self.run_dir / name) for name in self.INPUT_FILES}
@@ -610,41 +621,90 @@ class Runner:
                 digests[path.relative_to(self.run_dir).as_posix()] = _digest(path)
         return digests
 
+    def _record_inputs(self) -> None:
+        """The runner's record of what it wrote. A session and a later run are both judged against it."""
+        present = {k: v for k, v in self._input_digests().items() if v is not None}
+        self._write(self.INPUTS_RECORD, present)
+
+    def _verify_inputs(self) -> None:
+        """At the start of a run: the inputs on disk must be the ones the runner recorded. Anything
+        else, however it got there, is quarantined with the artifacts made beside it, so the run
+        rebuilds from the verified source rather than adopting changed bytes as its baseline."""
+        record_path = self.run_dir / self.INPUTS_RECORD
+        if not record_path.is_file():
+            self._phase("inputs", recorded=False)
+            return
+        recorded = json.loads(record_path.read_text(encoding="utf8"))
+        current = self._input_digests()
+        modified = sorted(p for p, digest in recorded.items() if current.get(p) is not None and current.get(p) != digest)
+        if modified:
+            quarantine = self._quarantine()
+            raise RunFailure("input_modified", "the run's inputs changed since the runner wrote them; they are quarantined and the run starts again", {"paths": modified[:20], "quarantine": str(quarantine)})
+        self._phase("inputs", recorded=True, files=len(recorded))
+
+    def _quarantine(self) -> Path:
+        """Move every input and every model output of this run aside, keeping them for inspection."""
+        target = self.run_dir / f"quarantine-{_now().replace(':', '').replace('.', '')}"
+        target.mkdir()
+        names = [*self.INPUT_FILES, "bundle", *self.MODEL_OUTPUTS, self.INPUTS_RECORD]
+        for name in names:
+            path = self.run_dir / name
+            if path.exists():
+                path.rename(target / name)
+        return target
+
+    def _protected_state(self) -> dict[str, str | None]:
+        """Desk state outside git that a session must not touch: the thread registry."""
+        try:
+            key = self.registry.relative_to(self.repo).as_posix()
+        except ValueError:
+            key = str(self.registry)
+        return {key: _digest(self.registry)}
+
     def _tree_digests(self) -> dict[str, str | None]:
-        """The working tree's changed paths with their content, so a session rewriting a file the
-        owner already had open is caught, not only a session touching a clean one."""
+        """The working tree's changed paths with their content, plus protected state outside git, so a
+        session rewriting a file the owner already had open, or reverting it to the committed text,
+        or touching desk state git ignores, is caught."""
         try:
             run_prefix = self.run_dir.relative_to(self.repo).as_posix() + "/"
         except ValueError:
             run_prefix = None
-        return {p: _digest(self.repo / p) for p in self.stray_changes() if run_prefix is None or not p.startswith(run_prefix)}
+        digests = {p: _digest(self.repo / p) for p in self.stray_changes() if run_prefix is None or not p.startswith(run_prefix)}
+        digests.update(self._protected_state())
+        return digests
 
     def _session(self, call: Callable[[], Any]) -> Any:
         """Run a model session and refuse to go on if it wrote where it may not.
 
-        Two comparisons bracket the session. Outside the run directory, the working tree's changed
-        paths and their contents must be the same afterwards, so the owner's work in progress never
-        blocks the paper and is never silently rewritten by a session. Inside it, the runner-owned
-        inputs must be byte-identical, so the checker judges the copy against the evidence the
-        runner froze, not evidence the writer edited. Both checks run even when the session fails."""
+        Two comparisons bracket the session, and both run whatever the session's outcome. Outside the
+        run directory, the set of changed paths and their contents must be the same afterwards (a path
+        that vanished from the changed set was reverted, which counts). Inside it, the runner-owned
+        inputs must be byte-identical to the runner's record; if not, they and everything made beside
+        them are quarantined so the next run rebuilds from the verified source."""
         tree_before = self._tree_digests()
-        inputs_before = self._input_digests()
-        failure: RunFailure | None = None
+        failure: BaseException | None = None
+        result = None
         try:
             result = call()
-        except RunFailure as exc:
-            failure, result = exc, None
+        except Exception as exc:  # noqa: BLE001 -- checked below, then re-raised.
+            failure = exc
         tree_after = self._tree_digests()
-        stray = sorted(p for p in tree_after if p not in tree_before or tree_after[p] != tree_before[p])
+        missing = object()
+        stray = sorted(p for p in set(tree_before) | set(tree_after) if tree_before.get(p, missing) != tree_after.get(p, missing))
         if stray:
             details: dict[str, Any] = {"paths": stray[:20]}
-            if failure:
+            if isinstance(failure, RunFailure):
                 details["after"] = failure.error_type
+            elif failure:
+                details["after"] = f"{type(failure).__name__}: {failure}"
             raise RunFailure("stray_edits", "the session wrote outside the run directory; sessions may only write there", details)
-        inputs_after = self._input_digests()
-        modified = sorted(p for p in set(inputs_before) | set(inputs_after) if inputs_before.get(p) != inputs_after.get(p))
+        record_path = self.run_dir / self.INPUTS_RECORD
+        recorded = json.loads(record_path.read_text(encoding="utf8")) if record_path.is_file() else {}
+        current = self._input_digests()
+        modified = sorted(p for p, digest in recorded.items() if current.get(p) != digest)
         if modified:
-            raise RunFailure("input_modified", "the session changed the runner's inputs; the evidence must stay as it was frozen", {"paths": modified[:20]})
+            quarantine = self._quarantine()
+            raise RunFailure("input_modified", "the session changed the runner's inputs; the evidence must stay as it was frozen, so it and the session's work are quarantined", {"paths": modified[:20], "quarantine": str(quarantine)})
         if failure:
             raise failure
         return result

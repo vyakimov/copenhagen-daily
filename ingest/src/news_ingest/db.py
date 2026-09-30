@@ -583,12 +583,24 @@ class Database:
         self.con.commit()
         return cur.lastrowid
 
-    def fail_poll(self, poll, error):
+    def fail_poll(self, poll, error, feed_id=None, source=None, url=None):
+        """Record a failed poll and, when the feed is named, count the failure against the feed so
+        `health` can report it. The error text is kept on both rows; nothing else about the feed
+        (validators, last successful poll) changes."""
+        now = format_utc(now_utc())
+        error_json = json.dumps({"message": str(error), "type": type(error).__name__})
         with self.con:
             self.con.execute(
                 "UPDATE feed_polls SET status='failed',ended_at=?,error_json=? WHERE poll_id=?",
-                (format_utc(now_utc()), json.dumps({"message": str(error)}), poll),
+                (now, error_json, poll),
             )
+            if feed_id:
+                self.con.execute(
+                    "INSERT INTO feed_state(feed_id,source,url,last_checked_at,consecutive_failures,last_error_json) "
+                    "VALUES(?,?,?,?,1,?) ON CONFLICT(feed_id) DO UPDATE SET last_checked_at=excluded.last_checked_at,"
+                    "consecutive_failures=feed_state.consecutive_failures+1,last_error_json=excluded.last_error_json",
+                    (feed_id, source, url, now, error_json),
+                )
 
     def commit_not_modified(self, poll, feed, source, url):
         now = format_utc(now_utc())

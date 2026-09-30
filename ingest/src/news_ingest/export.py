@@ -5,6 +5,7 @@ import json
 import os
 import shutil
 import tempfile
+import time
 from pathlib import Path
 
 from .db import connect
@@ -54,7 +55,35 @@ def plan_export(output, since=None, until=None, changed_since=None):
     }
 
 
-def export_bundle(database, output, since=None, until=None, changed_since=None):
+def export_bundle(
+    database,
+    output,
+    since=None,
+    until=None,
+    changed_since=None,
+    lock_path=None,
+    lock_wait_seconds=90,
+):
+    """Write a bundle. With a lock path the export holds the collector's process lock while it reads
+    and stamps `generated_at`, waiting up to `lock_wait_seconds` for a poll in flight to finish; a
+    poll commits rows stamped with a time taken before its transaction, so an export that read
+    beside it could stamp a cursor those rows fall behind."""
+    if lock_path is None:
+        return _export_bundle(database, output, since, until, changed_since)
+    from .collect import process_lock
+
+    deadline = time.monotonic() + lock_wait_seconds
+    while True:
+        try:
+            with process_lock(lock_path):
+                return _export_bundle(database, output, since, until, changed_since)
+        except RuntimeError as exc:
+            if str(exc) != "lock_busy" or time.monotonic() >= deadline:
+                raise
+            time.sleep(1)
+
+
+def _export_bundle(database, output, since=None, until=None, changed_since=None):
     plan = plan_export(output, since, until, changed_since)
     if plan["mode"] == "publication_window":
         start = plan["window"]["since"]

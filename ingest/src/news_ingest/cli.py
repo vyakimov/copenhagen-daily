@@ -533,6 +533,7 @@ def _dispatch(args: argparse.Namespace) -> dict[str, Any]:
             args.since,
             args.until,
             args.changed_since,
+            lock_path=config.lock_path,
         )
     if action == "backup":
         target = _validate_target(args.output)

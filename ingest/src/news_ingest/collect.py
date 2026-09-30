@@ -119,7 +119,7 @@ async def collect_once(config: AppConfig, source: str | None = None) -> dict:
                 except Exception as exc:  # noqa: BLE001 -- individual publisher isolation.
                     database_started = perf_counter()
                     try:
-                        db.fail_poll(poll, exc)
+                        db.fail_poll(poll, exc, feed.id, sid, str(feed.url))
                     finally:
                         timings["database"] += perf_counter() - database_started
                     failures += 1

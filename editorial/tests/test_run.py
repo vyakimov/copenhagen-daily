@@ -138,7 +138,7 @@ def test_happy_path_publishes_and_records(policy, tmp_path):
     status = runner.run()
     assert status["outcome"] == "published", status
     assert [p["name"] for p in status["phases"]] == [
-        "reconcile", "collect", "window", "memory", "editor", "check", "preflight", "publish", "receipt", "threads", "deliver", "device_push", "archive"]
+        "reconcile", "inputs", "collect", "window", "memory", "editor", "check", "preflight", "publish", "receipt", "threads", "deliver", "device_push", "archive"]
     assert ("publisher", "publish") in fakes.calls and ("git", "commit") in fakes.calls
     assert read_json(runner.run_dir / "status.json")["outcome"] == "published"
     assert (runner.run_dir / "check-input.json").exists()
@@ -672,3 +672,153 @@ def test_a_store_that_needs_recovery_stops_the_run_before_any_session(policy, tm
     status = make_runner(policy, tmp_path, fakes).run()
     assert status["outcome"] == "failed" and status["failure"]["type"] == "recovery_required"
     assert ("editor", "edition") not in fakes.calls and ("ingest", "collect") not in fakes.calls
+
+
+# ---- verification of the review fixes: the four partial closures ------------------------------------
+
+
+def _poisoning_editor(fakes):
+    original = fakes.editor
+
+    def editor(mode, run_dir, timeout):
+        record = original(mode, run_dir, timeout)
+        window = json.loads((run_dir / "window.json").read_text())
+        for article in window["articles"]:
+            article["description"] = "POISONED"
+        (run_dir / "window.json").write_text(json.dumps(window))
+        return record
+
+    return editor
+
+
+def test_rejected_evidence_is_quarantined_so_a_retry_rebuilds_it(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    status = make_runner(policy, tmp_path, fakes, editor=_poisoning_editor(fakes)).run()
+    assert status["failure"]["type"] == "input_modified"
+    run_dir = tmp_path / "runs" / EDITION_ID
+    assert not (run_dir / "window.json").exists(), "the modified evidence must not stay in place"
+    assert not (run_dir / "edition.json").exists(), "artifacts built beside modified evidence go with it"
+    quarantine = list(run_dir.glob("quarantine-*"))
+    assert quarantine and (quarantine[0] / "window.json").exists()
+
+    seen = {}
+    original_checker = fakes.checker
+
+    def checker(run_dir, timeout):
+        seen["input"] = (run_dir / "check-input.json").read_text()
+        return original_checker(run_dir, timeout)
+
+    status = make_runner(policy, tmp_path, fakes, checker=checker, retry=True).run()
+    assert status["outcome"] == "published", status["failure"]
+    assert "POISONED" not in seen["input"]
+    assert [c[1] for c in fakes.calls if c[0] == "editor"].count("edition") == 2
+
+
+def test_inputs_changed_between_runs_are_caught_at_the_start_of_the_next(policy, tmp_path):
+    fakes = Fakes(tmp_path, editor_hangs=True)
+    make_runner(policy, tmp_path, fakes).run()
+    run_dir = tmp_path / "runs" / EDITION_ID
+    window = json.loads((run_dir / "window.json").read_text())
+    window["articles"][0]["description"] = "EDITED BETWEEN RUNS"
+    (run_dir / "window.json").write_text(json.dumps(window))
+    again = Fakes(tmp_path)
+    status = make_runner(policy, tmp_path, again, retry=True).run()
+    assert status["failure"]["type"] == "input_modified" and status["failure"]["phase"] == "inputs"
+    assert ("editor", "edition") not in again.calls
+    status = make_runner(policy, tmp_path, again, retry=True).run()
+    assert status["outcome"] == "published", status["failure"]
+
+
+def _git_repo(tmp_path):
+    import subprocess
+
+    def git(*a):
+        return subprocess.run(["git", *a], cwd=tmp_path, check=True, capture_output=True, text=True)
+
+    git("init", "-q")
+    git("config", "user.email", "t@example.org")
+    git("config", "user.name", "t")
+    (tmp_path / ".gitignore").write_text("runs/\nvar/\nthreads.json\n")
+    (tmp_path / "notes.txt").write_text("committed\n")
+    git("add", ".gitignore", "notes.txt")
+    git("commit", "-q", "-m", "seed")
+    return git
+
+
+def test_a_session_that_reverts_the_owners_edit_to_the_committed_text_is_caught(policy, tmp_path):
+    from news_editorial.run import _stray_changes
+
+    _git_repo(tmp_path)
+    (tmp_path / "notes.txt").write_text("the owner's edit\n")
+    fakes = Fakes(tmp_path)
+    original = fakes.editor
+
+    def editor(mode, run_dir, timeout):
+        (tmp_path / "notes.txt").write_text("committed\n")  # back to HEAD: vanishes from git status
+        return original(mode, run_dir, timeout)
+
+    status = make_runner(policy, tmp_path, fakes, editor=editor, stray_changes=lambda: _stray_changes(tmp_path)).run()
+    assert status["failure"]["type"] == "stray_edits"
+    assert status["failure"]["details"]["paths"] == ["notes.txt"]
+
+
+def test_a_session_that_touches_the_desks_ignored_state_is_caught(policy, tmp_path):
+    from news_editorial.run import _stray_changes
+
+    _git_repo(tmp_path)
+    fakes = Fakes(tmp_path)
+    fakes.registry.write_text('{"schema_version": 1, "threads": []}')
+    original = fakes.editor
+
+    def editor(mode, run_dir, timeout):
+        fakes.registry.write_text('{"schema_version": 1, "threads": [{"id": "planted"}]}')
+        return original(mode, run_dir, timeout)
+
+    status = make_runner(policy, tmp_path, fakes, editor=editor, stray_changes=lambda: _stray_changes(tmp_path)).run()
+    assert status["failure"]["type"] == "stray_edits"
+    assert status["failure"]["details"]["paths"] == ["threads.json"]
+
+
+def test_the_guard_runs_even_when_the_session_raises_something_unexpected(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    tree = []
+
+    def editor(mode, run_dir, timeout):
+        tree.append("editorial/policy.yaml")
+        raise OSError("disk full")
+
+    status = make_runner(policy, tmp_path, fakes, editor=editor, stray_changes=lambda: list(tree)).run()
+    assert status["failure"]["type"] == "stray_edits"
+
+
+def test_schema_invalid_cached_verdicts_are_not_reused(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    original = fakes.checker
+
+    def bad_checker(run_dir, timeout):
+        record = original(run_dir, timeout)
+        doc = json.loads((run_dir / "verdicts.json").read_text())
+        doc["stories"][0]["sentences"][0]["verdict"] = "maybe"
+        (run_dir / "verdicts.json").write_text(json.dumps(doc))
+        return record
+
+    status = make_runner(policy, tmp_path, fakes, checker=bad_checker).run()
+    assert status["failure"]["type"] == "verdicts_invalid"
+    status = make_runner(policy, tmp_path, fakes, retry=True).run()
+    assert status["outcome"] == "published", status["failure"]
+    assert fakes.checker_calls == 2
+
+
+def test_a_descendant_that_ignores_term_is_still_killed_after_the_parent_exits(tmp_path, monkeypatch):
+    from news_editorial import blocks
+    from news_editorial.run import _headless
+
+    monkeypatch.setattr(blocks, "GRACE_SECONDS", 0.3)
+    marker = tmp_path / "marker"
+    script = tmp_path / "parent.sh"
+    script.write_text(f'#!/bin/sh\n(trap "" TERM; sleep 1.5; touch "{marker}") &\nexec sleep 5\n')
+    script.chmod(0o755)
+    with pytest.raises(RunFailure):
+        _headless([str(script)], tmp_path, 0.3, "editor-edition", tmp_path, "editor_minutes")
+    time.sleep(2)
+    assert not marker.exists(), "a TERM-ignoring child outlived the timeout"

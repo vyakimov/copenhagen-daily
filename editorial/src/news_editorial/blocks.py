@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import os
 import signal
+import time
 import subprocess
 import sys
 from pathlib import Path
@@ -34,17 +35,44 @@ def run_in_group(command: list[str], *, timeout: float, cwd: Path | None = None)
     return subprocess.CompletedProcess(command, proc.returncode, stdout, stderr)
 
 
+GRACE_SECONDS = 5.0
+
+
+def _group_alive(pgid: int) -> bool:
+    try:
+        os.killpg(pgid, 0)
+    except ProcessLookupError:
+        return False
+    except PermissionError:
+        # macOS answers EPERM for a group whose remaining member is exiting; treat it as still there.
+        return True
+    return True
+
+
 def _end_group(proc: subprocess.Popen[str]) -> None:
-    for sig, grace in ((signal.SIGTERM, 5), (signal.SIGKILL, 5)):
+    """Take down the whole process group, not just the direct child. The parent may exit on TERM
+    while a descendant that ignores it lives on, so the group is watched until it is empty, and
+    SIGKILL follows after the grace period whether or not the parent is still there."""
+    pgid = proc.pid
+    for sig in (signal.SIGTERM, signal.SIGKILL):
         try:
-            os.killpg(proc.pid, sig)
+            os.killpg(pgid, sig)
         except ProcessLookupError:
-            return
-        try:
-            proc.wait(timeout=grace)
-            return
-        except subprocess.TimeoutExpired:
-            continue
+            break
+        except PermissionError:
+            pass
+        deadline = time.monotonic() + GRACE_SECONDS
+        while time.monotonic() < deadline:
+            proc.poll()  # reap the parent if it has gone, so the group can empty
+            if not _group_alive(pgid):
+                break
+            time.sleep(0.05)
+        if not _group_alive(pgid):
+            break
+    proc.poll()
+    for stream in (proc.stdout, proc.stderr):
+        if stream:
+            stream.close()
 
 
 def call_wrapper(wrapper: Path, action: str, *args: str, timeout: int = 1800) -> dict[str, Any]:
