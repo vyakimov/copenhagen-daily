@@ -62,6 +62,7 @@ def test_collect_cli_metrics_offline(mode, tmp_path, config_path, monkeypatch, c
     try:
         assert db.con.execute("SELECT count(*) FROM sightings").fetchone()[0] == 2 * expected
         assert db.con.execute("SELECT count(*) FROM article_versions").fetchone()[0] == expected
+        assert db.con.execute("SELECT count(*) FROM sighting_contents").fetchone()[0] == expected
         summary = db.con.execute(
             "SELECT summary_json FROM fetch_runs ORDER BY rowid DESC LIMIT 1"
         ).fetchone()[0]

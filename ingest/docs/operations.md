@@ -95,3 +95,54 @@ compares the cached algorithm's result, and replaces the selected source's cache
 on apply. Dry-run reports `merge_states_rebuilt` (the number staged) but makes no
 persistent changes; projection difference counts do not measure cache differences.
 Apply installs missing schema migrations before staging; dry-run never migrates.
+
+## Content deduplication (migration 005)
+
+Use `deduplicate-sightings --dry-run` to scan a consistent read-only snapshot and
+measure unique content. It reports repeated JSON bytes, unique content JSON bytes,
+per-observation JSON bytes, and estimated JSON bytes saved. These are payload
+measurements, excluding keys, indexes, page overhead, and unchanged thin-row columns.
+`database_allocated_bytes` and `database_free_bytes` report SQLite pages separately;
+WAL size is not included. On an already migrated database the payload calculation
+still compares its logically reconstructed legacy representation with deduplication.
+
+Apply with `deduplicate-sightings --backup PATH`, choosing a new backup filename
+whose parent directory exists. It acquires the collector lock before backup and
+migration, uses SQLite's backup API, verifies backup integrity, and refuses to
+overwrite the backup. Schedule the operation for a maintenance window: collection
+cannot write while it runs. Allow space for the full backup, new tables, and WAL.
+
+Populated databases do **not** run migration 005 during normal collection or rebuild.
+Both layouts remain supported until this explicit command is used. Empty/new
+databases migrate automatically. The migration runner places schema changes,
+content transfer, indexes, and migration bookkeeping in one transaction; failure
+rolls back to the legacy schema and data. A successful result includes
+`sightings_verified`, `distinct_contents`, and `sightings_sha256`.
+
+Each observation retains its original ID, poll/feed/source identity, placement,
+publisher order, and observed-at timestamp. Its three normalized observation-time
+values are factored into `observation_json`, preserving their original JSON literals.
+`sighting_contents` stores the normalized JSON template and both original raw JSON
+columns, keyed by a separate SHA-256 storage digest scoped to publisher/article
+identity. Only those three top-level observation values are factored out: publisher
+timestamps, raw URLs, nested metadata, key order, and whitespace remain untouched.
+Every original JSON string reconstructs byte for byte. Hash matches are also checked
+against the actual stored text; mismatches abort instead of reusing the wrong content.
+
+Before committing, the migration compares ordered fingerprints covering every
+original and reconstructed sighting column, verifies row counts and foreign keys,
+and preserves the autoincrement high-water mark. It does not change article versions,
+projections, appearances, payloads, validators, or merge-state watermarks. Future
+content inserts and their observation references share the normal feed transaction;
+unchanged observations still create sightings but reuse content.
+
+Internal callers should use `db.read_sightings()` for logical observations. Physical
+SQL queries must join `sightings.content_id` to `sighting_contents`; the old three JSON
+columns no longer exist in `sightings`. Older application versions cannot read the
+new layout. For rollback, stop database writers and restore the verified pre-migration
+backup using the normal SQLite recovery procedure; do not copy a main file over an
+active WAL database.
+
+No compaction is performed automatically. Freed pages are reusable inside SQLite;
+returning that space to the filesystem is a separate, post-validation maintenance
+step. Existing raw-payload retention is unchanged.

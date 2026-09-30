@@ -62,9 +62,9 @@ def benchmark_collect():
                 with seed.con:
                     seed.con.execute(
                         "INSERT INTO sightings(poll_id,feed_id,source,source_id,item_position,"
-                        "publisher_order,observed_at,normalized_json,raw_metadata_json,raw_item_json) "
+                        "publisher_order,observed_at,content_id,observation_json) "
                         "SELECT ?,feed_id,source,source_id,item_position,publisher_order,observed_at,"
-                        "normalized_json,raw_metadata_json,raw_item_json FROM sightings WHERE poll_id=?",
+                        "content_id,observation_json FROM sightings WHERE poll_id=?",
                         (poll, first),
                     )
             measurements = {}
@@ -89,7 +89,7 @@ def benchmark_collect():
                     plan = [
                         row[3]
                         for row in db.con.execute(
-                            "EXPLAIN QUERY PLAN SELECT normalized_json,feed_id,item_position,"
+                            "EXPLAIN QUERY PLAN SELECT content_id,feed_id,item_position,"
                             "publisher_order FROM sightings WHERE source=? AND source_id=? "
                             "AND sighting_id>? "
                             "ORDER BY sighting_id",

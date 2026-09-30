@@ -3,7 +3,7 @@ from news_ingest.db import Database
 
 def test_migrations_are_idempotent(tmp_path):
     one = Database(tmp_path / "news.sqlite")
-    assert one.con.execute("SELECT count(*) FROM schema_migrations").fetchone()[0] == 4
+    assert one.con.execute("SELECT count(*) FROM schema_migrations").fetchone()[0] == 5
     one.close()
     two = Database(tmp_path / "news.sqlite")
     assert two.con.execute("PRAGMA integrity_check").fetchone()[0] == "ok"
@@ -14,7 +14,7 @@ def test_article_lookup_uses_migrated_index(tmp_path):
     db = Database(tmp_path / "news.sqlite")
     try:
         query = (
-            "EXPLAIN QUERY PLAN SELECT normalized_json,feed_id,item_position,publisher_order "
+            "EXPLAIN QUERY PLAN SELECT sighting_id,feed_id,item_position,publisher_order "
             "FROM sightings WHERE source=? AND source_id=? ORDER BY sighting_id"
         )
         plan = db.con.execute(query, ("bbc", "example")).fetchall()

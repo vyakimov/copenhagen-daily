@@ -85,3 +85,20 @@ Temporary files are removed on completion; the configured database is never
 opened. Allow roughly 400 MB of temporary disk space. Cache warm-up is outside the
 timed warm-cache trial. Timings are diagnostic,
 not a test threshold or a prediction of live collection speed.
+
+## Sighting content deduplication
+
+Migration 005 stores repeated content once while retaining every observation and
+its original JSON text. New databases use it automatically. Populated databases
+continue collecting in the legacy layout until explicitly migrated:
+
+```sh
+./gather_news.sh deduplicate-sightings --dry-run
+./gather_news.sh deduplicate-sightings --backup var/pre-dedup-2026-09-29.sqlite3
+```
+
+Apply holds the process lock, creates and integrity-checks a new backup, and verifies
+exact reconstruction of every sighting before committing the migration. It does
+not rebuild articles, alter versions, or run `VACUUM`. The dry-run reports JSON
+savings separately from database page allocation/free space. See
+[`docs/operations.md`](docs/operations.md) for migration and recovery details.

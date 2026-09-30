@@ -8,7 +8,7 @@ import pytest
 from news_ingest.cli import main
 from news_ingest.collect import process_lock
 from news_ingest.config import load_config
-from news_ingest.db import Database
+from news_ingest.db import Database, has_sighting_content, migrate, read_sightings
 from news_ingest.feed import ParsedFeed, SightingCandidate
 from news_ingest.http import FetchResult
 from news_ingest.models import ArticleSnapshot
@@ -132,7 +132,10 @@ def test_source_filter_isolates_repair_and_validation(history, capsys):
     db, config_file, _ = history
     expected = dump(db, "articles")[0]
     db.con.execute("UPDATE articles SET content_hash='broken'")
-    db.con.execute("UPDATE sightings SET normalized_json='{}' WHERE source='dr'")
+    db.con.execute(
+        "UPDATE sighting_contents SET normalized_template=json_set(normalized_template,'$.title',NULL) "
+        "WHERE content_id IN (SELECT content_id FROM sightings WHERE source='dr')"
+    )
     db.con.commit()
     dr_before = tuple(db.con.execute("SELECT * FROM articles WHERE source='dr'").fetchone())
     code, envelope = invoke(capsys, config_file, "--source", "bbc")
@@ -148,7 +151,10 @@ def test_source_filter_isolates_repair_and_validation(history, capsys):
 def test_invalid_history_leaves_projection_untouched(history, capsys, dry_run, defect):
     db, config_file, _ = history
     if defect == "invalid":
-        db.con.execute("UPDATE sightings SET normalized_json='{}' WHERE source='dr'")
+        db.con.execute(
+            "UPDATE sighting_contents SET normalized_template=json_set(normalized_template,'$.title',NULL) "
+            "WHERE content_id IN (SELECT content_id FROM sightings WHERE source='dr')"
+        )
     elif defect == "identity":
         db.con.execute("UPDATE sightings SET source_id='mismatch' WHERE source='dr'")
     else:
@@ -290,10 +296,8 @@ def test_disabled_source_remains_rebuildable(history, capsys):
 
 
 def repeat_observation(db, config, monkeypatch, title="Next"):
-    latest = db.con.execute(
-        "SELECT normalized_json FROM sightings WHERE source='bbc' ORDER BY sighting_id DESC LIMIT 1"
-    ).fetchone()
-    article = ArticleSnapshot.model_validate_json(latest[0])
+    latest = list(read_sightings(db.con, source="bbc"))[-1]
+    article = ArticleSnapshot.model_validate_json(latest["normalized_json"])
     observed = article.last_seen_at + timedelta(minutes=1)
     article = article.model_copy(
         update={
@@ -359,6 +363,7 @@ def test_cache_and_watermark_roll_back_with_failed_feed(history, monkeypatch):
     tables = (
         "article_feed_merge_state",
         "article_merge_heads",
+        "sighting_contents",
         "sightings",
         "articles",
         "article_versions",
@@ -417,7 +422,7 @@ def test_upgrade_initializes_cache_without_rewriting_history(history, capsys, mo
     db.con.commit()
     # Preview on an older schema must not apply migrations or populate persistent state.
     assert invoke(capsys, config_file, "--dry-run")[0] == 0
-    assert db.con.execute("SELECT count(*) FROM schema_migrations").fetchone()[0] == 3
+    assert db.con.execute("SELECT count(*) FROM schema_migrations").fetchone()[0] == 4
     upgraded = Database(db.path)
     try:
         assert {table: dump(upgraded, table) for table in tables} == before
@@ -427,3 +432,186 @@ def test_upgrade_initializes_cache_without_rewriting_history(history, capsys, mo
     finally:
         upgraded.close()
     assert invoke(capsys, config_file, "--dry-run")[1]["result"]["rows_changed"] == 0
+
+
+@pytest.fixture
+def legacy_history(history):
+    db, config_file, config = history
+    rows = list(read_sightings(db.con, include_raw=True))
+    db.con.execute("DROP TABLE sightings")
+    db.con.execute("DROP TABLE sighting_contents")
+    schema = (Path(__file__).parents[1] / "migrations" / "001_initial.sql").read_text()
+    db.con.execute(
+        next(line for line in schema.splitlines() if line.startswith("CREATE TABLE sightings("))
+    )
+    db.con.execute("CREATE INDEX sightings_article_idx ON sightings(source,source_id)")
+    columns = (
+        "sighting_id",
+        "poll_id",
+        "feed_id",
+        "source",
+        "source_id",
+        "item_position",
+        "publisher_order",
+        "observed_at",
+        "normalized_json",
+        "raw_metadata_json",
+        "raw_item_json",
+    )
+    db.con.executemany(
+        "INSERT INTO sightings VALUES(?,?,?,?,?,?,?,?,?,?,?)",
+        [tuple(row[column] for column in columns) for row in rows],
+    )
+    db.con.execute("DELETE FROM schema_migrations WHERE version=5")
+    db.con.commit()
+    db.compact_sightings = False
+    return db, config_file, config
+
+
+def test_content_migration_roundtrip_is_atomic_and_idempotent(legacy_history, monkeypatch, capsys):
+    db, config_file, config = legacy_history
+    before = list(read_sightings(db.con, include_raw=True))
+    tables = (
+        "articles",
+        "article_versions",
+        "raw_payloads",
+        "appearances",
+        "feed_state",
+        "article_merge_heads",
+        "article_feed_merge_state",
+    )
+    facts = {table: dump(db, table) for table in tables}
+    migrate(db.con)
+    assert not has_sighting_content(db.con)  # Collection never auto-migrates populated history.
+    db.con.execute("UPDATE sqlite_sequence SET seq=9000 WHERE name='sightings'")
+    db.con.commit()
+    migrate(db.con, allow_content_migration=True)
+    assert list(read_sightings(db.con, include_raw=True)) == before
+    assert {table: dump(db, table) for table in tables} == facts
+    assert db.con.execute("SELECT count(*) FROM sighting_contents").fetchone()[0] < len(before)
+    assert (
+        db.con.execute("SELECT seq FROM sqlite_sequence WHERE name='sightings'").fetchone()[0]
+        == 9000
+    )
+    migrate(db.con, allow_content_migration=True)
+    assert list(read_sightings(db.con, include_raw=True)) == before
+    assert invoke(capsys, config_file, "--dry-run")[1]["result"]["rows_changed"] == 0
+    restarted = Database(db.path)
+    try:
+        repeat_observation(restarted, config, monkeypatch)
+        assert restarted.con.execute("SELECT max(sighting_id) FROM sightings").fetchone()[0] == 9001
+        assert restarted.con.execute("PRAGMA foreign_key_check").fetchall() == []
+    finally:
+        restarted.close()
+
+
+def test_content_migration_failure_after_swap_restores_legacy_tables(legacy_history):
+    import sqlite3
+
+    db, _, _ = legacy_history
+    before = list(read_sightings(db.con, include_raw=True))
+    db.con.execute(
+        "CREATE TRIGGER reject_migration BEFORE INSERT ON schema_migrations WHEN NEW.version=5 "
+        "BEGIN SELECT RAISE(ABORT, 'failure after table swap'); END"
+    )
+    db.con.commit()
+    with pytest.raises(sqlite3.IntegrityError):
+        migrate(db.con, allow_content_migration=True)
+    assert not has_sighting_content(db.con)
+    assert list(read_sightings(db.con, include_raw=True)) == before
+    assert db.con.execute("SELECT count(*) FROM schema_migrations").fetchone()[0] == 4
+    assert not db.con.execute(
+        "SELECT 1 FROM sqlite_master WHERE name IN ('sighting_contents','sightings_v5')"
+    ).fetchone()
+
+
+def test_repeated_content_reuses_blob_and_preserves_a_b_a_versions(history, monkeypatch):
+    db, _, config = history
+    versions = db.con.execute("SELECT count(*) FROM article_versions").fetchone()[0]
+    content_counts = []
+    for title in ("A", "B", "A", "A"):
+        repeat_observation(db, config, monkeypatch, title)
+        content_counts.append(
+            db.con.execute("SELECT count(*) FROM sighting_contents").fetchone()[0]
+        )
+    assert content_counts[1] == content_counts[0] + 1
+    assert content_counts[2:] == [content_counts[1], content_counts[1]]
+    assert db.con.execute("SELECT count(*) FROM article_versions").fetchone()[0] == versions + 2
+
+
+def test_storage_digest_collision_rolls_back_instead_of_sharing_wrong_content(history, monkeypatch):
+    from news_ingest.db import store_sighting_content
+
+    db, _, _ = history
+    before = dump(db, "sighting_contents")
+    row = next(read_sightings(db.con, source="bbc", include_raw=True))
+    changed = json.loads(row["normalized_json"])
+    changed["title"] = "Different content"
+    monkeypatch.setattr(
+        "news_ingest.sighting_content.storage_digest", lambda *args: "forced-collision"
+    )
+    with pytest.raises(ValueError), db.con:
+        for normalized in (row["normalized_json"], json.dumps(changed)):
+            store_sighting_content(
+                db.con, "bbc", "example", normalized, row["raw_metadata_json"], row["raw_item_json"]
+            )
+    assert dump(db, "sighting_contents") == before
+
+
+def test_dedup_cli_requires_backup_and_lock_and_preserves_exports(legacy_history, tmp_path, capsys):
+    db, config_file, config = legacy_history
+    root = Path(__file__).parents[1]
+    before = list(read_sightings(db.con, include_raw=True))
+    argv = ["deduplicate-sightings", "--config", str(config_file)]
+    assert main(argv) == 1
+    assert json.loads(capsys.readouterr().out)["error"]["type"] == "invalid_arguments"
+    backup_path = tmp_path / "before-dedup.sqlite3"
+    with process_lock(config.lock_path):
+        assert main([*argv, "--backup", str(backup_path)]) == 1
+        assert json.loads(capsys.readouterr().out)["error"]["type"] == "lock_busy"
+        assert not backup_path.exists()
+    exports = []
+    for name in ("before", "after"):
+        output = tmp_path / f"dedup-{name}"
+        code = main(
+            [
+                "export",
+                "--config",
+                str(config_file),
+                "--since",
+                "2026-09-29T00:00:00Z",
+                "--until",
+                "2026-09-30T00:00:00Z",
+                "--output",
+                str(output),
+            ]
+        )
+        assert code == 0
+        capsys.readouterr()
+        exports.append(
+            [
+                (output / filename).read_bytes()
+                for filename in ("articles.jsonl", "appearances.jsonl")
+            ]
+        )
+        if name == "before":
+            result = subprocess.run(
+                [str(root / "gather_news.sh"), *argv, "--backup", str(backup_path)],
+                cwd="/tmp",
+                text=True,
+                capture_output=True,
+                timeout=30,
+                check=False,
+            )
+            assert result.returncode == 0, result.stdout
+            assert json.loads(result.stdout)["result"]["migrated"] is True
+    assert exports[0] == exports[1]
+    assert list(read_sightings(db.con, include_raw=True)) == before
+    from news_ingest.db import connect
+
+    saved = connect(backup_path, readonly=True)
+    try:
+        assert not has_sighting_content(saved)
+        assert list(read_sightings(saved, include_raw=True)) == before
+    finally:
+        saved.close()

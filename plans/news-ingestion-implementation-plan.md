@@ -434,6 +434,14 @@ it. Do not store bodies for 304 responses. The retention command is a no-op when
 `normalized_json` is the validated per-sighting candidate before cross-feed merging. Keep the raw
 entry separately so parser and merge changes can be audited.
 
+Migration 005 (29 September 2026) preserves this logical record but factors its physical storage
+into thin `sightings` rows and `sighting_contents`. The normalized JSON's three top-level
+observation timestamp literals are stored per observation; its remaining exact JSON text and
+both raw JSON strings are shared under a separate, identity-scoped storage digest. The database
+read API reconstructs every original string byte for byte. IDs, placements, observation counts,
+version history, and projection semantics are unchanged. Populated databases require an explicit
+backed-up migration; see `ingest/docs/operations.md` for the command and verification contract.
+
 ### `articles`
 
 Create one row per `(source, source_id)` with columns matching every `ArticleSnapshot` field except

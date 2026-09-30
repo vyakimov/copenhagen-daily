@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import gzip
+import hashlib
 import json
 import sqlite3
 import uuid
@@ -25,7 +26,8 @@ def connect(path: str | Path, readonly: bool = False) -> sqlite3.Connection:
     return con
 
 
-def migrate(con: sqlite3.Connection) -> None:
+def migrate(con: sqlite3.Connection, *, allow_content_migration=False) -> dict:
+    verification = {}
     con.execute(
         "CREATE TABLE IF NOT EXISTS schema_migrations(version INTEGER PRIMARY KEY, applied_at TEXT NOT NULL)"
     )
@@ -35,11 +37,145 @@ def migrate(con: sqlite3.Connection) -> None:
         if not con.execute(
             "SELECT 1 FROM schema_migrations WHERE version=?", (version,)
         ).fetchone():
-            with con:
-                con.executescript(file.read_text())
+            if (
+                version == 5
+                and not allow_content_migration
+                and con.execute("SELECT 1 FROM sightings LIMIT 1").fetchone()
+            ):
+                break
+            try:
+                # executescript otherwise commits before executing; put BEGIN inside the script.
+                con.executescript("BEGIN IMMEDIATE;\n" + file.read_text())
+                if version == 5:
+                    verification = migrate_sighting_content(con)
                 con.execute(
                     "INSERT INTO schema_migrations VALUES (?,?)", (version, format_utc(now_utc()))
                 )
+                con.commit()
+            except Exception:
+                con.rollback()
+                raise
+    return verification
+
+
+def has_sighting_content(con):
+    return any(row[1] == "content_id" for row in con.execute("PRAGMA table_info(sightings)"))
+
+
+def store_sighting_content(con, source, source_id, normalized, raw_metadata, raw_item):
+    from .sighting_content import restore_observation, split_observation, storage_digest
+
+    template, observation = split_observation(normalized)
+    if restore_observation(template, observation) != normalized:
+        raise ValueError("sighting content did not round-trip exactly")
+    digest = storage_digest(source, source_id, template, raw_metadata, raw_item)
+    values = (template, raw_metadata, raw_item)
+    con.execute(
+        "INSERT INTO sighting_contents(storage_hash,normalized_template,raw_metadata_json,raw_item_json) "
+        "VALUES(?,?,?,?) ON CONFLICT(storage_hash) DO NOTHING",
+        (digest, *values),
+    )
+    stored = con.execute(
+        "SELECT content_id,normalized_template,raw_metadata_json,raw_item_json "
+        "FROM sighting_contents WHERE storage_hash=?",
+        (digest,),
+    ).fetchone()
+    if tuple(stored)[1:] != values:
+        raise ValueError("sighting storage digest collision or corrupt content")
+    return stored[0], observation
+
+
+def migrate_sighting_content(con):
+    previous_sequence = con.execute(
+        "SELECT seq FROM sqlite_sequence WHERE name='sightings'"
+    ).fetchone()
+    count = 0
+    original_hash = hashlib.sha256()
+    for row in con.execute("SELECT * FROM sightings ORDER BY source,source_id,sighting_id"):
+        original_hash.update(json.dumps(dict(row), sort_keys=True, ensure_ascii=False).encode())
+        original_hash.update(b"\n")
+        content_id, observation = store_sighting_content(
+            con,
+            row["source"],
+            row["source_id"],
+            row["normalized_json"],
+            row["raw_metadata_json"],
+            row["raw_item_json"],
+        )
+        con.execute(
+            "INSERT INTO sightings_v5 VALUES(?,?,?,?,?,?,?,?,?,?)",
+            (*tuple(row)[:8], content_id, observation),
+        )
+        count += 1
+    if con.execute("SELECT count(*) FROM sightings_v5").fetchone()[0] != count:
+        raise ValueError("sighting migration count mismatch")
+    # No tables reference sightings; stable IDs preserve merge watermarks and all observations.
+    con.execute("DROP TABLE sightings")
+    con.execute("ALTER TABLE sightings_v5 RENAME TO sightings")
+    con.execute("CREATE INDEX sightings_article_idx ON sightings(source,source_id)")
+    if previous_sequence is not None:
+        updated = con.execute(
+            "UPDATE sqlite_sequence SET seq=max(seq,?) WHERE name='sightings'",
+            (previous_sequence[0],),
+        )
+        if not updated.rowcount:
+            con.execute(
+                "INSERT INTO sqlite_sequence VALUES('sightings',?)", (previous_sequence[0],)
+            )
+    if con.execute("PRAGMA foreign_key_check(sightings)").fetchone():
+        raise ValueError("sighting migration foreign-key mismatch")
+    restored_hash = hashlib.sha256()
+    for row in read_sightings(con, include_raw=True):
+        restored_hash.update(json.dumps(row, sort_keys=True, ensure_ascii=False).encode())
+        restored_hash.update(b"\n")
+    if restored_hash.digest() != original_hash.digest():
+        raise ValueError("sighting migration reconstruction mismatch")
+    return {
+        "sightings_verified": count,
+        "sightings_sha256": original_hash.hexdigest(),
+        "distinct_contents": con.execute("SELECT count(*) FROM sighting_contents").fetchone()[0],
+    }
+
+
+def read_sightings(con, source=None, source_id=None, after_id=0, poll_id=None, include_raw=False):
+    from .sighting_content import restore_observation
+
+    clauses = ["s.sighting_id>?"]
+    params = [after_id]
+    for field, value in (("source", source), ("source_id", source_id), ("poll_id", poll_id)):
+        if value is not None:
+            clauses.append(f"s.{field}=?")
+            params.append(value)
+    compact = has_sighting_content(con)
+    if compact:
+        columns = "s.*,c.normalized_template"
+        if include_raw:
+            columns += ",c.raw_metadata_json,c.raw_item_json"
+        query = f"SELECT {columns} FROM sightings s LEFT JOIN sighting_contents c USING(content_id)"
+    else:
+        columns = (
+            "s.sighting_id,s.poll_id,s.feed_id,s.source,s.source_id,s.item_position,"
+            "s.publisher_order,s.observed_at,s.normalized_json"
+        )
+        if include_raw:
+            columns += ",s.raw_metadata_json,s.raw_item_json"
+        query = f"SELECT {columns} FROM sightings s"
+    query += " WHERE " + " AND ".join(clauses) + " ORDER BY s.source,s.source_id,s.sighting_id"
+    for row in con.execute(query, params):
+        value = dict(row)
+        if compact:
+            try:
+                value["normalized_json"] = restore_observation(
+                    value.pop("normalized_template"), value.pop("observation_json")
+                )
+            except (TypeError, ValueError) as exc:
+                raise RebuildError(
+                    "rebuild_invalid_sighting",
+                    "Stored sighting content cannot be reconstructed.",
+                    {"sighting_id": value["sighting_id"]},
+                ) from exc
+            value.pop("content_id")
+        yield value
 
 
 class RebuildError(ValueError):
@@ -47,6 +183,58 @@ class RebuildError(ValueError):
         super().__init__(message)
         self.code = code
         self.details = details
+
+
+def deduplication_report(database):
+    from .sighting_content import split_observation, storage_digest
+
+    con = connect(database, readonly=True)
+    seen = set()
+    rows = repeated_bytes = unique_bytes = observation_bytes = 0
+    try:
+        con.execute("BEGIN")
+        for row in read_sightings(con, include_raw=True):
+            template, observation = split_observation(row["normalized_json"])
+            digest = storage_digest(
+                row["source"],
+                row["source_id"],
+                template,
+                row["raw_metadata_json"],
+                row["raw_item_json"],
+            )
+            repeated_bytes += sum(
+                len(row[key].encode())
+                for key in ("normalized_json", "raw_metadata_json", "raw_item_json")
+            )
+            observation_bytes += len(observation.encode())
+            if digest not in seen:
+                seen.add(digest)
+                unique_bytes += sum(
+                    len(value.encode())
+                    for value in (template, row["raw_metadata_json"], row["raw_item_json"])
+                )
+            rows += 1
+        return {
+            "dry_run": True,
+            "already_deduplicated": has_sighting_content(con),
+            "sightings": rows,
+            "distinct_contents": len(seen),
+            "repeated_json_bytes": repeated_bytes,
+            "unique_content_json_bytes": unique_bytes,
+            "observation_json_bytes": observation_bytes,
+            "estimated_json_bytes_saved": repeated_bytes - unique_bytes - observation_bytes,
+            "database_allocated_bytes": (
+                con.execute("PRAGMA page_count").fetchone()[0]
+                * con.execute("PRAGMA page_size").fetchone()[0]
+            ),
+            "database_free_bytes": (
+                con.execute("PRAGMA freelist_count").fetchone()[0]
+                * con.execute("PRAGMA page_size").fetchone()[0]
+            ),
+            "excludes": "SQLite pages, indexes, keys, and unchanged observation columns",
+        }
+    finally:
+        con.close()
 
 
 def rebuild_projection(con, priorities, source=None, dry_run=False):
@@ -89,13 +277,7 @@ def rebuild_projection(con, priorities, source=None, dry_run=False):
             "CREATE TEMP TABLE rebuilt_merge_heads (source TEXT,source_id TEXT,last_sighting_id INTEGER,"
             "state_count INTEGER,PRIMARY KEY(source,source_id))"
         )
-        rows = con.execute(
-            "SELECT sighting_id,source,source_id,normalized_json,feed_id,item_position,"
-            "publisher_order,observed_at FROM sightings "
-            + ("WHERE source=? " if source is not None else "")
-            + "ORDER BY source,source_id,sighting_id",
-            (source,) if source is not None else (),
-        )
+        rows = read_sightings(con, source=source)
         sightings_read = 0
         states_rebuilt = 0
         for (sid, aid), history in groupby(rows, key=lambda row: (row["source"], row["source_id"])):
@@ -271,9 +453,28 @@ class Database:
         self.path = path
         self.con = connect(path)
         migrate(self.con)
+        self.compact_sightings = has_sighting_content(self.con)
 
     def close(self):
         self.con.close()
+
+    def insert_sighting(self, values):
+        # Caller owns the feed transaction. Content and its observation must commit together.
+        if self.compact_sightings:
+            content_id, observation = store_sighting_content(
+                self.con, values[2], values[3], *values[7:]
+            )
+            self.con.execute(
+                "INSERT INTO sightings(poll_id,feed_id,source,source_id,item_position,publisher_order,"
+                "observed_at,content_id,observation_json) VALUES(?,?,?,?,?,?,?,?,?)",
+                (*values[:7], content_id, observation),
+            )
+        else:
+            self.con.execute(
+                "INSERT INTO sightings(poll_id,feed_id,source,source_id,item_position,publisher_order,"
+                "observed_at,normalized_json,raw_metadata_json,raw_item_json) VALUES(?,?,?,?,?,?,?,?,?,?)",
+                values,
+            )
 
     def merge_article(self, source, source_id, priorities):
         """Advance disposable per-feed state using only sightings beyond its durable watermark."""
@@ -318,11 +519,7 @@ class Database:
             )
         rows_read = 0
         changed_feeds = set()
-        for row in self.con.execute(
-            "SELECT sighting_id,feed_id,normalized_json FROM sightings "
-            "WHERE source=? AND source_id=? AND sighting_id>? ORDER BY sighting_id",
-            (source, source_id, through),
-        ):
+        for row in read_sightings(self.con, source=source, source_id=source_id, after_id=through):
             article = ArticleSnapshot.model_validate_json(row["normalized_json"])
             if (article.source, article.source_id) != (source, source_id):
                 raise ValueError("sighting identity mismatch")
@@ -445,8 +642,7 @@ class Database:
                     continue
                 seen_in_snapshot.add(article.source_id)
                 data = article.model_dump(mode="json")
-                self.con.execute(
-                    "INSERT INTO sightings(poll_id,feed_id,source,source_id,item_position,publisher_order,observed_at,normalized_json,raw_metadata_json,raw_item_json) VALUES(?,?,?,?,?,?,?,?,?,?)",
+                self.insert_sighting(
                     (
                         poll,
                         feed,

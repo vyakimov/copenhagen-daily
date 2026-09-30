@@ -4,7 +4,7 @@ import sqlite3
 from pathlib import Path
 
 from .collect import process_lock
-from .db import connect, migrate, rebuild_projection
+from .db import connect, has_sighting_content, migrate, rebuild_projection
 
 
 def backup(database, output):
@@ -25,6 +25,27 @@ def restore_check(backup_path):
     result = src.execute("PRAGMA integrity_check").fetchone()[0]
     src.close()
     return {"integrity": result, "ok": result == "ok"}
+
+
+def deduplicate_sightings(database, backup_path, lock_path):
+    with process_lock(lock_path):
+        con = connect(database)
+        try:
+            if has_sighting_content(con):
+                return {"already_deduplicated": True, "migrated": False}
+            backup(database, backup_path)
+            if not restore_check(backup_path)["ok"]:
+                raise ValueError("backup integrity check failed; migration was not started")
+            verification = migrate(con, allow_content_migration=True)
+            return {
+                **verification,
+                "already_deduplicated": False,
+                "migrated": True,
+                "backup": str(backup_path),
+                "vacuum_performed": False,
+            }
+        finally:
+            con.close()
 
 
 def rebuild_articles(database, source=None, dry_run=False, *, priorities, lock_path):

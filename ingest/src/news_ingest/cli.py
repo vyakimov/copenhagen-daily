@@ -103,6 +103,16 @@ DRY_RUN_PARAM = {
 }
 
 ACTIONS: dict[str, dict[str, Any]] = {
+    "deduplicate-sightings": {
+        "description": "Measure or migrate lossless sighting-content deduplication.",
+        "mutates": True,
+        "network": False,
+        "params": [
+            CONFIG_PARAM,
+            DRY_RUN_PARAM,
+            {"name": "backup", "type": "string", "required": False},
+        ],
+    },
     "benchmark-collect": {
         "description": "Compare indexed and unindexed ingestion on disposable synthetic history.",
         "mutates": False,
@@ -266,6 +276,11 @@ def build_parser() -> JSONArgumentParser:
 
     _command(sub, "list-actions", "./gather_news.sh list-actions")
     _command(sub, "benchmark-collect", "./gather_news.sh benchmark-collect")
+
+    p = _command(sub, "deduplicate-sightings", "./gather_news.sh deduplicate-sightings --dry-run")
+    _add_config(p)
+    p.add_argument("--dry-run", action="store_true")
+    p.add_argument("--backup")
 
     p = _command(sub, "validate-config", "./gather_news.sh validate-config")
     _add_config(p)
@@ -495,6 +510,17 @@ def _dispatch(args: argparse.Namespace) -> dict[str, Any]:
     if action == "health":
         database = _require_database(config.database_path)
         return health(database, config.failure_alert_threshold)
+    if action == "deduplicate-sightings":
+        from .db import deduplication_report
+        from .replay import deduplicate_sightings
+
+        database = _require_database(config.database_path)
+        if args.dry_run:
+            return deduplication_report(database)
+        if not args.backup:
+            raise ActionError("invalid_arguments", "--backup PATH is required before migration.")
+        target = _validate_target(args.backup)
+        return deduplicate_sightings(database, target, config.lock_path)
     if action == "export":
         _validate_target(args.output)
         database = _require_database(config.database_path)

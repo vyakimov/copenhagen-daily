@@ -82,13 +82,31 @@ parsing, and network costs rather than inferring their proportions from process 
    versions. Its shared streaming merge accumulator avoids merging every historical prefix from
    scratch. It also checks the per-feed cache algorithm against the full-history result and refreshes
    caches on apply. See `operations.md` for validation, locking, and missing-evidence behavior.
-4. **Deduplicate reusable content losslessly.** Use a separate storage digest: article `content_hash`
-   excludes raw URLs and raw metadata. Separate observation timestamps and placement from reusable
-   content; retain every sighting and prove reconstruction equality and `A -> B -> A` preservation.
-   Measure storage savings rather than assuming a final size. Use a forward-only migration and
-   verified backup.
+4. **Implemented: lossless content deduplication; live rollout pending.** Migration 005 shares
+   exact normalized content and raw JSON using a separate storage digest, not article `content_hash`.
+   Every observation, placement, ID, and timestamp is retained. Tests cover byte-exact reconstruction,
+   `A -> B -> A`, collision rejection, and transactional rollback. Populated databases remain on the
+   legacy layout until an explicit `deduplicate-sightings --backup NEW_PATH`; the collector supports
+   both layouts. See the rehearsal below and `operations.md` before applying.
 5. **Reclaim space after migration validation.** Schedule compaction with sufficient disk headroom.
    Measure WAL/checkpoint behavior before adding mandatory per-collection checkpoints.
+
+### Deduplication rehearsal, 29 September after 16:30
+
+Applied only to an isolated SQLite backup, not the live database:
+
+- 282,801 sightings shared 29,056 distinct content records. Repeated JSON occupied 2,033,688,116
+  bytes; shared content plus observation timestamp literals occupied 250,128,110 bytes, saving
+  1,783,560,006 bytes (87.7%). These are payload bytes, not a final database-size estimate.
+- Migration verified the full reconstructed sighting history against a before-migration SHA-256
+  fingerprint within the transaction. SQLite integrity checks passed, and full-window exports of
+  17,006 articles and 284,825 appearances had identical file hashes before and after.
+- Full rebuild previews before and after both reported the same 463 existing projection differences:
+  Borsen 133, DR 237, FT 81, Politiken 12; no additions or removals. These need separate investigation;
+  deduplication neither introduced nor repaired them.
+- No VACUUM was performed. The migrated copy allocated 3,254,468,608 bytes, of which 2,293,030,912
+  were free pages reusable by SQLite. Returning those pages to the filesystem is a separate,
+  explicitly scheduled maintenance operation.
 
 ## What not to do
 
