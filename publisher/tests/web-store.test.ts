@@ -327,3 +327,14 @@ test("the archive is a month-grouped register that names the latest edition", as
     new RegExp(`href="/n/${escapeRegExp(doc.edition.id)}/"`),
   );
 });
+
+test("the flow is three build-time stacks, not balanced CSS columns", async () => {
+  const root = await mkdtemp(join(tmpdir(), "publish-columns-"));
+  const doc = await edition("dense.json");
+  const result = await publish(root, doc);
+  assert.equal(result.status, "published");
+  const html = await readFile(join(root, "live", "n", doc.edition.id, "index.html"), "utf8");
+  assert.equal((html.match(/class="col"/g) ?? []).length, 3);
+  const css = await readFile(join(root, "live", "a", "broadsheet-v3", "web.css"), "utf8");
+  assert.doesNotMatch(css, /\.flow\{[^}]*column-count/);
+});

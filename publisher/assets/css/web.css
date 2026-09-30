@@ -83,17 +83,20 @@ header{break-after:avoid}
 .callout.timeline dl{display:grid;grid-template-columns:auto 1fr;column-gap:12px;row-gap:3px;font-size:var(--small);line-height:1.35}
 .callout.timeline dt{font-weight:700}
 
-/* composition: grid. The lead beside a rail of up to two secondaries, then the remaining stories flow
-   through three balanced columns, secondaries before briefs. */
+/* composition: grid. The lead beside a rail of up to two secondaries, then the remaining stories in
+   three fixed stacks, secondaries before briefs. The stacks are dealt at build time (columns.ts), not
+   balanced by the browser, so opening a source list only pushes down the stories beneath it. */
 .grid{display:grid;column-gap:var(--gutter)}
 .top{grid-template-columns:7fr 5fr;margin-top:12px}
 .top.alone{grid-template-columns:1fr}
 .rail{border-left:2px solid var(--rule);padding-left:var(--gutter)}
 .rail>*+*{border-top:1px solid var(--hairline);padding-top:8px;margin-top:8px}
 .ornament{text-align:center;color:var(--tertiary);font-size:18px;margin:6px 0 0}
-.flow{column-count:3;column-gap:var(--gutter);column-rule:1px solid var(--rule);column-fill:balance;border-top:1px solid var(--rule);padding-top:10px}
-.flow .story{break-inside:avoid;padding-bottom:8px}
-.flow .story+.story{border-top:1px solid var(--hairline);padding-top:8px}
+.flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--gutter);border-top:1px solid var(--rule);padding-top:10px}
+.flow .col+.col{border-left:1px solid var(--rule);margin-left:calc(var(--gutter) / -2);padding-left:calc(var(--gutter) / 2)}
+.flow .story{padding-bottom:8px}
+.flow .story+.story,.flow .col+.col>.story:first-child{border-top:1px solid var(--hairline);padding-top:8px}
+.flow .col+.col>.story:first-child{border-top:0;padding-top:0}
 .flow .body{max-width:none}
 .flow .head{margin-top:0}
 .flow .head+.story{padding-top:0;border-top:0}
@@ -134,7 +137,10 @@ header{break-after:avoid}
   .title{font-size:44px;white-space:normal}
   .grid{grid-template-columns:1fr}
   .rail{border-left:0;padding-left:0;border-top:2px solid var(--rule);padding-top:10px;margin-top:12px}
-  .flow{column-count:1}
+  .flow{grid-template-columns:1fr}
+  .flow .col+.col{border-left:0;margin-left:0;padding-left:0}
+  .flow .col+.col>.story:first-child{border-top:1px solid var(--hairline);padding-top:8px}
+  .flow .col+.col>.head{margin-top:8px}
   .body.two{column-count:1}
   .sheet{column-count:2}
   h1,.sheet .story.lead h1{font-size:36px}h2{font-size:23px}.deck{font-size:19px}

@@ -1,22 +1,42 @@
 ---
-// Grid composition: the lead beside a rail of up to two secondaries, then the remaining stories flow
-// through three balanced columns, secondaries before briefs. Contract order is kept within each role.
+// Grid composition: the lead beside a rail of up to two secondaries, then the remaining stories in
+// three fixed stacks, secondaries before briefs. Contract order is kept within each role and each
+// stack is a contiguous run; the cut points are chosen here from estimated heights, so nothing a
+// reader does (opening a source list, say) moves a story to another column.
 import Story from "../Story.astro";
+import { estimateHeight, splitColumns, type Item } from "../../../../assets/html/columns.ts";
 const { lead, secondaries, briefs, common } = Astro.props;
 const rail = secondaries.slice(0, 2);
 const flow = secondaries.slice(2);
+type Entry = { kind: "story"; story: any } | { kind: "head"; text: string };
+const items: Item<Entry>[] = [
+  ...flow.map((s: any) => ({ key: s.id, lines: estimateHeight(s), value: { kind: "story", story: s } as Entry })),
+  ...(briefs.length > 0
+    ? [{ key: "also-today", lines: 40, leads: true, value: { kind: "head", text: "Also today" } as Entry }]
+    : []),
+  ...briefs.map((s: any) => ({ key: s.id, lines: estimateHeight(s), value: { kind: "story", story: s } as Entry })),
+];
+const columns = splitColumns(items, 3);
 ---
 <div class:list={["grid", "top", { alone: rail.length === 0 }]}>
   <Story story={lead} {...common} twoColumn={true} />
   {rail.length > 0 && <div class="rail">{rail.map((s: any) => <Story story={s} {...common} />)}</div>}
 </div>
-{(flow.length > 0 || briefs.length > 0) && (
+{items.length > 0 && (
   <>
     <div class="ornament" aria-hidden="true">❦</div>
     <div class="flow">
-      {flow.map((s: any) => <Story story={s} {...common} />)}
-      {briefs.length > 0 && <div class="head">Also today</div>}
-      {briefs.map((s: any) => <Story story={s} {...common} />)}
+      {columns.map((column) => (
+        <div class="col">
+          {column.map((item) =>
+            item.value!.kind === "head" ? (
+              <div class="head">{item.value!.text}</div>
+            ) : (
+              <Story story={item.value!.story} {...common} />
+            ),
+          )}
+        </div>
+      ))}
     </div>
   </>
 )}
