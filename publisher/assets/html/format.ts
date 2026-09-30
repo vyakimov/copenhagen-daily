@@ -20,6 +20,29 @@ export function formatEditionDate(isoDate: string, language: string): string {
   }).format(date);
 }
 
+/** "Tuesday 9 September" for the archive register, where the month heading carries the year. */
+export function formatDayInMonth(isoDate: string, language: string): string {
+  const [year, month, day] = isoDate.split("-").map(Number);
+  const date = new Date(Date.UTC(year!, month! - 1, day!));
+  return new Intl.DateTimeFormat(locale(language), {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    timeZone: "UTC",
+  }).format(date);
+}
+
+/** "September 2026" as the archive register's running head. */
+export function formatMonth(isoDate: string, language: string): string {
+  const [year, month] = isoDate.split("-").map(Number);
+  const date = new Date(Date.UTC(year!, month! - 1, 1));
+  return new Intl.DateTimeFormat(locale(language), {
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(date);
+}
+
 /** "05:00, Tuesday 9 September" for a cutoff timestamp, shown in the edition's timezone. */
 export function formatCutoff(
   iso: string,

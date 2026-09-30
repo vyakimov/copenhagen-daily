@@ -1,21 +1,40 @@
 ---
 import Broadsheet from "../../layouts/Broadsheet.astro";
 import { config, order } from "../../lib.ts";
-import { formatEditionDate } from "../../../../assets/html/format.ts";
+import { formatDayInMonth, formatMonth } from "../../../../assets/html/format.ts";
+// The register of back numbers: newest first, grouped by month, numbered as the paper numbers them.
+// The index snapshot is the only source, so the row shows what it holds: number, date, and name.
+const latest = order.at(-1);
+const rows = order.map((e, i) => ({ ...e, number: i + 1 })).reverse();
+const months: { head: string; rows: typeof rows }[] = [];
+for (const row of rows) {
+  const head = formatMonth(row.date, row.language);
+  const group = months.at(-1);
+  if (group && group.head === head) group.rows.push(row);
+  else months.push({ head, rows: [row] });
+}
 ---
 <Broadsheet title={`Archive — ${config.masthead}`}>
   <main class="page">
     <div class="title">{config.masthead}</div>
     <div class="dateline">
-      <span>Edition archive</span><span class="mid">{order.length} editions</span><span></span>
+      <span>Edition archive</span>
+      <span class="mid">{order.length} {order.length === 1 ? "edition" : "editions"}</span>
+      <span>{latest && <a href="/">Latest edition</a>}</span>
     </div>
-    <ol class="archive-list" reversed>
-      {[...order].reverse().map((e) => (
-        <li>
-          <a href={`/n/${e.id}/`}>{formatEditionDate(e.date, e.language)}</a> <span>· {e.name}</span>
-        </li>
-      ))}
-    </ol>
-    <a href="/">Latest edition</a>
+    {months.map((group) => (
+      <section class="register">
+        <h2 class="register-month">{group.head}</h2>
+        <ol reversed>
+          {group.rows.map((e) => (
+            <li class={e.id === latest?.id ? "latest" : undefined}>
+              <span class="no">No. {e.number}</span>
+              <a href={`/n/${e.id}/`}>{formatDayInMonth(e.date, e.language)}</a>
+              <span class="name">{e.name}</span>
+            </li>
+          ))}
+        </ol>
+      </section>
+    ))}
   </main>
 </Broadsheet>

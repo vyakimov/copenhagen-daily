@@ -307,5 +307,23 @@ test("a release carries every layout version the store holds, so archived pages 
     join(root, "live", "n", doc.edition.id, "index.html"),
     "utf8",
   );
-  assert.match(html, /href="\/a\/broadsheet-v2\/web.css"/);
+  assert.match(html, /href="\/a\/broadsheet-v3\/web.css"/);
+});
+
+test("the archive is a month-grouped register that names the latest edition", async () => {
+  const root = await mkdtemp(join(tmpdir(), "publish-archive-"));
+  const doc = await edition("minimal.json");
+  const result = await publish(root, doc);
+  assert.equal(result.status, "published");
+  const archive = await readFile(
+    join(root, "live", "archive", "index.html"),
+    "utf8",
+  );
+  assert.match(archive, /class="register"/);
+  assert.match(archive, /class="register-month"/);
+  assert.match(archive, /class="latest"/);
+  assert.match(
+    archive,
+    new RegExp(`href="/n/${escapeRegExp(doc.edition.id)}/"`),
+  );
 });
