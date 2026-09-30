@@ -1,6 +1,6 @@
 # copenhagen-daily
 
-[![check](https://github.com/vyakimov/copenhagen-daily/actions/workflows/check.yml/badge.svg?branch=deploy)](https://github.com/vyakimov/copenhagen-daily/actions/workflows/check.yml)
+[![check](https://github.com/vyakimov/copenhagen-daily/actions/workflows/check.yml/badge.svg?branch=main)](https://github.com/vyakimov/copenhagen-daily/actions/workflows/check.yml)
 
 A personal daily newspaper: first-party RSS feeds in, one edited edition out, published as a static
 broadsheet website and a one-page grayscale image for a TRMNL X panel.
