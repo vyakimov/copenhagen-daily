@@ -191,11 +191,26 @@ paper: build it, rehearse a corrupted release on staging, then let it reach prod
 other findings, on recovery (1, 2), verification (4), and the device path (5, 6, 7), were fixed the
 same day.
 
+### Also alongside it: two loose ends from the block 2 review
+
+Both are small, both touch the run's journal, and both should be rehearsed on staging with an
+interrupted run rather than tried on the morning paper.
+
+- **The send-back counter is not persisted.** A run resumed after an interruption starts its check
+  at round one again, so an edition that had already spent its one send-back can be sent back once
+  more. Record the round and whether the saved verdicts were the final ones in the run directory,
+  and let the resumed check continue from there.
+- **Status and phase files are written in place.** A process or machine failure during a write can
+  leave a truncated `status.json` or phase file that the presence-based resume treats as a
+  checkpoint. Write them to a temporary file and rename, as the thread registry already does, and
+  have the resume validate a checkpoint before trusting it.
+
 ### What it costs
 
 An afternoon for the paper itself: the bucket, the distribution, the certificate's extra name, the DNS
 record, a dozen lines in the desk config, and the `target` option in three actions. Running cost is
-nil on the free CloudFront plan. The recovery inventory is a further day, mostly tests.
+nil on the free CloudFront plan. The recovery inventory is a further day, mostly tests; the two loose
+ends above are an hour or two each.
 
 ### The gate
 
