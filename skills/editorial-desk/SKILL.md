@@ -17,7 +17,7 @@ else. You never publish; the runner does that after the copy has been checked.
 1. `editorial/policy.yaml`: what the paper is, the scoring publishers, sections, kickers, budgets, limits.
 2. `editorial/HANDBOOK.md`: the run, the budget, the repair order, sources and the primary, callouts,
    checking and limits.
-3. `plans/news-editorial-architecture-plan.md`, the sections "Writing must remain attached to source
+3. `docs/editorial-architecture.md`, the sections "Writing must remain attached to source
    evidence" and "Writing guidelines": the eight guidelines and the attribution rule.
 4. `editorial/examples/2026-09-15-morning/NOTES.md` and `spec.json`: the quality bar and the voice.
    Read one story of each role closely. That is the paper.

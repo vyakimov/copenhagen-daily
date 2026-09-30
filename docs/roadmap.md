@@ -2,9 +2,9 @@
 
 Work that is designed but not authorized to build. Each item states the gap it closes, the approach
 settled for it, and the gate that must be met before it starts. Nothing in the current plans depends
-on anything here. Companions: [Block 2 editorial architecture](news-editorial-architecture-plan.md),
-[Block 3 publishing architecture](news-publishing-architecture-plan.md),
-[Block 3 implementation](news-publishing-implementation-plan.md), and the
+on anything here. Companions: [Block 2 editorial architecture](editorial-architecture.md),
+[Block 3 publishing architecture](publisher-architecture.md),
+[Block 3 implementation](publisher-architecture.md), and the
 [decision log](decision-log.md).
 
 ---
@@ -111,7 +111,7 @@ there first.
 ## Late discoveries in the candidate window
 
 **Status: designed, not scheduled.** Recorded 30 September 2026, from finding 7 of
-[the block 2 review](block-two-code-review-2026-09-30.md).
+[the block 2 review](reviews/block-two-code-review-2026-09-30.md).
 
 ### The gap
 
@@ -180,7 +180,7 @@ have actually been, at no editor cost.
 ### To do alongside it: recovery must verify the whole release
 
 The block 3 code review of 30 September 2026 (finding 3 in
-[the review](block-three-code-review-2026-09-30.md)) showed that recovery after a crash verifies the
+[the review](reviews/block-three-code-review-2026-09-30.md)) showed that recovery after a crash verifies the
 candidate bundle, the shared assets, and the manifest's copy in the release, but not the rest of the
 release shell: `index.json`, `latest.json`, the archive and navigation pages, the root page, and the
 historical links. A shell file corrupted between the durable intent and recovery is activated as it

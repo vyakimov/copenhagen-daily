@@ -93,7 +93,7 @@ Locations: `editorial/src/news_editorial/run.py:377–398`; `editorial/src/news_
 
 Both window paths request only `export --since <cutoff minus 72 hours> --until <cutoff>`. The producer filters exclusively on `published_at`. An article published four days ago but first observed today, or an older article corrected today, is absent before Block 2 computes `newly_observed`. Attaching that flag to already-admitted rows cannot admit the missing article.
 
-**Evidence:** traced the wrapper arguments to the producer's SQL predicate `published_at>=? AND published_at<?`. No observation/content-change supplement is requested. This conflicts with the explicit late-arrival and correction exceptions in `plans/news-editorial-architecture-plan.md:348` and the build plan's window description.
+**Evidence:** traced the wrapper arguments to the producer's SQL predicate `published_at>=? AND published_at<?`. No observation/content-change supplement is requested. This conflicts with the explicit late-arrival and correction exceptions in `docs/editorial-architecture.md:348` and the build plan's window description.
 
 **Fix:** combine the publication window with a bounded observation/change input, deduplicate by article identity/revision, and retain provenance for every input. Respect the producer's changed-since boundary limitations rather than assuming that export is already a bounded snapshot. Test an old newly discovered article and an old corrected article.
 

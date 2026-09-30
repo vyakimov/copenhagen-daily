@@ -1,7 +1,7 @@
 # Putting Copenhagen Daily on AWS: a plan for the person doing it
 
 Status: build plan, 14 September 2026. Broad strokes only, in the same spirit as the
-[block 2 build plan](news-editorial-build-plan.md): written for the owner, who has no cloud experience
+[block 2 build plan](editorial-architecture.md): written for the owner, who has no cloud experience
 yet and wants to change that in a way an interviewer will recognise. The project's architecture does
 not change. Three blocks, one schedule, file contracts between them, SQLite behind each. AWS is where
 that runs and how it is delivered, not a reason to redesign it. Every choice below is made so that the

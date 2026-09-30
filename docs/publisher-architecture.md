@@ -1,10 +1,10 @@
 # Block 3: Broadsheet publishing architecture
 
 Status: architecture, 14 September 2026, describing block 3 as built. This document records the publishing approach and the decisions behind it at the level
-needed to remember the design; the [implementation plan](news-publishing-implementation-plan.md)
+needed to remember the design; the [implementation plan](publisher-architecture.md)
 remains the exhaustive specification and governs contract, failure table, and protocol details.
-Companions: [Block 1: ingestion architecture](news-ingestion-architecture-plan.md) and
-[Block 2: editorial architecture](news-editorial-architecture-plan.md).
+Companions: [Block 1: ingestion architecture](ingest-architecture.md) and
+[Block 2: editorial architecture](editorial-architecture.md).
 
 ## Recommendation, as built
 
@@ -53,7 +53,7 @@ time are printed on the page, and the build time is never presented as the time 
 
 ## Design language, as built
 
-The direction was worked out in `plans/design/` and then settled by specimen and by reading real
+The direction was worked out in `docs/design/` and then settled by specimen and by reading real
 editions. What holds:
 
 - **Type.** Newsreader, a variable serif with optical sizes, for the masthead, headlines, decks,
@@ -144,7 +144,7 @@ Delivery starts with TRMNL's Image Display plugin fetching `device/current.png` 
 reach; publication and device refresh are separate events, and the page carries its own date so an
 offline panel is honest. Alias, Terminus, and a private plugin remain the alternatives if conversion,
 privacy, or cloud independence demand them. Hosting is a static host with authenticated reader access,
-immutable asset paths, and an atomic latest pointer; the [AWS plan](aws-plan.md) maps this to S3 and
+immutable asset paths, and an atomic latest pointer; the [AWS plan](aws-delivery.md) maps this to S3 and
 CloudFront. These plans authorise no public posting, and publisher licensing is the largest open risk.
 
 ## Decisions and the reasons behind them

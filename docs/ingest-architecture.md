@@ -2,10 +2,10 @@
 
 Status: architecture, 14 September 2026, written from the code as it runs. It describes what block 1 is, how it is built, and the decisions that shaped it,
 at the level of detail needed to remember the design rather than to implement it. The
-[implementation plan](news-ingestion-implementation-plan.md) remains the exhaustive specification
+[implementation plan](ingest-architecture.md) remains the exhaustive specification
 and is authoritative where this document is silent. Companions:
-[Block 2: editorial architecture](news-editorial-architecture-plan.md) and
-[Block 3: publishing architecture](news-publishing-architecture-plan.md).
+[Block 2: editorial architecture](editorial-architecture.md) and
+[Block 3: publishing architecture](publisher-architecture.md).
 
 ## Recommendation, as built
 

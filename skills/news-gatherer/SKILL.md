@@ -54,4 +54,4 @@ Preview mutating actions with `--dry-run`. Export and backup targets are immutab
 - Code layout, change workflow, testing, CLI evolution, and dependency boundaries: [references/development.md](references/development.md)
 - Source identities, prominence, transactions, exports, replay, and data safety: [references/contracts.md](references/contracts.md)
 
-For a requirement not covered there, read `ingest/AGENTS.md`, then the authoritative `plans/news-ingestion-implementation-plan.md` at the repository root. Treat the plan's optional work packages 14 and 15 as gated scope requiring explicit user approval.
+For a requirement not covered there, read `ingest/AGENTS.md`, then the authoritative `docs/ingest-architecture.md` at the repository root. Treat the plan's optional work packages 14 and 15 as gated scope requiring explicit user approval.

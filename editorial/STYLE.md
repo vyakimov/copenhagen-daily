@@ -2,7 +2,7 @@
 
 Status: first draft, 28 September 2026, written from the three editions that exist (15 September,
 19 September, 24 September) and the checker's notes on them. The [handbook](HANDBOOK.md) holds the
-method and the hard rules; the [architecture](../plans/news-editorial-architecture-plan.md) holds the
+method and the hard rules; the [architecture](../docs/editorial-architecture.md) holds the
 eight writing guidelines. This page settles the small choices those leave open, so two editions read
 as one paper. Where it is silent, follow the golden example. Every rule here is guidance for the
 editor and a note for the checker; none is a validator.

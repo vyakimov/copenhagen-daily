@@ -1,6 +1,6 @@
 # Block 2: Newspaper editorial architecture
 
-Status: architecture, 14 September 2026. This block is the editorial voice of a newspaper, and one edition is published to every reader. This document recommends boundaries and tradeoffs; it is not an implementation work breakdown. Its companion is [Block 3: Broadsheet publishing architecture](news-publishing-architecture-plan.md).
+Status: architecture, 14 September 2026. This block is the editorial voice of a newspaper, and one edition is published to every reader. This document recommends boundaries and tradeoffs; it is not an implementation work breakdown. Its companion is [Block 3: Broadsheet publishing architecture](publisher-architecture.md).
 
 ## Recommendation
 
@@ -32,7 +32,7 @@ flowchart LR
 
 Release 1 supplies titles, RSS descriptions where available, publisher identities, URLs, timestamps, categories, and feed appearances. Nullable `public_lead` and `public_body` fields exist in the model; their existence does not mean that text has been acquired. The first newspaper should therefore contain concise digests of RSS evidence, with direct links to the original reporting. A fuller-looking newspaper must not be achieved by inventing fuller reporting.
 
-The ingestion [implementation plan](news-ingestion-implementation-plan.md) remains authoritative for block 1. These downstream proposals do not enable its optional enrichment or homepage work. NYT article fetching remains prohibited. Any future text acquisition follows the existing source gates as a separately approved project; neither the LLM nor the publishing browser retrieves publisher pages.
+The ingestion [implementation plan](ingest-architecture.md) remains authoritative for block 1. These downstream proposals do not enable its optional enrichment or homepage work. NYT article fetching remains prohibited. Any future text acquisition follows the existing source gates as a separately approved project; neither the LLM nor the publishing browser retrieves publisher pages.
 
 The current code also matters at the handoff. Inspection of [`models.py`](../ingest/src/news_ingest/models.py), [`export.py`](../ingest/src/news_ingest/export.py), and [`db.py`](../ingest/src/news_ingest/db.py) establishes these integration constraints:
 
@@ -294,7 +294,7 @@ Treat all source text as untrusted data. The editorial model has no browser, she
 
 Use versioned JSON with a published JSON Schema at this boundary. Markdown may be a useful preview, but should not be the primary machine interface. Block 2 owns meaning, selection priority, and permitted shortening; block 3 owns typography, coordinates, and actual pagination.
 
-**Block 3 owns the schema itself**, published as hand-written JSON Schema Draft 2020-12 with golden acceptance and rejection documents. Every published schema is an immutable numbered artifact, and every accepted-shape change, including an optional field or new callout kind, creates a new integer version. Unknown fields are rejected, so older renderers cannot be assumed to accept newer output. Block 2 selects a supported version/digest, validates with the identical schema and equivalent format assertions, runs the shared semantic rejection corpus, and calls block 3's `validate` as final preflight. The detailed contract is Section 5 of the [publishing implementation plan](news-publishing-implementation-plan.md).
+**Block 3 owns the schema itself**, published as hand-written JSON Schema Draft 2020-12 with golden acceptance and rejection documents. Every published schema is an immutable numbered artifact, and every accepted-shape change, including an optional field or new callout kind, creates a new integer version. Unknown fields are rejected, so older renderers cannot be assumed to accept newer output. Block 2 selects a supported version/digest, validates with the identical schema and equivalent format assertions, runs the shared semantic rejection corpus, and calls block 3's `validate` as final preflight. The detailed contract is Section 5 of the [publishing implementation plan](publisher-architecture.md).
 
 The conceptual edition contract should carry:
 

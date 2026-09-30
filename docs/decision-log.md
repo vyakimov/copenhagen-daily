@@ -7,11 +7,11 @@ The architecture plans say what the system does. This says why, including the al
 weighed and why they lost, so nobody re-derives them. Entries marked **Measured** rest on a test that
 was actually run, not on reasoning alone, and the test is named so it can be repeated.
 
-Companions: [Block 1 architecture](news-ingestion-architecture-plan.md),
-[Block 1 implementation](news-ingestion-implementation-plan.md),
-[Block 2 editorial architecture](news-editorial-architecture-plan.md),
-[Block 3 publishing architecture](news-publishing-architecture-plan.md),
-[Block 3 implementation](news-publishing-implementation-plan.md),
+Companions: [Block 1 architecture](ingest-architecture.md),
+[Block 1 implementation](ingest-architecture.md),
+[Block 2 editorial architecture](editorial-architecture.md),
+[Block 3 publishing architecture](publisher-architecture.md),
+[Block 3 implementation](publisher-architecture.md),
 [design notes](design/README.md), and the
 [roadmap](roadmap.md) of designed but unbuilt work.
 
@@ -162,7 +162,7 @@ that term is the weakest in any case.
 **Copy is facts first, and colour needs a name on it. Settled 14 September 2026.** Three evaluation
 editions read as padded and editorialised because the writer paraphrased RSS teasers faithfully, so
 DR's "valggyser" and Altinget's sketch-writing surfaced as the paper's own voice. The writing
-guidelines in the [editorial architecture](news-editorial-architecture-plan.md) require a new fact
+guidelines in the [editorial architecture](editorial-architecture.md) require a new fact
 per sentence, attribute any colour to the outlet or speaker in the sentence itself, synthesise across
 sources instead of a paragraph per outlet, put the answer first, and set a word budget per role. They
 are guidelines rather than validators: attributed colour is acceptable on a slow day, unattributed

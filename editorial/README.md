@@ -3,7 +3,7 @@
 The desk that turns a block 1 export into one edition for block 3. The editor is a Claude Code
 session under `skills/editorial-desk`; the checker is a second session under `editorial/VERIFIER.md`;
 the rules are deterministic tools behind `edit_news.sh`. The design is
-`plans/news-editorial-architecture-plan.md` and the build plan is `plans/news-editorial-build-plan.md`.
+`docs/editorial-architecture.md` and the build plan is `docs/editorial-architecture.md`.
 
 ## One executable
 

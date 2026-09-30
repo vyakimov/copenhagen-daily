@@ -10,7 +10,7 @@ persists raw payloads and every valid sighting in SQLite, builds a deterministic
 article projection, and publishes immutable JSONL export bundles.
 
 The detailed product and implementation contract is
-`../plans/news-ingestion-implementation-plan.md`. Treat it as authoritative when a
+`../docs/ingest-architecture.md`. Treat it as authoritative when a
 requirement is not summarized here.
 
 ## Non-negotiable boundaries

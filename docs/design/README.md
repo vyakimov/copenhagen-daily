@@ -7,7 +7,7 @@ Render a composition with headless Chrome:
 ```
 "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --disable-gpu \
   --hide-scrollbars --force-device-scale-factor=1 --window-size=1920,1500 \
-  --screenshot=/tmp/A.png "file://$PWD/plans/design/device.html?v=A"
+  --screenshot=/tmp/A.png "file://$PWD/docs/design/device.html?v=A"
 ```
 
 ## Tokens

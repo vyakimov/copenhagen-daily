@@ -1,7 +1,7 @@
 # The desk handbook
 
 How an edition of Copenhagen Daily is made, written for the editor, whether that editor is a person
-running the desk by hand or the model inside block 2. The [architecture](../plans/news-editorial-architecture-plan.md)
+running the desk by hand or the model inside block 2. The [architecture](../docs/editorial-architecture.md)
 says what the paper is and why; the [policy file](policy.yaml) holds the numbers; this page is the
 working method. The [golden example](examples/2026-09-15-morning/NOTES.md) shows the result.
 
