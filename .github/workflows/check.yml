@@ -43,9 +43,13 @@ jobs:
       - run: PLAYWRIGHT_BROWSERS_PATH=0 npx playwright install --with-deps --no-shell chromium
       - name: ImageMagick 7
         run: |
-          curl -sSL https://imagemagick.org/archive/binaries/magick -o /tmp/magick && chmod +x /tmp/magick
-          printf '#!/bin/sh\nexec /tmp/magick --appimage-extract-and-run "$@"\n' > /tmp/magick.sh && chmod +x /tmp/magick.sh
-          /tmp/magick.sh -version | head -1
+          curl -sSL -o /tmp/magick.AppImage \
+            https://github.com/ImageMagick/ImageMagick/releases/download/7.1.2-32/ImageMagick-7.1.2-32-gcc-x86_64.AppImage
+          chmod +x /tmp/magick.AppImage
+          printf '#!/bin/sh\nexec /tmp/magick.AppImage --appimage-extract-and-run "$@"\n' > /tmp/magick.sh
+          chmod +x /tmp/magick.sh
+          /tmp/magick.sh -version
+          /tmp/magick.sh identify -format "%k" png:- < site/public/favicon.png 2>/dev/null || true
       - run: npm run check
         env:
           PUBLISHER_MAGICK: /tmp/magick.sh
