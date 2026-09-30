@@ -15,6 +15,15 @@ import json
 from pathlib import Path
 
 
+EXCERPT_CHARS = 200
+
+
+def excerpt(text: str | None) -> str | None:
+    if not text or len(text) <= EXCERPT_CHARS:
+        return text
+    return text[:EXCERPT_CHARS].rsplit(" ", 1)[0] + " …"
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("bundle", type=Path)
@@ -39,6 +48,9 @@ def main() -> None:
         if cited or index % args.every == 0:
             article = dict(article)
             article["raw_metadata"] = {}
+            # A fixture carries no more of a publisher's text than a citation would.
+            for field in ("description", "public_lead", "public_body"):
+                article[field] = excerpt(article.get(field))
             keep.append(article)
     keys = {(a["source"], a["source_id"]) for a in keep}
     appearances = [

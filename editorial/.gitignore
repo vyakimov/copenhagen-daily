@@ -9,3 +9,5 @@ runs/*/window.md
 runs/*/sessions/
 runs/*/*.draft.json
 runs/*/*.draft.md
+runs/*/check-input.json
+runs/*/verdicts.json

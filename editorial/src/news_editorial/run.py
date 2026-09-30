@@ -41,9 +41,11 @@ LOCK_PATH = VAR / "run.lock"
 # The desk actions an editor session may call. `run` is deliberately absent: a session must never
 # start another run, publish, or reach block 1 or block 3 through the wrapper.
 EDITOR_ACTIONS = ("check-clusters", "score", "build")
+# What the archive commits: the desk's own work. The check input and the verdicts stay out of git
+# because they quote the publishers' text; they remain in the run directory on disk.
 SMALL_FILES = [
     "feeds.json", "memory.json", "clusters.json", "clusters-checked.json", "ranking.json", "selection.json", "spec.json",
-    "edition.json", "check-input.json", "verdicts.json", "send-back.json", "edition-checked.json",
+    "edition.json", "send-back.json", "edition-checked.json",
     "NOTES.md", "status.json",
 ]
 

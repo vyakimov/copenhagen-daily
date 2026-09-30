@@ -14,3 +14,10 @@ broadsheet website and a one-page grayscale image for a TRMNL X panel.
 The blocks share no code. Block 1 hands block 2 an immutable export bundle; block 2 hands block 3
 an immutable edition JSON validated against block 3's published schema; block 3 returns a
 publication receipt.
+
+## Licence
+
+The code and documentation are licensed under the Apache License, Version 2.0 (see `LICENSE`). The
+editions in `editorial/runs/` and `editorial/examples/` are the paper's own copy and are not part of
+the licence; headlines and short excerpts from the publishers' feeds that appear in fixtures and run
+records remain their publishers' property and are reproduced only as citations.
