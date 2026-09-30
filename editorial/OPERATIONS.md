@@ -26,6 +26,10 @@ Shift-Command-G and `/bin/sh`), and every process the job starts inherits it. Wi
 job's stderr log says `Operation not permitted`. To stop one: `launchctl bootout gui/$(id -u)/ai.copenhagen-daily.edition`. launchd runs a missed
 calendar job when the Mac wakes, so a closed lid at 08:05 means a late edition, not a lost one.
 
+The jobs carry their own `PATH`, and its order matters: `/opt/homebrew/bin` comes before `~/.local/bin`
+because other tools drop their own `node` there (Hermes keeps a Node 22 in it), and block 3 needs
+Homebrew's Node 26. A `dependency_missing` failure naming a Node version means that order was lost.
+
 ## Delivery
 
 After an activated publish the run syncs block 3's `live/` directory to the bucket named in
@@ -80,8 +84,10 @@ Read `runs/<id>/status.json`: `failure.phase` and `failure.type` say which step 
 - `verdicts_invalid`: the checker's verdicts do not cover the check input sentence for sentence, or
   name a different edition. The details list the missing and unknown addresses. Run again; the check
   phase reruns the checker.
-- `stray_edits`: a session wrote outside the run directory. The details name the paths. Read the
-  diff, revert what should not be there, and run again; nothing was published.
+- `stray_edits`: a session wrote outside the run directory. The working tree is compared before and
+  after each session, so only what the session changed counts; your own uncommitted work elsewhere in
+  the repository does not block the paper. The details name the paths. Read the diff, revert what
+  should not be there, and run again; nothing was published.
 - `internal_error`: the runner itself raised. The details carry the traceback. Fix, then run again.
 - `lock_busy` from block 1 or block 3: another process holds a lock. Wait, then run again. The same
   type from block 2 means another `run` is in progress; `editorial/var/run.lock` names it.

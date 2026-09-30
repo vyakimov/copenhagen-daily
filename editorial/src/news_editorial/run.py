@@ -407,7 +407,7 @@ class Runner:
         if (self.run_dir / "edition.json").is_file() and (self.run_dir / "NOTES.md").is_file():
             self._phase("editor", resumed=True)
         else:
-            record = self.editor("edition", self.run_dir, self._budget(self.policy.limits.editor_minutes))
+            record = self._session(lambda: self.editor("edition", self.run_dir, self._budget(self.policy.limits.editor_minutes)))
             self._phase("editor", session=record)
         edition = self._read("edition.json")
         problems = validate_edition(edition)
@@ -435,7 +435,7 @@ class Runner:
         else:
             self._write("check-input.json", check_input_doc)
             (self.run_dir / "verdicts.json").unlink(missing_ok=True)
-            self.checker(self.run_dir, self._budget(self.policy.limits.checker_minutes))
+            self._session(lambda: self.checker(self.run_dir, self._budget(self.policy.limits.checker_minutes)))
         verdicts = without_nulls(self._read("verdicts.json"))
         self._write("verdicts.json", verdicts)
         if verdicts.get("edition_id") != edition["edition"]["id"]:
@@ -468,7 +468,7 @@ class Runner:
         for _ in range(self.policy.limits.check_send_backs):
             if not result["send_back"]:
                 break
-            self.editor("send-back", self.run_dir, self._budget(self.policy.limits.editor_minutes))
+            self._session(lambda: self.editor("send-back", self.run_dir, self._budget(self.policy.limits.editor_minutes)))
             edition = self._read("edition.json")
             problems = validate_edition(edition)
             if problems:
@@ -492,7 +492,6 @@ class Runner:
     def _publish(self) -> None:
         """The web edition only. Block 3 keeps its device renderer, but no run asks for it: the desk
         makes no device decisions, and a kitchen screen is fed from the live paper by other means."""
-        self._refuse_stray_edits()
         args = ["--edition", str(self.run_dir / "edition-checked.json"), "--publish-root", str(self.publish_root), "--skip-device"]
         if self.dry_run:
             args.append("--dry-run")
@@ -505,15 +504,21 @@ class Runner:
         }
         self._phase("publish", status=result.get("status"), device_status=result.get("device_status"))
 
-    def _refuse_stray_edits(self) -> None:
-        """A session may only write inside its run directory; anything else in git stops the publish."""
+    def _session(self, call: Callable[[], Any]) -> Any:
+        """Run a model session and refuse to go on if it wrote outside its run directory.
+
+        The working tree is compared before and after the session, so the owner's own work in
+        progress elsewhere in the repository never blocks the paper; only what the session changed counts."""
+        before = set(self.stray_changes())
+        result = call()
         try:
             run_prefix = self.run_dir.relative_to(self.repo).as_posix() + "/"
         except ValueError:
             run_prefix = None
-        stray = [p for p in self.stray_changes() if run_prefix is None or not p.startswith(run_prefix)]
+        stray = [p for p in self.stray_changes() if p not in before and (run_prefix is None or not p.startswith(run_prefix))]
         if stray:
-            raise RunFailure("stray_edits", "the working tree changed outside the run directory; the sessions may only write there", {"paths": stray[:20]})
+            raise RunFailure("stray_edits", "the session wrote outside the run directory; sessions may only write there", {"paths": stray[:20]})
+        return result
 
     def _receipt(self) -> None:
         if self.dry_run:

@@ -110,9 +110,9 @@ def make_runner(policy, tmp_path, fakes, **kwargs):
     kwargs.setdefault("lock_path", tmp_path / "run.lock")
     return Runner(
         policy=policy, run_dir=run_dir, edition_id=EDITION_ID, cutoff=CUTOFF, publish_root=fakes.publish_root,
-        registry=fakes.registry, ingest=fakes.ingest, publisher=fakes.publisher, editor=fakes.editor, checker=fakes.checker,
-        collect=True, repo=tmp_path,
-        **{"git": lambda *a: fakes.calls.append(("git", a[0])), "stray_changes": lambda: [], "lock_path": tmp_path / "run.lock", **kwargs},
+        registry=fakes.registry, ingest=fakes.ingest, publisher=fakes.publisher, collect=True, repo=tmp_path,
+        **{"editor": fakes.editor, "checker": fakes.checker, "git": lambda *a: fakes.calls.append(("git", a[0])),
+           "stray_changes": lambda: [], "lock_path": tmp_path / "run.lock", **kwargs},
     )
 
 
@@ -207,13 +207,46 @@ def test_incomplete_verdicts_fail_the_run(policy, tmp_path):
     assert ("publisher", "publish") not in fakes.calls
 
 
-def test_stray_edits_outside_the_run_directory_stop_the_publish(policy, tmp_path):
+def test_a_session_writing_outside_the_run_directory_stops_the_run(policy, tmp_path):
     fakes = Fakes(tmp_path)
-    status = make_runner(policy, tmp_path, fakes, stray_changes=lambda: ["editorial/policy.yaml", f"runs/{EDITION_ID}/spec.json"]).run()
+    tree = ["ingest/README.md"]  # the owner's own work in progress, there before the run
+    original_editor = fakes.editor
+
+    def editor(mode, run_dir, timeout):
+        tree.extend(["editorial/policy.yaml", f"runs/{EDITION_ID}/spec.json"])
+        return original_editor(mode, run_dir, timeout)
+
+    status = make_runner(policy, tmp_path, fakes, editor=editor, stray_changes=lambda: list(tree)).run()
     assert status["outcome"] == "failed"
     assert status["failure"]["type"] == "stray_edits"
+    assert status["failure"]["phase"] == "editor"
     assert status["failure"]["details"]["paths"] == ["editorial/policy.yaml"]
+    assert fakes.checker_calls == 0
     assert ("publisher", "publish") not in fakes.calls
+
+
+def test_a_checker_writing_outside_the_run_directory_stops_the_run(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    tree: list[str] = []
+    original_checker = fakes.checker
+
+    def checker(run_dir, timeout):
+        tree.append("publisher/src/publish/web.ts")
+        return original_checker(run_dir, timeout)
+
+    status = make_runner(policy, tmp_path, fakes, checker=checker, stray_changes=lambda: list(tree)).run()
+    assert status["outcome"] == "failed"
+    assert status["failure"]["type"] == "stray_edits"
+    assert status["failure"]["phase"] == "check"
+    assert ("publisher", "publish") not in fakes.calls
+
+
+def test_the_owners_work_in_progress_does_not_block_the_paper(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    dirty = ["ingest/README.md", "ingest/migrations/005_sighting_content.sql", "editorial/config/launchd/ai.copenhagen-daily.edition.plist"]
+    status = make_runner(policy, tmp_path, fakes, stray_changes=lambda: list(dirty)).run()
+    assert status["outcome"] == "published", status
+    assert ("publisher", "publish") in fakes.calls
 
 
 def test_an_unexpected_exception_is_recorded_in_status(policy, tmp_path):

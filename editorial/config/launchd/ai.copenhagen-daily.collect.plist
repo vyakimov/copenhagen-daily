@@ -15,7 +15,7 @@
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>PATH</key>
-		<string>/Users/vy/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+		<string>/opt/homebrew/bin:/Users/vy/.local/bin:/usr/local/bin:/usr/bin:/bin</string>
 		<key>HOME</key>
 		<string>/Users/vy</string>
 		<key>PUBLISHER_MAGICK</key>
