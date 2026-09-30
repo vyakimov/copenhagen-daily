@@ -331,3 +331,54 @@ def freshness_action(args: argparse.Namespace) -> dict[str, Any]:
             report["notification"] = notify("Copenhagen Daily: the paper is stale", body, config.get("notify") or {})
         raise ActionError("stale_edition", "the latest activated edition is older than the limit", report)
     return report
+
+
+@action("verify-live")
+def verify_live_action(args: argparse.Namespace) -> dict[str, Any]:
+    """Compare the live site with the newsroom's live tree; optionally deliver again, and tell the owner the verdict."""
+    import fcntl
+    import zoneinfo
+
+    from .deliver import deliver
+    from .notify import notify
+    from .run import LOCK_PATH, load_desk_config
+    from .verify import summary, verify_live
+
+    config = load_desk_config()
+    delivery = config.get("delivery") or {}
+    site_url = args.site_url or delivery.get("site_url")
+    if not site_url:
+        raise ActionError("not_configured", "delivery.site_url is not set in config/desk.yaml and --site-url was not given")
+    today = dt.datetime.now(zoneinfo.ZoneInfo(_policy().timezone)).date().isoformat()
+
+    def run_in_progress() -> bool:
+        if not LOCK_PATH.is_file():
+            return False
+        with LOCK_PATH.open("a+") as lock:
+            try:
+                fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            except OSError:
+                return True
+            fcntl.flock(lock, fcntl.LOCK_UN)
+            return False
+
+    root = _publish_root(args)
+    report = verify_live(root, site_url, today=today, run_in_progress=run_in_progress())
+    fix: dict[str, Any] | None = None
+    if args.fix and report["fixable"]:
+        try:
+            delivered = deliver(root, delivery)
+        except Exception as exc:  # noqa: BLE001 -- the AWS CLI's failure is the message.
+            fix = {"applied": "deliver", "error": str(exc), "after": report["state"]}
+        else:
+            after = verify_live(root, site_url, today=today, run_in_progress=run_in_progress())
+            fix = {"applied": "deliver", "result": delivered, "after": after["state"]}
+            report = {**after, "before_fix": report["state"]}
+    if fix:
+        report["fix"] = fix
+    if args.notify:
+        subject, body = summary(report, fix)
+        report["notification"] = notify(subject, body, config.get("notify") or {})
+    if report["state"] != "ok":
+        raise ActionError("live_site_problem", "; ".join(report["problems"]) or report["state"], report)
+    return report

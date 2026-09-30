@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>ai.copenhagen-daily.verify</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/sh</string>
+		<string>-c</string>
+		<string>/Users/vy/Documents/Development/news-gatherer/editorial/edit_news.sh verify-live --fix --notify; exit $?</string>
+	</array>
+	<key>WorkingDirectory</key>
+	<string>/Users/vy</string>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>PATH</key>
+		<string>/opt/homebrew/bin:/Users/vy/.local/bin:/usr/local/bin:/usr/bin:/bin</string>
+		<key>HOME</key>
+		<string>/Users/vy</string>
+		<key>PUBLISHER_MAGICK</key>
+		<string>/opt/homebrew/bin/magick</string>
+	</dict>
+	<key>StartCalendarInterval</key>
+	<dict>
+		<key>Hour</key>
+		<integer>6</integer>
+		<key>Minute</key>
+		<integer>0</integer>
+	</dict>
+	<key>StandardOutPath</key>
+	<string>/Users/vy/Library/Logs/copenhagen-daily/verify.stdout.log</string>
+	<key>StandardErrorPath</key>
+	<string>/Users/vy/Library/Logs/copenhagen-daily/verify.stderr.log</string>
+</dict>
+</plist>

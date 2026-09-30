@@ -42,3 +42,29 @@ def test_notify_reads_smtp_settings_from_the_env_file(tmp_path, monkeypatch):
     result = notify("Edition failed", "body", {}, cwd=tmp_path, smtp_env=env, desktop=False)
     assert result["delivered"] == "smtp"
     assert sent == {"host": "smtp.example.org", "port": 587, "tls": True, "login": ("u", "p"), "subject": "Edition failed", "to": "b@example.org"}
+
+
+def test_notify_posts_to_discord_when_the_env_file_names_a_webhook(tmp_path):
+    env = tmp_path / "discord.env"
+    env.write_text("DISCORD_WEBHOOK_ID=123\nDISCORD_WEBHOOK_TOKEN=abc\n")
+    posted = {}
+
+    def post(url, payload):
+        posted["url"], posted["payload"] = url, payload
+        return 204
+
+    result = notify("Edition failed", "phase editor", {}, cwd=tmp_path, smtp_env=tmp_path / "missing.env", discord_env=env, post=post, desktop=False)
+    assert result["delivered"] == "discord" and result["status"] == 204
+    assert posted["url"] == "https://discord.com/api/webhooks/123/abc"
+    assert posted["payload"]["content"].startswith("**Edition failed**\nphase editor")
+
+
+def test_notify_accepts_a_full_discord_webhook_url_and_ignores_placeholders(tmp_path):
+    env = tmp_path / "discord.env"
+    env.write_text("DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/9/z\n")
+    posted = []
+    result = notify("s", "b", {}, cwd=tmp_path, smtp_env=tmp_path / "missing.env", discord_env=env, post=lambda u, p: posted.append(u) or 204, desktop=False)
+    assert result["delivered"] == "discord" and posted == ["https://discord.com/api/webhooks/9/z"]
+    env.write_text("DISCORD_WEBHOOK_ID=<paste the id>\nDISCORD_WEBHOOK_TOKEN=<paste the token>\n")
+    result = notify("s", "b", {}, cwd=tmp_path, smtp_env=tmp_path / "missing.env", discord_env=env, post=lambda u, p: 204, desktop=False)
+    assert result["delivered"] == "stderr"

@@ -31,3 +31,11 @@ def test_unknown_action_is_usage_error():
 def test_module_entry_point_matches_wrapper():
     proc = subprocess.run([sys.executable, "-m", "news_editorial", "list-actions"], capture_output=True, text=True)
     assert json.loads(proc.stdout)["ok"] is True
+
+
+def test_verify_live_is_listed_and_parses_its_flags():
+    from news_editorial.cli import ACTIONS, build_parser
+
+    assert ACTIONS["verify-live"]["mutates"] is False
+    args = build_parser().parse_args(["verify-live", "--fix", "--notify", "--site-url", "https://example.test"])
+    assert args.fix and args.notify and args.site_url == "https://example.test"

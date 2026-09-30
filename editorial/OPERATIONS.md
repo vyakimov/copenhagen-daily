@@ -2,13 +2,14 @@
 
 ## The schedule
 
-The Mac is the newsroom; AWS is delivery only. Four launchd jobs in `config/launchd/` run everything,
+The Mac is the newsroom; AWS is delivery only. Five launchd jobs in `config/launchd/` run everything,
 with logs under `~/Library/Logs/copenhagen-daily/`:
 
 | Job | When | Command |
 |---|---|---|
 | `ai.copenhagen-daily.collect` | every fifteen minutes | block 1 `collect --once` |
 | `ai.copenhagen-daily.edition` | 05:30 local | `edit_news.sh run` |
+| `ai.copenhagen-daily.verify` | 06:00 local | `edit_news.sh verify-live --fix --notify`: checks the live site against the newsroom's copy, delivers again if that is the remedy, and posts the verdict either way |
 | `ai.copenhagen-daily.retry` | 07:30 local | `edit_news.sh run --retry`: runs only if the morning edition has not already succeeded, resuming a failed run from its first missing file |
 | `ai.copenhagen-daily.freshness` | 09:00 local | `edit_news.sh freshness --notify`: fails and notifies when the latest activated edition is older than `max_edition_age_hours` |
 
@@ -42,11 +43,40 @@ same by hand, for example after a manual `recover`. The site is served unlisted:
 `noindex` meta tag and the release root has a `robots.txt` that disallows everything; CloudFront
 should add an `X-Robots-Tag: noindex` header for files that are not HTML.
 
+## Checking the site from outside
+
+`verify-live` reads `live/latest.json`, the front page, and the edition's manifest from the site named
+by `delivery.site_url` and compares them byte for byte with the newsroom's live tree, then fetches the
+stylesheet the page links and looks for the `x-robots-tag` header. The verdict is one state:
+
+- `ok`: everything matches and today's edition is up.
+- `not_delivered`: the site is behind the newsroom, or the files differ. Delivering again is the
+  whole remedy; `--fix` does it and checks again.
+- `broken`: the stylesheet is missing (delivering again fixes it) or the robots header is gone (the
+  CloudFront response function; not fixed automatically).
+- `no_edition_today` / `run_in_progress`: yesterday's paper is correctly on the site and today's is
+  not; the second form means a run holds the lock. Nothing is done: the 07:30 retry covers a failed
+  run, and the notification says so.
+- `unreachable` / `no_local_edition`: the site or the publish root could not be read.
+
+The action never edits anything; its one fix is the deterministic delivery step. Anything else is a
+message to the owner.
+
 ## Being told
 
-A run that fails notifies the owner once, and the freshness job notifies when no edition is fresh.
+A run that fails notifies the owner once, the freshness job notifies when no edition is fresh, and the
+verify job posts its verdict every morning, good or bad, so silence itself is a signal.
 `notify.command` in `config/desk.yaml` names a script that receives the subject as its argument and
-the body on stdin. Without one, `var/smtp.env` sends an email:
+the body on stdin. Without one, `var/discord.env` posts to a Discord channel: in the channel's
+settings choose Integrations, Webhooks, New Webhook, copy the URL, and paste its two parts:
+
+```
+DISCORD_WEBHOOK_ID=123456789012345678
+DISCORD_WEBHOOK_TOKEN=the long token after the id
+```
+
+Regenerate the webhook in Discord if the token ever leaks; nothing else changes. Without that file,
+`var/smtp.env` sends an email:
 
 ```
 SMTP_HOST=smtp.gmail.com

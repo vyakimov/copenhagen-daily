@@ -15,10 +15,13 @@ delivery:
   distribution_id: E67FD57M9R899
   profile: copenhagen-daily-deliver            # an IAM user scoped to this bucket and distribution; the SSO profile is for people
   aws_command: aws
+  site_url: https://copenhagen-daily.net       # what readers open; verify-live checks it against the live tree
 
-# How the owner hears about a failure. `command` gets the subject as its argument and the body on
-# stdin. With no command, var/smtp.env (SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD, MAIL_FROM,
-# MAIL_TO) sends an email; with neither, a desktop notification and a line on stderr.
+# How the owner hears about a failure, and gets the daily live-site verdict. `command` gets the
+# subject as its argument and the body on stdin. With no command, var/discord.env (DISCORD_WEBHOOK_ID
+# and DISCORD_WEBHOOK_TOKEN, or DISCORD_WEBHOOK_URL) posts to a Discord channel; failing that,
+# var/smtp.env (SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD, MAIL_FROM, MAIL_TO) sends an email;
+# with none of them, a desktop notification and a line on stderr.
 notify:
   command: null
 
