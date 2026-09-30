@@ -12,6 +12,8 @@ export type IndexEntry = {
   id: string;
   date: string;
   name: string;
+  /** The paper's own number; absent on entries written before it was recorded. */
+  number?: number;
   language: string;
   cutoff_at: string;
   generated_at: string;
@@ -27,6 +29,7 @@ export function indexEntry(
     id: e.id,
     date: e.date,
     name: e.name,
+    number: e.number,
     language: e.language,
     cutoff_at: e.cutoff_at,
     generated_at: e.generated_at,

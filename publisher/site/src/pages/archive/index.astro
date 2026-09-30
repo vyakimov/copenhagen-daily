@@ -3,9 +3,10 @@ import Broadsheet from "../../layouts/Broadsheet.astro";
 import { config, order } from "../../lib.ts";
 import { formatDayInMonth, formatMonth } from "../../../../assets/html/format.ts";
 // The register of back numbers: newest first, grouped by month, numbered as the paper numbers them.
-// The index snapshot is the only source, so the row shows what it holds: number, date, and name.
+// The index snapshot is the only source, so the row shows what it holds: number, date, and name. Entries
+// written before the number was recorded fall back to their position, which matched the number then.
 const latest = order.at(-1);
-const rows = order.map((e, i) => ({ ...e, number: i + 1 })).reverse();
+const rows = order.map((e, i) => ({ ...e, number: e.number ?? i + 1 })).reverse();
 const months: { head: string; rows: typeof rows }[] = [];
 for (const row of rows) {
   const head = formatMonth(row.date, row.language);

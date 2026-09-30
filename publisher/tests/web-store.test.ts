@@ -322,6 +322,9 @@ test("the archive is a month-grouped register that names the latest edition", as
   assert.match(archive, /class="register"/);
   assert.match(archive, /class="register-month"/);
   assert.match(archive, /class="latest"/);
+  assert.match(archive, new RegExp(`No\\. ${doc.edition.number}<`));
+  const index = JSON.parse(await readFile(join(root, "live", "index.json"), "utf8"));
+  assert.equal(index.editions.at(-1).number, doc.edition.number);
   assert.match(
     archive,
     new RegExp(`href="/n/${escapeRegExp(doc.edition.id)}/"`),

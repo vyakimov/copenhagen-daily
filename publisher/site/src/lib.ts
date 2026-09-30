@@ -8,6 +8,7 @@ export type IndexEntry = {
   id: string;
   date: string;
   name: string;
+  number?: number;
   language: string;
   cutoff_at: string;
   generated_at: string;
