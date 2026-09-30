@@ -14,7 +14,7 @@ def test_notify_runs_the_configured_command_with_subject_and_body(tmp_path):
 
 
 def test_notify_falls_back_to_the_log_when_nothing_is_configured(tmp_path, capsys):
-    result = notify("Edition failed", "body", {}, cwd=tmp_path, smtp_env=tmp_path / "missing.env", desktop=False)
+    result = notify("Edition failed", "body", {}, cwd=tmp_path, smtp_env=tmp_path / "missing.env", discord_env=tmp_path / "no-discord.env", desktop=False)
     assert result["delivered"] == "stderr"
     assert "Edition failed" in capsys.readouterr().err
 
@@ -39,7 +39,7 @@ def test_notify_reads_smtp_settings_from_the_env_file(tmp_path, monkeypatch):
             sent["subject"] = message["Subject"]; sent["to"] = message["To"]
 
     monkeypatch.setattr("smtplib.SMTP", FakeSMTP)
-    result = notify("Edition failed", "body", {}, cwd=tmp_path, smtp_env=env, desktop=False)
+    result = notify("Edition failed", "body", {}, cwd=tmp_path, smtp_env=env, discord_env=tmp_path / "no-discord.env", desktop=False)
     assert result["delivered"] == "smtp"
     assert sent == {"host": "smtp.example.org", "port": 587, "tls": True, "login": ("u", "p"), "subject": "Edition failed", "to": "b@example.org"}
 

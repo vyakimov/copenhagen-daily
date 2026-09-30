@@ -161,7 +161,9 @@ No live deployment, serving-layer behavior, external dependency vulnerability au
 - **4** fixed: `verify` and `receipt` compare the manifest's digest with the activation record before
   trusting its inventory, and fail with `bundle_integrity_failed` on a mismatch.
 - **3** recorded on the roadmap under the staging paper, to be built and rehearsed there.
-- **5, 6, 7** left as they are: the device path is skipped by every scheduled run and is expected to be
-  replaced; revisit if it returns.
+- **5, 6, 7** fixed later the same day, when the device path was switched back on for the kitchen
+  screen: count repair is band-aware and never demotes into a full brief band; the printed-page link is
+  edition-absolute; the saved device page links the versioned stylesheet the release carries, and the
+  renderer serves fonts beside it.
 
 Regression tests for 8, 1, 2 and 4 were written first and watched failing; the full check passes.

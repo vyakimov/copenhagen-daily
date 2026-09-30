@@ -24,6 +24,7 @@ class Fakes:
     def __init__(self, tmp_path, strikes_first=False, editor_hangs=False, send_back_fails=False):
         self.calls = []
         self.publish_args = None
+        self.device_status = "published"
         self.send_back_fails = send_back_fails
         self.omit_stories = set()
         self.checker_raises = None
@@ -50,7 +51,7 @@ class Fakes:
         if action == "publish":
             self.publish_args = list(args)
             edition = read_json(Path(args[args.index("--edition") + 1]))
-            return {"status": "published", "edition_id": edition["edition"]["id"], "web_story_ids": [s["id"] for s in edition["stories"]], "device_status": "published", "bundle": {"path": f"n/{EDITION_ID}/", "manifest_sha256": "sha256:" + "0" * 64}}
+            return {"status": "published", "edition_id": edition["edition"]["id"], "web_story_ids": [s["id"] for s in edition["stories"]], "device_status": self.device_status, "bundle": {"path": f"n/{EDITION_ID}/", "manifest_sha256": "sha256:" + "0" * 64}}
         if action == "receipt":
             return {"activated": True, "activation": {"sequence": 10}, "manifest_sha256": "sha256:" + "0" * 64, "receipt": {"web": {"story_ids": ["russian-frigate-flares-gedser"]}, "device": {"status": "published"}}}
         raise AssertionError(action)
@@ -122,7 +123,7 @@ def test_happy_path_publishes_and_records(policy, tmp_path):
     status = runner.run()
     assert status["outcome"] == "published", status
     assert [p["name"] for p in status["phases"]] == [
-        "collect", "window", "memory", "editor", "check", "preflight", "publish", "receipt", "threads", "deliver", "archive"]
+        "collect", "window", "memory", "editor", "check", "preflight", "publish", "receipt", "threads", "deliver", "device_push", "archive"]
     assert ("publisher", "publish") in fakes.calls and ("git", "commit") in fakes.calls
     assert read_json(runner.run_dir / "status.json")["outcome"] == "published"
     assert (runner.run_dir / "check-input.json").exists()
@@ -418,3 +419,44 @@ def test_collect_runs_when_the_last_poll_is_old(policy, tmp_path):
     status = runner.run()
     assert status["outcome"] == "published", status["failure"]
     assert "collect" in calls
+
+
+def test_the_device_page_is_rendered_only_when_the_desk_config_asks(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    make_runner(policy, tmp_path, fakes, device=True).run()
+    assert "--skip-device" not in fakes.publish_args
+    fakes = Fakes(tmp_path / "again")
+    make_runner(policy, tmp_path / "again", fakes).run()
+    assert "--skip-device" in fakes.publish_args
+
+
+def test_the_device_page_is_pushed_after_delivery_and_a_push_failure_does_not_fail_the_edition(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    pushed = []
+    runner = make_runner(policy, tmp_path, fakes, device=True, device_pusher=lambda root: pushed.append(root) or {"pushed": True, "to": "host:/x.png"})
+    status = runner.run()
+    assert status["outcome"] == "published"
+    names = [p["name"] for p in status["phases"]]
+    assert names.index("device_push") == names.index("deliver") + 1
+    assert pushed == [fakes.publish_root]
+
+    def broken(root):
+        raise RuntimeError("scp: connection refused")
+
+    fakes = Fakes(tmp_path / "broken")
+    notes = []
+    runner = make_runner(policy, tmp_path / "broken", fakes, device=True, device_pusher=broken, notifier=lambda s, b: notes.append(s))
+    status = runner.run()
+    assert status["outcome"] == "published"
+    phase = next(p for p in status["phases"] if p["name"] == "device_push")
+    assert phase["failed"] and "connection refused" in phase["error"]
+    assert any("device" in n.lower() for n in notes)
+
+
+def test_the_device_push_is_skipped_when_no_device_page_was_published(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    fakes.device_status = "failed"
+    pushed = []
+    status = make_runner(policy, tmp_path, fakes, device=True, device_pusher=lambda root: pushed.append(root)).run()
+    assert status["outcome"] == "published" and pushed == []
+    assert next(p for p in status["phases"] if p["name"] == "device_push")["skipped"]

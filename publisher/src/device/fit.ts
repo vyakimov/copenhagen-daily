@@ -1,10 +1,19 @@
 // Section 10, reduced to one composition: place required and optional stories in contract order,
 // measure, and repair the first clipped slot down a fixed ladder until the page fits or a required
 // story cannot be placed. Then try reserves one at a time. Every transition is recorded.
-import type { EditionContractV1, Story } from "../contract/edition-contract.generated.ts";
+import type {
+  EditionContractV1,
+  Story,
+} from "../contract/edition-contract.generated.ts";
 import { publisherError, type PublisherFailure } from "../publish/errors.ts";
 import type { DeviceBrowser, Measurement } from "./browser.ts";
-import { CAPACITY, renderDevicePage, type BodyVariant, type DevicePlan, type Placement } from "./render.ts";
+import {
+  CAPACITY,
+  renderDevicePage,
+  type BodyVariant,
+  type DevicePlan,
+  type Placement,
+} from "./render.ts";
 
 export type FitReport = {
   schema_version: 1;
@@ -22,8 +31,16 @@ export type FitReport = {
   }>;
   off_origin_requests: Array<{ category: string; url_sha256: string }>;
 };
-export type FitResult = { plan: DevicePlan; html: string; measurement: Measurement; report: FitReport };
-export type TitleLike = { masthead: string; publishers: Record<string, string> };
+export type FitResult = {
+  plan: DevicePlan;
+  html: string;
+  measurement: Measurement;
+  report: FitReport;
+};
+export type TitleLike = {
+  masthead: string;
+  publishers: Record<string, string>;
+};
 
 const MAX_CANDIDATES = 80;
 const RUNGS: BodyVariant[] = ["extended", "standard", "short"];
@@ -34,20 +51,41 @@ const START: Record<Placement["role_as_placed"], BodyVariant | null> = {
 };
 
 /** The longest supplied variant not above the starting rung, else the shortest supplied one. */
-function startingVariant(story: Story, role: Placement["role_as_placed"]): BodyVariant | null {
+function startingVariant(
+  story: Story,
+  role: Placement["role_as_placed"],
+): BodyVariant | null {
   const start = START[role];
   if (!start) return null;
   const supplied = RUNGS.filter((v) => story.copy.body[v]);
-  return supplied.find((v) => RUNGS.indexOf(v) >= RUNGS.indexOf(start)) ?? supplied.at(-1) ?? null;
+  return (
+    supplied.find((v) => RUNGS.indexOf(v) >= RUNGS.indexOf(start)) ??
+    supplied.at(-1) ??
+    null
+  );
 }
 
-function lowerVariant(story: Story, current: BodyVariant | null): BodyVariant | null {
+function lowerVariant(
+  story: Story,
+  current: BodyVariant | null,
+): BodyVariant | null {
   if (!current) return null;
-  return RUNGS.slice(RUNGS.indexOf(current) + 1).find((v) => story.copy.body[v]) ?? null;
+  return (
+    RUNGS.slice(RUNGS.indexOf(current) + 1).find((v) => story.copy.body[v]) ??
+    null
+  );
 }
 
-/** Assign slots in contract order; null when the role counts exceed the composition. */
-function assign(stories: Story[], roles: Map<string, Placement["role_as_placed"]>): Placement[] | null {
+type Band = "secondary" | "brief";
+type Assignment =
+  | { placements: Placement[]; counts: Record<Band, number> }
+  | { overflow: Band };
+
+/** Assign slots in contract order; names the band whose count exceeds the composition when one does. */
+function assign(
+  stories: Story[],
+  roles: Map<string, Placement["role_as_placed"]>,
+): Assignment {
   const counts = { secondary: 0, brief: 0 };
   const placements: Placement[] = [];
   for (const story of stories) {
@@ -55,7 +93,7 @@ function assign(stories: Story[], roles: Map<string, Placement["role_as_placed"]
     let slot: string;
     if (role === "lead") slot = "lead";
     else {
-      if (counts[role] >= CAPACITY[role]) return null;
+      if (counts[role] >= CAPACITY[role]) return { overflow: role };
       counts[role] += 1;
       slot = `${role}-${counts[role]}`;
     }
@@ -68,7 +106,7 @@ function assign(stories: Story[], roles: Map<string, Placement["role_as_placed"]
       callout_index: role === "brief" || story.callouts.length === 0 ? null : 0,
     });
   }
-  return placements;
+  return { placements, counts };
 }
 
 export async function fitEdition(
@@ -86,56 +124,105 @@ export async function fitEdition(
     repairs: [],
     off_origin_requests: browser.offOrigin,
   };
-  const plan: DevicePlan = { composition: "lead-wide", placements: [], omitted: [], dropped_callouts: [] };
+  const plan: DevicePlan = {
+    composition: "lead-wide",
+    placements: [],
+    omitted: [],
+    dropped_callouts: [],
+  };
   const roles = new Map<string, Placement["role_as_placed"]>();
   const state = new Map<string, Placement>();
   let candidate = 0;
-  const fail = (type: string, message: string, details: Record<string, unknown>): PublisherFailure =>
+  const fail = (
+    type: string,
+    message: string,
+    details: Record<string, unknown>,
+  ): PublisherFailure =>
     publisherError(type, message, { ...details, fit_report: report });
-  const record = (slot: string | null, story_id: string, action: string, before: unknown, after: unknown) =>
+  const record = (
+    slot: string | null,
+    story_id: string,
+    action: string,
+    before: unknown,
+    after: unknown,
+  ) =>
     report.repairs.push({ candidate, slot, story_id, action, before, after });
 
   // Count-level selection: demote, then omit optional stories, until the role counts fit the composition.
-  let active = edition.stories.filter((s) => s.device_participation !== "reserve");
-  const place = (): Placement[] | null => {
-    const placements = assign(active, roles);
-    if (!placements) return null;
+  let active = edition.stories.filter(
+    (s) => s.device_participation !== "reserve",
+  );
+  const place = (): Placement[] | Band => {
+    const assigned = assign(active, roles);
+    if ("overflow" in assigned) return assigned.overflow;
     // Repairs persist across re-placement: restore each story's selected variants.
-    return placements.map((p) => {
+    return assigned.placements.map((p) => {
       const prior = state.get(p.story_id);
-      return prior ? { ...p, headline_variant: prior.headline_variant, copy_variant: prior.copy_variant,
-        callout_index: prior.callout_index } : p;
+      return prior
+        ? {
+            ...p,
+            headline_variant: prior.headline_variant,
+            copy_variant: prior.copy_variant,
+            callout_index: prior.callout_index,
+          }
+        : p;
     });
   };
   // Every edition seen so far lists omittable stories in contract order, which is prominence order, so
   // the least prominent optional story is the last one in the list and goes first.
-  const omit = (reason: string): boolean => {
-    const next = [...edition.fit_policy.omittable_story_ids].reverse().find((id) => active.some((s) => s.id === id));
+  const bandOf = (s: Story): Band | "lead" => roles.get(s.id) ?? s.role;
+  const omit = (reason: string, band?: Band): boolean => {
+    const next = [...edition.fit_policy.omittable_story_ids]
+      .reverse()
+      .find((id) =>
+        active.some(
+          (s) => s.id === id && (band === undefined || bandOf(s) === band),
+        ),
+      );
     if (!next) return false;
     active = active.filter((s) => s.id !== next);
     plan.omitted.push({ story_id: next, reason });
     record(null, next, "omit_story", "placed", reason);
     return true;
   };
+  /** Move the least prominent secondary that may fall back into the brief band, if that band has room. */
   const demote = (): boolean => {
     if (!edition.fit_policy.allow_role_fallback) return false;
-    const target = [...active].reverse().find((s) => s.fallback_role && (roles.get(s.id) ?? s.role) === "secondary");
+    const briefs = active.filter((s) => bandOf(s) === "brief").length;
+    if (briefs >= CAPACITY.brief) return false;
+    const target = [...active]
+      .reverse()
+      .find((s) => s.fallback_role && bandOf(s) === "secondary");
     if (!target) return false;
     roles.set(target.id, "brief");
     state.delete(target.id);
     record(null, target.id, "fallback_role", "secondary", "brief");
     return true;
   };
-  /** Place the active stories, omitting optional ones until the role counts fit the composition. */
+  /**
+   * Place the active stories, repairing the band that overflows: first omit an optional story from
+   * that band, then, for a full secondary band, demote a secondary into a brief slot that is free.
+   * A demotion never runs when the brief band is what overflows, since it could only make that worse.
+   */
   const settle = (): Placement[] => {
     let next = place();
-    while (!next) {
-      if (!demote() && !omit("capacity")) {
-        throw fail("composition_unavailable", "the stories do not fit the composition's slot counts", {
-          composition: "lead-wide",
-          capacity: CAPACITY,
-          remaining_story_ids: active.map((s) => s.id),
-        });
+    while (typeof next === "string") {
+      const band = next;
+      const repaired =
+        omit("capacity", band) ||
+        (band === "secondary" && demote()) ||
+        omit("capacity");
+      if (!repaired) {
+        throw fail(
+          "composition_unavailable",
+          "the stories do not fit the composition's slot counts",
+          {
+            composition: "lead-wide",
+            capacity: CAPACITY,
+            overflowing_band: band,
+            remaining_story_ids: active.map((s) => s.id),
+          },
+        );
       }
       next = place();
     }
@@ -150,7 +237,11 @@ export async function fitEdition(
   const measure = async (current: Placement[]): Promise<Measurement> => {
     candidate += 1;
     if (candidate > MAX_CANDIDATES) {
-      throw fail("fit_budget_exhausted", "the fit search exceeded its candidate budget", { max: MAX_CANDIDATES });
+      throw fail(
+        "fit_budget_exhausted",
+        "the fit search exceeded its candidate budget",
+        { max: MAX_CANDIDATES },
+      );
     }
     plan.placements = current;
     for (const p of current) state.set(p.story_id, p);
@@ -163,8 +254,10 @@ export async function fitEdition(
   const canApply = (p: Placement, rung: Rung): boolean => {
     const story = byId.get(p.story_id)!;
     if (rung === "drop_callout") return p.callout_index !== null;
-    if (rung === "headline_short") return p.headline_variant === "headline" && !!story.copy.headline_short;
-    if (rung === "body_step") return lowerVariant(story, p.copy_variant) !== null;
+    if (rung === "headline_short")
+      return p.headline_variant === "headline" && !!story.copy.headline_short;
+    if (rung === "body_step")
+      return lowerVariant(story, p.copy_variant) !== null;
     return false;
   };
   /** Apply the first rung the story can take, in the given order. */
@@ -172,7 +265,11 @@ export async function fitEdition(
     const story = byId.get(p.story_id)!;
     const rung = rungs.find((r) => canApply(p, r));
     if (rung === "drop_callout") {
-      plan.dropped_callouts.push({ story_id: story.id, index: p.callout_index!, reason: "overflow" });
+      plan.dropped_callouts.push({
+        story_id: story.id,
+        index: p.callout_index!,
+        reason: "overflow",
+      });
       record(p.slot, story.id, "drop_callout", p.callout_index, null);
       p.callout_index = null;
     } else if (rung === "headline_short") {
@@ -186,7 +283,11 @@ export async function fitEdition(
     return true;
   };
   const OWN: Rung[] = ["drop_callout", "headline_short", "body_step"];
-  const tallest = (m: Measurement, rungs: Rung[], includeLead = false): Placement | undefined =>
+  const tallest = (
+    m: Measurement,
+    rungs: Rung[],
+    includeLead = false,
+  ): Placement | undefined =>
     [...placements]
       .filter((p) => includeLead || p.role_as_placed !== "lead")
       .sort((a, b) => m.slots[b.slot]!.natural_px - m.slots[a.slot]!.natural_px)
@@ -195,9 +296,13 @@ export async function fitEdition(
     measurement = await measure(placements);
     if (measurement.fits) break;
     const failing =
-      placements.find((p) => p.slot !== "lead" && measurement!.slots[p.slot]?.clipped) ??
-      placements.find((p) => measurement!.slots[p.slot]?.clipped);
-    if (!failing) throw fail("fit_failed_layout", "a non-story region overflows the page", { measurement });
+      placements.find(
+        (p) => p.slot !== "lead" && measurement!.slots[p.slot]?.clipped,
+      ) ?? placements.find((p) => measurement!.slots[p.slot]?.clipped);
+    if (!failing)
+      throw fail("fit_failed_layout", "a non-story region overflows the page", {
+        measurement,
+      });
     const story = byId.get(failing.story_id)!;
     const slotInfo = measurement.slots[failing.slot]!;
     if (failing.role_as_placed === "lead") {
@@ -220,7 +325,9 @@ export async function fitEdition(
     } else if (repair(failing, OWN)) {
       continue;
     } else if (
-      failing.role_as_placed === "secondary" && story.fallback_role && edition.fit_policy.allow_role_fallback
+      failing.role_as_placed === "secondary" &&
+      story.fallback_role &&
+      edition.fit_policy.allow_role_fallback
     ) {
       roles.set(story.id, "brief");
       record(failing.slot, story.id, "fallback_role", "secondary", "brief");
@@ -234,20 +341,36 @@ export async function fitEdition(
       placements = settle();
       continue;
     }
-    throw fail("fit_failed_required_story", "a required story cannot be placed at any supplied length", {
-      slot: failing.slot,
-      story_id: story.id,
-      overflow_px: Math.max(0, slotInfo.content_px - slotInfo.available_px),
-      measurement: slotInfo,
-    });
+    throw fail(
+      "fit_failed_required_story",
+      "a required story cannot be placed at any supplied length",
+      {
+        slot: failing.slot,
+        story_id: story.id,
+        overflow_px: Math.max(0, slotInfo.content_px - slotInfo.available_px),
+        measurement: slotInfo,
+      },
+    );
   }
 
   // Restoration. The greedy ladder can strip more than the page needed, so put things back one at a
   // time and keep each only if the page still fits: omitted optional stories most prominent first,
   // then reserves in their declared order, then dropped callouts in story order.
-  let base = { placements, html, measurement: measurement!, active: [...active], plan: structuredClone(plan) };
+  let base = {
+    placements,
+    html,
+    measurement: measurement!,
+    active: [...active],
+    plan: structuredClone(plan),
+  };
   const commit = (m: Measurement) => {
-    base = { placements, html, measurement: m, active: [...active], plan: structuredClone(plan) };
+    base = {
+      placements,
+      html,
+      measurement: m,
+      active: [...active],
+      plan: structuredClone(plan),
+    };
   };
   const revert = () => {
     placements = base.placements;
@@ -259,9 +382,12 @@ export async function fitEdition(
   };
   const tryStory = async (id: string): Promise<boolean> => {
     const story = byId.get(id)!;
-    active = edition.stories.filter((s) => base.active.some((a) => a.id === s.id) || s.id === id);
+    active = edition.stories.filter(
+      (s) => base.active.some((a) => a.id === s.id) || s.id === id,
+    );
     plan.omitted = plan.omitted.filter((o) => o.story_id !== id);
-    const attempt = place();
+    const placed = place();
+    const attempt = typeof placed === "string" ? null : placed;
     while (attempt) {
       placements = attempt;
       const m = await measure(attempt);
@@ -281,15 +407,22 @@ export async function fitEdition(
   // Demoted secondaries first: give each its role back if the counts allow and the page still fits.
   for (const story of edition.stories) {
     if (candidate >= MAX_CANDIDATES) break;
-    if (roles.get(story.id) !== "brief" || !placements.some((p) => p.story_id === story.id)) continue;
+    if (
+      roles.get(story.id) !== "brief" ||
+      !placements.some((p) => p.story_id === story.id)
+    )
+      continue;
     roles.delete(story.id);
     state.delete(story.id);
-    const attempt = place();
+    const placed = place();
+    const attempt = typeof placed === "string" ? null : placed;
     if (attempt) placements = attempt;
     const m = attempt ? await measure(attempt) : null;
     if (m?.fits) {
       record(null, story.id, "restore_role", "brief", "secondary");
-      plan.dropped_callouts = plan.dropped_callouts.filter((d) => d.story_id !== story.id);
+      plan.dropped_callouts = plan.dropped_callouts.filter(
+        (d) => d.story_id !== story.id,
+      );
       commit(m);
     } else {
       roles.set(story.id, "brief");
@@ -299,7 +432,9 @@ export async function fitEdition(
   }
   const candidates = [
     ...edition.stories.filter(
-      (s) => s.device_participation === "optional" && plan.omitted.some((o) => o.story_id === s.id),
+      (s) =>
+        s.device_participation === "optional" &&
+        plan.omitted.some((o) => o.story_id === s.id),
     ),
     ...edition.fit_policy.reserve_story_ids.map((id) => byId.get(id)!),
   ];
@@ -307,7 +442,10 @@ export async function fitEdition(
     if (candidate >= MAX_CANDIDATES) break;
     if (!(await tryStory(story.id))) {
       if (story.device_participation === "reserve") {
-        plan.omitted.push({ story_id: story.id, reason: "reserve_did_not_fit" });
+        plan.omitted.push({
+          story_id: story.id,
+          reason: "reserve_did_not_fit",
+        });
         record(null, story.id, "reserve_rejected", "tried", "discarded");
       }
     }
@@ -315,7 +453,8 @@ export async function fitEdition(
   for (const dropped of [...plan.dropped_callouts]) {
     if (candidate >= MAX_CANDIDATES) break;
     const p = placements.find((x) => x.story_id === dropped.story_id);
-    if (!p || p.callout_index !== null || p.role_as_placed === "brief") continue;
+    if (!p || p.callout_index !== null || p.role_as_placed === "brief")
+      continue;
     p.callout_index = dropped.index;
     plan.dropped_callouts = plan.dropped_callouts.filter((d) => d !== dropped);
     const m = await measure(placements);
@@ -331,7 +470,10 @@ export async function fitEdition(
   html = base.html;
   measurement = base.measurement;
   for (const s of edition.stories) {
-    if (!plan.placements.some((p) => p.story_id === s.id) && !plan.omitted.some((o) => o.story_id === s.id)) {
+    if (
+      !plan.placements.some((p) => p.story_id === s.id) &&
+      !plan.omitted.some((o) => o.story_id === s.id)
+    ) {
       plan.omitted.push({ story_id: s.id, reason: "not_attempted" });
     }
   }

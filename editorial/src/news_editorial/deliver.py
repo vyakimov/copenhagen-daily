@@ -1,4 +1,5 @@
-"""Delivery: sync block 3's live directory to the bucket and invalidate the distribution."""
+"""Delivery: sync block 3's live directory to the bucket and invalidate the distribution, and push the
+device page to the kitchen screen's image host."""
 
 from __future__ import annotations
 
@@ -25,3 +26,22 @@ def deliver(publish_root: Path, config: dict[str, Any]) -> dict[str, Any]:
         subprocess.run(invalidate, check=True, capture_output=True, text=True, timeout=120)
         result["invalidated"] = config["distribution_id"]
     return result
+
+
+def push_device(publish_root: Path, config: dict[str, Any], run: Any = subprocess.run) -> dict[str, Any]:
+    """Copy the newest device page to `host:path` with scp. No host configured means the push is skipped.
+
+    Legacy scp (`-O`) because the target is a NAS whose sshd has no SFTP subsystem. The key's
+    passphrase comes from the login keychain through ~/.ssh/config, so nothing here holds a secret."""
+    host, path = config.get("host"), config.get("path")
+    if not host or not path:
+        return {"skipped": True, "reason": "no host configured"}
+    page = publish_root / "live" / "device" / "current.png"
+    if not page.is_file():
+        raise RuntimeError(f"{page} does not exist; no device page has been published")
+    target = f"{host}:{path}"
+    command = ["scp", "-O", "-q", "-o", "BatchMode=yes", "-o", "ConnectTimeout=20", str(page), target]
+    proc = run(command, check=False, capture_output=True, text=True, timeout=120)
+    if proc.returncode != 0:
+        raise RuntimeError(f"scp exited {proc.returncode}: {(proc.stderr or proc.stdout).strip()}")
+    return {"pushed": True, "to": target, "bytes": page.stat().st_size}

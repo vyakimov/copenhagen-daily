@@ -1110,7 +1110,7 @@
     },
     {
       "id": "trump-energy-truce-claim",
-      "device_participation": "required",
+      "device_participation": "optional",
       "role": "secondary",
       "kicker": "World",
       "copy": {
@@ -1221,7 +1221,7 @@
     },
     {
       "id": "supreme-court-mail-ballots",
-      "device_participation": "required",
+      "device_participation": "optional",
       "role": "secondary",
       "kicker": "World",
       "copy": {
@@ -1684,7 +1684,7 @@
     },
     {
       "id": "afghanistan-documents-withheld",
-      "device_participation": "required",
+      "device_participation": "optional",
       "role": "brief",
       "kicker": "Denmark",
       "copy": {
@@ -1728,7 +1728,7 @@
     },
     {
       "id": "sewage-citizens-proposal",
-      "device_participation": "required",
+      "device_participation": "optional",
       "role": "brief",
       "kicker": "Denmark",
       "copy": {
@@ -1783,7 +1783,7 @@
     },
     {
       "id": "nato-drone-lithuania",
-      "device_participation": "required",
+      "device_participation": "optional",
       "role": "brief",
       "kicker": "Europe",
       "copy": {
@@ -1857,7 +1857,7 @@
     },
     {
       "id": "emmys-widows-bay-record",
-      "device_participation": "required",
+      "device_participation": "optional",
       "role": "brief",
       "kicker": "Culture",
       "copy": {
@@ -2586,8 +2586,14 @@
     "allow_composition_substitution": true,
     "reserve_story_ids": [],
     "omittable_story_ids": [
+      "trump-energy-truce-claim",
+      "supreme-court-mail-ballots",
       "ai-shares-slide-trump-conspiracy",
       "sweden-centre-party-refuses-kristersson",
+      "afghanistan-documents-withheld",
+      "sewage-citizens-proposal",
+      "nato-drone-lithuania",
+      "emmys-widows-bay-record",
       "ninth-grade-fail-rate",
       "tilst-murder-charges",
       "cars-co2-down-30-percent",

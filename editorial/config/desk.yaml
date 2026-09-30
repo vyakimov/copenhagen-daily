@@ -8,6 +8,13 @@ editor_model: claude-opus-5-5                            # null keeps the CLI's 
 checker_model: null                            # null keeps the checker CLI's default
 collect_before_export: true                    # poll block 1 once before exporting the window
 commit_runs: true                              # git-commit the run directory after an activated publish
+device: true                                   # also render the kitchen screen's page; a device failure leaves the web edition untouched
+
+# Where the device page goes after delivery: scp -O to host:path. The host is a ~/.ssh/config alias
+# whose key passphrase lives in the login keychain. Leave host empty to skip the push.
+device_push:
+  host: MisterGentleman
+  path: /volume1/web/todays_news.png
 
 # Delivery to AWS. Leave bucket empty until the bucket and distribution exist; the run then skips it.
 delivery:

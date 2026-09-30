@@ -6,6 +6,7 @@ import { renderCallout } from "../../assets/html/callout.ts";
 import { formatCutoff, formatEditionDate } from "../../assets/html/format.ts";
 import { softHyphenate } from "../../assets/html/hyphenate.ts";
 import type { EditionContractV1, Story } from "../contract/edition-contract.generated.ts";
+import { LAYOUT_VERSION } from "../contract/version.ts";
 
 export type BodyVariant = "extended" | "standard" | "short";
 export type Placement = {
@@ -24,7 +25,8 @@ export type DevicePlan = {
 };
 
 export const CAPACITY = { secondary: 3, brief: 4 } as const;
-export const STYLESHEET_URL = "/a/device.css";
+/** The same versioned path the release publishes the stylesheet at, so the saved page loads it from the docroot. */
+export const STYLESHEET_URL = `/a/${LAYOUT_VERSION}/device.css`;
 
 const e = escapeHtml;
 

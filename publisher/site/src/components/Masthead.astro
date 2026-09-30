@@ -21,7 +21,11 @@ const date = formatEditionDate(edition.date, edition.language);
   <a href={`/go/${edition.id}/prev/`}>← Previous edition</a>
   <span>
     <a href="/archive/">Edition archive</a>
-    {device && <span class="device-note"> · <a href="./device/page-1.png">View as printed page (1872 × 1404)</a></span>}
+    {device && (
+      <span class="device-note">
+        {" · "}<a href={`/n/${edition.id}/device/page-1.png`}>View as printed page (1872 × 1404)</a>
+      </span>
+    )}
   </span>
   <a href={`/go/${edition.id}/next/`}>Next edition →</a>
 </nav>

@@ -1,9 +1,8 @@
 import copy
-import json
 
 import pytest
-
 from conftest import BUNDLE, EDITORIAL_EXAMPLES, read_json
+
 from news_editorial.build import BuildError, build_edition, validate_spec
 from news_editorial.bundle import load_bundle
 from news_editorial.contract import validate_edition
@@ -81,3 +80,28 @@ def test_headline_only_story_is_marked(policy):
     edition = build_edition(spec, bundle, feeds=read_json(GOLDEN / "feeds.json"))
     story = next(s for s in edition["stories"] if s["id"] == brief["id"])
     assert "digest_of_rss_description" in story["limitations"]
+
+
+def test_only_the_lead_is_required_on_the_device_when_the_spec_is_silent():
+    from news_editorial.build import assign_device_participation
+
+    stories = [{"id": "lead", "role": "lead"}] + [{"id": f"s{i}", "role": "secondary"} for i in range(5)] + [
+        {"id": f"b{i}", "role": "brief"} for i in range(15)
+    ]
+    assigned = assign_device_participation(stories)
+    assert [s["id"] for s in assigned if s["device_participation"] == "required"] == ["lead"]
+    optional = [s["id"] for s in assigned if s["device_participation"] == "optional"]
+    assert optional == [f"s{i}" for i in range(5)] + [f"b{i}" for i in range(15)]
+    # an explicit value in the spec is kept
+    kept = assign_device_participation([{"id": "lead", "role": "lead"}, {"id": "s0", "role": "secondary", "device_participation": "reserve"}])
+    assert kept[1]["device_participation"] == "reserve"
+
+
+def test_a_spec_without_device_fields_builds_an_edition_the_device_can_fit():
+    spec = copy.deepcopy(golden_spec())
+    for story in spec["stories"]:
+        story.pop("device", None)
+        story.pop("fallback", None)
+    doc = build_edition(spec, load_bundle(BUNDLE), feeds=read_json(GOLDEN / "feeds.json"))
+    assert [s["id"] for s in doc["stories"] if s["device_participation"] == "required"] == [doc["stories"][0]["id"]]
+    assert doc["fit_policy"]["omittable_story_ids"] == [s["id"] for s in doc["stories"] if s["device_participation"] == "optional"]

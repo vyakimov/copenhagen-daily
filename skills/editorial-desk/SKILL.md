@@ -98,8 +98,8 @@ eligible. `outside_budget` is eligible but beyond the limit.
 
 The ranking proposes; you decide, and every departure carries a reason. A covered cluster runs only
 as a new development, and the reason names the development. Apply the handbook's budget and
-diversity rule. Roles: exactly one lead, first. The paper is the web edition; there is no device
-page to fit, so write nothing about participation, fallbacks, or short headlines. `sources` are window
+diversity rule. Roles: exactly one lead, first. The paper is the web edition; the kitchen screen is
+fitted mechanically from the same copy, so write nothing about participation, fallbacks, or short headlines. `sources` are window
 numbers, primary first, and the primary is a scoring publisher's article that supplied the most of the
 copy; at most one article per publisher unless a second carries distinct evidence the copy uses;
 dated articles before live blogs and rolling pages. Story ids are slugs never used before; memory

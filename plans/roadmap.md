@@ -151,8 +151,8 @@ stands, and the next publish fails while reading the live index. The fix is a di
 complete release in the durable intent, validated before activation, with the failure evidence kept
 and `live` left alone when it fails. It changes the journal format, so it belongs with the staging
 paper: build it, rehearse a corrupted release on staging, then let it reach production. The review's
-other findings on recovery (1, 2) and verification (4) were fixed the same day; its device findings
-(5, 6, 7) wait on the device path, which every scheduled run skips.
+other findings, on recovery (1, 2), verification (4), and the device path (5, 6, 7), were fixed the
+same day.
 
 ### What it costs
 

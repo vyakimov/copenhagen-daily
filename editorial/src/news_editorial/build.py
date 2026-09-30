@@ -115,7 +115,7 @@ def _story(spec: dict[str, Any], resolver: Resolver, input_id: str, scoring: set
         limitations.append("partial_source_coverage")
     story = {
         "id": story_id,
-        "device_participation": spec.get("device", "required"),
+        "device_participation": spec.get("device"),
         "role": spec["role"],
         "kicker": spec["kicker"],
         "copy": copy,
@@ -128,6 +128,19 @@ def _story(spec: dict[str, Any], resolver: Resolver, input_id: str, scoring: set
     if "kicker_secondary" in spec:
         story["kicker_secondary"] = spec["kicker_secondary"]
     return story
+
+
+# The desk makes no device decisions. The lead is required on the kitchen screen and every other story
+# is optional in prominence order: block 3 fits the page with as many of the most prominent stories as
+# fit, omitting from the least prominent end when the page is full. The desk writes no shorter forms
+# for the screen, so it never marks a story required that the page might not be able to hold. A spec
+# that names a story's participation explicitly keeps it.
+def assign_device_participation(stories: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    for story in stories:
+        if story.get("device_participation"):
+            continue
+        story["device_participation"] = "required" if story["role"] == "lead" else "optional"
+    return stories
 
 
 def build_edition(
@@ -181,7 +194,7 @@ def build_edition(
             "note": edition["note"],
         },
         "inputs": [{"id": edition["input_id"], "sha256": bundle.manifest_sha256}],
-        "stories": stories,
+        "stories": assign_device_participation(stories),
         "fit_policy": {
             "allow_role_fallback": True,
             "allow_composition_substitution": True,

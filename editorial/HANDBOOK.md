@@ -31,8 +31,9 @@ because there deliberately is not one.
 
 ## The budget
 
-The paper is the web edition, and it carries everything accepted. No device page is fitted from a
-run, so nothing is marked for a device and no story needs a shorter form to make room.
+The paper is the web edition, and it carries everything accepted. A kitchen screen shows the lead and
+as many of the next stories as fit, decided mechanically by block 3 from the same copy, so nothing is
+marked for a device by hand and no story needs a shorter form to make room.
 
 | Role | Web |
 |---|---|

@@ -43,6 +43,16 @@ same by hand, for example after a manual `recover`. The site is served unlisted:
 `noindex` meta tag and the release root has a `robots.txt` that disallows everything; CloudFront
 should add an `X-Robots-Tag: noindex` header for files that are not HTML.
 
+## The kitchen screen
+
+With `device: true` in `config/desk.yaml`, every publish also fits and renders block 3's device page
+from the same contract; the desk makes no device decisions. A device failure degrades the publish to
+web-only and the web edition is unaffected. After delivery, `device_push` copies the newest page
+(`live/device/current.png`) to the NAS with `scp -O` (the NAS has no SFTP subsystem); the host is an
+alias in `~/.ssh/config` and its key's passphrase is in the login keychain, so the job carries no
+secret. A failed push is recorded in the run's status and notified, never fatal. By hand:
+`edit_news.sh push-device`. Block 3 needs its pinned Chromium (`publisher/OPERATIONS.md`) on the Mac.
+
 ## Looking before publishing
 
 Block 3's `preview` builds any edition contract into a scratch site and serves it on the loopback

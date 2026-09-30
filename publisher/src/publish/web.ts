@@ -6,7 +6,8 @@ import type { EditionContractV1 } from "../contract/edition-contract.generated.t
 import { canonical } from "./hash.ts";
 import { publisherError } from "./errors.ts";
 
-export const LAYOUT_VERSION = "broadsheet-v3";
+import { LAYOUT_VERSION } from "../contract/version.ts";
+export { LAYOUT_VERSION };
 
 export type IndexEntry = {
   id: string;
