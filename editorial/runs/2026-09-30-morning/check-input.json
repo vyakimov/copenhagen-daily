@@ -1,0 +1,2504 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-09-30-morning",
+  "stories": [
+    {
+      "id": "animal-welfare-six-years-new-agency",
+      "role": "lead",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Six years in prison for the worst animal-welfare breaches under emergency plan",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske",
+            "jp",
+            "tv2",
+            "politiken"
+          ]
+        },
+        {
+          "location": "deck",
+          "sentence": 0,
+          "text": "A new agency will run more inspections, paid for mainly by farmers; pig producers call it a media stunt.",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske",
+            "jp",
+            "tv2",
+            "politiken"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 0,
+          "text": "The maximum sentence for the most serious breaches of animal-welfare rules rises from two to six years in prison under an emergency plan the government and Alternativet presented on Tuesday.",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske",
+            "jp",
+            "tv2"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 1,
+          "text": "A new agency under the Justice Ministry will take over the inspections, which increase by 50 per cent.",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske",
+            "jp",
+            "tv2"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 0,
+          "text": "From 2027 at least two inspectors will attend each visit to pig, cattle and poultry herds, and more than 100 staff will be hired.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 1,
+          "text": "The plan costs 120 million kroner in 2027, rising to 160 million a year by 2029, and farmers will pay most of it through a higher inspection fee.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 0,
+          "text": "'Now we are cleaning up after decades of failing the animals,' said Franciska Rosenkilde, Alternativet's political leader, who presented the plan at the Justice Ministry.",
+          "cites": [
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        },
+        {
+          "location": "standard[3]",
+          "sentence": 0,
+          "text": "Jeppe Bloch Nielsen, chairman of Danske Svineproducenter, calls the plan a 'media stunt' and says it was the agency, not the farmers, that failed.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[3]",
+          "sentence": 1,
+          "text": "He puts a producer's fee at about 4,000 kroner today and says the producers' own calculation shows it could reach 19,000.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "callouts[0]",
+          "sentence": 0,
+          "text": "6 years: Maximum prison sentence for the most serious animal-welfare breaches, up from two",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske",
+            "jp",
+            "tv2",
+            "politiken"
+          ]
+        },
+        {
+          "location": "callouts[1]",
+          "sentence": 0,
+          "text": "Now we are cleaning up after decades of failing the animals. (Franciska Rosenkilde, Alternativet's political leader)",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "60dd9abd-ff54-4f40-9d41-f5f2c881a7fc",
+          "title": "Akutplan med mere kontrol og hårdere straffe skal give landbrugsdyr bedre kår",
+          "description": "<p>Dyrevelfærden i de danske landbrugsstalde er ikke god nok.</p><p>Det samme gælder den kontrol, der har været ført på området.</p><p>Det skal der nu laves om på med flere ressourcer, grundigere kontrolbesøg og hårdere straffe.</p><p>Det fremgår af en ny akutplan, som regeringen sammen med Alternativet tirsdag præsenterede ved et pressemøde i Justitsministeriet.</p><p>- Det har ikke været godt nok indtil nu. Derfor kommer vi nu med en række initiativer, der skal give en langt stærkere kontrol, sagde justitsminister Nicolai Wammen (S).</p><p>Foruden justitsministeren var også minister for natur og dyrevelfærd Christian Rabjerg Madsen (S) og Franciska Rosenkilde, der er politisk leder for Alternativet, med til at præsentere planen.</p><p>Sidstnævnte har været en af de bærende kræfter i forhold til at bringe dyrevelfærden i det danske landbrug på den politiske dagsorden. Derfor var det ifølge Wammen også meget \"naturligt\", at hun tog ordet ved pressemødet.</p><p>- Nu lukker vi hullerne, styrker kontrollen og skærper strafferammen, lød det fra Rosenkilde.</p><p>- Det er helt indiskutabelt et skridt i den rigtige retning.</p><p>Akutplanen kommer i kølvandet på, at Statsrevisorerne i april udtalte skarp kritik af kontrollen med grises velfærd.</p><p>Den indeholder følgende fire hovedpunkter: Genopretning af kontrollen, en styrket dyrevelfærdskontrol, øget kvalitet af kontrollen og hårdere sanktioner og færre undtagelser.</p><p>Det indebærer blandt andet, at der fremover skal være flere og bedre kontroller med grise-, kvæg- og fjerkræbesætningerne.</p><p>Fremover skal der være mindst to kontrollanter ved hvert besøg. Det såkaldte kontroltryk øges også fra 20 til 30 procent.</p><p>Begrebet dækker over, hvor stor en andel af danske besætninger der i løbet af et år kan forvente et kontrolbesøg.</p><p>Planen skal allerede gælde fra 2027.</p><p>For at kunne lykkes med den øgede kontrol ansættes der over 100 flere medarbejdere. Der oprettes også en ny styrelse, som har til hovedopgave at stå for de pågældende kontroller.</p><p>Formanden for Danske Svineproducenter, Jeppe Bloch Nielsen, kalder planen for et \"mediestunt\".</p><p>- Det er utroligt, at politikerne kan få det til at fremstå, som om det er landbruget, der ikke har haft orden i penalhuset.</p><p>- Det er styrelsen, der ikke har gjort sit arbejde, siger han.</p><p>Ifølge formanden er det \"håbløst\" at øge kontrollerne, når man ikke har været i stand til at opretholde det kontroltryk og de vilkår, der allerede var lovet.</p><p>I starten af september offentliggjorde Justitsministeriet et kasseeftersyn af området. Her lød det, at der udestår omkring 1500 opfølgende kontroller fra 2025 og første halvdel af 2026.</p><p>Regningen for akutplanens øgede kontroller ventes at blive 120 millioner kroner i 2027 og derefter stige til 160 millioner kroner om året frem mod 2029.</p><p>Det er landmændene selv, der skal betale det meste af regningen gennem et øget kontrolgebyr.</p><p>Ifølge Bloch Nielsen kan det betyde, at nogle mister deres levebrød.</p><p>- I dag betaler vi omkring 4000 kroner, men vi har i dag selv regnet på, at det kan komme til at koste os 19.000 kroner.</p><p>- Det betyder, at de mindre producenter lukker, før de store gør, siger han.</p><p>Jeppe Bloch Nielsen ser det som, at regeringen straffer landmændene for deres egne mangler.</p><p>Ud over kontrollerne vil mulighederne for at straffe landmænd, der ikke lever op til reglerne for dyrevelfærd, også blive skærpet.</p><p>For fremtiden kan et brud på reglerne give helt op til seks års fængsel.</p><p>- Det må aldrig blive kynisme eller jagten på profit, der bliver afgørende for, om et dyr har det godt, sagde Wammen.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T13:45:01.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/akutplan-med-mere-kontrol-og-haardere-straffe-skal-give-landbrugsdyr-bedre-kaar",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "a9969a10-fbfe-42fb-8385-cf025afb8c63",
+          "title": "Akutpakke for dyrevelfærd øger kontrol og hæver strafferammen",
+          "description": "<p>Der oprettes en styrelse for kontrol med dyrevelfærd i Justitsministeriet, og kontrollen, som har haltet alvorligt de senere år, skal øges med 50 procent.</p><p>Det fremgår af en såkaldt akutpakke, der også indeholder hårdere strafferamme for overtrædelser, præsenteret tirsdag i Justitsministeriet.</p><p>- Det er ikke nogen hemmelighed, at det ikke har været godt nok, som det har været indtil nu. Derfor kommer vi med en række initiativer, siger justitsminister Nicolai Wammen (S).</p><p>Det er dog - noget atypisk - Alternativets politiske leder, Franciska Rosenkilde, som får lov at præsentere akutpakken, da støttepartiet har ført denne dagsorden længe.</p><p>- Nu rydder vi op efter årtiers svigt af dyrene, siger Franciska Rosenkilde.</p><p>- Selv om en akutplan ikke løser alle problemer i et snuptag, så er dette et vigtigt skridt i den rigtige retning.</p><p>Straffene skærpes markant for brud på reglerne. Der vil ske en tredobling af strafferammen for de mest alvorlige brud på dyrevelfærdsreglerne fra to til seks år.</p><p>Akutpakken kommer samlet til at koste 160 millioner kroner årligt, når den er indfaset.</p><p>Justitsministeren tilføjer på pressemødet, at det er besætningsejerne, som kommer til at betale for den styrkede kontrol.</p><p>Regeringen vil blandt andet gennemføre flere dyrevelfærdskontroller og som udgangspunkt gå fra én til to tilsynsførende på hvert kontrolbesøg.</p><p>- Det bliver i højere grad en kontrol, der foregår uden varsel, siger Wammen.</p><p>Der har været særligt fokus på en række sager i danske grisebesætninger, men tirsdagens initiativer fra regeringen gælder også eksempelvis kvæg og fjerkræ.</p><p>Akutpakken kommer i forlængelse af hård kritik fra Rigsrevisionen i april 2026.</p><p>Med den nye regerings tiltræden er ansvaret for dyrevelfærdskontrollen flyttet til Justitsministeriet, hvorfor det er der, at de nye initiativer præsenteres.</p><p>I starten af september offentliggjorde ministeriet et kasseeftersyn af området. Her lød det, at der udestår omkring 1500 opfølgende kontroller fra 2025 og første halvdel af 2026.</p><p>Regeringen vil forsøge at komme sagspuklen til livs ved at øge antallet af kontrollanter og kontroller, som samtidigt skal have et mere solidt fundament.</p><p>Derfor vil regeringen etablere en helt ny, selvstændig styrelse til at drive kontrollerne.</p><p>Justitsminister Nicolai Wammen kan ikke afvise, at det kan skabe bureaukratiske problemer.</p><p>- Kan der være administrative problemer ved at lave en ny styrelse? Ja, det vil der sikkert være, siger han til et spørgsmål fra Ritzau.</p><p>- Men det ændrer ikke på, at det her er en meget klar melding fra regeringen sammen med Alternativet om, at vi i den grad skruer op for antallet af medarbejdere, antallet af kontroller og kvaliteten af kontrollerne.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T10:09:19.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/akutpakke-oeger-baade-kontrol-og-straf-paa-dyrevelfaerden",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:f4f5c8f4-3b32-473e-9d8c-3c1c3cfd705c",
+          "title": "Akutpakke for dyrevelfærd øger kontrol og hæver strafferammen",
+          "description": "Den maksimale straf for alvorlige brud på dyrevelfærdsreglerne hæves fra to til seks års fængsel.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T10:38:30.000000Z",
+          "url": "https://www.dr.dk/nyheder/politik/akutpakke-dyrevelfaerd-oeger-kontrol-og-haever-strafferammen",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:890d6727-e384-57f0-a444-c79bdfcff612",
+          "title": "Akutpakke for dyrevelfærd øger kontrol og hæver strafferammen",
+          "description": "Den maksimale straf for alvorlige brud på dyrevelfærdsreglerne hæves fra to til seks års fængsel.",
+          "authors": [],
+          "categories": [
+            "Politik",
+            "Samfund"
+          ],
+          "published_at": "2026-09-29T11:29:49.000000Z",
+          "url": "https://www.berlingske.dk/politik/akutpakke-for-dyrevelfaerd-oeger-kontrol-og-haever-strafferammen",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19688532",
+          "title": "Ny styrelse etableres, og antallet af kontroller skrues op: Her er akutplanen for dyrevelfærd",
+          "description": "Regeringen og Alternativet har præsenteret en plan for strammere kontrol med dyrevelfærd.",
+          "authors": [],
+          "categories": [
+            "Politik"
+          ],
+          "published_at": "2026-09-29T10:00:00.000000Z",
+          "url": "https://jyllands-posten.dk/politik/ECE19688532/her-er-akutplanen-for-bedre-dyrevelfaerd/",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/politik/2026-09-29-akutpakke-for-dyrevelfaerd-oeger-kontrol-og-haever-strafferammen",
+          "title": "Akutpakke for dyrevelfærd øger kontrol og hæver strafferammen",
+          "description": "Den maksimale straf for alvorlige brud på dyrevelfærdsreglerne hæves fra to til seks års fængsel.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T10:51:35.000000Z",
+          "url": "https://nyheder.tv2.dk/politik/2026-09-29-akutpakke-for-dyrevelfaerd-oeger-kontrol-og-haever-strafferammen",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11001866",
+          "title": "Ny akutpakke for dyrevelfærd vedtaget med Franciska Rosenkilde i usædvanlig hovedrolle",
+          "description": "Den maksimale straf for alvorlige brud på dyrevelfærdsreglerne hæves fra to til seks års fængsel.",
+          "authors": [],
+          "categories": [
+            "Politik"
+          ],
+          "published_at": "2026-09-29T10:48:57.000000Z",
+          "url": "https://politiken.dk/danmark/politik/art11001866/Ny-akutpakke-for-dyrevelf%C3%A6rd-vedtaget-med-Franciska-Rosenkilde-i-us%C3%A6dvanlig-hovedrolle",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "fairford-vans-no-explosives",
+      "role": "secondary",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "No bombs in the RAF Fairford vans, British police say, only petrol",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr",
+            "jp",
+            "ft",
+            "bbc"
+          ]
+        },
+        {
+          "location": "deck",
+          "sentence": 0,
+          "text": "The five men arrested near the US bomber base remain under investigation on bail.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr",
+            "jp",
+            "ft",
+            "bbc"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 0,
+          "text": "British counter-terror police found no improvised explosive devices in the vans stopped near RAF Fairford early on Sunday, they said on Tuesday, but seized a quantity of petrol.",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske",
+            "jp"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 0,
+          "text": "The five men arrested on Sunday were released on bail on Monday and remain under investigation.",
+          "cites": [
+            "kristeligt_dagblad",
+            "ft",
+            "bbc"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 1,
+          "text": "Laurence Taylor, head of Britain's national counter-terror policing, said the release was an investigative decision.",
+          "cites": [
+            "kristeligt_dagblad",
+            "ft",
+            "bbc"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 2,
+          "text": "One of the suspects had himself called the emergency number shortly before his arrest.",
+          "cites": [
+            "kristeligt_dagblad",
+            "ft",
+            "bbc"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 0,
+          "text": "Police have searched properties in London and expect to finish the investigation around the base on Wednesday.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "9984417a-fcd6-468e-b7d1-97660ce866be",
+          "title": "Politi fandt ingen bomber i varevogne ved britisk militærbase",
+          "description": "<p>Der blev ikke fundet nogen improviserede sprængladninger i de varevogne, britisk politi stoppede ved luftbasen Fairford tidligt søndag morgen.</p><p>Politiet har dog beslaglagt \"en mængde benzin\" fra varevognene.</p><p>Det meddeler det britiske politis antiterrorenhed tirsdag.</p><p>Beboere i området alarmerede politiet tidligt søndag morgen, efter at have observeret de \"mistænkelige\" varevogne.</p><p>Flybasen, der ligger i det sydvestlige England, benyttes af amerikanske styrker til angreb mod Iran.</p><p>Fem mænd, der blev anholdt søndag, er fortsat under efterforskning, efter at de blev løsladt mod kaution mandag.</p><p>Politiet har understreget, at beslutningen om at løslade dem er truffet af hensyn til efterforskningen.</p><p>- Jeg forstår, hvorfor denne udvikling vil være kommet som en overraskelse for mange, siger Laurence Taylor, chef for Storbritanniens nationale antiterrorpoliti.</p><p>- Men jeg vil gerne understrege, at det var en efterforskningsmæssig beslutning, og at den er baseret på erfaring og en grundig overvejelse af politiets beføjelser.</p><p>Tirsdag har britisk politi også oplyst, at der er blevet foretaget ransagninger af ejendomme i London.</p><p>Efterforskningen omkring flybasen Fairford er ved at blive trappet ned og forventes at være helt afsluttet onsdag.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T17:33:10.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/politi-fandt-ingen-bomber-i-varevogne-ved-britisk-militaerbase",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:9353bd7f-3af8-5949-9cda-3968990a10a6",
+          "title": "Politi fandt ingen bomber i varevogne ved britisk militærbase",
+          "description": "Der er fundet benzin, men ingen sprængladninger i efterforskningen af et formodet komplot rettet mod flybase.",
+          "authors": [],
+          "categories": [
+            "Internationalt",
+            "Samfund"
+          ],
+          "published_at": "2026-09-29T17:33:54.000000Z",
+          "url": "https://www.berlingske.dk/internationalt/politi-fandt-ingen-bomber-i-varevogne-ved-britisk-militaerbase",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:f2863434-40f1-4ec4-a40a-a8ccfdfca844",
+          "title": "Britisk politi har ikke fundet sprængstoffer i efterforskning af mulig terrorplan mod flybase",
+          "description": "Fem mistænkte blev i går løsladt baseret på 'efterforskningsmæssige beslutninger', lyder det fra politiet.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T17:43:20.000000Z",
+          "url": "https://www.dr.dk/nyheder/udland/britisk-politi-har-ikke-fundet-spraengstoffer-i-efterforskning-af-mulig-terrorplan-mod-flybase",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19691046",
+          "title": "Politi fandt ingen bomber i varevogne ved britisk militærbase",
+          "description": "Der er fundet benzin, men ingen sprængladninger i efterforskningen af et formodet komplot rettet mod flybase.",
+          "authors": [],
+          "categories": [
+            "Europa"
+          ],
+          "published_at": "2026-09-29T18:54:23.000000Z",
+          "url": "https://jyllands-posten.dk/international/europa/ECE19691046/politi-fandt-ingen-bomber-i-varevogne-ved-britisk-militaerbase/",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "e9b18367-5144-4775-8ddd-d1d133672db0",
+          "title": "Suspect in RAF Fairford incident called 999 shortly before arrest",
+          "description": "Motive for the emergency call is unclear, as police continue to investigate incident at air base used by US bombers",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T20:19:58.000000Z",
+          "url": "https://www.ft.com/content/e9b18367-5144-4775-8ddd-d1d133672db0",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cqn8m342rgk9o",
+          "title": "One of the five men arrested near RAF Fairford called 999 himself",
+          "description": "He made the call almost an hour before a farmer also called police after seeing men in balaclavas.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-30T00:12:24.000000Z",
+          "url": "https://www.bbc.co.uk/news/articles/cqn8m342rgk9o?at_campaign=rss&at_medium=RSS",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "trump-ai-morally-binding-deal",
+      "role": "secondary",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Trump lets AI companies police themselves under a 'morally binding' deal",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr",
+            "borsen",
+            "jp",
+            "politiken",
+            "guardian",
+            "nytimes",
+            "wsj"
+          ]
+        },
+        {
+          "location": "deck",
+          "sentence": 0,
+          "text": "Google, Anthropic, Meta, OpenAI and Nvidia have signed; a company that breaks it faces no consequences.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr",
+            "borsen",
+            "jp",
+            "politiken",
+            "guardian",
+            "nytimes",
+            "wsj"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 0,
+          "text": "Donald Trump and the heads of Google, Anthropic, Meta, OpenAI and Nvidia, together with Elon Musk, have signed an agreement that leaves the control of AI to the companies rather than to new rules.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 1,
+          "text": "Asked on Tuesday whether it was legally binding, Trump said: 'It is morally binding, I think.'",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 0,
+          "text": "The agreement asks each company for four layers of control, including an independent outside party to check that internal controls work, and says that legislation may make sense over time.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 1,
+          "text": "Because it is only morally binding, a company that fails to live up to it faces no consequences.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 0,
+          "text": "'We have taken a good first step,' said Mark Zuckerberg, Meta's chief executive.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        },
+        {
+          "location": "callouts[0]",
+          "sentence": 0,
+          "text": "It is morally binding, I think. (Donald Trump, US president)",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "60ae9363-ce94-4d65-98a6-7cea526e00ea",
+          "title": "Trump vil lade AI-branchen styre sig selv i stedet for at indføre regler",
+          "description": "<p>Amerikanske teknologivirksomheder skal hellere selv regulere kunstig intelligens, frem for at staten skal fastsætte regler.</p><p>Det siger USA's præsident, Donald Trump, efter et frokostmøde tirsdag med topchefer fra nogle af de store virksomheder inden for kunstig intelligens (AI).</p><p>Han og tech-lederne har underskrevet en aftale, der ifølge Trump er \"en form for beskyttelse\". Det siger han til journalister efter frokostmødet.</p><p>På et spørgsmål fra en journalist om, hvorvidt det er en juridisk bindende aftale, svarer præsidenten:</p><p>- Det er moralsk forpligtende, synes jeg.</p><p>Trump offentliggjorde lidt senere den underskrevne aftale på sit sociale medie, Truth Social.</p><p>Af aftalen fremgår det, at hver enkelt selskab er ansvarlig for at udvikle sin egen teknologi på en ansvarlig måde. Det skal foregå gennem det, der beskrives som robuste interne test.</p><p>Derudover opfordrer aftalen til at indføre fire lag af kontrol. Blandt andet at få en ekstern og uafhængig partner til at gennemgå og evaluere, om den interne kontrol og monitorering foregår efter hensigten.</p><p>Bestyrelserne i techselskaberne opfordres desuden til at nedsætte en uafhængig komité, der skal føre tilsyn med både den interne og eksterne kontrol.</p><p>Aftalen er ud over Donald Trump underskrevet af topcheferne for Google, Anthropic, Meta, OpenAI, Nvidia og Elon Musk, der er involveret i flere selskaber - blandt andet X, Tesla og SpaceX.</p><p>Jensen Huang, der er topchef for chip-giganten Nvidia, siger til journalister efter mødet, at han ikke ser en konflikt mellem innovation, teknologi og sikkerhed.</p><p>- Vil vi gå fremad med det her på ansvarlig og sikker vis, siger han.</p><p>Trump siger, at der efter hans opfattelse er en høj grad af selvregulering (\"self-policing\", red.) blandt AI-virksomhederne.</p><p>Men præsidenten tilføjer, at \"vi overvejer at etablere et udvalg, der kan føre tilsyn\" med den nye teknologi.</p><p>Trumps melding kommer på et tidspunkt, hvor USA's Kongres presser mere og mere på for at få et stærkere tilsyn med branchen.</p><p>Blandt deltagerne ved frokostmødet i Det Hvide Hus var Amazon-chef Jeff Bezos, Meta-direktør Mark Zuckerberg, direktør Sundar Pichai fra Google og Tesla-direktør Elon Musk, der har stiftet selskabet SpaceXAI (tidligere xAI).</p><p>Også chefer fra OpenAI, Anthropic, Microsoft og Nvidia var med sammen med politiske ledere fra Kongressen.</p><p>Den republikanske leder Mike Johnson siger, at det er vigtigt at finde \"den rette balance\" mellem innovation og en eller anden form for tilsyn.</p><p>- Vi har ikke brug for et moratorium. Vi behøver ikke at kaste os ud i at overregulere dette, for så vil vi tabe kapløbet til Kina, sagde Johnson inden tirsdagens møde i et interview mandag med Fox Business Network.</p><p>Tirsdagens møde blev afholdt på et tidspunkt, hvor holdningen til AI bliver stadig mere kritisk i Washington D.C., hvor de folkevalgte er under pres fra deres vælgere for at bremse eller tøjle udviklingen.</p><p>Det skyldes især en frygt for, at den nye teknologi kan erstatte menneskers arbejdskraft og dermed få store samfundsmæssige konsekvenser.</p><p>En anden type bekymringer drejer sig om, hvorvidt AI-systemerne kan begynde at agere uden menneskelig kontrol.</p><p>Senest har OpenAI undskyldt for et tilfælde af hacking udført af en AI-agent mod en australsk myndighedshjemmeside.</p><p>Få dage forinden havde OpenAI advaret flere regeringer, offentlige myndigheder og universiteter om, at AI-agenter fra selskabet kan have opført sig \"uhensigtsmæssigt\" omkring deres hjemmesider.</p><p>Endelig er mange amerikanske vælgere bekymrede over de store datacentre, der følger med AI-teknologien.</p><p>Spørgsmålet er blevet et stridspunkt i valgkampene til midtvejsvalget hos begge partier. Flere og flere lokalsamfund er bekymrede over stigende elregninger samt presset på vandforsyninger og arealer.</p><p>RITZAU/AFP</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T20:00:50.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/trump-vil-lade-ai-branchen-styre-sig-selv-i-stedet-indfoere-regler",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "ec2ffcc6-9c5d-4ba6-b8f7-49042c369726",
+          "title": "Trump præsenterer ”moralsk bindende” aftale for selskaber bag kunstig intelligens",
+          "description": "Godmorgen og velkommen til onsdagens Morgensamling, der begynder med en ny aftale om kunstig intelligens. Den amerikanske præsident, Donald Trump, har nemlig offentliggjort en \"moralsk bindende\" aftale med de største kunstig intelligens-selskaber i verden, skriver han på Truth Social . I aftalen står der blandt andet, at virksomheder bag kunstig intelligens-modeller bør indføre fire lag af sikkerhed. Det kan for eksempel være et hold af internt ansatte, som sikrer, at alle kontroller fungerer som tilsigtet, eller at virksomheden indgår i et samarbejde med en uafhængig ekstern part for at udføre uafhængige vurderinger af, om kontroller fungerer som tilsigtet. Da aftalen kun er \"moralsk bindende\", har det ikke nogen konsekvenser, hvis virksomhederne ikke lever op til den. Der står dog i aftalens slutning, at det \"med tiden kan give mening\" at lave aftalen om til egentlige love og regler. Som en del af den nye aftale vil USA's præsident, Donald Trump, også ændre navnet, så det ikke længere hedder kunstig intelligens, men i stedet \"superintelligens\". Foto: Tierney L. Cross/EPA/Ritzau Scanpix Natur og kultur tilsidesættes i forsvarsprojekter Siden september sidste år har det været muligt for danske ministre at tilsidesætte hensynet til blandt andet miljø, kultur og natur, hvis det planlagte projekt tjener \"væsentlige\" formål for forsvaret eller beredskabet. Og den mulighed er i den grad blevet brugt, viser en ny gennemgang foretaget af Politiken . Loven har siden vedtagelse været i brug på en lang række bygge- og anlægsprojekter fordelt over hele Danmark i form af eksempelvis afskæring af klagerettigheder eller fravigelse af love og regler. I lovforslagets bemærkninger står, at fravigelser af mere indgribende karakter vil kræve \"særdeles tungtvejende grunde\", og at ministrene i almindelighed bør \"udforme de konkrete fravigelser på den mindst indgribende måde\". Ph.d.-studerende Kenneth Løvenskjold Andreasen fra Juridisk Institut på Syddansk Universitet siger til Politiken, at \"det skaber bekymring for, om praksis er proportional med det oprindelige formål beskrevet i loven\". Egenbetaling i folkeskolen presser familier Selvom den danske folkeskole er gratis, kan ekstraudgifter til blandt andet arrangementer, madordninger og skolerejser løbe op i flere tusinde kroner. Og det presser familier med trængte økonomier, viser nye undersøgelser. I en spørgeskemaundersøgelse foretaget af Egmont Fonden svarer 39 procent af de økonomisk dårligt stillede forældre, at deres barn på grund af udgifter til skolegang ikke kan gå til fritidsaktiviteter. 27 procent vurderer, at udgifterne får barnet til at føle sig udenfor i klassen. Du kan læse mere om undersøgelserne og høre, hvad Mødrehjælpens direktør, Ninna Thomsen, og Red Barnets generalsekretær, Johanne Schmidt-Nielsen, mener om emnet, i dagens Kristeligt Dagblad her . Første kvindelige premierminister i Marokko Fatima Ezzahra El Mansouri er navnet på Marokkos første kvindelige premierminister, der tirsdag blev udpeget af landets konge. Det meddeler det marokkanske hof ifølge Reuters. Udnævnelsen som ny premierminister kommer, efter at Fatima Ezzahra El Mansouris parti, Autenticitet og Modernitet (PAM), blev det største parti ved parlamentsvalget i Marokko, der fandt sted den 23. september i år. Efter udnævnelsen skal premierministeren forsøge at danne en regering for en femårig periode i Marokko, hvor 98 procent af befolkningen er muslimsk. Fatima Ezzahra El Mansouri har frem til nu været minister for national planlægning, byplanlægning og boliger samt borgmester i Marrakesh. Foto: Jalal Morchidi/EPA/Ritzau Scanpix Særlige jademasker kommer til Danmark For første gang nogensinde skal mayaernes jademasker udstilles uden for Mexico. Og det bliver i Danmark, nærmere bestemt ved Aarhus, det kommer til at ske. Fra den 9. oktober kan man på Moesgaard Museum ved Aarhus se 200 genstande, der er udlånt fra andre museer. Nogle af genstandene har aldrig før været vist for offentligheden, skriver museet i en pressemeddelelse. \"Med udstillingen skal de besøgende forstå mayaernes oplevelse af verden og indflydelsen på den,\" siger direktør på Moesgaard Museum, Mads Kähler Holst, om de historiske genstande fra mayaerne. En civilisation, der blandt andet var med til at udvikle skriftsprog, kalendersystemer og monumenter. En af de udstillede jademasker på Moesgaard Museum har i sin tid tilhørt grundlæggeren af slangedynastiet, som er et dynasti, museet beskriver som \"et af de mest magtfulde herskerdynastier\". Foto: Secretaría de Cultura-INAH-México/Free Kan det give udfordringer, når præster krammer? Vidste du, at du hver tirsdag kan læse med, når Kristeligt Dagblads Kirke&Tro-redaktør, Anders Ellebæk Madsen, kommenterer en sag, der har tiltrukket sig særlig opmærksomhed? I denne uge er emnet præstekrammere – altså præster, der krammer kirkegængere. I nyhedsbrevet lyder det blandt andet, at \"krammet har vundet frem som hilseform, det er indiskutabelt\", men at det også byder på nye udfordringer. Hvis du synes, det lyder interessant, vil jeg anbefale dig at tilmelde dig nyhedsbrevet her . Til sidst vil jeg bare sige tak, fordi du læste med.",
+          "authors": [
+            "Astrid Karen Lyngholm Johansen"
+          ],
+          "categories": [],
+          "published_at": "2026-09-30T05:10:00.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/bagsiden/trump-praesenterer-moralsk-bindende-aftale-selskaber-bag-kunstig-intelligens",
+          "primary": false
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "f4873356-75da-42ce-9a4c-1065eae70a52",
+          "title": "Zuckerberg om AI-sikkerhed: Vi har taget et godt første skridt",
+          "description": "<p>Lederne for flere af de største amerikanske techselskaber har forpligtet hinanden til at opbygge interne og eksterne kontrolsystemer inden for udvikling af kunstig intelligens.</p><p>Det siger administrerende direktør for Meta, Mark Zuckerberg, ifølge mediet Fox News efter et frokostmøde tirsdag.</p><p>På mødet deltog chefkolleger fra andre techselskaber og USA's præsident, Donald Trump.</p><p>- Vi kan alle blive enige om, at det amerikanske folk og vores kunder skal vide, at det, vi bygger, fungerer efter hensigten.</p><p>- Derfor har vi udarbejdet et sæt principper og forpligtelser om at opbygge robuste interne kontrolsystemer, siger Mark Zuckerberg.</p><p>Meta-chefen tilføjer, at den interne sikkerhedskontrol vil blive koblet sammen med flere lag af revision og kontrol.</p><p>- Det begynder med en intern risikovurdering, samtidig med at der vil være ekstern revision og kontrol.</p><p>- Samtidig er vi blevet enige om, at alle vores bestyrelser skal gennemgå de rapporter, som kontrollanterne udarbejder, siger Mark Zuckerberg.</p><p>Donald Trump har senere tirsdag offentliggjort en aftale, der er underskrevet af topcheferne for Google, Anthropic, Meta, OpenAI, Nvidia og Elon Musk, der er involveret i flere techselskaber.</p><p>Aftalen indeholder fire opfordringer, der vedrører intern og ekstern kontrol, som selskaberne har forpligtet sig til.</p><p>Techselskaberne har desuden skrevet under på, at de vil mødes jævnligt for at etablere fælles standarder, der kan forbedre sikkerheden. Det tilføjes, at det over tid kan blive nødvendigt at indføre lovgivning.</p><p>Bekymringer for sikkerheden ved kunstig intelligens er de seneste måneder taget til efter sager, hvor AI-agenter har været ude af kontrol og har hacket hjemmesider.</p><p>Mark Zuckerberg betegner tirsdagens møde som et godt første skridt for at imødegå bekymringen.</p><p>- Tanken er ikke, at det er det eneste, vi nogensinde kommer til at gøre. Tanken er, at det er en begyndelse og en aftale, som hele branchen kan samles om, siger Zuckerberg.</p><p>Med på mødet var blandt andet ledere fra OpenAI, Anthropic, Microsoft, Nvidia, Google og Amazon. Også Tesla-direktør Elon Musk, der har stiftet rumfartsvirksomheden SpaceX, deltog.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T21:30:36.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/zuckerberg-om-ai-sikkerhed-vi-har-taget-et-godt-foerste-skridt",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:cc4b3dfa-da84-5b85-8b77-bfbdc239c3e2",
+          "title": "Trump vil lade AI-branchen styre sig selv i stedet for at indføre regler",
+          "description": "Efter møde med topchefer fra de førende AI-virksomheder taler Trump om en \"moralsk forpligtende\" ny aftale.",
+          "authors": [],
+          "categories": [
+            "Internationalt",
+            "Samfund"
+          ],
+          "published_at": "2026-09-29T22:17:50.000000Z",
+          "url": "https://www.berlingske.dk/internationalt/trump-vil-lade-ai-branchen-styre-sig-selv-i-stedet-for-at-indfoere-regler",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:6cba4f6b-ead3-4655-bd82-7aeef4a7b954",
+          "title": "Trump vil lade AI-branchen styre sig selv i stedet for at indføre regler",
+          "description": "Efter møde med topchefer fra de førende AI-virksomheder taler Trump om en \"moralsk forpligtende\" ny aftale.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T20:11:29.000000Z",
+          "url": "https://www.dr.dk/nyheder/udland/trump-vil-lade-ai-branchen-styre-sig-selv-i-stedet-indfoere-regler",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/4098442-trump-vil-lade-ai-branchen-styre-sig-selv-i-stedet-for-at-indfore-regler",
+          "title": "Trump vil lade AI-branchen styre sig selv i stedet for at indføre regler",
+          "description": "Efter møde med topchefer fra de førende AI-virksomheder taler Trump om en “moralsk forpligtende” ny aftale",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-30T04:11:22.000000Z",
+          "url": "https://borsen.dk/nyheder/udland/4098442-trump-vil-lade-ai-branchen-styre-sig-selv-i-stedet-for-at-indfore-regler",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19691247",
+          "title": "Trump vil lade AI-branchen styre sig selv i stedet for at indføre regler",
+          "description": "Efter møde med topchefer fra de førende AI-virksomheder taler Trump om en \"moralsk forpligtende\" ny aftale.",
+          "authors": [],
+          "categories": [
+            "International"
+          ],
+          "published_at": "2026-09-30T03:55:14.000000Z",
+          "url": "https://jyllands-posten.dk/international/ECE19691247/trump-vil-lade-aibranchen-styre-sig-selv-i-stedet-for-at-indfoere-regler/",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11002712",
+          "title": "Trump vil lade AI-branchen styre sig selv i stedet for at indføre regler",
+          "description": "Efter møde med topchefer fra de førende AI-virksomheder taler Trump om en ’moralsk forpligtende’ ny aftale.",
+          "authors": [],
+          "categories": [
+            "Internationalt"
+          ],
+          "published_at": "2026-09-29T20:16:18.000000Z",
+          "url": "https://politiken.dk/internationalt/art11002712/Trump-vil-lade-AI-branchen-styre-sig-selv-i-stedet-for-at-indf%C3%B8re-regler",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/us-news/2026/sep/29/trump-ai-deal-tech-ceos-superintelligence",
+          "title": "Trump announces vague ‘morally binding’ AI deal among tech CEOs for ‘tremendous self-policing’",
+          "description": "US president also issues executive order officially rebranding ‘artificial intelligence’ as ‘superintelligence’ Donald Trump announced on Tuesday that the heads of the largest US tech and AI companies had signed on to a “morally binding” agreement to put controls on artificial intelligence. He announced the deal, called the Joint Commitment On Frontier Responsibilities, following a White House luncheon with top tech executives. “It’s almost like a constitution in a way, and the biggest ​people in the world signed that, and ​I signed it as president, and it really ⁠is a form of protection,” Trump said. Continue reading...",
+          "authors": [
+            "Nick Robins-Early"
+          ],
+          "categories": [
+            "AI (artificial intelligence)",
+            "Anthropic",
+            "Dario Amodei",
+            "Donald Trump",
+            "Elon Musk",
+            "Mark Zuckerberg",
+            "Meta",
+            "Nvidia",
+            "OpenAI",
+            "SpaceX",
+            "Technology",
+            "US news",
+            "US politics"
+          ],
+          "published_at": "2026-09-29T23:21:25.000000Z",
+          "url": "https://www.theguardian.com/us-news/2026/sep/29/trump-ai-deal-tech-ceos-superintelligence",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/09/29/us/politics/ai-trump-meta-microsoft-openai.html",
+          "title": "At A.I. Event, Trump Asks Meta, OpenAI and Microsoft to Make Safety Decisions Themselves",
+          "description": "President Trump’s meetings with tech leaders produced some voluntary safeguards and a commitment to rebrand artificial intelligence as “super intelligence,” the term that Mr. Trump prefers.",
+          "authors": [
+            "Katie Rogers and Cecilia Kang"
+          ],
+          "categories": [
+            "Amazon.com Inc",
+            "Anthropic AI LLC",
+            "Artificial Intelligence",
+            "Google Inc",
+            "High Net Worth Individuals",
+            "Meta Platforms Inc",
+            "Microsoft Corp",
+            "OpenAI Labs",
+            "Regulation and Deregulation of Industry",
+            "Social Media",
+            "United States Politics and Government"
+          ],
+          "published_at": "2026-09-29T23:20:44.000000Z",
+          "url": "https://www.nytimes.com/2026/09/29/us/politics/ai-trump-meta-microsoft-openai.html",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003933786",
+          "title": "Trump Defends Light-Touch AI Strategy After Industry Sounds Alarms",
+          "description": "The president says industry “self regulation” and existing authorities including the Justice Department will keep artificial-intelligence tools safe.",
+          "authors": [
+            "Amrith Ramkumar"
+          ],
+          "categories": [],
+          "published_at": "2026-09-29T23:30:00.000000Z",
+          "url": "https://www.wsj.com/tech/ai/trump-defends-light-touch-ai-strategy-after-industry-sounds-alarms-2f9599eb?mod=rss_Technology",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "estonia-blames-russia-arson",
+      "role": "secondary",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Estonia blames Russian intelligence for arson at a defence company",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "guardian",
+            "ft",
+            "bbc"
+          ]
+        },
+        {
+          "location": "deck",
+          "sentence": 0,
+          "text": "Frederiksen calls it another example of Russia's increasingly aggressive behaviour.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "guardian",
+            "ft",
+            "bbc"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 0,
+          "text": "The arson attack on the Estonian defence company Milrem Robotics in mid-August was sabotage ordered by Russia's intelligence services, Estonia's defence minister, Margus Tsahkna, wrote on X on Tuesday; he says the suspects have been caught.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 1,
+          "text": "Dmitry Peskov, the Russian president's spokesman, rejected the accusation as false.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 0,
+          "text": "Mette Frederiksen called the attack 'yet another example of the sharpened threat picture and Russia's increasingly aggressive behaviour', and said the government would keep arming, keep supporting Ukraine and invest heavily in a security package for the police and PET.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 0,
+          "text": "Mark Rutte, Nato's secretary-general, urged member states to 'keep calm, carry on as before and support Ukraine'.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "b04a36a2-e26c-4c03-b792-b9600c828801",
+          "title": "Estland anklager Rusland for at stå bag ildspåsættelse - Rusland afviser",
+          "description": "<p>Estland anklager tirsdag Rusland for at stå bag en ildspåsættelse mod en forsvarsvirksomhed i landet.</p><p>Det skriver Estlands forsvarsminister, Margus Tsahkna, i et opslag på X.</p><p>Her skriver ministeren, at det med sikkerhed kan konkluderes, at ildspåsættelsen, som fandt sted i midten af august mod virksomheden Milrem Robotics, var en \"sabotagehandling beordret af Den Russiske Føderations efterretningstjenester\".</p><p>De formodede gerningspersoner er ifølge Tsahkna blevet pågrebet og \"er ikke længere nogen trussel\".</p><p>- Sabotagehandlingen er en del af Ruslands bredere kampagne på tværs af Europa, som har det mål at intimidere os og svække vores støtte til Ukraine, skriver ministeren i opslaget og tilføjer:</p><p>- Vores svar vil være det modsatte. Vi vil øge både vores støtte til Ukraine og vores pres på Rusland.</p><p>Dmitrij Peskov, der er Ruslands præsidentielle talsperson, afviser samme dag anklagerne som falske, skriver Reuters.</p><p>Danmarks statsminister, Mette Frederiksen, kalder i et skriftligt citat hændelsen for \"endnu et eksempel på det skærpede trusselsbillede og Ruslands stadig mere aggressive adfærd\".</p><p>- Det understreger blot alvoren af FE’s og PET’s seneste vurderinger om truslen fra Rusland og sabotagetruslen mod Danmark. Regeringen tager truslerne alvorligt, og Rusland vil ikke få held med at få os til at ændre kurs, siger hun og fortsætter:</p><p>- Vi vil ufortrødent fortsætte oprustningen, støtten til Ukraine. Og så vil vi investere massivt i en sikkerhedspakke, der skal styrke politiet og PET’s indsatser i forhold til det aktuelle trusselsbillede.</p><p>Natos generalsekretær, Mark Rutte, opfordrer ligeledes tirsdag til, at Nato-landene \"bevarer roen, fortsætter som hidtil og støtter Ukraine\", skriver AFP.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T11:23:01.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/estland-anklager-rusland-staa-bag-ildspaasaettelse-rusland-afviser",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:b9dedf47-caa8-5f72-985b-673373ec2619",
+          "title": "Estland anklager Rusland for at stå bag ildspåsættelse - Rusland afviser",
+          "description": "I august blev estisk forsvarsfirma udsat for ildspåsættelse. Estland anklager tirsdag Rusland for at stå bag.",
+          "authors": [],
+          "categories": [
+            "Internationalt",
+            "Samfund"
+          ],
+          "published_at": "2026-09-29T11:55:54.000000Z",
+          "url": "https://www.berlingske.dk/internationalt/estland-anklager-rusland-for-at-staa-bag-ildspaasaettelse-rusland-afviser",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/sep/29/estonia-blames-russia-arson-attack-drone-maker-ukraine",
+          "title": "Estonia blames Russia for arson attack on drone maker supplying Ukraine",
+          "description": "European and Nato leaders express support for Estonia after August attack on manufacturer in Tallinn Europe live – latest updates European and Nato leaders have expressed full support for Estonia and Ukraine after the Baltic state said an August arson attack on a drone manufacturer supplying Kyiv was an act of sabotage commissioned by Moscow’s security services. Estonia’s foreign minister, Margus Tsahkna, said on social media on Tuesday that such attacks were “absolutely unacceptable” and that Russia’s chargé d’affaires in the Estonian capital, Tallinn, was being summoned to his ministry. Continue reading...",
+          "authors": [
+            "Jon Henley Europe correspondent and agencies"
+          ],
+          "categories": [
+            "Estonia",
+            "Europe",
+            "Russia",
+            "Ukraine",
+            "World news"
+          ],
+          "published_at": "2026-09-29T14:20:39.000000Z",
+          "url": "https://www.theguardian.com/world/2026/sep/29/estonia-blames-russia-arson-attack-drone-maker-ukraine",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "c269b475-b37a-4fe8-b138-849d8525ff59",
+          "title": "Russia behind arson attack on defence company, says Estonia",
+          "description": "Estonian foreign minister Margus Tsahkna says Moscow is ‘boiling western democracies like a frog’",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T09:12:12.000000Z",
+          "url": "https://www.ft.com/content/c269b475-b37a-4fe8-b138-849d8525ff59",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "c6m27l4er4jxo",
+          "title": "Estonia blames Russia for arson at defence company supplying Ukraine",
+          "description": "Russia has been accused of launching sabotage attacks across a number of European Nato countries which have been helping Ukraine.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T19:36:41.000000Z",
+          "url": "https://www.bbc.co.uk/news/articles/c6m27l4er4jxo?at_campaign=rss&at_medium=RSS",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "finance-bill-defence-22-billion",
+      "role": "secondary",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Finance bill adds 22 billion kroner for defence in 2027",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "jp"
+          ]
+        },
+        {
+          "location": "deck",
+          "sentence": 0,
+          "text": "Donations to Ukraine will now need backing in the Folketing, the tax minister says.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "jp"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 0,
+          "text": "The government's finance bill will add 22 billion kroner for defence in 2027, and defence spending is to rise to about 40 billion kroner in 2030, Berlingske reports.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "jp"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 0,
+          "text": "That keeps Denmark on course for Nato's target of 3.5 per cent of GDP before 2030.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 1,
+          "text": "Counting the Ukraine fund, Denmark already spends 3.4 per cent in 2026 by Nato's own count, according to Berlingske.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 0,
+          "text": "Jakob Engel-Schmidt, the tax minister, says the government will now ask the Folketing who will back donations to Ukraine.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 1,
+          "text": "Rasmus Brun Pedersen, associate professor at Aarhus University, tells Kristeligt Dagblad this points to a government facing hard priorities, aware that welfare is more popular than defence.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "callouts[0]",
+          "sentence": 0,
+          "text": "22 billion kroner: Extra for defence in the 2027 finance bill",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "jp"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "ec56b616-756c-453f-bd74-4ebb37b6828a",
+          "title": "Forsvaret får 22 milliarder kroner ekstra i finanslovsforslag",
+          "description": "<p>Regeringen vil afsætte yderligere 22 milliarder kroner til Forsvaret i 2027 som en del af dens kommende finanslovsforslag.</p><p>Det skriver Berlingske tirsdag.</p><p>Planen er, at investeringen i Forsvaret skal stige til omkring 40 milliarder kroner i 2030, skriver avisen.</p><p>Forventningen er dermed, at Danmark fortsat når at indfri Natos mål om at bruge 3,5 procent af bnp på militært forsvar inden 2030.</p><p>Ifølge Berlingske fremgår det af Natos egen opgørelse, at Danmark allerede i 2026 har brugt 3,4 procent af bnp på forsvar, hvis man tæller pengene med fra den såkaldte Ukrainefond.</p><p>Finansminister Peter Hummelgaard (S) fortæller, at regeringens første finanslovsforslag kommer til at bære præg af, at \"vi simpelthen skærer ind til benet\".</p><p>- Der er noget, vi skal have lidt mindre af, for at vi så til gengæld kan investere i fællesskabet, i velfærden, i trygheden og i et konkurrencedygtigt erhvervsliv, siger han til Berlingske.</p><p>Støtten til Ukraine vil fortsat også være en del af de penge, der sættes af til forsvar i de kommende år, fastslår økonomi- og indenrigsminister Pia Olsen Dyhr (SF).</p><p>- Det her handler både om at forsvare Danmark og Europa, samtidig med at vi også beskytter velfærden. Dansk økonomi er stærk nok til at kunne begge dele, siger hun.</p><p>Det er dog med det forbehold ifølge skatte- og vækstminister Jakob Engel-Schmidt (M), at regeringen er nødsaget til at spørge Folketinget bredt om, hvad der er opbakning til, når det gælder donationer til Ukraine.</p><p>Målet om at øge forsvarsinvesteringerne er ikke noget nyt, og også den tidligere SVM-regering havde stort fokus på det. Dengang lød målsætningen, at man ikke ville nå de 3,5 procent af bnp før i 2030.</p><p>- Det er vigtigt at sige, at pengetræet ikke vokser ind i himlen, og arbejdet kommer ikke dumpende ned fra himlen, sagde den daværende økonomiminister Stephanie Lose (V).</p><p>Nato-målet om, at samtlige medlemslande skal bruge mindst 3,5 procent af bnp på militært forsvar, blev aftalt på et Nato-topmøde i Haag 2025.</p><p>Tidligere lå målet i Nato på 2 procent fra den såkaldte Wales-aftale, der blev indgået i 2014.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T08:10:11.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/forsvaret-faar-22-milliarder-kroner-ekstra-i-finanslovsforslag",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:dc197902-7323-5819-bb7a-b2391185be08",
+          "title": "Forsvaret får 22 milliarder kroner ekstra i finanslovsforslag",
+          "description": "Forsvarsudgifterne forventes at stige til cirka 40 milliarder kroner i 2030 ifølge Berlingske.",
+          "authors": [],
+          "categories": [
+            "Politik",
+            "Samfund"
+          ],
+          "published_at": "2026-09-29T08:36:46.000000Z",
+          "url": "https://www.berlingske.dk/politik/forsvaret-faar-22-milliarder-kroner-ekstra-i-finanslovsforslag",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19687832",
+          "title": "Forsvaret får 22 milliarder kroner ekstra i finanslovsforslag",
+          "description": "Forsvarsudgifterne forventes at stige til cirka 40 milliarder kroner i 2030 ifølge Berlingske.",
+          "authors": [],
+          "categories": [
+            "Politik"
+          ],
+          "published_at": "2026-09-29T08:28:57.000000Z",
+          "url": "https://jyllands-posten.dk/politik/ECE19687832/forsvaret-faar-22-milliarder-kroner-ekstra-i-finanslovsforslag/",
+          "primary": false
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "9fc9f7cf-84db-4847-93c4-040377e47dca",
+          "title": "Et vigtigt \"men\" fra skatteministeren viser, at Ukraine-støtten er begyndt at gøre ondt",
+          "description": "Ukrainestøtten har i de fire år, fuldskalakrigen har stået på, været hævet over politiske prioriteringer, debatter og stort set også partifarve. Men nu er det slut med at gribe i det økonomiske råderums budget, hver gang der skal findes milliarder til Ukraine. For råderummet er allerede afsat, og derfor kan politikere først ty til midlerne igen i 2035. Og derfor lød der et vigtigt \"men\" i den uforbeholdne støtte til Ukraine, da fire ministre præsenterede regeringens finanslovsforslag i Berlingske tirsdag. De sorgløse dage er overstået rent økonomisk, sagde skatteminister Jakob Engel-Schmidt (Mod.) til avisen: \"Det betyder også, at vi kommer til at spørge Folketinget, når vi taler om donationer til Ukraine, hvem der vil være med til det.\" Det tyder på en regering, der skal til at lave nogle svære prioriteringer nu og godt ved, at velfærd er mere populært end forsvar, siger lektor i international politik ved Aarhus Universitet Rasmus Brun Pedersen. Hvordan tolker du Jakob Engel-Schmidts udtalelse? Meget af det, som har finansieret støtten til Ukraine og i det hele taget oprustningen, har været taget af det økonomiske råderum. Det er penge, vi har haft, og der har ikke været en konflikt mellem velfærdsgoder og Ukrainestøtte. Det vil sige, at det ikke for alvor har gjort ondt på danskerne, og det kan det komme til nu. Det tyder på, at der er ved at komme en træthed i dele af regeringen, fordi indenrigspolitiske dagsordener også er vigtige, når man er politiker, og når der skal prioriteres penge, er velfærdspolitik typisk mere populært end forsvarspolitik. Pengene til Ukraine udgør en stor del af vores forsvarsbudget. Er der også en diskussion i disse år om, hvorvidt man skal bruge flere af pengene på vores eget territorialforsvar? Jeg har indtryk af, at man stadig ser støtten til Ukraine som der, hvor man gør den største forskel. Også i forhold til vores egen sikkerhed, fordi man afskrækker russerne og samtidig holder dem beskæftigede, så de ikke fokuserer så meget på os. Men igen, det er dyrt at opruste og opretholde disse udgifter, så der kan godt komme et arbejde for forsvarsforligskredsen i forhold til, hvordan man skal fordele pengene til territorialforsvar og Ukraine-støtte. Mens den danske Ukrainefonds midler har været faldende i år, har Sverige og Norge skruet op for støtten. Hvad er det et udtryk for? Danmark har under hele krigen været et af de lande, der giver allermest til Ukraine, hvis man tager højde for befolkningstal. Og det er vigtigt at huske, at selvom Danmarks bidrag er faldet, så ligger vi stadig højt på donorlisten. Jeg har indtryk af, at vi stadig er loyale og har Ukraine som en prioritet, men det er klart, at nu når pengene i Ukrainefonden er brugt, så rykker det ind i en politisk forhandling, om man skal tilføje flere penge til fonden. Norge er i en særlig situation med deres oliefond, så det gør ikke ondt på nordmændene at øge støtten til Ukraine. Begynder det at gøre ondt på Danmark? Det er dyrt. Og det har vi ikke mærket så meget i Danmark, fordi vi har finansieret det med det økonomiske råderum – sådan lidt som Joakim von And, som bare kunne tage nogle penge fra lageret. Men nu er pengene brugt, og så går det ind i den daglige drift, hvor der skal prioriteres mellem indenrigspolitiske dagsordener og det udenrigspolitiske. Alting er oppe i luften, og der er mange, der gerne vil have de penge til andre formål. I nogle af vores nabolande, særligt i den tyske befolkning, ser man en stigende utilfredshed med støtten til Ukraine. Hvordan ser det ud i Danmark? Vi ligger stadig højt i opbakningen fra befolkningen sammenlignet med andre europæiske lande. Det kan have noget at gøre med, at vi faktisk selv er et frontlinjeland i en udsat position, fordi vi kontrollerer Ruslands adgang til Østersøen sammen med Sverige.",
+          "authors": [
+            "Lisa Seidelin"
+          ],
+          "categories": [],
+          "published_at": "2026-09-29T16:00:00.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/et-vigtigt-men-fra-skatteministeren-viser-ukraine-stoetten-er-begyndt-goere-ondt",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "prisons-record-occupancy",
+      "role": "secondary",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Danish prisons hold more inmates than they have places",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr",
+            "politiken",
+            "via_ritzau"
+          ]
+        },
+        {
+          "location": "deck",
+          "sentence": 0,
+          "text": "Occupancy is the highest ever, and the prison officers' union expects it to rise as tougher sentences take effect.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr",
+            "politiken",
+            "via_ritzau"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 0,
+          "text": "Danish prisons hold 4,650 inmates in 4,300 places, an average occupancy of 105.4 per cent and the highest ever, the prison officers' union Fængselsforbundet says.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr",
+            "politiken"
+          ]
+        },
+        {
+          "location": "standard[0]",
+          "sentence": 1,
+          "text": "Last year the figure was 102.7 per cent.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr",
+            "politiken"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 0,
+          "text": "Occupancy has averaged 135 per cent at Vejle remand prison this year and 140 per cent at Hillerød in recent months.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[1]",
+          "sentence": 1,
+          "text": "Cells are fitted with bunk beds, and hobby rooms, visiting rooms and offices are taken into use.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "standard[2]",
+          "sentence": 0,
+          "text": "The union expects more overcrowding, partly because the penal reform's tougher sentences for violence and rape take effect in two stages; half came in February and the rest follows in January.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        },
+        {
+          "location": "callouts[0]",
+          "sentence": 0,
+          "text": "105.4 per cent: Average occupancy of Danish prisons, the highest ever",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr",
+            "politiken",
+            "via_ritzau"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "e4907660-e690-461f-a215-ce6482e4ede2",
+          "title": "Der er flere indsatte end pladser i landets fængsler",
+          "description": "<p>Der er blevet mere trangt i de danske fængsler, hvor der er flere indsatte, end der er plads til.</p><p>Det skriver Fængselsforbundet i en pressemeddelelse.</p><p>Der er på nuværende tidspunkt 4650 indsatte i landets fængsler, men kun 4300 pladser.</p><p>Belægningen i landets fængsler er i gennemsnit på 105,4 procent, hvilket er det højeste niveau nogensinde. Sidste år lå belægningen på 102,7 procent.</p><p>De mange indsatte skaber overbelægning og lægger et pres på fængslernes kapacitet. Overbelægning opstår, når der er flere indsatte, end fængslerne har pladser til.</p><p>Det betyder, at der bliver indsat køjesenge i cellerne, så der er plads til to personer i stedet for en, eller inddraget hobbyrum, besøgslokaler eller kontorer.</p><p>Pladsen har været mest trang i Vejle Arrest, hvor der i gennemsnit har været en belægning på 135 procent i år.</p><p>Ifølge Jan Bruun, tillidsrepræsentant i Vejle Arrest, lægger det et pres på arresthuset, hvor cellerne går mere og mere i forfald.</p><p>- Vi bruger meget tid på at finde plads til indsatte, bytte rundt, når en dobbeltcelle ikke fungerer mellem to indsatte, og flytte igen, når nogle får ophævet brev- og besøgskontrol, udtaler han i meddelelsen.</p><p>I Hillerød Arrest har der de seneste måneder været en belægning på 140 procent, hvilket ifølge arresthuset stiller store krav til personalet.</p><p>De mange indsatte kan også mærkes i Randers Arrest, hvor belægningen i gennemsnit har været på 115 procent i år.</p><p>Ifølge arresthusets tillidsrepræsentant har det øget konfliktniveauet blandt de indsatte.</p><p>Samtidig er der udsigt til mere overbelægning i landets fængsler, fremgår det.</p><p>Det skyldes blandt andet strafreformens skærpelser for vold og voldtægt. Halvdelen af skærpelserne trådte i kraft i februar i år, mens yderligere skærpelser træder i kraft til januar.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-30T04:57:29.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/der-er-flere-indsatte-end-pladser-i-landets-faengsler",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:ec20b2e6-78cc-57b6-9818-941ee49911c9",
+          "title": "Der er flere indsatte end pladser i landets fængsler",
+          "description": "Flere indsatte lægger et historisk pres på kapaciteten i de danske fængsler, oplyser Fængselsforbundet.",
+          "authors": [],
+          "categories": [
+            "Indland",
+            "Samfund"
+          ],
+          "published_at": "2026-09-30T05:23:48.000000Z",
+          "url": "https://www.berlingske.dk/indland/der-er-flere-indsatte-end-pladser-i-landets-faengsler",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:1b0b6a31-bbd7-48a2-8dfc-e0176201c3cb",
+          "title": "Forbund: Rekordmange indsatte i danske fængsler",
+          "description": "Flere indsatte lægger et historisk pres på kapaciteten i de danske fængsler, oplyser Fængselsforbundet.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-30T05:39:04.000000Z",
+          "url": "https://www.dr.dk/nyheder/indland/forbund-rekordmange-indsatte-i-danske-faengsler",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11002756",
+          "title": "Der er flere indsatte end pladser i landets fængsler",
+          "description": "Flere indsatte lægger et historisk pres på kapaciteten i de danske fængsler, oplyser Fængselsforbundet.",
+          "authors": [],
+          "categories": [
+            "Danmark"
+          ],
+          "published_at": "2026-09-30T05:01:43.000000Z",
+          "url": "https://politiken.dk/danmark/art11002756/Der-er-flere-indsatte-end-pladser-i-landets-f%C3%A6ngsler",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15193561/?publisherId=11858213&lang=da",
+          "title": "Ny rekord: 105 procent overbelæg i fængslerne",
+          "description": "Indstrømningen af indsatte skaber et historisk pres på fængslernes kapacitet. Alligevel er der nye strafskærpelser på vej.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T16:32:49.000000Z",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15193561/ny-rekord-105-procent-overbelaeg-i-faengslerne?lang=da",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "german-drone-first-test-flight",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "German military drone makes first test flight over Jutland",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr",
+            "jp",
+            "politiken"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "A five-tonne German military drone, flown by a pilot in Schleswig, on Tuesday made the first test flight of an unmanned aircraft its size in Danish airspace.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "a20af738-a861-4e56-8ec7-e14f2009468d",
+          "title": "Militær overvågningsdrone på fem ton flyver for første gang over Danmark",
+          "description": "<p>En militær overvågningsdrone, der fjernstyres fra Tyskland, flyver tirsdag over Jylland.</p><p>Det skriver Forsvaret på sin hjemmeside.</p><p>Det er ifølge Forsvaret den første testflyvning i dansk luftrum med et ubemandet militært luftfartøj af den størrelse.</p><p>Flyet vejer over fem ton, er 13 meter langt og har et vingefang på 26 meter. Det flyver i syv kilometers højde - samme luftrum som den bemandede luftfart.</p><p>Dronen af typen \"German Heron TP\" tilhører det tyske flyvevåben, Luftwaffe, og piloten, der styrer den, sidder på en militær flyvestation i Schleswig i Tyskland.</p><p>Flyvningen begynder over den dansk-tyske grænse i Sønderjylland og går over den østlige del af Jylland til Aalborg.</p><p>Herefter flyver dronen retur til Tyskland via den vestlige del af Jylland.</p><p>Den samlede flyvetid er ifølge Forsvarets nyhed beregnet til cirka to timer.</p><p>Under flyvningen er den tyske pilot i kontakt med flyveledelsen i Naviair, der har ansvaret for at lede fly gennem det danske luftrum.</p><p>Trafikstyrelsen har ifølge Forsvaret godkendt, at sikkerhedsprocedurerne er i orden, når militærdronen skal flyve uden for synsvidde.</p><p>- Det betyder, at vi har kontrolleret, at der er styr på alle de procedurer, der skal sørge for en sikker navigation i forhold til andre luftfartøjer i luftrummet - også hvis man undervejs skulle miste styringen eller radioforbindelsen, siger kontorchef i Trafikstyrelsen Signe Finderup Slot til Forsvarets hjemmeside.</p><p>Flyvningen sker som led i forberedelserne til, at flyvevåbnet i 2028 modtager egne ubemandede fly af typen \"General Atomics MQ-9B\".</p><p>De skal operere fra Flyvestation Aalborg under Eskadrille 729 og skal blandt andet anvendes til patruljering og overvågning i luftrummet over Grønland og i Nordatlanten.</p><p>Brigadechef Hans Peter Andersen kalder testflyvningen for en milepæl.</p><p>- Testflyvningen er endnu et vigtigt skridt mod, at vi modtager vores egne ubemandede fly i de kommende år.</p><p>- Opbygningen af Eskadrille 729 er i fuld gang, og her får vi i samarbejde med gode allierede i Luftwaffe mulighed for at teste flyvning med ubemandede luftfartøjer i dansk luftrum for første gang, siger han på hjemmesiden.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T08:12:09.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/militaer-overvaagningsdrone-paa-fem-ton-flyver-foerste-gang-over-danmark",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:75adf56b-b3f8-57b9-acc0-e87c48b26af5",
+          "title": "Militær overvågningsdrone på fem ton flyver for første gang over Danmark",
+          "description": "Tysk pilot fjernstyrer militærdrone, der sendes på testflyvning i syv kilometers højde over Jylland.",
+          "authors": [],
+          "categories": [
+            "Danmark",
+            "Indland",
+            "Samfund"
+          ],
+          "published_at": "2026-09-29T08:14:54.000000Z",
+          "url": "https://www.berlingske.dk/danmark/militaer-overvaagningsdrone-paa-fem-ton-flyver-for-foerste-gang-over-danmark",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:99daf170-2750-4bba-bc07-31f179bd0d22",
+          "title": "Kæmpedroner er det danske forsvars fremtid – og nu har de testet luftrummet af",
+          "description": "En stor overvågningsdrone har i løbet af i dag fløjet rundt i det danske luftrum, mens piloten sad i Tyskland.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T18:20:00.000000Z",
+          "url": "https://www.dr.dk/nyheder/indland/kaempedroner-er-det-danske-forsvars-fremtid-og-nu-har-de-testet-luftrummet-af",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19689037",
+          "title": "Generalen ville »gerne have haft dem i går«: Det er lige det her, Danmark mangler. Nu kommer de",
+          "description": "Tirsdag tog Flyvevåbnet et stort skridt på vej til at få Danmarks køb af fire gigantiske og milliarddyre droner sat ind i forsvaret af Grønland og i den betændte situation i Østersøen.",
+          "authors": [
+            "Henrik Philip Hare"
+          ],
+          "categories": [
+            "Indland"
+          ],
+          "published_at": "2026-09-29T16:11:53.000000Z",
+          "url": "https://jyllands-posten.dk/indland/ECE19689037/nybrud-over-jyllands-luftrum-flyvevaabnet-har-lige-taget-skridtet-mod-en-ny-tid/",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11001172",
+          "title": "Militær overvågningsdrone på fem ton flyver for første gang over Danmark",
+          "description": "Tysk pilot fjernstyrer militærdrone, der sendes på testflyvning i syv kilometers højde over Jylland.",
+          "authors": [],
+          "categories": [
+            "Danmark"
+          ],
+          "published_at": "2026-09-29T08:17:36.000000Z",
+          "url": "https://politiken.dk/danmark/art11001172/Milit%C3%A6r-overv%C3%A5gningsdrone-p%C3%A5-fem-ton-flyver-for-f%C3%B8rste-gang-over-Danmark",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "climate-activist-kluge-fined",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Climate activist pushed over by a guardsman is fined 17,000 kroner",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske",
+            "jp",
+            "politiken",
+            "tv2"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Copenhagen City Court on Tuesday fined Oskar Kluge, the climate activist pushed over by a guardsman at the king's New Year speech last year, 17,000 kroner on all 48 counts.",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "21196ed8-9526-4584-8bc7-e15bf5c54b80",
+          "title": "Klimaaktivist idømt bøder efter protest ved nytårstalen",
+          "description": "<p>En video af klimaaktivisten Oskar Kluge, der blev skubbet i jorden foran Amalienborg nytårsaften, gik medierne rundt, da året netop var skudt i gang.</p><p>Tirsdag har Københavns Byret idømt den i dag 25-årige aktivist fra organisationen Nødbremsen for at have overtrådt ordensbekendtgørelsen i forbindelse med episoden.</p><p>Det oplyser Københavns Byret.</p><p>I retssagen, der også omhandler en lang række andre episoder i forbindelse med aktivisme, idømmes Oskar Kluge dagbøder på samlet 17.000 kroner.</p><p>Ved protesten i forbindelse med kongens nytårstale sidste år sprang han ved Livgardens vagtskifte ind foran Livgarden og tog opstilling med et banner.</p><p>- Klimakollaps - træk nødbremsen, lød det på det orange banner.</p><p>Han og to andre aktivister blev bortvist fra stedet, men Oskar Kluge undlod at efterkomme det. Han forblev på stedet med sit banner og kastede konfetti.</p><p>Et særligt øjeblik fra episoden blev meget omtalt, da en video viste, hvordan en garder fra Livgarden skubbede aktivisten, så han faldt til jorden.</p><p>Garderen blev efterfølgende anmeldt for at have skubbet Oskar Kluge, men blev aldrig sigtet.</p><p>Først besluttede Forsvarsministeriets Auditørkorps at indstille efterforskningen, og i sommer lukkede Generalauditoriatet sagen helt.</p><p>Det blev lagt til grund, at aktivisten forud for skubbet var et sted på slotspladsen, der ikke var beregnet til publikum, og at den inspektionshavende befalingsmand havde påbudt aktivisten at gå væk.</p><p>Det fremstod ifølge Generalauditoriatet åbenlyst, at der på det sted, hvor aktivisten var, skulle være fri passage for vagtparaden.</p><p>I retssagen i Københavns Byret er Oskar Kluge dømt for alle 48 forhold, som anklagemyndigheden rejste tiltale for, oplyser byretten.</p><p>Blandt andet tog han også 29. august 2024 opstilling på slotspladsen foran Amalienborg med et banner. Han var inden for et afspærret område og nægtede at forlade stedet.</p><p>Det skete i forbindelse med, at statsminister Mette Frederiksen (S) præsenterede en ministerrokade, og DR sendte direkte tv fra stedet.</p><p>Desuden er han dømt for hærværk ved at have sprøjtet orange maling på Københavns store juletræ på Rådhuspladsen 3. december 2023.</p><p>Desuden er der en lang række tilfælde af brud på ordensbekendtgørelsen og overtrædelse af færdselsloven ved flere tilfælde, hvor han satte sig på kørebanen på veje i København og nægtede at forlade stederne.</p><p>Organisationen Nødbremsen, som Oskar Kluge er en del af, skriver på deres hjemmeside, at \"vi står i et klimakollaps,\" og at der \"skal stoppes for projekter, der forøger udledningerne\".</p><p>Trods dommen er Oskar Kluge glad for, at han protesterede.</p><p>- Jeg er glad for, at jeg protesterede, og det er kun blevet tydeligere denne sommer, hvad det hele handler om. Vores fælles livsgrundlag bliver hevet væk under os.</p><p>- Det betyder tørke og tusinder af døde i hedebølger til følge. Som befolkning i det her land har vi en mulighed for at stoppe regeringen i at skubbe os ud i denne katastrofe, hvis vi går sammen og siger fra, skriver han i en mail.</p><p>- Den her dom ændrer ikke ved noget af det, og derfor fortsætter vi i Nødbremsen arbejdet mod regeringens fossile politik og for et liv, vi alle kan trives i, lyder det afslutningsvist.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T11:50:00.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/klimaaktivist-idoemt-boeder-efter-protest-ved-nytaarstalen",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:223babad-b7d1-484d-b53f-372646a75125",
+          "title": "Der er faldet dom i sag mod aktivist efter optrin nytårsaften",
+          "description": "En klimaaktivist sprang ind foran Livgardens parademarch med banner efter kongens nytårstale sidste år. Nu har han fået sin dom og en bøde på 17.000 kroner.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T11:45:56.000000Z",
+          "url": "https://www.dr.dk/nyheder/indland/der-er-faldet-dom-i-sag-mod-aktivist-efter-optrin-nytaarsaften",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:3b474ea1-5bb7-5b19-b3ab-2f90f851cd9a",
+          "title": "Klimaaktivist får bøder for protest efter kong Frederiks tale",
+          "description": "Klimaaktivisten, der blev skubbet omkuld af en garder, er nu blevet dømt.",
+          "authors": [
+            "Thomas Søgaard Rohde",
+            "thro@berlingske.dk (Thomas Søgaard Rohde)"
+          ],
+          "categories": [
+            "Indland",
+            "Samfund"
+          ],
+          "published_at": "2026-09-29T14:29:21.000000Z",
+          "url": "https://www.berlingske.dk/indland/klimaaktivist-faar-boeder-for-protest-efter-kong-frederiks-tale",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19689824",
+          "title": "Klimaaktivist idømt bøder efter protest ved nytårstalen",
+          "description": "En garder skubbede en klimaaktivist væk, da han stillede sig op foran Livgarden ved kongens nytårstale sidste år.",
+          "authors": [
+            "Anne Katrine Lund-Hansen"
+          ],
+          "categories": [
+            "Indland"
+          ],
+          "published_at": "2026-09-29T13:02:00.000000Z",
+          "url": "https://jyllands-posten.dk/indland/ECE19689824/klimaaktivist-idoemt-boeder-efter-protest-ved-nytaarstalen/",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11002206",
+          "title": "Han blev skubbet i jorden af en garder: Nu har klimaaktivist fået sin straf efter protest ved nytårstalen",
+          "description": "En garder skubbede en klimaaktivist væk, da han stillede sig op foran Livgarden ved kongens nytårstale sidste år.",
+          "authors": [],
+          "categories": [
+            "Danmark"
+          ],
+          "published_at": "2026-09-29T12:43:38.000000Z",
+          "url": "https://politiken.dk/danmark/art11002206/Nu-har-klimaaktivist-f%C3%A5et-sin-straf-efter-protest-ved-nyt%C3%A5rstalen",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/krimi/2026-09-29-klimaaktivist-idoemt-boeder-efter-protest-ved-nytaarstalen",
+          "title": "Klimaaktivist idømt bøder efter protest ved nytårstalen",
+          "description": "En garder skubbede en klimaaktivist væk, da han stillede sig op foran Livgarden ved kongens nytårstale sidste år.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T12:44:19.000000Z",
+          "url": "https://nyheder.tv2.dk/krimi/2026-09-29-klimaaktivist-idoemt-boeder-efter-protest-ved-nytaarstalen",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "tv2-chief-fined-name-ban",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "TV 2's chief executive fined for breaching a name ban",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske",
+            "jp",
+            "politiken",
+            "tv2"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "The court in Odense fined TV 2's chief executive, Anne Engdal Christensen, 25,000 kroner for breaching a name ban in the documentary 'Den sorte svane'; DR reports that TV 2 will appeal.",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "37123b73-7878-42d4-9241-e2e00a768b28",
+          "title": "TV 2-direktør får bøde for at bryde navneforbud i Den sorte svane",
+          "description": "<p>TV 2 brød et navneforbud for daværende advokat Lise Roulund, da tv-stationen i maj 2024 udsendte tv-dokumentaren \"Den sorte svane\".</p><p>Tirsdag har Retten i Odense idømt TV 2's administrerende direktør, Anne Engdal Christensen, en bøde på 25.000 kroner i sagen.</p><p>Samtidig idømmes daværende redaktionschef Michael Nørgaard Jensen en bøde på 15.000 kroner.</p><p>Byretten afviser dog, at de skal betale en tortgodtgørelse til Lise Roulund, som havde stillet krav om 150.000 kroner.</p><p>Det var i slutningen af maj 2024, at TV 2 sendte den siden meget omtalte dokumentar \"Den sorte svane\", hvor man ifølge tv-kanalen får indblik i den kriminelle underverden - og hvordan rockere arbejder sammen med erhvervsfolk og advokater.</p><p>I dokumentaren følger man blandt andet et opsat kontor, hvor TV 2 har aftalt med muldvarpen, Amira Smajic, at der filmes med skjult kamera, mens hun mødes med forskellige personer.</p><p>På de skjulte optagelser ser man blandt andre Lise Roulund, der dengang var advokat.</p><p>Men i juni 2023 havde Lise Roulund fået et navneforbud i en hvidvasksag ved Københavns Byret, og derfor tiltalte anklagemyndigheden TV 2-cheferne for brud på navneforbud.</p><p>Ifølge anklageskriftet var TV 2-direktøren og redaktionschefen henholdsvis ansvarlig og medansvarlig for, at tv-stationen udsendte \"Den sorte svane\" om formodet hvidvask af penge i kriminelle miljøer, hvori man flere gange viste og navngav Lise Roulund som muligt medvirkende til den formodede hvidvask.</p><p>Ritzau har endnu ikke set rettens begrundelse for at idømme direktøren og den nu tidligere redaktionschef bøder i sagen.</p><p>TV 2 har i sagen nægtet at have brudt reglerne.</p><p>I marts fortalte Ulla Pors, der var nyhedsdirektør på TV 2, til fagbladet Journalisten, at TV 2 slet ikke var bekendt med den sag, politiets efterforskning, sigtelsen eller navneforbuddet, da tv-stationen var i sidste fase og ved at trykke udgiv på dokumentaren i maj 2024.</p><p>Hun forklarede, at Lise Roulunds advokat først \"få dage før udgivelsen\" gjorde TV 2 opmærksom på navneforbuddet og politiets sigtelse.</p><p>- Vi omtaler ikke sigtelsen mod Lise Roulund og refererer ikke politiets efterforskning, men lægger kun frem, hvad vi selv har fundet.</p><p>- Det her kan betyde, at vi som journalister ikke kan fortælle nye historier, hvis en person har andre sager kørende - og det er dybt problematisk, sagde hun til Journalisten.</p><p>Lise Roulund skriver tirsdag i en sms til Ritzau, at dommen er en \"vigtig sejr for retssikkerheden\".</p><p>- Men dommen gør ikke den skade om, som TV 2's offentliggørelse har påført mig. Konsekvenserne for mit arbejde og mit liv indtrådte øjeblikkeligt, skriver hun blandt andet.</p><p>Lise Roulund er fortsat mistænkt for hvidvask og nægter sig skyldig.</p><p>Hun har ikke længere navneforbud i sagen. Det blev ophævet i efteråret 2024.</p><p>Ritzau forsøger også at få en kommentar fra TV 2. Derfor vides det endnu ikke, om tv-kanalen ønsker at anke dommen.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T08:27:17.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/tv-2-direktoer-faar-boede-bryde-navneforbud-i-den-sorte-svane",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:36ce4fde-3c09-48fb-bbd7-83b9c8a281a0",
+          "title": "TV 2-chefer får bøder for at bryde navneforbud i 'Den sorte svane'",
+          "description": "Tirsdag er TV 2-chefer dømt for at bryde navneforbud, som beskyttede Lise Roulund. Tv-stationen vil anke.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T09:04:52.000000Z",
+          "url": "https://www.dr.dk/nyheder/indland/tv-2-chefer-faar-boeder-bryde-navneforbud-i-den-sorte-svane",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:005eeda8-9084-5179-9ace-4e143f34822c",
+          "title": "TV 2-direktør får bøde for at bryde navneforbud i Den sorte svane",
+          "description": "Tirsdag er TV 2-chefer dømt for at bryde navneforbud, som beskyttede Lise Roulund. Tv-stationen vil anke.",
+          "authors": [],
+          "categories": [
+            "Indland",
+            "Samfund"
+          ],
+          "published_at": "2026-09-29T12:49:47.000000Z",
+          "url": "https://www.berlingske.dk/indland/tv-2-direktoer-faar-boede-for-at-bryde-navneforbud-i-den-sorte-svane",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19690038",
+          "title": "TV 2-direktør får bøde for at bryde navneforbud i Den sorte svane",
+          "description": "Tirsdag er TV 2-chefer dømt for at bryde navneforbud, som beskyttede Lise Roulund. Tv-stationen vil anke.",
+          "authors": [],
+          "categories": [
+            "Kultur"
+          ],
+          "published_at": "2026-09-29T12:56:22.000000Z",
+          "url": "https://jyllands-posten.dk/kultur/ECE19690038/tv-2direktoer-faar-boede-for-at-bryde-navneforbud-i-den-sorte-svane/",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11001294",
+          "title": "TV 2's direktør får bøde på 25.000 kroner",
+          "description": "Da TV 2 udsendte dokumentaren ’Den sorte svane’ i 2024, var en af de medvirkende beskyttet af navneforbud.",
+          "authors": [],
+          "categories": [
+            "Medier"
+          ],
+          "published_at": "2026-09-29T08:33:22.000000Z",
+          "url": "https://politiken.dk/kultur/medier/art11001294/TV-2s-direkt%C3%B8r-f%C3%A5r-b%C3%B8de-p%C3%A5-25.000-kroner",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/samfund/2026-09-29-tv-2-direktoer-faar-boede-for-at-bryde-navneforbud-i-den-sorte-svane",
+          "title": "TV 2-direktør får bøde for at bryde navneforbud i Den sorte svane",
+          "description": "Tirsdag er TV 2-chefer dømt for at bryde navneforbud, som beskyttede Lise Roulund. Tv-stationen vil anke.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T13:17:53.000000Z",
+          "url": "https://nyheder.tv2.dk/samfund/2026-09-29-tv-2-direktoer-faar-boede-for-at-bryde-navneforbud-i-den-sorte-svane",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "hydrogen-pipeline-extra-support",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Hydrogen pipeline to Germany gets 5.6 billion kroner more in state support",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "borsen",
+            "jp",
+            "via_ritzau"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "A Folketing agreement adds 5.6 billion kroner in operating support for the hydrogen pipeline from Esbjerg to the German border, on top of 10.9 billion, and eases producers' booking commitments.",
+          "cites": [
+            "kristeligt_dagblad"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "9b6f35ed-2c8f-4b7a-a1f7-1575c8db32a2",
+          "title": "Folketinget øger støtten til brintrør med milliarder",
+          "description": "<p>Den offentlige støtte til brintrøret fra Jylland til Tyskland bliver nu væsentligt større.</p><p>I en ny aftale mellem regeringen og flere af Folketingets partier afsættes der yderligere 5,6 milliarder kroner til driftsstøtte.</p><p>Det kommer oven i de allerede afsatte 10,9 milliarder kroner til projektet.</p><p>Dermed tager staten en større del af risikoen for brintrørets succes på et tidspunkt, hvor brintmarkedet langtfra er køreklart.</p><p>- Vi går ind i projektet med åbne øjne. Brintmarkedet er stadig umodent, og et brintrør er et stort projekt med flere risici, siger klima-, energi- og forsyningsminister Samira Nawa i en pressemeddelelse.</p><p>Ministeren insisterer dog på, at brintprojektet skal lykkes.</p><p>- For en grønnere og mere sikker fremtid og for en ny lovende dansk eksport, siger hun.</p><p>Brintrøret skal gå fra Esbjerg over Veerst ved Egtved og ned til den tyske grænse. Den rute skaber en form som et syvtal, hvilket har givet projektet navnet Syvtallet.</p><p>Ideen med røret er, at danske virksomheder kan producere grøn brint ved hjælp af vedvarende energi og sælge det til tyske virksomheder.</p><p>Tyskland er rigt på store industrielle virksomheder, som i dag har en stor CO2-udledning.</p><p>Hvis de kan bruge grøn brint i deres industrielle processer, kan det sænke deres CO2-aftryk.</p><p>Derfor er Tyskland meget interesseret i røret.</p><p>Man har fra tysk side givet tilsagn om støtte til fem brintprojekter i Danmark for i alt 12 milliarder kroner fra den tyske stat og fra EU.</p><p>Rationalet med den store offentlige støtte er, at man dermed hjælper en umoden klimaindustri på vej.</p><p>For at sikre, at røret bliver brugt, er brintvirksomhederne underlagt et såkaldt bookingkrav.</p><p>Her skal producenterne forpligte sig til at levere en vis mængde brint til røret.</p><p>Den nye aftale slækker på dette krav, fordi det har vist sig teknisk svært at leve op til for producenterne.</p><p>De forskellige producenter skal samlet set booke en plads i røret svarende til 0,5 GW.</p><p>Men de skal kun binde sig økonomisk til 0,1 GW brint. Samtidig bliver fristen for den økonomiske garanti forlænget, så virksomhederne får større sikkerhed for, at røret faktisk bygges, når de er klar med deres brint.</p><p>Særligt De Konservative er glade for dette element, som har været en prioriteret sag i forhandlingerne.</p><p>- Det bør give den nødvendige sikkerhed for, at så mange af projekterne som muligt bliver til virkelighed, siger Anders Storgaard, klima-, energi- og forsyningsordfører i Konservative, i en pressemeddelelse.</p><p>I industrien er man da også tilfredse med den øgede statsstøtte og lempede krav til virksomhederne selv.</p><p>Nu bør rammerne for en ny dansk eksport være på plads, lyder det fra Green Power Denmark.</p><p>- Aftalen skaber det nødvendige fundament for at gøre grøn brint fra Danmark til et nyt eksporteventyr, hvor danske brintvirksomheder kan bidrage til energiforsyningen og skabe et mere sikkert, frit og uafhængigt Europa, siger Kristian Jensen, administrerende direktør i Green Power Denmark, i en skriftlig kommentar.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T12:15:13.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/folketinget-oeger-stoetten-til-brintroer-med-milliarder",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:7f0e2e6e-1794-5c84-acb1-6d30fce81d6f",
+          "title": "Folketinget øger støtten til brintrør med milliarder",
+          "description": "Staten tager større risiko med brintrøret ved at give yderligere fem milliarder kroner i støtte i ny aftale.",
+          "authors": [],
+          "categories": [
+            "Politik",
+            "Samfund"
+          ],
+          "published_at": "2026-09-29T12:49:51.000000Z",
+          "url": "https://www.berlingske.dk/politik/folketinget-oeger-stoetten-til-brintroer-med-milliarder",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/baeredygtig/milliardaftale-skal-redde-brintror-til-tyskland",
+          "title": "Milliardaftale skal redde brintrør til Tyskland",
+          "description": "“En stor håndsrækning til brintbranchen” skal sikre, at brintrøret til Tyskland kan blive til virkelighed ved at lade staten løbe en større del af risikoen",
+          "authors": [
+            "Christian Østergaard",
+            "chos@borsen.dk (Christian Østergaard)"
+          ],
+          "categories": [],
+          "published_at": "2026-09-29T12:28:09.000000Z",
+          "url": "https://borsen.dk/nyheder/baeredygtig/milliardaftale-skal-redde-brintror-til-tyskland",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19690019",
+          "title": "Folketinget øger støtten til brintrør med milliarder",
+          "description": "Staten tager større risiko med brintrøret ved at give yderligere fem milliarder kroner i støtte i ny aftale.",
+          "authors": [],
+          "categories": [
+            "Politik"
+          ],
+          "published_at": "2026-09-29T13:32:22.000000Z",
+          "url": "https://jyllands-posten.dk/politik/ECE19690019/folketinget-oeger-stoetten-til-brintroer-med-milliarder/",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15192401/?publisherId=9426318&lang=da",
+          "title": "Bred aftale om større sikkerhed for at dansk brintrør bygges",
+          "description": "Det danske brinteventyr, som kan styrke et energiuafhængigt Europa, skal i gang. En bred kreds af Folketingets partier er enige om at give en stor håndsrækning til brintbranchen og give større sikkerhed for, at brintrøret Syvtallet fra Esbjerg til den tyske grænse bliver til virkelighed.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T12:00:46.000000Z",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15192401/bred-aftale-om-storre-sikkerhed-for-at-dansk-brintror-bygges?lang=da",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "scotus-third-country-deportations-resume",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "US Supreme Court lets Trump resume deportations to third countries",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "borsen",
+            "politiken",
+            "dr",
+            "ft",
+            "guardian",
+            "nytimes",
+            "wapo"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "The US Supreme Court has let the Trump administration again deport migrants to countries other than their own, suspending a 2025 ruling that required prior notice.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "politiken"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "e63896f7-732c-45c7-b533-4862e7d5b606",
+          "title": "Højesteret lader Trump genoptage deportationer til tredjelande",
+          "description": "<p>USA's højesteret har givet præsident Donald Trumps regering lov til på ny at udvise migranter til andre lande end deres hjemlande.</p><p>Det skriver nyhedsbureauet Reuters.</p><p>Migranterne kan deporteres til tredjelande uden forudgående varsel, hvis landene har givet en troværdig diplomatisk garanti for, at migranterne ikke vil blive udsat for forfølgelse eller tortur.</p><p>De fleste migranter er blevet sendt til Mexico.</p><p>Men migranter er blandt andet også blevet deporteret til Sydsudan - et land, som USA's udenrigsministerium fraråder amerikanere at rejse til på grund af risiko for kriminalitet, kidnapninger og væbnede konflikter.</p><p>Migranter er også blevet sendt til andre afrikanske lande som Uganda, Ækvatorialguinea, Liberia og den Centralafrikanske Republik.</p><p>I begyndelsen af 2025 afgjorde en dommer ved en føderal domstol i delstaten Massachusetts, at det var i strid med den amerikanske retssikkerhedsgaranti og udlændingelov at udvise migranter til tredjelande uden forudgående varsel.</p><p>Det er den afgørelse, som den amerikanske højesteret nu har suspenderet.</p><p>Mandag skrev Reuters, at mere end et dusin (12, red.) FN-eksperter i menneskerettigheder har skrevet til den amerikanske regering og opfordret den til at stoppe deportationer af migranter til andre lande end deres egne.</p><p>Ifølge eksperterne udløser deportationerne \"en bølge af menneskerettighedskrænkelser\".</p><p>- De, der er i størst fare, er børn, kvinder, personer med handicap, ofre for menneskehandel, LGBT+-personer, menneskerettighedsforkæmpere, statsløse og andre personer i ekstremt sårbare situationer.</p><p>Den amerikanske delegation i FN's kontor i Genève i Schweiz har ikke svaret på Reuters' henvendelse om en kommentar.</p><p>Udvisningen af migranter til tredjelande er en del af stramningen af den amerikanske immigrationspolitik - en af Trumps mærkesager.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T19:47:40.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/hoejesteret-lader-trump-genoptage-deportationer-til-tredjelande",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:9ffa785d-0d75-57be-95a4-c115f1ee077d",
+          "title": "Højesteret lader Trump genoptage deportationer til tredjelande",
+          "description": "Afgørelse giver Trump-regeringen mulighed for igen at sende migranter til lande, de ikke kommer fra.",
+          "authors": [],
+          "categories": [
+            "Internationalt",
+            "Samfund"
+          ],
+          "published_at": "2026-09-29T20:27:48.000000Z",
+          "url": "https://www.berlingske.dk/internationalt/hoejesteret-lader-trump-genoptage-deportationer-til-tredjelande",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/hojesteret-lader-trump-genoptage-deportationer-til-tredjelande",
+          "title": "Højesteret lader Trump genoptage deportationer til tredjelande",
+          "description": "Afgørelse giver Trump-regeringen mulighed for igen at sende migranter til lande, de ikke kommer fra",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T20:36:27.000000Z",
+          "url": "https://borsen.dk/nyheder/udland/hojesteret-lader-trump-genoptage-deportationer-til-tredjelande",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11002713",
+          "title": "Højesteret lader Trump genoptage deportationer til tredjelande",
+          "description": "Afgørelsen giver Trump-regeringen mulighed for igen at sende migranter til lande, de ikke kommer fra.",
+          "authors": [],
+          "categories": [
+            "Internationalt"
+          ],
+          "published_at": "2026-09-29T20:16:44.000000Z",
+          "url": "https://politiken.dk/internationalt/art11002713/H%C3%B8jesteret-lader-Trump-genoptage-deportationer-til-tredjelande",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:93ad9b08-b39e-47c6-b51c-938a032be186",
+          "title": "Højesteret lader Trump genoptage deportationer til tredjelande",
+          "description": null,
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T23:28:22.000000Z",
+          "url": "https://www.dr.dk/nyheder/seneste/hoejesteret-lader-trump-genoptage-deportationer-til-tredjelande",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "264c7d6f-9f84-43b9-89de-f8e9523a41a5",
+          "title": "Trump administration can deport non-citizens to third countries for now",
+          "description": "Supreme Court issues temporary decision allowing US to send immigrants to nations where they have no ties",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T20:06:20.000000Z",
+          "url": "https://www.ft.com/content/264c7d6f-9f84-43b9-89de-f8e9523a41a5",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/us-news/2026/sep/29/trump-immigration-deport-migrants-third-country",
+          "title": "US supreme court allows Trump officials to resume deportations to third countries",
+          "description": "Conservative majority temporarily lifts lower-court decision as liberal justices dissent from ruling The Trump administration may deport immigrants to a “third country”, or a country other than their homeland, without providing them an opportunity to dispute due to humanitarian concerns, the supreme court said in a brief order on Tuesday. The six-justice conservative majority of the high court temporarily lifted a lower court decision that determined immigrants being deported to a third country needed notice to argue they are at risk of persecution. Continue reading...",
+          "authors": [
+            "Ariana Baio"
+          ],
+          "categories": [
+            "Law (US)",
+            "US immigration",
+            "US news",
+            "US supreme court"
+          ],
+          "published_at": "2026-09-29T20:24:23.000000Z",
+          "url": "https://www.theguardian.com/us-news/2026/sep/29/trump-immigration-deport-migrants-third-country",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/09/29/us/politics/supreme-court-deportations-third-country.html",
+          "title": "Supreme Court Allows Trump Administration’s Third-Country Deportations, for Now",
+          "description": "The court also announced it would hear arguments in December on the legality of the Trump administration policy to swiftly deport immigrants to countries not their own.",
+          "authors": [
+            "Abbie VanSickle"
+          ],
+          "categories": [
+            "Decisions and Verdicts",
+            "Deportation",
+            "Human Rights and Human Rights Violations",
+            "Illegal Immigration",
+            "Supreme Court (US)",
+            "Trump, Donald J",
+            "United States Politics and Government"
+          ],
+          "published_at": "2026-09-29T22:20:50.000000Z",
+          "url": "https://www.nytimes.com/2026/09/29/us/politics/supreme-court-deportations-third-country.html",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/politics/2026/09/29/supreme-court-allows-trump-administration-now-resume-third-country-deportations/",
+          "title": "Supreme Court allows ‘third country’ deportations to resume for now",
+          "description": "The high court will later hear arguments and make a final ruling on the Trump administration’s controversial policy of sending migrants to countries where they are not citizens.",
+          "authors": [
+            "Julian Mark, Justin Jouvenal"
+          ],
+          "categories": [],
+          "published_at": "2026-09-29T20:35:35.000000Z",
+          "url": "https://www.washingtonpost.com/politics/2026/09/29/supreme-court-allows-trump-administration-now-resume-third-country-deportations/",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "morocco-el-mansouri-first-female-pm",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Morocco gets its first female prime minister",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "borsen",
+            "dr",
+            "jp",
+            "nytimes",
+            "wapo"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Morocco's king has named Fatima Ezzahra El Mansouri, whose party came first in the election on 23 September, the country's first female prime minister and asked her to form a government.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "borsen"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "598165d3-30f8-4579-b27c-e35642e9e1c5",
+          "title": "Marokko får sin første kvindelige premierminister",
+          "description": "<p>Marokkos konge har udpeget Fatima Ezzahra El Mansouri som den første kvindelige premierminister i det nordafrikanske land.</p><p>Det meddeler hoffet ifølge AFP og Reuters.</p><p>Udnævnelsen kommer, efter at hendes parti, Autenticitet og Modernitet (PAM), blev det største parti ved parlamentsvalget i Marokko 23. september.</p><p>El Mansouri blev tirsdag modtaget af kong Mohamed VI i det kongelige palads og \"fik som opdrag at danne en ny regering\", meddeler hoffet ifølge AFP.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T16:12:48.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/marokko-faar-sin-foerste-kvindelige-premierminister",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:497d69db-e4d0-5623-887c-9a6df280bde0",
+          "title": "Marokko får sin første kvindelige premierminister",
+          "description": "Fatima Ezzahra El Mansouri, hvis parti blev det største ved Marokkos valg, skal forsøge at danne en regering.",
+          "authors": [],
+          "categories": [
+            "Internationalt",
+            "Samfund"
+          ],
+          "published_at": "2026-09-29T16:13:45.000000Z",
+          "url": "https://www.berlingske.dk/internationalt/marokko-faar-sin-foerste-kvindelige-premierminister",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/marokko-far-sin-forste-kvindelige-premierminister",
+          "title": "Marokko får sin første kvindelige premierminister",
+          "description": "Fatima Ezzahra El Mansouri, hvis parti blev det største ved Marokkos valg, skal forsøge at danne en regering",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T17:26:05.000000Z",
+          "url": "https://borsen.dk/nyheder/udland/marokko-far-sin-forste-kvindelige-premierminister",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:53dd4354-4d52-43bf-aa4e-c5fc85c6dce6",
+          "title": "Marokko har fået den første kvindelige premierminister",
+          "description": null,
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T16:35:02.000000Z",
+          "url": "https://www.dr.dk/nyheder/seneste/marokko-har-faaet-den-foerste-kvindelige-premierminister",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19690913",
+          "title": "Marokko får sin første kvindelige premierminister",
+          "description": "Fatima Ezzahra El Mansouri, hvis parti blev det største ved Marokkos valg, skal forsøge at danne en regering.",
+          "authors": [],
+          "categories": [
+            "Afrika"
+          ],
+          "published_at": "2026-09-29T18:52:59.000000Z",
+          "url": "https://jyllands-posten.dk/international/Afrika/ECE19690913/marokko-faar-sin-foerste-kvindelige-premierminister/",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/09/29/world/middleeast/morocco-first-woman-prime-minister.html",
+          "title": "Morocco’s King Names a Female Prime Minister, in a Historic First",
+          "description": "Fatima Ezzahra El Mansouri, a lawyer and politician from the centrist Authenticity and Modernity Party, is only the second woman to lead the government of a North African country.",
+          "authors": [
+            "Aida Alami and Ephrat Livni"
+          ],
+          "categories": [
+            "Arabs",
+            "El Mansouri, Fatima Ezzahra",
+            "Mohammed VI, King of Morocco",
+            "Muslims and Islam",
+            "Politics and Government",
+            "Women's Rights",
+            "World Cup 2030 (Soccer)"
+          ],
+          "published_at": "2026-09-29T20:40:30.000000Z",
+          "url": "https://www.nytimes.com/2026/09/29/world/middleeast/morocco-first-woman-prime-minister.html",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/world/2026/09/29/morocco-appoints-its-first-female-prime-minister/",
+          "title": "Morocco appoints its first female prime minister",
+          "description": "A royal decree issued by Morocco’s King Muhammed VI tasked Fatima Zahra El Mansouri with forming a new cabinet, probably a coalition government with other political groups.",
+          "authors": [
+            "Mohamad El Chamaa"
+          ],
+          "categories": [],
+          "published_at": "2026-09-29T22:02:26.000000Z",
+          "url": "https://www.washingtonpost.com/world/2026/09/29/morocco-appoints-its-first-female-prime-minister/",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "df-messerschmidt-chairman-fee",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Dansk Folkeparti gives Messerschmidt a chairman's fee",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "borsen",
+            "jp",
+            "politiken"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Dansk Folkeparti's executive agreed on Friday to pay Morten Messerschmidt a chairman's fee that lifts his pay to the level earlier chairmen received, the party tells Berlingske.",
+          "cites": [
+            "kristeligt_dagblad",
+            "borsen",
+            "politiken"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "af7cd14a-8da1-43d4-8209-e7067bdad8fb",
+          "title": "DF vil give Messerschmidt en lønforhøjelse",
+          "description": "<p>Dansk Folkepartis formand, Morten Messerschmidt, skal have et formandshonorar.</p><p>Det besluttede en enig hovedbestyrelse i fredags, oplyser DF til Berlingske.</p><p>Honoraret skal løfte Messerschmidts løn op på et niveau, der svarer til et beløb, som tidligere formænd i DF har fået.</p><p>Den præcise løn skal Messerschmidt forhandle på plads med partisekretær Kenneth Kristensen Berth.</p><p>Gruppeformand Alex Ahrendtsen (DF) siger til Berlingske, at lønforhøjelsen skyldes, at Messerschmidt skal belønnes for sin \"enorme\" og \"massive\" indsats.</p><p>DF klarer sig i øjeblikket godt i meningsmålingerne. I den seneste, som analyseinstituttet Voxmeter har foretaget for Ritzau, er DF kun overgået af Socialdemokratiet. DF står således til 12,5 procent af stemmerne.</p><p>- Vi kan takke Morten Messerschmidt for den fremgang og den popularitet, vi for øjeblikket nyder, og som også viste sig ved valget i foråret, siger Ahrendtsen til Berlingske.</p><p>Efter folketingsvalget i 2022, hvor DF gik meget tilbage og tabte 11 mandater, blev et medlemsbetalt formandshonorar sparet væk, hvilket partiet bekræftede over for netavisen Pio i 2023.</p><p>Den tidligere DF-formand Kristian Thulesen Dahl fik, mens han var formand, cirka 30.000 kroner om måneden i medlemsbetalt formandshonorar, blev der tilføjet dengang.</p><p>Tidligere i år kom det frem, at Mona Juul, formand for De Konservative, modtager 25.000 kroner om måneden i formandsvederlag, mens Liberal Alliances leder, Alex Vanopslagh, får 40.000 kroner hver måned. Sidstnævnte beløb er også det, som Danmarksdemokraternes formand, Inger Støjberg, får. Det er et beløb, som partilederne får ud over deres grundløn som folketingsmedlemmer.</p><p>Messerschmidt har været formand for DF siden 2022. Ved folketingsvalget i marts fik DF 9,1 procent af stemmerne.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T13:24:57.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/df-vil-give-messerschmidt-en-loenforhoejelse",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:0617c02b-a7b9-5281-89b3-c16c7b0d9693",
+          "title": "DF vil give Messerschmidt en lønforhøjelse",
+          "description": "Morten Messerschmidt gør det så godt som DF-formand, at han har fortjent et formandshonorar, mener partiet.",
+          "authors": [],
+          "categories": [
+            "Politik",
+            "Samfund"
+          ],
+          "published_at": "2026-09-29T17:08:52.000000Z",
+          "url": "https://www.berlingske.dk/politik/df-vil-give-messerschmidt-en-loenforhoejelse",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/politik/df-vil-give-messerschmidt-en-lonforhojelse",
+          "title": "DF vil give Messerschmidt en lønforhøjelse",
+          "description": "Dansk Folkepartis formand, Morten Messerschmidt, skal have et formandshonorar. Det besluttede en enig hovedbestyrelse i fredags, oplyser DF til Berlingske. Honoraret skal løfte Messerschmidts løn op på et niveau, der svarer til et beløb, som tidligere formænd i DF har fået.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T14:47:42.000000Z",
+          "url": "https://borsen.dk/nyheder/politik/df-vil-give-messerschmidt-en-lonforhojelse",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19690558",
+          "title": "DF vil give Messerschmidt en lønforhøjelse",
+          "description": "Morten Messerschmidt gør det så godt som DF-formand, at han har fortjent et formandshonorar, mener partiet.",
+          "authors": [],
+          "categories": [
+            "Politik"
+          ],
+          "published_at": "2026-09-29T14:00:38.000000Z",
+          "url": "https://jyllands-posten.dk/politik/ECE19690558/df-vil-give-messerschmidt-en-loenforhoejelse/",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11002649",
+          "title": "DF vil give Messerschmidt en lønforhøjelse",
+          "description": "Morten Messerschmidt gør det så godt som DF-formand, at han har fortjent et formandshonorar, mener partiet.",
+          "authors": [],
+          "categories": [
+            "Politik"
+          ],
+          "published_at": "2026-09-29T17:17:07.000000Z",
+          "url": "https://politiken.dk/danmark/politik/art11002649/DF-vil-give-Messerschmidt-en-l%C3%B8nforh%C3%B8jelse",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "burnham-water-public-control",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Burnham promises more public control of Britain's water",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "borsen",
+            "tv2",
+            "nytimes",
+            "bbc"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "In his first conference speech as prime minister, Andy Burnham promised to reverse Margaret Thatcher's ban on public ownership of water companies and to increase public control of water, energy and housing.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "b33598b5-1aa5-4bbf-a8ad-528d452293a4",
+          "title": "Andy Burnham vil rulle privatisering af britisk vandforsyning tilbage",
+          "description": "<p>Den britiske premierminister, Andy Burnham, vil have øget offentlig kontrol med vand, energi og boliger.</p><p>Det siger han i sin første store tale som premierminister ved Labours årlige partikongres i Liverpool tirsdag.</p><p>Burnham varsler et opgør med den privatiseringsbølge, der har domineret sektorerne i de seneste årtier, skriver nyhedsbureauerne AFP og Reuters.</p><p>- Storbritannien er længe gået i den forkerte retning, siger Burnham i talen.</p><p>Vandforsyningssektoren blev privatiseret i 1989, men sektoren har været ramt af problemer.</p><p>Burnham siger i sin tale, at han vil tilbagerulle sin forgænger Margaret Thatchers forbud mod offentligt ejerskab af vandværker.</p><p>Thames Water, der med 16 millioner kunder er Storbritanniens største vandværk, har en gæld på milliarder af pund og har fået en regn af bøder for at forurene landets floder med spildevand.</p><p>\"Det stinker\", at det er offentligheden, der skal betale regningen for \"spildevand i vores vandløb\", siger Burnham ifølge BBC.</p><p>De mange problemer har rejst spørgsmål om, hvorvidt forsyningsselskaberne i højere grad har været optaget af profit frem for at prioritere miljøet og sikre, at forbrugernes vandregninger har været til at betale.</p><p>- Vand er et symbol på det, der er gået galt i Storbritannien. En tjeneste, hvor aktionærerne aldrig taber, og hvor offentligheden aldrig vinder, siger Burnham.</p><p>Premierministeren fortæller, at han vil fremlægge et lovforslag, der skal øge den offentlige kontrol med forsyningsselskaberne.</p><p>Der er ikke tale om nationalisering, skriver BBC's politiske korrespondent Jack Fenwick, men det er det hidtil største skridt, Burnham har taget i retning af at indfri sit gamle løfte om mere offentlig kontrol med vand- og energiforsyningen.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T14:21:00.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/andy-burnham-vil-rulle-privatisering-af-britisk-vandforsyning-tilbage",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:26d39fbd-449e-5639-a9af-f5fc7fa68ed3",
+          "title": "Andy Burnham vil rulle privatisering af britisk vandforsyning tilbage",
+          "description": "Premierminister vil øge den offentlige kontrol med forsyningsselskaber og boligsektoren.",
+          "authors": [],
+          "categories": [
+            "Internationalt",
+            "Samfund"
+          ],
+          "published_at": "2026-09-29T14:39:52.000000Z",
+          "url": "https://www.berlingske.dk/internationalt/andy-burnham-vil-rulle-privatisering-af-britisk-vandforsyning-tilbage",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/andy-burnham-vil-rulle-privatisering-tilbage-og-aendre-valgsystem",
+          "title": "Andy Burnham vil rulle privatisering tilbage og ændre valgsystem",
+          "description": "Premierminister vil øge den offentlige kontrol med forsyningsselskaber og boligsektoren",
+          "authors": [
+            "Jacob Laurents",
+            "jala@borsen.dk (Jacob Laurents)"
+          ],
+          "categories": [],
+          "published_at": "2026-09-29T15:33:01.000000Z",
+          "url": "https://borsen.dk/nyheder/udland/andy-burnham-vil-rulle-privatisering-tilbage-og-aendre-valgsystem",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/udland/2026-09-29-brexit-har-vaeret-en-katastrofe-nu-vil-andy-burnham-finde-vejen-tilbage-mod-eu",
+          "title": "Brexit har været en ”katastrofe” – nu vil Andy Burnham finde vejen tilbage mod EU",
+          "description": "EU kommer ikke til at stå i vejen for, at Storbritannien kan vende tilbage til unionen som medlem, mener korrespondent.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T08:42:31.000000Z",
+          "url": "https://nyheder.tv2.dk/udland/2026-09-29-brexit-har-vaeret-en-katastrofe-nu-vil-andy-burnham-finde-vejen-tilbage-mod-eu",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/09/29/world/europe/andy-burnham-labour-conference-uk.html",
+          "title": "Prime Minister Andy Burnham Lays Out Plan to Change UK in Emotional Speech at Labour Conference",
+          "description": "Andy Burnham set out a range of policies on Tuesday in his biggest speech since becoming prime minister of Britain. “I accept people will not agree with every part of it,” he said.",
+          "authors": [
+            "Michael D. Shear and Stephen Castle"
+          ],
+          "categories": [
+            "Burnham, Andrew M (1970- )",
+            "Elder Care",
+            "Great Britain",
+            "Healey, John (1960- )",
+            "Labour Party (Great Britain)",
+            "Liverpool (England)",
+            "Politics and Government"
+          ],
+          "published_at": "2026-09-29T17:22:18.000000Z",
+          "url": "https://www.nytimes.com/2026/09/29/world/europe/andy-burnham-labour-conference-uk.html",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cve8x724e9ezo",
+          "title": "Burnham vows to end existing pension triple lock in 2030 to help fund care",
+          "description": "The PM was at times emotional during his conference speech in which he outlined his long-term plan for the UK.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T17:39:06.000000Z",
+          "url": "https://www.bbc.co.uk/news/articles/cve8x724e9ezo?at_campaign=rss&at_medium=RSS",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "christa-pike-execution-not-halted",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "US Supreme Court refuses to halt Christa Pike's execution",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "jp",
+            "tv2",
+            "bbc",
+            "wapo"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "The US Supreme Court has refused to stop the execution of Christa Pike, due on Wednesday, who would be the first woman executed in Tennessee in more than 200 years.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "tv2"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "cfde93aa-a030-434d-9095-37f9a6b95532",
+          "title": "USA's højesteret afviser at standse henrettelse af dødsdømt kvinde",
+          "description": "<p>USA's højesteret har afvist at sætte en stopper for henrettelsen af dødsdømte Christa Pike.</p><p>Det skriver mediet BBC sent tirsdag aften dansk tid.</p><p>50-årige Christa Pike står onsdag til at blive den første kvinde til at blive henrettet i den amerikanske delstat Tennessee i mere end 200 år.</p><p>Hun blev i 1996 dømt til døden for drabet på en klassekammerat.</p><p>Tennessees guvernør, Bill Lee, afviste mandag en anmodning om at benåde Pike.</p><p>I håb om at få henrettelsen udsat indgav Pikes advokater i sidste øjeblik en anmodning til den amerikanske højesteret.</p><p>Pike skal efter planen henrettes med en dødelig indsprøjtning onsdag klokken 11 lokal tid (17.00 dansk tid, red.) i et højsikkerhedsfængsel i byen Nashville.</p><p>I USA er 18 kvinder siden 1970'erne blevet henrettet, mens det samme gør sig gældende for 1663 mænd, skriver BBC.</p><p>Pike var 18 år, da hun og hendes daværende kæreste tævede og dræbte 19-årige Colleen Slemmer. De gik på det samme jobtræningscenter i Knoxville.</p><p>Sagen tiltrak sig dengang stor opmærksomhed. Det skyldtes ifølge det amerikanske nyhedsbureau AP blandt andet, at der var blevet skåret et pentagram ind i huden på Slemmers krop.</p><p>I takt med at datoen for henrettelsen har nærmet sig, har sagen ifølge AP på ny sat gang i en debat om dødsstraf til unge gerningspersoner.</p><p>Pike benægter ikke, at hun udførte drabet, men hendes støtter mener, at delstaten bør tage højde for hendes unge alder på gerningstidspunktet, psykisk sygdom og at hun blev udsat for gentagne seksuelle overgreb som barn.</p><p>- Jeg var en psykisk syg 18-årig. Det tog mig mange år overhovedet at forstå alvoren af det, jeg havde gjort, skrev Pike i en udtalelse, der indgik i hendes anmodning om en benådning.</p><p>- Det tog endnu længere tid at acceptere, hvor mange menneskers liv jeg havde påvirket. Jeg tog livet af nogens barn, søster og ven. Jeg væmmes ved i dag at tænke på, at jeg var i stand til at begå sådan en forbrydelse, skrev hun ifølge AP.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T23:16:08.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/usas-hoejesteret-afviser-standse-henrettelse-af-doedsdoemt-kvinde",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:7a4f8dcc-fb35-59b1-9433-24f24de05ea0",
+          "title": "USA's højesteret afviser at standse henrettelse af dødsdømt kvinde",
+          "description": "Christa Pike blev i 1996 dømt for drab. USA's højesteret vil ikke sætte en stopper for hendes henrettelse.",
+          "authors": [],
+          "categories": [
+            "Internationalt",
+            "Samfund"
+          ],
+          "published_at": "2026-09-29T23:43:50.000000Z",
+          "url": "https://www.berlingske.dk/internationalt/usas-hoejesteret-afviser-at-standse-henrettelse-af-doedsdoemt-kvinde",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19691268",
+          "title": "»Jeg var en psykisk syg 18-årig«: Kvinde får afvist sin anmodning om at standse dødsstraf",
+          "description": "Christa Pike blev i 1996 dømt for drab. USA's højesteret vil ikke sætte en stopper for hendes henrettelse.",
+          "authors": [],
+          "categories": [
+            "USA"
+          ],
+          "published_at": "2026-09-30T03:52:28.000000Z",
+          "url": "https://jyllands-posten.dk/international/usa/ECE19691268/usas-hoejesteret-afviser-at-standse-henrettelse-af-doedsdoemt-kvinde/",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/udland/2026-09-30-usas-hoejesteret-afviser-at-standse-henrettelse-af-doedsdoemt-kvinde",
+          "title": "USA's højesteret afviser at standse henrettelse af dødsdømt kvinde",
+          "description": "Christa Pike blev i 1996 dømt for drab. USA's højesteret vil ikke sætte en stopper for hendes henrettelse.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-30T03:20:08.000000Z",
+          "url": "https://nyheder.tv2.dk/udland/2026-09-30-usas-hoejesteret-afviser-at-standse-henrettelse-af-doedsdoemt-kvinde",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cwe879654mj7o",
+          "title": "US Supreme Court denies Christa Pike's last-ditch bid to halt execution",
+          "description": "The Tennessee inmate has been awaiting execution since she was sentenced to death in 1996 for the murder of a teenage classmate.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T23:39:58.000000Z",
+          "url": "https://www.bbc.co.uk/news/articles/cwe879654mj7o?at_campaign=rss&at_medium=RSS",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/national-security/2026/09/29/tennessee-set-execute-woman-first-time-more-than-200-years/",
+          "title": "Tennessee to execute a woman for first time in over 200 years",
+          "description": "Christa Pike was convicted in a brutal 1995 killing committed when she was 18. Advocates pushing for her life to be spared point to abuse she suffered as a child.",
+          "authors": [
+            "Katie Mettler, Brady Dennis"
+          ],
+          "categories": [],
+          "published_at": "2026-09-29T09:00:00.000000Z",
+          "url": "https://www.washingtonpost.com/national-security/2026/09/29/tennessee-set-execute-woman-first-time-more-than-200-years/",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "jorgensen-hard-energy-winter-warning",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Dan Jørgensen warns the EU of a very hard energy winter",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske",
+            "politiken"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "The EU is preparing for 'a very hard winter' with very high energy prices, Dan Jørgensen, the EU's energy commissioner, said after meeting energy ministers in Dublin on Tuesday.",
+          "cites": [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "2ef54b03-d0d5-4c83-80d5-8f50f0d2fefb",
+          "title": "Dan Jørgensen advarer om hård vinter på energiområdet i EU",
+          "description": "<p>En hård vinter venter forude på energiområdet i EU, og det understreger behovet for, at EU's omstilling til vedvarende energi sker så hurtigt som muligt.</p><p>Det siger EU's energikommissær, Dan Jørgensen, efter et møde med EU's energiministre i Dublin tirsdag eftermiddag.</p><p>- Der er ingen tvivl om, at vi i EU forbereder os på en meget hård vinter. Vi ved, at vi er nødt til at fastholde kursen i forhold til at slippe af med vores afhængighedsforhold, siger han med henvisning til EU's forbrug af fossile brændsler fra lande uden for EU.</p><p>- Så det betyder flere vedvarende energikilder så hurtigt som muligt. Det betyder elektrificering så hurtigt som muligt. Og det betyder, at energieffektivisering skal forbedres så hurtigt som muligt, lyder det videre på et kort pressemøde, som kan ses i en video på X.</p><p>Dan Jørgensen understreger, at EU's energiforsyning ikke umiddelbart er truet, men tilføjer:</p><p>- Vi forventer meget høje priser.</p><p>Energipriserne er i forvejen steget på grund af krigen i Mellemøsten, der blev udløst af USA's og Israels angreb på Iran i februar, og som har ført til et stop for en stor del af olie- og gaseksporten fra Mellemøsten.</p><p>Som et plaster på såret støtter Dan Jørgensen en opfordring fra blandt andet Frankrig om at udsætte indførelsen af et nyt krav til importører af olie og gas om at overvåge og indrapportere mængden af metanudledning.</p><p>Kravet skal medvirke til at nedbringe udledningen af drivhusgassen og skulle være trådt i kraft i 2027, skriver nyhedsbureauet AFP.</p><p>Kritikere har advaret om, at reguleringen kan få olie- og gaseksporterende lande til at fravælge EU. I så fald kan udbuddet af olie og gas blive væsentligt indskrænket for EU-landene, hvilket vil få priserne til at stige endnu mere.</p><p>Dan Jørgensen afviser, at EU tager et skridt tilbage i kampen mod klimaforandringer og siger, at håbet er, at en udsættelse vil hjælpe med at holde energimarkederne i ro.</p><p>- Vi holder fast i målene, vi holder fast i vores ambitioner, siger han ifølge AFP.</p><p>Hos brancheorganisationen Dansk Erhverv er vicedirektør Ulrich Bang enig med energikommissæren i, at der skal sættes fart på elektrificeringen og udfasningen af fossile brændsler i EU.</p><p>Organisationen, der taler danske virksomheders sag, har fokus på Danmarks og EU's konkurrenceevne, som ifølge Ulrich Bang blandt andet er udfordret af, at virksomheder i USA betaler langt mindre for energi.</p><p>- I dag betaler europæiske virksomheder op mod dobbelt så meget for strøm og fire gange så meget for gas som deres amerikanske konkurrenter, og EU er dybt afhængig af fossile brændsler fra lande uden for unionen.</p><p>- Det gør os sårbare over for geopolitiske kriser, prisudsving og forsyningsstop. Det er det, vi er oppe imod. Her er elektrificering en afgørende forudsætning for Danmarks og EU's konkurrenceevne og energiuafhængighed, siger Ulrich Bang i en skriftlig kommentar til Ritzau.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T16:09:34.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/udland/dan-joergensen-advarer-om-haard-vinter-paa-energiomraadet-i-eu",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:a04cc009-077a-48ad-b5c4-b265b7bc2392",
+          "title": "Dan Jørgensen advarer om hård vinter på energiområdet i EU",
+          "description": "Omstilling til vedvarende energi skal ske så hurtigt som muligt, lyder det fra EU's energikommissær.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T16:46:56.000000Z",
+          "url": "https://www.dr.dk/nyheder/udland/eu/dan-joergensen-advarer-om-haard-vinter-paa-energiomraadet-i-eu",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:22b2db1e-65fa-5ee6-8afb-ac2be5c14529",
+          "title": "Dan Jørgensen advarer om hård vinter på energiområdet i EU",
+          "description": "Omstilling til vedvarende energi skal ske så hurtigt som muligt, lyder det fra EU's energikommissær.",
+          "authors": [],
+          "categories": [
+            "Internationalt",
+            "Samfund"
+          ],
+          "published_at": "2026-09-29T18:19:45.000000Z",
+          "url": "https://www.berlingske.dk/internationalt/dan-joergensen-advarer-om-haard-vinter-paa-energiomraadet-i-eu",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11002624",
+          "title": "Dan Jørgensen advarer om hård energi-vinter i EU",
+          "description": "Omstilling til vedvarende energi skal ske så hurtigt som muligt, lyder det fra EU’s energikommissær.",
+          "authors": [],
+          "categories": [
+            "Internationalt"
+          ],
+          "published_at": "2026-09-29T16:26:31.000000Z",
+          "url": "https://politiken.dk/internationalt/art11002624/Dan-J%C3%B8rgensen-advarer-om-h%C3%A5rd-energi-vinter-i-EU",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "sf-radikale-stand-by-su-cut",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "SF and Radikale stand by an SU cut they did not propose",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "politiken",
+            "dr",
+            "jp"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Pia Olsen Dyhr of SF and Martin Lidegaard of Radikale say the SU cut for 81,000 students living at home was not their parties' idea, but both stand by it.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "10f7104d-726c-4729-831a-8d9792227c4f",
+          "title": "SF og De Radikale tager afstand fra egen SU-nedskæring",
+          "description": "<p>Både SF og De Radikale lægger afstand til partiernes eget forslag om at fjerne SU'en fra 81.000 hjemmeboende studerende.</p><p>SU-nedskæringen er en del af regeringens finanslovsforslag, og begge partier har derfor nikket ja til nedskæringen.</p><p>- Det er ikke nogen hemmelighed, at det ikke er noget, vi har fundet på. Men vi har indgået kompromisser i den her regering, og det står jeg på mål for, siger formand Pia Olsen Dyhr (SF) på vej til partiets gruppemøde tirsdag.</p><p>SPØRGSMÅL: Tror du, at SF's vælgere stemmer på SF, så SF kan være med til at skære i SU'en?</p><p>- Det tror jeg ikke, at SF's vælgere gør. Hvorfor skulle de dog det? Vi har stået værn om SU'en, og det har vi sådan set også gjort i denne regering. Det her konkrete forslag handler om hjemmeboende SU med forældre med indtægter på over 710.000 kroner. Så på den måde er der en social balance i det her, siger Olsen Dyhr.</p><p>Unge fra familier med de laveste indkomster, udeboende og unge, der modtager handicaptillæg, beholder deres SU på det nuværende niveau, påpeger politisk ordfører Sigurd Agersnap (SF).</p><p>SF har kontinuerligt igennem flere valgkampe sagt, at partiet ikke vil forringe SU'en.</p><p>I den seneste valgkamp lød det, at en SU-reform, hvor det sjette SU-år blev fjernet, skulle rulles tilbage.</p><p>Sigurd Agersnap mener dog ikke, at man kan tale om et løftebrud.</p><p>- Nej, jeg mener ikke, at det er et løftebrud. Man er nødt til at kigge på en finanslov som et samlet hele, hvor man kigger på de initiativer, der er, som løfter vores velfærdssamfund til flere mennesker og sørger for at støtte unge, der blandt andet bor på kollegieværelser, siger Agersnap inden gruppemødet.</p><p>Pia Olsen Dyhr, der også er økonomi- og indenrigsminister, har ved flere lejligheder udtalt, at det er forkert at skære i SU'en, og at SF er stor modstander af forringelser på det område.</p><p>Hos De Radikale siger politisk leder Martin Lidegaard, der er erhvervs- og konkurrencekraftsminister, at SU-forringelsen er en af de \"svære ting\" i finansloven. Altså for De Radikale.</p><p>- Det er ikke sjove beslutninger. Det er økonomisk ansvarlig politik, siger Lidegaard i forbindelse med De Radikales gruppemøde tirsdag.</p><p>- For familier, der tjener over 700.000 kroner, synes vi, det er fair nok, at man tager ansvar for, at vi kan løfte vores uddannelser og gøre det godt for de studerende, der bor på kollegier.</p><p>- Det er også radikal politik at være økonomisk ansvarlig. Så de investeringer, vi laver i dag, skal finansieres. Det er også radikal politik, jeg står 100 procent på mål for, siger Lidegaard.</p><p>Han tilføjer, at der \"mig bekendt ikke er andre planer om yderligere nedskæringer på SU-området\".</p><p>Helt konkret vil regeringen tage SU'en fra 81.000 hjemmeboende studerende, hvis forældre har en samlet årlig indkomst på over 710.000 kroner.</p><p>Det svarer til, at hver forælder i gennemsnit har en månedsløn på 29.583 kroner.</p><p>Dermed har forældrene høje indkomster, mener finansminister Peter Hummelgaard (S).</p><p>- Det er ikke, fordi vi i særskilt grad går efter de unge. Tværtimod. Meget af det, vi godt vil bruge penge på, handler om unge mennesker.</p><p>- Det gælder kun for unge, der er hjemmeboende og har forældre med høje indkomster, siger Hummelgaard til DR.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T09:03:37.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/sf-og-de-radikale-tager-afstand-fra-egen-su-nedskaering",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:64f0d404-db0a-5540-a069-6958dbd3c42b",
+          "title": "SF og De Radikale tager afstand fra egen SU-nedskæring",
+          "description": "Forslag fra regeringen om at skære i SU'en er hverken en idé fra De Radikale eller SF, siger partierne.",
+          "authors": [],
+          "categories": [
+            "Politik",
+            "Samfund"
+          ],
+          "published_at": "2026-09-29T09:59:49.000000Z",
+          "url": "https://www.berlingske.dk/politik/sf-og-de-radikale-tager-afstand-fra-egen-su-nedskaering",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11001288",
+          "title": "SF og Radikale: »Vi er nødt til at foretage nogle hårde prioriteringer. Det er ikke sjovt«",
+          "description": "Gymnasieelever og støttepartier kritiserer SF og R for at gå med til at skære i SU’en. Pia Olsen Dyhr og Martin Lidegaard forsvarer sig med, at kompromiser og hårde prioriteringer er nødvendige.",
+          "authors": [],
+          "categories": [
+            "Politik"
+          ],
+          "published_at": "2026-09-29T17:50:09.000000Z",
+          "url": "https://politiken.dk/danmark/politik/art11001288/%C2%BBVi-er-n%C3%B8dt-til-at-foretage-nogle-h%C3%A5rde-prioriteringer.-Det-er-ikke-sjovt%C2%AB",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:9ae14c7e-93e5-42f4-b55a-d52b6133c7f2",
+          "title": "Pia Olsen Dyhr stod på en blokvogn og tordnede mod SU-besparelser: Nu svinger hun hammeren over 81.000 studerende",
+          "description": "- Ikke noget, vi har fundet på, lyder det nu fra SF's formand om SU-nedskæringer. Løftebrud, lyder kritikken.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T14:55:00.000000Z",
+          "url": "https://www.dr.dk/nyheder/politik/pia-olsen-dyhr-stod-paa-en-blokvogn-og-tordnede-mod-su-besparelser-nu-svinger-hun-hammeren-over-81",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19688172",
+          "title": "Det kaldes et »klokkeklart løftebrud« - Martin Lidegaard kalder det »fair nok«",
+          "description": "De Radikale lovede at beskytte SU’en, men nu går partiet med til at fjerne støtten for 81.000 hjemmeboende elever.",
+          "authors": [
+            "Katrine Gammelgaard"
+          ],
+          "categories": [
+            "Politik"
+          ],
+          "published_at": "2026-09-29T14:45:00.000000Z",
+          "url": "https://jyllands-posten.dk/politik/ECE19688172/ny-finanslov-vil-skaere-i-suen-trods-de-radikales-loefter-om-det-modsatte/",
+          "primary": false
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "2abd029b-ceaa-479e-b267-ab873ad149c9",
+          "title": "Gymnasieelever retter skarp kritik af SF og R for SU-nedskæring",
+          "description": "<p>Danske Gymnasieelevers Sammenslutning (DGS) langer især ud efter regeringspartierne SF og De Radikale, som går med til at skære i SU'en, hvilket fremgår af regeringens kommende finanslovsforslag.</p><p>- SF og Radikale har selv tordnet mod SU-forringelser og lovet forbedringer i valgkampen. Pia Olsen Dyhr beskrev det selv som en rød linje efter sidste valg, siger DGS-forperson Oscar Tønsberg Hoffmann i en pressemeddelelse.</p><p>Han henviser til SF's formand, som ved flere lejligheder har udtalt, at det er forkert at skære i SU'en, og at SF er stor modstander af forringelser på det område.</p><p>- Det kan godt være, dén linje blev utydelig, da man forhandlede regering, men dét skulle jeg hilse og sige, at den ikke er for de tusindvis af elever og studerende, der stemte på de to partier i håbet om en bedre uddannelsespolitik med investeringer frem for besparelser, siger Oscar Tønsberg Hoffmann.</p><p>Også De Radikale er modstander af SU-forringelser, men SF og De Radikale sidder nu i regering med Socialdemokratiet og Moderaterne, og de fire partier er altså klar til at skære i SU'en.</p><p>Helt konkret vil regeringen tage SU'en fra 81.000 hjemmeboende studerende, hvis forældre har en samlet årlig indkomst på over 710.000 kroner.</p><p>Det fremgår af regeringens finanslovsforslag for 2027, som ventes at blive præsenteret i sin helhed snart. Men forslaget om SU-besparelsen er blevet beskrevet i Berlingske.</p><p>Hos De Radikale siger finansordfører Katrine Robsøe, at partiet er gået med til forringelsen, fordi \"vi er med i en flerpartiregering, hvor man ikke kan få alting præcist, som man vil have haft det\".</p><p>- Jeg er glad for, at vi sørger for, at for dem, hvor forældreindkomsten er lavere, der holder vi stadig fast i den hjemmeboende SU, siger hun.</p><p>SPØRGSMÅL: Tror du, at jeres vælgere har stemt på jer for at få SU-forringelser?</p><p>- Jeg er helt med på, at vi ikke er et parti, der har et ønske om at forringe SU'en. Men jeg er glad for, at vi har andre ting, hvor vi trækker i en anden retning i forhold til at stille de unge bedre. Blandt andet i forhold til boligstøtte på kollegier, og der kommer forhåbentlig også flere ting i den samlede finanslov, siger Robsøe.</p><p>Hun tilføjer, at De Radikale \"er en del af en regering og derfor tager ansvar for en samlet økonomi\".</p><p>- Det her er ikke et radikalt forslag. Men dog et forslag, som har nogle balancer i sig, og det synes jeg også, at det samlede finanslovsforslag kommer til at have, siger Robsøe.</p><p>Ritzau forsøger også at få en kommentar fra SF.</p><p>Ritzau har forsøgt at få en kommentar fra finansordfører Sofie Lippert (SF), som henviser til partiets pressetjeneste, der henviser til politisk ordfører Sigurd Agersnap (SF), som endnu ikke er vendt retur.</p><p>Regeringens støtteparti Enhedslisten er ikke imponeret. Regeringen vil foruden at skære i SU'en også hæve beskæftigelseskravene for at få dimittenddagpenge.</p><p>- Forringelserne for de studerende og nyuddannede må regeringen finde et andet flertal til, siger hun.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T08:18:21.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/gymnasieelever-retter-skarp-kritik-af-sf-og-r-som-vil-skaere-i-suen",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "gender-pay-gap-12-3",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Gap between men's and women's pay narrows for the first time since 2022",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr",
+            "politiken"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Women earned on average 12.3 per cent less than men in 2025, against 12.9 per cent the year before, the first narrowing in three years, Statistics Denmark figures show.",
+          "cites": [
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "e3832062-81e7-4bd7-9474-3e01c434714f",
+          "title": "Lønforskel mellem mænd og kvinder mindskes for første gang siden 2022",
+          "description": "<p>Lønforskellen på mænd og kvinder blev sidste år mindre for første gang i tre år.</p><p>Det viser nye tal fra Danmarks Statistik, som er blevet offentliggjort tirsdag morgen.</p><p>I 2025 tjente kvinder i gennemsnit 12,3 procent mindre end mænd. Året før var forskellen 12,9 procent.</p><p>Det er positivt, mener Mads Moberg Reumert, der er cheføkonom hos pensionsselskabet Danica.</p><p>- Lønforskelle handler ikke kun om økonomisk ligestilling på arbejdsmarkedet. De handler også om økonomisk ligestilling som pensionist, skriver han i en kommentar.</p><p>- Løn er den faktor, der betyder mest for størrelsen af pensionsopsparingen. Derfor er udviklingen i lønforskellene også noget af det vigtigste at holde øje med, hvis man ønsker mindre økonomisk ulighed mellem mænd og kvinder som pensionister.</p><p>Danmarks Statistik har opgjort det såkaldte løngab siden 2004. Dengang var forskellen 16 procent.</p><p>I mellemtiden var forskellen nede på 11,9 procent i 2020. Både i 2023 og 2024 voksede forskellen dog, inden den stime blev brudt sidste år.</p><p>Helle Dalsgaard, der er rådgivningsleder i Sampension, mener også, at sidste års fald er en god nyhed.</p><p>- Selv om man skal have luppen frem, så er der - set over en længere årrække - sket fremskridt, når det gælder den økonomiske ligestilling herhjemme, hvor lønforskellen mellem kvinder og mænd er faldet støt, skriver hun i en kommentar.</p><p>- Og efter nogle år med bump på vejen så gik udviklingen atter den rigtige vej sidste år. Det er positivt.</p><p>For hende er bundlinjen dog fortsat, at kvinder stadig tjener \"betydeligt mindre end mænd\".</p><p>Rådgivningslederen er dog fortrøstningsfuld, når hun kigger mod fremtiden.</p><p>- Kvinder har et stort og stigende uddannelsesforspring til mænd, og det må alt andet lige ventes at smitte positivt af på deres lønniveau over tid.</p><p>- Og det samme gælder med reglerne om øremærket barsel, som har betydet, at mænd i stigende grad tager barsel, hvilket også kan gøre en privatøkonomisk forskel for kvinder, lyder det i kommentaren.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T06:30:27.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/loenforskel-mellem-maend-og-kvinder-falder-foerste-gang-siden-2022",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:80013c7a-fcb2-569d-9249-c4c1f5c345b3",
+          "title": "Lønforskel mellem mænd og kvinder mindskes for første gang siden 2022",
+          "description": "I 2004, da lønforskellen på mænd og kvinder først blev opgjort, var den 16 procent. Nu er den 12,3 procent.",
+          "authors": [],
+          "categories": [
+            "Business"
+          ],
+          "published_at": "2026-09-29T07:09:50.000000Z",
+          "url": "https://www.berlingske.dk/business/loenforskel-mellem-maend-og-kvinder-mindskes-for-foerste-gang-siden-2022",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:0f4928e7-4106-43af-ac76-90c9e3a9530d",
+          "title": "Lønforskel mellem mænd og kvinder falder lidt",
+          "description": null,
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T06:56:39.000000Z",
+          "url": "https://www.dr.dk/nyheder/seneste/loenforskel-mellem-maend-og-kvinder-falder-lidt",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11001028",
+          "title": "Lønforskel mellem mænd og kvinder mindskes for første gang siden 2022",
+          "description": "I 2004, da lønforskellen på mænd og kvinder først blev opgjort, var den 16 procent. Nu er den 12,3 procent.",
+          "authors": [],
+          "categories": [
+            "Danmark"
+          ],
+          "published_at": "2026-09-29T07:18:13.000000Z",
+          "url": "https://politiken.dk/danmark/art11001028/L%C3%B8nforskel-mellem-m%C3%A6nd-og-kvinder-mindskes-for-f%C3%B8rste-gang-siden-2022",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "matthiesen-leaves-venstre-leadership",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Anni Matthiesen leaves Venstre's group leadership",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "jp"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "Anni Matthiesen, one of five Venstre MPs who voted against the fertiliser law, has left the party's group leadership, a decision she says she took a week before the vote.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "778bc9e6-05d7-460d-8107-77529620ba0e",
+          "title": "Trodsede Troels Lunds linje: Nu forlader V-medlem gruppeledelsen",
+          "description": "<p>Folketingsmedlem Anni Matthiesen (V) trækker sig som gruppesekretær og dermed som medlem af partiets gruppeledelse.</p><p>Det oplyser gruppeformand Morten Dahlin til TV 2.</p><p>- Det er sket fuldstændig frivilligt, siger Dahlin.</p><p>Matthiesen var for nylig en af de 5 af Venstres 18 folketingsmedlemmer, som valgte at gå imod partilinjen og stemme imod gødskningsloven, der tildeler danske landmænd kvoter for deres udledninger af kvælstof til fjorde og kyster, og som har skabt intern uro i Venstre.</p><p>Dahlin siger, at Matthiesens beslutning ikke har noget med den sag at gøre. Altså at der ingen kobling er overhovedet. Hun havde truffet beslutningen før afstemningen om den lov, udtaler gruppeformanden.</p><p>Det bekræfter Anni Matthiesen også selv.</p><p>- Jeg besluttede selv at trække mig som gruppesekretær, hvilket jeg meddelte til gruppeledelsen 27. august, en uge inden vi skulle stemme om L5 (gødskningsloven, red.), skriver hun til TV 2.</p><p>I april havde Venstres folketingsgruppe et konstituerende gruppemøde, hvor gruppeledelsen blev valgt. Dengang skrev Venstre blandt andet følgende på partiets hjemmeside:</p><p>- Derudover er Anni Matthiesen valgt som folketingsgruppens nye gruppesekretær, hvilket er en central rolle for organiseringen af Venstres parlamentariske arbejde i Folketingssalen.</p><p>Folketingets formand, Søren Gade, var det første Venstre-folketingsmedlem, der erklærede sin modstand mod gødskningsloven. Herefter fulgte Amanda Heitmann, Anni Matthiesen, Preben Bang Henriksen og Peter Juel-Jensen trop.</p><p>Venstres formand, Troels Lund Poulsen, havde ellers gjort det meget klart, at Venstre som parti stemmer for loven.</p><p>- Det er partiets linje, det har jeg fået klar opbakning til fra vores forretningsudvalg og fra vores hovedbestyrelse. Og så må jeg også erkende, at nogle folketingsmedlemmer ser anderledes på sagen.</p><p>- Jeg lægger ikke skjul på, at det er en udfordrende situation, sagde Troels Lund Poulsen tidligere på måneden, inden der skulle stemmes om loven i Folketingssalen.</p><p>Sagen førte også til, at eksminister Thomas Danielsen (V) valgte at trække sig som folketingskandidat i Holstebrokredsen, fordi han fik kritik fra sin kreds.</p><p>Thomas Danielsen blev blandt andet kaldt \"tonedøv\", fordi han stemte for loven.</p><p>Desuden har Marlene Ambo (V) kritiseret Amanda Heitmann (V) - begge er valgt til Folketinget på Fyn - for Heitmanns ageren i sagen om gødskningsloven.</p><p>I meningsmålingerne har Venstre det svært for tiden. I den seneste måling foretaget af analyseinstituttet Voxmeter for Ritzau står det tidligere regeringsparti til 6,6 procent af stemmerne.</p><p>Ved folketingsvalget i marts fik Venstre 10,1 procent af stemmerne, hvilket var historisk ringe for partiet.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-29T11:25:39.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/trodsede-troels-lunds-linje-nu-forlader-v-medlem-gruppeledelsen",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:2c6eada8-3fe4-51a4-99fc-5e0b3d6b398d",
+          "title": "Trodsede Troels Lunds linje: Nu forlader V-medlem gruppeledelsen",
+          "description": "Sag om gødskningslov har skabt intern uro i Venstre, hvor Anni Matthiesen nu er fortid i gruppeledelsen.",
+          "authors": [],
+          "categories": [
+            "Politik",
+            "Samfund"
+          ],
+          "published_at": "2026-09-29T12:01:49.000000Z",
+          "url": "https://www.berlingske.dk/politik/trodsede-troels-lunds-linje-nu-forlader-v-medlem-gruppeledelsen",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:dafd528d-5021-5f88-a358-258a6113e681",
+          "title": "Midt i V-opgør trækker Venstre-dissident sig fra central post",
+          "description": "Venstre-dissident trækker sig fra central post i partiet. Ifølge gruppeformanden er der ingen sammenhæng med afstemningen om gødskningsloven. Men den køber Berlingskes politiske redaktør ikke.",
+          "authors": [
+            "Rose Ulveman",
+            "roul@berlingske.dk (Rose Ulveman)"
+          ],
+          "categories": [
+            "Politik",
+            "Samfund"
+          ],
+          "published_at": "2026-09-29T13:29:53.000000Z",
+          "url": "https://www.berlingske.dk/politik/midt-i-v-opgoer-traekker-venstre-dissident-sig-fra-central-post",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19688970",
+          "title": "Hun har netop trukket sig fra Venstres ledelse: Nu kommer hun med en forklaring",
+          "description": "Hun var en af dem, der gik imod partilinjen, da der skulle stemmes om en ny gødskningslov.",
+          "authors": [],
+          "categories": [
+            "Politik"
+          ],
+          "published_at": "2026-09-29T11:19:22.000000Z",
+          "url": "https://jyllands-posten.dk/politik/ECE19688970/anni-matthiesen-traekker-sig-som-medlem-af-venstres-gruppeledelse-nu-kommer-hun-med-en-forklaring/",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "funen-cable-cancels-trains",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "Dug-up cable cuts trains between Odense and Fredericia",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "A cable dug through on West Funen cancelled several trains between Odense and Fredericia on Wednesday morning; DSB is bringing in replacement buses and does not know when normal service will resume.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "fb12638c-689f-4155-8627-34c883193a3b",
+          "title": "Overgravet kabel giver færre tog mellem Odense og Fredericia",
+          "description": "<p>Flere tog mellem Odense og Fredericia er onsdag morgen aflyst. Samtidig kan der være forsinkelser på de øvrige tog, der kører på Vestfyn.</p><p>Det fremgår af en melding fra P4 Trafik på dr.dk.</p><p>Aflysningerne og forstyrrelserne skyldes et overgravet kabel på Vestfyn.</p><p>DSB arbejder onsdag morgen på at få indsat togbusser, som skal erstatte de aflyste regionaltog.</p><p>Det er endnu uvist, hvornår togtrafikken kan køre normalt igen, skriver DSB i en meddelelse.</p><p>Ligeledes arbejder Banedanmark på at få ordnet det overgravede kabel, fremgår det af meldingen.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-30T05:35:47.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/overgravet-kabel-giver-faerre-tog-mellem-odense-og-fredericia",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:48292f3d-3671-5920-8292-cbf4e37e8506",
+          "title": "Overgravet kabel giver færre tog mellem Odense og Fredericia",
+          "description": "Et overgravet kabel på Vestfyn giver aflysninger og forsinkelser onsdag morgen.",
+          "authors": [],
+          "categories": [
+            "Danmark",
+            "Indland",
+            "Samfund"
+          ],
+          "published_at": "2026-09-30T05:42:48.000000Z",
+          "url": "https://www.berlingske.dk/danmark/overgravet-kabel-giver-faerre-tog-mellem-odense-og-fredericia",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:9c3c5a13-7440-449a-b97e-b2c9973122d5",
+          "title": "Overgravet kabel driller togtrafik på Vestfyn",
+          "description": null,
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-30T05:52:56.000000Z",
+          "url": "https://www.dr.dk/nyheder/seneste/overgravet-kabel-driller-togtrafik-paa-vestfyn",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "id": "september-power-price-highest-since-2022",
+      "role": "brief",
+      "sentences": [
+        {
+          "location": "headline",
+          "sentence": 0,
+          "text": "September's electricity was the dearest since 2022",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "jp",
+            "via_ritzau"
+          ]
+        },
+        {
+          "location": "lede",
+          "sentence": 0,
+          "text": "The average raw electricity price in September was 1.07 kroner per kilowatt-hour east of the Great Belt and 1.05 west of it, the highest since December 2022, the energy company OK says.",
+          "cites": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "jp"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "7eecbed8-ece0-48e9-bb22-241139d5094f",
+          "title": "Uro og for lidt sol og vind har givet den dyreste strøm siden 2022",
+          "description": "<p>Svag vind og lidt sol kombineret med høje gaspriser som følge af geopolitiske uroligheder har sendt elpriserne op og gør september til den dyreste måned siden december 2022.</p><p>Den gennemsnitlige rå elpris den forgangne måned ender således på 1,07 kroner per kilowatt-time øst for Storebælt og 1,05 kroner per kilowatt-time vest for.</p><p>Dertil kommer så moms, afgift og tariffer.</p><p>Det skriver energiselskabet OK i en pressemeddelelse.</p><p>- Der har desværre ikke været nok vind og sol til at presse priserne ned i september, siger kommerciel chef Troels Skipper og fortsætter:</p><p>- Dermed har den høje gaspris, som er forårsaget af geopolitiske uroligheder, været styrende for elprisen i store dele af måneden.</p><p>Til sammenligning kostede strømmen i snit 0,62 kroner per kilowatt-time øst for Storebælt og 0,54 kroner per kilowatt-time vest for Storebælt i september sidste år.</p><p>OK understreger i pressemeddelelsen, at regningen dog ikke bliver større for forbrugerne i Danmark end sidste år, da elafgiften i 2026 - og også næste år - er sænket til EU's minimumssats.</p><p>Ud over at september har været den dyreste måned i rå elpriser siden december 2022, har der ifølge OK også været \"meget store udsving i elprisen\" i månedens løb.</p><p>Mandag den 14. september var elprisen eksempelvis over fem kroner per kilowatt-time i kortere tidsrum.</p><p>I den modsatte ende af prislejet har \"flere weekenddage budt på masser af timer med elpriser omkring nul kroner\".</p><p>Energiselskabets kommercielle chef opfordrer til, at man holder øje med priserne og indretter sig efter dem.</p><p>- Det bliver også vigtigt hen over vinteren, hvor vi vil se flere store udsving i strømprisen. Men udsvingene giver altså også mulighed for, at man kan sænke sin elregning, siger Troels Skipper i pressemeddelelsen.</p><p>Den gennemsnitlige elpris har indtil videre i 2026 været over en krone per kilowatt-time i fire af årets hidtil 40 uger. To af ugerne har været i september.</p><p>RITZAU</p>",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-30T03:45:01.000000Z",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/uro-og-lidt-sol-og-vind-har-givet-den-dyreste-stroem-siden-2022",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:86cd6357-fcd2-508b-9769-ae7bb3d7e2dd",
+          "title": "Uro og for lidt sol og vind har givet den dyreste strøm siden 2022",
+          "description": "Den gennemsnitlige rå elpris steg i september til det højeste niveau i knap fire år, skriver energiselskab.",
+          "authors": [],
+          "categories": [
+            "Danmark",
+            "Indland",
+            "Samfund"
+          ],
+          "published_at": "2026-09-30T03:45:47.000000Z",
+          "url": "https://www.berlingske.dk/danmark/uro-og-for-lidt-sol-og-vind-har-givet-den-dyreste-stroem-siden-2022",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19691307",
+          "title": "Uro og for lidt sol og vind har givet den dyreste strøm siden 2022",
+          "description": "Den gennemsnitlige rå elpris steg i september til det højeste niveau i knap fire år, skriver energiselskab.",
+          "authors": [],
+          "categories": [
+            "Indland"
+          ],
+          "published_at": "2026-09-30T03:46:00.000000Z",
+          "url": "https://jyllands-posten.dk/indland/ECE19691307/uro-og-for-lidt-sol-og-vind-har-givet-den-dyreste-stroem-siden-2022/",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15192539/?publisherId=13559467&lang=da",
+          "title": "Elprisen har ikke været højere siden energikrisen: September blev den dyreste måned i næsten fire år",
+          "description": "Den gennemsnitlige elpris rundede for første gang siden energikrisen en krone pr. kWh i både Øst- og Vestdanmark. Samtidig viser data fra Norlys, at danskernes interesse for elpriserne stiger, når markedet opfører sig mere uroligt.",
+          "authors": [],
+          "categories": [],
+          "published_at": "2026-09-30T03:46:54.000000Z",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15192539/elprisen-har-ikke-vaeret-hojere-siden-energikrisen-september-blev-den-dyreste-maned-i-naesten-fire-ar?lang=da",
+          "primary": false
+        }
+      ]
+    }
+  ]
+}

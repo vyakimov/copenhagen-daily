@@ -1,0 +1,132 @@
+{
+ "schema_version": 1,
+ "edition_id": "2026-09-30-morning",
+ "cutoff_at": "2026-09-30T06:00:00.000000Z",
+ "started_at": "2026-09-30T07:38:36.173789Z",
+ "dry_run": false,
+ "outcome": "published",
+ "phases": [
+  {
+   "name": "collect",
+   "finished_at": "2026-09-30T07:38:51.032901Z",
+   "skipped": true,
+   "reason": "recent_poll",
+   "last_poll_at": "2026-09-30T07:29:41.021248Z",
+   "age_minutes": 9.2
+  },
+  {
+   "name": "window",
+   "finished_at": "2026-09-30T07:38:51.033323Z",
+   "resumed": true
+  },
+  {
+   "name": "memory",
+   "finished_at": "2026-09-30T07:38:51.052152Z",
+   "editions": [
+    "2026-09-29-morning",
+    "2026-09-28-morning",
+    "2026-09-27-evening",
+    "2026-09-27-morning",
+    "2026-09-21-evening",
+    "2026-09-19-evening",
+    "2026-09-18-afternoon",
+    "2026-09-17-midday",
+    "2026-09-16-morning",
+    "2026-09-15-morning",
+    "2026-09-14-midday",
+    "2026-09-13-morning",
+    "2026-09-12-morning"
+   ],
+   "threads": 8,
+   "next_edition_number": 14
+  },
+  {
+   "name": "editor",
+   "finished_at": "2026-09-30T07:38:51.052356Z",
+   "resumed": true
+  },
+  {
+   "name": "check",
+   "finished_at": "2026-09-30T07:38:51.112522Z",
+   "rounds": 1,
+   "struck": 0,
+   "send_back": [],
+   "fallen": [],
+   "resumed": true
+  },
+  {
+   "name": "preflight",
+   "finished_at": "2026-09-30T07:38:51.310125Z",
+   "valid": true
+  },
+  {
+   "name": "publish",
+   "finished_at": "2026-09-30T07:38:53.931505Z",
+   "status": "published",
+   "device_status": "skipped"
+  },
+  {
+   "name": "receipt",
+   "finished_at": "2026-09-30T07:38:54.091494Z",
+   "activated": true,
+   "web_stories": 21
+  },
+  {
+   "name": "threads",
+   "finished_at": "2026-09-30T07:38:54.102998Z",
+   "touched": 5,
+   "total": 8
+  },
+  {
+   "name": "deliver",
+   "finished_at": "2026-09-30T07:38:56.383665Z",
+   "bucket": "copenhagen-daily-live",
+   "synced": true,
+   "invalidated": "E67FD57M9R899"
+  },
+  {
+   "name": "archive",
+   "finished_at": "2026-09-30T07:38:56.384660Z",
+   "committed": 14
+  }
+ ],
+ "failure": null,
+ "published": {
+  "edition": "/Users/vy/Documents/Development/news-gatherer/editorial/runs/2026-09-30-morning/edition-checked.json",
+  "status": "published",
+  "device_status": "skipped",
+  "bundle": {
+   "manifest_sha256": "sha256:4470fc8634c61d5b454792b36fc2101cc3a766feed43479903f5e795fe4b935c",
+   "path": "n/2026-09-30-morning/"
+  },
+  "receipt": {
+   "sequence": 14,
+   "manifest_sha256": "sha256:4470fc8634c61d5b454792b36fc2101cc3a766feed43479903f5e795fe4b935c",
+   "web_story_ids": [
+    "animal-welfare-six-years-new-agency",
+    "fairford-vans-no-explosives",
+    "trump-ai-morally-binding-deal",
+    "estonia-blames-russia-arson",
+    "finance-bill-defence-22-billion",
+    "prisons-record-occupancy",
+    "german-drone-first-test-flight",
+    "climate-activist-kluge-fined",
+    "tv2-chief-fined-name-ban",
+    "hydrogen-pipeline-extra-support",
+    "scotus-third-country-deportations-resume",
+    "morocco-el-mansouri-first-female-pm",
+    "df-messerschmidt-chairman-fee",
+    "burnham-water-public-control",
+    "christa-pike-execution-not-halted",
+    "jorgensen-hard-energy-winter-warning",
+    "sf-radikale-stand-by-su-cut",
+    "gender-pay-gap-12-3",
+    "matthiesen-leaves-venstre-leadership",
+    "funen-cable-cancels-trains",
+    "september-power-price-highest-since-2022"
+   ]
+  }
+ },
+ "updated_at": "2026-09-30T07:38:56.384830Z",
+ "elapsed_s": 20.2
+}

@@ -1,0 +1,230 @@
+{
+  "edition": {
+    "id": "2026-09-30-morning",
+    "number": 14,
+    "name": "Wednesday edition",
+    "date": "2026-09-30",
+    "cutoff_at": "2026-09-30T06:00:00.000000Z",
+    "checked_from": "2026-09-27T06:00:00.000000Z",
+    "input_id": "export-2026-09-30-0600",
+    "presentation": {
+      "emphasis": "many_stories",
+      "ear_right": "Inside: no bombs in the RAF Fairford vans, Trump lets AI police itself, Estonia blames Russia for arson"
+    },
+    "note": "Built from headlines and RSS descriptions published between 08:00 on Sunday and 08:00 on Wednesday Copenhagen time, from 132 feeds at seventeen publishers, all polled successfully. Danish outlets decide what is news; international titles are linked where they cover the same story. Nothing else was read."
+  },
+  "stories": [
+    {
+      "id": "animal-welfare-six-years-new-agency",
+      "role": "lead",
+      "kicker": "Politics",
+      "headline": "Six years in prison for the worst animal-welfare breaches under emergency plan",
+      "deck": "A new agency will run more inspections, paid for mainly by farmers; pig producers call it a media stunt.",
+      "standard": [
+        ["The maximum sentence for the most serious breaches of animal-welfare rules rises from two to six years in prison under an emergency plan the government and Alternativet presented on Tuesday. A new agency under the Justice Ministry will take over the inspections, which increase by 50 per cent.", ["kristeligt_dagblad", "dr", "berlingske", "jp", "tv2"]],
+        ["From 2027 at least two inspectors will attend each visit to pig, cattle and poultry herds, and more than 100 staff will be hired. The plan costs 120 million kroner in 2027, rising to 160 million a year by 2029, and farmers will pay most of it through a higher inspection fee.", ["kristeligt_dagblad"]],
+        ["'Now we are cleaning up after decades of failing the animals,' said Franciska Rosenkilde, Alternativet's political leader, who presented the plan at the Justice Ministry.", ["kristeligt_dagblad", "politiken"]],
+        ["Jeppe Bloch Nielsen, chairman of Danske Svineproducenter, calls the plan a 'media stunt' and says it was the agency, not the farmers, that failed. He puts a producer's fee at about 4,000 kroner today and says the producers' own calculation shows it could reach 19,000.", ["kristeligt_dagblad"]]
+      ],
+      "callouts": [
+        {"kind": "figure", "value": "6 years", "label": "Maximum prison sentence for the most serious animal-welfare breaches, up from two"},
+        {"kind": "quote", "text": "Now we are cleaning up after decades of failing the animals.", "attribution": "Franciska Rosenkilde, Alternativet's political leader", "attribution_source": "kristeligt_dagblad"}
+      ],
+      "sources": [807, 1085, 1058, 983, 1110, 1045, 1049]
+    },
+    {
+      "id": "fairford-vans-no-explosives",
+      "role": "secondary",
+      "kicker": "World",
+      "headline": "No bombs in the RAF Fairford vans, British police say, only petrol",
+      "deck": "The five men arrested near the US bomber base remain under investigation on bail.",
+      "standard": [
+        ["British counter-terror police found no improvised explosive devices in the vans stopped near RAF Fairford early on Sunday, they said on Tuesday, but seized a quantity of petrol.", ["kristeligt_dagblad", "dr", "berlingske", "jp"]],
+        ["The five men arrested on Sunday were released on bail on Monday and remain under investigation. Laurence Taylor, head of Britain's national counter-terror policing, said the release was an investigative decision. One of the suspects had himself called the emergency number shortly before his arrest.", ["kristeligt_dagblad", "ft", "bbc"]],
+        ["Police have searched properties in London and expect to finish the investigation around the base on Wednesday.", ["kristeligt_dagblad"]]
+      ],
+      "sources": [541, 540, 531, 474, 398, 231]
+    },
+    {
+      "id": "trump-ai-morally-binding-deal",
+      "role": "secondary",
+      "kicker": "Technology",
+      "headline": "Trump lets AI companies police themselves under a 'morally binding' deal",
+      "deck": "Google, Anthropic, Meta, OpenAI and Nvidia have signed; a company that breaks it faces no consequences.",
+      "standard": [
+        ["Donald Trump and the heads of Google, Anthropic, Meta, OpenAI and Nvidia, together with Elon Musk, have signed an agreement that leaves the control of AI to the companies rather than to new rules. Asked on Tuesday whether it was legally binding, Trump said: 'It is morally binding, I think.'", ["kristeligt_dagblad", "berlingske", "dr"]],
+        ["The agreement asks each company for four layers of control, including an independent outside party to check that internal controls work, and says that legislation may make sense over time. Because it is only morally binding, a company that fails to live up to it faces no consequences.", ["kristeligt_dagblad"]],
+        ["'We have taken a good first step,' said Mark Zuckerberg, Meta's chief executive.", ["kristeligt_dagblad", "berlingske"]]
+      ],
+      "callouts": [
+        {"kind": "quote", "text": "It is morally binding, I think.", "attribution": "Donald Trump, US president", "attribution_source": "kristeligt_dagblad"}
+      ],
+      "sources": [420, 43, 332, 301, 407, 96, 160, 401, 265, 266, 259]
+    },
+    {
+      "id": "estonia-blames-russia-arson",
+      "role": "secondary",
+      "kicker": "Defence",
+      "headline": "Estonia blames Russian intelligence for arson at a defence company",
+      "deck": "Frederiksen calls it another example of Russia's increasingly aggressive behaviour.",
+      "standard": [
+        ["The arson attack on the Estonian defence company Milrem Robotics in mid-August was sabotage ordered by Russia's intelligence services, Estonia's defence minister, Margus Tsahkna, wrote on X on Tuesday; he says the suspects have been caught. Dmitry Peskov, the Russian president's spokesman, rejected the accusation as false.", ["kristeligt_dagblad", "berlingske"]],
+        ["Mette Frederiksen called the attack 'yet another example of the sharpened threat picture and Russia's increasingly aggressive behaviour', and said the government would keep arming, keep supporting Ukraine and invest heavily in a security package for the police and PET.", ["kristeligt_dagblad"]],
+        ["Mark Rutte, Nato's secretary-general, urged member states to 'keep calm, carry on as before and support Ukraine'.", ["kristeligt_dagblad"]]
+      ],
+      "sources": [987, 952, 772, 1159, 433]
+    },
+    {
+      "id": "finance-bill-defence-22-billion",
+      "role": "secondary",
+      "kicker": "Defence",
+      "headline": "Finance bill adds 22 billion kroner for defence in 2027",
+      "deck": "Donations to Ukraine will now need backing in the Folketing, the tax minister says.",
+      "standard": [
+        ["The government's finance bill will add 22 billion kroner for defence in 2027, and defence spending is to rise to about 40 billion kroner in 2030, Berlingske reports.", ["kristeligt_dagblad", "berlingske", "jp"]],
+        ["That keeps Denmark on course for Nato's target of 3.5 per cent of GDP before 2030. Counting the Ukraine fund, Denmark already spends 3.4 per cent in 2026 by Nato's own count, according to Berlingske.", ["kristeligt_dagblad"]],
+        ["Jakob Engel-Schmidt, the tax minister, says the government will now ask the Folketing who will back donations to Ukraine. Rasmus Brun Pedersen, associate professor at Aarhus University, tells Kristeligt Dagblad this points to a government facing hard priorities, aware that welfare is more popular than defence.", ["kristeligt_dagblad"]]
+      ],
+      "callouts": [
+        {"kind": "figure", "value": "22 billion kroner", "label": "Extra for defence in the 2027 finance bill"}
+      ],
+      "sources": [1248, 1213, 1221, 663]
+    },
+    {
+      "id": "prisons-record-occupancy",
+      "role": "secondary",
+      "kicker": "Justice",
+      "headline": "Danish prisons hold more inmates than they have places",
+      "deck": "Occupancy is the highest ever, and the prison officers' union expects it to rise as tougher sentences take effect.",
+      "standard": [
+        ["Danish prisons hold 4,650 inmates in 4,300 places, an average occupancy of 105.4 per cent and the highest ever, the prison officers' union Fængselsforbundet says. Last year the figure was 102.7 per cent.", ["kristeligt_dagblad", "berlingske", "dr", "politiken"]],
+        ["Occupancy has averaged 135 per cent at Vejle remand prison this year and 140 per cent at Hillerød in recent months. Cells are fitted with bunk beds, and hobby rooms, visiting rooms and offices are taken into use.", ["kristeligt_dagblad"]],
+        ["The union expects more overcrowding, partly because the penal reform's tougher sentences for violence and rape take effect in two stages; half came in February and the rest follows in January.", ["kristeligt_dagblad"]]
+      ],
+      "callouts": [
+        {"kind": "figure", "value": "105.4 per cent", "label": "Average occupancy of Danish prisons, the highest ever"}
+      ],
+      "sources": [62, 29, 13, 48, 615]
+    },
+    {
+      "id": "german-drone-first-test-flight",
+      "role": "brief",
+      "kicker": "Defence",
+      "headline": "German military drone makes first test flight over Jutland",
+      "lede": ["A five-tonne German military drone, flown by a pilot in Schleswig, on Tuesday made the first test flight of an unmanned aircraft its size in Danish airspace.", ["kristeligt_dagblad", "berlingske", "dr"]],
+      "sources": [1246, 1239, 504, 642, 1236]
+    },
+    {
+      "id": "climate-activist-kluge-fined",
+      "role": "brief",
+      "kicker": "Crime",
+      "headline": "Climate activist pushed over by a guardsman is fined 17,000 kroner",
+      "lede": ["Copenhagen City Court on Tuesday fined Oskar Kluge, the climate activist pushed over by a guardsman at the king's New Year speech last year, 17,000 kroner on all 48 counts.", ["kristeligt_dagblad", "dr", "berlingske"]],
+      "sources": [957, 963, 763, 853, 875, 874]
+    },
+    {
+      "id": "tv2-chief-fined-name-ban",
+      "role": "brief",
+      "kicker": "Justice",
+      "headline": "TV 2's chief executive fined for breaching a name ban",
+      "lede": ["The court in Odense fined TV 2's chief executive, Anne Engdal Christensen, 25,000 kroner for breaching a name ban in the documentary 'Den sorte svane'; DR reports that TV 2 will appeal.", ["kristeligt_dagblad", "dr"]],
+      "sources": [1225, 1164, 871, 864, 1217, 839]
+    },
+    {
+      "id": "hydrogen-pipeline-extra-support",
+      "role": "brief",
+      "kicker": "Energy",
+      "headline": "Hydrogen pipeline to Germany gets 5.6 billion kroner more in state support",
+      "lede": ["A Folketing agreement adds 5.6 billion kroner in operating support for the hydrogen pipeline from Esbjerg to the German border, on top of 10.9 billion, and eases producers' booking commitments.", ["kristeligt_dagblad"]],
+      "sources": [908, 870, 890, 817, 934]
+    },
+    {
+      "id": "scotus-third-country-deportations-resume",
+      "role": "brief",
+      "kicker": "World",
+      "headline": "US Supreme Court lets Trump resume deportations to third countries",
+      "lede": ["The US Supreme Court has let the Trump administration again deport migrants to countries other than their own, suspending a 2025 ruling that required prior notice.", ["kristeligt_dagblad", "berlingske", "politiken"]],
+      "sources": [428, 389, 381, 399, 261, 414, 391, 299, 383]
+    },
+    {
+      "id": "morocco-el-mansouri-first-female-pm",
+      "role": "brief",
+      "kicker": "World",
+      "headline": "Morocco gets its first female prime minister",
+      "lede": ["Morocco's king has named Fatima Ezzahra El Mansouri, whose party came first in the election on 23 September, the country's first female prime minister and asked her to form a government.", ["kristeligt_dagblad", "berlingske", "borsen"]],
+      "sources": [640, 638, 551, 610, 477, 376, 306]
+    },
+    {
+      "id": "df-messerschmidt-chairman-fee",
+      "role": "brief",
+      "kicker": "Politics",
+      "headline": "Dansk Folkeparti gives Messerschmidt a chairman's fee",
+      "lede": ["Dansk Folkeparti's executive agreed on Friday to pay Morten Messerschmidt a chairman's fee that lifts his pay to the level earlier chairmen received, the party tells Berlingske.", ["kristeligt_dagblad", "borsen", "politiken"]],
+      "sources": [830, 569, 745, 788, 556]
+    },
+    {
+      "id": "burnham-water-public-control",
+      "role": "brief",
+      "kicker": "Europe",
+      "headline": "Burnham promises more public control of Britain's water",
+      "lede": ["In his first conference speech as prime minister, Andy Burnham promised to reverse Margaret Thatcher's ban on public ownership of water companies and to increase public control of water, energy and housing.", ["kristeligt_dagblad", "berlingske"]],
+      "sources": [771, 752, 691, 1210, 552, 537]
+    },
+    {
+      "id": "christa-pike-execution-not-halted",
+      "role": "brief",
+      "kicker": "World",
+      "headline": "US Supreme Court refuses to halt Christa Pike's execution",
+      "lede": ["The US Supreme Court has refused to stop the execution of Christa Pike, due on Wednesday, who would be the first woman executed in Tennessee in more than 200 years.", ["kristeligt_dagblad", "berlingske", "tv2"]],
+      "sources": [267, 250, 162, 175, 253, 1189]
+    },
+    {
+      "id": "jorgensen-hard-energy-winter-warning",
+      "role": "brief",
+      "kicker": "Energy",
+      "headline": "Dan Jørgensen warns the EU of a very hard energy winter",
+      "lede": ["The EU is preparing for 'a very hard winter' with very high energy prices, Dan Jørgensen, the EU's energy commissioner, said after meeting energy ministers in Dublin on Tuesday.", ["kristeligt_dagblad", "dr", "berlingske"]],
+      "sources": [646, 596, 505, 625]
+    },
+    {
+      "id": "sf-radikale-stand-by-su-cut",
+      "role": "brief",
+      "kicker": "Politics",
+      "headline": "SF and Radikale stand by an SU cut they did not propose",
+      "lede": ["Pia Olsen Dyhr of SF and Martin Lidegaard of Radikale say the SU cut for 81,000 students living at home was not their parties' idea, but both stand by it.", ["kristeligt_dagblad", "berlingske"]],
+      "sources": [1165, 1113, 526, 739, 747, 1233]
+    },
+    {
+      "id": "gender-pay-gap-12-3",
+      "role": "brief",
+      "kicker": "Economy",
+      "headline": "Gap between men's and women's pay narrows for the first time since 2022",
+      "lede": ["Women earned on average 12.3 per cent less than men in 2025, against 12.9 per cent the year before, the first narrowing in three years, Statistics Denmark figures show.", ["kristeligt_dagblad", "politiken"]],
+      "sources": [1341, 1301, 1318, 1290]
+    },
+    {
+      "id": "matthiesen-leaves-venstre-leadership",
+      "role": "brief",
+      "kicker": "Politics",
+      "headline": "Anni Matthiesen leaves Venstre's group leadership",
+      "lede": ["Anni Matthiesen, one of five Venstre MPs who voted against the fertiliser law, has left the party's group leadership, a decision she says she took a week before the vote.", ["kristeligt_dagblad", "berlingske"]],
+      "sources": [985, 928, 823, 991]
+    },
+    {
+      "id": "funen-cable-cancels-trains",
+      "role": "brief",
+      "kicker": "Transport",
+      "headline": "Dug-up cable cuts trains between Odense and Fredericia",
+      "lede": ["A cable dug through on West Funen cancelled several trains between Odense and Fredericia on Wednesday morning; DSB is bringing in replacement buses and does not know when normal service will resume.", ["kristeligt_dagblad", "berlingske"]],
+      "sources": [14, 10, 1]
+    },
+    {
+      "id": "september-power-price-highest-since-2022",
+      "role": "brief",
+      "kicker": "Prices",
+      "headline": "September's electricity was the dearest since 2022",
+      "lede": ["The average raw electricity price in September was 1.07 kroner per kilowatt-hour east of the Great Belt and 1.05 west of it, the highest since December 2022, the energy company OK says.", ["kristeligt_dagblad", "berlingske", "jp"]],
+      "sources": [167, 166, 165, 164]
+    }
+  ]
+}
