@@ -43,6 +43,20 @@ same by hand, for example after a manual `recover`. The site is served unlisted:
 `noindex` meta tag and the release root has a `robots.txt` that disallows everything; CloudFront
 should add an `X-Robots-Tag: noindex` header for files that are not HTML.
 
+## Looking before publishing
+
+Block 3's `preview` builds any edition contract into a scratch site and serves it on the loopback
+interface, with the archive and prev/next navigation taken from the real publish root, and writes
+nothing to the store:
+
+```sh
+publisher/publish_news.sh preview --edition editorial/runs/<id>/edition-checked.json --publish-root publisher/var/evaluation/site
+```
+
+The envelope names the URL; stop it with Ctrl-C. `--output DIR` writes the site instead of serving it.
+Use it to look at a run's copy before a publish, and to see a layout change on a real edition before
+the next morning's release carries it.
+
 ## Checking the site from outside
 
 `verify-live` reads `live/latest.json`, the front page, and the edition's manifest from the site named

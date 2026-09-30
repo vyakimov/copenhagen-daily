@@ -4,13 +4,23 @@ import { createHash } from "node:crypto";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
+import { createServer } from "node:http";
+import { createReadStream } from "node:fs";
+import { stat } from "node:fs/promises";
+import { extname, join } from "node:path";
 import { tmpdir } from "node:os";
 import { parseArgs, requiredOption } from "../src/cli/args.ts";
 import { ACTIONS, actionCatalog } from "../src/cli/actions/list-actions.ts";
 import { emit, emitError, type PublisherError } from "../src/contract/envelope.ts";
 import { readEdition, validateEdition, type EditionContractV1 } from "../src/contract/edition-contract.ts";
 import { CLI_VERSION, ENVELOPE_VERSION, SUPPORTED_EDITION_SCHEMA_VERSIONS } from "../src/contract/version.ts";
-import { publishEdition, recoverPublication, activatedReceipt, verifyBundle } from "../src/publish/store.ts";
+import {
+  publishEdition,
+  recoverPublication,
+  activatedReceipt,
+  verifyBundle,
+  currentIndex,
+} from "../src/publish/store.ts";
 import { buildWeb, copyAssets, indexEntry, LAYOUT_VERSION } from "../src/publish/web.ts";
 import { canonical, hashBytes, hashFile } from "../src/publish/hash.ts";
 import { publisherError } from "../src/publish/errors.ts";
@@ -99,6 +109,94 @@ async function check(): Promise<void> {
   });
   if (results.some((r) => !r.ok)) fail("check_failed", "offline checks failed", { checks: results });
   emit("check", { checks: results.map(({ name, ok }) => ({ name, ok })) });
+}
+
+const PREVIEW_TYPES: Record<string, string> = {
+  ".html": "text/html; charset=utf-8",
+  ".css": "text/css; charset=utf-8",
+  ".json": "application/json",
+  ".png": "image/png",
+  ".svg": "image/svg+xml",
+  ".txt": "text/plain; charset=utf-8",
+  ".woff2": "font/woff2",
+  ".woff": "font/woff",
+};
+
+/**
+ * Build one edition into a scratch site and serve it on the loopback interface. The archive and the
+ * prev/next stubs come from the publish root's index when one is given, so navigation is the real
+ * thing; nothing is written to the store. With --output the site is written there instead of served.
+ */
+function stringOption(name: string): string | undefined {
+  const value = args.options.get(name);
+  if (value === true) fail("usage_error", `--${name} needs a value`, { option: name });
+  return value;
+}
+
+async function preview(): Promise<void> {
+  const edition = await loadValidEdition(requiredOption(args, "edition"));
+  const layout = args.options.get("layout");
+  if (layout !== undefined && layout !== "grid" && layout !== "sheet") {
+    fail("usage_error", "--layout must be grid or sheet", { option: "layout", value: layout });
+  }
+  const publishRoot = stringOption("publish-root");
+  const prior = publishRoot ? await currentIndex(resolve(publishRoot)) : [];
+  const entries = [...prior.filter((e) => e.id !== edition.edition.id), indexEntry(edition, "skipped")];
+  const work = await mkdtemp(resolve(tmpdir(), "publisher-preview-"));
+  const dist = await buildWeb(root, work, edition, entries, { layout: layout as never });
+  await copyAssets(root, resolve(dist, "a", LAYOUT_VERSION));
+  // "/" is the previewed edition's own page, as it would be in a release, whatever the index says is latest.
+  await cp(resolve(dist, "n", edition.edition.id, "index.html"), resolve(dist, "index.html"));
+  const summary = { edition_id: edition.edition.id, editions_in_index: entries.length, layout_version: LAYOUT_VERSION };
+  const output = stringOption("output");
+  if (output) {
+    await mkdir(output, { recursive: true });
+    await cp(dist, output, { recursive: true });
+    await rm(work, { recursive: true, force: true });
+    emit("preview", { status: "built", path: resolve(output), ...summary });
+    return;
+  }
+  const server = createServer(async (request, response) => {
+    const url = new URL(request.url ?? "/", "http://127.0.0.1");
+    let file = join(dist, decodeURIComponent(url.pathname));
+    if (!file.startsWith(dist)) {
+      response.writeHead(403).end();
+      return;
+    }
+    try {
+      if ((await stat(file)).isDirectory()) {
+        if (!url.pathname.endsWith("/")) {
+          response.writeHead(301, { location: `${url.pathname}/` }).end();
+          return;
+        }
+        file = join(file, "index.html");
+      }
+      await stat(file);
+    } catch {
+      response.writeHead(404, { "content-type": "text/plain" }).end("not found");
+      return;
+    }
+    response.writeHead(200, { "content-type": PREVIEW_TYPES[extname(file)] ?? "application/octet-stream" });
+    createReadStream(file).pipe(response);
+  });
+  const port = integerOption("port", 4747, 1);
+  await new Promise<void>((ok, bad) => server.once("error", bad).listen(port, "127.0.0.1", ok));
+  const address = server.address();
+  const bound = typeof address === "object" && address ? address.port : port;
+  emit("preview", {
+    status: "serving",
+    url: `http://127.0.0.1:${bound}/`,
+    edition_page: `http://127.0.0.1:${bound}/n/${edition.edition.id}/`,
+    archive: `http://127.0.0.1:${bound}/archive/`,
+    ...summary,
+    stop: "Ctrl-C",
+  });
+  await new Promise<void>((done) => {
+    const stop = () => server.close(() => done());
+    process.once("SIGINT", stop);
+    process.once("SIGTERM", stop);
+  });
+  await rm(work, { recursive: true, force: true });
 }
 
 async function buildWebAction(): Promise<void> {
@@ -250,6 +348,8 @@ async function main(): Promise<void> {
     }
     case "build-web":
       return buildWebAction();
+    case "preview":
+      return preview();
     case "fit":
       return fit();
     case "render-device":

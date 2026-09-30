@@ -23,7 +23,7 @@ import {
   verifyBundle,
 } from "../src/publish/store.ts";
 import { hashFile } from "../src/publish/hash.ts";
-import { buildWeb, indexEntry } from "../src/publish/web.ts";
+import { buildWeb, indexEntry, LAYOUT_VERSION } from "../src/publish/web.ts";
 
 const projectRoot = resolve(import.meta.dirname, "..");
 const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -340,4 +340,38 @@ test("the flow is three build-time stacks, not balanced CSS columns", async () =
   assert.equal((html.match(/class="col"/g) ?? []).length, 3);
   const css = await readFile(join(root, "live", "a", "broadsheet-v3", "web.css"), "utf8");
   assert.doesNotMatch(css, /\.flow\{[^}]*column-count/);
+});
+
+test("preview builds any edition against the store's real index without writing to the store", async () => {
+  const root = await mkdtemp(join(tmpdir(), "publish-preview-"));
+  const published = await edition("minimal.json");
+  assert.equal((await publish(root, published)).status, "published");
+  const before = await tree(root);
+  const out = await mkdtemp(join(tmpdir(), "preview-out-"));
+  const draft = await edition("dense.json");
+  const r = spawnSync(
+    resolve(projectRoot, "publish_news.sh"),
+    [
+      "preview",
+      "--edition",
+      resolve(projectRoot, "contracts/examples/dense.json"),
+      "--publish-root",
+      root,
+      "--output",
+      out,
+    ],
+    { encoding: "utf8" },
+  );
+  const envelope = JSON.parse(r.stdout);
+  assert.equal(envelope.ok, true, r.stderr);
+  assert.equal(envelope.result.status, "built");
+  assert.equal(envelope.result.editions_in_index, 2);
+  const page = await readFile(join(out, "n", draft.edition.id, "index.html"), "utf8");
+  assert.match(page, new RegExp(`href="/a/${LAYOUT_VERSION}/web.css"`));
+  const archive = await readFile(join(out, "archive", "index.html"), "utf8");
+  assert.match(archive, new RegExp(`href="/n/${escapeRegExp(published.edition.id)}/"`));
+  assert.match(archive, new RegExp(`href="/n/${escapeRegExp(draft.edition.id)}/"`));
+  assert.ok((await stat(join(out, "a", LAYOUT_VERSION, "web.css"))).isFile());
+  assert.equal(await readFile(join(out, "index.html"), "utf8"), page, "the home page is the previewed edition");
+  assert.equal(await tree(root), before, "preview must not touch the store");
 });

@@ -42,7 +42,16 @@ References: [RSS.app extraction and limitations](https://help.rss.app/en/article
 
 ## Edition revisions and correction notices
 
-**Status: deferred. Not in the first release.** Settled 11 September 2026.
+**Status: designed; promoted on 30 September 2026, now that the site is delivered and shared.**
+Settled 11 September 2026 as deferred.
+
+**The interim path, used once on 30 September 2026.** A layout fix was pushed to the live paper by
+publishing the day's checked edition again under a new id (`<id>-second-printing`), keeping its number
+and cutoff, with the name "Wednesday edition, second printing". The store orders by cutoff and then
+generation time, so the reprint became the latest without changing the day, and the archive shows two
+rows for it. That is the newspaper's honest answer to a mistake, and it works today with no new code,
+but it is hand-assembled and leaves the original unlinked to its correction. The design below turns it
+into a routine action.
 
 ### The gap
 
@@ -93,8 +102,54 @@ generated JSON.
 
 ### The gate
 
-A real correction has been needed on a published edition and the next-edition workaround was found
-inadequate in practice. Do not build it speculatively.
+Met on 30 September 2026: a fix was needed on a published edition and the hand-assembled reprint
+served, but only just. Build it after the staging paper below, since a re-issue should be rehearsed
+there first.
+
+---
+
+## A staging paper
+
+**Status: designed, not scheduled.** Recorded 30 September 2026.
+
+### The gap
+
+Every change to the pipeline runs for the first time on the production paper at 05:30, with nobody
+watching. The failures met so far, a Node version on the job's PATH, a guard that refused the
+owner's work in progress, a column layout that only misbehaved in Safari, were all in the publishing
+and scheduling layers, and each was found by readers or by the morning's failure notice. The local
+`preview` action covers layout and copy, but not delivery, the edge functions, the archive on a real
+index, or the launchd environment.
+
+### The approach
+
+A second, complete paper that nobody reads. Everything is already parameterised, so it is
+configuration rather than code:
+
+- A second publish root, `publisher/var/staging/site`, with its own store and releases.
+- A second bucket and CloudFront distribution at `staging.copenhagen-daily.net`, with the same edge
+  functions and the same `noindex` posture, and the deliver IAM policy widened to both buckets.
+- A `target` on the desk's delivery config (`live` or `staging`) that `deliver`, `verify-live`, and
+  `run` accept, so any edition, the golden editions included, can be published end to end to staging
+  with one flag, through the same launchd environment when wanted.
+- A rule: a change to block 3, the desk runner, the delivery step, or the jobs is published to staging
+  with the golden edition or the day's copy, and checked there by `verify-live --target staging`,
+  before it is committed to `deploy`.
+
+The model sessions do not run against staging routinely. Their output is validated by the
+deterministic tools before anything is published, and staging exercises the layers where the failures
+have actually been, at no editor cost.
+
+### What it costs
+
+An afternoon: the bucket, the distribution, the certificate's extra name, the DNS record, a dozen
+lines in the desk config, and the `target` option in three actions. Running cost is nil on the free
+CloudFront plan.
+
+### The gate
+
+None. It should go in before the next change to block 3 or the delivery path, and before the
+correction path above is built.
 
 ---
 

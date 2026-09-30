@@ -4,6 +4,7 @@ export const ACTIONS = [
   ["doctor", "Report pinned renderer dependencies"],
   ["fit", "Measure and fit a device composition"],
   ["list-actions", "List supported actions"],
+  ["preview", "Build an edition into a local site and serve it"],
   ["publish", "Publish an immutable web and device bundle"],
   ["receipt", "Read an activated publication receipt"],
   ["recover", "Recover a pending publication activation"],

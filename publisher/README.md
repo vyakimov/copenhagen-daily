@@ -3,7 +3,7 @@
 Block 3 validates an editorial edition and publishes the web newspaper and TRMNL-sized device page.
 The public interface is the self-locating `publish_news.sh` JSON command wrapper.
 
-Actions: `list-actions`, `version`, `doctor`, `schema`, `validate`, `check`, `build-web`, `fit`,
+Actions: `list-actions`, `version`, `doctor`, `schema`, `validate`, `check`, `build-web`, `preview`, `fit`,
 `render-device`, `publish`, `recover`, `receipt`, and `verify`. The schemas in `contracts/` are the
 hand-written boundary shared with the editorial block; generated TypeScript types follow the edition
 schema.

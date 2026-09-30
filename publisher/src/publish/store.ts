@@ -276,7 +276,7 @@ async function currentRelease(root: string): Promise<string | null> {
   }
 }
 
-async function currentIndex(root: string): Promise<IndexEntry[]> {
+export async function currentIndex(root: string): Promise<IndexEntry[]> {
   const live = await currentRelease(root);
   if (!live) return [];
   return JSON.parse(await readFile(join(live, "index.json"), "utf8")).editions;
