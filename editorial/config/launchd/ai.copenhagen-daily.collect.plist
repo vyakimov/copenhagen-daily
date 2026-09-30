@@ -8,24 +8,24 @@
 	<array>
 		<string>/bin/sh</string>
 		<string>-c</string>
-		<string>/Users/vy/Documents/Development/news-gatherer/ingest/gather_news.sh collect --once; exit $?</string>
+		<string>@REPO@/ingest/gather_news.sh collect --once; exit $?</string>
 	</array>
 	<key>WorkingDirectory</key>
-	<string>/Users/vy</string>
+	<string>@HOME@</string>
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>PATH</key>
-		<string>/opt/homebrew/bin:/Users/vy/.local/bin:/usr/local/bin:/usr/bin:/bin</string>
+		<string>/opt/homebrew/bin:@HOME@/.local/bin:/usr/local/bin:/usr/bin:/bin</string>
 		<key>HOME</key>
-		<string>/Users/vy</string>
+		<string>@HOME@</string>
 		<key>PUBLISHER_MAGICK</key>
 		<string>/opt/homebrew/bin/magick</string>
 	</dict>
 	<key>StartInterval</key>
 	<integer>900</integer>
 	<key>StandardOutPath</key>
-	<string>/Users/vy/Library/Logs/copenhagen-daily/collect.stdout.log</string>
+	<string>@HOME@/Library/Logs/copenhagen-daily/collect.stdout.log</string>
 	<key>StandardErrorPath</key>
-	<string>/Users/vy/Library/Logs/copenhagen-daily/collect.stderr.log</string>
+	<string>@HOME@/Library/Logs/copenhagen-daily/collect.stderr.log</string>
 </dict>
 </plist>

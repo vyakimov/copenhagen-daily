@@ -57,9 +57,24 @@ class RunFailure(Exception):
         self.details = details or {}
 
 
-def load_desk_config(path: Path = DESK_CONFIG) -> dict[str, Any]:
+DESK_LOCAL_CONFIG = VAR / "desk.local.yaml"
+
+
+def load_desk_config(path: Path = DESK_CONFIG, local: Path = DESK_LOCAL_CONFIG) -> dict[str, Any]:
+    """config/desk.yaml, with var/desk.local.yaml laid over it one level deep. The committed file
+    holds the shape and the defaults; the local file, which git ignores, holds this deployment's
+    names: the bucket, the distribution, the CLI profile, the kitchen screen's host and path."""
     with path.open(encoding="utf8") as handle:
-        return yaml.safe_load(handle)
+        config = yaml.safe_load(handle) or {}
+    if local.is_file():
+        with local.open(encoding="utf8") as handle:
+            overlay = yaml.safe_load(handle) or {}
+        for key, value in overlay.items():
+            if isinstance(value, dict) and isinstance(config.get(key), dict):
+                config[key] = {**config[key], **value}
+            else:
+                config[key] = value
+    return config
 
 
 def _digest(path: Path) -> str | None:

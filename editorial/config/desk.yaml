@@ -10,17 +10,19 @@ collect_before_export: true                    # poll block 1 once before export
 commit_runs: true                              # git-commit the run directory after an activated publish
 device: true                                   # also render the kitchen screen's page; a device failure leaves the web edition untouched
 
-# Where the device page goes after delivery: scp -O to host:path. The host is a ~/.ssh/config alias
-# whose key passphrase lives in the login keychain. Leave host empty to skip the push.
+# Where the device page goes after delivery: scp -O to host:path, from var/desk.local.yaml. The host
+# is a ~/.ssh/config alias whose key passphrase lives in the login keychain. No host, no push.
 device_push:
-  host: MisterGentleman
-  path: /volume1/web/todays_news.png
+  host: null
+  path: null
 
 # Delivery to AWS. Leave bucket empty until the bucket and distribution exist; the run then skips it.
+# The bucket, distribution and profile are this deployment's own and live in var/desk.local.yaml,
+# which git ignores and which is laid over this file key by key (see load_desk_config).
 delivery:
-  bucket: copenhagen-daily-live
-  distribution_id: E67FD57M9R899
-  profile: copenhagen-daily-deliver            # an IAM user scoped to this bucket and distribution; the SSO profile is for people
+  bucket: null                                 # var/desk.local.yaml: the S3 bucket the live tree syncs to
+  distribution_id: null                        # var/desk.local.yaml: the CloudFront distribution to invalidate
+  profile: null                                # var/desk.local.yaml: an IAM user scoped to that bucket and distribution
   aws_command: aws
   site_url: https://copenhagen-daily.net       # what readers open; verify-live checks it against the live tree
 

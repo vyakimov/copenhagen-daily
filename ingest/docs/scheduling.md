@@ -3,7 +3,7 @@
 Collection runs under macOS launchd. The job definition is
 `editorial/config/launchd/ai.copenhagen-daily.collect.plist` at the repository
 root, label `ai.copenhagen-daily.collect`. It runs
-`/Users/vy/Documents/Development/news-gatherer/ingest/gather_news.sh collect --once`
+`<repository>/ingest/gather_news.sh collect --once`
 through `/bin/sh -c` with `StartInterval` 900, so a poll starts every fifteen
 minutes. Stdout and stderr go to
 `~/Library/Logs/copenhagen-daily/collect.stdout.log` and

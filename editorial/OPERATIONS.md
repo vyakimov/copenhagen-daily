@@ -13,12 +13,15 @@ with logs under `~/Library/Logs/copenhagen-daily/`:
 | `ai.copenhagen-daily.retry` | 07:30 local | `edit_news.sh run --retry`: skips when today's run already ended as published, dry run, or skipped; otherwise resumes the failed run from its first missing file |
 | `ai.copenhagen-daily.freshness` | 09:00 local | `edit_news.sh freshness --notify`: fails and notifies when the latest activated edition is older than `max_edition_age_hours` |
 
-Install them once:
+The files in `config/launchd/` are templates: `@REPO@` and `@HOME@` stand for this repository's path
+and the login home. Install or reload them with:
 
 ```sh
-for f in editorial/config/launchd/*.plist; do cp "$f" ~/Library/LaunchAgents/; launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/$(basename "$f"); done
-launchctl list | grep copenhagen
+editorial/config/launchd/install.sh
 ```
+
+It renders each template into `~/Library/LaunchAgents/`, boots the label out if it is loaded, and
+boots it back in.
 
 The repository lives under `~/Documents`, which macOS protects from background jobs, so each job runs
 its command through `/bin/sh`, which forks the wrapper and stays its parent. Grant Full Disk Access to
@@ -28,7 +31,7 @@ job's stderr log says `Operation not permitted`. To stop one: `launchctl bootout
 calendar job when the Mac wakes, so a Mac Studio asleep at 05:30 runs the edition late rather than losing it; keep it set to never sleep.
 
 The jobs carry their own `PATH`, and its order matters: `/opt/homebrew/bin` comes before `~/.local/bin`
-because other tools drop their own `node` there (Hermes keeps a Node 22 in it), and block 3 needs
+because other tools drop their own `node` there (one on this machine keeps a Node 22), and block 3 needs
 Homebrew's Node 26. A `dependency_missing` failure naming a Node version means that order was lost.
 
 ## Delivery
@@ -86,6 +89,13 @@ fetched and must return HTTP 200 (its bytes are not compared). The verdict is on
 
 The action never edits anything; its one fix is the deterministic delivery step. Anything else is a
 message to the owner.
+
+## This deployment's names
+
+`config/desk.yaml` is committed and holds the shape and the defaults. The names that belong to this
+deployment alone, the bucket, the distribution id, the CLI profile, the kitchen screen's host and
+path, live in `var/desk.local.yaml`, which git ignores and which is laid over the committed file key
+by key when the desk starts. Without it, delivery and the device push are skipped.
 
 ## Being told
 

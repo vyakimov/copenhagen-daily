@@ -1,0 +1,51 @@
+name: check
+
+on:
+  push:
+    branches: [deploy, main]
+  pull_request:
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    defaults:
+      run: { working-directory: ingest }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --frozen --extra dev
+      - run: uv run ruff check src tests
+      - run: uv run ruff format --check src tests
+      - run: uv run pytest -q
+
+  editorial:
+    runs-on: ubuntu-latest
+    defaults:
+      run: { working-directory: editorial }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --frozen
+      - run: uv run pytest -q
+
+  publisher:
+    runs-on: ubuntu-latest
+    defaults:
+      run: { working-directory: publisher }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 26
+          cache: npm
+          cache-dependency-path: publisher/package-lock.json
+      - run: npm ci
+      - run: PLAYWRIGHT_BROWSERS_PATH=0 npx playwright install --with-deps --no-shell chromium
+      - name: ImageMagick 7
+        run: |
+          curl -sSL https://imagemagick.org/archive/binaries/magick -o /tmp/magick && chmod +x /tmp/magick
+          printf '#!/bin/sh\nexec /tmp/magick --appimage-extract-and-run "$@"\n' > /tmp/magick.sh && chmod +x /tmp/magick.sh
+          /tmp/magick.sh -version | head -1
+      - run: npm run check
+        env:
+          PUBLISHER_MAGICK: /tmp/magick.sh

@@ -51,7 +51,7 @@ into its state, and confirming that a plan shows no drift is the step that makes
 reproducible. It is listed in the [roadmap](roadmap.md); the staging paper designed there would be a
 second instance of the same module, which is the practical reason to do it before that.
 
-## The sentence for the interview
+## In one sentence
 
 "A three-stage news pipeline with SQLite state, run on a schedule on one machine, that publishes an
 immutable static site through S3 and CloudFront with Route 53 and ACM in front, delivered by a
