@@ -178,7 +178,7 @@ configuration rather than code:
   with one flag, through the same launchd environment when wanted.
 - A rule: a change to block 3, the desk runner, the delivery step, or the jobs is published to staging
   with the golden edition or the day's copy, and checked there by `verify-live --target staging`,
-  before it is committed to `deploy`.
+  before it is committed to `main`.
 
 The model sessions do not run against staging routinely. Their output is validated by the
 deterministic tools before anything is published, and staging exercises the layers where the failures
