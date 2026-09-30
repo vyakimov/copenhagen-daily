@@ -42,7 +42,69 @@ test("schema returns its digest and validate accepts minimal", () => {
   const s = run(["schema", "--name", "edition"]);
   assert.equal(s.status, 0);
   assert.match(s.body.result.sha256, /^sha256:[0-9a-f]{64}$/);
-  const v = run(["validate", "--edition", resolve(root, "contracts/examples/minimal.json")]);
+  const v = run([
+    "validate",
+    "--edition",
+    resolve(root, "contracts/examples/minimal.json"),
+  ]);
   assert.equal(v.status, 0);
   assert.equal(v.body.result.valid, true);
+});
+
+test("unsupported, malformed, and duplicate options are refused before anything is written", async () => {
+  const { mkdtemp, readdir } = await import("node:fs/promises");
+  const { tmpdir } = await import("node:os");
+  const fixture = resolve(root, "contracts/examples/minimal.json");
+  const unknown = run([
+    "validate",
+    "--edition",
+    fixture,
+    "--not-a-real-option",
+  ]);
+  assert.equal(unknown.status, 2);
+  assert.equal(unknown.body.error.type, "usage_error");
+  assert.match(unknown.body.error.message, /not-a-real-option/);
+
+  const publishRoot = await mkdtemp(resolve(tmpdir(), "publish-usage-"));
+  const misspelt = run([
+    "publish",
+    "--edition",
+    fixture,
+    "--publish-root",
+    publishRoot,
+    "--skip-device",
+    "--dryrun",
+  ]);
+  assert.equal(misspelt.status, 2, misspelt.stdout);
+  assert.equal(misspelt.body.error.type, "usage_error");
+  assert.deepEqual(
+    await readdir(publishRoot),
+    [],
+    "a refused publish must leave the root untouched",
+  );
+
+  const missingValue = run(["validate", "--edition"]);
+  assert.equal(missingValue.status, 2);
+  const valueOnFlag = run([
+    "publish",
+    "--edition",
+    fixture,
+    "--publish-root",
+    publishRoot,
+    "--skip-device",
+    "yes",
+  ]);
+  assert.equal(valueOnFlag.status, 2, valueOnFlag.stdout);
+  assert.equal(valueOnFlag.body.error.type, "usage_error");
+  const duplicate = run([
+    "validate",
+    "--edition",
+    fixture,
+    "--edition",
+    fixture,
+  ]);
+  assert.equal(duplicate.status, 2);
+  const stray = run(["validate", "--edition", fixture, "extra"]);
+  assert.equal(stray.status, 2);
+  assert.deepEqual(await readdir(publishRoot), []);
 });

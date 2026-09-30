@@ -140,11 +140,25 @@ The model sessions do not run against staging routinely. Their output is validat
 deterministic tools before anything is published, and staging exercises the layers where the failures
 have actually been, at no editor cost.
 
+### To do alongside it: recovery must verify the whole release
+
+The block 3 code review of 30 September 2026 (finding 3 in
+[the review](block-three-code-review-2026-09-30.md)) showed that recovery after a crash verifies the
+candidate bundle, the shared assets, and the manifest's copy in the release, but not the rest of the
+release shell: `index.json`, `latest.json`, the archive and navigation pages, the root page, and the
+historical links. A shell file corrupted between the durable intent and recovery is activated as it
+stands, and the next publish fails while reading the live index. The fix is a digest inventory of the
+complete release in the durable intent, validated before activation, with the failure evidence kept
+and `live` left alone when it fails. It changes the journal format, so it belongs with the staging
+paper: build it, rehearse a corrupted release on staging, then let it reach production. The review's
+other findings on recovery (1, 2) and verification (4) were fixed the same day; its device findings
+(5, 6, 7) wait on the device path, which every scheduled run skips.
+
 ### What it costs
 
-An afternoon: the bucket, the distribution, the certificate's extra name, the DNS record, a dozen
-lines in the desk config, and the `target` option in three actions. Running cost is nil on the free
-CloudFront plan.
+An afternoon for the paper itself: the bucket, the distribution, the certificate's extra name, the DNS
+record, a dozen lines in the desk config, and the `target` option in three actions. Running cost is
+nil on the free CloudFront plan. The recovery inventory is a further day, mostly tests.
 
 ### The gate
 

@@ -1,5 +1,13 @@
 #!/usr/bin/env node
-import { access, cp, mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import {
+  access,
+  cp,
+  mkdir,
+  mkdtemp,
+  readFile,
+  rm,
+  writeFile,
+} from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -9,11 +17,24 @@ import { createReadStream } from "node:fs";
 import { stat } from "node:fs/promises";
 import { extname, join } from "node:path";
 import { tmpdir } from "node:os";
-import { parseArgs, requiredOption } from "../src/cli/args.ts";
+import { parseArgs, requiredOption, type ParsedArgs } from "../src/cli/args.ts";
+import { OPTIONS } from "../src/cli/options.ts";
 import { ACTIONS, actionCatalog } from "../src/cli/actions/list-actions.ts";
-import { emit, emitError, type PublisherError } from "../src/contract/envelope.ts";
-import { readEdition, validateEdition, type EditionContractV1 } from "../src/contract/edition-contract.ts";
-import { CLI_VERSION, ENVELOPE_VERSION, SUPPORTED_EDITION_SCHEMA_VERSIONS } from "../src/contract/version.ts";
+import {
+  emit,
+  emitError,
+  type PublisherError,
+} from "../src/contract/envelope.ts";
+import {
+  readEdition,
+  validateEdition,
+  type EditionContractV1,
+} from "../src/contract/edition-contract.ts";
+import {
+  CLI_VERSION,
+  ENVELOPE_VERSION,
+  SUPPORTED_EDITION_SCHEMA_VERSIONS,
+} from "../src/contract/version.ts";
 import {
   publishEdition,
   recoverPublication,
@@ -21,7 +42,12 @@ import {
   verifyBundle,
   currentIndex,
 } from "../src/publish/store.ts";
-import { buildWeb, copyAssets, indexEntry, LAYOUT_VERSION } from "../src/publish/web.ts";
+import {
+  buildWeb,
+  copyAssets,
+  indexEntry,
+  LAYOUT_VERSION,
+} from "../src/publish/web.ts";
 import { canonical, hashBytes, hashFile } from "../src/publish/hash.ts";
 import { publisherError } from "../src/publish/errors.ts";
 import { loadTitleConfig } from "../src/contract/title-config.ts";
@@ -30,7 +56,13 @@ import { fitEdition } from "../src/device/fit.ts";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const REQUIRED_NODE_MAJOR = 26;
-const args = parseArgs(process.argv.slice(2));
+const actionName = process.argv[2] ?? "";
+// Parsed inside the try below so a bad option is reported through the same envelope as any other error.
+let args: ParsedArgs = {
+  action: actionName,
+  options: new Map(),
+  positionals: [],
+};
 const known = new Set<string>(ACTIONS.map(([name]) => name));
 const schemaFiles: Record<string, string> = {
   edition: "edition-contract.v1.schema.json",
@@ -41,9 +73,14 @@ const schemaFiles: Record<string, string> = {
   device_artifact_result: "device-artifact-result.v1.schema.json",
 };
 
-const sha256 = (data: string | Buffer) => `sha256:${createHash("sha256").update(data).digest("hex")}`;
+const sha256 = (data: string | Buffer) =>
+  `sha256:${createHash("sha256").update(data).digest("hex")}`;
 
-function fail(type: string, message: string, details: Record<string, unknown> = {}): never {
+function fail(
+  type: string,
+  message: string,
+  details: Record<string, unknown> = {},
+): never {
   throw publisherError(type, message, details);
 }
 
@@ -51,17 +88,27 @@ async function loadValidEdition(path: string): Promise<EditionContractV1> {
   const checked = validateEdition(await readEdition(path));
   if (!checked.valid) {
     const first = checked.issues[0]!;
-    fail(first.code, "edition contract is invalid", { issues: checked.issues, pointer: first.pointer });
+    fail(first.code, "edition contract is invalid", {
+      issues: checked.issues,
+      pointer: first.pointer,
+    });
   }
   return checked.value;
 }
 
-function integerOption(name: string, fallback: number, minimum: number): number {
+function integerOption(
+  name: string,
+  fallback: number,
+  minimum: number,
+): number {
   const raw = args.options.get(name);
   if (raw === undefined) return fallback;
   const value = Number(raw);
   if (!Number.isInteger(value) || value < minimum) {
-    fail("usage_error", `--${name} must be an integer of at least ${minimum}`, { option: name, value: raw });
+    fail("usage_error", `--${name} must be an integer of at least ${minimum}`, {
+      option: name,
+      value: raw,
+    });
   }
   return value;
 }
@@ -74,7 +121,9 @@ async function doctor(): Promise<void> {
   const browserInstalled = await access(executable)
     .then(() => true)
     .catch(() => false);
-  const browserVersion = browserInstalled ? spawnSync(executable, ["--version"], { encoding: "utf8" }) : null;
+  const browserVersion = browserInstalled
+    ? spawnSync(executable, ["--version"], { encoding: "utf8" })
+    : null;
   emit("doctor", {
     node: process.version,
     npm: pkg.packageManager,
@@ -87,16 +136,27 @@ async function doctor(): Promise<void> {
     },
     imagemagick: magick.status === 0 ? magick.stdout.split("\n")[0] : null,
     browser_installed: browserInstalled,
-    chromium_version: browserVersion?.status === 0 ? browserVersion.stdout.trim() : null,
-    chromium_executable_sha256: browserInstalled ? await hashFile(executable) : null,
+    chromium_version:
+      browserVersion?.status === 0 ? browserVersion.stdout.trim() : null,
+    chromium_executable_sha256: browserInstalled
+      ? await hashFile(executable)
+      : null,
   });
 }
 
 async function check(): Promise<void> {
   const checks: Array<[string, string, string[]]> = [
     ["lint", process.execPath, [resolve(root, "scripts/lint.ts")]],
-    ["typecheck", resolve(root, "node_modules/.bin/tsc"), ["--noEmit", "--project", resolve(root, "tsconfig.json")]],
-    ["tests", process.execPath, ["--test", resolve(root, "tests/**/*.test.ts")]],
+    [
+      "typecheck",
+      resolve(root, "node_modules/.bin/tsc"),
+      ["--noEmit", "--project", resolve(root, "tsconfig.json")],
+    ],
+    [
+      "tests",
+      process.execPath,
+      ["--test", resolve(root, "tests/**/*.test.ts")],
+    ],
     ["wrapper", "/bin/sh", ["-n", resolve(root, "publish_news.sh")]],
   ];
   const results = checks.map(([name, command, commandArgs]) => {
@@ -105,9 +165,15 @@ async function check(): Promise<void> {
       encoding: "utf8",
       env: { ...process.env, NO_COLOR: "1" },
     });
-    return { name, ok: r.status === 0, exit_code: r.status, output_tail: `${r.stdout}${r.stderr}`.slice(-4000) };
+    return {
+      name,
+      ok: r.status === 0,
+      exit_code: r.status,
+      output_tail: `${r.stdout}${r.stderr}`.slice(-4000),
+    };
   });
-  if (results.some((r) => !r.ok)) fail("check_failed", "offline checks failed", { checks: results });
+  if (results.some((r) => !r.ok))
+    fail("check_failed", "offline checks failed", { checks: results });
   emit("check", { checks: results.map(({ name, ok }) => ({ name, ok })) });
 }
 
@@ -129,7 +195,8 @@ const PREVIEW_TYPES: Record<string, string> = {
  */
 function stringOption(name: string): string | undefined {
   const value = args.options.get(name);
-  if (value === true) fail("usage_error", `--${name} needs a value`, { option: name });
+  if (value === true)
+    fail("usage_error", `--${name} needs a value`, { option: name });
   return value;
 }
 
@@ -137,17 +204,32 @@ async function preview(): Promise<void> {
   const edition = await loadValidEdition(requiredOption(args, "edition"));
   const layout = args.options.get("layout");
   if (layout !== undefined && layout !== "grid" && layout !== "sheet") {
-    fail("usage_error", "--layout must be grid or sheet", { option: "layout", value: layout });
+    fail("usage_error", "--layout must be grid or sheet", {
+      option: "layout",
+      value: layout,
+    });
   }
   const publishRoot = stringOption("publish-root");
   const prior = publishRoot ? await currentIndex(resolve(publishRoot)) : [];
-  const entries = [...prior.filter((e) => e.id !== edition.edition.id), indexEntry(edition, "skipped")];
+  const entries = [
+    ...prior.filter((e) => e.id !== edition.edition.id),
+    indexEntry(edition, "skipped"),
+  ];
   const work = await mkdtemp(resolve(tmpdir(), "publisher-preview-"));
-  const dist = await buildWeb(root, work, edition, entries, { layout: layout as never });
+  const dist = await buildWeb(root, work, edition, entries, {
+    layout: layout as never,
+  });
   await copyAssets(root, resolve(dist, "a", LAYOUT_VERSION));
   // "/" is the previewed edition's own page, as it would be in a release, whatever the index says is latest.
-  await cp(resolve(dist, "n", edition.edition.id, "index.html"), resolve(dist, "index.html"));
-  const summary = { edition_id: edition.edition.id, editions_in_index: entries.length, layout_version: LAYOUT_VERSION };
+  await cp(
+    resolve(dist, "n", edition.edition.id, "index.html"),
+    resolve(dist, "index.html"),
+  );
+  const summary = {
+    edition_id: edition.edition.id,
+    editions_in_index: entries.length,
+    layout_version: LAYOUT_VERSION,
+  };
   const output = stringOption("output");
   if (output) {
     await mkdir(output, { recursive: true });
@@ -173,14 +255,21 @@ async function preview(): Promise<void> {
       }
       await stat(file);
     } catch {
-      response.writeHead(404, { "content-type": "text/plain" }).end("not found");
+      response
+        .writeHead(404, { "content-type": "text/plain" })
+        .end("not found");
       return;
     }
-    response.writeHead(200, { "content-type": PREVIEW_TYPES[extname(file)] ?? "application/octet-stream" });
+    response.writeHead(200, {
+      "content-type":
+        PREVIEW_TYPES[extname(file)] ?? "application/octet-stream",
+    });
     createReadStream(file).pipe(response);
   });
   const port = integerOption("port", 4747, 1);
-  await new Promise<void>((ok, bad) => server.once("error", bad).listen(port, "127.0.0.1", ok));
+  await new Promise<void>((ok, bad) =>
+    server.once("error", bad).listen(port, "127.0.0.1", ok),
+  );
   const address = server.address();
   const bound = typeof address === "object" && address ? address.port : port;
   emit("preview", {
@@ -206,16 +295,27 @@ async function buildWebAction(): Promise<void> {
   try {
     const layout = args.options.get("layout");
     if (layout !== undefined && layout !== "grid" && layout !== "sheet") {
-      fail("usage_error", "--layout must be grid or sheet", { option: "layout", value: layout });
+      fail("usage_error", "--layout must be grid or sheet", {
+        option: "layout",
+        value: layout,
+      });
     }
-    const dist = await buildWeb(root, work, edition, [indexEntry(edition, "skipped")], { layout: layout as never });
+    const dist = await buildWeb(
+      root,
+      work,
+      edition,
+      [indexEntry(edition, "skipped")],
+      { layout: layout as never },
+    );
     const assets = resolve(work, "assets");
     await copyAssets(root, assets);
     if (!dry) {
       const output = requiredOption(args, "output");
       await mkdir(output, { recursive: true });
       await cp(dist, output, { recursive: true });
-      await cp(assets, resolve(output, "a", LAYOUT_VERSION), { recursive: true });
+      await cp(assets, resolve(output, "a", LAYOUT_VERSION), {
+        recursive: true,
+      });
     }
     emit("build-web", {
       status: dry ? "planned" : "built",
@@ -230,7 +330,9 @@ async function buildWebAction(): Promise<void> {
 async function fit(): Promise<void> {
   const edition = await loadValidEdition(requiredOption(args, "edition"));
   const config = loadTitleConfig(resolve(root, "config/title.yaml"));
-  const result = await withBrowser(root, (browser) => fitEdition(browser, edition, config));
+  const result = await withBrowser(root, (browser) =>
+    fitEdition(browser, edition, config),
+  );
   emit("fit", {
     status: "fit",
     edition_id: edition.edition.id,
@@ -245,11 +347,23 @@ async function renderDevice(): Promise<void> {
   const edition = await loadValidEdition(requiredOption(args, "edition"));
   const dry = args.options.has("dry-run");
   const output = dry ? null : resolve(requiredOption(args, "output"));
-  const files = ["page-1.html", "page-1.png", "composition.json", "fit-report.json"];
+  const files = [
+    "page-1.html",
+    "page-1.png",
+    "composition.json",
+    "fit-report.json",
+  ];
   if (output) {
     for (const name of files) {
-      if (await access(resolve(output, name)).then(() => true, () => false)) {
-        fail("bundle_exists", "output directory already holds a device page", { path: resolve(output, name) });
+      if (
+        await access(resolve(output, name)).then(
+          () => true,
+          () => false,
+        )
+      ) {
+        fail("bundle_exists", "output directory already holds a device page", {
+          path: resolve(output, name),
+        });
       }
     }
   }
@@ -271,7 +385,10 @@ async function renderDevice(): Promise<void> {
         assets_sha256: device.stylesheet_sha256,
       }),
     );
-    await writeFile(resolve(output, "fit-report.json"), canonical(device.report));
+    await writeFile(
+      resolve(output, "fit-report.json"),
+      canonical(device.report),
+    );
   }
   emit("render-device", {
     status: dry ? "planned" : "rendered",
@@ -304,7 +421,9 @@ async function publish(): Promise<void> {
     requireDevice,
     keepReleases: integerOption("keep-releases", 5, 1),
     crashAt:
-      typeof args.options.get("crash-at") === "string" ? (String(args.options.get("crash-at")) as never) : undefined,
+      typeof args.options.get("crash-at") === "string"
+        ? (String(args.options.get("crash-at")) as never)
+        : undefined,
   });
   emit("publish", result);
 }
@@ -312,13 +431,19 @@ async function publish(): Promise<void> {
 async function main(): Promise<void> {
   const nodeMajor = Number(process.versions.node.split(".")[0]);
   if (nodeMajor !== REQUIRED_NODE_MAJOR) {
-    fail("dependency_missing", `Node ${REQUIRED_NODE_MAJOR} is required; running ${process.version}`, {
-      required_major: REQUIRED_NODE_MAJOR,
-      running: process.version,
-    });
+    fail(
+      "dependency_missing",
+      `Node ${REQUIRED_NODE_MAJOR} is required; running ${process.version}`,
+      {
+        required_major: REQUIRED_NODE_MAJOR,
+        running: process.version,
+      },
+    );
   }
   if (!args.action || !known.has(args.action)) {
-    fail("usage_error", "unknown or missing action", { actions: [...known].sort() });
+    fail("usage_error", "unknown or missing action", {
+      actions: [...known].sort(),
+    });
   }
   switch (args.action) {
     case "list-actions":
@@ -336,14 +461,27 @@ async function main(): Promise<void> {
     case "schema": {
       const name = String(args.options.get("name") ?? "edition");
       const file = schemaFiles[name];
-      if (!file) fail("usage_error", "unknown schema name", { name, names: Object.keys(schemaFiles).sort() });
+      if (!file)
+        fail("usage_error", "unknown schema name", {
+          name,
+          names: Object.keys(schemaFiles).sort(),
+        });
       const raw = await readFile(resolve(root, "contracts", file), "utf8");
-      emit(args.action, { name, version: 1, sha256: sha256(raw), schema: JSON.parse(raw) });
+      emit(args.action, {
+        name,
+        version: 1,
+        sha256: sha256(raw),
+        schema: JSON.parse(raw),
+      });
       return;
     }
     case "validate": {
       const edition = await loadValidEdition(requiredOption(args, "edition"));
-      emit(args.action, { edition_id: edition.edition.id, schema_version: edition.schema_version, valid: true });
+      emit(args.action, {
+        edition_id: edition.edition.id,
+        schema_version: edition.schema_version,
+        valid: true,
+      });
       return;
     }
     case "build-web":
@@ -359,36 +497,54 @@ async function main(): Promise<void> {
     case "recover":
       emit(
         args.action,
-        await recoverPublication(resolve(requiredOption(args, "publish-root")), args.options.has("dry-run")),
+        await recoverPublication(
+          resolve(requiredOption(args, "publish-root")),
+          args.options.has("dry-run"),
+        ),
       );
       return;
     case "receipt":
       emit(
         args.action,
-        await activatedReceipt(resolve(requiredOption(args, "publish-root")), requiredOption(args, "edition")),
+        await activatedReceipt(
+          resolve(requiredOption(args, "publish-root")),
+          requiredOption(args, "edition"),
+        ),
       );
       return;
     case "verify":
       emit(
         args.action,
-        await verifyBundle(resolve(requiredOption(args, "publish-root")), requiredOption(args, "edition")),
+        await verifyBundle(
+          resolve(requiredOption(args, "publish-root")),
+          requiredOption(args, "edition"),
+        ),
       );
       return;
     case "check":
       return check();
     default:
-      fail("usage_error", "action is declared but not available until its implementation batch", {
-        action: args.action,
-      });
+      fail(
+        "usage_error",
+        "action is declared but not available until its implementation batch",
+        {
+          action: args.action,
+        },
+      );
   }
 }
 
 try {
+  args = parseArgs(process.argv.slice(2), OPTIONS);
   await main();
 } catch (caught) {
-  const e = caught as Error & { type?: string; details?: Record<string, unknown> };
-  const type = e.type ?? "usage_error";
-  emitError(args.action || "unknown", {
+  const e = caught as Error & {
+    type?: string;
+    details?: Record<string, unknown>;
+  };
+  // An error nobody typed is a defect, not the operator's mistake.
+  const type = e.type ?? "internal_error";
+  emitError(actionName || "unknown", {
     type,
     message: e.message,
     details: e.details ?? {},

@@ -19,6 +19,7 @@ import {
   open,
   readdir,
   readFile,
+  lstat,
   readlink,
   rename,
   rm,
@@ -386,6 +387,19 @@ async function swapLive(root: string, intent: Intent): Promise<void> {
     );
   }
   const temp = join(root, `.live-${intent.release_id}`);
+  // The name carries the release id, so an existing entry is this run's own leftover from a crash
+  // between creating it and renaming it; replace it. Anything that is not a symlink is not ours.
+  const leftover = await lstat(temp).catch(() => null);
+  if (leftover) {
+    if (!leftover.isSymbolicLink()) {
+      throw publisherError(
+        "publish_conflict",
+        "the temporary live link path is occupied by something else",
+        { path: temp },
+      );
+    }
+    await rm(temp);
+  }
   await symlink(relative(root, target), temp);
   await rename(temp, join(root, "live"));
   await fsync(root);
@@ -397,7 +411,24 @@ async function recordActivation(
 ): Promise<Activation> {
   const existing = await readActivations(root);
   const already = existing.find((a) => a.release_id === intent.release_id);
-  if (already) return already;
+  if (already) {
+    // A crash between writing the record and clearing the intent lands here: finish the clean-up.
+    if (
+      already.manifest_sha256 !== intent.manifest_sha256 ||
+      already.edition_id !== intent.edition_id
+    ) {
+      throw publisherError(
+        "publish_conflict",
+        "an activation record exists for this release but describes a different publication",
+        {
+          release_id: intent.release_id,
+        },
+      );
+    }
+    await rm(join(root, "state", "pending.json"), { force: true });
+    await fsync(join(root, "state"));
+    return already;
+  }
   const sequence = (existing.at(-1)?.sequence ?? 0) + 1;
   const record: Activation = {
     ...intent,
@@ -935,6 +966,7 @@ export async function activatedReceipt(
       edition_id: editionId,
     });
   }
+  await expectManifest(bundle, activation);
   const receipt = JSON.parse(
     await readFile(join(bundle, "publication-receipt.json"), "utf8"),
   );
@@ -949,6 +981,26 @@ export async function activatedReceipt(
   };
 }
 
+/** The manifest is trusted only if it is the one the activation record hashed at publication. */
+async function expectManifest(
+  bundle: string,
+  activation: Activation,
+): Promise<void> {
+  const path = join(bundle, "manifest.json");
+  const actual = (await exists(path)) ? await hashFile(path) : null;
+  if (actual !== activation.manifest_sha256) {
+    throw publisherError(
+      "bundle_integrity_failed",
+      "the manifest is not the one recorded at activation",
+      {
+        edition_id: activation.edition_id,
+        expected: activation.manifest_sha256,
+        actual,
+      },
+    );
+  }
+}
+
 export async function verifyBundle(
   root: string,
   editionId: string,
@@ -959,6 +1011,10 @@ export async function verifyBundle(
       edition_id: editionId,
     });
   }
+  const activation = (await readActivations(root)).find(
+    (a) => a.edition_id === editionId,
+  );
+  if (activation) await expectManifest(bundle, activation);
   const manifest = JSON.parse(
     await readFile(join(bundle, "manifest.json"), "utf8"),
   );

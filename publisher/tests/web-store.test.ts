@@ -323,7 +323,9 @@ test("the archive is a month-grouped register that names the latest edition", as
   assert.match(archive, /class="register-month"/);
   assert.match(archive, /class="latest"/);
   assert.match(archive, new RegExp(`No\\. ${doc.edition.number}<`));
-  const index = JSON.parse(await readFile(join(root, "live", "index.json"), "utf8"));
+  const index = JSON.parse(
+    await readFile(join(root, "live", "index.json"), "utf8"),
+  );
   assert.equal(index.editions.at(-1).number, doc.edition.number);
   assert.match(
     archive,
@@ -336,9 +338,15 @@ test("the flow is three build-time stacks, not balanced CSS columns", async () =
   const doc = await edition("dense.json");
   const result = await publish(root, doc);
   assert.equal(result.status, "published");
-  const html = await readFile(join(root, "live", "n", doc.edition.id, "index.html"), "utf8");
+  const html = await readFile(
+    join(root, "live", "n", doc.edition.id, "index.html"),
+    "utf8",
+  );
   assert.equal((html.match(/class="col"/g) ?? []).length, 3);
-  const css = await readFile(join(root, "live", "a", "broadsheet-v3", "web.css"), "utf8");
+  const css = await readFile(
+    join(root, "live", "a", "broadsheet-v3", "web.css"),
+    "utf8",
+  );
   assert.doesNotMatch(css, /\.flow\{[^}]*column-count/);
 });
 
@@ -366,12 +374,117 @@ test("preview builds any edition against the store's real index without writing 
   assert.equal(envelope.ok, true, r.stderr);
   assert.equal(envelope.result.status, "built");
   assert.equal(envelope.result.editions_in_index, 2);
-  const page = await readFile(join(out, "n", draft.edition.id, "index.html"), "utf8");
+  const page = await readFile(
+    join(out, "n", draft.edition.id, "index.html"),
+    "utf8",
+  );
   assert.match(page, new RegExp(`href="/a/${LAYOUT_VERSION}/web.css"`));
   const archive = await readFile(join(out, "archive", "index.html"), "utf8");
-  assert.match(archive, new RegExp(`href="/n/${escapeRegExp(published.edition.id)}/"`));
-  assert.match(archive, new RegExp(`href="/n/${escapeRegExp(draft.edition.id)}/"`));
+  assert.match(
+    archive,
+    new RegExp(`href="/n/${escapeRegExp(published.edition.id)}/"`),
+  );
+  assert.match(
+    archive,
+    new RegExp(`href="/n/${escapeRegExp(draft.edition.id)}/"`),
+  );
   assert.ok((await stat(join(out, "a", LAYOUT_VERSION, "web.css"))).isFile());
-  assert.equal(await readFile(join(out, "index.html"), "utf8"), page, "the home page is the previewed edition");
+  assert.equal(
+    await readFile(join(out, "index.html"), "utf8"),
+    page,
+    "the home page is the previewed edition",
+  );
   assert.equal(await tree(root), before, "preview must not touch the store");
+});
+
+test("recovery clears a pending intent whose activation record was already written", async () => {
+  const root = await mkdtemp(join(tmpdir(), "publish-pending-"));
+  const doc = await edition("sparse.json");
+  assert.equal((await publish(root, doc)).status, "published");
+  const dir = join(root, "state", "activations");
+  const [name] = await readdir(dir);
+  const record = JSON.parse(await readFile(join(dir, name!), "utf8"));
+  const { activated, sequence, activated_at, ...intent } = record;
+  void activated;
+  void activated_at;
+  const { writeFile } = await import("node:fs/promises");
+  await writeFile(join(root, "state", "pending.json"), JSON.stringify(intent));
+  await assert.rejects(
+    () => activatedReceipt(root, doc.edition.id),
+    (e: any) => e.type === "recovery_required",
+  );
+  const first = await recoverPublication(root, false);
+  assert.equal(first.status, "recovered");
+  assert.equal(
+    await stat(join(root, "state", "pending.json")).then(
+      () => true,
+      () => false,
+    ),
+    false,
+    "the intent must be cleared",
+  );
+  assert.deepEqual(await readdir(dir), [name], "no second activation record");
+  assert.equal(
+    JSON.parse(await readFile(join(dir, name!), "utf8")).sequence,
+    sequence,
+  );
+  assert.equal((await activatedReceipt(root, doc.edition.id)).activated, true);
+  assert.equal(
+    (await recoverPublication(root, false)).status,
+    "nothing_to_recover",
+  );
+  const next = await edition("minimal.json");
+  assert.equal((await publish(root, next)).status, "published");
+});
+
+test("recovery survives a crash between creating the temporary live link and renaming it", async () => {
+  const root = await mkdtemp(join(tmpdir(), "publish-templink-"));
+  const doc = await edition("sparse.json");
+  await assert.rejects(
+    () => publish(root, doc, { crashAt: "after-intent" }),
+    (e: any) => e.type === "publication_outcome_uncertain",
+  );
+  const intent = JSON.parse(
+    await readFile(join(root, "state", "pending.json"), "utf8"),
+  );
+  const { symlink } = await import("node:fs/promises");
+  const { relative } = await import("node:path");
+  await symlink(
+    relative(root, resolve(root, intent.final.release)),
+    join(root, `.live-${intent.release_id}`),
+  );
+  const recovered = await recoverPublication(root, false);
+  assert.equal(recovered.status, "recovered");
+  assert.equal(
+    await readlink(join(root, "live")),
+    relative(root, resolve(root, intent.final.release)),
+  );
+  assert.deepEqual(
+    (await readdir(root)).filter((n) => n.startsWith(".live-")),
+    [],
+  );
+  assert.equal((await activatedReceipt(root, doc.edition.id)).activated, true);
+});
+
+test("verify and receipt reject a bundle whose manifest no longer matches its activation record", async () => {
+  const root = await mkdtemp(join(tmpdir(), "publish-tamper-"));
+  const doc = await edition("sparse.json");
+  assert.equal((await publish(root, doc)).status, "published");
+  assert.equal((await verifyBundle(root, doc.edition.id)).valid, true);
+  const bundle = join(root, "store", "n", doc.edition.id);
+  const { chmod, writeFile } = await import("node:fs/promises");
+  const manifestPath = join(bundle, "manifest.json");
+  await chmod(bundle, 0o755);
+  await chmod(manifestPath, 0o644);
+  const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
+  manifest.files = [];
+  await writeFile(manifestPath, JSON.stringify(manifest));
+  await assert.rejects(
+    () => verifyBundle(root, doc.edition.id),
+    (e: any) => e.type === "bundle_integrity_failed",
+  );
+  await assert.rejects(
+    () => activatedReceipt(root, doc.edition.id),
+    (e: any) => e.type === "bundle_integrity_failed",
+  );
 });
