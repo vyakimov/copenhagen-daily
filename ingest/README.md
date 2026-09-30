@@ -38,6 +38,19 @@ returns a JSON envelope.
 Repeat a mutating command without `--dry-run` only after reviewing its plan.
 Use `./gather_news.sh check` for the complete offline repository verification.
 
+`health` returns `status: degraded` and a `feed_failures:<feed_id>` reason for
+every feed whose `consecutive_failures` has reached `failure_alert_threshold`
+(3 in `config/sources.yaml`). A failed poll increments that counter and stores
+the error in `feed_state.last_error_json`; a successful or `304` poll resets it
+to 0.
+
+`export` takes the collector's process lock, waiting up to 90 seconds for a
+poll in flight, and holds it while it reads and stamps `generated_at`. A
+changed-since cursor taken from the manifest therefore cannot fall behind rows
+a concurrent poll commits. The one exception is `rebuild-articles`, which
+restores each article's historical change time on purpose, so repairs it
+applies are not visible to a changed-since export.
+
 The project-local agent skill is
 [`skills/news-gatherer/SKILL.md`](../skills/news-gatherer/SKILL.md) at the repository root. Its short main
 file covers daily use; optional references hold operations, development, and
@@ -82,19 +95,21 @@ databases, ingests the same 20-item RSS response without the index, with the ind
 and a cold cache, and with the index and a warm cache,
 reports query plans and elapsed times, and checks identical article projections.
 Temporary files are removed on completion; the configured database is never
-opened. Allow roughly 400 MB of temporary disk space. Cache warm-up is outside the
-timed warm-cache trial. Timings are diagnostic,
+opened. The temporary databases use the migration 005 layout and take tens of
+megabytes. Cache warm-up is outside the timed warm-cache trial. Timings are diagnostic,
 not a test threshold or a prediction of live collection speed.
 
 ## Sighting content deduplication
 
 Migration 005 stores repeated content once while retaining every observation and
-its original JSON text. New databases use it automatically. Populated databases
-continue collecting in the legacy layout until explicitly migrated:
+its original JSON text. New databases apply it automatically. A populated
+database takes it only through the explicit command below; the live database
+was migrated this way and vacuumed on 30 September 2026, so the command is now
+relevant for a restored legacy backup:
 
 ```sh
 ./gather_news.sh deduplicate-sightings --dry-run
-./gather_news.sh deduplicate-sightings --backup var/pre-dedup-2026-09-29.sqlite3
+./gather_news.sh deduplicate-sightings --backup var/pre-dedup-YYYY-MM-DD.sqlite3
 ```
 
 Apply holds the process lock, creates and integrity-checks a new backup, and verifies

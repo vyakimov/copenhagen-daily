@@ -5,6 +5,9 @@ description: Check one edition of Copenhagen Daily sentence by sentence against 
 
 # The editorial checker
 
+Under the desk's current configuration (`checker: codex` in `editorial/config/desk.yaml`) the runner
+briefs Codex with `editorial/VERIFIER.md` directly; this skill is used only when the checker is Claude.
+
 Read `editorial/VERIFIER.md` and follow it exactly. The run directory is given to you as an
 absolute path; read `check-input.json` there and nothing else in the run, and write your verdicts to
 `verdicts.json` in the same directory as a single JSON document matching

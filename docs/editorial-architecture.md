@@ -1,364 +1,266 @@
-# Block 2: Newspaper editorial architecture
+# Block 2: the editorial desk
 
-Status: architecture, 14 September 2026. This block is the editorial voice of a newspaper, and one edition is published to every reader. This document recommends boundaries and tradeoffs; it is not an implementation work breakdown. Its companion is [Block 3: Broadsheet publishing architecture](publisher-architecture.md).
+Status: as built, 30 September 2026. This document describes the editorial desk as it runs today: what the paper is, how one edition is made, and where the rules live. Operations are in [editorial/OPERATIONS.md](../editorial/OPERATIONS.md), the actions in [editorial/README.md](../editorial/README.md), the writing rules in the [handbook](../editorial/HANDBOOK.md) and the [style guide](../editorial/STYLE.md), and the reasons behind each choice in the [decision log](decision-log.md). Work that is designed but not built is on the [roadmap](roadmap.md). Its companion is [Block 3: Broadsheet publishing architecture](publisher-architecture.md).
 
-## Recommendation
+## What block 2 is
 
-Build a small, scheduled Python editorial application that consumes immutable `news-ingest` exports and produces an immutable, structured **edition**. Use LLMs for event matching, relevance assessment, and evidence-bounded writing. Use ordinary code for input validation, candidate retrieval, selection constraints, state, and publication decisions.
+A scheduled, deterministic Python runner, `edit_news.sh run`, that turns one of block 1's immutable export bundles into one immutable edition contract for block 3, wrapped around two bounded headless model sessions. The editor session clusters the window by event, selects under the ranking, writes evidence-bound copy, and builds the edition. The checker session reads every sentence against its evidence and marks it supported or unsupported. Code does everything else: the window, the memory, the cluster validator, the ranking, source resolution, contract validation, strikes, publication, delivery, and the record.
 
-**This block is an editorial desk, not a recommender.** It produces one edition that every reader receives. There is no per-reader profile, no per-reader selection, no reading history, and no behavioral signal of any kind. What the paper covers is a standing editorial decision the owner makes and writes down, the same way a masthead decides its remit. That keeps the system free of personal data, keeps every reader looking at the same public page, and keeps the cost of an edition independent of how many people read it.
+**This block is an editorial desk, not a recommender.** It produces one edition that every reader receives. There is no per-reader profile, no per-reader selection, no reading history, and no behavioral signal of any kind. What the paper covers is a standing editorial decision the owner writes down in `editorial/policy.yaml`, the same way a masthead decides its remit. Nothing in it is inferred from behaviour, and no reader tracking exists to inform it.
 
-Keep the acquisition system unchanged as block 1. All three blocks live in one repository, `copenhagen-daily`, as sibling directories `ingest/`, `editorial/`, and `publisher/`, with independently runnable ingestion, editorial, and publishing commands. They can run on one machine, on one schedule, without HTTP calls between them. Separate processes and file contracts provide the isolation needed here; microservices, a message broker, and an agent framework would add operating work without improving the newspaper.
+**It is a desk, not an agent.** The sequence of phases is fixed, every phase ends in a file in the run directory, and a model decides what the paper says, never what the system does next. The editor may call only three wrapper actions and may write only inside its run directory; the runner verifies both after every session.
 
-The most consequential editorial choice is to make the unit of selection a **reported event or development**, while retaining every contributing publisher article. Cross-source deduplication means showing one treatment of an event with several source links. It never means deleting articles, collapsing publisher identities, or treating repeated reporting as proof.
+The three blocks live in one repository, `copenhagen-daily`, as sibling directories `ingest/`, `editorial/`, and `publisher/`. They talk through shell wrappers, a one-object JSON envelope on stdout, and files on disk; nothing imports across a block boundary at runtime and no HTTP call passes between them.
 
 ```mermaid
 flowchart LR
-    A[Block 1: immutable RSS export bundles] --> B[Validate and retain inputs]
-    B --> C[Find candidate event matches]
-    C --> D[LLM matching and relevance assessment]
-    D --> E[Selection under policy]
-    E --> U[Union of selected stories]
-    U --> F[Evidence-bounded writing and validation, once per story]
-    F --> G[Immutable edition bundle]
-    G --> H[Block 3: layout and publication]
-    P[Editorial policy for the title] --> D
-    S[Previous editions and story history] --> C
-    S --> E
-    H -->|publication receipt| S
+    A[Block 1: immutable export bundle] --> W[window.json and window.md]
+    S[Block 3 store: last 14 activated editions] --> M[memory.json]
+    T[var/threads.json] --> M
+    W --> E[Editor session: clusters, selection, spec, build]
+    M --> E
+    E --> C[check-input.json]
+    C --> K[Checker session: verdicts.json]
+    K --> V[apply-verdicts: strikes, one send-back, fall to headline]
+    V --> P[Block 3: validate, publish, receipt]
+    P --> D[S3 sync, CloudFront invalidation, device page to the NAS]
+    P --> T
+    P --> G[git commit of the run]
+    Y[policy.yaml] --> E
+    Y --> V
 ```
 
-## Start with the evidence the collector actually has
+## The evidence the desk has
 
-Release 1 supplies titles, RSS descriptions where available, publisher identities, URLs, timestamps, categories, and feed appearances. Nullable `public_lead` and `public_body` fields exist in the model; their existence does not mean that text has been acquired. The first newspaper should therefore contain concise digests of RSS evidence, with direct links to the original reporting. A fuller-looking newspaper must not be achieved by inventing fuller reporting.
+Block 1 supplies titles, RSS descriptions where the feed carries them, publisher identities, canonical URLs, timestamps, categories, and feed appearances. That is all the evidence there is: the paper is a digest of RSS evidence with direct links to the original reporting, and every story carries the limitation `digest_of_rss_description`. No component of block 2 fetches a publisher page; the editor has no web tools, and the checker runs in a read-only sandbox.
 
-The ingestion [implementation plan](ingest-architecture.md) remains authoritative for block 1. These downstream proposals do not enable its optional enrichment or homepage work. NYT article fetching remains prohibited. Any future text acquisition follows the existing source gates as a separately approved project; neither the LLM nor the publishing browser retrieves publisher pages.
+Article identity is block 1's `(source, source_id)` with a `content_hash`, and every source in an edition carries both plus the bundle's `input_id`, so an edition can always be traced to exactly what it read. The bundle's manifest digest is recorded in the edition's `inputs[]`. Coverage comes from block 1's `health` action at export time, written to `feeds.json` in the run directory: each feed with `checked`, `failed`, or `not_checked`. `build` derives the edition's coverage status from it, `complete` only when every feed checked, and the editor's coverage note says what was read and what failed.
 
-The current code also matters at the handoff. Inspection of [`models.py`](../ingest/src/news_ingest/models.py), [`export.py`](../ingest/src/news_ingest/export.py), and [`db.py`](../ingest/src/news_ingest/db.py) establishes these integration constraints:
+The window is a 72-hour publication-time window ending at the cutoff. An article published earlier than that and first observed today does not enter it; the runner flags `newly_observed` against the previous edition's cutoff only for articles already in the window. The changed-since input that would admit late discoveries and corrections is designed on the [roadmap](roadmap.md#late-discoveries-in-the-candidate-window) and is not built.
 
-| Current behavior | Architectural consequence |
-|---|---|
-| Article identity is `(source, source_id)` and content has a `content_hash`. | Preserve that identity and reference the exact input bundle and content hash in editorial evidence. |
-| Exports contain current article projections, rather than the complete article-version stream. | Retain consumed bundles. They allow reconstruction of what an edition used, but cannot recover every intervening publisher correction or an arbitrary historical as-of state. |
-| Publication-window exports select by publication time; changed-since selects by content-change time. | Use both to handle current news, late discoveries, and corrections to older articles. A daily publication window alone is insufficient. |
-| Placement-only changes do not advance article content-change time. | Refresh appearances for the active candidate window separately from content deltas. Do not use changed-since as a complete observation stream. |
-| `publisher_prominence` summarizes the strongest retained placement; appearances carry observation timestamps. | Calculate recent prominence from relevant appearances. A historical high score must not make an old story permanently important. |
-| The current manifest writes empty `coverage_gaps` and `warnings` and omits the full configured feed set required by the plan. | Treat coverage as unknown unless supported by actual collection/health evidence. Correct the upstream contract before relying on manifest completeness; do not read the ingestion database directly as a workaround. |
-
-Validate bundle schemas, counts, and file hashes before importing, reject unsupported schema versions, and make repeated imports idempotent. Keep evidence references namespaced by publisher and input bundle; do not assume an ingestion database's local poll IDs are globally unique across rebuilds or different installations.
-
-Before wiring production scheduling, reconcile the exporter with the plan's snapshot/cursor boundary rules. The current changed-since implementation does not explicitly enforce the documented upper bound. The consumer should use inclusive, overlapping checkpoints and advance them only after durable import; overlap is protection against boundaries, not a replacement for a correct producer contract. Capture a timestamped, secret-free collection/health sidecar while coverage reporting is being completed, clearly distinguishing its observation time from the export snapshot.
-
-## Separate article, event, thread, and edition
-
-Use four concepts with distinct lifetimes:
+## Article, story, thread, title, edition
 
 | Concept | Meaning |
 |---|---|
-| Article evidence | One publisher's observed text at a particular imported revision. Original identity, language, attribution, URL, and content hash remain attached. |
-| Story/event | A specific occurrence or development that can receive one newspaper treatment: for example, a particular rate decision. Membership is a revisable editorial judgment. |
-| Ongoing thread | Optional continuity between distinct developments, such as several decisions and reactions concerning the same central bank. This is useful memory, not one giant duplicate cluster. |
-| Title | The newspaper: a standing remit, masthead, schedule, and editorial policy. There is one. |
-| Edition | One dated issue of one title: a frozen selection and wording for a cutoff, a policy revision, and an editorial run. A correction appears in a subsequent edition. |
+| Article evidence | One publisher's observed text at a particular exported revision, with its identity, language, URL, and content hash attached. |
+| Story | A specific event or development that receives one newspaper treatment. Membership is the editor's judgement, checked by the validator. |
+| Thread | Continuity between distinct developments, such as several decisions and reactions about the same central bank. Memory, not one giant cluster. |
+| Title | The newspaper: `copenhagen-daily`, with one masthead, schedule, and policy. There is one. |
+| Edition | One dated issue: a frozen selection and wording for a cutoff. An edition id is published once; a correction appears in a later edition. |
 
-Assign durable editorial story IDs when stories are first established. Do not derive a permanent ID solely from a membership list, which changes as reporting arrives. Record merges, splits, and supersession so a corrected match does not silently rewrite past editions. Keep the current clustering projection rebuildable from retained decisions and evidence.
+Story ids are slugs the editor mints in `selection.json`; `build` refuses an id that memory says was published before. The unit of selection is the event, and cross-source deduplication means one treatment with several source links, never a dropped article or a collapsed publisher identity.
 
-## Cluster in one model call, then verify in code
+## The run
 
-Give the whole candidate window to one capable model in a single call per edition and let it group the articles. Do not build a retrieval stage, an embedding model, a vector cache, or similarity thresholds.
+One run owns `editorial/runs/<edition-id>/`. The runner holds `editorial/var/run.lock`, appends a line to `status.json` after each phase, and stops at the first failure, leaving the last activated edition in place and notifying the owner. A rerun with the same edition id resumes from the first missing file; a published id is never rerun.
 
-The arithmetic supports this. Measured on real collected articles, a title plus description averages about 51 tokens. A 72-hour candidate window across sixteen publishers is on the order of 1,200 articles (1,228 on 14 September 2026), so the whole set is roughly 60,000 input tokens. That is one modest call per edition, a handful of times a day, which is negligible against the cost of writing the stories.
+| Phase | What happens |
+|---|---|
+| reconcile | Ask block 3 for the edition's receipt. If the edition is already activated, a previous run failed after publishing; every phase up to and including `publish` is skipped and the phases after it run again, each safe to repeat. A pending publication in block 3 stops the run with `recovery_required`. |
+| inputs | The runner's own inputs on disk (`window.json`, `window.md`, `memory.json`, `feeds.json`, `check-input.json`, the bundle) are compared with the digests it recorded in `inputs.json`. Any change quarantines the inputs and every model output made beside them, and the run rebuilds from the verified source. |
+| collect | Poll block 1 once, unless every healthy feed polled within the last 20 minutes. If the scheduled collector holds block 1's lock, wait, and after twenty attempts go on with its poll. |
+| window | Export the 72-hour publication window ending at the cutoff, verify the bundle, read feed health, and write `feeds.json`, `window.json`, and `window.md`. |
+| memory | Read the last 14 activated editions from block 3's store and the thread registry, and write `memory.json`. |
+| editor | The editor session, in edition mode. Its output is `clusters.json`, `selection.json`, `spec.json`, `edition.json`, and `NOTES.md`. The runner then validates `edition.json` against the contract itself. |
+| check | Build `check-input.json`, run the checker, verify the verdicts cover every sentence exactly once, strike, send back at most once, and write `edition-checked.json`. |
+| preflight | Block 3's `validate` on `edition-checked.json`. |
+| publish | Block 3's `publish`, with the device page rendered because `desk.yaml` sets `device: true`. A device failure degrades the publish to web-only. |
+| receipt | Block 3's `receipt`; the run fails with `not_activated` if no activation exists. |
+| threads | Advance `var/threads.json` from the web set of the activated receipt, never earlier. |
+| deliver | `aws s3 sync --delete` of block 3's `live/` tree to the bucket and a CloudFront invalidation, under the scoped IAM profile. Skipped with no bucket configured. |
+| device_push | `scp -O` of `live/device/current.png` to the NAS, only when the publish produced a device page. A failure is recorded and notified, never fatal. |
+| archive | `git commit --only` of the run's own small files. The bundle, the window, and the session records stay on disk, uncommitted. |
 
-The simplification is the stronger argument. Cross-lingual matching between Danish and English is exactly where embedding thresholds are most painful to tune and most fragile to maintain, and it is exactly what a capable general model does well without configuration. Removing the retrieval stage removes the most fragile components in this block: a model choice, a similarity threshold, a candidate-pair generator, and a cache to keep coherent with them.
+`run --dry-run` does everything up to `publish --dry-run` and skips the receipt, the threads, delivery, the push, and the commit. `run --retry` runs only when today's edition has not already ended as published, dry run, or skipped.
 
-Three design rules make the single call safe.
+### The two sessions
 
-**Return groups, not assignments.** Ask for a list of clusters, each carrying a short event description, the member article IDs, and a confidence. Anything not mentioned is a singleton. Most articles are singletons, so the output stays short, and long enumerations are where a model drifts, duplicates, or silently drops an identifier. The event description is what makes a cluster checkable by a person afterwards.
+The **editor** is a Claude Code session started with `claude -p` under `skills/editorial-desk/SKILL.md`, in `acceptEdits` mode with the repository readable, no web tools, no MCP servers, no session persistence, and a `Bash` allowlist that admits exactly three wrapper actions: `check-clusters`, `score`, and `build`. It cannot start a run, publish, or reach block 1 or block 3. It is bounded by `limits.editor_minutes` (40) and `limits.editor_turns` (150). The model is the one named in `config/desk.yaml`.
 
-**Move the cheap signal from before the model to after it.** The lexical and temporal checks that would have proposed candidates become a validator on the model's output instead. This is the same code in a better place: a pre-filter's misses are invisible and permanent, while a validator's flags are visible and cost nothing to review. Validate that every returned ID exists and appears at most once; that a cluster's members fall inside a plausible time span; that grouped articles share at least one rare term, named entity, or section; and that no cluster is implausibly large. A cluster that fails is split back into singletons and recorded, never silently accepted.
+The **checker** is Codex by default: `codex exec` in its read-only sandbox, ephemeral, briefed with `editorial/VERIFIER.md`, with a strict output schema derived from `editorial/contracts/verdicts.v1.schema.json` and its final message written straight to `verdicts.json`. It is bounded by `limits.checker_minutes` (15); the Codex path takes no turn bound. With `checker: claude` in `desk.yaml`, or `--checker claude`, a Claude Code session runs under `skills/editorial-checker/SKILL.md` with `Bash` also disallowed and `limits.checker_turns` (40) applied. The brief is the same file either way. A different model checking the editor's work has different blind spots, which is the property wanted in a checker.
 
-**Scrutinize cross-publisher clusters hardest**, because they are the ones that matter. Breadth drives the ranking formula below, so an over-merge does not merely duplicate a story, it promotes a story that was never that big. Cluster errors are amplified exactly where the stakes are highest, so a merge that raises a story's publisher count deserves the strictest check and, when uncertain, the split.
+The checker reads `check-input.json` and nothing else in the run: not the spec, not the notes, not the editor's reasoning. Each story in it carries every sentence of its copy with an address (`headline`, `deck`, `lede`, `standard[i]`, `callouts[i]`, and so on) and the publishers the paragraph cites, plus the story's evidence: for each source, the title, description, byline, categories, timestamp, and URL from the window. The headline, the deck, and every callout except a quote cite the whole of the story's evidence; a quote callout cites its attribution source.
 
-Instruct for conservatism and keep the standing preference: a duplicate occasionally appearing twice is better than suppressing a genuinely different event. Ask the model for coherent groups justified by a single event description rather than for pairwise matches, which is what keeps it from behaving like blind connected components. If A resembles B and B resembles C, A and C may still concern different events, and a group that cannot be described as one event is not a group.
+### The guards
 
-If candidate volume ever outgrows a single call, shard by day or by section and cluster within shards before a smaller reconciliation pass. Do not reintroduce embeddings to solve a volume problem.
+Two comparisons bracket every session, whatever its outcome. **`stray_edits`**: the working tree's changed paths outside the run directory, with their contents, and the thread registry, must be the same before and after; a path that vanished was reverted and counts. The owner's own uncommitted work elsewhere does not block the paper, because only what the session changed is compared. **`input_modified`**: the runner-owned inputs inside the run directory must still match `inputs.json`; if not, they and the session's work are quarantined and the run fails so the next run rebuilds from the verified source.
 
-### Threads: the same call, a looser standard
+A send-back may change only the stories that were sent back; any other change fails the run with `send_back_overreach`. An edition whose id differs from the run's is refused.
 
-A **thread** is a running narrative that several distinct events belong to over time. The September floods in Nepal are a thread; the flooding itself, Nepal accusing China of withholding weather data, and India calling China's response insufficient are three clusters inside it. Clusters answer "is this the same event"; threads answer "is this the same story".
+### The run directory
 
-Build them in the call already being made. Include in the prompt a compact list of active threads, each an identifier, a one-line description, and a last-seen date, and ask the model to attach every cluster it forms to an existing thread or open a new one. Active threads are a few dozen lines, so this adds almost nothing to a call that already carries the whole candidate window.
+| File | Written by | Content |
+|---|---|---|
+| `bundle/`, `feeds.json` | runner | Block 1's export and the coverage inventory |
+| `window.json`, `window.md` | runner | The numbered candidate window and its reading view |
+| `memory.json` | runner | Covered articles, threads, previous cutoff, next edition number |
+| `inputs.json` | runner | Digests of everything above |
+| `clusters.json` | editor | Groups with an event line, member numbers, confidence, thread |
+| `clusters-checked.json` | `check-clusters` | The validated clusters, removals, flags, singletons |
+| `ranking.json` | `score` | Every candidate with its terms, decision, and rank |
+| `selection.json` | editor | Stories with role, kicker, sources, and reasons; rejections; notes |
+| `spec.json` | editor | The compact editorial decision, to `contracts/spec.v1.schema.json` |
+| `edition.json` | `build` | The contract, sources resolved from evidence, validated |
+| `check-input.json` | runner | What the checker reads |
+| `verdicts.json` | checker | One verdict per sentence, and guideline notes |
+| `send-back.json`, `edition-checked.json` | runner | The strikes, the stories sent back or fallen, the struck edition |
+| `NOTES.md` | editor | The editorial log entry |
+| `status.json`, `sessions/` | runner | Phases, outcome, failure, session summaries |
 
-**Thread attachment is deliberately looser than cluster merging, and that is safe.** A bad merge changes what gets published, because two events become one story and one of them disappears. A bad thread attachment changes a ranking nudge and a "see also" link. The conservative bias belongs on clustering and must not be copied onto threading, which is what makes threading cheap to get right.
+The window numbers its articles `1..N`, and the editor refers to articles by number in every file it writes; the tools map numbers back to `(source, source_id)`, and an unknown number is a validation failure rather than a silent loss. `window.md` shows Danish articles from the last 24 hours with their descriptions and every other article by headline, grouped by publisher.
 
-A thread goes dormant after a fortnight without a new story. Dormant threads leave the prompt to keep it small but are retained, so a revival reattaches rather than starting over.
+## Clustering: one reading pass, then a validator
 
-Threads serve three purposes. They let repeat suppression distinguish "already covered" from "a new development in a story we ran", which is what allows day-three copy to refer to the floods without re-reporting them. They give the web edition a story history, which is something a website can offer that a printed paper cannot. And they contribute to ranking, as described below. The first two justify threads on their own.
+The editor reads the whole window and writes `clusters.json`: a list of groups, each with a one-line event description a reader could check, its member numbers, a confidence, and a thread. Anything not mentioned is a singleton, and most articles are. There is no retrieval stage, no embedding model, and no similarity threshold; the window fits in one context, and cross-lingual matching between Danish and English is what a capable model does without configuration.
 
-Examples the design must handle include the same announcement in two languages, two different announcements by the same company, a news report and an opinion column about it, and a later correction or material development. Opinion can be linked as a perspective without being absorbed into the factual account. A changed headline alone is not automatically new news.
+The cheap lexical signal sits after the model as a validator, `check-clusters`, where its flags are visible instead of a pre-filter's invisible misses. It removes numbers that are not in the window and numbers used twice, dissolves any cluster over 30 members, splits off members that share no rare term, capitalised entity, or section with the cluster's core, and flags a confidence under 0.5. A rare term is one that appears in at most 2 per cent of the window's articles, with a floor of three. Splits are recorded in `clusters-checked.json` and stand; the editor may disagree in the log but does not undo them.
+
+The standing preference is conservatism: a duplicate appearing twice is better than a suppressed event, and a group that cannot be described as one event is not a group. Cross-publisher merges deserve the strictest scrutiny because breadth drives the ranking, so an over-merge promotes a story that was never that big.
+
+### Threads
+
+A thread is a running narrative that several distinct events belong to. The editor attaches each cluster to an active thread from memory, opens a new one with an id and a description, or leaves it null. Threads are looser than clusters, and that is safe: a bad merge changes what is published, a bad thread attachment changes a ranking nudge.
+
+The registry, `editorial/var/threads.json`, advances only in the `threads` phase, from stories in the activated receipt's web set: each thread records the editions it ran in, its story ids, its last-seen date, and its peak breadth. A thread not seen for `thread_dormant_days` (14) leaves the active list in memory but stays in the registry, so a revival reattaches rather than starting over. Threads let repeat suppression distinguish "already covered" from "a new development in a story we ran", and they feed the `thread_strength` term below.
 
 ## The editorial policy is the newspaper's voice
 
-The title has a small, versioned **editorial policy** file: its remit, meaning the subjects it covers and the subjects it deliberately leaves out; its standing interests and exclusions; the list of scoring publishers whose reporting decides what is news; output language; tone; reading budget and page target; and its appetite for general news outside the remit. This is the masthead's editorial line, written by hand by the owner and kept in version control, so every change to what the paper covers is a deliberate, reviewable commit.
-
-It is not a user profile and carries no privacy weight. Nothing about it is inferred, learned, or derived from anyone's behavior. Publishing it as a "what this paper covers" page is a reasonable feature rather than a leak.
-
-**Do not add reader tracking to inform it.** No click logging, no dwell time, no per-reader analytics, and no inference from the fact that a device displayed something. Those would recreate the personal data this design exists without, and they answer a question the paper is not asking. An editor decides what matters; readers are not consulted by instrumentation.
+`editorial/policy.yaml` is the masthead's standing line, versioned in git and read at every run: the title, language, timezone, and schedule; the scoring and corroborating publishers; the ranking weights and section weights; the section table mapping feeds to sections; the kicker vocabulary; word budgets; limits; and source rules. It is not a user profile and carries no privacy weight. Correction happens by editing it: when an edition reads badly, the owner reads `NOTES.md` and `ranking.json`, changes the policy, the handbook, or the style guide, and commits. No weight adjusts itself.
 
 ### Danish media decide what is news
 
-**The paper is an overview of what Danish media are reporting. Settled 14 September 2026.** A story is
-eligible for an edition only if at least one *scoring publisher* reports it. The scoring publishers are
-every Danish outlet in the collector's configuration: DR, TV 2, Politiken, Berlingske, Jyllands-Posten,
-Børsen, Information, Altinget, Kristeligt Dagblad, and Via Ritzau. The international outlets, the Financial Times, the New York Times, BBC News, The Economist, The
-Guardian, The Washington Post, and The Wall Street Journal, are *linked publishers*: they
-never make a story eligible and never contribute to its score, but when a scoring publisher reports a
-story they also cover, their articles are attached to it as sources, so the reader gets the link and
-the writer gets the evidence.
+The paper is an overview of what Danish media are reporting. A story is eligible only if at least one **scoring publisher** reports it: DR, TV 2, Politiken, Berlingske, Jyllands-Posten, Børsen, Information, Altinget, and Kristeligt Dagblad. Via Ritzau is a **corroborating publisher**: a Danish feed of primary material whose press releases are evidence for a story a scoring publisher reports, never a source of eligibility, because a press release is a claim by an interested party. Every other configured publisher, the FT, the NYT, BBC News, The Economist, The Guardian, The Washington Post, and The Wall Street Journal, is a **linked publisher**: it never makes a story eligible and never scores, but when a scoring publisher reports a story it also covers, its articles attach as sources.
 
-The distinction is a list in the editorial policy file, `scoring_publishers`, not a property of block 1's
-configuration, because it is an editorial decision about what the paper is, not a fact about a feed. Any
-publisher not on the list is a linked publisher. A Danish feed of primary material, such as Via Ritzau's
-press releases, is listed separately as a *corroborating publisher*: it is evidence for a story other
-outlets report, never a source of eligibility in itself, because a press release is a claim by an
-interested party and not a news judgement. Settled 16 September 2026. Adding a new international feed changes nothing about
-selection; adding a new Danish outlet to the list widens what counts as news.
+The distinction is the `scoring_publishers` and `corroborating_publishers` lists in the policy, not a property of block 1's configuration. Three rules follow:
 
-Three consequences follow, and each is a rule:
-
-- **Clustering still sees everything.** International articles enter the single clustering call, because
-  matching them to Danish reporting is how they get attached. A cluster whose members are all linked
-  publishers is dropped at selection with the decision reason `not_in_danish_media`, and the drop is
-  recorded like any other rejection. It is never written, never scored, never counted.
-- **Breadth and prominence count scoring publishers only.** `breadth` is the number of distinct scoring
-  publishers on the story, and `peak_prominence` reads only their ranked surfaces. A story on DR,
-  Berlingske, and the FT has breadth two, not three. The FT's front page placing it first is evidence
-  for the writer, not a signal for the ranking.
-- **Sources are complete.** The story's `sources[]` in the edition contract carries every contributing
-  article, scoring and linked alike, with one primary. The primary is a scoring publisher's article.
-  Block 3 renders and links them all; the web's dateline lists every publisher that contributed.
+- **Clustering sees everything.** International articles enter the editor's reading so they attach to Danish reporting. A cluster with no scoring publisher is ranked with the decision `not_in_danish_media` and is never written.
+- **Breadth and prominence count scoring publishers only.** A story on DR, Berlingske, and the FT has breadth two.
+- **Sources are complete.** A story's `sources[]` carries every contributing article, scoring, corroborating, and linked alike, with one primary, and block 3 links them all.
 
 ### Which articles a story carries, and which is primary
 
-A story's sources are every article that supplied a fact, a quotation, or a judgement used in its copy,
-from scoring and linked publishers alike. The rule is evidence, not volume: include at most one article
-per publisher unless a second carries distinct evidence the copy actually uses, and prefer dated
-articles to live blogs, rolling "latest" pages, and video reels, which are included only when they are
-the sole coverage. The contract's cap of sixteen sources per story is kept: under this rule a story
-that reaches it has drawn on every configured publisher, and a story that genuinely needs more is the
-occasion to raise the cap with a new schema version, never to drop evidence silently.
-
-The primary is the scoring publisher's article that supplied the most of the copy; on a tie, the one
-with the fuller description, then the earlier one. The headline links to the primary, so it must be an
-article a reader can open and recognise the story in.
-
-The practical effect on prominence is that, of the ten scoring publishers, only Børsen and
-Jyllands-Posten supply a ranked surface that counts (Børsen's homepage feed and Jyllands-Posten's
-top-stories feed), since international homepage feeds do not score. Prominence is the weakest term, and
-the weights below assume it.
+A story's sources are every article that supplied a fact, a quotation, or a judgement used in its copy: at most one article per publisher unless a second carries distinct evidence the copy uses, and dated articles before live blogs, rolling pages, and video reels, which are included only as sole coverage. The contract caps sources at sixteen. The primary is the scoring publisher's article that supplied the most of the copy; on a tie, the fuller description, then the earlier one. The headline links to it. `build` refuses a primary that is not a scoring publisher, a source listed twice, and a paragraph or quote callout citing a publisher not among the story's sources.
 
 ### Sections come from the publisher, not from a model
 
-Resolve a story's sections from feed provenance, never from an LLM's reading of the text. Every appearance record names the feed it was seen in and marks whether that feed is a section, homepage, or latest feed. Filtering to section feeds gives the publisher's own placement decision, which is a better authority on where an article belongs than any inference we could make.
+A story's sections are resolved from feed provenance through the policy's `feed_sections` table, never from a model's reading of the text. Each appearance names the feed it was seen in; an article keeps the set of every section it was seen in; latest and homepage feeds carry no section; `borsen.breaking` and `borsen.longread` map to nothing because they describe urgency and format, not subject. Opinion is a flag on the article, not a section, so a comment column competes for its subject's slot with a marker. TV 2, Jyllands-Posten, Information, Kristeligt Dagblad, and Via Ritzau publish no section feeds, so their articles take sections from other publishers' articles in the same cluster, else none; a story with no section takes `unsectioned_weight` (0.8).
 
-A hand-written table maps each section feed to the title's own section vocabulary, so `dr.kultur`, `berlingske.kultur`, `ft.life_arts`, and `nytimes.arts` all resolve to culture. That table lives with the editorial policy, is inspectable, and needs no model. Coverage is 95 to 99 per cent once section feeds are configured for every source.
+### The ranking
 
-Three rules govern its use. Keep the resulting **set** of sections rather than collapsing to one label, because roughly an eighth of articles legitimately sit in more than one and that overlap is editorial signal. Resolve sections at edition time from all accumulated appearances, not once at first sight, because an article often reaches a section feed on a later poll than the latest feed that first surfaced it. And treat **opinion as a flag rather than a section**, since an opinion piece about culture is both; a comment column should compete for a culture slot carrying a marker, not occupy a separate section that displaces its subject.
-
-Two feeds map to nothing on purpose. `borsen.breaking` and `borsen.longread` describe urgency and format rather than subject, and articles in them reliably appear in a subject feed as well.
-
-### Weighting: the editor sets priorities, the day can overrule them
-
-Rank candidate stories with a small, visible formula rather than a model call:
+`score` computes a visible formula for every validated cluster and singleton and writes every term to `ranking.json`:
 
 ```
-base  = 0.45 x breadth + 0.10 x peak_prominence + 0.30 x recency
-      + 0.15 x thread_strength
+base  = (0.45 x breadth + 0.10 x peak_prominence + 0.30 x recency
+        + 0.15 x thread_strength) / (sum of the weights of the known terms)
 score = base x section_weight
 ```
 
-`breadth` is the count of distinct *scoring* publishers covering the story, normalized and deliberately non-linear, because the step from one publisher to two is the largest gain in evidence. Linked publishers do not count, however many of them carry the story. `section_weight` comes from the title's policy.
+`breadth` is the count of distinct scoring publishers, normalised concavely (n/(n+1), with ten publishers as 1.0), so the step from one publisher to two is the largest gain in evidence.
 
-`peak_prominence` counts **only feeds whose order is editorial, and only on scoring publishers**. Feed ordering was tested on 8 September 2026. The three homepage feeds are ranked, as are `nytimes.world` and `borsen.finans`. Every `latest` feed and most section feeds, including `dr.indland`, `politiken.indland`, `ft.world`, and `berlingske.samfund`, are in strict reverse-publication order, so position in them carries no editorial signal whatsoever. Scoring those was counting recency a second time under another name. Score a chronological surface at zero and let recency do that job once.
+`peak_prominence` counts only feeds whose order is editorial, `ranked_feeds` in the policy, and only on scoring publishers. Feed ordering was tested on 8 September 2026: every latest feed and every section feed is in reverse-publication order and carries no editorial signal, so only `borsen.homepage` and `jp.topnyheder` count. A story with no article on a ranked surface has prominence **unknown, not low**, and the term drops out of the formula for that story by renormalising the remaining weights. A story missing from Børsen's homepage was genuinely not front-paged; a story missing from a DR ranked surface tells us nothing, because DR publishes none.
 
-Record prominence as **unknown rather than low** for a publisher with no ranked surface, and let the other terms carry the story. The distinction matters: a story missing from Børsen's homepage feed was genuinely not front-paged, which is real negative evidence, while a story missing from a DR ranked surface tells us nothing, because DR publishes none. Treating those as the same number would make prominence untrustworthy. Of the scoring publishers only Børsen and Jyllands-Posten supply it; the NYT, FT, BBC, and Guardian homepage feeds are ranked but belong to linked publishers and do not score. Extending prominence to the other Danish outlets requires homepage capture, which stays gated.
+`recency` is measured in editions, not hours, from the latest scoring publisher's publication time in the cluster: 1.0 for anything since the previous edition's cutoff, 0.45 one edition older, 0.15 beyond that. Anchoring to the cutoff makes a daily paper behave like one: a story filed just after yesterday's deadline is new to this edition. With no published edition to anchor to, whole days before the cutoff stand in.
 
-`recency` is measured in **editions, not hours**. A story published since the previous edition's cutoff scores 1.0, one edition older scores about 0.45, two editions older about 0.15. Anchoring to the cutoff rather than to a rolling clock is what makes a daily paper behave like one: a story filed just after yesterday's deadline is new to this edition even though it is more than a day old. A smooth linear decay barely discriminates between this morning and yesterday afternoon, which is the distinction that matters most.
+`thread_strength` is the thread's peak breadth, normalised, decayed by the number of editions since the paper last published from it, and zero for a thread the paper has never run. It rewards continuity for a reader who read the earlier edition, not busy topics in general.
 
-Two clocks, deliberately. **Gate candidacy on observation time** so that a story the collector discovered late is still eligible, and **score recency on publication time** so that a genuinely old story is penalized for being old. A three-day-old article nobody noticed can earn a brief; it should not lead.
+`section_weight` is the highest weight among the story's sections. Multiplying rather than adding gives the property that makes the numbers meaningful: the ratio between two section weights is exactly the margin a story needs to overcome them. With Denmark at 1.0 and technology at 0.5, a technology story must reach twice the base score of the best Danish story to lead.
 
-`thread_strength` is the peak breadth the thread ever reached, decayed by the number of editions since **this title last published from that thread**. It applies only when the paper actually ran a story from the thread, because the value being captured is continuity for a reader who read the earlier edition, not a generic boost for busy topics. A day-three follow-up to yesterday's lead scores meaningfully above an unrelated story with identical evidence; a fortnight later it scores below it. Setting this term to zero reproduces the behaviour of a paper with no memory, so it is a tunable rather than a commitment. The failure mode to watch in the editorial log is a long-running story that never dies and slowly crowds out fresh news.
+Every candidate carries a decision: `not_in_danish_media` (no scoring publisher), `already_covered` (any member article appears in a published story in memory), `eligible`, or `outside_budget` (eligible but ranked beyond `limits.stories_written`, 24). Ties break on breadth, then the fresher story, then the id. `score` also writes **diversity notes**, which are advisory: a section holding more than half of the top, or one publisher being the sole scoring publisher on more than half of it.
 
-Prominence takes only a tenth of the weight because it is measurably weak, as the next paragraph explains. Recency takes nearly a third because a daily brief should visibly prefer today. Note that repeat suppression, not the recency term, is what stops yesterday's lead from reappearing: a story already published does not return unless the thread produces a material development, which arrives as a new cluster with its own age.
+### Selection is the editor's, with reasons
 
-Multiplying by the section weight rather than adding it gives the property that makes the numbers meaningful: **the ratio between two section weights is exactly the margin a story needs to overcome them.** With Denmark at 1.0 and technology at 0.5, a technology story must reach twice the base score of the best Danish story to lead the paper. An editor can reason about that directly and tune it without guessing.
-
-Breadth carries half the weight for a measured reason. Section-feed prominence barely discriminates: across the corpus, position one in almost every section feed scores identically, because the score is a within-publisher feed position and section feeds are short. Only homepage feeds produce a strong prominence signal, and only a few publishers have one configured. Cross-publisher breadth is the signal that actually separates the day's big story from a well-placed minor one. Measured on real data, the largest story of the day appeared across five of the six publishers in the sample while a local item that outranked it on prominence alone appeared in one.
-
-A caution confirmed by experiment. A naive clustering that merged any two articles sharing rare terms, closing transitively, produced clusters spanning business, Denmark, world, climate, and culture at once and inflated breadth for stories that were never the same event. That is the failure mode the cluster validator exists to catch. Breadth is only trustworthy on top of conservative matching, and because it multiplies the cost of an over-merge, the validator should be tested against Danish and English examples before these weights are tuned.
-
-Have the LLM assess understandable dimensions: relevance to the title's remit, likely consequence, novelty relative to previous editions, and adequacy of available evidence. Let code combine those assessments with recency and recent publisher prominence under a visible policy. The assessments are editorial judgments, not calibrated probabilities of importance.
-
-Selection happens across the edition, after clustering and before writing, so the desk never pays to write a story it will not run. Reserve some space for consequential general news and discovery outside the stated remit; cap repetitive topics; avoid letting the publisher with the most feed items dominate. Count distinct publishers rather than appearances when describing breadth of reporting, and do not present that count as independent corroboration. Publisher prominence is one bounded signal, not a cross-publisher universal ranking.
-
-Prefer a simple weighted ordering followed by explicit diversity and space constraints to an opaque second LLM deciding the entire newspaper. Give every selected or rejected candidate a concise decision reason such as `already_covered`, `new_development`, `outside_budget`, `insufficient_evidence`, or `not_in_danish_media`. Record the supporting dimensions so weights and exclusions can be adjusted without guessing what happened.
-
-Correction happens by editing the policy, not by learning. When an edition reads badly, the owner inspects the recorded decision reasons, changes the policy file, and commits. Keep a lightweight editorial log of judgments such as “wrong match,” “should not have led,” or “missed the obvious story,” tied to the edition and story IDs, so a policy change can be argued from examples rather than from memory. That log is an editor's notebook and an input to a human decision. It never adjusts weights on its own.
+The ranking proposes; the editor decides in `selection.json`, and every departure carries a reason. A covered cluster runs only as a new development, and the reason names the development: a new decision, number, actor, or consequence, never more analysis of the same event. The handbook's diversity rule applies: no publisher dominates, no section takes more than half the page, culture and sport appear only when a Danish outlet made them news. Rejections are recorded with their decision reasons, and `NOTES.md` is the editor's notebook: what led and why, what was left out, every departure from the ranking, every validator split disagreed with. The owner reads it every morning.
 
 ### Guidelines, not micromanagement
 
-The editor is a model, and it is trusted as an editor. The paper runs a few model calls a day, so it can
-afford a capable model, and a capable model given broad guidelines and a good example produces better
-editions than one given a rulebook. The plans therefore codify three kinds of thing and deliberately
-stop there: what the paper is (remit, scoring publishers, schedule, voice); the hard rules that protect
-the reader and the evidence (eligibility, attribution, no invention, immutability, budgets as
-ceilings); and the working method (the run, the budget, the repair order). Everything else, which
-story leads on a day with two contenders, whether a figure beats a quote, whether a timeline earns its
-space, how a Danish institution is named in English, is guidance with a reason attached, and the
-editor may depart from it when the day demands and say so in the editorial log. Do not turn guidance
-into validators. A rule that the model must follow algorithmically belongs in code; a judgement that a
-good editor would make belongs in the prompt as advice.
+The editor is a model and is trusted as an editor. The written material codifies three kinds of thing and stops there: what the paper is; the hard rules that protect the reader and the evidence, which are eligibility, attribution, no invention, immutability, and budgets as ceilings; and the working method. Everything else, which story leads on a day with two contenders, whether a figure beats a quote, how a Danish institution is named in English, is guidance with a reason attached, and the editor may depart from it and say so in the log. A rule the model must follow algorithmically belongs in code; a judgement a good editor would make belongs in the prompt as advice.
 
-The working material for the editor lives in `editorial/`: the policy file `policy.yaml` with the
-scoring publishers, section table, section weights, kicker vocabulary, budgets, and schedule; the desk
-handbook `HANDBOOK.md` with the run, the budget, the repair order, and the callout guidance; and the
-golden example under `examples/`, the edition of 15 September 2026 with the reasoning behind each
-choice, which is both the quality bar and block 2's first test fixture. A style guide, `STYLE.md`, is
-still to be written: spelling, numbers and currency, English names for Danish institutions, how Danish
-titles and quotations are rendered. Until it exists the golden example is the style reference.
+The working material is `editorial/policy.yaml`, `editorial/HANDBOOK.md` for the run, the budget, sources and the primary, callouts, kickers, checking, and limits, `editorial/STYLE.md` for spelling, numbers, time, names, and attribution forms, and the golden example under `editorial/examples/2026-09-15-morning/`, which is the quality bar and a test fixture.
 
 ## Writing must remain attached to source evidence
 
-For selected stories, prepare a compact packet of attributed source text. Generate a headline, optional standfirst, and a small set of permitted copy lengths named `short`, `standard`, and `extended`. These names are deliberately distinct from the story roles `lead`, `secondary`, and `brief`, which describe prominence rather than length. These are maximum budgets, not word counts the model must fill. A title-only item can remain a headline with a source link; it need not become a paragraph.
+For each selected story the editor writes a headline, an optional deck, and body copy in the permitted variants `short`, `standard`, and `extended`, which name lengths and are distinct from the roles `lead`, `secondary`, and `brief`, which name prominence. The budgets are ceilings, not targets. A title-only item can remain a headline with a source link; when the description is empty, that is the whole brief.
 
-Each factual sentence, including the headline, must map to the source passage or passages supporting it. Preserve who made a claim, uncertainty, numbers, dates, and disagreements. Agreement between feeds still does not verify an event independently. Do not add background facts or causal explanations from model memory.
+Each factual sentence, including the headline, must rest on the source passages supporting it. Preserve who made a claim, uncertainty, numbers, dates, and disagreements. Agreement between feeds does not verify an event independently. No background fact, context, or causal explanation from model memory enters the copy.
 
-**Attribute by citation, not by prefix. Settled 11 September 2026.** Every paragraph and every brief lede is `{text, sources[]}`: the prose states what happened, and the publisher ids in `sources[]` say who reported it. Block 3 renders them as a trailing marker linking to the article. Copy must not open with "X reports that" or rotate through synonyms for it; in a paper where every sentence is a digest, the prefix repeats on every paragraph and carries nothing the marker does not. Name a publisher inside the sentence only when the point is that publishers differ: "Politiken puts the vote at 29 to 26; DR reports 28 to 27" is prose because the disagreement is the news. A quote's reporting publisher is likewise a publisher id.
+**Attribute by citation, not by prefix.** Every paragraph and every lede is `{text, sources[]}`: the prose states what happened, and the publisher ids in `sources[]` say who reported it. Block 3 renders them as a trailing marker linking to the article. Copy does not open with "X reports that" or rotate through synonyms for it. A publisher is named inside the sentence only when the point is that publishers differ: "Politiken puts the vote at 29 to 26; DR reports 28 to 27" is prose because the disagreement is the news. A quote's reporting publisher is likewise a publisher id.
+
+For a full edition the editor delegates each story to a subagent that receives only that story's articles, the role and its budget, the eight guidelines, and one golden-example story of the same role, and returns the story's spec entry; the editor assembles the spec.
 
 ### Writing guidelines: facts first, colour only with a name on it
 
-**Settled 14 September 2026.** The evidence block 2 writes from
-is RSS descriptions, and Danish outlets write those as teasers: "Valggyser kan trække i langdrag",
-"vidste ikke hvilket ben de skulle stå på". A faithful paraphrase carries the teaser's voice into the
-paper, where it reads as the paper's own opinion, because the citation sits on the paragraph and is
-invisible in the prose. Unchecked, the result is copy that is at once padded, editorialised, and
-structurally serialised by outlet. These guidelines prevent that. They are guidelines, not validators: the writer
-weighs them, and the review step flags departures rather than rejecting them.
+The evidence block 2 writes from is RSS descriptions, and Danish outlets write those as teasers: "Valggyser kan trække i langdrag", "vidste ikke hvilket ben de skulle stå på". A faithful paraphrase carries the teaser's voice into the paper, where it reads as the paper's own opinion, because the citation sits on the paragraph and is invisible in the prose. Unchecked, the result is copy that is at once padded, editorialised, and serialised by outlet. These guidelines prevent that. They are guidelines, not validators: the writer weighs them, and the checker notes departures as advisory guideline notes rather than strikes.
 
-1. **Every sentence should carry a new fact**: an actor, a number, a time, a place, or a decision. A
-   sentence that only characterises ("it is a thriller that may drag on") is cut, not rewritten.
-2. **Colour is attributed or cut.** The paper's own voice is plain. Idiom, metaphor, and mood from a
-   source are either translated to their plain meaning or kept as that source's characterisation with
-   the outlet or speaker named in the sentence: "Altinget called the night a thriller", never "it was a
-   thriller". A direct quotation with a named speaker is always allowed. On a slow news day a story may
-   carry attributed colour as padding; unattributed colour is never padding.
-3. **Synthesise, do not serialise.** One story is one account. Sources are citations on sentences, not
-   units of structure; a paragraph per outlet restating the same fact is the tell of summarisation. An
-   outlet is named in prose only when outlets disagree or when guideline 2 requires it.
-4. **Answer first.** The result and what happens next, then how it unfolded, then reactions and analysis.
-   The teaser's suspense structure is inverted.
-5. **Analysis has a name.** Judgements are attributed to a person or a title, never floated as the
-   paper's view.
-   The test for whether a source is named in the sentence or only cited in the marker is *whose
-   authority the sentence rests on*. A fact of record, something that happened, a number, a date, a
-   decision, rests on the event itself: "The overnight count left two seats between the blocs" is
-   cited by the marker and names nobody, however many outlets reported it. A sentence that rests on
-   the source's own judgement, observation, or access names the source in prose: "Kristeligt Dagblad
-   describes empty dance floors", "an analyst quoted by Børsen hopes it does not distract", "Elisabet
-   Svane attributes the fall to the green change of course". Naming in prose is therefore a signal to
-   the reader that this is one outlet's view or eyewitness account rather than the settled record, and
-   it is never used for facts, because that would suggest the fact is contested when it is not. Where
-   the speaker is unnamed, the chain of attribution is kept: "an analyst quoted by Børsen", not "an
-   analyst". A direct quotation names its speaker and, if the speaker is not obvious, the outlet that
-   obtained it.
+1. **Every sentence should carry a new fact**: an actor, a number, a time, a place, or a decision. A sentence that only characterises ("it is a thriller that may drag on") is cut, not rewritten.
+2. **Colour is attributed or cut.** The paper's own voice is plain. Idiom, metaphor, and mood from a source are either translated to their plain meaning or kept as that source's characterisation with the outlet or speaker named in the sentence: "Altinget called the night a thriller", never "it was a thriller". A direct quotation with a named speaker is always allowed. On a slow news day a story may carry attributed colour as padding; unattributed colour is never padding.
+3. **Synthesise, do not serialise.** One story is one account. Sources are citations on sentences, not units of structure; a paragraph per outlet restating the same fact is the tell of summarisation. An outlet is named in prose only when outlets disagree or when guideline 2 requires it.
+4. **Answer first.** The result and what happens next, then how it unfolded, then reactions and analysis. The teaser's suspense structure is inverted.
+5. **Analysis has a name.** Judgements are attributed to a person or a title, never floated as the paper's view. The test for whether a source is named in the sentence or only cited in the marker is *whose authority the sentence rests on*. A fact of record, something that happened, a number, a date, a decision, rests on the event itself: "The overnight count left two seats between the blocs" is cited by the marker and names nobody, however many outlets reported it. A sentence that rests on the source's own judgement, observation, or access names the source in prose: "Kristeligt Dagblad describes empty dance floors", "an analyst quoted by Børsen hopes it does not distract", "Elisabet Svane attributes the fall to the green change of course". Naming in prose is therefore a signal to the reader that this is one outlet's view or eyewitness account rather than the settled record, and it is never used for facts, because that would suggest the fact is contested when it is not. Where the speaker is unnamed, the chain of attribution is kept: "an analyst quoted by Børsen", not "an analyst". A direct quotation names its speaker and, if the speaker is not obvious, the outlet that obtained it.
 6. **The headline and deck carry the drama; the body may be plain.**
-7. **A word budget per role** keeps density a constraint rather than a hope: lead 120 to 180 words,
-   secondary 60 to 110, brief one sentence under 35. Thin evidence produces a short story, not a padded
-   one; guideline 1 wins over filling the slot.
-8. **Respect the reader's time.** The paper never pads for its own sake. A slow news day makes a shorter
-   newspaper, not a thinner one: fewer stories, shorter stories, empty slots left empty. The reader stays
-   engaged because every sentence carries something relevant to them, and when the sentences stop the
-   reader is done and can get on with their day. The budgets in guideline 7 are ceilings, never targets,
-   and the attributed colour guideline 2 allows on a slow day is a courtesy to the source's voice, not a
-   way to fill space.
+7. **A word budget per role** keeps density a constraint rather than a hope: lead 120 to 180 words, secondary 60 to 110, brief one sentence under 35. Thin evidence produces a short story, not a padded one; guideline 1 wins over filling the slot.
+8. **Respect the reader's time.** The paper never pads for its own sake. A slow news day makes a shorter newspaper, not a thinner one: fewer stories, shorter stories, empty slots left empty. The reader stays engaged because every sentence carries something relevant to them, and when the sentences stop the reader is done and can get on with their day. The budgets in guideline 7 are ceilings, never targets, and the attributed colour guideline 2 allows on a slow day is a courtesy to the source's voice, not a way to fill space.
 
-Translate into the chosen newspaper language while retaining original source text and language in the private evidence record. Do not turn a paraphrase into a quotation. Convert relative time expressions using the source and edition timestamps, or omit them when ambiguous. Label digests as based on RSS headlines/descriptions where that is the evidence available.
+Copy is English; the source text and language stay in the evidence. A paraphrase is never a quotation. Relative time expressions are converted using the source and edition timestamps, or omitted when ambiguous. Callout text is approved copy written here, with the same evidence discipline as the body; block 3 chooses only which callouts fit and never composes or edits their wording.
 
-Validate output structure and reference integrity in code. Use an additional bounded LLM check for unsupported statements, changed attribution, and contradictions, with at most a small number of repairs. This check can catch mistakes; it is not proof of truth. If a story still fails, fall back to supported shorter copy or a source headline, or exclude it with an explicit reason. A missing paragraph is preferable to a confident invention.
+All source text is untrusted data. The editor has no browser, no shell beyond the three wrapper actions, and no publishing credentials; feed text cannot alter the policy or authorise an action, and every URL in the edition comes from the resolved evidence, never from the model.
 
-Callout text is approved copy written here, at generation time, with the same evidence discipline as the body. Block 3 chooses only which callouts fit; it never composes or edits their wording.
+## The check
 
-Treat all source text as untrusted data. The editorial model has no browser, shell, publishing credentials, or acquisition tools. Feed text cannot alter the editorial policy or authorize actions. URLs in final output come from validated input references, not strings invented by the model.
+The checker marks every sentence, headline and callouts included, against the sources the sentence cites: supported, with the passage, or unsupported, with the reason: no source says it, the evidence contradicts it, the attribution changed, a paraphrase became a quotation, a quotation has no speaker, or the copy adds background no evidence carries. It never rewrites. A check can catch a mistake; it is not proof of truth.
+
+The runner refuses verdicts that do not cover the check input sentence for sentence, exactly once each, or that name a different edition, and asks the checker again on the next run. `apply-verdicts` then strikes: an unsupported sentence is removed from its paragraph, a struck deck or short headline is dropped, a struck callout is removed, and nothing new enters. A story **stands** if its headline was not struck, its opening sentence survived, and at least `story_stands_min_words` (0.67) of its words remain; a brief-capable story that lost its lede does not stand. A story that stands ships as struck.
+
+A story that does not stand goes back to the editor once (`limits.check_send_backs`, 1) in send-back mode, with the strikes and their reasons in `send-back.json`; the editor rewrites only those stories from the evidence, shorter if the evidence is thin, and the rewrite is checked once more. A story that still does not stand **falls to its headline**: body, deck, and callouts removed, the lede set to the headline for a brief-capable story, the limitation `headline_only` added, and, when the headline itself was struck, the primary source's own title in its place. The failure mode is a shorter story, never an invented one.
 
 ## The edition is the contract with block 3
 
-Use versioned JSON with a published JSON Schema at this boundary. Markdown may be a useful preview, but should not be the primary machine interface. Block 2 owns meaning, selection priority, and permitted shortening; block 3 owns typography, coordinates, and actual pagination.
+Block 3 owns the schema, `publisher/contracts/edition-contract.v1.schema.json`, and `build` validates against the identical schema and the same semantic checks before block 3's `validate` runs as the final preflight, so a malformed edition fails with the same pointer before a subprocess is spawned. The edition carries:
 
-**Block 3 owns the schema itself**, published as hand-written JSON Schema Draft 2020-12 with golden acceptance and rejection documents. Every published schema is an immutable numbered artifact, and every accepted-shape change, including an optional field or new callout kind, creates a new integer version. Unknown fields are rejected, so older renderers cannot be assumed to accept newer output. Block 2 selects a supported version/digest, validates with the identical schema and equivalent format assertions, runs the shared semantic rejection corpus, and calls block 3's `validate` as final preflight. The detailed contract is Section 5 of the [publishing implementation plan](publisher-architecture.md).
-
-The conceptual edition contract should carry:
-
-| Part | Required meaning |
+| Part | Content |
 |---|---|
-| Identity and time | Title ID, edition ID, cutoff, edition date, timezone, output language, schema version. The title ID selects the masthead and device profile block 3 holds for it. Distinguish publication, observation, editorial generation, and eventual publication times. |
-| Reproducibility | Input bundle references and digests; private references to profile, policy, prompts, models, and stored accepted responses. |
-| Coverage | Configured source/feed inventory and known gaps, or explicit unknown status; no claim of complete publisher coverage. |
-| Ordered stories | Unique story IDs in authoritative array order, with no redundant `order` field. `device_participation` is `required`, `optional`, or `reserve`; all are accepted web stories. Exactly one lead is first and required. Other roles are secondary and brief, with only secondary-to-brief fallback. Approved bodies are `short`, `standard`, and `extended`, with optional `headline_short` and a publisher-prefixed lede for any brief-capable story. Attributed callouts use the five declared kinds. Reader-facing kickers carry section presentation; internal ranking dimensions stay in private editorial records. |
-| Presentation intent | An edition emphasis such as `one_big_story` or `quiet_day`, masthead ear text, and the edition name and number. These are hints. |
-| Links and attribution | Primary reading link and every contributor, preserving block 1's `(source, source_id)`, an opaque input-bundle reference, original title, timestamps, and supporting content hash. Publisher display names come from block 3 config. No local paths enter public provenance. Evidence limitations must be visible to readers. |
-| Fit policy | Present for the contract and filled mechanically; block 2 does not use it, since no run renders a device page. |
+| Identity and time | Title `copenhagen-daily`, edition id, number, name, date, `Europe/Copenhagen`, English, cutoff, generation time. |
+| Coverage | The feed inventory from block 1's health, `checked_from` and `checked_until`, a status derived from the inventory, and the editor's coverage note. |
+| Inputs | The bundle's `input_id` and manifest digest. |
+| Stories | In authoritative order, lead first. Each with role, kicker, optional secondary kicker, copy (headline, optional deck and short headline, lede, body variants), callouts of the five declared kinds, complete sources with one primary, and limitations. |
+| Presentation | An emphasis of `one_big_story`, `quiet_day`, or `many_stories`, and the right ear text. Hints. |
+| Device fields | `device_participation` and `fit_policy`, filled mechanically by `build`: the lead is `required`, every other story `optional`, so block 3 fits the kitchen screen from the most prominent stories down and omits from the least prominent end. The editor writes nothing about participation, fallbacks, or short headlines. |
 
-Keep private audit material in a separate sidecar: evidence passages, cluster decisions, selection reasons, validation results, costs, and provenance. Export only the compact source attribution and limitations needed by the reader to block 3's public-facing content. The editorial policy is not secret and may be published deliberately, but prompts, provider request logs, model responses, and cost records must never reach the newspaper.
+Private material stays in the run directory and never reaches the paper: the ranking, the selection reasons, the verdicts, the session records, and the notes. The policy is not secret and may be published deliberately.
 
-The publisher returns separate web and device sets, chosen composition, roles, headline/body variants, slots, callout indices, omissions, and structural elements. Update “included previously” memory from the **web set** only after an activated receipt is acknowledged, idempotently by edition ID and manifest digest. A stored bundle or fitting report is not activation evidence. If stdout is lost, use `receipt --edition <id>`; if activation is pending, run `recover` and look up the receipt again, rather than generating a different edition to escape the conflict. Block 3 retains activation evidence beyond release cleanup. Stored receipts omit their enclosing manifest digest; the outer lookup/command result supplies it. Local activation, external hosting, device delivery, and reading are separate facts.
+Memory advances only from an activated receipt: the `threads` phase reads the receipt's web story ids, and the next run's `memory` reads block 3's activation records, so an edition that failed to publish leaves no trace in either. A stored bundle is not activation evidence. If stdout is lost, `receipt --edition <id>` recovers it; if activation is pending, block 3's `recover` is run and the receipt looked up again, never a different edition generated to escape the conflict.
 
 ### Story budget
 
-The web edition carries every accepted story and is the paper. Typical editions carry three to five
-secondaries and eight to sixteen briefs; a quiet day carries fewer, and that is a complete edition
-rather than a thin one.
+The web edition carries every accepted story and is the paper.
 
-### The device page is not block 2's concern
+| Role | Web |
+|---|---|
+| Lead | exactly 1, first |
+| Secondary | as many as the day earns, typically 3 to 5 |
+| Brief | as many as earn a line, typically 8 to 16 |
 
-Block 3 keeps a device renderer and a fit report, but a scheduled run tells it to skip the device page,
-and block 2 makes no device decisions: no participation, no fallback role, no short headline, no
-composition preference, and no fit repair. The contract's device fields are filled mechanically by
-`build` so the contract stays valid. A kitchen screen that shows the paper is fed from the published web
-edition by something outside the three blocks, and never drives what the desk writes.
+A quiet day is a shorter paper: two secondaries and five briefs is a complete edition.
 
-## State, scheduling, and failure behavior
+### The device page is block 3's
 
-Use a separate SQLite database for imported article revisions, matching decisions, model-response caches, the written story pool, story history, edition status, and the editorial log. Store immutable input and output bundles on disk. Reuse the collector's operational principles: one writer, explicit ordering, short transactions, atomic directory publication, structured diagnostics, and backups. Never make a database transaction wait for a model call.
+Block 3 renders the kitchen screen's page from the same contract at every publish, and `device_push` copies it to the NAS. The desk makes no device decisions and writes no shorter forms for it; the page shows the lead and as many of the next stories as fit.
 
-Use a scheduled batch, not continuous generation after each poll. The title publishes one morning edition in `Europe/Copenhagen`, with English copy as in the supplied visual reference. A device page is not part of a run. Multiple titles are designed in the [roadmap](roadmap.md).
+## Memory and repeat suppression
 
-At each run, freeze the imported input set and cutoff. **Default the candidate window to 72 hours of publication time**, and hold continuity for several weeks. The window is a backstop rather than the main mechanism: with recency anchored to edition cutoffs, anything past two editions already scores 0.15 and is effectively buried, so the gate exists to stop genuinely stale material appearing at all rather than to rank.
+Every run begins by reading the paper it has already published: the last `memory_editions` (14) activated editions from block 3's store, newest first. From them `memory.json` carries every published story with the articles it carried, a covered-article map keyed by `(source, source_id)`, each story's thread, the previous cutoff that anchors recency, and the next edition number. A candidate whose articles overlap a published story's is `already_covered` in the ranking and runs only as a new development the editor names. A changed headline alone is not new news; opinion about a covered event is linked as a perspective, not run as the event again.
 
-### Reading past editions
+## State, schedule, and failure
 
-Every run begins by reading the paper it has already published. Block 2 loads the published contracts
-of the last fortnight from block 3's store, newest first, and from them builds three things: the set of
-story ids and the articles each carried, which is the "already covered" memory; each story's thread,
-which is what lets day-three copy refer to a story without re-reporting it; and the day each ran, which
-is what the recency and thread terms are measured against. A candidate cluster that overlaps a
-published story's articles is covered unless it brings a material development, a new decision, number,
-actor, or consequence; further analysis of the same event is not a development. Memory advances only
-from an activated publication receipt, so an edition that failed to publish leaves no trace in it.
+There is no block 2 database. State is the run directories, block 3's store, and the thread registry. Reproducibility means retention: the edition names its bundle and digest, the run directory keeps every phase file, and deterministic code reproduces the edition from them; a fresh session is a new run and is not promised to decide the same way.
 
-Gate and score on different clocks, as the weighting section describes. Candidacy also admits anything newly observed since the previous edition, so a late discovery stays eligible even when the article is older; recency then scores it on publication time, so it can earn a brief without leading. One exemption to the window: a material correction to an older article is new information and is admitted regardless of the original's age. Block 1's changed-since export exists to surface exactly those. Late arrivals can be eligible because they were newly observed; label their actual publication time. Material corrections can override normal repeat suppression.
+launchd on the Mac Studio runs five jobs from `editorial/config/launchd/`: block 1's collect every fifteen minutes, the edition at 05:30 local, `verify-live --fix --notify` at 06:00, `run --retry` at 07:30, and `freshness --notify` at 09:00, which fails when the latest activated edition is older than `max_edition_age_hours` (30). The cutoff is the policy's 05:30 in `Europe/Copenhagen`, and the edition id is `<date>-morning`.
 
-Checkpoint import independently from successful newspaper publication: a model outage should not make ingestion progress disappear. Resume interrupted stages from retained inputs and responses. Cache keys include the exact relevant evidence and model/prompt revision. Matching and writing depend only on evidence; relevance assessment additionally depends on the policy revision, cutoff, and prior-edition state. Placement-dependent decisions include appearance evidence even though article `content_hash` excludes it.
+Limits are deadline discipline, recorded in the policy: at most 24 stories written, one send-back, 40 minutes and 150 turns for the editor, 15 minutes for the checker, 75 minutes for the run from collect to receipt. A limit hit stops the run and leaves the last activated edition in place with its own date: a shorter paper or no paper, never a late one. Nothing retries a model step blindly, because a second attempt at the same window costs the same and hides the fault. A headlines-only degraded edition is on the [roadmap](roadmap.md#headlines-only-degraded-edition).
 
-Do not promise deterministic LLM regeneration, even with low temperature. Reproducibility means retaining the accepted response and all of its inputs. Deterministic code can then reproduce the chosen edition from those stored results. A deliberate fresh model run creates a new run.
+A failed run notifies the owner once, through `notify.command` if set, else the Discord webhook in `var/discord.env`, else SMTP from `var/smtp.env`, else a desktop notification and stderr. The verify job posts its verdict every morning, good or bad, so silence is itself a signal. The failure types and what to do about each are in [editorial/OPERATIONS.md](../editorial/OPERATIONS.md).
 
-Set per-run limits on stories written, repair rounds, and elapsed time, and record them in the policy file. Start with one capable general-purpose model for the editor; the checker may run on a different one, since a different model has different blind spots. Choose models using multilingual matching and attribution tests, rather than fixing a vendor or model name in this architecture plan.
+If some feeds fail, the edition uses the evidence it has and its coverage note says so. Yesterday's paper is never disguised as today's, and an old summary is never reused against corrected source text.
 
-If some sources fail, use valid evidence and display the resulting coverage limitation. If model processing fails, retain the last published edition with its original date; optionally issue a clearly labeled headlines-only fallback using deterministic policy. Do not disguise yesterday's newspaper as today's, or reuse an old summary against corrected source text.
+## Corrections
 
-## What would validate these decisions
-
-Run a short pilot with manually judged examples from every publisher. Evaluate matching precision and missed matches separately, including Danish/English pairs and distinct developments in the same thread. Inspect selected and rejected candidates, not just attractive finished pages. Track unsupported statements, missing attribution, excessive repetition, interesting omissions, reading time, per-edition cost, and deadline reliability.
-
-The first useful milestone is one evidence-traceable edition, with visible reasons for its choices, successfully rendered by block 3. Next establish repeat suppression and correction handling across several mornings. Only then tune models, scoring, or add optional acquisition. No fine-tuning, autonomous researching agents, general knowledge graph, vector service, or collaborative editing system is required for that milestone.
-
-The principal open product decisions are the title's remit, output language, publication times, page and reading budget, and tolerance for a headlines-only degraded edition. These do not prevent adopting the file boundary, conservative matching, evidence policy, and batch architecture now.
+A published edition id is never rerun; the next edition corrects it. The interim path for a same-day fix, used once on 30 September 2026, is a second printing under a new id with the same number and cutoff. Revision-qualified permalinks and attached correction notices are designed on the [roadmap](roadmap.md#edition-revisions-and-correction-notices).

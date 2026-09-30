@@ -8,9 +8,10 @@ Read this file when changing code, configuration, migrations, tests, or the CLI.
 |---|---|
 | `config/sources.yaml` | Publisher/feed behavior, priorities, URLs, gates, and runtime paths. Do not create publisher adapter modules. |
 | `src/news_ingest/models.py` | Strict boundary models; unknown fields are rejected. |
-| `feed.py`, `identity.py`, `urls.py`, `time.py`, `merge.py`, `hashing.py`, `prominence.py` | Pure normalization and projection rules where possible. |
-| `db.py` and `migrations/` | All SQL, forward-only numbered schema migrations, transactions, and rebuildable persistence. |
+| `feed.py`, `identity.py`, `urls.py`, `time.py`, `merge.py`, `hashing.py`, `prominence.py`, `sighting_content.py` | Pure normalization, projection, and sighting-content factoring rules where possible. |
+| `db.py` and `migrations/` | All SQL, forward-only numbered schema migrations (001 to 005), transactions, the merge-state cache, rebuild, and content deduplication. |
 | `collect.py`, `export.py`, `health.py`, `replay.py`, `fixture.py` | Orchestration at narrow boundaries. |
+| `tools/` | `benchmark_collect.py` (run through `benchmark-collect`; temporary databases only) and the `capture_fixture.py` compatibility shim. |
 | `cli.py` | JSON action catalog, strict argument parsing, stable envelopes, error mapping, and offline verification. |
 | `gather_news.sh` | Sole allowlisted executable; resolves repository and `.venv`, then replaces itself with the Python module. |
 | `tests/` | Network-free default suite using temporary databases and directories. |
@@ -47,7 +48,7 @@ Treat the CLI as an API for agents:
 - `list-actions` is sorted and JSON-Schema-like. Update it and action help whenever flags change.
 - Mutating actions have a real dry-run that performs validation but no network/database/output mutation.
 - Keep list output bounded or summarized. Put volatile/request details in `meta` when introduced.
-- Never prompt, use color/spinners/pagers, invoke a shell subprocess, or read stdin unless a future explicit flag opts into it.
+- Never prompt, use color/spinners/pagers, or read stdin. The only subprocesses are the fixed verification steps `check` runs (Ruff check and format, compileall, pytest, and `sh -n` on the wrapper), each with a 300-second timeout; do not add others.
 - Use fixed timeouts for subprocess and network boundaries. Keep upstream/raw data out of the top-level envelope.
 - Evolve the schema additively within a major version. Bump `meta.schema_version` for a breaking contract change.
 
@@ -59,6 +60,6 @@ Direct dependencies remain exactly pinned in `pyproject.toml`, with `uv.lock` co
 
 ## Logging and secrets
 
-Stdout is the CLI contract. Structured one-object-per-line diagnostics go to stderr. Do not log or serialize raw payloads, full descriptions/bodies, cookies, authorization headers, API keys, credentials, or resolved `_env` secrets. URL diagnostics must redact configured secret parameters.
+Stdout is the CLI contract and the only output the package writes; there is no logging framework and no stderr diagnostics. Errors are stored as JSON in `feed_polls.error_json`, `feed_state.last_error_json`, and quarantine rows. The configuration holds no credentials and no environment interpolation exists. If logging is ever added, it must not write raw payloads, full descriptions/bodies, cookies, authorization headers, API keys, or credentials, and URL diagnostics would need redaction of any secret parameters; neither mechanism exists today.
 
 Configuration is parsed with `yaml.safe_load` and validated before mutation/network access. URLs must be HTTPS; feed IDs, URLs, and per-source orders must be unique; runtime database/lock paths must remain inside the repository runtime root.

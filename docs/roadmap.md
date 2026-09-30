@@ -138,6 +138,13 @@ intervening publisher edit.
 A day: the export flag and its SQL in block 1 with tests for an old newly seen article and an old
 corrected one, the window builder's second input, and the two provenance marks in the ranking.
 
+Two facts about block 1 bound what this can deliver, and both are by design. `rebuild-articles`
+restores an article's historical change time when it repairs a row, so a repair is invisible to a
+changed-since export: the observation input will surface late discoveries and publisher corrections,
+never the owner's own repairs. And the export now runs under the collector's process lock, waiting up
+to ninety seconds for a poll in flight, so the cursor it stamps can never fall behind rows that poll
+commits; the observation input inherits that guarantee for free.
+
 ### The gate
 
 None on the code. Do it when a real late discovery or correction is seen to have been missed, or with
@@ -219,16 +226,47 @@ correction path above is built.
 
 ---
 
+## Terraform for the delivery
+
+**Status: wanted, not scheduled.** Recorded 30 September 2026.
+
+### The gap
+
+Everything on the AWS side, the bucket and its policy, the distribution and its two functions, the
+certificate, the hosted zone's records, and the deliver user with its inline policy, was created in
+the console. It works, it is documented in [AWS delivery](aws-delivery.md), and it cannot be
+reproduced except by hand.
+
+### The approach
+
+One Terraform module for a paper: bucket, distribution, functions, certificate name, DNS records,
+and the IAM policy statement that lets a deliver user reach it. Import the live resources into its
+state and confirm a plan shows no drift before changing anything. The staging paper above is the
+same module applied a second time with a different name, which is the practical reason to write it
+first.
+
+### What it costs
+
+A day, most of it the imports and the two functions' source in the module.
+
+### The gate
+
+None. Do it before the staging paper, since that is a second copy of exactly this.
+
+---
+
 ## Headlines-only degraded edition
 
 **Status: deferred. Not in the first release.** Settled 24 September 2026.
 
 ### The gap
 
-When the editor or the checker fails or runs past its wall clock, release 1 keeps the last activated
-edition in place with its own date and publishes nothing. On a morning with real news that leaves the
-reader with yesterday's paper. A clearly labelled headlines-only edition, built by deterministic policy
-from the ranking alone, would give the reader today's headlines with links and no copy.
+When the editor or the checker fails or runs past its wall clock, the run stops, the last activated
+edition stays in place with its own date, and the 07:30 retry resumes the run from its first missing
+file. If that fails too, the reader has yesterday's paper until someone reruns by hand. On a morning
+with real news that is a paper the reader does not get. A clearly labelled headlines-only edition,
+built by deterministic policy from the ranking alone, would give the reader today's headlines with
+links and no copy.
 
 ### The approach
 
@@ -241,8 +279,10 @@ presents itself as a written edition.
 
 ### The gate
 
-A run has actually failed on a morning that mattered, and the owner would rather have had the
-headlines than yesterday's paper. Do not build it before the runner has failed for real.
+The runner has failed for real, on 29 and 30 September, and each time the paper was late rather than
+missing: the retry or a rerun by hand got it out. The gate that is left is a morning on which neither
+did, with real news in it, and the owner would rather have had the headlines than yesterday's paper.
+Do not build it for lateness; the retry and the notifications are the answer to that.
 
 ---
 
@@ -250,13 +290,14 @@ headlines than yesterday's paper. Do not build it before the runner has failed f
 
 **Status: wanted, not scheduled.** Recorded 24 September 2026.
 
-Two golden editions exist, 15 September morning and 19 September evening. They are the quality bar,
-the writing reference until the style guide exists, and the fixtures for `build` and the checker. Two
-is thin: a quiet day, a day dominated by one story, a day with a material correction, and a day where a
-Danish outlet made sport or culture news are each a case the desk skill will meet and the examples do
-not yet show. The mechanism is already in place: a run the owner judges good moves from `runs/` to
-`examples/` with its notes. The work is the judging, one edition at a time, and it should start with the
-first fortnight of scheduled runs.
+One golden edition exists, `examples/2026-09-15-morning`. It is the quality bar, the worked example
+the desk skill reads, and the fixture for `build` and the checker. The style guide, `STYLE.md`, now
+exists as a first draft written from the three editions of 15, 19, and 24 September and the checker's
+notes on them, so the example is no longer the only writing reference, but one is thin: a quiet day, a
+day dominated by one story, a day with a material correction, and a day where a Danish outlet made
+sport or culture news are each a case the desk skill will meet and the examples do not yet show. The
+mechanism is already in place: a run the owner judges good moves from `runs/` to `examples/` with its
+notes. The work is the judging, one edition at a time, from the scheduled runs now accumulating.
 
 **Gate:** none. Add one whenever a run is judged good and shows something the existing examples do not.
 
@@ -270,17 +311,22 @@ below is chosen so that every layer also earns its place in this project.
 
 ### The gap
 
-Today's signals are ad hoc: block 1's `health` command, a `status.json` per run, the launchd logs, a
-desktop notification on failure, and the 11:30 freshness job. Nothing is kept over time, nothing says
-when a job silently never ran (lid closed, agent unloaded, PATH broken, which is how the 30 September
-edition was late), and nothing ties an edition's quality back to what the model sessions did.
+Today's signals are the ones the desk posts to Discord: a failure notice from the 05:30 edition run
+or its 07:30 retry, the `verify-live` verdict at 06:00 every morning, good or bad, and the 09:00
+freshness job when no edition is fresh. Behind them are block 1's `health` command, a `status.json`
+per run, and the launchd logs. Because the verify job speaks every day, its silence is itself a
+signal, which covers most of the case where the Mac never ran a job (asleep, agent unloaded, PATH
+broken, which is how the 30 September edition was late); but a person has to notice the silence, and
+the verify job is a launchd job on the same machine. Nothing is kept over time, and nothing ties an
+edition's quality back to what the model sessions did.
 
 ### The approach, in order of value for effort
 
 **1. A dead-man's switch for the scheduled jobs.** Healthchecks.io (open source, free tier) or
-Cronitor. Each launchd job pings a URL on start and on success; the service alerts when the 08:05
-ping has not arrived by 08:45. This catches the class of failure nothing else sees, and it is an
-hour's work. Do this first.
+Cronitor. Each launchd job pings a URL on start and on success; the service alerts when the 06:00
+verify job's ping has not arrived by 06:30, or the edition's success ping by 08:00, after the retry.
+This turns the silence into a message from outside the machine, which is the one thing the Discord
+verdict cannot be. An hour's work. Do this first.
 
 **2. OpenTelemetry for metrics, logs, and traces.** OpenTelemetry is the vendor-neutral standard and
 the name that matters on a CV. Instrument the block 2 runner so each run is a trace with a span per
@@ -296,10 +342,11 @@ a batch pipeline pushes, and Prometheus scraping assumes a long-lived server.
 
 **3. Dashboards, alerts, and one SLO.** Grafana dashboards over that data: edition timeline, poll
 health, cost per edition, strike rate per brief version. Alert rules worth having: no edition by
-08:45, poll database time above a minute, a feed failing three polls running, cost per edition above
-a threshold. Then state one service-level objective, such as "the paper is published by 08:45 on 95%
-of weekdays", and measure it; talking about SLOs and error budgets from experience is what separates
-having run software from having installed a dashboard.
+08:00, poll database time above a minute, a feed failing three polls running, cost per edition above
+a threshold. Then state one service-level objective, such as "the paper is on the site by 06:00 on
+95% of weekdays", which is what `verify-live` already measures one morning at a time; talking about
+SLOs and error budgets from experience is what separates having run software from having installed a
+dashboard.
 
 **4. LLM observability.** The field's tools are Langfuse (open source, self-hostable: traces, cost,
 prompt versioning, datasets, scores), Arize Phoenix (open source, on OpenTelemetry, strong on evals),
@@ -312,13 +359,14 @@ Record a hash of the skill and brief files on every trace, so a change in strike
 the brief change that caused it. The question of how conservative the checker is then becomes a chart
 rather than a transcript search.
 
-**5. The AWS side.** CloudFront already reports requests and errors to CloudWatch for free. Add the
-pending CloudWatch alarm on edition age through a small scheduled Lambda that reads `latest.json`,
-and turn on CloudFront standard logs to S3 with Athena for readership once the link is shared.
+**5. The AWS side.** CloudFront already reports requests and errors to CloudWatch for free. A
+CloudWatch alarm on edition age, fed by a small scheduled Lambda that reads `latest.json` from the
+site, would be a second outside check that does not live on the Mac; CloudFront standard logs to S3
+with Athena would answer readership once the link is shared. Neither exists today.
 
 ### What not to do
 
-Run Prometheus scraping on a laptop, adopt Datadog at its price for a one-person project, or stand up
+Run Prometheus scraping on a desk machine that sleeps, adopt Datadog at its price for a one-person project, or stand up
 an ELK stack. Each is more to operate than the thing being watched.
 
 ### The gate
@@ -356,13 +404,16 @@ split a sentence across pages; a story moves whole. The receipt and the composit
 **File naming is already reserved.** `device/page-1.png` is numbered so that `page-2.png` is additive.
 Each page is its own document at its own URL; never stack pages in one document and clip.
 
-**Delivery through TRMNL playlist slots.** One Image Display instance per active page, in reading order,
-with page number, page count, edition date, and edition ID visible on every page. Publication and device
-refresh are separate events, and a playlist is not a transactional document viewer: the hosted service
-may refresh slots at different times. With a fixed two-slot configuration, generate a truthful "end of
-edition" second image when an edition has only one page, so the panel cannot keep showing yesterday's
-page two. Verify multi-page refresh and next-screen navigation on the actual firmware before relying on
-it.
+**Delivery is a second file on the NAS, or a second playlist slot.** Today the desk pushes
+`live/device/current.png` to the house NAS by scp after delivery and the kitchen screen reads it from
+there; the same file is on the site, where TRMNL's Image Display plugin could point instead. A second
+page is a second file pushed the same way, `page-2.png` beside it, and on the TRMNL side one Image
+Display instance per active page, in reading order, with page number, page count, edition date, and
+edition ID visible on every page. Publication and device refresh are separate events, and a playlist
+is not a transactional document viewer: the hosted service may refresh slots at different times. With
+a fixed two-slot configuration, generate a truthful "end of edition" second image when an edition has
+only one page, so the panel cannot keep showing yesterday's page two. Verify multi-page refresh and
+next-screen navigation on the actual firmware before relying on it.
 
 ### What it costs
 
@@ -372,9 +423,11 @@ does not need: a two-page edition, a one-page edition after a two-page day, and 
 
 ### The gate
 
-A week of real editions in which optional stories are omitted often enough to matter, or required
-stories cause repeated device fit failures, judged against the reading-time cost of a second visit.
-Required stories are never silently omitted from a successful release-1 device edition.
+A week of real editions in which optional stories are omitted often enough to matter, judged against
+the reading-time cost of a second visit. Since 30 September 2026 the lead is the only required story
+and every other story is optional in prominence order, so the other half of the old gate, repeated
+required-story fit failures, now means a lead that does not fit, which is a layout bug rather than a
+reason for a second page. The lead is never silently omitted from a successful device edition.
 
 ---
 
@@ -446,9 +499,10 @@ instead of buried.
 Only Børsen's homepage feed and Jyllands-Posten's top-stories feed supply it in a way that counts.
 Feed ordering was tested on 8 September 2026: homepage feeds are editorially ranked, while every
 `latest` feed and most section feeds are in strict reverse-publication order and therefore carry no
-placement signal at all. Only the Danish scoring publishers contribute to prominence, so the
-international homepage feeds do not enter the calculation, and the other seven Danish publishers are
-recorded as unknown. Capturing the Danish homepages is therefore the whole of this item.
+placement signal at all; the policy's `ranked_feeds` is exactly those two. Only the nine Danish
+scoring publishers contribute to prominence, so the international homepage feeds do not enter the
+calculation, and the other seven Danish publishers are recorded as unknown. Capturing the nine Danish
+homepages is therefore the whole of this item.
 
 ### Why the obvious fixes were rejected
 
@@ -465,7 +519,7 @@ are server-rendered, and hashed class names are hashed in a rendered DOM too.
 ### The shape worth building
 
 Capture the page and have a vision-capable model read it. This is the one approach that is
-publisher-agnostic: one prompt serves all six, a redesign does not break it, and any page legible to a
+publisher-agnostic: one prompt serves all nine, a redesign does not break it, and any page legible to a
 person stays legible to the model. It also measures the actual quantity, since prominence genuinely is
 size, position, imagery, and whether a story sits above the fold. Every markup signal is a proxy for that.
 
@@ -486,7 +540,7 @@ the newspaper's existing candidates and can never introduce content into it. Thi
 validator and the property that makes the whole idea safe.
 
 **Capture once per edition, immediately before the run.** Front-page position is wanted at deadline, not
-as a time series. Six renders and six model calls per edition is negligible. Continuous polling would be
+as a time series. Nine renders and nine model calls per edition is negligible. Continuous polling would be
 hundreds of captures a day and easily the most expensive thing in the system, spent on the smallest term
 in the ranking formula.
 
@@ -500,11 +554,11 @@ these axes rather than on a product name:
 |---|---|---|
 | Consent walls, bot challenges, IP reputation | Yours to solve, and the hardest part | Largely handled, which is the main thing being bought |
 | Third party sees the target URLs | No | Yes, and it fetches on your behalf, which changes the posture toward publishers |
-| Marginal cost | None beyond compute | Per request, negligible at six per edition |
+| Marginal cost | None beyond compute | Per request, negligible at nine per edition |
 | Failure surface | A browser to pin and keep working | An external dependency and its availability |
 | Reuse | Block 3 already pins a browser, though for a different purpose and under a different boundary | New dependency |
 
-At three or four captures per edition the volume is too small for per-request cost to matter, so the
+At nine captures per edition the volume is too small for per-request cost to matter, so the
 decision turns on who handles bot mitigation and whether routing publisher URLs through a third party is
 acceptable. Some hosted services also return structured extraction, which would substitute for the vision
 model but reintroduces the markup-reading fragility this design exists to avoid.
@@ -520,7 +574,7 @@ commitment; the self-hosted browser block 3 already pins remains the comparison.
 
 ### What remains genuinely costly
 
-Getting to the page. Every Danish site presents a consent wall, and NYT and FT add paywalls and possible
+Getting to the page. Every Danish site presents a consent wall, and some add paywalls and possible
 bot challenges. That is per-publisher work, though it is one-time session state rather than selectors
 that churn with redesigns. Rendering pages to extract editorial ordering also sits further from a
 publisher's terms than reading their feed, which compounds the redistribution question recorded elsewhere.
@@ -532,5 +586,6 @@ judgment. The existing mitigation applies: retain the accepted response and its 
 
 Do not begin until the editorial log shows a recurring, named complaint that single-publisher scoops are
 being buried, across at least several weeks of real editions. Prominence carries a tenth of the ranking
-weight, the correction restricting it to ranked surfaces has not yet been measured in production, and
-building an acquisition subsystem for the smallest term before that evidence exists is the wrong order.
+weight, the restriction to two ranked surfaces has only run in production since the desk was scheduled
+and has not been measured against the editions it produced, and building an acquisition subsystem for
+the smallest term before that evidence exists is the wrong order.

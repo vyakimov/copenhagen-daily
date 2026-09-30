@@ -78,8 +78,8 @@ is a secondary kicker, never a section.
 
 ## Checking the copy
 
-A separate checker reads the edition and the window, nothing else: not the spec, not the notes, not
-the editor's reasoning. It reads every sentence, the headline and callouts included, against the
+A separate checker reads `check-input.json`, nothing else: each story's sentences and that story's
+own evidence rows, not the spec, not the notes, not the editor's reasoning. It reads every sentence, the headline and callouts included, against the
 sources the sentence cites, and marks each one supported, with the passage, or unsupported, with the
 reason: no source says it, the attribution changed, a paraphrase became a quotation, a quotation has
 no speaker, the sources disagree and the copy does not. The checker marks; it never rewrites. A check

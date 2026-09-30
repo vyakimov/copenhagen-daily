@@ -22,8 +22,9 @@ Companions: [Block 1 architecture](ingest-architecture.md),
 **One repository, `copenhagen-daily`, holding all three blocks.** This is one product built by one
 person on one schedule, so one repository is the right default. The three blocks occupy sibling
 directories, `ingest/`, `editorial/`, and `publisher/`. Block 1's rule that no browser, model, or
-credential enters the component touching untrusted feeds is a directory rule enforced by tests: nothing
-under `ingest/` may depend on a browser, a model, or the Node toolchain. Coupling decides layout: blocks
+credential enters the component touching untrusted feeds is a directory rule, stated in `AGENTS.md` and
+kept by review rather than by a test: nothing under `ingest/` may depend on a browser, a model, a
+credential, or the Node toolchain. Coupling decides layout: blocks
 2 and 3 share a contract that flows both ways and is still being designed, so they sit together and
 change together; block 1 hands block 2 an immutable bundle over a schema that already shipped, so
 `ingest/` changes rarely and independently.
@@ -35,6 +36,14 @@ runtime. The repository question only decides where a change lands and what one 
 **Contract drift is handled by fixtures, not by topology.** Each side keeps a frozen artifact of its
 neighbour in its test suite, so a break surfaces as a failing test at the boundary. This works under any
 repository arrangement, which is why it beats reorganising.
+
+**The plans directory is retired; `docs/` holds the cross-block documents and each block describes
+itself. Settled 30 September 2026.** The three implementation plans were removed once the code they
+planned existed, because a plan that has been built is either a duplicate of the code or a lie about
+it. What survives in `docs/` is the three architecture documents, this log, the roadmap, the AWS
+delivery page, the design notes, and the reviews. The as-built description of each block is its own
+`README.md` and `OPERATIONS.md` (block 1's operations live in its README), next to the code that they
+describe, so a change to behaviour and a change to its description land in one commit.
 
 **Block 3 owns the edition schema.** The producer-owns-the-contract instinct, that the reader should not
 define what the writer must produce, does not apply here. Block 3 is not merely the reader, it is the renderer, and what a renderer can draw is a hard constraint
@@ -195,6 +204,25 @@ marker after the text. Prose names a publisher only when publishers disagree.
 **Object storage is a future delivery design, not the local commit protocol.** Immutable prefixes and a single release pointer could replace filesystem primitives. Atomic
 single-object writes do not make multiple root/index updates transactional. Hosting remains deferred;
 any adapter must define coherent activation and recovery before it is implemented.
+Reversed on 30 September 2026 as to hosting, see below; the commit protocol stays local.
+
+**The paper is delivered to S3 and CloudFront at copenhagen-daily.net, unlisted, by the desk. Settled
+30 September 2026.** Hosting stopped being deferred without the object-storage adapter ever being
+written: block 3's commit protocol stays on the Mac's filesystem, and delivery is a sync of the
+finished `live/` directory to a private bucket plus an invalidation, run by the desk after each
+activated publish under an IAM user whose only rights are that bucket and that distribution. The
+site is public but unlisted, with `noindex` in the page, in `robots.txt`, and in a response header,
+because licensing is still open and a shared secret would have shut out the kitchen screen as well.
+Activation and recovery remain block 3's, on disk; the bucket is a copy that `verify-live` checks
+from outside every morning. The full account is in [AWS delivery](aws-delivery.md).
+
+**The device page is pushed to the kitchen screen's NAS by scp. Settled 30 September 2026.** The
+screen reads `todays_news.png` from a share on the house NAS, so after delivery the desk copies
+`live/device/current.png` there with legacy `scp -O` (the NAS has no SFTP subsystem), under a host
+alias whose key passphrase is in the login keychain. It is a copy of a file already on the site, so a
+failed push is notified and never fatal, and the screen keeps the last page it had. The same file is
+also on the site at `device/current.png`, which is where TRMNL's Image Display plugin would read it
+if the panel is ever pointed at the site instead.
 
 ---
 
@@ -240,6 +268,22 @@ subject.
 **Two Børsen feeds map to no section on purpose.** `borsen.breaking` and `borsen.longread` describe
 urgency and format rather than subject, and their articles reliably appear in a subject feed as well.
 
+**Via Ritzau corroborates and never scores. Settled 16 September 2026.** The policy lists it under
+`corroborating_publishers`, a third kind beside scoring and linked. A press release is a claim by an
+interested party, not a news judgement, so it cannot make a story eligible and counts towards neither
+breadth nor prominence; but when a scoring publisher reports a story the release also carries, its
+text is attached as evidence for the writer the way a linked publisher's is. The scoring list is nine
+Danish outlets, not the ten named in the 14 September entry above, for this reason.
+
+**Coverage comes from block 1's `health`, not from the export manifest. Settled 30 September 2026.**
+The manifest's `coverage_gaps` and `warnings` are written empty, so the desk stopped reading them for
+coverage. Before the window is exported the run asks block 1 for `health`, records every configured
+feed with its outcome and last check as `feeds.json`, and `build` derives the edition's coverage
+status from that list: complete when every feed checked, partial when some failed, unknown when the
+list is empty. The same call decides whether a fresh collect is worth running. Block 1 now counts a
+failed poll against its feed (`consecutive_failures`), which is what made the health report usable
+for this. The manifest fields stay empty rather than being removed, since the bundle schema shipped.
+
 ---
 
 ## Ranking
@@ -268,8 +312,16 @@ Jyllands-Posten's top-stories feed. Every
 `latest` feed and most section feeds, including `dr.indland`, `politiken.indland`, `ft.world`, and
 `berlingske.samfund`, are in strict reverse-publication order, so position carries no editorial signal.
 Scoring those counted recency twice under another name.
+Narrowed on 30 September 2026 to two feeds, see below.
 
-**Unknown prominence is recorded as unknown, not as low.** A story missing from the NYT homepage feed was
+**Only `borsen.homepage` and `jp.topnyheder` are ranked feeds. Settled 30 September 2026.** The policy's
+`ranked_feeds` list dropped `borsen.finans` and `nytimes.world`. The NYT feed never counted, since
+prominence is scored on scoring publishers only and the NYT is linked; listing it invited the wrong
+reading. Børsen's finance feed is a section feed and section feeds are chronological, so it was
+double-counting recency like the rest. Prominence is now exactly the two surfaces whose order is a
+front-page decision by a Danish desk, and the ten per cent weight on it reads as what it is.
+
+**Unknown prominence is recorded as unknown, not as low.** A story missing from Børsen's homepage feed was
 genuinely not front-paged, which is real negative evidence. A story missing from a DR ranked surface tells
 us nothing, because DR publishes none. Treating those as the same number would make prominence
 untrustworthy.
@@ -368,6 +420,21 @@ variant up front would make the fit loop free of model calls, but most editions 
 each costs output. The loop instead mirrors a desk: block 3 names the shortfall, the editor is asked for
 the specific variant the repair order calls for, and the rounds are bounded by the policy's limits with
 participation as the final repair.
+Reversed on 30 September 2026, see below.
+
+**The editor writes no shorter forms and there is no variant loop. Settled 30 September 2026.** The
+device page was made a fit of what exists rather than a negotiation. `build` marks only the lead
+required and every other story optional in prominence order; block 3 places as many of the most
+prominent stories as fit and omits from the least prominent end, and a device failure leaves the web
+edition untouched. The on-demand variant round was dropped because it put a model call inside the
+publish, made the run's length depend on the panel, and bought a few extra briefs on a busy day. A
+story the panel cannot hold is read on the web, which is the first-class product.
+
+**The checker is a second CLI, Codex, under the same brief. Settled 30 September 2026.** The desk
+config names the checker (`checker: claude` or `codex`) and the run accepts `--checker` to override
+it; the brief in `VERIFIER.md` is the same either way, and the verdicts record which tool and model
+checked. The configured default is Codex, so the copy is checked by a different model from the one
+that wrote it; switching is one line and changes nothing downstream.
 
 **Sixteen sources per story is kept, with an inclusion rule.** The cap was reached once, on the Gedser
 lead, and only because live-blog entries and a rolling page were counted alongside dated articles. With
@@ -390,6 +457,8 @@ activated edition when a run fails. Gate: a run has failed on a morning that mat
 device page, so there is no page budget, no inside-page composition, and no playlist coordination. Gate:
 a week of material optional omissions or repeated required-story device fit failures. Required
 stories cannot be silently omitted from a successful device edition.
+Since 30 September 2026 only the lead is required (see Clustering and threads, the entry on shorter
+forms), so the second half of that gate is a lead that does not fit.
 
 **Multiple titles.** Designed in the [roadmap](roadmap.md). Gate: a second remit is actually wanted, such as
 a sports-and-culture paper beside the news paper.
@@ -428,3 +497,5 @@ Denmark-focused brief, but it is the number to revisit first if editions read wr
 **Whether block 1's manifest gap matters in practice.** It writes empty coverage gaps and warnings and
 omits the configured feed inventory its own plan requires, so block 2 must treat coverage as unknown
 rather than complete until it is fixed.
+Closed on 30 September 2026 from the other side: the desk derives coverage from `health` instead
+(see Editorial signals). The manifest fields stay empty.

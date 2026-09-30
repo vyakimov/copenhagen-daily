@@ -10,7 +10,7 @@ with logs under `~/Library/Logs/copenhagen-daily/`:
 | `ai.copenhagen-daily.collect` | every fifteen minutes | block 1 `collect --once` |
 | `ai.copenhagen-daily.edition` | 05:30 local | `edit_news.sh run` |
 | `ai.copenhagen-daily.verify` | 06:00 local | `edit_news.sh verify-live --fix --notify`: checks the live site against the newsroom's copy, delivers again if that is the remedy, and posts the verdict either way |
-| `ai.copenhagen-daily.retry` | 07:30 local | `edit_news.sh run --retry`: runs only if the morning edition has not already succeeded, resuming a failed run from its first missing file |
+| `ai.copenhagen-daily.retry` | 07:30 local | `edit_news.sh run --retry`: skips when today's run already ended as published, dry run, or skipped; otherwise resumes the failed run from its first missing file |
 | `ai.copenhagen-daily.freshness` | 09:00 local | `edit_news.sh freshness --notify`: fails and notifies when the latest activated edition is older than `max_edition_age_hours` |
 
 Install them once:
@@ -41,7 +41,7 @@ listing and writing the one bucket and invalidating the one distribution; its ke
 profile `copenhagen-daily` is for a person at the keyboard. With no bucket configured the phase is skipped. `edit_news.sh deliver` does the
 same by hand, for example after a manual `recover`. The site is served unlisted: every page carries a
 `noindex` meta tag and the release root has a `robots.txt` that disallows everything; CloudFront
-should add an `X-Robots-Tag: noindex` header for files that are not HTML.
+adds an `X-Robots-Tag: noindex` header for files that are not HTML, and `verify-live` checks for it.
 
 ## The kitchen screen
 
@@ -70,8 +70,9 @@ the next morning's release carries it.
 ## Checking the site from outside
 
 `verify-live` reads `live/latest.json`, the front page, and the edition's manifest from the site named
-by `delivery.site_url` and compares them byte for byte with the newsroom's live tree, then fetches the
-stylesheet the page links and looks for the `x-robots-tag` header. The verdict is one state:
+by `delivery.site_url` and compares them byte for byte with the newsroom's live tree. The
+`x-robots-tag` header is read from the `latest.json` response; the stylesheet the front page links is
+fetched and must return HTTP 200 (its bytes are not compared). The verdict is one state:
 
 - `ok`: everything matches and today's edition is up.
 - `not_delivered`: the site is behind the newsroom, or the files differ. Delivering again is the
@@ -115,15 +116,25 @@ With neither, a macOS notification appears and the message goes to the job's std
 
 ## What a run does
 
-Collect, export the window, read memory, the editor session, the checker session, strikes, preflight,
-publish, receipt, threads, commit. The run publishes the web edition only: block 3 is told to skip
-the device page, and the desk makes no device decisions. On the final check a story that no longer
-stands falls to a headline, and a struck headline is replaced by the primary source's own title. Each phase appends to `runs/<id>/status.json`, so `status`
-says where a run is or where it stopped. The sessions are bounded by `limits` in `policy.yaml`, in
-minutes and in turns; a limit hit stops the run and leaves the last activated edition in place. The
-editor session may run only `check-clusters`, `score`, and `build` through the wrapper, has no web
-tools and no MCP servers, and a change it makes anywhere in the repository outside its run directory
-stops the run before `publish`.
+The phases, in order: `reconcile` (ask block 3 whether the edition is already activated), `inputs`
+(verify the run's recorded inputs, see below), `collect`, `window`, `memory`, `editor`, `check`
+(the checker session and the strikes, with at most one send-back), `preflight`, `publish`, `receipt`,
+`threads`, `deliver`, `device_push`, `archive` (the commit). With `device: true` in `config/desk.yaml`,
+as it is, the publish also renders the device page from the same contract; the desk makes no device
+decisions. On the final check a story that no longer stands falls to a headline, and a struck
+headline is replaced by the primary source's own title. Each phase appends to `runs/<id>/status.json`,
+so `status` says where a run is or where it stopped. The sessions are bounded by `limits` in
+`policy.yaml`: both by wall clock in minutes; `editor_turns` bounds the editor session and
+`checker_turns` bounds the checker only when it is Claude, since the Codex checker takes no turn
+bound. A limit hit stops the run and leaves the last activated edition in place. The editor session
+may run only `check-clusters`, `score`, and `build` through the wrapper, has no web tools and no MCP
+servers, and a change it makes anywhere in the repository outside its run directory stops the run
+before `publish`.
+
+The runner records what it writes for the sessions (`window.json`, `window.md`, `memory.json`,
+`feeds.json`, `check-input.json`, and the bundle) as digests in `runs/<id>/inputs.json`. After every
+session, and at the start of every run in the `inputs` phase, the files on disk must match that
+record.
 
 ## When a run fails
 
@@ -133,25 +144,36 @@ Read `runs/<id>/status.json`: `failure.phase` and `failure.type` say which step 
 - `editor_timeout`, `checker_timeout`, `run_timeout`: the session ran past its wall clock. Read the
   run directory for what it managed; the phase files are resumable. Run again with the same edition
   id and the runner continues from the first missing file.
-- `contract_invalid`, `spec_invalid`: the editor wrote something block 3 would refuse. The details name
-  the pointer. Fix the spec by hand and run `build`, or run again.
+- `contract_invalid`: the editor's edition, or the struck edition, fails block 3's contract. The
+  details name the pointer. Fix the spec by hand and run `build`, or run again.
+- `editor_failed`, `checker_failed`: the session exited non-zero or reported an error; `sessions/`
+  holds its record. Run again.
+- `phase_output_missing`: a phase ended without writing its file (for example the editor session
+  wrote no `edition.json`). Run again.
 - `verdicts_invalid`: the checker's verdicts do not cover the check input sentence for sentence, or
   name a different edition. The details list the missing and unknown addresses. Run again; the check
   phase reruns the checker.
+- `send_back_overreach`: the send-back session changed or dropped a story that was not sent back.
+  The details name the stories. Nothing was published; run again.
 - `stray_edits`: a session wrote outside the run directory. The working tree is compared before and
   after each session, so only what the session changed counts; your own uncommitted work elsewhere in
   the repository does not block the paper. The details name the paths. Read the diff, revert what
   should not be there, and run again; nothing was published.
+- `input_modified`: a session changed the runner's inputs, or they changed between runs. The inputs
+  and the model outputs made beside them are moved to `quarantine-<time>/` inside the run directory,
+  kept for inspection, and the next run rebuilds them from block 1 and the publish root. Nothing was
+  published; run again.
 - `internal_error`: the runner itself raised. The details carry the traceback. Fix, then run again.
 - `lock_busy` from block 1 or block 3: another process holds a lock. Wait, then run again. The same
   type from block 2 means another `run` is in progress; `editorial/var/run.lock` names it.
 - `not_activated`: `publish` returned but no activation exists. Run block 3's `recover`, then
   `receipt`; never generate a different edition to escape it.
-- A failure after the publish (`receipt`, `threads`, `deliver`, `device_push`, `archive`) is resumed
-  by a rerun: the run first asks block 3 for the edition's receipt, and when the edition is already
+- A failure after the publish (`receipt`, `threads`, `deliver`, `archive`) is resumed by a rerun:
+  the run first asks block 3 for the edition's receipt, and when the edition is already
   activated it skips straight to the steps after the publish, each of which is safe to repeat. The
   notification for such a failure says the edition is activated locally but may not be on the site.
-  Earlier failures stay in `status.json` under `previous_failures`.
+  Earlier failures stay in `status.json` under `previous_failures`. `device_push` never fails the
+  run: a failed push is recorded in the phase and notified, and `edit_news.sh push-device` repeats it.
 - `recovery_required`: block 3 holds a pending publication from an interrupted run. Run
   `publisher/publish_news.sh recover --publish-root <root>`, then rerun.
 
@@ -160,5 +182,6 @@ A published edition id is never rerun; the next edition corrects it.
 ## Rehearsing without publishing
 
 `edit_news.sh run --dry-run` does everything up to `publish --dry-run`, which assembles and removes a
-release under the publish root, and skips the receipt, the thread registry, delivery, and the commit. Use it
-after changing the handbook, the policy, or a skill.
+release under the publish root, and skips `reconcile`, `receipt`, `threads`, `deliver`, `device_push`,
+and `archive`. The `inputs` check and the collect still run. Use it after changing the handbook, the
+policy, or a skill.

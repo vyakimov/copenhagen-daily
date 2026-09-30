@@ -138,7 +138,7 @@ At most one callout on a secondary, three on a lead.
 ## The coverage note and the log
 
 The coverage note says what was read and in what form: "Built from headlines and RSS descriptions
-published between 08:00 on Sunday and 08:00 on Wednesday Copenhagen time, from 132 feeds at seventeen
+published between 05:30 on Sunday and 05:30 on Wednesday Copenhagen time, from 132 feeds at seventeen
 publishers, all polled successfully. Danish outlets decide what is news; international titles are
 linked where they cover the same story. Nothing else was read." When a feed failed, it says which.
 

@@ -12,16 +12,53 @@ a real poll. Use `health` for status. Preview `export` and `backup` with
 `restore-check --backup PATH`. Run the complete offline validation suite with
 `./gather_news.sh check`.
 
-Every non-help call emits one JSON envelope on stdout. Branch on `ok` and
-`error.type`; diagnostics go to stderr. Usage failures exit 2, other failures
-exit 1, and success exits 0. The wrapper never prompts or invokes `uv`.
+Every non-help call emits one JSON envelope on stdout and nothing else; there
+is no separate log stream. Branch on `ok` and `error.type`. Usage failures
+exit 2, other failures exit 1, and success exits 0. The wrapper never prompts or
+invokes `uv`. A failed feed's error is stored as JSON on its `feed_polls` row
+and in `feed_state.last_error_json`, and each failure increments
+`feed_state.consecutive_failures`; a successful or `304` poll resets the count.
+`health` returns `status: degraded` with `feed_failures:<feed_id>` in `reasons`
+for every feed at or above `failure_alert_threshold` (3 in
+`config/sources.yaml`), and `integrity_check_failed` when SQLite's integrity
+check fails. `export` waits up to 90 seconds for the collector's process lock
+and holds it while reading, so a poll in flight delays an export rather than
+racing it.
 
-Raw RSS payloads can consume disk; monitor `var/`, rotate stderr logs externally,
-and alert on health warnings. Copy SQLite backups or immutable exports, not the
+Raw payloads and sightings consume disk; monitor `var/`. launchd writes the
+collector's stdout and stderr to `~/Library/Logs/copenhagen-daily/`; rotate
+those files externally. Alert on `health` returning `degraded` and read its
+`reasons`. Copy SQLite backups or immutable exports, not the
 live SQLite main file without its WAL. To upgrade: stop the scheduler, create a
 backup, have the operator provision the locked environment, run
-`./gather_news.sh check`, restart, and inspect health. Quarantine records contain
-diagnostics rather than article text.
+`./gather_news.sh check`, restart, and inspect health. Quarantine rows keep the
+error and the raw feed item that failed, never a fetched article page.
+
+## Collection performance
+
+The collector runs every fifteen minutes under launchd (see
+`scheduling.md`). Overlapping polls fail fast on the process lock and are
+harmless. Freshness depends on the last completed collection; the schedule does
+not guarantee a fifteen-minute bound.
+
+`collect --once` reports `timings_seconds` and the counters defined in the
+README. With the merge-state cache of migration 004 warm, an article's
+observation reads only sightings after its saved watermark, so
+`historical_rows_read` tracks `sightings_inserted` and a poll spends about 3
+seconds in the database; fetch is the larger cost. A cold cache (a first
+observation, or an old article reappearing) reads that identity's retained
+history once and counts in `merge_state_bootstraps`.
+
+The live database uses the migration 005 layout: `sightings` rows are thin
+observation rows that reference shared `sighting_contents`, so a poll that sees
+unchanged items adds rows without repeating their content. The database was
+migrated with `deduplicate-sightings` and vacuumed on 30 September 2026. No
+compaction runs automatically; if free pages accumulate again, `VACUUM` is a
+separate maintenance step needing disk headroom for a full copy.
+
+Do not shorten raw payload retention to save space: compressed payloads are
+small and are the audit trail. Do not lengthen the poll interval to reduce
+load; fifteen minutes is the intended cadence for ten-item feeds.
 
 ## Rebuilding article projections
 

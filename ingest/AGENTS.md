@@ -22,8 +22,11 @@ requirement is not summarized here.
 - Raw payloads and sightings are facts. The `articles` table is a rebuildable
   projection.
 - Advance HTTP validators only in the same transaction as successfully parsed
-  and committed data. A valid `304` is the only exception.
-- Isolate publisher/feed failures and make them visible in structured output.
+  and committed data. A valid `304` records the check without touching them.
+- Isolate publisher/feed failures. The `collect` result carries only the
+  `succeeded`, `failed`, and `planned` counts; the failed poll row and
+  `feed_state` carry the feed name and error, and `health` names every feed
+  whose `consecutive_failures` has reached `failure_alert_threshold`.
 - Exports must be schema-validated, deterministic, immutable, and atomically
   published.
 - Do not add browser automation, login automation, subscriber-cookie handling,
@@ -49,9 +52,13 @@ requirement is not summarized here.
 - Store UTC timestamps as RFC 3339 text with six fractional digits and a `Z`.
 - Preserve exact publisher URLs in `raw_url`; apply tracking cleanup only to
   `canonical_url`.
-- JSON written to stdout is the CLI contract. Diagnostics and one-object-per-line
-  structured logs belong on stderr. Never log raw payloads, full descriptions,
-  bodies, cookies, authorization headers, API keys, or credentials.
+- JSON written to stdout is the CLI contract, and it is the only output the
+  package writes. There is no logging framework and no stderr diagnostics:
+  feed errors are stored as JSON in `feed_polls.error_json`,
+  `feed_state.last_error_json`, and quarantine rows, and `check` returns bounded
+  stdout/stderr tails of its subprocesses in `error.details`. Do not add
+  logging that writes raw payloads, full descriptions, bodies, cookies,
+  authorization headers, API keys, or credentials.
 - Use the process lock for every database-mutating command. A second writer must
   return a machine-readable `lock_busy` error rather than wait indefinitely.
 - Use explicit ordering in SQL or Python whenever output or merging must be
@@ -61,13 +68,21 @@ requirement is not summarized here.
 ## Data and transaction rules
 
 - Use one transaction per successful HTTP `200` feed response.
-- Within that transaction, store the compressed raw payload, sightings,
-  quarantines, article projections and versions, appearances, final poll state,
-  and updated feed validators.
+- Within that transaction, store the compressed raw payload, sightings and
+  their `sighting_contents` rows, quarantines, the per-feed merge-state cache
+  (`article_feed_merge_state` and `article_merge_heads`), article projections
+  and versions, appearances, final poll state, and updated feed validators.
 - Roll the entire ingestion transaction back on an unusable feed or database
-  error, then record only the failed poll and failure state in a short separate
-  transaction.
-- A `304` creates no payload, sighting, version, or appearance.
+  error, then record the failure in a short separate transaction: the poll row
+  becomes `failed` with `error_json`, and `feed_state.consecutive_failures`
+  increments with `last_error_json` set. A later successful or `304` poll resets
+  the count to 0.
+- A `304` creates no payload, sighting, version, or appearance and does not
+  initialize or change merge state.
+- Migrations are forward-only: 003 adds the `(source, source_id)` sightings
+  index, 004 adds the merge-state cache, and 005 adds `sighting_contents`. New
+  databases apply all of them on first open. A populated database takes 005
+  only through `deduplicate-sightings --backup PATH`.
 - Repeated unchanged content must not create an article version.
 - Content transitions `A -> B -> A` must create three ordered versions.
 - Never delete or rewrite original sightings during replay or rebuild.
@@ -153,16 +168,21 @@ requirement is not summarized here.
 - Require HTTPS publisher URLs and unique feed IDs, URLs, and per-source orders.
 - Reject runtime database and lock paths that resolve outside the configured
   repository/runtime directory.
-- Environment interpolation is allowed only for fields ending in `_env`; never
-  serialize resolved secrets to config, SQLite, logs, or exports.
-- Preserve the full configured feed set in export metadata even when collection
-  is filtered with `--source`.
+- The configuration holds no credentials and no environment interpolation
+  exists; do not add either without a plan.
+- The export manifest records `schema_version`, `generated_at`, `export_mode`,
+  `window` or `changed_since`, `article_count`, `appearance_count`, each file's
+  `sha256` and `bytes`, and empty `coverage_gaps` and `warnings` lists. It does
+  not record the configured feed set or whether collection was filtered with
+  `--source`. `poll_interval_seconds` is validated but read by no code; the
+  schedule lives in `editorial/config/launchd`.
 
 ## Tests and fixtures
 
 - All default tests must be network-free and use temporary databases/directories.
-- Put network-backed checks under `tests/live/`, mark them `live`, and exclude
-  them from the ordinary test suite.
+- Mark any network-backed test `live` (the marker is registered in
+  `pyproject.toml`); `check` runs `pytest -m "not live"`. No live tests exist
+  today.
 - Use `gather_news.sh capture-fixture` as the only normal fixture-capture path;
   `tools/capture_fixture.py` is a compatibility shim. Raw
   fixtures need safe metadata sidecars and hashes, and must never contain
@@ -188,16 +208,15 @@ This assumes the operator has already provisioned `.venv` from the committed
 
 For changes affecting persistence, collection, recovery, or exports, also run
 the smallest relevant CLI smoke test against a temporary database. Do not use or
-overwrite `var/news-ingest.sqlite3` in tests.
+overwrite `var/news-ingest.sqlite3` in tests. `./gather_news.sh benchmark-collect`
+is a network-free ingestion comparison on temporary databases and never opens
+the configured database; `deduplicate-sightings --dry-run` reads the live
+database through a read-only snapshot.
 
-Live publisher checks are separate and must be explicitly requested or clearly
-required by the task:
-
-```sh
-./gather_news.sh live-contracts
-```
-
-Do not treat a publisher outage as an offline-test failure.
+There is no automated live publisher check: `./gather_news.sh live-contracts`
+returns `status: disabled`. When a task needs one, run `capture-fixture` or a
+source-limited `collect --once --source ID` deliberately, and only when the
+user asked for it. Do not treat a publisher outage as an offline-test failure.
 
 ## Change discipline
 

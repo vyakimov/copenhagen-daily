@@ -1,182 +1,184 @@
-# Block 3: Broadsheet publishing architecture
+# Block 3: the publisher
 
-Status: architecture, 14 September 2026, describing block 3 as built. This document records the publishing approach and the decisions behind it at the level
-needed to remember the design; the [implementation plan](publisher-architecture.md)
-remains the exhaustive specification and governs contract, failure table, and protocol details.
-Companions: [Block 1: ingestion architecture](ingest-architecture.md) and
-[Block 2: editorial architecture](editorial-architecture.md).
+Status: as-built documentation, describing block 3 as it stands on 30 September 2026. Companions:
+[Block 1: ingestion architecture](ingest-architecture.md), [Block 2: editorial architecture](editorial-architecture.md),
+the [decision log](decision-log.md), and the [roadmap](roadmap.md) for what is designed but not built.
+Commands and failure handling: [publisher/README.md](../publisher/README.md), [publisher/OPERATIONS.md](../publisher/OPERATIONS.md).
 
-## Recommendation, as built
+## What block 3 is
 
-Block 3 is a **static edition publisher** in `publisher/`: TypeScript on Node, Astro for the web
-edition, plain TypeScript templates for the device page, a pinned Playwright Chromium for measurement
-and capture, and ImageMagick for the device image. From one accepted edition it produces two outputs.
-The **web edition** is the product: a static broadsheet site carrying every story at full approved
-length, with per-edition permalinks, an archive, and a latest pointer. The **device edition** is a
-separate reduced artifact: one 1872 × 1404 sixteen-level grayscale PNG for a TRMNL X panel.
+Block 3 is a static edition publisher in `publisher/`: TypeScript on Node 26, Astro 7 for the web
+edition, a plain TypeScript template for the device page, a pinned Playwright Chromium for measurement
+and capture, and ImageMagick 7 for the device image. From one accepted edition it produces two outputs.
+The web edition is the product: a static broadsheet site carrying every story at full approved length,
+with per-edition permalinks, an archive, and a latest pointer. The device edition is a reduced artifact:
+one 1872 by 1404 sixteen-level grayscale PNG for a TRMNL X panel. The two share the edition, the
+type, and the story and callout components, and nothing else: no layout, page budget, or build path.
 
-The two share an edition, a design language, and a component vocabulary. They do not share a layout,
-a page budget, or a build path, and nothing in the web edition is constrained to keep parity with the
-panel. Editions vary from day to day in composition, story counts, and callouts, and every variation
-comes from block 2's editorial signals, never from randomness.
+Boundary rules, enforced by the tests in `publisher/tests/`: block 3 calls no model, it selects among
+the copy variants block 2 supplied and measures boxes, never rewriting, shortening, reordering, or
+composing. It renders only its own pages from local assets: the device browser loads pages from a
+loopback server, aborts every off-origin request, and fails the run if one was attempted; it never
+visits a publisher URL. It uploads nothing and touches no account; delivery belongs to the desk. Every
+contract string is escaped before it reaches a template.
 
-Block 3 never calls a model. It selects among the copy variants block 2 supplied and measures boxes;
-it does not rewrite, shorten, reorder, or compose. Its browser loads only local pages and vendored
-assets, and every contract string is escaped before it reaches a template.
+## The edition contract
 
-```mermaid
-flowchart LR
-    A[Block 2: edition JSON] --> B[validate: schema + semantic rules]
-    B --> E[build-web: Astro site, every story, full length]
-    B --> C[fit: measure the device page in Chromium]
-    C --> D[render-device: capture, 4-bit PNG, verify bytes]
-    E --> H[publish: stage, promote to immutable store, swap live]
-    D -.->|device failure does not block the web| H
-    H --> I[web archive, latest pointer, device/current.png]
-    H --> K[publication receipt to block 2]
+The edition is the publishing unit. Its shape is `contracts/edition-contract.v1.schema.json`, a
+hand-written JSON Schema 2020-12 owned by block 3; the TypeScript types are generated from it, never
+the reverse, so Python and TypeScript validate one artifact identically. Golden editions and a
+rejection corpus are in `contracts/examples/`, beside the schemas for what block 3 writes. Story
+order in the contract is authoritative; a story has a role (lead, secondary, brief), up to three body
+variants, an optional short headline, callouts of five kinds (`quote`, `figure`, `facts`, `box`,
+`timeline`), and complete sources. `config/title.yaml` holds what belongs to the title rather than
+the day: id, masthead, device profile, web composition, and the publisher id to display name map.
+
+`validate` reads at most 4 MiB of UTF-8 JSON, accepts only `schema_version` 1, validates with Ajv in
+strict mode with full format checking, then applies the semantic rules in `src/contract/edition-contract.ts`:
+the title matches the configured id; ids are unique; exactly one lead, first, `required`, without a
+fallback; only a secondary may fall back to brief, and anything that can be a brief has a lede; a
+sourced story has one primary source, every source names a configured publisher and an existing input
+over HTTPS, and every citation names one of the story's sources; the fit policy's lists match the
+`reserve` and `optional` stories exactly; and the coverage status agrees with the feed inventory.
+
+## The web edition
+
+Astro runs once per edition in a scratch directory, with `TZ=Europe/Copenhagen` and
+`SOURCE_DATE_EPOCH=0`. Only that edition is in the content collection; the archive, the latest
+pointer, and the `go/<id>/prev|next` stubs are built from the store's index snapshot, the only way the
+build can know about editions it does not render. Every page links its stylesheet at
+`/a/<layout version>/web.css`; the layout version is `broadsheet-v3` (`src/contract/version.ts`).
+Assets are `tokens.css` concatenated with `web.css` or `device.css` plus the vendored variable WOFF2
+files of Newsreader and Libre Franklin; no font loads from the network.
+
+Two compositions exist; `web_layout` in the title config selects one, and `--layout` overrides it for
+`build-web` and `preview` only. Both render the same `Story` component and one type scale.
+
+- Grid, the default: the lead, body in two columns, beside a rail of up to two secondaries. The rest,
+  secondaries then briefs under an "Also today" head, are dealt at build time into three fixed,
+  contiguous stacks by `assets/html/columns.ts`, which estimates each story's height from a scale
+  calibrated against rendered editions, not balanced CSS columns, so opening a source list only
+  pushes down the stories beneath it.
+- Sheet: one sheet of three balanced CSS columns. The lead's kicker, headline, and deck span them;
+  its body and everything else flow through in contract order.
+
+The masthead's left ear is the weekday edition label ("Monday edition") and "News through 8am, 28
+September", both read off the cutoff in the edition's timezone, in Danish for a Danish edition. The
+right ear is the edition's `ear_right` when block 2 supplies one, else "Edition N". The dateline
+carries the date, the paper's number, and the five publishers that contributed to the most stories
+with a "+N more" tail. The navigation line links the previous and next editions through the `go/`
+stubs, the archive, and, when the edition has a device page, "View as printed page" at
+`/n/<id>/device/page-1.png`, an edition-absolute link that stays right in the archive.
+
+Each story renders its longest supplied body variant, justified, soft-hyphenated at build time from
+TeX patterns for the edition's language (`config/hyphenation.json`) so every browser breaks words at
+the same points, with a drop cap on the lead. The headline links to the primary source; the first
+callout follows the header, the rest follow the body. Paragraph citations are not rendered inline;
+the footer is one line naming every contributing publisher once, primary first, which opens a
+disclosure with the limitations note and every article with its original title, publisher, and time.
+The web adds a warm paper tone and one dark-red accent, which `web.css` uses for link hover and
+focus, the pull-quote rule, the source-list toggle marker, the titles of facts, box, and timeline
+callouts, the edition id in the folio, and the latest marks in the archive. The archive is a register
+of back numbers, newest first and grouped by month: each row shows the paper's own number (carried in
+the index entry; position is the fallback for older entries), the day, and the name.
+
+## The store and activation
+
+Publication is durable without a database. Under the publish root:
+
+```
+store/n/<edition-id>/   immutable bundle: edition.json, page, manifest, receipt, and the device files
+store/a/<layout>/       immutable shared assets, one directory per layout version
+releases/<release-id>/  a complete docroot of hard links into the store
+live -> releases/<id>   the docroot delivery syncs
+state/pending.json      the one durable activation intent, or absent
+state/activations/      one record per activation, <release-id>.json, numbered by sequence, kept forever
+.lock                   exclusive directory lock for publish and recover
+.staging-<release-id>/  run-owned work, kept only while an intent is pending
 ```
 
-## The edition is the publishing unit
+`publish` takes the lock, refuses to run while an intent is pending, and refuses a stored edition
+id. It renders the device page, builds the web edition, writes the bundle and its manifest (file
+hashes, the shared asset inventory, the device outcome, and the renderer environment down to the
+Chromium executable digest and the fonts lock), and assembles the release: hard links to every stored
+edition and to this bundle, hard links to every layout version in the store so archived pages keep
+the stylesheet they were published with, `index.json`, `latest.json` with separate web and device
+pointers, `device/current.png` linked to the newest edition with a device page, and a root
+`index.html` linked to the latest edition's own page.
 
-The content record is the edition from block 2: ordered stories with roles, copy variants, callouts,
-and complete sources. Each edition is published once into an immutable directory under `n/<id>/`
-holding the edition JSON, the rendered page, the manifest with hashes, the publication receipt, and,
-when it succeeded, the device page. An archived edition is never rebuilt: a correction appears in the
-next edition, and a design change applies only to editions published after it. Revisions with
-correction notices are designed in the [roadmap](roadmap.md) and deferred.
+The staged tree is synced to disk and the intent written atomically. Promotion renames each staged
+object to its final path and freezes it read-only. Activation renames a temporary symlink over `live`
+after checking that `live` still points at the recorded predecessor; a leftover temporary link with
+this run's release id is replaced, anything else there is a conflict. The activation record gets the
+next sequence number and the intent is removed. A crash before the intent leaves nothing; after it,
+`recover` verifies every staged or promoted object against the intent's hashes, finishes promotion
+and the swap, and, when a record for the release already exists from a crash between writing it and
+clearing the intent, only cleans up. Releases beyond the newest five are then deleted, never the
+live one; the store and records stay.
 
-The web archive links every edition; a small `latest` pointer and `go/<id>/prev|next` stubs owned by
-the shell mean an archived page never needs rewriting when a newer edition arrives. Every story has an
-anchor, the headline links to the primary source, and the footer opens the full evidence trail: every
-contributing article with its original title, publisher, and time. The coverage note and the cutoff
-time are printed on the page, and the build time is never presented as the time every feed was checked.
+`receipt` returns the stored receipt only for an activated edition, after checking that the bundle's
+manifest still hashes to what the activation record recorded. Block 2 advances its "already covered"
+memory from this, never from a build or fit. `verify` re-hashes every bundle file and shared asset
+against the manifest, and the manifest against the activation record when one exists. Archived
+editions are never rebuilt: a correction appears in the next edition, and a design change applies
+only to editions published after it.
 
-## Design language, as built
+## The device page
 
-The direction was worked out in `docs/design/` and then settled by specimen and by reading real
-editions. What holds:
+One composition, `lead-wide`, is built: masthead, a lead that is kicker, headline, deck, and source
+line with an optional callout to its right, a band of up to three secondaries, a strip of up to four
+briefs, and a folio with the cutoff and coverage status. The bands size to their content and the lead
+takes what remains, so a too-full page shows as a clipped lead. Every geometry number is in
+`device.css`; the template emits no links or scripts and links the stylesheet at
+`/a/<layout version>/device.css`, the path the release serves.
 
-- **Type.** Newsreader, a variable serif with optical sizes, for the masthead, headlines, decks,
-  quotes, figures, and body; Libre Franklin, a variable grotesque, in tracked capitals for kickers,
-  the dateline, source lines, and navigation. Chosen by specimen on 11 September 2026 over Playfair
-  Display with Source Serif 4, Libre Caslon, and a blackletter nameplate. Both faces are vendored under the OFL; no font loads from the
-  network.
-- **Colour.** The device is pure black on pure white with two fill greys and one hairline grey that
-  land exactly on the sixteen-level palette. The web adds a warm paper tone and one dark-red accent
-  for links, the pull-quote bar, and the disclosure marker. Nothing else is coloured.
-- **Masthead and dateline.** Edition name and cutoff in the left ear, the edition's "Inside" line in
-  the right. The dateline carries the date, the number, and the five publishers that contributed to
-  the most stories with a quiet "+N more" tail, settled 14 September 2026 when sixteen titles made a
-  full list crowd the masthead.
-- **Story roles.** Exactly one lead: kicker, display headline, italic deck, optional callout, body with
-  a drop cap in one or two columns. Secondaries with a text-face headline and a short body. Briefs
-  with a headline and a one-sentence lede.
-- **Attribution.** Publishers are cited, not prefixed: copy never opens with "X reports". Each story's
-  footer is one quiet line naming every contributing publisher once, primary first; it is the summary
-  of a disclosure that opens the full source list with the story's limitations note. Settled 11 and 14
-  September 2026.
-- **Body copy.** Justified, soft-hyphenated at build time so every browser breaks identically,
-  paragraphs separated by a gap rather than an indent, wrapped with `text-wrap: pretty`. Settled 14
-  September 2026 after an indent left one-line paragraphs looking stranded.
-- **Callouts.** Five kinds, each owned by a story and written by block 2: `quote`, `figure`, `facts`,
-  `box`, and `timeline`. Block 3 chooses which fit; it never composes one.
-- **Web compositions.** A grid, the lead beside a rail with flowing columns below, is the default; a
-  single sheet of newspaper columns is kept as a one-word switch in the title config. Both render the
-  same story component and type scale. Settled 14 September 2026.
-- **Device compositions.** Three were designed, lead-wide, lead-tall, and lead-centred, with empty
-  bands allowed and no filler. One, lead-wide, is built: its secondary and brief bands size to their
-  content and the lead takes what remains.
+`fit` places required and optional stories in contract order, repairing a band over capacity by
+omitting optional stories from it, demoting a secondary with a brief fallback, then omitting any
+optional story. The page is then measured and repaired down the fixed ladder the README describes
+until it fits or a required story cannot be placed. A restoration phase then puts things back one at
+a time and keeps each only if the page still fits: demoted secondaries get their role back, then
+omitted optional stories most prominent first, then reserves in declared order, then dropped
+callouts, within a budget of 80 candidates. Every transition is recorded in the fit report, stored
+with the edition (on a failed fit too) so block 2 can shorten copy and retry rather than guess.
 
-What never varies is type size, margins, rule weights, and palette. Variation comes only from the
-composition, the counts, the callouts, and the structural elements the edition calls for.
+Measurement uses one pinned Chromium installed under `node_modules` with `PLAYWRIGHT_BROWSERS_PATH=0`
+and a 1872 by 1404 viewport; pages are served from a loopback server, and all four required faces
+must report loaded. Capture re-measures the frozen page and requires an identical result, takes one
+viewport screenshot, and asserts the frame from the PNG header. ImageMagick converts it with
+`-strip -colorspace Gray -depth 4`, no dithering, and the bytes are verified: 1872 by 1404, colour
+type 0, bit depth 4, only IHDR, IDAT, and IEND, at most sixteen levels. `-strip` is what makes two
+runs byte-identical; identity across operating systems or browser upgrades is not promised.
 
-## Layout on the device is a measured, bounded process
+A device failure of capacity or availability publishes the web edition anyway as `status: "partial"`,
+with the cause in the receipt and `device/current.png` still pointing at the last edition that
+produced a page; `--require-device` reverses that. The four `DEVICE_INTEGRITY_ERRORS`
+(`measurement_inconsistent`, `screenshot_size_mismatch`, `image_invariant_violation`,
+`network_access_blocked`) always stop the run. If the web build fails, nothing is published.
 
-This governs the device edition only; the web has no page budget, no omissions, and no fit failure.
+## The command line
 
-The contract's story order is authoritative. Each story declares `device_participation` of `required`,
-`optional`, or `reserve`; the lead is first and required; the only role fallback is secondary to brief;
-the omission and reserve lists must match those sets exactly. The publisher never invents copy, reorders
-stories, or shrinks type to fit.
+`publish_news.sh` is the public interface. Every action writes one JSON envelope on stdout; a usage
+error exits 2, any other error 1. Options are strict (`src/cli/options.ts`): each action declares its
+options and whether they take a value, and an unknown, repeated, or valueless option, or any
+positional argument, is refused before the action runs, so a misspelt flag is never ignored on the
+way to a publish. `preview` serves any edition on the loopback interface from a scratch build, with
+real archive navigation when `--publish-root` is given, and writes nothing to the store.
 
-As built, the device lead is kicker, headline, deck, and source line, with its body read on the web.
-The page is measured in the pinned Chromium and a bounded loop repairs overflow in a fixed order: drop
-the tallest stories' callouts, demote secondaries that allow a brief fallback, omit optional stories
-least prominent first, take the lead's short headline, then trim the tallest remaining story, until every
-slot fits or a required story cannot be placed. Callouts go before stories; required stories never
-vanish silently. The fitting page is captured once, converted to a 4-bit grayscale PNG with no dithering,
-and verified from its bytes. The frozen composition and a fit report are stored with the edition so
-block 2 can shorten copy and retry rather than guess.
+## Unlisted posture and delivery
 
-## One edition, two outputs, one of them first class
+The site is served but not listed: every page carries
+`<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">`, the release root carries a
+`robots.txt` that disallows everything, and CloudFront adds an `x-robots-tag: noindex` header for files
+that are not HTML. Block 3 does none of the delivery. After an activated publish the desk syncs `live/`
+to the S3 bucket and invalidates the CloudFront distribution, then copies `live/device/current.png` to
+the NAS with `scp -O`; see [editorial/OPERATIONS.md](../editorial/OPERATIONS.md) and
+[aws-delivery.md](aws-delivery.md). Publisher licensing is the open question behind the unlisted posture.
 
-A device failure of capacity or availability publishes the web edition anyway, records the cause in
-the receipt, and leaves `device/current.png` pointing at the last edition that produced a page, so the
-panel keeps a readable page rather than a gap. `--require-device` reverses that for callers who need
-both. Integrity failures, a page that reached the network, a wrong screenshot size, an image invariant
-violated, always stop the run. If the web build fails, nothing is published.
+## Decisions and what remains
 
-## Publication is durable without a database
-
-Publishing writes into run-owned staging under the publish root, promotes the bundle into an immutable
-store, assembles a complete release snapshot as hard links, and activates it with one atomic swap of
-the `live` symlink. A durable intent is written before promotion, so `recover` can finish an
-interrupted activation without rerendering, and `receipt` can reconcile a publication whose stdout was
-lost. Activation records are numbered and kept forever; old releases beyond a retention count are
-deleted, never the live one or the store. The store is read-only on disk, and `verify` re-hashes an
-archived bundle without launching a browser. Block 2 advances its "already covered" memory only from an
-activated receipt.
-
-The published site references its assets by root-relative path, so the release directory must be
-served as a web root; opening a page from the filesystem shows it unstyled.
-
-## Rendering is local, pinned, and reproducible
-
-Fonts, browser, and ImageMagick are pinned; `doctor` reports their identities. The render stage is
-network-isolated apart from a loopback server, animations are disabled, and fonts are awaited before
-measurement. Reproducibility means the same composition and environment yield stable artifacts, and
-`-strip` on the ImageMagick conversion is what makes two runs byte-identical; byte identity across
-operating systems or browser upgrades is not promised, and renderer upgrades get visual review.
-
-## Delivery and hosting
-
-Delivery starts with TRMNL's Image Display plugin fetching `device/current.png` from a host its cloud can
-reach; publication and device refresh are separate events, and the page carries its own date so an
-offline panel is honest. Alias, Terminus, and a private plugin remain the alternatives if conversion,
-privacy, or cloud independence demand them. Hosting is a static host with authenticated reader access,
-immutable asset paths, and an atomic latest pointer; the [AWS plan](aws-delivery.md) maps this to S3 and
-CloudFront. These plans authorise no public posting, and publisher licensing is the largest open risk.
-
-## Decisions and the reasons behind them
-
-- **Block 3 owns the edition schema.** The consumer that must render
-  every field is the right owner; block 2 validates against block 3's published schema and rejection
-  corpus.
-- **The schema is hand-written JSON Schema, not generated from Zod.**
-  TypeScript types are generated from it, never the reverse, so Python and TypeScript validate one
-  artifact identically.
-- **Astro renders the web only; the device uses plain TypeScript templates.** Astro's container
-  rendering was the wrong tool for a fixed-size measured page.
-- **Astro 7 and Node 26, measured on 8 September.** Versions are resolved once and pinned exactly.
-- **The web edition is first class; the device is a reduced artifact.** Settled 8 September so the
-  panel's compromises never reach the site.
-- **Archived editions are never rebuilt; publication has durable state without a database.** Settled
-  11 September: immutability as a file protocol, activation as the only evidence of publication.
-- **Release-1 tests guard invariants and contracts, nothing else.** Settled 11 September to keep the
-  test surface proportional to the product.
-- **Type by specimen, attribution by citation, grid with a sheet switch, quiet masthead and footers,
-  gap paragraphing.** The design decisions of 11 and 14 September, each recorded in the
-  [decision log](decision-log.md) with the alternatives and why they lost.
-
-## Where block 3 stands
-
-Built: `validate`, `schema`, `build-web`, `publish`, `recover`, `receipt`, `verify`, `doctor`, and
-`check`, with the immutable store and release protocol, the Astro web edition in both layouts, and
-vendored type. The device path, `fit` and `render-device` with the single lead-wide composition, is in
-the working tree on 14 September 2026 and being finished. Three evaluation editions from 12 to 14
-September were published locally that day and reviewed for visual and editorial quality, which is where
-the masthead, footer, and paragraph decisions came from.
-
-Still to do: the owner's physical device trials, which no agent can perform; the two remaining device
-compositions; and the milestones the first release names, a week of consecutive editions reviewed side
-by side, a correction carried in a following edition, a failed build, and an offline panel.
+The decisions behind the above are in the [decision log](decision-log.md) with the alternatives:
+block 3 owns the hand-written schema; Astro renders the web only, its container rendering being the
+wrong tool for a fixed-size measured page; the web edition is first class and the device a reduced
+artifact; immutability is a file protocol and activation the only evidence of publication.
+Edition revisions with correction notices, a staging paper, whole-release verification in recovery,
+multi-page device output, and further compositions are designed in the [roadmap](roadmap.md).
