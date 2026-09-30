@@ -75,3 +75,14 @@ test("estimated lines grow with body length, callouts, and long headlines", () =
   const boxed = estimateHeight(story("b", 30, 1));
   assert.ok(long > short && boxed > short);
 });
+
+test("a heading and its first story are dealt as one unit, even when they are the only briefs", () => {
+  const items = [
+    { key: "big", lines: 700 },
+    { key: "head", lines: 40, leads: true },
+    { key: "brief", lines: 220 },
+  ];
+  const columns = splitColumns(items, 3);
+  const keys = columns.map((c) => c.map((i) => i.key));
+  assert.deepEqual(keys, [["big"], ["head", "brief"], []]);
+});

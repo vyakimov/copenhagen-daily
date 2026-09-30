@@ -47,42 +47,47 @@ export function estimateHeight(story: any): number {
 }
 
 /**
- * Deal items into `count` contiguous stacks. Filling left to right, a column takes the next item
- * only if that leaves the tallest column shorter than stopping would, judging the columns still to
- * come by their fair share of what remains. An item marked `leads` (a heading) never closes a
- * column: it goes with what follows it.
+ * Deal items into `count` contiguous stacks. An item marked `leads` (a heading) is welded to the item
+ * after it, so the two are placed as one unit and a heading can never end a column. Filling left to
+ * right, a column takes the next unit only if that leaves the tallest column shorter than stopping
+ * would, judging the columns still to come by their fair share of what remains.
  */
 export function splitColumns<T>(items: Item<T>[], count: number): Item<T>[][] {
+  const units: Item<T>[][] = [];
+  for (let i = 0; i < items.length; i++) {
+    const item = items[i]!;
+    if (item.leads && i + 1 < items.length) {
+      units.push([item, items[i + 1]!]);
+      i++;
+    } else {
+      units.push([item]);
+    }
+  }
+  const height = (unit: Item<T>[]) =>
+    unit.reduce((sum, item) => sum + item.lines, 0);
   const columns: Item<T>[][] = Array.from({ length: count }, () => []);
   let index = 0;
-  let remaining = items.reduce((sum, item) => sum + item.lines, 0);
+  let remaining = units.reduce((sum, unit) => sum + height(unit), 0);
   for (let c = 0; c < count; c++) {
     const later = count - c - 1;
-    let height = 0;
-    while (index < items.length) {
-      const item = items[index]!;
-      const leftAfter = items.length - index - 1;
-      // Every later column must still get an item, unless there are fewer items than columns.
-      const mustStop = later > 0 && leftAfter < later;
-      if (later > 0 && height > 0 && !mustStop) {
+    let filled = 0;
+    while (index < units.length) {
+      const unit = units[index]!;
+      const leftAfter = units.length - index - 1;
+      // Every later column must still get a unit, unless there are fewer units than columns.
+      if (later > 0 && filled > 0) {
+        if (leftAfter < later) break;
         const ifTaken = Math.max(
-          height + item.lines,
-          (remaining - item.lines) / later,
+          filled + height(unit),
+          (remaining - height(unit)) / later,
         );
-        const ifStopped = Math.max(height, remaining / later);
+        const ifStopped = Math.max(filled, remaining / later);
         if (ifTaken >= ifStopped) break;
       }
-      if (mustStop && height > 0) break;
-      columns[c]!.push(item);
-      height += item.lines;
-      remaining -= item.lines;
+      columns[c]!.push(...unit);
+      filled += height(unit);
+      remaining -= height(unit);
       index++;
-    }
-    // A heading must not sit at the foot of a column.
-    while (later > 0 && columns[c]!.length > 1 && columns[c]!.at(-1)!.leads) {
-      const moved = columns[c]!.pop()!;
-      remaining += moved.lines;
-      index--;
     }
   }
   return columns;
