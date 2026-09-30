@@ -12,7 +12,7 @@ timezone: Europe/Copenhagen
 
 schedule:
   edition: morning
-  cutoff_local: "08:00"      # the edition covers news through this time; published shortly after
+  cutoff_local: "05:30"      # the edition covers news through this time; published shortly after
   candidate_window_hours: 72 # publication-time window; anything observed since the last edition also qualifies
   memory_editions: 14        # published editions read at each run for repeat suppression and threads
   thread_dormant_days: 14

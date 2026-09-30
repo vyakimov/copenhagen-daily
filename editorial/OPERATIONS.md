@@ -8,9 +8,9 @@ with logs under `~/Library/Logs/copenhagen-daily/`:
 | Job | When | Command |
 |---|---|---|
 | `ai.copenhagen-daily.collect` | every fifteen minutes | block 1 `collect --once` |
-| `ai.copenhagen-daily.edition` | 08:05 local | `edit_news.sh run` |
-| `ai.copenhagen-daily.retry` | 10:30 local | `edit_news.sh run --retry`: runs only if the morning edition has not already succeeded, resuming a failed run from its first missing file |
-| `ai.copenhagen-daily.freshness` | 11:30 local | `edit_news.sh freshness --notify`: fails and notifies when the latest activated edition is older than `max_edition_age_hours` |
+| `ai.copenhagen-daily.edition` | 05:30 local | `edit_news.sh run` |
+| `ai.copenhagen-daily.retry` | 07:30 local | `edit_news.sh run --retry`: runs only if the morning edition has not already succeeded, resuming a failed run from its first missing file |
+| `ai.copenhagen-daily.freshness` | 09:00 local | `edit_news.sh freshness --notify`: fails and notifies when the latest activated edition is older than `max_edition_age_hours` |
 
 Install them once:
 
@@ -24,7 +24,7 @@ its command through `/bin/sh`, which forks the wrapper and stays its parent. Gra
 `/bin/sh` once (System Settings, Privacy & Security, Full Disk Access, the plus button, then
 Shift-Command-G and `/bin/sh`), and every process the job starts inherits it. Without that grant the
 job's stderr log says `Operation not permitted`. To stop one: `launchctl bootout gui/$(id -u)/ai.copenhagen-daily.edition`. launchd runs a missed
-calendar job when the Mac wakes, so a closed lid at 08:05 means a late edition, not a lost one.
+calendar job when the Mac wakes, so a closed lid at 05:30 means a late edition, not a lost one.
 
 The jobs carry their own `PATH`, and its order matters: `/opt/homebrew/bin` comes before `~/.local/bin`
 because other tools drop their own `node` there (Hermes keeps a Node 22 in it), and block 3 needs

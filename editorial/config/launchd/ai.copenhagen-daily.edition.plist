@@ -24,9 +24,9 @@
 	<key>StartCalendarInterval</key>
 	<dict>
 		<key>Hour</key>
-		<integer>8</integer>
-		<key>Minute</key>
 		<integer>5</integer>
+		<key>Minute</key>
+		<integer>30</integer>
 	</dict>
 	<key>StandardOutPath</key>
 	<string>/Users/vy/Library/Logs/copenhagen-daily/edition.stdout.log</string>

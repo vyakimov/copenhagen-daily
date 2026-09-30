@@ -14,8 +14,8 @@ CUTOFF = "2026-09-15T08:00:00.000000Z"
 
 
 def test_cutoff_for_converts_local_cutoff_to_utc(policy):
-    assert cutoff_for("2026-09-24", policy) == "2026-09-24T06:00:00.000000Z"
-    assert cutoff_for("2026-01-15", policy) == "2026-01-15T07:00:00.000000Z"
+    assert cutoff_for("2026-09-24", policy) == "2026-09-24T03:30:00.000000Z"
+    assert cutoff_for("2026-01-15", policy) == "2026-01-15T04:30:00.000000Z"
 
 
 class Fakes:
