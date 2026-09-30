@@ -141,6 +141,73 @@ first fortnight of scheduled runs.
 
 ---
 
+## Monitoring and observability
+
+**Status: designed, not scheduled.** Recorded 30 September 2026. The owner's stated reason is to
+be able to claim, credibly, the technologies that keep software running in production; the design
+below is chosen so that every layer also earns its place in this project.
+
+### The gap
+
+Today's signals are ad hoc: block 1's `health` command, a `status.json` per run, the launchd logs, a
+desktop notification on failure, and the 11:30 freshness job. Nothing is kept over time, nothing says
+when a job silently never ran (lid closed, agent unloaded, PATH broken, which is how the 30 September
+edition was late), and nothing ties an edition's quality back to what the model sessions did.
+
+### The approach, in order of value for effort
+
+**1. A dead-man's switch for the scheduled jobs.** Healthchecks.io (open source, free tier) or
+Cronitor. Each launchd job pings a URL on start and on success; the service alerts when the 08:05
+ping has not arrived by 08:45. This catches the class of failure nothing else sees, and it is an
+hour's work. Do this first.
+
+**2. OpenTelemetry for metrics, logs, and traces.** OpenTelemetry is the vendor-neutral standard and
+the name that matters on a CV. Instrument the block 2 runner so each run is a trace with a span per
+phase, and emit metrics from numbers already computed: poll duration and database time in block 1,
+articles per feed, feed failures, phase durations, editor turns and cost, strikes per edition,
+delivery time, and edition age as a gauge. The headless Claude Code editor session exports natively
+with no code: `CLAUDE_CODE_ENABLE_TELEMETRY=1` with the OTLP metrics and logs exporters set in the
+runner's environment emits session count, cost, token usage and tool events, and
+`OTEL_RESOURCE_ATTRIBUTES` tags each session with its edition id. Codex has an `[otel]` exporter for
+logs and traces in its config, though `codex exec` does not yet emit metrics. Push straight to
+Grafana Cloud's free tier (hosted Prometheus, Loki, Tempo) rather than running a collector on the Mac;
+a batch pipeline pushes, and Prometheus scraping assumes a long-lived server.
+
+**3. Dashboards, alerts, and one SLO.** Grafana dashboards over that data: edition timeline, poll
+health, cost per edition, strike rate per brief version. Alert rules worth having: no edition by
+08:45, poll database time above a minute, a feed failing three polls running, cost per edition above
+a threshold. Then state one service-level objective, such as "the paper is published by 08:45 on 95%
+of weekdays", and measure it; talking about SLOs and error budgets from experience is what separates
+having run software from having installed a dashboard.
+
+**4. LLM observability.** The field's tools are Langfuse (open source, self-hostable: traces, cost,
+prompt versioning, datasets, scores), Arize Phoenix (open source, on OpenTelemetry, strong on evals),
+LangSmith, Braintrust, and Weights & Biases Weave. Langfuse fits best because its trace, score, and
+dataset model matches what block 2 already produces. Each run becomes a trace; the scores are numbers
+the runner already computes (strikes, send-backs, stories fallen to the headline, the editor's
+self-reported checks); the golden edition and the seeded-error edition become datasets, so every
+change to the handbook, style guide, or checker brief gets a regression run before it goes live.
+Record a hash of the skill and brief files on every trace, so a change in strike rate can be tied to
+the brief change that caused it. The question of how conservative the checker is then becomes a chart
+rather than a transcript search.
+
+**5. The AWS side.** CloudFront already reports requests and errors to CloudWatch for free. Add the
+pending CloudWatch alarm on edition age through a small scheduled Lambda that reads `latest.json`,
+and turn on CloudFront standard logs to S3 with Athena for readership once the link is shared.
+
+### What not to do
+
+Run Prometheus scraping on a laptop, adopt Datadog at its price for a one-person project, or stand up
+an ELK stack. Each is more to operate than the thing being watched.
+
+### The gate
+
+None for step 1; it should go in before the next week of scheduled runs. Steps 2 to 4 wait until the
+scheduled pipeline has run unattended for a fortnight, so the dashboards show a steady state rather
+than the shakedown, and so the instrumentation is added to a runner whose phases have stopped moving.
+
+---
+
 ## Multi-page device output
 
 **Status: deferred. Not in the first release.** Settled 11 September 2026.
