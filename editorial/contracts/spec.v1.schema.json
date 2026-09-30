@@ -86,8 +86,8 @@
       "properties": {
         "id": {"$ref": "#/$defs/id"},
         "role": {"enum": ["lead", "secondary", "brief"]},
-        "device": {"enum": ["required", "optional", "reserve"], "description": "Inert: no run renders a device page. Defaults to required; kept so archived specs still build."},
-        "fallback": {"type": "boolean", "description": "Inert, as device: a secondary that could live as a brief on a device page."},
+        "device": {"enum": ["required", "optional", "reserve"], "description": "Optional. When absent the build marks the lead required and every other story optional for the kitchen screen, in prominence order; block 3 fits what it can. Kept so archived specs still build."},
+        "fallback": {"type": "boolean", "description": "Optional: a secondary that may fall back to a brief slot on the kitchen screen. The desk does not set it."},
         "kicker": {"$ref": "#/$defs/text"},
         "kicker_secondary": {"$ref": "#/$defs/text"},
         "headline": {"$ref": "#/$defs/text"},

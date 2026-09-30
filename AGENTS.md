@@ -18,8 +18,10 @@ Cross-block documents live in `plans/`. Repository-level agent skills live in `s
   Its own `AGENTS.md` is authoritative inside that directory and is not relaxed by anything here.
 - `publisher/` may use Node and a pinned headless Chromium, but only to render pages it generated
   itself from local assets. It never visits a publisher URL, loads a remote resource, or calls a model.
-- `editorial/` is the only block that calls a language model. It has no browser, shell, or
-  publishing credentials.
+- `editorial/` is the only block that calls a language model, and it does so only inside two bounded
+  sessions whose tools are the desk's own read-only actions; the model sessions have no browser, no
+  general shell, and no credentials. The deterministic runner around them holds the one delivery
+  credential (a scoped IAM user) and the NAS host alias, never the sessions.
 - Every block exposes one self-locating POSIX `sh` wrapper (`ingest/gather_news.sh`,
   `editorial/edit_news.sh`, `publisher/publish_news.sh`) that emits exactly one JSON object on stdout and diagnostics on stderr.
   Use the wrapper; do not invoke `uv`, `npm`, `node`, or `astro` directly for routine work.

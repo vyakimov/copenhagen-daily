@@ -155,6 +155,6 @@ A published edition id is never rerun; the next edition corrects it.
 
 ## Rehearsing without publishing
 
-`edit_news.sh run --dry-run` does everything up to `publish --dry-run --skip-device`, which assembles and removes a
+`edit_news.sh run --dry-run` does everything up to `publish --dry-run`, which assembles and removes a
 release under the publish root, and skips the receipt, the thread registry, delivery, and the commit. Use it
 after changing the handbook, the policy, or a skill.

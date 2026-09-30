@@ -108,6 +108,43 @@ there first.
 
 ---
 
+## Late discoveries in the candidate window
+
+**Status: designed, not scheduled.** Recorded 30 September 2026, from finding 7 of
+[the block 2 review](block-two-code-review-2026-09-30.md).
+
+### The gap
+
+The desk asks block 1 for `export --since <cutoff minus 72 hours> --until <cutoff>`, and the export
+selects on publication time alone. An article published four days ago but first observed today, or an
+older article a publisher corrected today, never enters the window, so the `newly_observed` flag the
+desk computes can only mark rows that were admitted anyway. The editorial architecture plan says
+plainly that a publication window is insufficient on its own and that a changed-since input handles
+late discoveries and corrections.
+
+### The approach
+
+Block 1's export gains a bounded observation input, `--observed-since <previous cutoff>`, that adds
+articles first seen or changed since the last edition whatever their publication time, deduplicated
+by article identity with the publication-window rows, each carrying its provenance (why it is in the
+bundle). The desk's window builder then reads both, keeps `newly_observed` as it is, and marks
+late-discovered and corrected rows so the ranking's recency term can treat them honestly: a late
+discovery is new to the paper, a correction is a development of a covered story. The producer's own
+limit stands: changed-since sees content changes from the retained revision stream, not every
+intervening publisher edit.
+
+### What it costs
+
+A day: the export flag and its SQL in block 1 with tests for an old newly seen article and an old
+corrected one, the window builder's second input, and the two provenance marks in the ranking.
+
+### The gate
+
+None on the code. Do it when a real late discovery or correction is seen to have been missed, or with
+the next block 1 change, whichever comes first.
+
+---
+
 ## A staging paper
 
 **Status: designed, not scheduled.** Recorded 30 September 2026.

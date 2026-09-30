@@ -86,9 +86,13 @@ def verify_live(
         remote = {}
     report["live_edition"] = remote.get("edition_id")
     same_edition = report["live_edition"] == edition_id
-    check("latest_pointer", same_edition, None if same_edition else f"live {report['live_edition']}, local {edition_id}")
+    same_bytes = body == pointer.read_bytes()
+    check("latest_pointer", same_bytes, None if same_bytes else (f"live {report['live_edition']}, local {edition_id}" if not same_edition else "the live pointer differs from the local one"))
     if not same_edition:
         problems.append(f"the site serves {report['live_edition'] or 'no edition'}; the newsroom has {edition_id}")
+        return finish("not_delivered", fixable=True)
+    if not same_bytes:
+        problems.append("the live latest.json names the same edition but differs from the newsroom's copy")
         return finish("not_delivered", fixable=True)
 
     robots = "noindex" in headers.get("x-robots-tag", "")

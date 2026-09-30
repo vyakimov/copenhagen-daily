@@ -67,15 +67,42 @@ def test_build_action_rebuilds_the_golden_example(tmp_path):
     assert built == archived
 
 
+def golden_window_into(run_dir):
+    from news_editorial.bundle import load_bundle
+    from news_editorial.paths import POLICY_PATH
+    from news_editorial.policy import load_policy
+    from news_editorial.window import build_window, write_window
+
+    window = build_window(load_bundle(BUNDLE), load_policy(POLICY_PATH), cutoff=CUTOFF, previous_cutoff=PREVIOUS_CUTOFF)
+    write_window(window, run_dir)
+    return window
+
+
+def full_verdicts(edition, window, strikes=()):
+    """Every sentence supported except the (story, location, sentence) triples in `strikes`."""
+    from news_editorial.verdicts import check_input
+
+    doc = check_input(edition, window)
+    stories = []
+    for story in doc["stories"]:
+        sentences = []
+        for s in story["sentences"]:
+            key = (story["id"], s["location"], s["sentence"])
+            if key in strikes:
+                sentences.append({"location": s["location"], "sentence": s["sentence"], "verdict": "unsupported", "reason": "invented"})
+            else:
+                sentences.append({"location": s["location"], "sentence": s["sentence"], "verdict": "supported"})
+        stories.append({"id": story["id"], "sentences": sentences, "guideline_notes": []})
+    return {"schema_version": 1, "edition_id": edition["edition"]["id"], "stories": stories}
+
+
 def test_apply_verdicts_action_writes_struck_edition_and_send_back(tmp_path):
     golden = EDITORIAL / "examples" / "2026-09-15-morning"
     shutil.copy(golden / "edition.json", tmp_path / "edition.json")
-    (tmp_path / "verdicts.json").write_text(json.dumps({
-        "schema_version": 1, "edition_id": "2026-09-15-morning",
-        "stories": [{"id": "russian-frigate-flares-gedser", "sentences": [
-            {"location": "standard[0]", "sentence": 0, "verdict": "unsupported", "reason": "invented"},
-        ], "guideline_notes": ["colour without a name in paragraph 2"]}],
-    }))
+    window = golden_window_into(tmp_path)
+    verdicts = full_verdicts(read_json(golden / "edition.json"), window, strikes={("russian-frigate-flares-gedser", "standard[0]", 0)})
+    verdicts["stories"][0]["guideline_notes"] = ["colour without a name in paragraph 2"]
+    (tmp_path / "verdicts.json").write_text(json.dumps(verdicts))
     result = run("apply-verdicts", "--run", str(tmp_path))
     assert result["ok"], result
     assert result["result"]["send_back"] == ["russian-frigate-flares-gedser"]
@@ -84,3 +111,13 @@ def test_apply_verdicts_action_writes_struck_edition_and_send_back(tmp_path):
     assert final["ok"] and final["result"]["fallen"] == ["russian-frigate-flares-gedser"]
     struck = read_json(tmp_path / "edition-checked.json")
     assert struck["stories"][0]["copy"]["body"] == {}
+
+
+def test_apply_verdicts_action_refuses_verdicts_that_do_not_cover_the_check_input(tmp_path):
+    golden = EDITORIAL / "examples" / "2026-09-15-morning"
+    shutil.copy(golden / "edition.json", tmp_path / "edition.json")
+    golden_window_into(tmp_path)
+    (tmp_path / "verdicts.json").write_text(json.dumps({"schema_version": 1, "edition_id": "2026-09-15-morning", "stories": []}))
+    result = run("apply-verdicts", "--run", str(tmp_path), "--final")
+    assert result["ok"] is False and result["error"]["type"] == "verdicts_invalid", result
+    assert not (tmp_path / "edition-checked.json").exists()

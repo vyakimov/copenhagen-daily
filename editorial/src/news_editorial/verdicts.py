@@ -5,6 +5,7 @@ from __future__ import annotations
 import copy
 import json
 import re
+from collections import Counter
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
@@ -201,11 +202,18 @@ def addresses(check_input_doc: dict[str, Any]) -> set[tuple[str, str, int]]:
 def coverage_problems(check_input_doc: dict[str, Any], verdicts: dict[str, Any]) -> dict[str, list[str]]:
     """Addresses the checker skipped or invented; empty when every sentence has exactly its verdict."""
     expected = addresses(check_input_doc)
-    given = {(s["id"], x["location"], x["sentence"]) for s in verdicts["stories"] for x in s["sentences"]}
+    listed = [(s["id"], x["location"], x["sentence"]) for s in verdicts["stories"] for x in s["sentences"]]
+    given = set(listed)
     fmt = lambda a: f"{a[0]}/{a[1]}#{a[2]}"  # noqa: E731
+    # An address given twice would be struck against copy the first verdict already changed, so a
+    # repeat is refused even when both verdicts agree; the same goes for a story listed twice.
+    counts = Counter(listed)
+    story_counts = Counter(s["id"] for s in verdicts["stories"])
+    duplicate = sorted({fmt(a) for a, n in counts.items() if n > 1} | {sid for sid, n in story_counts.items() if n > 1})
     return {
         "missing": sorted(fmt(a) for a in expected - given),
         "unknown": sorted(fmt(a) for a in given - expected),
+        "duplicate": duplicate,
     }
 
 
@@ -238,12 +246,14 @@ def check_input(edition: dict[str, Any], window: dict[str, Any]) -> dict[str, An
             add(f"callouts[{index}]", _callout_text(callout), cites, split=False)
         evidence = []
         for source in story["sources"]:
-            article = articles.get((source["source"], source["source_id"]), {})
+            article = articles.get((source["source"], source["source_id"]))
+            if article is None:
+                raise ValueError(f"{story['id']}: source {source['source']}/{source['source_id']} is not in the window")
             evidence.append(
                 {
                     "source": source["source"],
                     "source_id": source["source_id"],
-                    "title": article.get("title", source["original_title"]),
+                    "title": article.get("title") or source["original_title"],
                     "description": article.get("description"),
                     "authors": article.get("authors", []),
                     "categories": article.get("categories", []),

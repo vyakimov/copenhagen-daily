@@ -96,3 +96,13 @@ def test_a_delivered_but_old_paper_reports_no_edition_today_or_a_run_in_progress
 def test_an_empty_publish_root_is_reported(tmp_path):
     report = verify_live(tmp_path, "https://example.test", Site(publish_root(tmp_path / "other")), today="2026-09-30")
     assert report["state"] == "no_local_edition" and report["fixable"] is False
+
+
+def test_a_pointer_that_differs_in_any_field_is_not_delivered(tmp_path):
+    root = publish_root(tmp_path)
+    local = json.loads((root / "live" / "latest.json").read_text())
+    local["web"]["date"] = "1900-01-01"
+    site = Site(root, **{"/latest.json": (200, {"x-robots-tag": "noindex"}, json.dumps(local).encode())})
+    report = verify_live(root, "https://example.test", site, today="2026-09-30")
+    assert report["state"] == "not_delivered" and report["fixable"] is True
+    assert report["live_edition"] == EDITION

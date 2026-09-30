@@ -163,3 +163,23 @@ def test_struck_short_headline_is_dropped_and_the_story_stands():
     assert "headline_short" not in story["copy"]
     assert story["copy"]["headline"] == doc["stories"][0]["copy"]["headline"]
     assert result["send_back"] == [] and result["struck"] == 1
+
+
+def test_duplicate_verdict_addresses_are_refused_before_anything_is_struck():
+    from conftest import BUNDLE, CUTOFF, PREVIOUS_CUTOFF
+    from news_editorial.bundle import load_bundle
+    from news_editorial.policy import load_policy
+    from news_editorial.paths import POLICY_PATH
+    from news_editorial.verdicts import check_input, coverage_problems
+    from news_editorial.window import build_window
+
+    edition = read_json(EDITORIAL_EXAMPLES / "2026-09-15-morning" / "edition.json")
+    window = build_window(load_bundle(BUNDLE), load_policy(POLICY_PATH), cutoff=CUTOFF, previous_cutoff=PREVIOUS_CUTOFF)
+    doc = check_input(edition, window)
+    verdicts = {"schema_version": 1, "edition_id": edition["edition"]["id"], "stories": []}
+    for story in doc["stories"]:
+        verdicts["stories"].append({"id": story["id"], "sentences": [{"location": s["location"], "sentence": s["sentence"], "verdict": "supported"} for s in story["sentences"]], "guideline_notes": []})
+    verdicts["stories"].append(copy.deepcopy(verdicts["stories"][0]))
+    problems = coverage_problems(doc, verdicts)
+    assert problems["missing"] == [] and problems["unknown"] == []
+    assert problems["duplicate"], "the repeated story must be reported"

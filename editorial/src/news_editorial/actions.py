@@ -229,6 +229,19 @@ def apply_verdicts_action(args: argparse.Namespace) -> dict[str, Any]:
     verdicts = _read(verdicts_path, "verdicts.json")
     if verdicts.get("edition_id") != edition["edition"]["id"]:
         raise ActionError("conflict", "verdicts name a different edition", {"verdicts": verdicts.get("edition_id"), "edition": edition["edition"]["id"]})
+    # The same rule as the runner: every sentence of the check input has exactly one verdict.
+    from .verdicts import check_input, coverage_problems, without_nulls
+
+    window_path = run_dir / "window.json"
+    if not window_path.is_file():
+        raise ActionError("missing_input", "window.json is needed to check that the verdicts cover the copy", {"path": str(window_path)})
+    verdicts = without_nulls(verdicts)
+    try:
+        coverage = coverage_problems(check_input(edition, _read(window_path, "window.json")), verdicts)
+    except (KeyError, TypeError, ValueError) as exc:
+        raise ActionError("verdicts_invalid", f"the verdicts are malformed: {exc}") from exc
+    if any(coverage.values()):
+        raise ActionError("verdicts_invalid", "the verdicts do not cover the check input sentence for sentence", {k: v[:20] for k, v in coverage.items()})
     try:
         result = apply_verdicts(edition, verdicts, min_words=policy.limits.story_stands_min_words, final=args.final)
     except ValueError as exc:

@@ -3,6 +3,7 @@ import shutil
 from pathlib import Path
 
 import pytest
+import time
 
 from conftest import BUNDLE, EDITORIAL_EXAMPLES, FIXTURES, read_json
 from news_editorial.blocks import BlockError
@@ -31,6 +32,7 @@ class Fakes:
         self.strikes_first = strikes_first
         self.editor_hangs = editor_hangs
         self.checker_calls = 0
+        self.health_feeds = None
         self.registry = tmp_path / "threads.json"
         self.publish_root = FIXTURES / "publish-root"
 
@@ -41,6 +43,8 @@ class Fakes:
             shutil.copytree(BUNDLE, output)
             return {"article_count": 254}
         if action == "health":
+            if self.health_feeds is not None:
+                return {"feeds": self.health_feeds}
             return {"feeds": [{"feed_id": f["feed_id"], "source": f["source"], "last_checked_at": f["last_checked_at"], "consecutive_failures": 0} for f in read_json(GOLDEN / "feeds.json")]}
         return {"status": "ok"}
 
@@ -460,3 +464,165 @@ def test_the_device_push_is_skipped_when_no_device_page_was_published(policy, tm
     status = make_runner(policy, tmp_path, fakes, device=True, device_pusher=lambda root: pushed.append(root)).run()
     assert status["outcome"] == "published" and pushed == []
     assert next(p for p in status["phases"] if p["name"] == "device_push")["skipped"]
+
+
+# ---- block 2 review, 30 September: the trust boundary and the retry paths ----------------------------
+
+
+def test_a_session_that_rewrites_the_evidence_stops_the_run_before_the_check(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    original_editor = fakes.editor
+
+    def editor(mode, run_dir, timeout):
+        window = json.loads((run_dir / "window.json").read_text())
+        for article in window["articles"]:
+            article["description"] = "INVENTED"
+        (run_dir / "window.json").write_text(json.dumps(window))
+        return original_editor(mode, run_dir, timeout)
+
+    status = make_runner(policy, tmp_path, fakes, editor=editor).run()
+    assert status["outcome"] == "failed"
+    assert status["failure"]["type"] == "input_modified"
+    assert "window.json" in json.dumps(status["failure"]["details"])
+    assert fakes.checker_calls == 0
+
+
+def test_a_session_that_overwrites_the_owners_dirty_file_is_caught_by_content(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    dirty = tmp_path / "ingest" / "README.md"
+    dirty.parent.mkdir(parents=True)
+    dirty.write_text("the owner's half-finished sentence")
+    original_editor = fakes.editor
+
+    def editor(mode, run_dir, timeout):
+        dirty.write_text("rewritten by the session")
+        return original_editor(mode, run_dir, timeout)
+
+    status = make_runner(policy, tmp_path, fakes, editor=editor, stray_changes=lambda: ["ingest/README.md"]).run()
+    assert status["outcome"] == "failed" and status["failure"]["type"] == "stray_edits"
+    assert status["failure"]["details"]["paths"] == ["ingest/README.md"]
+
+
+def test_a_stray_edit_is_reported_even_when_the_session_itself_fails(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    tree = []
+
+    def editor(mode, run_dir, timeout):
+        tree.append("editorial/policy.yaml")
+        raise RunFailure("editor_timeout", "the editor ran past its wall clock", {"limit": "editor_minutes"})
+
+    status = make_runner(policy, tmp_path, fakes, editor=editor, stray_changes=lambda: list(tree)).run()
+    assert status["failure"]["type"] == "stray_edits"
+    assert status["failure"]["details"]["after"] == "editor_timeout"
+
+
+def test_the_archive_commit_leaves_unrelated_staged_work_alone(policy, tmp_path):
+    import subprocess
+
+    git = lambda *a: subprocess.run(["git", *a], cwd=tmp_path, check=True, capture_output=True, text=True)  # noqa: E731
+    git("init", "-q")
+    git("config", "user.email", "t@example.org")
+    git("config", "user.name", "t")
+    (tmp_path / "seed.txt").write_text("seed")
+    git("add", "seed.txt")
+    git("commit", "-q", "-m", "seed")
+    (tmp_path / "unrelated.txt").write_text("the owner staged this before the run")
+    git("add", "unrelated.txt")
+    fakes = Fakes(tmp_path)
+    status = make_runner(policy, tmp_path, fakes, git=lambda *a: git(*a), commit=True).run()
+    assert status["outcome"] == "published", status
+    shown = git("show", "--stat", "--name-only", "--format=", "HEAD").stdout
+    assert "unrelated.txt" not in shown and f"runs/{EDITION_ID}/status.json" in shown
+    assert "unrelated.txt" in git("diff", "--cached", "--name-only").stdout
+
+
+def test_invalid_cached_verdicts_are_not_reused_on_retry(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    fakes.omit_stories = {"russian-frigate-flares-gedser"}
+    status = make_runner(policy, tmp_path, fakes).run()
+    assert status["failure"]["type"] == "verdicts_invalid"
+    fakes.omit_stories = set()
+    status = make_runner(policy, tmp_path, fakes).run()
+    assert status["outcome"] == "published", status["failure"]
+    assert fakes.checker_calls == 2
+
+
+def test_an_invalid_edition_on_disk_is_set_aside_and_the_editor_runs_again(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    run_dir = tmp_path / "runs" / EDITION_ID
+    run_dir.mkdir(parents=True)
+    (run_dir / "edition.json").write_text('{"schema_version": 1, "edition": {"id": "x"}, "stories": []}')
+    (run_dir / "NOTES.md").write_text("# half\n")
+    status = make_runner(policy, tmp_path, fakes).run()
+    assert status["outcome"] == "published", status["failure"]
+    assert [c[1] for c in fakes.calls if c[0] == "editor"] == ["edition"]
+    assert list(run_dir.glob("edition.invalid-*.json"))
+
+
+def test_a_timed_out_session_takes_its_children_with_it(tmp_path):
+    from news_editorial.run import _headless
+
+    marker = tmp_path / "marker"
+    script = tmp_path / "parent.sh"
+    script.write_text(f'#!/bin/sh\n(sleep 1; touch "{marker}") &\nsleep 5\n')
+    script.chmod(0o755)
+    with pytest.raises(RunFailure) as failure:
+        _headless([str(script)], tmp_path, 0.3, "editor-edition", tmp_path, "editor_minutes")
+    assert failure.value.error_type == "editor_minutes_timeout"
+    time.sleep(1.5)
+    assert not marker.exists(), "the session's child kept running after the timeout"
+
+
+def test_a_send_back_may_not_change_the_edition_id_or_unnamed_stories(policy, tmp_path):
+    fakes = Fakes(tmp_path, strikes_first=True)
+    original_editor = fakes.editor
+
+    def renaming_editor(mode, run_dir, timeout):
+        record = original_editor(mode, run_dir, timeout)
+        if mode == "send-back":
+            edition = json.loads((run_dir / "edition.json").read_text())
+            edition["edition"]["id"] = "2026-09-15-evening"
+            (run_dir / "edition.json").write_text(json.dumps(edition))
+        return record
+
+    status = make_runner(policy, tmp_path, fakes, editor=renaming_editor).run()
+    assert status["failure"]["type"] == "conflict" and ("publisher", "publish") not in fakes.calls
+
+    fakes = Fakes(tmp_path / "b", strikes_first=True)
+    original_editor = fakes.editor
+
+    def overreaching_editor(mode, run_dir, timeout):
+        record = original_editor(mode, run_dir, timeout)
+        if mode == "send-back":
+            edition = json.loads((run_dir / "edition.json").read_text())
+            other = next(s for s in edition["stories"] if s["id"] != "russian-frigate-flares-gedser")
+            other["copy"]["headline"] = "A headline nobody sent back"
+            (run_dir / "edition.json").write_text(json.dumps(edition))
+        return record
+
+    status = make_runner(policy, tmp_path / "b", fakes, editor=overreaching_editor).run()
+    assert status["failure"]["type"] == "send_back_overreach"
+    assert other_id_in(status["failure"]["details"])
+
+
+def other_id_in(details):
+    return any(sid != "russian-frigate-flares-gedser" for sid in details.get("changed", []))
+
+
+def test_collect_runs_when_any_healthy_feed_is_stale(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    fakes.health_feeds = [
+        {"feed_id": "fresh", "source": "dr", "last_successful_poll_at": "2026-09-15T07:55:00.000000Z", "last_checked_at": "2026-09-15T07:55:00.000000Z", "consecutive_failures": 0},
+        {"feed_id": "stale", "source": "tv2", "last_successful_poll_at": "2026-09-01T07:55:00.000000Z", "last_checked_at": "2026-09-01T07:55:00.000000Z", "consecutive_failures": 0},
+    ]
+    status = make_runner(policy, tmp_path, fakes, now=lambda: "2026-09-15T08:00:00.000000Z").run()
+    collect = next(p for p in status["phases"] if p["name"] == "collect")
+    assert not collect.get("skipped"), collect
+    fakes = Fakes(tmp_path / "b")
+    fakes.health_feeds = [
+        {"feed_id": "fresh", "source": "dr", "last_successful_poll_at": "2026-09-15T07:55:00.000000Z", "last_checked_at": "2026-09-15T07:55:00.000000Z", "consecutive_failures": 0},
+        {"feed_id": "broken", "source": "tv2", "last_successful_poll_at": "2026-09-01T07:55:00.000000Z", "last_checked_at": "2026-09-15T07:55:00.000000Z", "consecutive_failures": 3},
+    ]
+    status = make_runner(policy, tmp_path / "b", fakes, now=lambda: "2026-09-15T08:00:00.000000Z").run()
+    collect = next(p for p in status["phases"] if p["name"] == "collect")
+    assert collect.get("skipped") and collect["reason"] == "recent_poll"

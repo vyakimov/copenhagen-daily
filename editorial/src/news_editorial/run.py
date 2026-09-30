@@ -1,7 +1,7 @@
 """The runner: one edition end to end, deterministic steps around two bounded sessions.
 
-The output is the web edition. The contract's device fields are filled mechanically by `build` and
-block 3 is told to skip the device page.
+The output is the web edition, and, when the desk config asks, block 3's page for the kitchen screen,
+fitted from the same contract; the contract's device fields are filled mechanically by `build`.
 
 Every phase ends in a file in the run directory and a line in status.json. Nothing retries a model
 step blindly; a failure keeps the last activated edition in place and says why.
@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import datetime as dt
 import fcntl
+import hashlib
 import json
 import subprocess
 import traceback
@@ -59,6 +60,13 @@ def load_desk_config(path: Path = DESK_CONFIG) -> dict[str, Any]:
         return yaml.safe_load(handle)
 
 
+def _digest(path: Path) -> str | None:
+    try:
+        return hashlib.sha256(path.read_bytes()).hexdigest()
+    except OSError:
+        return None
+
+
 def _now() -> str:
     return dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H:%M:%S.%fZ")
 
@@ -89,7 +97,7 @@ def _session_record(run_dir: Path, name: str, record: dict[str, Any]) -> None:
 def _headless(command: list[str], cwd: Path, timeout: int, name: str, run_dir: Path, limit: str) -> dict[str, Any]:
     started = time.monotonic()
     try:
-        proc = subprocess.run(command, cwd=cwd, capture_output=True, text=True, timeout=timeout)
+        proc = blocks.run_in_group(command, cwd=cwd, timeout=timeout)
     except subprocess.TimeoutExpired as exc:
         _session_record(run_dir, name, {"command": command[:2], "timed_out_after_s": timeout})
         raise RunFailure(f"{limit}_timeout", f"{name} ran past its wall clock of {timeout}s", {"limit": limit}) from exc
@@ -353,7 +361,11 @@ class Runner:
         # The scheduled collector polls every few minutes; when its last poll is recent enough, a
         # second poll buys nothing and only competes for the lock.
         health = self.ingest("health", timeout=self._budget(2))
-        last = max((f.get("last_successful_poll_at") or "" for f in health.get("feeds", [])), default="")
+        # Every feed that is not known to be failing must have polled recently; one fresh feed says
+        # nothing about the rest after an interrupted or partial collection.
+        healthy = [f for f in health.get("feeds", []) if not f.get("consecutive_failures")]
+        polls = [f.get("last_successful_poll_at") or "" for f in healthy]
+        last = min(polls, default="") if polls and all(polls) else ""
         if last:
             age = dt.datetime.fromisoformat(self.now().replace("Z", "+00:00")) - dt.datetime.fromisoformat(last.replace("Z", "+00:00"))
             if age <= dt.timedelta(minutes=self.collect_max_age_minutes):
@@ -408,8 +420,25 @@ class Runner:
         write_memory(memory, self.run_dir)
         self._phase("memory", editions=[e["id"] for e in memory["editions"]], threads=len(memory["threads"]), next_edition_number=memory["next_edition_number"])
 
+    def _edition_on_disk_is_usable(self) -> bool:
+        """A resumed run reuses edition.json only when it is a valid contract for this run; anything
+        else is set aside so the editor runs again rather than the same failure repeating forever."""
+        path = self.run_dir / "edition.json"
+        if not (path.is_file() and (self.run_dir / "NOTES.md").is_file()):
+            return False
+        try:
+            edition = json.loads(path.read_text(encoding="utf8"))
+            usable = not validate_edition(edition) and edition["edition"]["id"] == self.edition_id
+        except (json.JSONDecodeError, KeyError, TypeError):
+            usable = False
+        if not usable:
+            aside = self.run_dir / f"edition.invalid-{_now().replace(':', '').replace('.', '')}.json"
+            path.rename(aside)
+            (self.run_dir / "edition-checked.json").unlink(missing_ok=True)
+        return usable
+
     def _editor(self) -> None:
-        if (self.run_dir / "edition.json").is_file() and (self.run_dir / "NOTES.md").is_file():
+        if self._edition_on_disk_is_usable():
             self._phase("editor", resumed=True)
         else:
             record = self._session(lambda: self.editor("edition", self.run_dir, self._budget(self.policy.limits.editor_minutes)))
@@ -422,14 +451,21 @@ class Runner:
             raise RunFailure("conflict", "the edition id does not match the run", {"edition": edition["edition"]["id"]})
 
     def _verdicts_on_disk_for(self, check_input_doc: dict[str, Any]) -> bool:
-        """True when a previous, interrupted run already had this exact check input checked."""
+        """True when a previous, interrupted run already had this exact check input checked, and the
+        verdicts it left are complete and valid; invalid verdicts are never reused, so a retry asks
+        the checker again instead of failing the same way."""
         previous = self.run_dir / "check-input.json"
         verdicts = self.run_dir / "verdicts.json"
         if not (previous.is_file() and verdicts.is_file()):
             return False
         try:
-            return json.loads(previous.read_text(encoding="utf8")) == check_input_doc
-        except json.JSONDecodeError:
+            if json.loads(previous.read_text(encoding="utf8")) != check_input_doc:
+                return False
+            doc = without_nulls(json.loads(verdicts.read_text(encoding="utf8")))
+            if doc.get("edition_id") != check_input_doc["edition_id"]:
+                return False
+            return not any(coverage_problems(check_input_doc, doc).values())
+        except (json.JSONDecodeError, KeyError, TypeError, ValueError):
             return False
 
     def _check_once(self, edition: dict[str, Any], final: bool, resume: bool = False) -> dict[str, Any]:
@@ -449,8 +485,8 @@ class Runner:
             coverage = coverage_problems(check_input_doc, verdicts)
         except (KeyError, TypeError) as exc:
             raise RunFailure("verdicts_invalid", f"the verdicts are malformed: {exc}") from exc
-        if coverage["missing"] or coverage["unknown"]:
-            raise RunFailure("verdicts_invalid", "the verdicts do not cover the check input sentence for sentence", {k: v[:20] for k, v in coverage.items()})
+        if any(coverage.values()):
+            raise RunFailure("verdicts_invalid", "the verdicts do not cover the check input sentence for sentence, once each", {k: v[:20] for k, v in coverage.items()})
         try:
             result = apply_verdicts(edition, verdicts, min_words=self.policy.limits.story_stands_min_words, final=final)
         except ValueError as exc:
@@ -473,11 +509,21 @@ class Runner:
         for _ in range(self.policy.limits.check_send_backs):
             if not result["send_back"]:
                 break
+            before = edition
             self._session(lambda: self.editor("send-back", self.run_dir, self._budget(self.policy.limits.editor_minutes)))
             edition = self._read("edition.json")
             problems = validate_edition(edition)
             if problems:
                 raise RunFailure("contract_invalid", "the revised edition fails the contract", {"problems": problems[:10]})
+            if edition["edition"]["id"] != self.edition_id:
+                raise RunFailure("conflict", "the send-back changed the edition id", {"edition": edition["edition"]["id"]})
+            # A send-back may change only the stories that were sent back.
+            untouched = {s["id"]: s for s in before["stories"] if s["id"] not in result["send_back"]}
+            after = {s["id"]: s for s in edition["stories"]}
+            changed = sorted(sid for sid, story in untouched.items() if after.get(sid) != story)
+            missing = sorted(sid for sid in untouched if sid not in after)
+            if changed or missing:
+                raise RunFailure("send_back_overreach", "the send-back changed stories that were not sent back", {"changed": changed[:20], "missing": missing[:20]})
             result = self._check_once(edition, final=True)
             rounds += 1
         if result["send_back"]:
@@ -512,20 +558,54 @@ class Runner:
         }
         self._phase("publish", status=result.get("status"), device_status=result.get("device_status"))
 
-    def _session(self, call: Callable[[], Any]) -> Any:
-        """Run a model session and refuse to go on if it wrote outside its run directory.
+    # Files the runner writes and the sessions only read: the evidence the checker is judged against.
+    INPUT_FILES = ("window.json", "window.md", "memory.json", "feeds.json", "check-input.json")
 
-        The working tree is compared before and after the session, so the owner's own work in
-        progress elsewhere in the repository never blocks the paper; only what the session changed counts."""
-        before = set(self.stray_changes())
-        result = call()
+    def _input_digests(self) -> dict[str, str | None]:
+        digests: dict[str, str | None] = {name: _digest(self.run_dir / name) for name in self.INPUT_FILES}
+        bundle = self.run_dir / "bundle"
+        if bundle.is_dir():
+            for path in sorted(p for p in bundle.rglob("*") if p.is_file()):
+                digests[path.relative_to(self.run_dir).as_posix()] = _digest(path)
+        return digests
+
+    def _tree_digests(self) -> dict[str, str | None]:
+        """The working tree's changed paths with their content, so a session rewriting a file the
+        owner already had open is caught, not only a session touching a clean one."""
         try:
             run_prefix = self.run_dir.relative_to(self.repo).as_posix() + "/"
         except ValueError:
             run_prefix = None
-        stray = [p for p in self.stray_changes() if p not in before and (run_prefix is None or not p.startswith(run_prefix))]
+        return {p: _digest(self.repo / p) for p in self.stray_changes() if run_prefix is None or not p.startswith(run_prefix)}
+
+    def _session(self, call: Callable[[], Any]) -> Any:
+        """Run a model session and refuse to go on if it wrote where it may not.
+
+        Two comparisons bracket the session. Outside the run directory, the working tree's changed
+        paths and their contents must be the same afterwards, so the owner's work in progress never
+        blocks the paper and is never silently rewritten by a session. Inside it, the runner-owned
+        inputs must be byte-identical, so the checker judges the copy against the evidence the
+        runner froze, not evidence the writer edited. Both checks run even when the session fails."""
+        tree_before = self._tree_digests()
+        inputs_before = self._input_digests()
+        failure: RunFailure | None = None
+        try:
+            result = call()
+        except RunFailure as exc:
+            failure, result = exc, None
+        tree_after = self._tree_digests()
+        stray = sorted(p for p in tree_after if p not in tree_before or tree_after[p] != tree_before[p])
         if stray:
-            raise RunFailure("stray_edits", "the session wrote outside the run directory; sessions may only write there", {"paths": stray[:20]})
+            details: dict[str, Any] = {"paths": stray[:20]}
+            if failure:
+                details["after"] = failure.error_type
+            raise RunFailure("stray_edits", "the session wrote outside the run directory; sessions may only write there", details)
+        inputs_after = self._input_digests()
+        modified = sorted(p for p in set(inputs_before) | set(inputs_after) if inputs_before.get(p) != inputs_after.get(p))
+        if modified:
+            raise RunFailure("input_modified", "the session changed the runner's inputs; the evidence must stay as it was frozen", {"paths": modified[:20]})
+        if failure:
+            raise failure
         return result
 
     def _receipt(self) -> None:
@@ -635,7 +715,8 @@ class Runner:
         self._write_status()
         paths = [str(relative / name) for name in SMALL_FILES if (self.run_dir / name).exists()]
         self.git("add", *paths)
-        self.git("commit", "-q", "-m", f"Archive the {self.edition_id} edition")
+        # Only the run's own files: anything else the owner had staged stays staged, uncommitted.
+        self.git("commit", "-q", "--only", "-m", f"Archive the {self.edition_id} edition", "--", *paths)
 
 
 def run_edition(args: Any, policy: Policy) -> dict[str, Any]:
