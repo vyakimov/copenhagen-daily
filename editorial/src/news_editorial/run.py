@@ -227,6 +227,7 @@ class Runner:
         self.device = device
         self.device_pusher = device_pusher
         self.retry = retry
+        self.activated_before = False
         self.stray_changes = stray_changes
         self.lock_path = lock_path
         self.policy = policy
@@ -301,6 +302,9 @@ class Runner:
                 return self.status
             if previous.get("outcome") == "published":
                 raise RunFailure("conflict", f"{self.edition_id} is already published; an edition id is used once", {"run": str(self.run_dir)})
+            # The history of what went wrong before is kept with the run, not overwritten by the retry.
+            if previous.get("failure"):
+                self.status["previous_failures"] = [*previous.get("previous_failures", []), {**previous["failure"], "at": previous.get("updated_at")}]
         self.lock_path.parent.mkdir(parents=True, exist_ok=True)
         with self.lock_path.open("a+") as lock:
             try:
@@ -321,6 +325,7 @@ class Runner:
         phase = "start"
         try:
             for phase, step in (
+                ("reconcile", self._reconcile),
                 ("collect", self._collect),
                 ("window", self._window),
                 ("memory", self._memory),
@@ -334,6 +339,9 @@ class Runner:
                 ("device_push", self._push_device),
                 ("archive", self._archive),
             ):
+                if self.activated_before and phase in self.BEFORE_ACTIVATION:
+                    self._phase(phase, skipped=True, reason="already_activated")
+                    continue
                 step()
         except (RunFailure, BlockError) as exc:
             self.status["outcome"] = "failed"
@@ -351,6 +359,39 @@ class Runner:
             self.status["outcome"] = "dry_run" if self.dry_run else "published"
             self._write_status()
         return self.status
+
+    BEFORE_ACTIVATION = ("collect", "window", "memory", "editor", "check", "preflight", "publish")
+
+    def _reconcile(self) -> None:
+        """Ask block 3 whether this edition is already activated. If it is, a previous run got as far
+        as publishing and failed after; the phases up to the publish are settled and only the ones
+        after it run again, each of them idempotent. Publishing twice is impossible anyway: block 3
+        refuses a stored edition, so without this step a retry could never finish the delivery."""
+        self.activated_before = False
+        if self.dry_run:
+            self._phase("reconcile", skipped=True)
+            return
+        try:
+            result = self.publisher("receipt", "--publish-root", str(self.publish_root), "--edition", self.edition_id, timeout=self._budget(2))
+        except BlockError as exc:
+            if exc.error_type in {"resource_not_found", "edition_not_activated"}:
+                self._phase("reconcile", activated=False)
+                return
+            if exc.error_type == "recovery_required":
+                raise RunFailure("recovery_required", "block 3 holds a pending publication; run publish_news.sh recover, then retry", {"upstream": exc.details}) from exc
+            raise
+        if not result.get("activated"):
+            self._phase("reconcile", activated=False)
+            return
+        self.activated_before = True
+        self.status["published"] = {
+            "edition": str(self.run_dir / "edition-checked.json"),
+            "status": "published",
+            "device_status": (result.get("receipt") or {}).get("device", {}).get("status"),
+            "bundle": {"path": f"n/{self.edition_id}/", "manifest_sha256": result.get("manifest_sha256")},
+            "resumed": True,
+        }
+        self._phase("reconcile", activated=True, sequence=result.get("activation", {}).get("sequence"))
 
     def _collect(self) -> None:
         """Poll once more so the window is current. The scheduled collector may hold block 1's lock;
@@ -663,10 +704,16 @@ class Runner:
             return
         failure = self.status["failure"] or {}
         subject = f"Copenhagen Daily: {self.edition_id} failed in {failure.get('phase')}"
+        if self.status.get("published"):
+            standing = (
+                "The edition is activated in the newsroom's store but the steps after it did not complete, so the site may still show "
+                "the previous edition. A retry resumes from the failed step without publishing again."
+            )
+        else:
+            standing = "The last activated edition stays in place. A retry runs later in the morning; after that, read the status and rerun by hand."
         body = (
             f"Edition {self.edition_id} stopped in phase {failure.get('phase')}: {failure.get('type')}.\n"
-            f"{failure.get('message')}\n\nRun directory: {self.run_dir}\nStatus: {self.run_dir / 'status.json'}\n"
-            "The last activated edition stays in place. A retry runs later in the morning; after that, read the status and rerun by hand."
+            f"{failure.get('message')}\n\nRun directory: {self.run_dir}\nStatus: {self.run_dir / 'status.json'}\n{standing}"
         )
         try:
             self.notifier(subject, body)

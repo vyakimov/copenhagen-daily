@@ -147,9 +147,13 @@ Read `runs/<id>/status.json`: `failure.phase` and `failure.type` say which step 
   type from block 2 means another `run` is in progress; `editorial/var/run.lock` names it.
 - `not_activated`: `publish` returned but no activation exists. Run block 3's `recover`, then
   `receipt`; never generate a different edition to escape it.
-- A failure in `receipt`, `threads`, or `archive` after an activated publish is not resumed by a
-  rerun; the rerun would re-enter `publish` and block 3 would refuse the duplicate. Finish those
-  steps by hand: block 3's `receipt`, then commit the run directory.
+- A failure after the publish (`receipt`, `threads`, `deliver`, `device_push`, `archive`) is resumed
+  by a rerun: the run first asks block 3 for the edition's receipt, and when the edition is already
+  activated it skips straight to the steps after the publish, each of which is safe to repeat. The
+  notification for such a failure says the edition is activated locally but may not be on the site.
+  Earlier failures stay in `status.json` under `previous_failures`.
+- `recovery_required`: block 3 holds a pending publication from an interrupted run. Run
+  `publisher/publish_news.sh recover --publish-root <root>`, then rerun.
 
 A published edition id is never rerun; the next edition corrects it.
 

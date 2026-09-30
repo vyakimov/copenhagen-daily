@@ -33,6 +33,8 @@ class Fakes:
         self.editor_hangs = editor_hangs
         self.checker_calls = 0
         self.health_feeds = None
+        self.published_ids = set()
+        self.receipt_raises = None
         self.registry = tmp_path / "threads.json"
         self.publish_root = FIXTURES / "publish-root"
 
@@ -55,8 +57,17 @@ class Fakes:
         if action == "publish":
             self.publish_args = list(args)
             edition = read_json(Path(args[args.index("--edition") + 1]))
+            if edition["edition"]["id"] in self.published_ids and "--dry-run" not in args:
+                raise BlockError("bundle_exists", "publish_news.sh publish: the edition is already stored")
+            if "--dry-run" not in args:
+                self.published_ids.add(edition["edition"]["id"])
             return {"status": "published", "edition_id": edition["edition"]["id"], "web_story_ids": [s["id"] for s in edition["stories"]], "device_status": self.device_status, "bundle": {"path": f"n/{EDITION_ID}/", "manifest_sha256": "sha256:" + "0" * 64}}
         if action == "receipt":
+            if self.receipt_raises:
+                raise self.receipt_raises
+            edition_id = args[args.index("--edition") + 1]
+            if edition_id not in self.published_ids:
+                raise BlockError("resource_not_found", "publish_news.sh receipt: no such edition")
             return {"activated": True, "activation": {"sequence": 10}, "manifest_sha256": "sha256:" + "0" * 64, "receipt": {"web": {"story_ids": ["russian-frigate-flares-gedser"]}, "device": {"status": "published"}}}
         raise AssertionError(action)
 
@@ -127,7 +138,7 @@ def test_happy_path_publishes_and_records(policy, tmp_path):
     status = runner.run()
     assert status["outcome"] == "published", status
     assert [p["name"] for p in status["phases"]] == [
-        "collect", "window", "memory", "editor", "check", "preflight", "publish", "receipt", "threads", "deliver", "device_push", "archive"]
+        "reconcile", "collect", "window", "memory", "editor", "check", "preflight", "publish", "receipt", "threads", "deliver", "device_push", "archive"]
     assert ("publisher", "publish") in fakes.calls and ("git", "commit") in fakes.calls
     assert read_json(runner.run_dir / "status.json")["outcome"] == "published"
     assert (runner.run_dir / "check-input.json").exists()
@@ -626,3 +637,38 @@ def test_collect_runs_when_any_healthy_feed_is_stale(policy, tmp_path):
     status = make_runner(policy, tmp_path / "b", fakes, now=lambda: "2026-09-15T08:00:00.000000Z").run()
     collect = next(p for p in status["phases"] if p["name"] == "collect")
     assert collect.get("skipped") and collect["reason"] == "recent_poll"
+
+
+
+def test_a_failure_after_activation_resumes_the_rest_without_republishing(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    notes = []
+
+    def broken(root):
+        raise RuntimeError("network down")
+
+    status = make_runner(policy, tmp_path, fakes, deliverer=broken, notifier=lambda s, b: notes.append(b)).run()
+    assert status["outcome"] == "failed" and status["failure"]["phase"] == "deliver"
+    assert status["published"]["status"] == "published"
+    assert "activated" in notes[-1] and "resume" in notes[-1]
+    assert [c for c in fakes.calls if c == ("publisher", "publish")] == [("publisher", "publish")]
+
+    delivered = []
+    fakes.calls.clear()
+    status = make_runner(policy, tmp_path, fakes, deliverer=lambda root: delivered.append(root) or {"synced": True}, retry=True).run()
+    assert status["outcome"] == "published", status["failure"]
+    assert ("publisher", "publish") not in fakes.calls and ("editor", "edition") not in fakes.calls
+    assert delivered == [fakes.publish_root]
+    reconcile = next(p for p in status["phases"] if p["name"] == "reconcile")
+    assert reconcile["activated"] is True
+    assert next(p for p in status["phases"] if p["name"] == "publish")["skipped"]
+    assert [f["phase"] for f in status["previous_failures"]] == ["deliver"]
+    assert ("git", "commit") in fakes.calls
+
+
+def test_a_store_that_needs_recovery_stops_the_run_before_any_session(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    fakes.receipt_raises = BlockError("recovery_required", "publish_news.sh receipt: a publication is pending; run recover")
+    status = make_runner(policy, tmp_path, fakes).run()
+    assert status["outcome"] == "failed" and status["failure"]["type"] == "recovery_required"
+    assert ("editor", "edition") not in fakes.calls and ("ingest", "collect") not in fakes.calls
