@@ -24,7 +24,7 @@ its command through `/bin/sh`, which forks the wrapper and stays its parent. Gra
 `/bin/sh` once (System Settings, Privacy & Security, Full Disk Access, the plus button, then
 Shift-Command-G and `/bin/sh`), and every process the job starts inherits it. Without that grant the
 job's stderr log says `Operation not permitted`. To stop one: `launchctl bootout gui/$(id -u)/ai.copenhagen-daily.edition`. launchd runs a missed
-calendar job when the Mac wakes, so a closed lid at 05:30 means a late edition, not a lost one.
+calendar job when the Mac wakes, so a Mac Studio asleep at 05:30 runs the edition late rather than losing it; keep it set to never sleep.
 
 The jobs carry their own `PATH`, and its order matters: `/opt/homebrew/bin` comes before `~/.local/bin`
 because other tools drop their own `node` there (Hermes keeps a Node 22 in it), and block 3 needs
