@@ -1,0 +1,2356 @@
+{
+  "schema_version": 2,
+  "title": "copenhagen-daily",
+  "edition": {
+    "id": "2026-10-01-morning",
+    "number": 15,
+    "name": "Thursday edition",
+    "date": "2026-10-01",
+    "timezone": "Europe/Copenhagen",
+    "language": "en",
+    "cutoff_at": "2026-10-01T03:30:00.000000Z",
+    "generated_at": "2026-10-01T03:43:27.638671Z"
+  },
+  "presentation": {
+    "emphasis": "many_stories",
+    "ear_right": "Inside: Russia summons Denmark's ambassador, seven parties get six months on pig farming, the ethics council on donor anonymity"
+  },
+  "coverage": {
+    "status": "complete",
+    "checked_from": "2026-09-28T03:30:00.000000Z",
+    "checked_until": "2026-10-01T03:30:00.000000Z",
+    "feeds": [
+      {
+        "feed_id": "altinget.arbejdsmarked",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.629833Z"
+      },
+      {
+        "feed_id": "altinget.by",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.713551Z"
+      },
+      {
+        "feed_id": "altinget.christiansborg",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.553465Z"
+      },
+      {
+        "feed_id": "altinget.eu",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.572929Z"
+      },
+      {
+        "feed_id": "altinget.forside",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.532783Z"
+      },
+      {
+        "feed_id": "altinget.forsvar",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.660490Z"
+      },
+      {
+        "feed_id": "altinget.klima",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.592257Z"
+      },
+      {
+        "feed_id": "altinget.kommunal",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.677466Z"
+      },
+      {
+        "feed_id": "altinget.sundhed",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.610960Z"
+      },
+      {
+        "feed_id": "altinget.uddannelse",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.695380Z"
+      },
+      {
+        "feed_id": "bbc.business",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.917412Z"
+      },
+      {
+        "feed_id": "bbc.culture",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:09.130151Z"
+      },
+      {
+        "feed_id": "bbc.europe",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.888380Z"
+      },
+      {
+        "feed_id": "bbc.health",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:09.031492Z"
+      },
+      {
+        "feed_id": "bbc.politics",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:09.081534Z"
+      },
+      {
+        "feed_id": "bbc.science",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.978146Z"
+      },
+      {
+        "feed_id": "bbc.technology",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.953206Z"
+      },
+      {
+        "feed_id": "bbc.top",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.803459Z"
+      },
+      {
+        "feed_id": "bbc.world",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.857139Z"
+      },
+      {
+        "feed_id": "berlingske.business",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.835363Z"
+      },
+      {
+        "feed_id": "berlingske.kultur",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.847679Z"
+      },
+      {
+        "feed_id": "berlingske.latest",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.810364Z"
+      },
+      {
+        "feed_id": "berlingske.opinion",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.861640Z"
+      },
+      {
+        "feed_id": "berlingske.samfund",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.825165Z"
+      },
+      {
+        "feed_id": "borsen.baeredygtig",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.197331Z"
+      },
+      {
+        "feed_id": "borsen.breaking",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.192747Z"
+      },
+      {
+        "feed_id": "borsen.ejendomme",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.224941Z"
+      },
+      {
+        "feed_id": "borsen.executive",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.306508Z"
+      },
+      {
+        "feed_id": "borsen.finans",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.247008Z"
+      },
+      {
+        "feed_id": "borsen.homepage",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.157901Z"
+      },
+      {
+        "feed_id": "borsen.investor",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.267854Z"
+      },
+      {
+        "feed_id": "borsen.longread",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.331750Z"
+      },
+      {
+        "feed_id": "borsen.markedsberetninger",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.354652Z"
+      },
+      {
+        "feed_id": "borsen.okonomi",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.525985Z"
+      },
+      {
+        "feed_id": "borsen.opinion",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.376713Z"
+      },
+      {
+        "feed_id": "borsen.pleasure",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.400391Z"
+      },
+      {
+        "feed_id": "borsen.politik",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.430840Z"
+      },
+      {
+        "feed_id": "borsen.tech",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.466946Z"
+      },
+      {
+        "feed_id": "borsen.udland",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.487227Z"
+      },
+      {
+        "feed_id": "borsen.virksomheder",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.510043Z"
+      },
+      {
+        "feed_id": "dr.indland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.898840Z"
+      },
+      {
+        "feed_id": "dr.kultur",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.066224Z"
+      },
+      {
+        "feed_id": "dr.latest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.873895Z"
+      },
+      {
+        "feed_id": "dr.musik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.088396Z"
+      },
+      {
+        "feed_id": "dr.penge",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.945248Z"
+      },
+      {
+        "feed_id": "dr.politik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.982137Z"
+      },
+      {
+        "feed_id": "dr.regionale",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.140281Z"
+      },
+      {
+        "feed_id": "dr.regionale_bornholm",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.183586Z"
+      },
+      {
+        "feed_id": "dr.regionale_fyn",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.226359Z"
+      },
+      {
+        "feed_id": "dr.regionale_kbh",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.161411Z"
+      },
+      {
+        "feed_id": "dr.regionale_nord",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.281052Z"
+      },
+      {
+        "feed_id": "dr.regionale_oestjylland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.342531Z"
+      },
+      {
+        "feed_id": "dr.regionale_sjaelland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.322699Z"
+      },
+      {
+        "feed_id": "dr.regionale_syd",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.203644Z"
+      },
+      {
+        "feed_id": "dr.regionale_trekanten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.301088Z"
+      },
+      {
+        "feed_id": "dr.regionale_vest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.247922Z"
+      },
+      {
+        "feed_id": "dr.senestesport",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.023598Z"
+      },
+      {
+        "feed_id": "dr.sporten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.004470Z"
+      },
+      {
+        "feed_id": "dr.udland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.923193Z"
+      },
+      {
+        "feed_id": "dr.vejret",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.106994Z"
+      },
+      {
+        "feed_id": "dr.viden",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.045066Z"
+      },
+      {
+        "feed_id": "economist.briefing",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:09.146628Z"
+      },
+      {
+        "feed_id": "economist.business",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:09.146972Z"
+      },
+      {
+        "feed_id": "economist.culture",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:09.147127Z"
+      },
+      {
+        "feed_id": "economist.europe",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:09.146710Z"
+      },
+      {
+        "feed_id": "economist.finance",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:09.146892Z"
+      },
+      {
+        "feed_id": "economist.international",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:09.146795Z"
+      },
+      {
+        "feed_id": "economist.latest",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:09.146431Z"
+      },
+      {
+        "feed_id": "economist.leaders",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:09.146542Z"
+      },
+      {
+        "feed_id": "economist.science",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:09.147054Z"
+      },
+      {
+        "feed_id": "ft.climate_capital",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.038094Z"
+      },
+      {
+        "feed_id": "ft.companies",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:06.969370Z"
+      },
+      {
+        "feed_id": "ft.global_economy",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:06.925863Z"
+      },
+      {
+        "feed_id": "ft.homepage.international",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:06.876881Z"
+      },
+      {
+        "feed_id": "ft.life_arts",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.132535Z"
+      },
+      {
+        "feed_id": "ft.markets",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:06.991455Z"
+      },
+      {
+        "feed_id": "ft.opinion",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.068226Z"
+      },
+      {
+        "feed_id": "ft.technology",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.014856Z"
+      },
+      {
+        "feed_id": "ft.work_careers",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.090101Z"
+      },
+      {
+        "feed_id": "ft.world",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:06.898436Z"
+      },
+      {
+        "feed_id": "guardian.business",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:09.612105Z"
+      },
+      {
+        "feed_id": "guardian.culture",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:09.912777Z"
+      },
+      {
+        "feed_id": "guardian.environment",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:09.773517Z"
+      },
+      {
+        "feed_id": "guardian.europe",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:09.547082Z"
+      },
+      {
+        "feed_id": "guardian.international",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:09.218718Z"
+      },
+      {
+        "feed_id": "guardian.opinion",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:10.056892Z"
+      },
+      {
+        "feed_id": "guardian.science",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:09.828619Z"
+      },
+      {
+        "feed_id": "guardian.technology",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:09.713058Z"
+      },
+      {
+        "feed_id": "guardian.world",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:09.467590Z"
+      },
+      {
+        "feed_id": "information.feed",
+        "source": "information",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.514299Z"
+      },
+      {
+        "feed_id": "jp.seneste",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.500897Z"
+      },
+      {
+        "feed_id": "jp.topnyheder",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.485117Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.artikler",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.755058Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.nyheder",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.732130Z"
+      },
+      {
+        "feed_id": "nytimes.arts",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:06.664262Z"
+      },
+      {
+        "feed_id": "nytimes.books",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:06.759153Z"
+      },
+      {
+        "feed_id": "nytimes.business",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:06.333152Z"
+      },
+      {
+        "feed_id": "nytimes.climate",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:06.576515Z"
+      },
+      {
+        "feed_id": "nytimes.europe",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:06.285714Z"
+      },
+      {
+        "feed_id": "nytimes.health",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:06.522871Z"
+      },
+      {
+        "feed_id": "nytimes.homepage",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:06.087033Z"
+      },
+      {
+        "feed_id": "nytimes.opinion",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:06.826409Z"
+      },
+      {
+        "feed_id": "nytimes.science",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:06.461605Z"
+      },
+      {
+        "feed_id": "nytimes.technology",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:06.411218Z"
+      },
+      {
+        "feed_id": "nytimes.world",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:06.183161Z"
+      },
+      {
+        "feed_id": "politiken.debat",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.716811Z"
+      },
+      {
+        "feed_id": "politiken.forbrugogliv",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.736159Z"
+      },
+      {
+        "feed_id": "politiken.ibyen",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.759829Z"
+      },
+      {
+        "feed_id": "politiken.indland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.559089Z"
+      },
+      {
+        "feed_id": "politiken.kultur",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.658688Z"
+      },
+      {
+        "feed_id": "politiken.latest",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.539432Z"
+      },
+      {
+        "feed_id": "politiken.oekonomi",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.637080Z"
+      },
+      {
+        "feed_id": "politiken.politik",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.598181Z"
+      },
+      {
+        "feed_id": "politiken.rejser",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.778935Z"
+      },
+      {
+        "feed_id": "politiken.sport",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.676714Z"
+      },
+      {
+        "feed_id": "politiken.udland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.579089Z"
+      },
+      {
+        "feed_id": "politiken.viden",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:07.695628Z"
+      },
+      {
+        "feed_id": "tv2.nyheder",
+        "source": "tv2",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.391193Z"
+      },
+      {
+        "feed_id": "via_ritzau.latest",
+        "source": "via_ritzau",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:08.777145Z"
+      },
+      {
+        "feed_id": "wapo.business",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:10.187526Z"
+      },
+      {
+        "feed_id": "wapo.national",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:10.131501Z"
+      },
+      {
+        "feed_id": "wapo.opinions",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:10.221423Z"
+      },
+      {
+        "feed_id": "wapo.politics",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:10.156017Z"
+      },
+      {
+        "feed_id": "wapo.technology",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:10.212351Z"
+      },
+      {
+        "feed_id": "wapo.world",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:10.112227Z"
+      },
+      {
+        "feed_id": "wsj.business",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:10.349442Z"
+      },
+      {
+        "feed_id": "wsj.economy",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:10.494307Z"
+      },
+      {
+        "feed_id": "wsj.markets",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:10.441141Z"
+      },
+      {
+        "feed_id": "wsj.opinion",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:10.614323Z"
+      },
+      {
+        "feed_id": "wsj.politics",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:10.525785Z"
+      },
+      {
+        "feed_id": "wsj.technology",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:10.550505Z"
+      },
+      {
+        "feed_id": "wsj.world",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-01T03:28:10.258785Z"
+      }
+    ],
+    "note": "Built from headlines and RSS descriptions published between 05:30 on Monday and 05:30 on Thursday Copenhagen time, from 132 feeds at seventeen publishers, all polled successfully. Danish outlets decide what is news; international titles are linked where they cover the same story. Nothing else was read."
+  },
+  "inputs": [
+    {
+      "id": "export-2026-10-01-0330",
+      "sha256": "sha256:f00a62eff1e4bfa4c7ac5a4a6a746d2b1afcf5a6499274c386ac1caa470eb36b"
+    }
+  ],
+  "stories": [
+    {
+      "id": "flydubai-pilot-stabs-captain",
+      "device_participation": "required",
+      "role": "lead",
+      "kicker": "World",
+      "copy": {
+        "headline": "Pilot stabs captain on Israel-bound flight, and passengers avert a crash",
+        "body": {
+          "standard": [
+            {
+              "text": "A Flydubai Boeing 737 MAX 8 with 180 passengers, flying from Dubai to Tel Aviv, sent a distress signal on Wednesday morning and then the code for a hijacking or other unlawful interference. It was diverted to Tabuk in Saudi Arabia and landed shortly after 09:00 Danish time; all passengers are safe.",
+              "sources": [
+                "kristeligt_dagblad",
+                "jp"
+              ]
+            },
+            {
+              "text": "The co-pilot stabbed the captain, and pilots travelling as passengers landed the plane, Israeli authorities say. Benjamin Netanyahu says a pilot has been arrested and is being questioned by the Saudi authorities, and that he apparently tried to crash the plane.",
+              "sources": [
+                "berlingske"
+              ]
+            },
+            {
+              "text": "Passengers broke into the cockpit, eyewitnesses say. One of them, a plumber named Yaniv, grabbed the control stick and did what he had seen on television, witnesses tell DR.",
+              "sources": [
+                "politiken",
+                "dr"
+              ]
+            },
+            {
+              "text": "Netanyahu says it could have become a new 9/11, and an Israeli minister quoted by TV 2 calls it jihadist terror. The motive is still unclear.",
+              "sources": [
+                "dr",
+                "tv2",
+                "politiken"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "The co-pilot of a Flydubai flight from Dubai to Tel Aviv stabbed the captain on Wednesday; pilots among the passengers landed the plane in Saudi Arabia, and Netanyahu says a pilot has been arrested.",
+              "sources": [
+                "berlingske",
+                "kristeligt_dagblad"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Passengers stop cockpit attack on Israel-bound plane",
+        "deck": "The plane landed in Saudi Arabia; Netanyahu says the pilot has been arrested."
+      },
+      "callouts": [
+        {
+          "kind": "facts",
+          "title": "The flight",
+          "items": [
+            "180 passengers on board",
+            "A Boeing 737 MAX 8 from Dubai to Tel Aviv",
+            "Diverted to Tabuk in Saudi Arabia"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "6be016fd-f630-4f6c-8eee-8510681baa63",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Frygt for kapring efter nødsignal fra passagerfly på vej til Israel",
+          "url": "https://www.kristeligt-dagblad.dk/udland/passagerfly-udsender-noedsignal-paa-vej-fra-dubai-til-israel",
+          "published_at": "2026-09-30T07:18:01.000000Z",
+          "content_hash": "sha256:34d6e40d44d74fb66d927edaeba403015b8bb22385864ff403496fe42c3612d1",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:c1096f22-234e-5b4b-bae4-4a47fe5e2981",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Drama i 10 kilometers højde: Israelske passagerer afværger flykapring",
+          "url": "https://www.berlingske.dk/internationalt/drama-i-10-kilometers-hoejde-israelske-passagerer-afvaerger-flykapring",
+          "published_at": "2026-09-30T17:47:01.000000Z",
+          "content_hash": "sha256:04718d1de759eff0ca8a71b3467c29cc2954444e310a3e6886657ec8ea646964",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:36c40342-3844-579b-86de-c7a5fbe5cbee",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Netanyahu: Pilot forsøgte tilsyneladende at styrte fly til Israel",
+          "url": "https://www.berlingske.dk/internationalt/netanyahu-pilot-forsoegte-tilsyneladende-at-styrte-fly-til-israel",
+          "published_at": "2026-09-30T19:02:47.000000Z",
+          "content_hash": "sha256:a61265f05d18f383925507f78d9baba5a0cf898d76288276859379f834883103",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:afb318cd-2a4d-438b-b84f-6af8eab9fa3b",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Vidner fortæller om knivstik i cockpittet: Blikkenslageren Yaniv greb styrepinden og gjorde, som han havde set på tv",
+          "url": "https://www.dr.dk/nyheder/udland/vidner-fortaeller-om-knivstik-i-cockpittet-blikkenslageren-yaniv-greb-styrepinden-og-gjorde-som-han",
+          "published_at": "2026-10-01T01:07:16.000000Z",
+          "content_hash": "sha256:4508686f346f6905ae35f19155356009b4f5303a9631ebc88d50ad30fb3a5874",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11003479",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Passagerer bryder ind i cockpit på fly mod Israel, piloter hårdt sårede",
+          "url": "https://politiken.dk/internationalt/art11003479/Passagerer-bryder-ind-i-cockpit-p%C3%A5-fly-mod-Israel-piloter-h%C3%A5rdt-s%C3%A5rede",
+          "published_at": "2026-09-30T10:52:42.000000Z",
+          "content_hash": "sha256:ad49bf92a50fc07cf35af4095d201a32066bedea26d57a174e992a2aa3c0b804",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/udland/2026-09-30-vi-befinder-os-i-cockpittet-vi-har-netop-overmandet-terroristerne",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "- Vi befinder os i cockpittet. Vi har netop overmandet terroristerne",
+          "url": "https://nyheder.tv2.dk/udland/2026-09-30-vi-befinder-os-i-cockpittet-vi-har-netop-overmandet-terroristerne",
+          "published_at": "2026-09-30T16:35:05.000000Z",
+          "content_hash": "sha256:e8dd18c33d3a4c8cd86d77f1f3c4023674f5982a136cb9d50e9c7d93048a3fbd",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19694327",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Piloter er blevet bragt på hospitalet - en af dem er meldt anholdt: Passagerer fortæller, hvordan de fik afværget flykatastrofe",
+          "url": "https://jyllands-posten.dk/international/mideast/ECE19694327/piloter-er-blevet-bragt-paa-hospitalet-passagerer-fortaeller-hvordan-de-fik-afvaerget-flykatastrofe/",
+          "published_at": "2026-09-30T12:54:48.000000Z",
+          "content_hash": "sha256:e1504b765c36c553bb59901e907b56b99bcb0e94fae7754d8d9eb201d8baa1dd",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/passagerer-pilot-blev-overfaldet-under-flyvning-til-israel",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Passagerer: Pilot blev overfaldet under flyvning til Israel",
+          "url": "https://borsen.dk/nyheder/udland/passagerer-pilot-blev-overfaldet-under-flyvning-til-israel",
+          "published_at": "2026-09-30T12:07:09.000000Z",
+          "content_hash": "sha256:04fc604f2c296cf367fb3dd4dd8ff96af0094c775944f75ddadfaf49d22fcc04",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cqgmrm7xd8wyo",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "'Hero' pilot stabbed by other pilot on Israel-bound plane, Israeli PM says",
+          "url": "https://www.bbc.co.uk/news/articles/cqgmrm7xd8wyo?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-01T02:29:04.000000Z",
+          "content_hash": "sha256:f7a9e7b1c19d37b9a784b96c6ad01e4389116833bf103a412c3c6628f95b78e9",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/sep/30/israel-bound-passenger-plane-emergency-landing-saudi-arabia-pilots-feud",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Pilot who stabbed co-pilot on Israel-bound plane may have tried to crash it, says Netanyahu",
+          "url": "https://www.theguardian.com/world/2026/sep/30/israel-bound-passenger-plane-emergency-landing-saudi-arabia-pilots-feud",
+          "published_at": "2026-09-30T22:30:53.000000Z",
+          "content_hash": "sha256:99faa83b0189c49c692774796a4ef69cfe38897b06aa7d60662c1ac08ad19b02",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "7ed6ed48-79e4-46c2-968f-f2a69d263d35",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "One pilot of Israel-bound flight stabbed the other and tried to crash plane",
+          "url": "https://www.ft.com/content/7ed6ed48-79e4-46c2-968f-f2a69d263d35",
+          "published_at": "2026-09-30T20:14:13.000000Z",
+          "content_hash": "sha256:e459715362e202950a1f08e7c7fd2703cd2cc103d48f496c8cfb41884f50e83d",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/live/2026/09/30/world/dubai-flight-tel-aviv-israel-pilots",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Plane to Israel Narrowly Averts Disaster After Pilot Stabbing",
+          "url": "https://www.nytimes.com/live/2026/09/30/world/dubai-flight-tel-aviv-israel-pilots",
+          "published_at": "2026-10-01T02:23:00.000000Z",
+          "content_hash": "sha256:f128e874e03ee1bcce85986a6c5df711dd512e07c9f942e54cd2ecb73838e86b",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/world/2026/09/30/flydubai-flight-tel-aviv-diverted-saudi-arabia-after-onboard-altercation/",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Pilot on Tel Aviv-bound flight tried to crash plane after cockpit stabbing, Netanyahu says",
+          "url": "https://www.washingtonpost.com/world/2026/09/30/flydubai-flight-tel-aviv-diverted-saudi-arabia-after-onboard-altercation/",
+          "published_at": "2026-09-30T21:43:37.000000Z",
+          "content_hash": "sha256:1a8ba7667dec3ed96442ea2127dcd5be4ccee45a86839e7ad3fbccb74a94c850",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "pig-tripartite-six-months",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Seven parties get six months to agree on the future of pig farming",
+        "body": {
+          "standard": [
+            {
+              "text": "The government on Wednesday presented the terms of reference for the grisefirepart, a four-party body in which seven parties are to agree on the future of pig farming, chaired by Jacob Bundsgaard, the former Aarhus mayor. Work starts in 2027 and has six months, to the end of June 2027; if the parties cannot agree, the government is ready to take the necessary initiatives, the terms of reference say.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "The temporary stop on new conventional pig farms stays in place. Christian Rabjerg Madsen, the minister for nature and animal welfare, says Denmark sends more pigs on long transports than it slaughters at home, but the law will set no numbers.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Danish piglets travel more than diplomats, Lars Løkke Rasmussen told the press conference.",
+              "sources": [
+                "dr",
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Seven parties have six months from 2027 to agree on the future of pig farming under Jacob Bundsgaard; if they cannot, the government is ready to take the necessary initiatives.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Pig-farming talks get six months",
+        "deck": "If they cannot agree, the government is ready to act on its own."
+      },
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "The four-party body shall not discuss whether these things will happen. The four-party body shall discuss how we get there.",
+          "attribution": "Maria Reumert Gjerding, environment minister",
+          "attribution_source": "kristeligt_dagblad"
+        }
+      ],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "7ab23e3c-547f-4eff-8e2f-34e079c45a67",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Syv parter skal forsøge at nå til enighed om fremtidens griseproduktion",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/syv-parter-skal-forsoege-naa-til-enighed-om-fremtidens-griseproduktion",
+          "published_at": "2026-09-30T10:35:00.000000Z",
+          "content_hash": "sha256:035f70a5220c3a7c685f6b616c97b4cfbb97bdb7b34b84520008f684c776c585",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:5c2e4eee-3fe0-5014-bbbb-3ec67caf470a",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Syv parter skal forsøge at nå til enighed om fremtidens griseproduktion",
+          "url": "https://www.berlingske.dk/politik/syv-parter-skal-forsoege-at-naa-til-enighed-om-fremtidens-griseproduktion",
+          "published_at": "2026-09-30T11:13:46.000000Z",
+          "content_hash": "sha256:a01b84a9adcbe2096240f10437f9aee97794afbb836a5f2a39317e9f1814b6a0",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:c60dda7a-0098-48d9-b7f8-ae586206ef15",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Danske svin rejser mere end diplomater, siger Løkke",
+          "url": "https://www.dr.dk/nyheder/politik/danske-svin-rejser-mere-end-diplomater-siger-loekke",
+          "published_at": "2026-09-30T11:29:06.000000Z",
+          "content_hash": "sha256:8d9d2652fa0f909f7bf2b4573863656a88db91819a0b17373bb225105aaaea0b",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19693701",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Syv parter skal forsøge at nå til enighed om fremtidens griseproduktion",
+          "url": "https://jyllands-posten.dk/politik/ECE19693701/syv-parter-skal-forsoege-at-naa-til-enighed-om-fremtidens-griseproduktion/",
+          "published_at": "2026-09-30T11:06:00.000000Z",
+          "content_hash": "sha256:543c517e8744f11f78e695b7839099f19011a3ff2c3b807d8c7e0b44192a7933",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "russia-summons-holmboe",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Defence",
+      "copy": {
+        "headline": "Russia summons Denmark's ambassador over the Gedser helicopter incident",
+        "body": {
+          "standard": [
+            {
+              "text": "Russia has summoned Rolf Holmboe, Denmark's ambassador, in answer to Denmark summoning Russia's envoy after a flare from the frigate Soobrazitelny passed 10 to 15 metres from a Danish Fennec helicopter off Gedser on 14 September.",
+              "sources": [
+                "kristeligt_dagblad",
+                "dr"
+              ]
+            },
+            {
+              "text": "Vladimir Barbin, Russia's ambassador to Denmark, has written to Ritzau that the helicopter acted 'provocatively'. Jeppe Bruus, the defence minister, rejected that account, noting that the frigate did not contact the helicopter before firing.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "'We must not let ourselves be intimidated,' Lars Løkke Rasmussen, the foreign minister, told TV 2 News on Wednesday, saying the Russians will not be able to produce evidence for their version.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Russia has summoned Denmark's ambassador over the Gedser helicopter incident; 'We must not let ourselves be intimidated,' Lars Løkke Rasmussen says.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Russia summons Danish ambassador",
+        "deck": "Løkke says Denmark will not be intimidated."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "2fdabea6-5e52-462c-828c-549da054d891",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Rusland indkalder dansk ambassadør efter helikopter-hændelse",
+          "url": "https://www.kristeligt-dagblad.dk/udland/rusland-indkalder-dansk-ambassadoer-efter-helikopter-haendelse",
+          "published_at": "2026-09-30T16:33:16.000000Z",
+          "content_hash": "sha256:c2b5af34f58a4030d167f6677f7be3028e9c4124446f4b5e664bb7e570a76ef8",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "35990eca-59ef-4d24-ae36-129e7f88632b",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Løkke: Vi må ikke lade os intimidere af russerne",
+          "url": "https://www.kristeligt-dagblad.dk/udland/loekke-vi-maa-ikke-lade-os-intimidere-af-russerne",
+          "published_at": "2026-09-30T19:30:44.000000Z",
+          "content_hash": "sha256:6ad29191d1725ced917290e9f516314ae0e50d2983a02fa0ed638749ee1428e1",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:70ad0f92-f1c4-4f28-85cd-2598432887a7",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Danmarks ambassadør i Rusland indkaldt over helikoptersag",
+          "url": "https://www.dr.dk/nyheder/udland/danmarks-ambassadoer-i-rusland-indkaldt-over-helikoptersag",
+          "published_at": "2026-09-30T16:54:18.000000Z",
+          "content_hash": "sha256:be2ba642844a3aa2b2f69189ce4ce7909a4068d8037f251e7e0819f5b23aeaa4",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:6274ba3d-8493-5cf8-95b4-ebdef357804a",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Løkke: Vi må ikke lade os intimidere af russerne",
+          "url": "https://www.berlingske.dk/internationalt/loekke-vi-maa-ikke-lade-os-intimidere-af-russerne",
+          "published_at": "2026-09-30T19:50:44.000000Z",
+          "content_hash": "sha256:a836ada00ea6b4d0746c5df03a4163e72bd09908c01733dfe41e3218b689ace5",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19695497",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Rusland har indkaldt dansk ambassadør efter helikopter-hændelse",
+          "url": "https://jyllands-posten.dk/international/ECE19695497/rusland-har-indkaldt-dansk-ambassadoer-efter-helikopterhaendelse/",
+          "published_at": "2026-09-30T16:49:53.000000Z",
+          "content_hash": "sha256:63084c838ecfd34f9bb530ac1f8e9b34a66c468dbc552048af644662d07d9419",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:c44f71cc-3145-52e3-a611-f702f50e47cb",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Diplomatisk krig med Rusland: »Danmark har dog et trumfkort,« siger korrespondent",
+          "url": "https://www.berlingske.dk/internationalt/diplomatisk-krig-med-rusland-danmark-har-dog-et-trumfkort-siger-korrespondent",
+          "published_at": "2026-09-30T18:44:23.000000Z",
+          "content_hash": "sha256:15528d00cb25d3e3b435ed7b24a70bcb8906135028bd98cbcb9cfbbe16985db1",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "ethics-council-donor-anonymity-end",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Ethics council wants to end anonymous sperm and egg donation",
+        "body": {
+          "standard": [
+            {
+              "text": "Det Etiske Råd, the ethics council, recommended on Wednesday that anonymous donation of sperm and eggs be abolished, so that every donor-conceived child can learn the donor's identity if it wishes. Fourteen of its 15 members back the recommendation, and the minister has called in the parties.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "Since 2012 people in fertility treatment have been able to choose between anonymous and open donation. Technology means anonymity can no longer be guaranteed, says Ayo Wahlberg, a council member and anthropology professor.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Ole Schou, director of the sperm bank Cryos, rejects the recommendation and warns that without enough donors such children will not be born.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Fourteen of the 15 members of Det Etiske Råd want anonymous sperm and egg donation abolished.",
+              "sources": [
+                "politiken",
+                "kristeligt_dagblad"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Ethics council: end donor anonymity",
+        "deck": "Fourteen of its 15 members back the change, and the minister has called in the parties."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "29031c2b-c0c5-48d1-8e86-3087ca4b6424",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Næsten enigt etisk råd vil afskaffe anonymitet i æg- og sæddonation",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/naesten-enigt-etisk-raad-vil-afskaffe-anonyme-donorer",
+          "published_at": "2026-09-30T16:00:00.000000Z",
+          "content_hash": "sha256:24d397478089759cb28771aa96bdddb0a1f1c3a84ec7a45ab394b13c53b4799a",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:e46ca28b-f05f-541f-8bb6-2924ae8e4ed1",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Flertal i Etisk Råd anbefaler at fjerne anonym sæd- og ægdonation",
+          "url": "https://www.berlingske.dk/danmark/flertal-i-etisk-raad-anbefaler-at-fjerne-anonym-saed-og-aegdonation",
+          "published_at": "2026-09-30T17:42:47.000000Z",
+          "content_hash": "sha256:182ad8f3c7e66980e7e43f6a1dc8a98c5d8fe301eafec07a474d1e2372f84d16",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:8b93bcd2-7ebb-43da-b55e-35dc1d013f30",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Overvældende flertal i Etisk Råd vil afskaffe anonyme sæddonorer",
+          "url": "https://www.dr.dk/nyheder/indland/overvaeldende-flertal-i-etisk-raad-vil-afskaffe-anonyme-saeddonorer",
+          "published_at": "2026-09-30T16:00:00.000000Z",
+          "content_hash": "sha256:8ccc12fa01f90101d27428074b261922de8884fdae44e83e6f0aa9b055242346",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11004425",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Flertal i Etisk Råd vil af med anonym sæd- og ægdonation",
+          "url": "https://politiken.dk/danmark/art11004425/Flertal-i-Etisk-R%C3%A5d-vil-af-med-anonym-s%C3%A6d-og-%C3%A6gdonation",
+          "published_at": "2026-09-30T16:21:48.000000Z",
+          "content_hash": "sha256:e90070ded91633ddd36aeb364468b2b2173d0801da0fa3c44cc5c9d8b8a0fb0d",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/samfund/2026-09-30-flertal-i-etisk-raad-anbefaler-at-fjerne-anonym-saed-og-aegdonation",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Flertal i Etisk Råd anbefaler at fjerne anonym sæd- og ægdonation",
+          "url": "https://nyheder.tv2.dk/samfund/2026-09-30-flertal-i-etisk-raad-anbefaler-at-fjerne-anonym-saed-og-aegdonation",
+          "published_at": "2026-09-30T16:04:00.000000Z",
+          "content_hash": "sha256:f59e3c46e297ae5f70425f63c72158f1989949117e0694e6eea82dd80762519a",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15195684/?publisherId=13562144&lang=da",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Et stort flertal i Det Etiske Råd anbefaler at afskaffe anonymitet ved donation af æg og sæd",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15195684/et-stort-flertal-i-det-etiske-rad-anbefaler-at-afskaffe-anonymitet-ved-donation-af-aeg-og-saed?lang=da",
+          "published_at": "2026-09-30T16:00:00.000000Z",
+          "content_hash": "sha256:c1cd4ef7ee76505b82ba52cbf03fea5d33dc8c9939e579ef8d8fbb8876953994",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "winter-grid-tariffs-evening",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Prices",
+      "copy": {
+        "headline": "Evening electricity gets dearer as winter tariffs start",
+        "body": {
+          "standard": [
+            {
+              "text": "Most grid companies switch to winter tariffs on Thursday, 1 October, so the time of day matters more for what households pay to have power delivered. Grid charges more than double, and the rise is far steeper east of the Great Belt than in the rest of the country.",
+              "sources": [
+                "jp",
+                "dr",
+                "borsen"
+              ]
+            },
+            {
+              "text": "Power used between 17:00 and 21:00 becomes dearer. In the dearest hours the switch raises the electricity bill by an average of 131 per cent.",
+              "sources": [
+                "politiken",
+                "jp"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Winter grid tariffs from Thursday more than double the charge for delivering power in the busiest hours, most of all east of the Great Belt.",
+              "sources": [
+                "borsen",
+                "jp"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Winter tariffs make evening power dearer",
+        "deck": "In the dearest hours the bill rises 131 per cent on average."
+      },
+      "callouts": [
+        {
+          "kind": "figure",
+          "value": "131 per cent",
+          "label": "Average rise in the electricity bill in the dearest hours"
+        }
+      ],
+      "sources": [
+        {
+          "source": "jp",
+          "source_id": "19691684",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Postnummer-lotteri: Der er stor forskel på prisen for strøm i stikkontakten",
+          "url": "https://jyllands-posten.dk/erhverv/ECE19691684/vintertid-er-en-dyr-tid-elkunder-ramt-af-kaempe-prisforskelle/",
+          "published_at": "2026-09-30T08:00:00.000000Z",
+          "content_hash": "sha256:c9e6903c4cd206c5a614b83b55df1a53dfcbb94bdbbaf028277639d892541f8e",
+          "primary": true
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/okonomi/nu-bliver-det-ekstra-dyrt-at-bruge-strom-i-aftentimerne",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Nu bliver det ekstra dyrt at bruge strøm i aftentimerne",
+          "url": "https://borsen.dk/nyheder/okonomi/nu-bliver-det-ekstra-dyrt-at-bruge-strom-i-aftentimerne",
+          "published_at": "2026-09-30T08:53:15.000000Z",
+          "content_hash": "sha256:ab9f934943f206b6855d20c04e0cfd019c1aff05dac3b493e8e1ab0d71716e39",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:b21525f9-f265-4764-9c37-55c473d0e824",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Fra i morgen bliver det dyrere at bruge el",
+          "url": "https://www.dr.dk/nyheder/indland/fra-i-morgen-bliver-det-dyrere-bruge-el",
+          "published_at": "2026-09-30T09:43:00.000000Z",
+          "content_hash": "sha256:039bce1d32e38e758487040701f5a2eda8be5d1512966bac82f9fa65694a5df2",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11002745",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Nu stiger elprisen",
+          "url": "https://politiken.dk/danmark/art11002745/Nu-stiger-elprisen",
+          "published_at": "2026-09-30T04:01:52.000000Z",
+          "content_hash": "sha256:afa2b9b7b7725f6f8b4c1968b33ea25f0b618c1f1dcab41b986ff53763e24530",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:9540577c-0baf-5d13-8f6d-9d19128ed439",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Elnetselskaber hæver prisen i døgnets travleste timer",
+          "url": "https://www.berlingske.dk/business/elnetselskaber-haever-prisen-i-doegnets-travleste-timer",
+          "published_at": "2026-09-30T03:00:48.000000Z",
+          "content_hash": "sha256:fbe75b0e031bd2183e6fcba89526553d17d0e54210a620c88a57dff59581275c",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "bovaer-sick-cows-exempt",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Climate",
+      "copy": {
+        "headline": "Cows that fell ill on Bovaer last year can be exempted",
+        "body": {},
+        "lede": {
+          "text": "From Thursday, farmers may exempt cows that showed symptoms from the methane-reducing additive Bovaer last year, Christian Rabjerg Madsen told a Folketing consultation; Enhedslisten and Alternativet want the requirement paused.",
+          "sources": [
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "c71015c8-a8ab-4e7e-a529-c7e3b515958d",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Flere køer kan fremover undtages fra omstridt foderstof",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/flere-koeer-kan-fremover-undtages-fra-omstridt-foderstof",
+          "published_at": "2026-09-30T08:57:13.000000Z",
+          "content_hash": "sha256:2aa5cd5c87c7a532f62271d777f47f8c15539b557c4e4695828564c45c6b114b",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:b09daa4d-d7a9-56dc-8d26-0361b75335e3",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Flere køer kan fremover undtages fra omstridt foderstof",
+          "url": "https://www.berlingske.dk/politik/flere-koeer-kan-fremover-undtages-fra-omstridt-foderstof",
+          "published_at": "2026-09-30T09:40:47.000000Z",
+          "content_hash": "sha256:25a1726c5466bd5efafd4615d34a3999efe1ac9ce374b7e257f1578a82e30da7",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:9387763f-c5a9-459e-8d95-1cc84d11f408",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Flere køer kan nu slippe for omstridt foderstof",
+          "url": "https://www.dr.dk/nyheder/indland/flere-koeer-kan-nu-slippe-omstridt-foderstof",
+          "published_at": "2026-09-30T13:04:22.000000Z",
+          "content_hash": "sha256:da9bdb426a4159280bea98600191ed41707c08271995c2819088c26db1d85d5e",
+          "primary": false
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "c7e78afb-9d1d-41e1-a069-cdf744fcb381",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Nu skal køerne igen fodres med Bovaer: ”Hvad nu, hvis det var mennesker?”",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/nu-skal-koeerne-igen-fodres-med-bovaer-hvad-nu-hvis-det-var-mennesker",
+          "published_at": "2026-09-30T16:49:00.000000Z",
+          "content_hash": "sha256:bb018b4b19db3567f73ff6fe09a2f8a31d20eac0990dd83945c937dd539d9199",
+          "primary": false
+        },
+        {
+          "source": "information",
+          "source_id": "843032 at https://www.information.dk",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Danske køer blev syge. Nu lemper regeringen krav om omstridt fodertilsætningsstof",
+          "url": "https://www.information.dk/indland/2026/09/danske-koeer-syge-lemper-regeringen-krav-omstridt-fodertilsaetningsstof",
+          "published_at": "2026-09-30T14:15:06.000000Z",
+          "content_hash": "sha256:a4dea446596110937ff1c6939e6101905e58fa11ab991c0e9257973df07678b4",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11003159",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Flere køer kan slippe for omstridt foderstof",
+          "url": "https://politiken.dk/klima/art11003159/Flere-k%C3%B8er-kan-slippe-for-omstridt-foderstof",
+          "published_at": "2026-09-30T09:32:55.000000Z",
+          "content_hash": "sha256:cb6bb43aa66d831225a822268d56851012b92e17e9abc9123ff161cb344ed770",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15193486/?publisherId=13562216&lang=da",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Udvidede muligheder for at undtage køer fra fodring med metanreducerende foder fra oktober 2026",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15193486/udvidede-muligheder-for-at-undtage-koer-fra-fodring-med-metanreducerende-foder-fra-oktober-2026?lang=da",
+          "published_at": "2026-09-30T07:11:08.000000Z",
+          "content_hash": "sha256:b7727e7eee99531670cdf007d0396b44e9d2a217b08bf290fa3f2abc66d8a1df",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "s-close-radio-iiii",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Social Democrats want to close Radio IIII",
+        "body": {},
+        "lede": {
+          "text": "The Social Democrats want to end Radio IIII's state support of about 100 million kroner a year and spend it on local media and TV 2 Kosmopol; its director calls it a big mistake.",
+          "sources": [
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "739c31dc-e976-42ab-b73e-ab3f6b3a45a2",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "S vil lukke radiokanal og flytte millionerne til andre medier",
+          "url": "https://www.kristeligt-dagblad.dk/kultur/s-vil-lukke-radiokanal-og-flytte-millionerne-til-andre-medier",
+          "published_at": "2026-09-30T21:19:32.000000Z",
+          "content_hash": "sha256:ba8caffae5aea1d49df2d1c00ebd56daeafc70eff5089f89d89c4735aa6d416e",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:97e83700-178f-5f11-a3a3-226284e290b7",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "S vil lukke radiokanal og flytte millionerne til andre medier",
+          "url": "https://www.berlingske.dk/danmark/s-vil-lukke-radiokanal-og-flytte-millionerne-til-andre-medier",
+          "published_at": "2026-09-30T21:48:47.000000Z",
+          "content_hash": "sha256:1bc898578ba4749d209e74b55a6bf9a618eea7301b3a349c0606d4af3c5ce11c",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:4d96b299-a5a7-47b8-8a92-cdb1bd029101",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "S vil lukke Radio IIII og flytte millionerne til andre medier",
+          "url": "https://www.dr.dk/nyheder/indland/s-vil-lukke-radio-iiii-og-flytte-millionerne-til-andre-medier",
+          "published_at": "2026-09-30T21:40:32.000000Z",
+          "content_hash": "sha256:4389e09a764d61e3563bb2b8ff4ce416ae907c1313dc53e02d3d4461157d448d",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11003646",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Regeringsparti er klar til at lægge radiostation i graven",
+          "url": "https://politiken.dk/kultur/medier/art11003646/Regeringsparti-er-klar-til-at-l%C3%A6gge-radiostation-i-graven",
+          "published_at": "2026-09-30T19:42:14.000000Z",
+          "content_hash": "sha256:190954d42d7c96af44851d11ca7180a391dbd86194c2ea6b4c51688ee7e4f687",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "roskilde-2027-tame-impala",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Culture",
+      "copy": {
+        "headline": "Tame Impala heads Roskilde Festival's first names for 2027",
+        "body": {},
+        "lede": {
+          "text": "Roskilde Festival named its first 18 acts for 2027, among them Tame Impala, Patti Smith and Emma Sehested Høeg, and opened ticket sales; a full-festival ticket costs 2,650 kroner.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "88db455d-d5bf-4568-979a-296d8b03a554",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Roskilde Festival åbner billetsalg med psykedelisk rock på plakaten",
+          "url": "https://www.kristeligt-dagblad.dk/kultur/roskilde-festival-aabner-billetsalg-med-psykedelisk-rock-paa-plakaten",
+          "published_at": "2026-09-30T08:00:01.000000Z",
+          "content_hash": "sha256:69fdeee291562abbc0b23c5aae834d957c0e88da1c965e8671a0d75b25c56d09",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:a377a6a7-4728-4303-8530-dba31439760a",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Roskilde Festival afslører de første navne: Kunstnere må gerne mene noget",
+          "url": "https://www.dr.dk/nyheder/kultur/roskilde-festival-efter-debat-om-politiske-ytringer-kunstnere-maa-mene-hvad-de-vil",
+          "published_at": "2026-09-30T09:10:00.000000Z",
+          "content_hash": "sha256:c016a385b493bcc057e25dae64f1fe329c45b432b36ff1bdfdc6d97c2b6ee925",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:84b66191-04b1-5db5-82d9-a4683787272c",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Roskilde Festival åbner billetsalg med psykedelisk rock på plakaten",
+          "url": "https://www.berlingske.dk/danmark/roskilde-festival-aabner-billetsalg-med-psykedelisk-rock-paa-plakaten",
+          "published_at": "2026-09-30T08:00:47.000000Z",
+          "content_hash": "sha256:3e6578b02c27a8066ce1c634b0e9d27f8205dd18ffcca7d067e2e3271a6704eb",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19692189",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Roskilde Festival åbner billetsalg med psykedelisk rock på plakaten",
+          "url": "https://jyllands-posten.dk/kultur/musik/ECE19692189/roskilde-festival-aabner-billetsalg-med-psykedelisk-rock-paa-plakaten/",
+          "published_at": "2026-09-30T08:10:52.000000Z",
+          "content_hash": "sha256:b4630034908704d2cfca642589a92f9ea75f836fb80d4080fe2ff03822010bf1",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11002954",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "NorthSide og Roskilde Festival afslører de første navne på næste års plakat",
+          "url": "https://politiken.dk/kultur/art11002954/NorthSide-og-Roskilde-Festival-afsl%C3%B8rer-de-f%C3%B8rste-navne-p%C3%A5-n%C3%A6ste-%C3%A5rs-plakat1",
+          "published_at": "2026-09-30T08:05:35.000000Z",
+          "content_hash": "sha256:9a32ebc91326afcb3de62033ea3059382a7ae651ddda8d70c90730f612d643e5",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/samfund/2026-09-30-roskilde-festival-offentliggoer-foerste-18-navne",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Roskilde Festival offentliggør første 18 navne",
+          "url": "https://nyheder.tv2.dk/samfund/2026-09-30-roskilde-festival-offentliggoer-foerste-18-navne",
+          "published_at": "2026-09-30T05:35:40.000000Z",
+          "content_hash": "sha256:daf6f30b3a73f158e7f0997b329f74a7b8c21602818717f4a7bac4ea4af66360",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "store-epstein-hearing",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Nordics",
+      "copy": {
+        "headline": "Støre tells Epstein hearing he never had contact with Epstein",
+        "body": {},
+        "lede": {
+          "text": "Jonas Gahr Støre, Norway's prime minister, told the Storting's Epstein hearing on Wednesday that he never had contact with Epstein and rejected talk of a bad culture in the Foreign Ministry.",
+          "sources": [
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "a51c2746-1cca-475c-bf0b-709d3110878e",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Norges statsminister afviser dårlig kultur under høring om Epstein",
+          "url": "https://www.kristeligt-dagblad.dk/udland/norges-statsminister-afviser-daarlig-kultur-under-hoering-om-epstein",
+          "published_at": "2026-09-30T09:19:31.000000Z",
+          "content_hash": "sha256:c2905623a85fe4acf5bff8b8a658cab302342a999ca8a62371d9f8e1f819b7c3",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "politiken",
+          "source_id": "11003026",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Jonas Gahr Støre: Jeg har aldrig haft nogen form for kontakt med Jeffrey Epstein",
+          "url": "https://politiken.dk/internationalt/art11003026/Jeg-har-aldrig-haft-nogen-form-for-kontakt-med-Jeffrey-Epstein",
+          "published_at": "2026-09-30T15:26:09.000000Z",
+          "content_hash": "sha256:8eaed1bca5d4c18c40b36bdf93610b0048c63efca0eabfd64bd6dadd1ddf3091",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:d99f6111-89b5-445d-8ef4-d7dc15d3da6e",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Norges statsminister under Epstein-høring: 'Jeg har ingen viden om, at Jeffrey Epstein har haft indflydelse på norsk udenrigspolitik'",
+          "url": "https://www.dr.dk/nyheder/udland/norges-statsminister-under-epstein-hoering-jeg-har-ingen-viden-om-jeffrey-epstein-har-haft",
+          "published_at": "2026-09-30T19:40:00.000000Z",
+          "content_hash": "sha256:3c6c82c01228ba11e9a8c729d3cb6df05b29aed806fddb08016776566a66a8e7",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:8c1f939e-a8d1-5643-bfc5-0819479e878b",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Norges statsminister afviser dårlig kultur under høring om Epstein",
+          "url": "https://www.berlingske.dk/internationalt/norges-statsminister-afviser-daarlig-kultur-under-hoering-om-epstein",
+          "published_at": "2026-09-30T10:00:44.000000Z",
+          "content_hash": "sha256:250bb3c023623ebed560775b06631a2fc8b07714c4edcd04c8e1d0558a75f5f3",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:3d44b9b7-7241-488f-bddd-77962cbc4c2b",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Norges statsminister skal stå skoleret i høring efter Epstein-afsløringer",
+          "url": "https://www.dr.dk/nyheder/udland/norges-statsminister-skal-staa-skoleret-i-hoering-efter-epstein-afsloeringer",
+          "published_at": "2026-09-30T06:13:46.000000Z",
+          "content_hash": "sha256:81b0d899677baaa3225955d4934e4905a1816ea91a4ed147120a59ce14e9db71",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:90bd8c2f-871c-566b-ae96-e131edc3eb77",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Hvor meget vidste den norske statsminister om Epstein-forbindelsen? Onsdag håber Norge at få svar",
+          "url": "https://www.berlingske.dk/internationalt/hvor-meget-vidste-den-norske-statsminister-om-epstein-forbindelsen-onsdag-haaber-norge-at-faa-svar",
+          "published_at": "2026-09-30T04:36:26.000000Z",
+          "content_hash": "sha256:a3047a388333a0a6cc78f6f20753eb1be7ae46296926e9a5e78822c67054b6ae",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "coalition-leaves-erbil",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Last US troops leave Iraq as the mission against Islamic State ends",
+        "body": {},
+        "lede": {
+          "text": "The US-led coalition, in which Denmark took part with F-16s, radar and training, formally ended its mission against Islamic State in Iraq on Wednesday as the last troops left Erbil Air Base.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "33a06555-5c91-467b-9691-af0105ebb9f2",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "USA sætter et endeligt punktum for kampen mod Islamisk Stat i Irak",
+          "url": "https://www.kristeligt-dagblad.dk/udland/usa-saetter-et-endeligt-punktum-kampen-mod-islamisk-stat-i-irak",
+          "published_at": "2026-09-30T08:23:00.000000Z",
+          "content_hash": "sha256:0ff342108c3946e77483ac263af00b96a63e9c7f4521f9eeeb74a0398e1547e1",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:6b409032-3f61-537e-bd18-f4f6bd4f2e9d",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "USA sætter et endeligt punktum for kampen mod Islamisk Stat i Irak",
+          "url": "https://www.berlingske.dk/internationalt/usa-saetter-et-endeligt-punktum-for-kampen-mod-islamisk-stat-i-irak",
+          "published_at": "2026-09-30T09:02:45.000000Z",
+          "content_hash": "sha256:44002ea90dab7e66686c953bb348bbb666f022049d187a455f14d639578af465",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19686178",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "USA trækker sig ud af Irak. Det skulle være en ny start, men en anden krybende magtovertagelse er under opsejling",
+          "url": "https://jyllands-posten.dk/international/mideast/ECE19686178/usa-traekker-sine-sidste-tropper-ud-af-irak-men-bagdad-har-et-andet-stort-problem/",
+          "published_at": "2026-09-30T04:45:00.000000Z",
+          "content_hash": "sha256:8e3ff0e0d66e5cfe41453bf405a9397fca3082bc9a11a069fc309300a272d78a",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "c65ym1dyn92mo",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Last UK and US troops leave Iraq as anti-Islamic State mission ends",
+          "url": "https://www.bbc.co.uk/news/articles/c65ym1dyn92mo?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-09-30T11:36:23.000000Z",
+          "content_hash": "sha256:c85f0f8e2b5167982fe106f4f67bc854f81c3740499db39838c2f13694e55e93",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "043221b2-d06c-4171-aa50-eeaebaf7674a",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "US withdraws remaining troops from Iraq",
+          "url": "https://www.ft.com/content/043221b2-d06c-4171-aa50-eeaebaf7674a",
+          "published_at": "2026-09-30T11:28:13.000000Z",
+          "content_hash": "sha256:8e99eb39f9cd4213558625e58afc8a6e0ce9a77c7734a598c2a2379c6670f9bf",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/09/30/world/middleeast/iraq-us-forces.html",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "After Two Decades, U.S. Forces Leave Iraq to an Uncertain Future",
+          "url": "https://www.nytimes.com/2026/09/30/world/middleeast/iraq-us-forces.html",
+          "published_at": "2026-09-30T23:09:20.000000Z",
+          "content_hash": "sha256:6ba939a14e869fc2fe4a6dd9f69849851608284590bc055b3baa46fec0e5283c",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "q2-growth-revised-0-9",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Economy",
+      "copy": {
+        "headline": "Second-quarter growth revised up to 0.9 per cent",
+        "body": {},
+        "lede": {
+          "text": "Danish GDP grew 0.9 per cent in the second quarter, 0.6 percentage points more than the estimate published in August, and is 5.7 per cent higher than a year earlier.",
+          "sources": [
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "53a3c0f2-47fe-490b-a79f-e0258174a02f",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Væksten i dansk økonomi er blevet opjusteret",
+          "url": "https://www.kristeligt-dagblad.dk/vaeksten-i-dansk-oekonomi-er-blevet-opjusteret",
+          "published_at": "2026-09-30T07:24:25.000000Z",
+          "content_hash": "sha256:94a2e4c78ee9b270c284fc72d9c4fcad9d3d3999aa08c102760d779b6ad98abc",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:b34796fc-9a5a-5874-aa7f-267fbb42cbbd",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Væksten i dansk økonomi er blevet opjusteret",
+          "url": "https://www.berlingske.dk/business/vaeksten-i-dansk-oekonomi-er-blevet-opjusteret",
+          "published_at": "2026-09-30T07:36:48.000000Z",
+          "content_hash": "sha256:ebaacc98f6a0e128e4741a73bee5f4b2dc36c6c4eed76d5e739362414a6a14a4",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11002880",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Væksten i dansk økonomi er blevet opjusteret",
+          "url": "https://politiken.dk/danmark/oekonomi/art11002880/V%C3%A6ksten-i-dansk-%C3%B8konomi-er-blevet-opjusteret",
+          "published_at": "2026-09-30T07:25:58.000000Z",
+          "content_hash": "sha256:ec7596050071ae16ccc1cadb56348de5bb7e5702bc69c77c37165bc232189a4d",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "home-guard-exercise-towns",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Defence",
+      "copy": {
+        "headline": "Home Guard soldiers and military vehicles in Jutland towns until Sunday",
+        "body": {},
+        "lede": {
+          "text": "Armed Home Guard soldiers and military vehicles will be seen in towns including Kolding, Vejle, Fredericia and Billund from Thursday to Sunday in what police call one of the largest exercises in recent times.",
+          "sources": [
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "283c2caa-4c20-4917-952f-da70d3571e64",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Militærkøretøjer og soldater kan ses i bybilledet i fire dage",
+          "url": "https://www.kristeligt-dagblad.dk/militaerkoeretoejer-og-soldater-kan-ses-i-bybilledet-i-fire-dage",
+          "published_at": "2026-09-30T06:12:51.000000Z",
+          "content_hash": "sha256:901e8580b12d9c4a27060f89a8f78153227faf331ca5aced49e7144e84f4bc7a",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:6a97acfb-5997-500a-a7b1-93d6dbf8b599",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Militærkøretøjer og soldater kan ses i bybilledet i fire dage",
+          "url": "https://www.berlingske.dk/indland/militaerkoeretoejer-og-soldater-kan-ses-i-bybilledet-i-fire-dage",
+          "published_at": "2026-09-30T11:23:47.000000Z",
+          "content_hash": "sha256:463b858e830c25f31a1df79bff341c4da29859795e624c2598e5488d8b7dfd14",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19692573",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Største øvelse i nyere tid sender soldater ud i de danske byer: »Vi kan risikere at stå i en situation, hvor der er brug for \"noget andet\"«",
+          "url": "https://jyllands-posten.dk/indland/ECE19692573/stoerste-oevelse-i-nyere-tid-sender-soldater-ud-i-de-danske-byer-vi-kan-risikere-at-staa-i-en-situation-hvor-der-er-brug-for-noget-andet/",
+          "published_at": "2026-09-30T15:00:00.000000Z",
+          "content_hash": "sha256:873986dd1f870bef4eb6ab9dbfa220eb98e7f0dc6703e9a1fc640306e06d9c6c",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11002802",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Militærkøretøjer og soldater kan ses i bybilledet i fire dage",
+          "url": "https://politiken.dk/danmark/art11002802/Milit%C3%A6rk%C3%B8ret%C3%B8jer-og-soldater-kan-ses-i-bybilledet-i-fire-dage",
+          "published_at": "2026-09-30T06:44:14.000000Z",
+          "content_hash": "sha256:29191e21d162e031bfc512fab432cfbcb2c1bc14b3f5f3d86ebc47b720dc75ff",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:e5108231-a2d5-49ba-b8a8-01e4d9f3f2f2",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Politiet melder om stor hjemmeværnsøvelse",
+          "url": "https://www.dr.dk/nyheder/seneste/politiet-melder-om-stor-hjemmevaernsoevelse",
+          "published_at": "2026-09-30T05:56:12.000000Z",
+          "content_hash": "sha256:7fc1f5972d4ffa6299afc532821cab48c9f403568bc320eca3b4c9872cea53e9",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "ls-busser-owner-charged",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "Former flex-bus owner charged with money laundering and fraud",
+        "body": {},
+        "lede": {
+          "text": "Salah Salem al-Badri, former owner of the bankrupt flex-traffic firm LS Busser, is charged with money laundering and fraud and is to be sought internationally; prosecutors believe he is in Morocco.",
+          "sources": [
+            "kristeligt_dagblad",
+            "tv2"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "10d2539d-6191-4981-97de-5cae55c141dc",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Tidligere ejer af flexbusselskab er sigtet for hvidvask og bedrageri",
+          "url": "https://www.kristeligt-dagblad.dk/tidligere-ejer-af-flexbusselskab-er-sigtet-hvidvask-og-bedrageri",
+          "published_at": "2026-09-30T09:44:23.000000Z",
+          "content_hash": "sha256:03c211975263ffec4551030995328b14323a7614526c96c8125a049a3b52f871",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:b1aa3fee-6e77-5b45-9d6d-765359720b03",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Tidligere ejer af flexbusselskab er sigtet for hvidvask og bedrageri",
+          "url": "https://www.berlingske.dk/indland/tidligere-ejer-af-flexbusselskab-er-sigtet-for-hvidvask-og-bedrageri",
+          "published_at": "2026-09-30T09:44:46.000000Z",
+          "content_hash": "sha256:b9cc190202242983c872c1ba9901b29ae798d5afa1accbda204e57dfb348b21c",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11004295",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Tidligere ejer af flextrafik-busser sigtet for hvidvask og bedrageri",
+          "url": "https://politiken.dk/danmark/art11004295/Tidligere-ejer-af-flextrafik-busser-sigtet-for-hvidvask-og-bedrageri",
+          "published_at": "2026-09-30T14:19:52.000000Z",
+          "content_hash": "sha256:c2513c47da8e3b1bf33adf1c0173b44a268f4971a2bf21eb0bf9ecb24c47daaf",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/samfund/2026-09-30-tidligere-bus-konge-beskyldt-for-at-afloenne-ansatte-med-narkopenge-nu-efterlyses-han-internationalt",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Tidligere flextrafik-konge efterlyses internationalt",
+          "url": "https://nyheder.tv2.dk/samfund/2026-09-30-tidligere-bus-konge-beskyldt-for-at-afloenne-ansatte-med-narkopenge-nu-efterlyses-han-internationalt",
+          "published_at": "2026-09-30T10:44:49.000000Z",
+          "content_hash": "sha256:93733598fe6bb66830956c57f1604c5f8189a8d3bc154754fa03168e28c50839",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "df-tonder-board-leaves",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Dansk Folkeparti's whole Tønder board quits the party",
+        "body": {},
+        "lede": {
+          "text": "Dansk Folkeparti's entire local board in Tønder has resigned and left the party after two councillors quit and its chair was expelled; Kenneth Kristensen Berth, the party's organisation chief, calls it a 'soap opera'.",
+          "sources": [
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "bd8dff78-d53a-4437-aa20-aa75d7f9e452",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Hele Dansk Folkepartis bestyrelse i Tønder forlader partiet",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/hele-dansk-folkepartis-bestyrelse-i-toender-forlader-partiet",
+          "published_at": "2026-09-30T07:53:05.000000Z",
+          "content_hash": "sha256:c194a38f424fa965cd034628c540f326bd8b379e2397b69c3b305d9d9c79d1bc",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:d77abc04-1386-5d78-99a8-987e074e2298",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Hele Dansk Folkepartis bestyrelse i Tønder forlader partiet",
+          "url": "https://www.berlingske.dk/politik/hele-dansk-folkepartis-bestyrelse-i-toender-forlader-partiet",
+          "published_at": "2026-09-30T09:36:53.000000Z",
+          "content_hash": "sha256:a0dba7f345d27c0dba28019f102269afa88000b0b15b64630dbeeb8173478af9",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:6de6a5bb-8a25-46eb-aebe-c15569ac285b",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Hele bestyrelsen i DF i Tønder er gået af",
+          "url": "https://www.dr.dk/nyheder/seneste/hele-bestyrelsen-i-df-i-toender-er-gaaet-af",
+          "published_at": "2026-09-30T07:24:39.000000Z",
+          "content_hash": "sha256:1c32cd18b177f292d7594d9a87ca364fa349d9f804f2e802c373723b1c86959f",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:6fa3fc55-b3fc-4aac-8fc5-51182a9e0ce3",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "20-årige Mads-Magnus Damm er sidste DF’er i Tønder: 'Han har et kæmpe arbejde, han skal gøre nu'",
+          "url": "https://www.dr.dk/nyheder/indland/20-aarige-mads-magnus-damm-er-sidste-df-er-i-toender-han-har-et-kaempe-arbejde-han-skal-goere-nu",
+          "published_at": "2026-09-30T16:22:29.000000Z",
+          "content_hash": "sha256:ef01dd3f0def90428e58bd3215142007c997300b90f8abccf17cdd5b546ecb0d",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19692211",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Hele DF's ledelse i Tønder forlader partiet",
+          "url": "https://jyllands-posten.dk/politik/ECE19692211/hele-dfs-ledelse-i-toender-forlader-partiet/",
+          "published_at": "2026-09-30T08:03:02.000000Z",
+          "content_hash": "sha256:0f63a10b466d947893b3878603727c33e65d2d3918fc6804bd688550169e2f5b",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "lokke-one-more-election",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Løkke will stand in at least one more general election",
+        "body": {},
+        "lede": {
+          "text": "Lars Løkke Rasmussen, the foreign minister and the Folketing's longest-serving member after 32 years, says he will stand in at least one more general election, but perhaps not the one after.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "4bd2c5de-a88e-41dd-a4cd-684a9dcd0de4",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Lars Løkke stiller op til mindst ét folketingsvalg mere",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/lars-loekke-stiller-op-til-mindst-et-folketingsvalg-mere",
+          "published_at": "2026-09-30T05:45:15.000000Z",
+          "content_hash": "sha256:5ac4b26cd98b553b9a4c72788de90b8ea66421f85b551504b47a6c3bbaf3da25",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:795ffb6b-d6af-5a6f-bca7-5b146e783db2",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Lars Løkke stiller op til mindst ét folketingsvalg mere",
+          "url": "https://www.berlingske.dk/politik/lars-loekke-stiller-op-til-mindst-et-folketingsvalg-mere",
+          "published_at": "2026-09-30T05:51:46.000000Z",
+          "content_hash": "sha256:f5443366c8454d682697c1377fab9fe96df2287899450325365442696961e63f",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19691570",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Lars Løkke melder ud om sin fremtid i politik",
+          "url": "https://jyllands-posten.dk/politik/ECE19691570/lars-loekke-melder-ud-om-sin-fremtid-i-politik/",
+          "published_at": "2026-09-30T06:59:55.000000Z",
+          "content_hash": "sha256:1386919da1664aaf2aa39860abde59e66e8bdc981e5b1f3374cb30ac836dd0f6",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "ibi-pippi-fined-horsens",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "Ibi-Pippi fined 15,000 kroner over a work she gave a prison officer",
+        "body": {},
+        "lede": {
+          "text": "Retten i Horsens fined the artist Ibi-Pippi Orup Sommer 15,000 kroner for harassing and indecently insulting a female prison officer with the work 'Toxic Masculinity'; the artist says she is deeply shaken.",
+          "sources": [
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "766a7a84-1833-4e84-9340-7a84c2962018",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Ibi-Pippi idømmes bøde for at have krænket fængselsbetjent",
+          "url": "https://www.kristeligt-dagblad.dk/kultur/ibi-pippi-idoemmes-boede-have-kraenket-faengselsbetjent",
+          "published_at": "2026-09-30T07:48:25.000000Z",
+          "content_hash": "sha256:932742f023befc11e782c7554ad1f8fb848384f5d62029fe1b83acca8bec5ec8",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:a0ce1638-9f30-5795-9c30-cd0db8c9cd3d",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Ibi-Pippi idømmes bøde for at have krænket fængselsbetjent",
+          "url": "https://www.berlingske.dk/indland/ibi-pippi-idoemmes-boede-for-at-have-kraenket-faengselsbetjent",
+          "published_at": "2026-09-30T08:17:51.000000Z",
+          "content_hash": "sha256:4d27e8ea17bee44ce247d0dadf5aea787c6f07cdf5fe328cb69a6b04a49eecbe",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:fd7c1583-455f-449f-9635-d57086929a11",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Provokunstner idømmes bøde for at krænke fængselsbetjent",
+          "url": "https://www.dr.dk/nyheder/seneste/provokunstner-idoemmes-boede-kraenke-faengselsbetjent",
+          "published_at": "2026-09-30T09:21:11.000000Z",
+          "content_hash": "sha256:b94f84ad8fd1a45caa84ae2d9bf6ea33a89cc6aa1758a189ee5784558938a50d",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19692087",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Ibi-Pippi idømmes bøde for at have krænket fængselsbetjent",
+          "url": "https://jyllands-posten.dk/indland/ECE19692087/ibipippi-idoemmes-boede-for-at-have-kraenket-faengselsbetjent/",
+          "published_at": "2026-09-30T07:49:00.000000Z",
+          "content_hash": "sha256:74e99d0fcb014612020bbef39d1c5846d225fe879505d4afd35a44388a0d78ae",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11002923",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Ibi-Pippi idømmes bøde for at have krænket fængselsbetjent",
+          "url": "https://politiken.dk/kultur/art11002923/Ibi-Pippi-id%C3%B8mmes-b%C3%B8de-for-at-have-kr%C3%A6nket-f%C3%A6ngselsbetjent",
+          "published_at": "2026-09-30T08:01:51.000000Z",
+          "content_hash": "sha256:97bee1e2ff0b0fbc64519d5d82be7a43b7ff50335809a2e9ce4af132745ee396",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "royal-run-2027-sold-out",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Sport",
+      "copy": {
+        "headline": "Royal Run 2027 sells out in record time",
+        "body": {},
+        "lede": {
+          "text": "All 102,500 places in Royal Run 2027, held in five towns on Whit Monday, sold out in just under three hours on Wednesday, a record, DIF and DGI say.",
+          "sources": [
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "e0ed8aa4-e532-4769-9278-9b38123bc74b",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Alle startnumre til Royal Run er udsolgt på rekordtid",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/fire-royal-run-byer-melder-udsolgt",
+          "published_at": "2026-09-30T10:40:49.000000Z",
+          "content_hash": "sha256:abd9071bddbf6c5cdfed3e2b1bc56fd443450a0fc777c2a79f39289578039bf8",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:d6b9b3ad-c022-53cc-bb36-e6a95b081306",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Alle startnumre til Royal Run er udsolgt på rekordtid",
+          "url": "https://www.berlingske.dk/danmark/alle-startnumre-til-royal-run-er-udsolgt-paa-rekordtid",
+          "published_at": "2026-09-30T11:17:46.000000Z",
+          "content_hash": "sha256:2f4be050cca17b75c728d4a8f68a3ee882a605170bb13f89331210c8fc54b3a7",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:3592d617-6c9e-4e6c-bb81-3ee34b5e894a",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Royal Run melder udsolgt",
+          "url": "https://www.dr.dk/nyheder/seneste/royal-run-melder-udsolgt",
+          "published_at": "2026-09-30T11:09:54.000000Z",
+          "content_hash": "sha256:19f0bfaa6e9e2467e8882f04a82626a6e2faa0c1effbdc3b874f9174561926ad",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19693798",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Royal Run er udsolgt på rekordtid",
+          "url": "https://jyllands-posten.dk/indland/ECE19693798/royal-run-er-udsolgt-paa-rekordtid/",
+          "published_at": "2026-09-30T11:17:00.000000Z",
+          "content_hash": "sha256:11ca62046e807d209e86f1e4d6bbaf478803f3ee6b397cd3ef6378a886155be7",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11003628",
+          "input_id": "export-2026-10-01-0330",
+          "original_title": "Alle startnumre til Royal Run er udsolgt på rekordtid",
+          "url": "https://politiken.dk/danmark/art11003628/Alle-startnumre-til-Royal-Run-er-udsolgt-p%C3%A5-rekordtid",
+          "published_at": "2026-09-30T11:18:37.000000Z",
+          "content_hash": "sha256:c9074c7a2589543dadf5788892cac0b51b9b532195014a4539da0f8140fe3ffe",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    }
+  ],
+  "fit_policy": {
+    "allow_role_fallback": true,
+    "allow_composition_substitution": true,
+    "reserve_story_ids": [],
+    "omittable_story_ids": [
+      "pig-tripartite-six-months",
+      "russia-summons-holmboe",
+      "ethics-council-donor-anonymity-end",
+      "winter-grid-tariffs-evening",
+      "bovaer-sick-cows-exempt",
+      "s-close-radio-iiii",
+      "roskilde-2027-tame-impala",
+      "store-epstein-hearing",
+      "coalition-leaves-erbil",
+      "q2-growth-revised-0-9",
+      "home-guard-exercise-towns",
+      "ls-busser-owner-charged",
+      "df-tonder-board-leaves",
+      "lokke-one-more-election",
+      "ibi-pippi-fined-horsens",
+      "royal-run-2027-sold-out"
+    ]
+  }
+}

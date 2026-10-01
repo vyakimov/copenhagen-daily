@@ -1,0 +1,208 @@
+{
+  "edition": {
+    "id": "2026-10-01-morning",
+    "number": 15,
+    "name": "Thursday edition",
+    "date": "2026-10-01",
+    "cutoff_at": "2026-10-01T03:30:00.000000Z",
+    "checked_from": "2026-09-28T03:30:00.000000Z",
+    "input_id": "export-2026-10-01-0330",
+    "presentation": {
+      "emphasis": "many_stories",
+      "ear_right": "Inside: Russia summons Denmark's ambassador, seven parties get six months on pig farming, the ethics council on donor anonymity"
+    },
+    "note": "Built from headlines and RSS descriptions published between 05:30 on Monday and 05:30 on Thursday Copenhagen time, from 132 feeds at seventeen publishers, all polled successfully. Danish outlets decide what is news; international titles are linked where they cover the same story. Nothing else was read."
+  },
+  "stories": [
+    {
+      "id": "flydubai-pilot-stabs-captain",
+      "role": "lead",
+      "kicker": "World",
+      "headline": "Pilot stabs captain on Israel-bound flight, and passengers avert a crash",
+      "headline_short": "Passengers stop cockpit attack on Israel-bound plane",
+      "deck": "The plane landed in Saudi Arabia; Netanyahu says the pilot has been arrested.",
+      "standard": [
+        ["A Flydubai Boeing 737 MAX 8 with 180 passengers, flying from Dubai to Tel Aviv, sent a distress signal on Wednesday morning and then the code for a hijacking or other unlawful interference. It was diverted to Tabuk in Saudi Arabia and landed shortly after 09:00 Danish time; all passengers are safe.", ["kristeligt_dagblad", "jp"]],
+        ["The co-pilot stabbed the captain, and pilots travelling as passengers landed the plane, Israeli authorities say. Benjamin Netanyahu says a pilot has been arrested and is being questioned by the Saudi authorities, and that he apparently tried to crash the plane.", ["berlingske"]],
+        ["Passengers broke into the cockpit, eyewitnesses say. One of them, a plumber named Yaniv, grabbed the control stick and did what he had seen on television, witnesses tell DR.", ["politiken", "dr"]],
+        ["Netanyahu says it could have become a new 9/11, and an Israeli minister quoted by TV 2 calls it jihadist terror. The motive is still unclear.", ["dr", "tv2", "politiken"]]
+      ],
+      "short": [
+        ["The co-pilot of a Flydubai flight from Dubai to Tel Aviv stabbed the captain on Wednesday; pilots among the passengers landed the plane in Saudi Arabia, and Netanyahu says a pilot has been arrested.", ["berlingske", "kristeligt_dagblad"]]
+      ],
+      "callouts": [
+        {"kind": "facts", "title": "The flight", "items": ["180 passengers on board", "A Boeing 737 MAX 8 from Dubai to Tel Aviv", "Diverted to Tabuk in Saudi Arabia"]}
+      ],
+      "sources": [1052, 396, 326, 57, 814, 464, 674, 715, 34, 149, 268, 36, 179]
+    },
+    {
+      "id": "pig-tripartite-six-months",
+      "role": "secondary",
+      "kicker": "Politics",
+      "headline": "Seven parties get six months to agree on the future of pig farming",
+      "headline_short": "Pig-farming talks get six months",
+      "deck": "If they cannot agree, the government is ready to act on its own.",
+      "standard": [
+        ["The government on Wednesday presented the terms of reference for the grisefirepart, a four-party body in which seven parties are to agree on the future of pig farming, chaired by Jacob Bundsgaard, the former Aarhus mayor. Work starts in 2027 and has six months, to the end of June 2027; if the parties cannot agree, the government is ready to take the necessary initiatives, the terms of reference say.", ["kristeligt_dagblad", "berlingske"]],
+        ["The temporary stop on new conventional pig farms stays in place. Christian Rabjerg Madsen, the minister for nature and animal welfare, says Denmark sends more pigs on long transports than it slaughters at home, but the law will set no numbers.", ["kristeligt_dagblad"]],
+        ["Danish piglets travel more than diplomats, Lars Løkke Rasmussen told the press conference.", ["dr", "kristeligt_dagblad"]]
+      ],
+      "short": [
+        ["Seven parties have six months from 2027 to agree on the future of pig farming under Jacob Bundsgaard; if they cannot, the government is ready to take the necessary initiatives.", ["kristeligt_dagblad", "berlingske"]]
+      ],
+      "callouts": [
+        {"kind": "quote", "text": "The four-party body shall not discuss whether these things will happen. The four-party body shall discuss how we get there.", "attribution": "Maria Reumert Gjerding, environment minister", "attribution_source": "kristeligt_dagblad"}
+      ],
+      "sources": [831, 778, 754, 786]
+    },
+    {
+      "id": "russia-summons-holmboe",
+      "role": "secondary",
+      "kicker": "Defence",
+      "headline": "Russia summons Denmark's ambassador over the Gedser helicopter incident",
+      "headline_short": "Russia summons Danish ambassador",
+      "deck": "Løkke says Denmark will not be intimidated.",
+      "standard": [
+        ["Russia has summoned Rolf Holmboe, Denmark's ambassador, in answer to Denmark summoning Russia's envoy after a flare from the frigate Soobrazitelny passed 10 to 15 metres from a Danish Fennec helicopter off Gedser on 14 September.", ["kristeligt_dagblad", "dr"]],
+        ["Vladimir Barbin, Russia's ambassador to Denmark, has written to Ritzau that the helicopter acted 'provocatively'. Jeppe Bruus, the defence minister, rejected that account, noting that the frigate did not contact the helicopter before firing.", ["kristeligt_dagblad"]],
+        ["'We must not let ourselves be intimidated,' Lars Løkke Rasmussen, the foreign minister, told TV 2 News on Wednesday, saying the Russians will not be able to produce evidence for their version.", ["kristeligt_dagblad", "berlingske"]]
+      ],
+      "short": [
+        ["Russia has summoned Denmark's ambassador over the Gedser helicopter incident; 'We must not let ourselves be intimidated,' Lars Løkke Rasmussen says.", ["kristeligt_dagblad"]]
+      ],
+      "sources": [465, 309, 443, 293, 451, 349]
+    },
+    {
+      "id": "ethics-council-donor-anonymity-end",
+      "role": "secondary",
+      "kicker": "Denmark",
+      "headline": "Ethics council wants to end anonymous sperm and egg donation",
+      "headline_short": "Ethics council: end donor anonymity",
+      "deck": "Fourteen of its 15 members back the change, and the minister has called in the parties.",
+      "standard": [
+        ["Det Etiske Råd, the ethics council, recommended on Wednesday that anonymous donation of sperm and eggs be abolished, so that every donor-conceived child can learn the donor's identity if it wishes. Fourteen of its 15 members back the recommendation, and the minister has called in the parties.", ["kristeligt_dagblad", "berlingske"]],
+        ["Since 2012 people in fertility treatment have been able to choose between anonymous and open donation. Technology means anonymity can no longer be guaranteed, says Ayo Wahlberg, a council member and anthropology professor.", ["kristeligt_dagblad"]],
+        ["Ole Schou, director of the sperm bank Cryos, rejects the recommendation and warns that without enough donors such children will not be born.", ["kristeligt_dagblad"]]
+      ],
+      "short": [
+        ["Fourteen of the 15 members of Det Etiske Råd want anonymous sperm and egg donation abolished.", ["politiken", "kristeligt_dagblad"]]
+      ],
+      "sources": [506, 400, 508, 477, 495, 500]
+    },
+    {
+      "id": "winter-grid-tariffs-evening",
+      "role": "secondary",
+      "kicker": "Prices",
+      "headline": "Evening electricity gets dearer as winter tariffs start",
+      "headline_short": "Winter tariffs make evening power dearer",
+      "deck": "In the dearest hours the bill rises 131 per cent on average.",
+      "standard": [
+        ["Most grid companies switch to winter tariffs on Thursday, 1 October, so the time of day matters more for what households pay to have power delivered. Grid charges more than double, and the rise is far steeper east of the Great Belt than in the rest of the country.", ["jp", "dr", "borsen"]],
+        ["Power used between 17:00 and 21:00 becomes dearer. In the dearest hours the switch raises the electricity bill by an average of 131 per cent.", ["politiken", "jp"]]
+      ],
+      "short": [
+        ["Winter grid tariffs from Thursday more than double the charge for delivering power in the busiest hours, most of all east of the Great Belt.", ["borsen", "jp"]]
+      ],
+      "callouts": [
+        {"kind": "figure", "value": "131 per cent", "label": "Average rise in the electricity bill in the dearest hours"}
+      ],
+      "sources": [1015, 958, 888, 1249, 1318]
+    },
+    {
+      "id": "bovaer-sick-cows-exempt",
+      "role": "brief",
+      "kicker": "Climate",
+      "headline": "Cows that fell ill on Bovaer last year can be exempted",
+      "lede": ["From Thursday, farmers may exempt cows that showed symptoms from the methane-reducing additive Bovaer last year, Christian Rabjerg Madsen told a Folketing consultation; Enhedslisten and Alternativet want the requirement paused.", ["kristeligt_dagblad"]],
+      "sources": [954, 891, 654, 453, 599, 898, 1057]
+    },
+    {
+      "id": "s-close-radio-iiii",
+      "role": "brief",
+      "kicker": "Politics",
+      "headline": "Social Democrats want to close Radio IIII",
+      "lede": ["The Social Democrats want to end Radio IIII's state support of about 100 million kroner a year and spend it on local media and TV 2 Kosmopol; its director calls it a big mistake.", ["kristeligt_dagblad", "politiken"]],
+      "sources": [203, 175, 180, 299]
+    },
+    {
+      "id": "roskilde-2027-tame-impala",
+      "role": "brief",
+      "kicker": "Culture",
+      "headline": "Tame Impala heads Roskilde Festival's first names for 2027",
+      "lede": ["Roskilde Festival named its first 18 acts for 2027, among them Tame Impala, Patti Smith and Emma Sehested Høeg, and opened ticket sales; a full-festival ticket costs 2,650 kroner.", ["kristeligt_dagblad", "dr"]],
+      "sources": [1010, 917, 1005, 995, 997, 1157]
+    },
+    {
+      "id": "store-epstein-hearing",
+      "role": "brief",
+      "kicker": "Nordics",
+      "headline": "Støre tells Epstein hearing he never had contact with Epstein",
+      "lede": ["Jonas Gahr Støre, Norway's prime minister, told the Storting's Epstein hearing on Wednesday that he never had contact with Epstein and rejected talk of a bad culture in the Foreign Ministry.", ["kristeligt_dagblad", "politiken"]],
+      "sources": [912, 532, 301, 859, 1114, 1217]
+    },
+    {
+      "id": "coalition-leaves-erbil",
+      "role": "brief",
+      "kicker": "World",
+      "headline": "Last US troops leave Iraq as the mission against Islamic State ends",
+      "lede": ["The US-led coalition, in which Denmark took part with F-16s, radar and training, formally ended its mission against Islamic State in Iraq on Wednesday as the last troops left Erbil Air Base.", ["kristeligt_dagblad", "berlingske"]],
+      "sources": [982, 922, 1212, 744, 755, 128]
+    },
+    {
+      "id": "q2-growth-revised-0-9",
+      "role": "brief",
+      "kicker": "Economy",
+      "headline": "Second-quarter growth revised up to 0.9 per cent",
+      "lede": ["Danish GDP grew 0.9 per cent in the second quarter, 0.6 percentage points more than the estimate published in August, and is 5.7 per cent higher than a year earlier.", ["kristeligt_dagblad"]],
+      "sources": [1048, 1037, 1045]
+    },
+    {
+      "id": "home-guard-exercise-towns",
+      "role": "brief",
+      "kicker": "Defence",
+      "headline": "Home Guard soldiers and military vehicles in Jutland towns until Sunday",
+      "lede": ["Armed Home Guard soldiers and military vehicles will be seen in towns including Kolding, Vejle, Fredericia and Billund from Thursday to Sunday in what police call one of the largest exercises in recent times.", ["kristeligt_dagblad"]],
+      "sources": [1115, 762, 562, 1090, 1143]
+    },
+    {
+      "id": "ls-busser-owner-charged",
+      "role": "brief",
+      "kicker": "Crime",
+      "headline": "Former flex-bus owner charged with money laundering and fraud",
+      "lede": ["Salah Salem al-Badri, former owner of the bankrupt flex-traffic firm LS Busser, is charged with money laundering and fraud and is to be sought internationally; prosecutors believe he is in Morocco.", ["kristeligt_dagblad", "tv2"]],
+      "sources": [886, 885, 593, 821]
+    },
+    {
+      "id": "df-tonder-board-leaves",
+      "role": "brief",
+      "kicker": "Politics",
+      "headline": "Dansk Folkeparti's whole Tønder board quits the party",
+      "lede": ["Dansk Folkeparti's entire local board in Tønder has resigned and left the party after two councillors quit and its chair was expelled; Kenneth Kristensen Berth, the party's organisation chief, calls it a 'soap opera'.", ["kristeligt_dagblad"]],
+      "sources": [1023, 893, 1047, 475, 1001]
+    },
+    {
+      "id": "lokke-one-more-election",
+      "role": "brief",
+      "kicker": "Politics",
+      "headline": "Løkke will stand in at least one more general election",
+      "lede": ["Lars Løkke Rasmussen, the foreign minister and the Folketing's longest-serving member after 32 years, says he will stand in at least one more general election, but perhaps not the one after.", ["kristeligt_dagblad", "berlingske"]],
+      "sources": [1149, 1145, 1078]
+    },
+    {
+      "id": "ibi-pippi-fined-horsens",
+      "role": "brief",
+      "kicker": "Crime",
+      "headline": "Ibi-Pippi fined 15,000 kroner over a work she gave a prison officer",
+      "lede": ["Retten i Horsens fined the artist Ibi-Pippi Orup Sommer 15,000 kroner for harassing and indecently insulting a female prison officer with the work 'Toxic Masculinity'; the artist says she is deeply shaken.", ["kristeligt_dagblad"]],
+      "sources": [1028, 986, 910, 1027, 1004]
+    },
+    {
+      "id": "royal-run-2027-sold-out",
+      "role": "brief",
+      "kicker": "Sport",
+      "headline": "Royal Run 2027 sells out in record time",
+      "lede": ["All 102,500 places in Royal Run 2027, held in five towns on Whit Monday, sold out in just under three hours on Wednesday, a record, DIF and DGI say.", ["kristeligt_dagblad"]],
+      "sources": [825, 773, 781, 774, 771]
+    }
+  ]
+}
