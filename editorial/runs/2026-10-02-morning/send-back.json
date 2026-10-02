@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-10-02-morning",
+  "send_back": [],
+  "fallen": [],
+  "stories": {},
+  "strikes": [
+    {
+      "story": "borris-shots-during-flight",
+      "location": "extended[4]",
+      "sentence": 0,
+      "verdict": "unsupported",
+      "reason": "DR describes the report as refreshingly rich in detail, not unusually rich; the comparison with its usual level of detail is absent.",
+      "cites": [
+        "dr",
+        "jp"
+      ]
+    }
+  ]
+}
