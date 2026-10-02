@@ -123,8 +123,10 @@ def test_candidates_beyond_the_budget_are_outside_budget(policy):
     policy = policy.model_copy(deep=True)
     policy.limits.stories_written = 2
     ranking = _rank(policy, _clusters(_cluster("gedser", GEDSER), _cluster("ai", AI), _cluster("supreme", SUPREME)))
-    decisions = {r["id"]: r["decision"] for r in ranking["candidates"] if r["id"] in {"gedser", "ai", "supreme"}}
-    assert sorted(decisions.values()) == ["eligible", "eligible", "outside_budget"]
+    decisions = [r["decision"] for r in ranking["candidates"]]
+    assert decisions.count("eligible") == 2
+    assert ranking["candidates"][0]["id"] == "gedser" and ranking["candidates"][0]["decision"] == "eligible"
+    assert {r["decision"] for r in ranking["candidates"] if r["id"] in {"ai", "supreme"}} <= {"eligible", "outside_budget"}
     assert ranking["limits"]["stories_written"] == 2
 
 

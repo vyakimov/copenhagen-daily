@@ -10,4 +10,6 @@ runs/*/sessions/
 runs/*/*.draft.json
 runs/*/*.draft.md
 runs/*/check-input.json
+runs/*/inputs.json
+runs/*/stories/*/brief*.json
 runs/*/verdicts.json

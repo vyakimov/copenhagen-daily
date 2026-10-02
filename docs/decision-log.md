@@ -461,6 +461,66 @@ the wrong reflex for a padded source list.
 
 ---
 
+## The desk reads less and writes nothing (2 October 2026)
+
+**The reading view is cut, deduplicated, and split.** Measured on the 1 and 2 October windows:
+`window.md` was 177,000 and 223,000 tokens, of which one publisher's full-text feed (Kristeligt
+Dagblad) was 51,000 and the six foreign headline-only outlets 60,000; 60 per cent of candidates can
+never make a story (`not_in_danish_media`); 276 articles shared an exact title with another, mostly
+wire copy carried by several outlets. Descriptions in the reading view are now cut at about 500
+characters at a sentence end; across the last five runs, every long-description article the editor
+placed in a cluster shared its linking term or name with the cluster inside the title or the first 300
+characters, so the cut costs no cluster. Identical text is listed once. The foreign outlets move to
+`window-linked.md`. The desk reads about 70,000 tokens.
+
+**Clustering is two passes, both the model's.** The desk clusters the Danish publishers; a subagent
+attaches the foreign headlines to the event lines. Linked publishers never score, so a wrong
+attachment is cheap, and the validator still sees it. No embeddings, no thresholds; the preference
+stated under Clustering above stands, with the context bounded.
+
+**The copy is written by one session per story, run by the runner.** The skill had asked the editor to
+delegate each story to a subagent, and the editor wrote everything itself with the whole window in
+context; the send-backs that followed were facts from articles the story did not cite. The runner now
+writes a brief per story with only that story's evidence, runs a read-only session on it, validates
+the answer, assembles the spec, and builds. A send-back rewrites only the stories sent back, each in
+its own session. The desk's job ends at the selection and the log.
+
+**Berlingske's section comes from its category tags.** The samfund feed carries world, politics and
+domestic news together and had mapped every article to `denmark`, so on 1 October all 24 eligible
+candidates had the same section weight and the section signal did nothing. The feed now maps to
+nothing and `category_sections` maps the publisher's own tags.
+
+**Memory holds only editions cut off before this run.** A rerun or a second printing for an earlier
+cutoff saw the editions after it and read its whole window as already covered.
+
+**Measured on dry reruns of the 1 and 2 October editions, same cutoffs.** The desk read 69,000 and
+75,000 tokens instead of 177,000 and 223,000 and cost $6.01 and $5.48 instead of $6.84 and $10.07.
+The writers took 21 and 23 sessions, a median of five turns and 20 seconds each, $5.77 and $5.79 in
+all, with no answer needing a second attempt. Neither rerun produced a send-back, against one of the
+two published runs; strikes were 3 and 0 against 0 and 1. The whole run cost $11.78 and $11.27
+against $8.06 and $10.07, so the per-story sessions cost about a dollar to four more than the single
+editor did, bought with the guarantee that no story's copy rests on another story's evidence. Wall
+clock was about the same, 16 minutes. The checker's advisory notes rose from one to four per edition,
+all the same fault: an outlet named in prose for a fact of record; the writer's brief now says so
+explicitly. Berlingske's samfund articles split into world, Denmark and politics instead of all
+Denmark, and the ranking's diversity note moved from "denmark holds 24 of 24" to 18 of 24. The 1
+October rerun led with the grid tariffs, the ranking's first, where the published edition had
+promoted the Flydubai cockpit stabbing from eleventh on breadth; the desk's own log says the world
+weight buried three broadly covered foreign stories, which is the open question on section weights.
+
+**Five review findings, all taken** ([the review](reviews/editorial-writer-split-review-2026-10-02.md)).
+The writer's isolation was a prompt, not a boundary: it had the repository added and the run
+directory as its working directory. It now starts in the story's own directory with nothing added,
+which a headless session cannot read outside of (checked live: the read was refused), and the brief
+carries the skill, the style guide and the guidelines. A retry re-recorded every input and so could
+adopt evidence changed mid-phase as the baseline; it now records its own brief only. A title alone
+had counted as the same text, hiding updated descriptions on rolling pages; the same headline over a
+different description now keeps it. Writers took one wall clock computed before the queue; each
+attempt now takes what the run has left. A half-written story file blocked recovery; cached copy is
+now validated, bound to its brief, and written atomically.
+
+---
+
 ## Deferred, with gates
 
 **Edition revisions and correction notices.** Designed in the [roadmap](roadmap.md). The first release

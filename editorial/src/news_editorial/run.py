@@ -1,4 +1,8 @@
-"""The runner: one edition end to end, deterministic steps around two bounded sessions.
+"""The runner: one edition end to end, deterministic steps around bounded sessions.
+
+The desk session clusters, selects and keeps the log; one small read-only session per story writes
+the copy from that story's evidence alone; the checker marks every sentence. The runner assembles the
+spec, builds the contract, and never lets a session see more than its job needs.
 
 The output is the web edition, and, when the desk config asks, block 3's page for the kitchen screen,
 fitted from the same contract; the contract's device fields are filled mechanically by `build`.
@@ -9,8 +13,11 @@ step blindly; a failure keeps the last activated edition in place and says why.
 
 from __future__ import annotations
 
+import concurrent.futures
 import datetime as dt
 import fcntl
+import re
+import threading
 import hashlib
 import json
 import subprocess
@@ -25,6 +32,7 @@ import yaml
 
 from . import blocks
 from .blocks import BlockError
+from .build import BuildError, build_edition, spec_story, validate_story_copy, write_edition
 from .bundle import BundleError, load_bundle
 from .clusters import check_clusters, write_checked  # noqa: F401 -- re-exported for the desk
 from .contract import validate_edition
@@ -40,13 +48,16 @@ DESK_CONFIG = EDITORIAL / "config" / "desk.yaml"
 LOCK_PATH = VAR / "run.lock"
 # The desk actions an editor session may call. `run` is deliberately absent: a session must never
 # start another run, publish, or reach block 1 or block 3 through the wrapper.
-EDITOR_ACTIONS = ("check-clusters", "score", "build")
+EDITOR_ACTIONS = ("check-clusters", "score")
+# The golden edition: one story of each role goes into a writer's brief as the voice to match.
+GOLDEN_SPEC = EDITORIAL / "examples" / "2026-09-15-morning" / "spec.json"
+WRITER_SKILL = REPO / "skills" / "story-writer" / "SKILL.md"
 # What the archive commits: the desk's own work. The check input and the verdicts stay out of git
 # because they quote the publishers' text; they remain in the run directory on disk.
 SMALL_FILES = [
     "feeds.json", "memory.json", "clusters.json", "clusters-checked.json", "ranking.json", "selection.json", "spec.json",
     "edition.json", "send-back.json", "edition-checked.json",
-    "NOTES.md", "status.json",
+    "NOTES.md", "status.json", "stories",
 ]
 
 
@@ -156,6 +167,33 @@ def invoke_editor(mode: str, run_dir: Path, timeout: int, config: dict[str, Any]
     return _headless(command, cwd=run_dir, timeout=timeout, name=f"editor-{mode}-{_now()[:19]}", run_dir=run_dir, limit="editor")
 
 
+def invoke_writer(brief: Path, timeout: int, config: dict[str, Any] | None = None, max_turns: int | None = None) -> dict[str, Any]:
+    """One story's writing session: it may read, and only read, and its final message is the copy.
+
+    Its working directory is the story's own, holding the brief and nothing else, and no other
+    directory is added, so a headless session is denied any read outside it: the whole window, the
+    other stories' briefs and the desk's files are out of reach, not merely out of the prompt. The
+    skill text, the style guide and the guidelines travel inside the brief for the same reason."""
+    config = config or load_desk_config()
+    run_dir = brief.parents[2]
+    prompt = (
+        f"Read {brief.name} in your working directory and follow its `skill` text exactly. "
+        "Your final message is the story JSON and nothing else."
+    )
+    command = [
+        config.get("editor_command", "claude"), "-p", prompt,
+        "--output-format", "json", "--tools", "Read",
+        "--disallowedTools", "Bash,Write,Edit,MultiEdit,NotebookEdit,WebFetch,WebSearch,Agent,Task",
+        "--strict-mcp-config", "--no-session-persistence",
+    ]
+    if max_turns:
+        command += ["--max-turns", str(max_turns)]
+    model = config.get("writer_model") or config.get("editor_model")
+    if model:
+        command += ["--model", model]
+    return _headless(command, cwd=brief.parent, timeout=timeout, name=f"writer-{brief.parent.name}-{_now()[:19]}", run_dir=run_dir, limit="writer")
+
+
 def invoke_checker(run_dir: Path, timeout: int, config: dict[str, Any] | None = None, max_turns: int | None = None) -> dict[str, Any]:
     config = config or load_desk_config()
     tool = config.get("checker", "claude")
@@ -216,6 +254,7 @@ class Runner:
         ingest: Callable[..., dict[str, Any]] = blocks.ingest,
         publisher: Callable[..., dict[str, Any]] = blocks.publisher,
         editor: Callable[[str, Path, int], dict[str, Any]] = invoke_editor,
+        writer: Callable[[Path, int], dict[str, Any]] = invoke_writer,
         checker: Callable[[Path, int], dict[str, Any]] = invoke_checker,
         git: Callable[..., None] = _git,
         stray_changes: Callable[[], list[str]] = _stray_changes,
@@ -256,6 +295,8 @@ class Runner:
         self.ingest = ingest
         self.publisher = publisher
         self.editor = editor
+        self.writer = writer
+        self._inputs_lock = threading.Lock()
         self.checker = checker
         self.git = git
         self.collect = collect
@@ -348,6 +389,7 @@ class Runner:
                 ("window", self._window),
                 ("memory", self._memory),
                 ("editor", self._editor),
+                ("write", self._write_copy),
                 ("check", self._check),
                 ("preflight", self._preflight),
                 ("publish", self._publish),
@@ -378,7 +420,7 @@ class Runner:
             self._write_status()
         return self.status
 
-    BEFORE_ACTIVATION = ("inputs", "collect", "window", "memory", "editor", "check", "preflight", "publish")
+    BEFORE_ACTIVATION = ("inputs", "collect", "window", "memory", "editor", "write", "check", "preflight", "publish")
 
     def _reconcile(self) -> None:
         """Ask block 3 whether this edition is already activated. If it is, a previous run got as far
@@ -483,9 +525,9 @@ class Runner:
 
     def _edition_on_disk_is_usable(self) -> bool:
         """A resumed run reuses edition.json only when it is a valid contract for this run; anything
-        else is set aside so the editor runs again rather than the same failure repeating forever."""
+        else is set aside so the stories are written again rather than the same failure repeating."""
         path = self.run_dir / "edition.json"
-        if not (path.is_file() and (self.run_dir / "NOTES.md").is_file()):
+        if not path.is_file():
             return False
         try:
             edition = json.loads(path.read_text(encoding="utf8"))
@@ -498,18 +540,332 @@ class Runner:
             (self.run_dir / "edition-checked.json").unlink(missing_ok=True)
         return usable
 
-    def _editor(self) -> None:
-        if self._edition_on_disk_is_usable():
-            self._phase("editor", resumed=True)
-        else:
-            record = self._session(lambda: self.editor("edition", self.run_dir, self._budget(self.policy.limits.editor_minutes)))
-            self._phase("editor", session=record)
-        edition = self._read("edition.json")
-        problems = validate_edition(edition)
+    # -- the desk ----------------------------------------------------------------------------------
+
+    _SLUG = re.compile(r"^[a-z0-9][a-z0-9_-]{0,79}$")
+
+    def _selection_problems(self, selection: Any, window: dict[str, Any]) -> list[str]:
+        """The desk's decision must be complete before a word is written: one lead first, every story
+        with a role, a kicker and sources the window holds, and the edition's presentation and note."""
+        problems: list[str] = []
+        if not isinstance(selection, dict) or not isinstance(selection.get("stories"), list) or not selection["stories"]:
+            return ["stories: a selection names at least one story"]
+        edition = selection.get("edition")
+        if not isinstance(edition, dict) or not isinstance(edition.get("presentation"), dict) or not str(edition.get("note") or "").strip():
+            problems.append("edition: presentation and note are required")
+        numbers = {a["n"] for a in window["articles"]}
+        seen: set[str] = set()
+        for i, row in enumerate(selection["stories"]):
+            where = f"stories[{i}]"
+            if not isinstance(row, dict):
+                problems.append(f"{where}: not an object")
+                continue
+            sid = row.get("id")
+            if not isinstance(sid, str) or not self._SLUG.match(sid):
+                problems.append(f"{where}.id: not a slug")
+            elif sid in seen:
+                problems.append(f"{where}.id: {sid} is listed twice")
+            seen.add(str(sid))
+            if row.get("role") not in ("lead", "secondary", "brief"):
+                problems.append(f"{where}.role: not lead, secondary or brief")
+            if not str(row.get("kicker") or "").strip():
+                problems.append(f"{where}.kicker: missing")
+            sources = row.get("sources")
+            if not isinstance(sources, list) or not sources:
+                problems.append(f"{where}.sources: at least one source")
+            else:
+                for ref in sources:
+                    if isinstance(ref, int) and ref not in numbers:
+                        problems.append(f"{where}.sources: [{ref}] is not in the window")
+                    elif isinstance(ref, str) and ":" not in ref:
+                        problems.append(f"{where}.sources: {ref!r} is not publisher:suffix")
+                    elif not isinstance(ref, (int, str)):
+                        problems.append(f"{where}.sources: {ref!r} is not a window number")
+        roles = [r.get("role") for r in selection["stories"] if isinstance(r, dict)]
+        if roles.count("lead") != 1 or roles[0] != "lead":
+            problems.append("stories: exactly one lead, first")
+        return problems
+
+    def _selection(self) -> dict[str, Any]:
+        selection = self._read("selection.json")
+        problems = self._selection_problems(selection, self._read("window.json"))
         if problems:
-            raise RunFailure("contract_invalid", "the editor's edition fails the contract", {"problems": problems[:10]})
-        if edition["edition"]["id"] != self.edition_id:
-            raise RunFailure("conflict", "the edition id does not match the run", {"edition": edition["edition"]["id"]})
+            raise RunFailure("selection_invalid", "the desk's selection is incomplete", {"problems": problems[:10]})
+        return selection
+
+    def _desk_on_disk_is_usable(self) -> bool:
+        path = self.run_dir / "selection.json"
+        if not (path.is_file() and (self.run_dir / "NOTES.md").is_file()):
+            return False
+        try:
+            return not self._selection_problems(json.loads(path.read_text(encoding="utf8")), self._read("window.json"))
+        except (json.JSONDecodeError, RunFailure):
+            return False
+
+    def _editor(self) -> None:
+        """The desk session: it reads, clusters, selects and keeps the log. It writes no copy."""
+        if self._desk_on_disk_is_usable():
+            self._phase("editor", resumed=True)
+            return
+        record = self._session(lambda: self.editor("desk", self.run_dir, self._budget(self.policy.limits.editor_minutes)))
+        selection = self._selection()
+        self._phase("editor", session=record, stories=len(selection["stories"]))
+
+    # -- the writers ---------------------------------------------------------------------------------
+
+    @staticmethod
+    def _guidelines_text() -> str:
+        """The two writing sections of the architecture document, as text for the brief."""
+        text = (REPO / "docs" / "editorial-architecture.md").read_text(encoding="utf8")
+        start = text.index("## Writing must remain attached to source evidence")
+        end = text.index("## The check", start)
+        return text[start:end].strip()
+
+    @staticmethod
+    def _golden_story(role: str) -> dict[str, Any]:
+        spec = json.loads(GOLDEN_SPEC.read_text(encoding="utf8"))
+        story = next(s for s in spec["stories"] if s["role"] == role)
+        return {k: v for k, v in story.items() if k not in ("id", "sources")}
+
+    def _budget_for(self, role: str) -> dict[str, Any]:
+        budgets = self.policy.budgets
+        if role == "lead":
+            return {"words": budgets.lead_words, "variants": ["extended", "standard", "short"], "callouts_max": 3}
+        if role == "secondary":
+            return {"words": budgets.secondary_words, "variants": ["standard", "short"], "callouts_max": 1}
+        return {"words": [1, budgets.brief_words], "variants": ["lede"], "callouts_max": 0}
+
+    def _brief(self, row: dict[str, Any], window: dict[str, Any], mode: str, extra: dict[str, Any]) -> dict[str, Any]:
+        """Everything a writer gets: this story's evidence, its role and budget, the voice to match,
+        and where the guidelines are. Nothing from any other story."""
+        by_number = {a["n"]: a for a in window["articles"]}
+        articles = []
+        for i, ref in enumerate(row["sources"]):
+            a = by_number.get(ref) if isinstance(ref, int) else next((x for x in window["articles"] if x["source"] == ref.split(":", 1)[0] and x["source_id"].endswith(ref.split(":", 1)[1])), None)
+            if a is None:
+                raise RunFailure("selection_invalid", f"{row['id']}: source {ref!r} is not in the window")
+            articles.append({
+                "ref": ref, "source": a["source"], "status": a["status"], "primary": i == 0, "title": a["title"],
+                "description": a.get("description"), "authors": a.get("authors") or [], "categories": a.get("categories") or [],
+                "language": a.get("language"), "published_at": a["published_at"], "url": a["url"], "wire": a.get("wire"),
+            })
+        date = edition_date_for(self.cutoff, self.policy)
+        return {
+            "schema_version": 1,
+            "mode": mode,
+            "edition": {"id": self.edition_id, "date": date, "cutoff_at": self.cutoff, "timezone": self.policy.timezone},
+            "story": {k: row[k] for k in ("id", "role", "kicker", "kicker_secondary") if k in row},
+            "budget": self._budget_for(row["role"]),
+            "articles": articles,
+            "example": self._golden_story(row["role"]),
+            "skill": WRITER_SKILL.read_text(encoding="utf8"),
+            "style": (EDITORIAL / "STYLE.md").read_text(encoding="utf8"),
+            "guidelines": self._guidelines_text(),
+            **extra,
+        }
+
+    @staticmethod
+    def _write_json_atomic(path: Path, doc: Any) -> None:
+        tmp = path.with_name(path.name + ".tmp")
+        tmp.write_text(json.dumps(doc, ensure_ascii=False, indent=1) + "\n", encoding="utf8")
+        tmp.replace(path)
+
+    @staticmethod
+    def _parse_copy(text: str) -> dict[str, Any]:
+        """The writer's final message, as JSON: bare, or fenced, or with words around it."""
+        candidates = [text.strip()]
+        fenced = re.search(r"```(?:json)?\s*(\{.*\})\s*```", text, re.DOTALL)
+        if fenced:
+            candidates.insert(0, fenced.group(1))
+        start, end = text.find("{"), text.rfind("}")
+        if start >= 0 < end:
+            candidates.append(text[start:end + 1])
+        for candidate in candidates:
+            try:
+                doc = json.loads(candidate)
+            except json.JSONDecodeError:
+                continue
+            if isinstance(doc, dict):
+                return doc
+        raise ValueError("the answer is not a JSON object")
+
+    def _record_one_input(self, path: Path) -> None:
+        """Add one runner-written file to the record without re-reading the rest: the baseline the
+        session guard compares against must not move while sessions are running."""
+        with self._inputs_lock:
+            record_path = self.run_dir / self.INPUTS_RECORD
+            recorded = json.loads(record_path.read_text(encoding="utf8")) if record_path.is_file() else {}
+            recorded[path.relative_to(self.run_dir).as_posix()] = _digest(path)
+            self._write(self.INPUTS_RECORD, recorded)
+
+    def _write_one(self, row: dict[str, Any], brief_path: Path) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+        """Run one story's session, twice at most: a second attempt carries the first one's problem.
+        Each attempt takes its wall clock from what the run has left at that moment."""
+        records: list[dict[str, Any]] = []
+        problems: list[str] = []
+        path = brief_path
+        for attempt in (1, 2):
+            if problems:
+                # The first brief stays as recorded; the second attempt reads a sibling that carries the
+                # problem, recorded as one more input before the session starts.
+                brief = json.loads(brief_path.read_text(encoding="utf8"))
+                brief["previous_answer_problems"] = problems
+                path = brief_path.with_name("brief-retry.json")
+                path.write_text(json.dumps(brief, ensure_ascii=False, indent=1) + "\n", encoding="utf8")
+                self._record_one_input(path)
+            record = self.writer(path, self._budget(self.policy.limits.writer_minutes))
+            records.append(record)
+            try:
+                copy = self._parse_copy(str(record.get("result") or ""))
+            except ValueError as exc:
+                problems = [str(exc)]
+                continue
+            problems = validate_story_copy(copy, row["role"])
+            if not problems:
+                return copy, records
+        raise RunFailure("writer_failed", f"{row['id']}: the writer's answer is not usable copy", {"problems": problems[:10], "attempts": len(records)})
+
+    def _write_stories(self, rows: list[dict[str, Any]], mode: str, extra: dict[str, dict[str, Any]]) -> dict[str, Any]:
+        """Write briefs, then run the sessions a few at a time. The briefs are runner inputs: they are
+        recorded before any session starts and checked after all of them end."""
+        window = self._read("window.json")
+        briefs: dict[str, Path] = {}
+        for row in rows:
+            story_dir = self.run_dir / "stories" / row["id"]
+            story_dir.mkdir(parents=True, exist_ok=True)
+            brief_path = story_dir / "brief.json"
+            brief_path.write_text(json.dumps(self._brief(row, window, mode, extra.get(row["id"], {})), ensure_ascii=False, indent=1) + "\n", encoding="utf8")
+            briefs[row["id"]] = brief_path
+        self._record_inputs()
+        sessions: dict[str, list[dict[str, Any]]] = {}
+
+        def run_all() -> None:
+            with concurrent.futures.ThreadPoolExecutor(max_workers=max(1, self.policy.limits.writer_concurrency)) as pool:
+                futures = {pool.submit(self._write_one, row, briefs[row["id"]]): row for row in rows}
+                failure: BaseException | None = None
+                for future in concurrent.futures.as_completed(futures):
+                    row = futures[future]
+                    try:
+                        copy, records = future.result()
+                    except BaseException as exc:  # noqa: BLE001 -- the first failure stops the phase; the rest finish.
+                        failure = failure or exc
+                        continue
+                    sessions[row["id"]] = records
+                    self._write_json_atomic(self.run_dir / "stories" / row["id"] / "story.json", copy)
+                if failure:
+                    raise failure
+
+        self._session(run_all)
+        return {
+            "stories": len(rows),
+            "sessions": sum(len(v) for v in sessions.values()),
+            "cost_usd": round(sum(r.get("total_cost_usd", 0) or 0 for v in sessions.values() for r in v), 4),
+        }
+
+    def _assemble_and_build(self) -> dict[str, Any]:
+        """spec.json from the selection and the stories on disk, then the contract, in the runner's hands."""
+        selection = self._selection()
+        window = self._read("window.json")
+        memory = self._read("memory.json")
+        feeds = self._read("feeds.json")
+        date = edition_date_for(self.cutoff, self.policy)
+        stories = []
+        for row in selection["stories"]:
+            copy = json.loads((self.run_dir / "stories" / row["id"] / "story.json").read_text(encoding="utf8"))
+            stories.append(spec_story(row, copy))
+        spec = {
+            "edition": {
+                "id": self.edition_id,
+                "number": memory["next_edition_number"],
+                "name": f"{dt.date.fromisoformat(date):%A} edition",
+                "date": date,
+                "cutoff_at": self.cutoff,
+                "checked_from": window["window"]["since"],
+                "input_id": window["bundle"]["input_id"],
+                "presentation": selection["edition"]["presentation"],
+                "note": selection["edition"]["note"],
+            },
+            "stories": stories,
+        }
+        self._write("spec.json", spec)
+        try:
+            bundle = load_bundle(self.run_dir / "bundle")
+        except BundleError as exc:
+            raise RunFailure("bundle_invalid", str(exc)) from exc
+        edition = build_edition(
+            spec, bundle, feeds, window=window, memory=memory,
+            scoring=set(self.policy.scoring_publishers), corroborating=set(self.policy.corroborating_publishers),
+            wire_agencies=self.policy.wire_agencies,
+        )
+        write_edition(edition, self.run_dir / "edition.json")
+        return edition
+
+    def _build_with_repair(self, mode: str, extra: dict[str, dict[str, Any]], rewritten: set[str]) -> dict[str, Any]:
+        """Build; when the build names a story's copy as the problem, that story is written once more
+        with the problem in its brief, then the build runs again. Anything else fails the run."""
+        selection = self._selection()
+        rows = {r["id"]: r for r in selection["stories"]}
+        for _ in range(len(rows) + 1):
+            try:
+                return self._assemble_and_build()
+            except BuildError as exc:
+                message = str(exc)
+                story_id = message.split(":", 1)[0]
+                if story_id in rows and story_id not in rewritten:
+                    rewritten.add(story_id)
+                    self._write_stories([rows[story_id]], mode, {story_id: {**extra.get(story_id, {}), "build_problem": message}})
+                    continue
+                raise RunFailure("contract_invalid", "the stories do not build into a valid edition", {"problem": message}) from exc
+        raise RunFailure("contract_invalid", "the stories do not build into a valid edition", {})
+
+    def _write_copy(self) -> None:
+        """One session per story, each with that story's evidence alone, then the spec and the contract."""
+        if self._edition_on_disk_is_usable():
+            self._phase("write", resumed=True)
+            return
+        selection = self._selection()
+        window = self._read("window.json")
+        todo = [row for row in selection["stories"] if not self._story_on_disk_is_usable(row, window)]
+        summary = self._write_stories(todo, "write", {}) if todo else {"stories": 0, "sessions": 0, "cost_usd": 0}
+        self._build_with_repair("write", {}, set())
+        self._phase("write", **summary, resumed_stories=len(selection["stories"]) - len(todo))
+
+    def _story_on_disk_is_usable(self, row: dict[str, Any], window: dict[str, Any]) -> bool:
+        """A story written by an earlier attempt is reused only when it is valid copy for its role and
+        was written from the brief this run would write now; anything else is set aside and the story
+        is written again."""
+        story_dir = self.run_dir / "stories" / row["id"]
+        story_path, brief_path = story_dir / "story.json", story_dir / "brief.json"
+        if not (story_path.is_file() and brief_path.is_file()):
+            return False
+        usable = False
+        try:
+            same_brief = json.loads(brief_path.read_text(encoding="utf8")) == self._brief(row, window, "write", {})
+            copy = json.loads(story_path.read_text(encoding="utf8"))
+            usable = same_brief and not validate_story_copy(copy, row["role"])
+        except (json.JSONDecodeError, RunFailure, TypeError):
+            usable = False
+        if not usable:
+            story_path.rename(story_dir / f"story.invalid-{_now().replace(':', '').replace('.', '')}.json")
+        return usable
+
+    def _rewrite(self, story_ids: list[str]) -> None:
+        """A send-back: only the named stories are written again, with their strikes in the brief."""
+        selection = self._selection()
+        send_back = self._read("send-back.json")
+        check_input_doc = self._read("check-input.json")
+        text_by = {(s["id"], v["location"], v["sentence"]): v["text"] for s in check_input_doc["stories"] for v in s["sentences"]}
+        extra: dict[str, dict[str, Any]] = {}
+        for sid in story_ids:
+            strikes = [
+                {"location": v["location"], "sentence": v["sentence"], "text": text_by.get((sid, v["location"], v["sentence"])), "reason": v.get("reason")}
+                for v in send_back["strikes"] if v["story"] == sid
+            ]
+            previous = json.loads((self.run_dir / "stories" / sid / "story.json").read_text(encoding="utf8"))
+            extra[sid] = {"strikes": strikes, "previous": previous}
+        rows = [r for r in selection["stories"] if r["id"] in story_ids]
+        self._write_stories(rows, "revise", extra)
+        self._build_with_repair("revise", extra, set())
 
     def _verdicts_on_disk_for(self, check_input_doc: dict[str, Any]) -> bool:
         """True when a previous, interrupted run already had this exact check input checked, and the
@@ -572,7 +928,7 @@ class Runner:
             if not result["send_back"]:
                 break
             before = edition
-            self._session(lambda: self.editor("send-back", self.run_dir, self._budget(self.policy.limits.editor_minutes)))
+            self._rewrite(list(result["send_back"]))
             edition = self._read("edition.json")
             problems = validate_edition(edition)
             if problems:
@@ -621,13 +977,13 @@ class Runner:
         self._phase("publish", status=result.get("status"), device_status=result.get("device_status"))
 
     # Files the runner writes and the sessions only read: the evidence the checker is judged against.
-    INPUT_FILES = ("window.json", "window.md", "memory.json", "feeds.json", "check-input.json")
+    INPUT_FILES = ("window.json", "window.md", "window-linked.md", "memory.json", "feeds.json", "check-input.json")
     INPUTS_RECORD = "inputs.json"
     # What the sessions produce. When the evidence is found changed, these go with it: they were
     # made beside evidence that can no longer be trusted.
     MODEL_OUTPUTS = (
         "clusters.json", "clusters-checked.json", "ranking.json", "selection.json", "spec.json",
-        "edition.json", "edition-checked.json", "NOTES.md", "verdicts.json", "send-back.json",
+        "edition.json", "edition-checked.json", "NOTES.md", "verdicts.json", "send-back.json", "stories",
     )
 
     def _input_digests(self) -> dict[str, str | None]:
@@ -636,6 +992,8 @@ class Runner:
         if bundle.is_dir():
             for path in sorted(p for p in bundle.rglob("*") if p.is_file()):
                 digests[path.relative_to(self.run_dir).as_posix()] = _digest(path)
+        for path in sorted((self.run_dir / "stories").glob("*/brief*.json")):
+            digests[path.relative_to(self.run_dir).as_posix()] = _digest(path)
         return digests
 
     def _record_inputs(self) -> None:
@@ -860,6 +1218,7 @@ def run_edition(args: Any, policy: Policy) -> dict[str, Any]:
         publish_root=publish_root,
         registry=VAR / "threads.json",
         editor=lambda mode, run_dir, timeout: invoke_editor(mode, run_dir, timeout, config, max_turns=policy.limits.editor_turns),
+        writer=lambda brief, timeout: invoke_writer(brief, timeout, config, max_turns=policy.limits.writer_turns),
         checker=lambda run_dir, timeout: invoke_checker(run_dir, timeout, {**config, "checker": args.checker or config.get("checker", "claude")}, max_turns=policy.limits.checker_turns),
         collect=config.get("collect_before_export", True) and not args.no_collect,
         dry_run=args.dry_run,

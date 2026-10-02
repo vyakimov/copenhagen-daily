@@ -17,17 +17,20 @@ because there deliberately is not one.
    first. Note every story id, the articles it carried, its thread, and the day it ran. A candidate that
    overlaps a published story's articles is covered unless it brings a material development: a new
    decision, number, actor, or consequence. "More analysis of the same event" is not a development.
-3. **Read the window.** Danish articles from the last 24 hours in full, with descriptions; the rest of
-   the window and the international titles by headline, to attach and to catch late arrivals.
+3. **Read the window.** The Danish publishers: articles from the last 24 hours with their descriptions,
+   the rest by headline. The international titles are a separate list, read by a subagent only to
+   attach them to the events already found.
 4. **Cluster by event**, conservatively. One event, one story. A thread is looser: several events, one
-   running narrative. When in doubt, split.
+   running narrative. When in doubt, split. Then attach the international titles.
 5. **Select.** Eligibility needs at least one scoring publisher. Rank by breadth among scoring
    publishers, recency measured in editions, the section weight, and thread continuity. Then apply the
    budget below and the diversity rule: no publisher dominates, no section takes more than half the
    page, culture and sport appear only when a Danish outlet made them news.
-6. **Write** to the guidelines in the architecture plan, then check every sentence against its sources.
-7. **Build, validate, publish.** Never change the edition id between attempts before publication.
-8. **Log** what was selected and rejected with a reason, and anything that felt wrong.
+6. **Log** what was selected and rejected with a reason, and anything that felt wrong. The desk's work
+   ends here.
+7. **Write**, one story at a time, each from its own evidence alone, to the guidelines in the
+   architecture plan; then check every sentence against its sources.
+8. **Build, validate, publish.** Never change the edition id between attempts before publication.
 
 ## The budget
 
@@ -92,8 +95,8 @@ can catch a mistake; it is not proof of truth.
 
 The repair is a strike, not a rewrite. Unsupported sentences are struck by the desk tool, and nothing
 new enters. A story still stands if its opening sentence survived and at least two thirds of its words
-remain. A story that stands ships as struck. A story that does not stand goes back to the editor once,
-with the strikes and their reasons attached, and the rewrite is checked once more. A story that fails
+remain. A story that stands ships as struck. A story that does not stand is written once more, in its
+own session, with the strikes and their reasons in the brief, and the rewrite is checked once more. A story that fails
 again falls to its headline and a link to the primary. The failure mode is a shorter story, never an
 invented one, and a missing paragraph is preferable to a confident invention.
 

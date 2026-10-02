@@ -42,6 +42,9 @@ class Limits(BaseModel):
     editor_turns: int
     checker_minutes: int
     checker_turns: int
+    writer_minutes: int = 8
+    writer_turns: int = 20
+    writer_concurrency: int = 4
     run_minutes: int
 
 
@@ -70,6 +73,7 @@ class Policy(BaseModel):
     limits: Limits
     sources: Sources
     feed_sections: dict[str, list[str]]
+    category_sections: dict[str, dict[str, list[str]]] = {}
     ranked_feeds: list[str]
 
     def publisher_status(self, publisher: str) -> Literal["scoring", "corroborating", "linked"]:

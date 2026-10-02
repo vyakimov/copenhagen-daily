@@ -101,6 +101,9 @@ limits:
   editor_turns: 150            # turn bound for the editor session; the rehearsal edition took 70
   checker_minutes: 15          # wall clock for the checker session
   checker_turns: 40            # turn bound for the checker session; the rehearsal check took 7
+  writer_minutes: 8            # wall clock for one story's writing session
+  writer_turns: 20             # turn bound for a writing session: it reads the brief and the style guide, then answers
+  writer_concurrency: 4        # how many stories are written at once
   run_minutes: 75              # wall clock for the whole run from collect to receipt
 
 sources:
@@ -116,6 +119,20 @@ ranked_feeds: [borsen.homepage, jp.topnyheder]
 # an article seen in it belongs to; an article keeps the set of every section it was seen in. Latest
 # and homepage feeds carry no section. Two Børsen feeds map to nothing on purpose: breaking and
 # longread describe urgency and format, not subject.
+# A publisher whose section feed is mixed tags each article with its own categories instead. Those
+# tags are publisher metadata like the feed is, never a model's reading, and map here per publisher.
+category_sections:
+  berlingske:
+    Indland: [denmark]
+    Danmark: [denmark]
+    Metropol: [copenhagen]
+    Politik: [politics]
+    Internationalt: [world]
+    Erhverv: [business]
+    Videnskab: [science]
+    Kultur: [culture]
+    Sport: [sport]
+
 feed_sections:
   # Danish scoring publishers
   dr.indland: [denmark]
@@ -149,7 +166,7 @@ feed_sections:
   politiken.forbrugogliv: [denmark]
   politiken.ibyen: [copenhagen, culture]
   politiken.rejser: [culture]
-  berlingske.samfund: [denmark]
+  berlingske.samfund: []            # mixed: world, politics and domestic news; category_sections below decides
   berlingske.business: [business]
   berlingske.kultur: [culture]
   berlingske.opinion: [opinion]

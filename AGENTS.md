@@ -20,11 +20,14 @@ Cross-block documents live in `docs/` (`editorial-architecture.md`, `ingest-arch
   Its own `AGENTS.md` is authoritative inside that directory and is not relaxed by anything here.
 - `publisher/` may use Node and a pinned headless Chromium, but only to render pages it generated
   itself from local assets. It never visits a publisher URL, loads a remote resource, or calls a model.
-- `editorial/` is the only block that calls a language model, and it does so only inside two bounded
-  sessions. The editor session runs Claude Code with `--permission-mode acceptEdits`, no web tools,
-  no MCP servers, and a Bash allowlist of three wrapper actions (`check-clusters`, `score`, `build`)
-  that write inside the run directory. The checker runs `codex exec -s read-only`, a read-only
-  sandbox that can still run shell commands; when the checker is Claude, Bash is disallowed. Neither
+- `editorial/` is the only block that calls a language model, and it does so only inside bounded
+  sessions of three kinds. The desk session runs Claude Code with `--permission-mode acceptEdits`, no
+  web tools, no MCP servers, and a Bash allowlist of two wrapper actions (`check-clusters`, `score`)
+  that write inside the run directory; it clusters and selects and writes no copy. One writer session
+  per story runs Claude Code with the Read tool only, in a working directory that holds that story's
+  brief and nothing else, with no other directory added, so a read anywhere else is refused; it
+  answers with that story's copy. The checker runs `codex exec -s read-only`, a read-only
+  sandbox that can still run shell commands; when the checker is Claude, Bash is disallowed. No
   session has a browser, network tools, or credentials, and after every session the runner refuses to
   go on if the session wrote outside the run directory (`stray_edits`) or changed the runner's own
   inputs (`input_modified`, with the run's files quarantined). The deterministic runner around them

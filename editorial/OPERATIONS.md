@@ -127,22 +127,27 @@ With neither, a macOS notification appears and the message goes to the job's std
 ## What a run does
 
 The phases, in order: `reconcile` (ask block 3 whether the edition is already activated), `inputs`
-(verify the run's recorded inputs, see below), `collect`, `window`, `memory`, `editor`, `check`
-(the checker session and the strikes, with at most one send-back), `preflight`, `publish`, `receipt`,
+(verify the run's recorded inputs, see below), `collect`, `window`, `memory`, `editor` (the desk
+session: clusters, ranking, selection, the log), `write` (one read-only session per story, a few at a
+time, then the spec and the contract assembled by the runner), `check`
+(the checker session and the strikes, with at most one send-back, which rewrites only the stories sent
+back, each in its own session again), `preflight`, `publish`, `receipt`,
 `threads`, `deliver`, `device_push`, `archive` (the commit). With `device: true` in `config/desk.yaml`,
 as it is, the publish also renders the device page from the same contract; the desk makes no device
 decisions. On the final check a story that no longer stands falls to a headline, and a struck
 headline is replaced by the primary source's own title. Each phase appends to `runs/<id>/status.json`,
 so `status` says where a run is or where it stopped. The sessions are bounded by `limits` in
-`policy.yaml`: both by wall clock in minutes; `editor_turns` bounds the editor session and
-`checker_turns` bounds the checker only when it is Claude, since the Codex checker takes no turn
-bound. A limit hit stops the run and leaves the last activated edition in place. The editor session
-may run only `check-clusters`, `score`, and `build` through the wrapper, has no web tools and no MCP
-servers, and a change it makes anywhere in the repository outside its run directory stops the run
-before `publish`.
+`policy.yaml`: each by wall clock in minutes; `editor_turns` bounds the desk session, `writer_turns`
+each writing session, and `checker_turns` the checker only when it is Claude, since the Codex checker
+takes no turn bound; `writer_concurrency` says how many stories are written at once. A limit hit
+stops the run and leaves the last activated edition in place. The desk session may run only
+`check-clusters` and `score` through the wrapper, has no web tools and no MCP servers; a writing
+session has the Read tool and nothing else; and a change any session makes anywhere in the repository
+outside its run directory stops the run before `publish`.
 
-The runner records what it writes for the sessions (`window.json`, `window.md`, `memory.json`,
-`feeds.json`, `check-input.json`, and the bundle) as digests in `runs/<id>/inputs.json`. After every
+The runner records what it writes for the sessions (`window.json`, `window.md`, `window-linked.md`,
+`memory.json`, `feeds.json`, `check-input.json`, the writers' briefs under `stories/`, and the bundle)
+as digests in `runs/<id>/inputs.json`. After every
 session, and at the start of every run in the `inputs` phase, the files on disk must match that
 record.
 
@@ -151,20 +156,26 @@ record.
 Read `runs/<id>/status.json`: `failure.phase` and `failure.type` say which step and why, and
 `sessions/` holds each session's summary. Then:
 
-- `editor_timeout`, `checker_timeout`, `run_timeout`: the session ran past its wall clock. Read the
+- `editor_timeout`, `writer_timeout`, `checker_timeout`, `run_timeout`: the session ran past its wall clock. Read the
   run directory for what it managed; the phase files are resumable. Run again with the same edition
   id and the runner continues from the first missing file.
-- `contract_invalid`: the editor's edition, or the struck edition, fails block 3's contract. The
-  details name the pointer. Fix the spec by hand and run `build`, or run again.
-- `editor_failed`, `checker_failed`: the session exited non-zero or reported an error; `sessions/`
-  holds its record. Run again.
+- `selection_invalid`: the desk's `selection.json` is incomplete: no lead first, a story without a
+  kicker or sources, a source not in the window, or no edition presentation and note. Nothing was
+  written. Fix the selection by hand or run again.
+- `contract_invalid`: the stories do not build into a valid edition, or the struck edition fails
+  block 3's contract. A story whose copy was the problem has already been written once more with the
+  problem in its brief. The details name the pointer. Run again.
+- `editor_failed`, `writer_failed`, `checker_failed`: the session exited non-zero or reported an
+  error, or a writer's answer was not usable copy twice; `sessions/` holds each record. Run again;
+  stories already written are kept under `stories/` and only the missing ones are written.
 - `phase_output_missing`: a phase ended without writing its file (for example the editor session
   wrote no `edition.json`). Run again.
 - `verdicts_invalid`: the checker's verdicts do not cover the check input sentence for sentence, or
   name a different edition. The details list the missing and unknown addresses. Run again; the check
   phase reruns the checker.
-- `send_back_overreach`: the send-back session changed or dropped a story that was not sent back.
-  The details name the stories. Nothing was published; run again.
+- `send_back_overreach`: a story that was not sent back changed between the check rounds. The runner
+  rewrites only the stories sent back, so this should not occur; the details name the stories.
+  Nothing was published; run again.
 - `stray_edits`: a session wrote outside the run directory. The working tree is compared before and
   after each session, so only what the session changed counts; your own uncommitted work elsewhere in
   the repository does not block the paper. The details name the paths. Read the diff, revert what

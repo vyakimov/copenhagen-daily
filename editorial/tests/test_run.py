@@ -24,6 +24,8 @@ class Fakes:
 
     def __init__(self, tmp_path, strikes_first=False, editor_hangs=False, send_back_fails=False):
         self.calls = []
+        self.writer_modes = []
+        self.revised_headline = None
         self.publish_args = None
         self.device_status = "published"
         self.send_back_fails = send_back_fails
@@ -72,28 +74,36 @@ class Fakes:
         raise AssertionError(action)
 
     def editor(self, mode, run_dir, timeout):
+        """The desk session: clusters, ranking, the selection and the log. No copy."""
         self.calls.append(("editor", mode))
         if self.editor_hangs:
             raise RunFailure("editor_timeout", "the editor ran past its wall clock", {"limit": "editor_minutes"})
-        if self.send_back_fails and mode == "send-back":
-            raise RunFailure("editor_failed", "the send-back session exited 1", {})
-        if mode == "edition":
-            (run_dir / "clusters.json").write_text(json.dumps({"schema_version": 1, "clusters": [
-                {"id": "gedser", "event": "frigate", "members": [79, 3, 30], "confidence": 0.9, "thread": {"new": {"id": "russia-baltic", "description": "Russian pressure in the Baltic"}}}]}))
-            (run_dir / "clusters-checked.json").write_text(json.dumps({"schema_version": 1, "clusters": [
-                {"id": "gedser", "event": "frigate", "members": [79, 3, 30], "removed": [], "flags": [], "confidence": 0.9, "thread": {"new": {"id": "russia-baltic", "description": "Russian pressure in the Baltic"}}}], "singletons": []}))
-            (run_dir / "ranking.json").write_text(json.dumps({"schema_version": 1, "candidates": [{"id": "gedser", "breadth": 7, "rank": 1}]}))
-            (run_dir / "selection.json").write_text(json.dumps({"schema_version": 1, "stories": [
-                {"id": "russian-frigate-flares-gedser", "cluster": "gedser", "role": "lead", "device": "required", "kicker": "Defence", "sources": [79]}], "rejected": []}))
-            spec = read_json(GOLDEN / "spec.json")
-            (run_dir / "spec.json").write_text(json.dumps(spec))
-            (run_dir / "NOTES.md").write_text("# Editorial log\n")
-        edition = read_json(GOLDEN / "edition.json")
-        (run_dir / "edition.json").write_text(json.dumps(edition))
-        if mode != "edition":
-            with (run_dir / "NOTES.md").open("a") as handle:
-                handle.write(f"\n{mode} revision.\n")
+        assert mode == "desk", mode
+        (run_dir / "clusters.json").write_text(json.dumps({"schema_version": 1, "clusters": [
+            {"id": "gedser", "event": "frigate", "members": [79, 3, 30], "confidence": 0.9, "thread": {"new": {"id": "russia-baltic", "description": "Russian pressure in the Baltic"}}}]}))
+        (run_dir / "clusters-checked.json").write_text(json.dumps({"schema_version": 1, "clusters": [
+            {"id": "gedser", "event": "frigate", "members": [79, 3, 30], "removed": [], "flags": [], "confidence": 0.9, "thread": {"new": {"id": "russia-baltic", "description": "Russian pressure in the Baltic"}}}], "singletons": []}))
+        (run_dir / "ranking.json").write_text(json.dumps({"schema_version": 1, "candidates": [{"id": "gedser", "breadth": 7, "rank": 1}]}))
+        spec = read_json(GOLDEN / "spec.json")
+        stories = [{"id": s["id"], "cluster": "gedser" if s["role"] == "lead" else None, "role": s["role"], "kicker": s["kicker"], "sources": s["sources"]} for s in spec["stories"]]
+        (run_dir / "selection.json").write_text(json.dumps({
+            "schema_version": 1, "edition": {"presentation": spec["edition"]["presentation"], "note": spec["edition"]["note"]},
+            "stories": stories, "rejected": []}))
+        (run_dir / "NOTES.md").write_text("# Editorial log\n")
         return {"tool": "fake", "turns": 1}
+
+    def writer(self, brief_path, timeout):
+        """One story's session: answers with the golden copy for that story."""
+        brief = read_json(brief_path)
+        self.writer_modes.append((brief["story"]["id"], brief["mode"]))
+        if self.send_back_fails and brief["mode"] == "revise":
+            raise RunFailure("writer_failed", "the revising session exited 1", {})
+        spec = read_json(GOLDEN / "spec.json")
+        story = next(s for s in spec["stories"] if s["id"] == brief["story"]["id"])
+        copy = {k: v for k, v in story.items() if k in ("headline", "headline_short", "deck", "lede", "extended", "standard", "short", "callouts")}
+        if brief["mode"] == "revise" and self.revised_headline:
+            copy["headline"] = self.revised_headline
+        return {"tool": "fake", "result": json.dumps(copy), "total_cost_usd": 0.1}
 
     def checker(self, run_dir, timeout):
         self.checker_calls += 1
@@ -127,7 +137,7 @@ def make_runner(policy, tmp_path, fakes, **kwargs):
     return Runner(
         policy=policy, run_dir=run_dir, edition_id=EDITION_ID, cutoff=CUTOFF, publish_root=fakes.publish_root,
         registry=fakes.registry, ingest=fakes.ingest, publisher=fakes.publisher, collect=True, repo=tmp_path,
-        **{"editor": fakes.editor, "checker": fakes.checker, "git": lambda *a: fakes.calls.append(("git", a[0])),
+        **{"editor": fakes.editor, "writer": fakes.writer, "checker": fakes.checker, "git": lambda *a: fakes.calls.append(("git", a[0])),
            "stray_changes": lambda: [], "lock_path": tmp_path / "run.lock", **kwargs},
     )
 
@@ -138,7 +148,15 @@ def test_happy_path_publishes_and_records(policy, tmp_path):
     status = runner.run()
     assert status["outcome"] == "published", status
     assert [p["name"] for p in status["phases"]] == [
-        "reconcile", "inputs", "collect", "window", "memory", "editor", "check", "preflight", "publish", "receipt", "threads", "deliver", "device_push", "archive"]
+        "reconcile", "inputs", "collect", "window", "memory", "editor", "write", "check", "preflight", "publish", "receipt", "threads", "deliver", "device_push", "archive"]
+    write = next(p for p in status["phases"] if p["name"] == "write")
+    assert write["stories"] == len(read_json(GOLDEN / "spec.json")["stories"]) and write["sessions"] == write["stories"]
+    assert (runner.run_dir / "stories" / "russian-frigate-flares-gedser" / "brief.json").exists()
+    brief = read_json(runner.run_dir / "stories" / "russian-frigate-flares-gedser" / "brief.json")
+    assert brief["story"]["role"] == "lead" and brief["example"]["role"] == "lead" and "id" not in brief["example"]
+    assert "Every sentence should carry a new fact" in brief["guidelines"] and brief["style"].startswith("#") and "story writer" in brief["skill"]
+    assert all(a["source"] in {"dr", "kristeligt_dagblad", "politiken", "berlingske", "jp", "bbc", "guardian", "nytimes", "ft", "wsj", "wapo", "tv2", "borsen", "altinget", "information", "via_ritzau", "economist"} for a in brief["articles"])
+    assert read_json(runner.run_dir / "spec.json")["edition"]["id"] == EDITION_ID
     assert ("publisher", "publish") in fakes.calls and ("git", "commit") in fakes.calls
     assert read_json(runner.run_dir / "status.json")["outcome"] == "published"
     assert (runner.run_dir / "check-input.json").exists()
@@ -154,8 +172,8 @@ def test_send_back_revises_once_then_finalises(policy, tmp_path):
     fakes = Fakes(tmp_path, strikes_first=True)
     status = make_runner(policy, tmp_path, fakes).run()
     assert status["outcome"] == "published"
-    editor_modes = [c[1] for c in fakes.calls if c[0] == "editor"]
-    assert editor_modes == ["edition", "send-back"]
+    assert [c[1] for c in fakes.calls if c[0] == "editor"] == ["desk"]
+    assert [m for m in fakes.writer_modes if m[1] == "revise"] == [("russian-frigate-flares-gedser", "revise")]
     assert fakes.checker_calls == 2
     check = next(p for p in status["phases"] if p["name"] == "check")
     assert check["send_back"] == ["russian-frigate-flares-gedser"] and check["rounds"] == 2
@@ -164,18 +182,21 @@ def test_send_back_revises_once_then_finalises(policy, tmp_path):
 def test_rerun_reuses_verdicts_when_the_check_input_is_unchanged(policy, tmp_path):
     fakes = Fakes(tmp_path, strikes_first=True, send_back_fails=True)
     status = make_runner(policy, tmp_path, fakes).run()
-    assert status["outcome"] == "failed" and status["failure"]["type"] == "editor_failed"
+    assert status["outcome"] == "failed" and status["failure"]["type"] == "writer_failed"
     assert fakes.checker_calls == 1
     # The rerun continues from the verdicts on disk: no second checker session for the same edition.
     fakes.send_back_fails = False
     fakes.calls.clear()
+    fakes.writer_modes.clear()
     status = make_runner(policy, tmp_path, fakes).run()
     assert status["outcome"] == "published", status["failure"]
-    assert [c[1] for c in fakes.calls if c[0] == "editor"] == ["send-back"]
+    assert [c[1] for c in fakes.calls if c[0] == "editor"] == []
+    assert fakes.writer_modes == [("russian-frigate-flares-gedser", "revise")]
     assert fakes.checker_calls == 2
     check = next(p for p in status["phases"] if p["name"] == "check")
     assert check["rounds"] == 2 and check["resumed"] is True
     assert next(p for p in status["phases"] if p["name"] == "editor")["resumed"] is True
+    assert next(p for p in status["phases"] if p["name"] == "write")["resumed"] is True
 
 
 def test_the_run_publishes_web_only_without_a_fit_phase(policy, tmp_path):
@@ -183,7 +204,7 @@ def test_the_run_publishes_web_only_without_a_fit_phase(policy, tmp_path):
     status = make_runner(policy, tmp_path, fakes).run()
     assert status["outcome"] == "published"
     assert "fit" not in [p["name"] for p in status["phases"]]
-    assert [c[1] for c in fakes.calls if c[0] == "editor"] == ["edition"]
+    assert [c[1] for c in fakes.calls if c[0] == "editor"] == ["desk"]
     assert fakes.publish_args is not None and "--skip-device" in fakes.publish_args
     assert not any(c == ("publisher", "fit") for c in fakes.calls)
 
@@ -566,7 +587,7 @@ def test_an_invalid_edition_on_disk_is_set_aside_and_the_editor_runs_again(polic
     (run_dir / "NOTES.md").write_text("# half\n")
     status = make_runner(policy, tmp_path, fakes).run()
     assert status["outcome"] == "published", status["failure"]
-    assert [c[1] for c in fakes.calls if c[0] == "editor"] == ["edition"]
+    assert [c[1] for c in fakes.calls if c[0] == "editor"] == ["desk"]
     assert list(run_dir.glob("edition.invalid-*.json"))
 
 
@@ -584,36 +605,153 @@ def test_a_timed_out_session_takes_its_children_with_it(tmp_path):
     assert not marker.exists(), "the session's child kept running after the timeout"
 
 
-def test_a_send_back_may_not_change_the_edition_id_or_unnamed_stories(policy, tmp_path):
+def test_a_send_back_rewrites_only_the_stories_sent_back(policy, tmp_path):
     fakes = Fakes(tmp_path, strikes_first=True)
-    original_editor = fakes.editor
+    fakes.revised_headline = "Frigate fires flares; a shorter account"
+    runner = make_runner(policy, tmp_path, fakes)
+    status = runner.run()
+    assert status["outcome"] == "published", status["failure"]
+    assert fakes.writer_modes.count(("russian-frigate-flares-gedser", "revise")) == 1
+    assert len([m for m in fakes.writer_modes if m[1] == "revise"]) == 1
+    brief = read_json(runner.run_dir / "stories" / "russian-frigate-flares-gedser" / "brief.json")
+    assert brief["mode"] == "revise" and brief["strikes"][0]["location"] == "standard[0]" and brief["strikes"][0]["reason"] == "invented"
+    assert brief["previous"]["headline"] != fakes.revised_headline
+    checked = read_json(runner.run_dir / "edition-checked.json")
+    lead = next(s for s in checked["stories"] if s["id"] == "russian-frigate-flares-gedser")
+    assert lead["copy"]["headline"] == fakes.revised_headline
+    golden = {s["id"]: s for s in read_json(GOLDEN / "spec.json")["stories"]}
+    for story in checked["stories"]:
+        if story["id"] != lead["id"]:
+            assert story["copy"]["headline"] == golden[story["id"]]["headline"]
 
-    def renaming_editor(mode, run_dir, timeout):
-        record = original_editor(mode, run_dir, timeout)
-        if mode == "send-back":
-            edition = json.loads((run_dir / "edition.json").read_text())
-            edition["edition"]["id"] = "2026-09-15-evening"
-            (run_dir / "edition.json").write_text(json.dumps(edition))
+
+def test_an_incomplete_selection_stops_the_run_before_any_writing(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    original = fakes.editor
+
+    def no_lead(mode, run_dir, timeout):
+        record = original(mode, run_dir, timeout)
+        selection = read_json(run_dir / "selection.json")
+        selection["stories"] = [s for s in selection["stories"] if s["role"] != "lead"]
+        (run_dir / "selection.json").write_text(json.dumps(selection))
         return record
 
-    status = make_runner(policy, tmp_path, fakes, editor=renaming_editor).run()
-    assert status["failure"]["type"] == "conflict" and ("publisher", "publish") not in fakes.calls
+    status = make_runner(policy, tmp_path, fakes, editor=no_lead).run()
+    assert status["outcome"] == "failed" and status["failure"]["type"] == "selection_invalid"
+    assert status["failure"]["phase"] == "editor" and fakes.writer_modes == []
 
-    fakes = Fakes(tmp_path / "b", strikes_first=True)
-    original_editor = fakes.editor
 
-    def overreaching_editor(mode, run_dir, timeout):
-        record = original_editor(mode, run_dir, timeout)
-        if mode == "send-back":
-            edition = json.loads((run_dir / "edition.json").read_text())
-            other = next(s for s in edition["stories"] if s["id"] != "russian-frigate-flares-gedser")
-            other["copy"]["headline"] = "A headline nobody sent back"
-            (run_dir / "edition.json").write_text(json.dumps(edition))
+def test_a_writer_that_answers_badly_is_asked_once_more_then_fails_the_run(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    answers = []
+
+    def babbling_writer(brief_path, timeout):
+        brief = read_json(brief_path)
+        answers.append(brief.get("previous_answer_problems"))
+        if brief["story"]["role"] == "lead":
+            return {"result": "I could not write this.", "total_cost_usd": 0}
+        return fakes.writer(brief_path, timeout)
+
+    status = make_runner(policy, tmp_path, fakes, writer=babbling_writer).run()
+    assert status["outcome"] == "failed" and status["failure"]["type"] == "writer_failed"
+    assert status["failure"]["phase"] == "write" and "russian-frigate-flares-gedser" in status["failure"]["message"]
+    assert any(a for a in answers if a), "the second attempt carries the first answer's problem"
+
+
+def test_a_writer_retry_does_not_move_the_evidence_baseline(policy, tmp_path):
+    """Review finding: a retry re-recorded every input, so evidence changed during the write phase
+    became the new baseline. Only the retry brief itself may join the record."""
+    fakes = Fakes(tmp_path)
+    attempts = []
+
+    def poisoning_writer(brief_path, timeout):
+        brief = read_json(brief_path)
+        if brief["story"]["role"] == "lead":
+            attempts.append(brief_path.name)
+            if len(attempts) == 1:
+                run_dir = brief_path.parents[2]
+                (run_dir / "window.md").write_text("POISONED\n")
+                return {"result": "not json", "total_cost_usd": 0}
+        return fakes.writer(brief_path, timeout)
+
+    status = make_runner(policy, tmp_path, fakes, writer=poisoning_writer).run()
+    assert attempts == ["brief.json", "brief-retry.json"]
+    assert status["outcome"] == "failed" and status["failure"]["type"] == "input_modified", status["failure"]
+    assert "window.md" in status["failure"]["details"]["paths"]
+
+
+def test_writers_stop_when_the_run_has_no_wall_clock_left(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    holder = {}
+
+    def exhausting_editor(mode, run_dir, timeout):
+        record = fakes.editor(mode, run_dir, timeout)
+        holder["runner"].started -= policy.limits.run_minutes * 60 + 1
         return record
 
-    status = make_runner(policy, tmp_path / "b", fakes, editor=overreaching_editor).run()
-    assert status["failure"]["type"] == "send_back_overreach"
-    assert other_id_in(status["failure"]["details"])
+    runner = make_runner(policy, tmp_path, fakes, editor=exhausting_editor)
+    holder["runner"] = runner
+    status = runner.run()
+    assert status["outcome"] == "failed" and status["failure"]["type"] == "run_timeout"
+    assert status["failure"]["phase"] == "write" and fakes.writer_modes == []
+
+
+def test_a_broken_cached_story_is_set_aside_and_written_again(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    run_dir = tmp_path / "runs" / EDITION_ID
+    story_dir = run_dir / "stories" / "russian-frigate-flares-gedser"
+    story_dir.mkdir(parents=True)
+    (story_dir / "story.json").write_text("{")
+    (story_dir / "brief.json").write_text("{}")
+    status = make_runner(policy, tmp_path, fakes).run()
+    assert status["outcome"] == "published", status["failure"]
+    assert ("russian-frigate-flares-gedser", "write") in fakes.writer_modes
+    assert list(story_dir.glob("story.invalid-*.json"))
+
+
+def test_a_cached_story_is_reused_only_with_the_brief_that_produced_it(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    status = make_runner(policy, tmp_path, fakes, dry_run=True).run()
+    assert status["outcome"] == "dry_run", status["failure"]
+    run_dir = tmp_path / "runs" / EDITION_ID
+    # A second run of the same id with the edition set aside: every story's brief still matches, so
+    # nothing is written again.
+    (run_dir / "edition.json").unlink()
+    (run_dir / "edition-checked.json").unlink()
+    fakes.writer_modes.clear()
+    status = make_runner(policy, tmp_path, fakes, dry_run=True).run()
+    assert status["outcome"] == "dry_run", status["failure"]
+    assert fakes.writer_modes == []
+    # The desk changes one story's sources: its brief differs, so that story alone is written again.
+    (run_dir / "edition.json").unlink()
+    (run_dir / "edition-checked.json").unlink()
+    selection = read_json(run_dir / "selection.json")
+    lead = next(s for s in selection["stories"] if s["role"] == "lead")
+    lead["sources"] = lead["sources"][:-1]
+    (run_dir / "selection.json").write_text(json.dumps(selection))
+    status = make_runner(policy, tmp_path, fakes, dry_run=True).run()
+    assert status["outcome"] == "dry_run", status["failure"]
+    assert fakes.writer_modes == [("russian-frigate-flares-gedser", "write")]
+
+
+def test_a_writer_whose_copy_cites_a_publisher_outside_its_sources_is_asked_again(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    seen = []
+
+    def overciting_writer(brief_path, timeout):
+        brief = read_json(brief_path)
+        record = fakes.writer(brief_path, timeout)
+        if brief["story"]["role"] == "lead":
+            seen.append(brief.get("build_problem"))
+            if not brief.get("build_problem"):
+                copy = json.loads(record["result"])
+                copy["standard"][0][1] = ["economist"]
+                record["result"] = json.dumps(copy)
+        return record
+
+    status = make_runner(policy, tmp_path, fakes, writer=overciting_writer).run()
+    assert status["outcome"] == "published", status["failure"]
+    assert seen[0] is None and "economist" in seen[1]
 
 
 def other_id_in(details):
@@ -711,7 +849,7 @@ def test_rejected_evidence_is_quarantined_so_a_retry_rebuilds_it(policy, tmp_pat
     status = make_runner(policy, tmp_path, fakes, checker=checker, retry=True).run()
     assert status["outcome"] == "published", status["failure"]
     assert "POISONED" not in seen["input"]
-    assert [c[1] for c in fakes.calls if c[0] == "editor"].count("edition") == 2
+    assert [c[1] for c in fakes.calls if c[0] == "editor"].count("desk") == 2
 
 
 def test_inputs_changed_between_runs_are_caught_at_the_start_of_the_next(policy, tmp_path):

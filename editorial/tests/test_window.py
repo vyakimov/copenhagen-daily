@@ -78,3 +78,87 @@ def test_the_reading_view_flags_wire_copy(policy, run_dir):
     assert next(line for line in lines if line.startswith(f"- [{wire['n']}] ")).split(": ")[0].endswith(" wire:ritzau")
     own = _find(window, "dr", GEDSER_PM)
     assert "wire:" not in next(line for line in lines if line.startswith(f"- [{own['n']}] ")).split(": ")[0]
+
+
+TRUMP_TRUCE = "urn:bm:article:0941a2fc-37ca-5ab5-ae24-e8b807224a03"
+
+
+def _line_for(path, n):
+    return next(line for line in path.read_text().splitlines() if line.startswith(f"- [{n}] "))
+
+
+def test_sections_also_come_from_publisher_categories(policy):
+    """Berlingske's samfund feed carries world, politics and domestic news side by side; the feed maps to
+    nothing and the article's own category tags supply the section."""
+    article = _find(_window(policy), "berlingske", TRUMP_TRUCE)
+    assert article["categories"] == ["Internationalt", "Samfund"]
+    assert article["sections"] == ["world"]
+
+
+def test_long_descriptions_are_cut_in_the_reading_view(policy, run_dir):
+    window = _window(policy)
+    article = _find(window, "dr", GEDSER_PM)
+    article["description"] = "Første sætning om fregatten. " + "Mere tekst her. " * 60 + "Sidste sætning."
+    write_window(window, run_dir)
+    lines = (run_dir / "window.md").read_text().splitlines()
+    head = _line_for(run_dir / "window.md", article["n"])
+    body = lines[lines.index(head) + 1]
+    assert body.startswith("  Første sætning om fregatten.")
+    assert body.endswith(". …") and len(body) < 560
+    assert read_json(run_dir / "window.json")["articles"][article["n"] - 1]["description"] == article["description"]
+
+
+def test_short_descriptions_are_not_cut(policy, run_dir):
+    window = _window(policy)
+    article = _find(window, "dr", GEDSER_PM)
+    write_window(window, run_dir)
+    lines = (run_dir / "window.md").read_text().splitlines()
+    head = _line_for(run_dir / "window.md", article["n"])
+    assert lines[lines.index(head) + 1] == "  " + article["description"]
+
+
+def test_identical_text_is_listed_once_and_pointed_to(policy, run_dir):
+    window = _window(policy)
+    first = _find(window, "dr", GEDSER_PM)
+    twin = next(a for a in window["articles"] if a["source"] == "tv2" and a["published_at"] >= first["published_at"][:4])
+    twin["title"] = first["title"].upper() + " "
+    twin["description"] = first["description"].upper()
+    write_window(window, run_dir)
+    assert _line_for(run_dir / "window.md", twin["n"]).endswith(f"same text as [{first['n']}] dr")
+    assert first["title"] in _line_for(run_dir / "window.md", first["n"])
+
+
+def test_the_same_headline_over_a_different_description_keeps_its_description(policy, run_dir):
+    """A rolling page files the same headline over new text; that is evidence, not a duplicate."""
+    window = _window(policy)
+    first = _find(window, "dr", GEDSER_PM)
+    twin = next(a for a in window["articles"] if a["source"] == "tv2" and a["description"] and a["published_at"] > "2026-09-14T08:00")
+    twin["title"] = first["title"]
+    twin["description"] = "En helt anden beskrivelse af en anden udvikling i sagen, som ikke ligner den første."
+    write_window(window, run_dir)
+    lines = (run_dir / "window.md").read_text().splitlines()
+    head = _line_for(run_dir / "window.md", twin["n"])
+    assert first["title"] in head and head.endswith(f"(same headline as [{first['n']}] dr)")
+    assert lines[lines.index(head) + 1] == "  " + twin["description"]
+
+
+def test_a_headline_only_repeat_points_to_the_first(policy, run_dir):
+    window = _window(policy)
+    first = _find(window, "dr", GEDSER_PM)
+    twin = next(a for a in window["articles"] if a["source"] == "tv2" and a is not first)
+    twin["title"] = first["title"]
+    twin["description"] = None
+    write_window(window, run_dir)
+    assert _line_for(run_dir / "window.md", twin["n"]).endswith(f"same text as [{first['n']}] dr")
+
+
+def test_linked_publishers_are_listed_in_their_own_file(policy, run_dir):
+    window = _window(policy)
+    write_window(window, run_dir)
+    main = (run_dir / "window.md").read_text()
+    linked = (run_dir / "window-linked.md").read_text()
+    assert "## guardian (linked" in linked and "## guardian" not in main
+    assert "## dr (scoring" in main and "## dr" not in linked
+    assert "window-linked.md" in main
+    guardian = next(a for a in window["articles"] if a["source"] == "guardian")
+    assert _line_for(run_dir / "window-linked.md", guardian["n"]).endswith(guardian["title"])

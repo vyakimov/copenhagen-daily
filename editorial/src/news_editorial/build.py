@@ -33,6 +33,47 @@ def validate_spec(spec: Any) -> list[str]:
     return sorted(f"{schema_pointer(e)}: {e.message}" for e in _spec_validator().iter_errors(spec))
 
 
+# What a writing session hands back: the copy of one story and nothing the desk decides. The shape is
+# the spec's story with the desk's fields removed, so a story.json plus the selection row is a spec entry.
+COPY_FIELDS = ("headline", "headline_short", "deck", "lede", "extended", "standard", "short", "callouts")
+DESK_FIELDS = ("id", "role", "kicker", "kicker_secondary", "sources", "device", "fallback", "partial")
+
+
+@lru_cache(maxsize=1)
+def _copy_validator() -> Draft202012Validator:
+    spec_schema = json.loads(SPEC_SCHEMA_PATH.read_text(encoding="utf8"))
+    story = spec_schema["$defs"]["story"]
+    schema = {
+        "$schema": spec_schema["$schema"],
+        "type": "object",
+        "additionalProperties": False,
+        "required": ["headline"],
+        "properties": {k: v for k, v in story["properties"].items() if k in COPY_FIELDS},
+        "$defs": spec_schema["$defs"],
+    }
+    return Draft202012Validator(schema, format_checker=FormatChecker())
+
+
+def validate_story_copy(copy: Any, role: str) -> list[str]:
+    """Schema problems with a writer's answer, plus the one rule per role the schema cannot say: a
+    brief is a lede, a lead or secondary has a standard body."""
+    problems = sorted(f"{schema_pointer(e)}: {e.message}" for e in _copy_validator().iter_errors(copy))
+    if problems:
+        return problems
+    if role == "brief" and "lede" not in copy:
+        problems.append("lede: a brief is its lede")
+    if role in ("lead", "secondary") and "standard" not in copy:
+        problems.append(f"standard: a {role} needs a standard body")
+    return problems
+
+
+def spec_story(selection_row: dict[str, Any], copy: dict[str, Any]) -> dict[str, Any]:
+    """One spec entry: the desk's decision from selection.json and the writer's copy."""
+    entry: dict[str, Any] = {k: selection_row[k] for k in DESK_FIELDS if k in selection_row}
+    entry.update({k: copy[k] for k in COPY_FIELDS if k in copy})
+    return entry
+
+
 def _ts(value: str) -> str:
     return value if "." in value else value.replace("Z", ".000000Z")
 

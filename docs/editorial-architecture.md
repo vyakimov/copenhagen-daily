@@ -59,10 +59,11 @@ One run owns `editorial/runs/<edition-id>/`. The runner holds `editorial/var/run
 | reconcile | Ask block 3 for the edition's receipt. If the edition is already activated, a previous run failed after publishing; every phase up to and including `publish` is skipped and the phases after it run again, each safe to repeat. A pending publication in block 3 stops the run with `recovery_required`. |
 | inputs | The runner's own inputs on disk (`window.json`, `window.md`, `memory.json`, `feeds.json`, `check-input.json`, the bundle) are compared with the digests it recorded in `inputs.json`. Any change quarantines the inputs and every model output made beside them, and the run rebuilds from the verified source. |
 | collect | Poll block 1 once, unless every healthy feed polled within the last 20 minutes. If the scheduled collector holds block 1's lock, wait, and after twenty attempts go on with its poll. |
-| window | Export the 72-hour publication window ending at the cutoff, verify the bundle, read feed health, and write `feeds.json`, `window.json`, and `window.md`. |
-| memory | Read the last 14 activated editions from block 3's store and the thread registry, and write `memory.json`. |
-| editor | The editor session, in edition mode. Its output is `clusters.json`, `selection.json`, `spec.json`, `edition.json`, and `NOTES.md`. The runner then validates `edition.json` against the contract itself. |
-| check | Build `check-input.json`, run the checker, verify the verdicts cover every sentence exactly once, strike, send back at most once, and write `edition-checked.json`. |
+| window | Export the 72-hour publication window ending at the cutoff, verify the bundle, read feed health, and write `feeds.json`, `window.json`, `window.md` (the Danish publishers) and `window-linked.md` (the foreign outlets, by headline). |
+| memory | Read the activated editions cut off before this run, up to 14, from block 3's store and the thread registry, and write `memory.json`. |
+| editor | The desk session. Its output is `clusters.json`, `selection.json` (with the edition's presentation and coverage note), and `NOTES.md`. The runner refuses an incomplete selection (`selection_invalid`) before a word is written. |
+| write | One writing session per story, `limits.writer_concurrency` at a time, each given a brief under `stories/<id>/` holding only that story's evidence, role, budget, and a golden story of the same role; its answer is the story's copy. The runner assembles `spec.json`, builds `edition.json`, and validates it. A story whose copy fails the build is written once more with the problem in its brief. Every attempt takes its wall clock from what the run has left; a retry adds its own brief to the input record without re-reading the rest, so the evidence baseline never moves while sessions run. A story left by an earlier attempt is reused only when it is valid copy and its brief is the one this run would write. |
+| check | Build `check-input.json`, run the checker, verify the verdicts cover every sentence exactly once, strike, send back at most once (each story sent back is written again in its own session, with its strikes in the brief), and write `edition-checked.json`. |
 | preflight | Block 3's `validate` on `edition-checked.json`. |
 | publish | Block 3's `publish`, with the device page rendered because `desk.yaml` sets `device: true`. A device failure degrades the publish to web-only. |
 | receipt | Block 3's `receipt`; the run fails with `not_activated` if no activation exists. |
@@ -73,9 +74,11 @@ One run owns `editorial/runs/<edition-id>/`. The runner holds `editorial/var/run
 
 `run --dry-run` does everything up to `publish --dry-run` and skips the receipt, the threads, delivery, the push, and the commit. `run --retry` runs only when today's edition has not already ended as published, dry run, or skipped.
 
-### The two sessions
+### The sessions
 
-The **editor** is a Claude Code session started with `claude -p` under `skills/editorial-desk/SKILL.md`, in `acceptEdits` mode with the repository readable, no web tools, no MCP servers, no session persistence, and a `Bash` allowlist that admits exactly three wrapper actions: `check-clusters`, `score`, and `build`. It cannot start a run, publish, or reach block 1 or block 3. It is bounded by `limits.editor_minutes` (40) and `limits.editor_turns` (150). The model is the one named in `config/desk.yaml`.
+The **desk** is a Claude Code session started with `claude -p` under `skills/editorial-desk/SKILL.md`, in `acceptEdits` mode with the repository readable, no web tools, no MCP servers, no session persistence, and a `Bash` allowlist that admits exactly two wrapper actions: `check-clusters` and `score`. It clusters, attaches the foreign outlets through a subagent, selects, and keeps the log; it writes no copy. It cannot start a run, publish, or reach block 1 or block 3. It is bounded by `limits.editor_minutes` (40) and `limits.editor_turns` (150). The model is the one named in `config/desk.yaml`.
+
+A **writer** is a Claude Code session per story, with the Read tool and nothing else, started in `stories/<id>/` with no other directory added: a headless session is refused any read outside its working directory, so the window, the other stories and the desk's files are out of reach rather than merely out of the prompt. The brief in that directory carries the skill text (`skills/story-writer/SKILL.md`), the style guide, the two writing sections of this document, the golden example and the evidence, and the session writes no file. Its final message is the story's copy as JSON, which the runner parses, validates against the spec's story shape, and stores as `stories/<id>/story.json`. It is bounded by `limits.writer_minutes` (8) and `limits.writer_turns` (20); an answer that is not usable copy is asked for once more with the problem in the brief, then fails the run. The writer never sees the window, the other stories, or the desk's reasoning, so a fact can only come from the story's own evidence or from nowhere, and the checker is there for the second case. The model is `writer_model` in `desk.yaml`, by default the desk's.
 
 The **checker** is Codex by default: `codex exec` in its read-only sandbox, ephemeral, briefed with `editorial/VERIFIER.md`, with a strict output schema derived from `editorial/contracts/verdicts.v1.schema.json` and its final message written straight to `verdicts.json`. It is bounded by `limits.checker_minutes` (15); the Codex path takes no turn bound. With `checker: claude` in `desk.yaml`, or `--checker claude`, a Claude Code session runs under `skills/editorial-checker/SKILL.md` with `Bash` also disallowed and `limits.checker_turns` (40) applied. The brief is the same file either way. A different model checking the editor's work has different blind spots, which is the property wanted in a checker.
 
@@ -85,33 +88,35 @@ The checker reads `check-input.json` and nothing else in the run: not the spec, 
 
 Two comparisons bracket every session, whatever its outcome. **`stray_edits`**: the working tree's changed paths outside the run directory, with their contents, and the thread registry, must be the same before and after; a path that vanished was reverted and counts. The owner's own uncommitted work elsewhere does not block the paper, because only what the session changed is compared. **`input_modified`**: the runner-owned inputs inside the run directory must still match `inputs.json`; if not, they and the session's work are quarantined and the run fails so the next run rebuilds from the verified source.
 
-A send-back may change only the stories that were sent back; any other change fails the run with `send_back_overreach`. An edition whose id differs from the run's is refused.
+A send-back writes only the stories that were sent back, each in its own session again; the runner compares the other stories before and after anyway and fails with `send_back_overreach` if one changed. The edition's id, number, name and date are the runner's, never a session's.
 
 ### The run directory
 
 | File | Written by | Content |
 |---|---|---|
 | `bundle/`, `feeds.json` | runner | Block 1's export and the coverage inventory |
-| `window.json`, `window.md` | runner | The numbered candidate window and its reading view |
+| `window.json`, `window.md`, `window-linked.md` | runner | The numbered candidate window; its reading view for the Danish publishers; the foreign outlets by headline |
 | `memory.json` | runner | Covered articles, threads, previous cutoff, next edition number |
 | `inputs.json` | runner | Digests of everything above |
 | `clusters.json` | editor | Groups with an event line, member numbers, confidence, thread |
 | `clusters-checked.json` | `check-clusters` | The validated clusters, removals, flags, singletons |
 | `ranking.json` | `score` | Every candidate with its terms, decision, and rank |
-| `selection.json` | editor | Stories with role, kicker, sources, and reasons; rejections; notes |
-| `spec.json` | editor | The compact editorial decision, to `contracts/spec.v1.schema.json` |
-| `edition.json` | `build` | The contract, sources resolved from evidence, validated |
+| `selection.json` | editor | Stories with role, kicker, sources, and reasons; rejections; notes; the edition's presentation and coverage note |
+| `stories/<id>/brief.json` | runner | One story's evidence, role, budget, and golden example, for its writer |
+| `stories/<id>/story.json` | writer | That story's copy |
+| `spec.json` | runner | The selection and the stories assembled, to `contracts/spec.v1.schema.json` |
+| `edition.json` | runner (`build`) | The contract, sources resolved from evidence, validated |
 | `check-input.json` | runner | What the checker reads |
 | `verdicts.json` | checker | One verdict per sentence, and guideline notes |
 | `send-back.json`, `edition-checked.json` | runner | The strikes, the stories sent back or fallen, the struck edition |
 | `NOTES.md` | editor | The editorial log entry |
 | `status.json`, `sessions/` | runner | Phases, outcome, failure, session summaries |
 
-The window numbers its articles `1..N`, and the editor refers to articles by number in every file it writes; the tools map numbers back to `(source, source_id)`, and an unknown number is a validation failure rather than a silent loss. `window.md` shows Danish articles from the last 24 hours with their descriptions and every other article by headline, grouped by publisher.
+The window numbers its articles `1..N`, and the editor refers to articles by number in every file it writes; the tools map numbers back to `(source, source_id)`, and an unknown number is a validation failure rather than a silent loss. `window.md` holds the Danish scoring and corroborating publishers, the only articles that can make a story: those from the last 24 hours with their description cut at about 500 characters (the full text stays in `window.json`), the rest by headline, grouped by publisher. The same text carried twice, by one outlet's several feeds or by several outlets running the same wire copy, is listed once; later copies point at the first by number. The same headline over a different description, a rolling page updated, keeps its description and only notes where the headline was seen first. `window-linked.md` holds the foreign outlets by headline. On a typical morning that leaves the desk about 70,000 tokens to read instead of 180,000 to 220,000, and the foreign headlines, 60,000 more, go to a subagent.
 
-## Clustering: one reading pass, then a validator
+## Clustering: one reading pass, then an attach pass, then a validator
 
-The editor reads the whole window and writes `clusters.json`: a list of groups, each with a one-line event description a reader could check, its member numbers, a confidence, and a thread. Anything not mentioned is a singleton, and most articles are. There is no retrieval stage, no embedding model, and no similarity threshold; the window fits in one context, and cross-lingual matching between Danish and English is what a capable model does without configuration.
+The editor reads the Danish publishers and writes `clusters.json`: a list of groups, each with a one-line event description a reader could check, its member numbers, a confidence, and a thread. Anything not mentioned is a singleton, and most articles are. There is no retrieval stage, no embedding model, and no similarity threshold, and every merge is a model's judgement with a checkable event line. The foreign outlets are attached in a second pass by a subagent that sees only the event lines and `window-linked.md` and answers with the linked articles that report each event; the desk merges its answer into the clusters. Linked publishers never make a story eligible and never score, so a wrong attachment is cheap, and the validator below sees it anyway. The desk's own context therefore never holds the whole window, which is what keeps a heavy news day from outgrowing it.
 
 The cheap lexical signal sits after the model as a validator, `check-clusters`, where its flags are visible instead of a pre-filter's invisible misses. It removes numbers that are not in the window and numbers used twice, dissolves any cluster over 30 members, splits off members that share no rare term, capitalised entity, or section with the cluster's core, and flags a confidence under 0.5. A rare term is one that appears in at most 2 per cent of the window's articles, with a floor of three. Splits are recorded in `clusters-checked.json` and stand; the editor may disagree in the log but does not undo them.
 
@@ -185,7 +190,7 @@ Each factual sentence, including the headline, must rest on the source passages 
 
 **Attribute by citation, not by prefix.** Every paragraph and every lede is `{text, sources[]}`: the prose states what happened, and the publisher ids in `sources[]` say who reported it. Block 3 renders them as a trailing marker linking to the article. Copy does not open with "X reports that" or rotate through synonyms for it. A publisher is named inside the sentence only when the point is that publishers differ: "Politiken puts the vote at 29 to 26; DR reports 28 to 27" is prose because the disagreement is the news. A quote's reporting publisher is likewise a publisher id.
 
-For a full edition the editor delegates each story to a subagent that receives only that story's articles, the role and its budget, the eight guidelines, and one golden-example story of the same role, and returns the story's spec entry; the editor assembles the spec.
+Each story is written in its own session, by the runner's hand rather than the editor's discretion: the session receives a brief with only that story's articles, the role and its budget, where the guidelines are, and one golden-example story of the same role, and answers with the story's copy; the runner assembles the spec. The desk never writes copy and a writer never sees the window, so the context a story is written from is exactly its evidence.
 
 ### Writing guidelines: facts first, colour only with a name on it
 

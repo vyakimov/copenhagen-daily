@@ -80,3 +80,12 @@ def test_write_memory(policy, tmp_path, run_dir):
     memory = build_memory(PUBLISH_ROOT, _registry(tmp_path), policy, cutoff=CUTOFF)
     write_memory(memory, run_dir)
     assert read_json(run_dir / "memory.json")["next_edition_number"] == 9
+
+
+def test_memory_holds_only_editions_cut_off_before_this_run(policy, tmp_path):
+    """A rerun or a second printing for an earlier cutoff must not see the editions that came after
+    it, or everything in its window would count as already covered."""
+    memory = build_memory(PUBLISH_ROOT, _registry(tmp_path), policy, cutoff="2026-09-19T19:49:28.000000Z")
+    assert [e["id"] for e in memory["editions"]] == ["2026-09-18-afternoon"]
+    assert memory["previous_cutoff_at"] == "2026-09-18T14:30:00.000000Z"
+    assert memory["next_edition_number"] == 9

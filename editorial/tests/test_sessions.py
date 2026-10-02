@@ -4,7 +4,7 @@ import stat
 import pytest
 
 from news_editorial.paths import EDITORIAL, REPO
-from news_editorial.run import RunFailure, invoke_checker, invoke_editor
+from news_editorial.run import RunFailure, invoke_checker, invoke_editor, invoke_writer
 
 
 def fake_cli(tmp_path, name, body):
@@ -22,19 +22,37 @@ def test_editor_session_is_bounded_and_allowlisted(tmp_path):
     run_dir = tmp_path / "run"
     run_dir.mkdir()
     claude = recording_claude(tmp_path)
-    record = invoke_editor("edition", run_dir, timeout=30, config={"editor_command": str(claude)}, max_turns=150)
+    record = invoke_editor("desk", run_dir, timeout=30, config={"editor_command": str(claude)}, max_turns=150)
     argv = (run_dir / "argv.txt").read_text()
     assert "--permission-mode acceptEdits" in argv
     wrapper = EDITORIAL / "edit_news.sh"
-    assert f"--allowedTools Bash({wrapper} check-clusters *),Bash({wrapper} score *),Bash({wrapper} build *)" in argv
+    assert f"--allowedTools Bash({wrapper} check-clusters *),Bash({wrapper} score *)" in argv
+    assert "build" not in argv
     assert f"Bash({wrapper} *)" not in argv and f"Bash({wrapper} run" not in argv
     assert "--disallowedTools WebFetch,WebSearch" in argv
     assert "--strict-mcp-config" in argv and "--max-turns 150" in argv
     assert "--no-session-persistence" in argv and "--output-format json" in argv
     assert f"--add-dir {REPO}" in argv
-    assert str(REPO / "skills" / "editorial-desk" / "SKILL.md") in argv and "Mode: edition" in argv
+    assert str(REPO / "skills" / "editorial-desk" / "SKILL.md") in argv and "Mode: desk" in argv
     assert record["num_turns"] == 2
-    assert list((run_dir / "sessions").glob("editor-edition-*.json"))
+    assert list((run_dir / "sessions").glob("editor-desk-*.json"))
+
+
+def test_writer_session_can_only_read_inside_its_own_directory(tmp_path):
+    run_dir = tmp_path / "run"
+    brief = run_dir / "stories" / "a-story" / "brief.json"
+    brief.parent.mkdir(parents=True)
+    brief.write_text("{}")
+    claude = recording_claude(tmp_path)
+    record = invoke_writer(brief, timeout=30, config={"editor_command": str(claude), "editor_model": "claude-opus-5-5"}, max_turns=20)
+    argv = (brief.parent / "argv.txt").read_text()  # the session's working directory is the story's
+    assert "--tools Read" in argv and "--add-dir" not in argv
+    assert "--disallowedTools Bash,Write,Edit,MultiEdit,NotebookEdit,WebFetch,WebSearch,Agent,Task" in argv
+    assert "--permission-mode" not in argv and "--allowedTools" not in argv
+    assert "--max-turns 20" in argv and "--model claude-opus-5-5" in argv
+    assert "Read brief.json in your working directory" in argv and str(REPO) not in argv
+    assert record["result"] == "done"
+    assert list((run_dir / "sessions").glob("writer-a-story-*.json"))
 
 
 def test_checker_session_has_no_bash(tmp_path):
@@ -64,7 +82,7 @@ def test_session_timeout_is_a_run_failure(tmp_path):
     run_dir.mkdir()
     sleeper = fake_cli(tmp_path, "claude", "sleep 5\n")
     with pytest.raises(RunFailure) as info:
-        invoke_editor("edition", run_dir, timeout=1, config={"editor_command": str(sleeper)})
+        invoke_editor("desk", run_dir, timeout=1, config={"editor_command": str(sleeper)})
     assert info.value.error_type == "editor_timeout"
 
 
@@ -73,5 +91,5 @@ def test_session_error_result_is_a_run_failure(tmp_path):
     run_dir.mkdir()
     failing = fake_cli(tmp_path, "claude", 'printf \'%s\\n\' \'{"type":"result","is_error":true,"result":"boom"}\'\n')
     with pytest.raises(RunFailure) as info:
-        invoke_editor("edition", run_dir, timeout=5, config={"editor_command": str(failing)})
+        invoke_editor("desk", run_dir, timeout=5, config={"editor_command": str(failing)})
     assert info.value.error_type == "editor_failed"

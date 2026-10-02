@@ -50,7 +50,9 @@ def activated_editions(publish_root: Path) -> list[dict[str, Any]]:
 def build_memory(publish_root: Path, registry_path: Path, policy: Policy, cutoff: str) -> dict[str, Any]:
     registry = load_registry(registry_path)
     story_thread = {sid: t["id"] for t in registry["threads"] for sid in t["story_ids"]}
-    records = activated_editions(publish_root)[: policy.schedule.memory_editions]
+    # Only editions cut off before this run count as memory: a rerun or a second printing for an
+    # earlier cutoff must not see what came after it, or its whole window reads as already covered.
+    records = [r for r in activated_editions(publish_root) if r["edition"]["edition"]["cutoff_at"] < cutoff][: policy.schedule.memory_editions]
     editions = []
     covered: dict[str, dict[str, str]] = {}
     for record in records:
