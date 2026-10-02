@@ -31,6 +31,14 @@ sentence cites, or of any article among the story's evidence when the paragraph 
 Translation from Danish and paraphrase are fine. A fact is an actor, a number, a date or time, a
 place, a decision, a quotation, an attribution, a causal claim, or a characterisation.
 
+Identification is translation, not background. The kind of thing a name in the evidence denotes
+("the Borris shooting range" for "Borris Skydeterræn", "the Supreme Court" for "Højesteret", "the
+town of Langeskov") and the role that says who a named person is ("Donald Trump, the US president",
+"Mette Frederiksen, the prime minister") are supported when the evidence names the person or the
+thing, even when it does not spell out the role or the kind. Strike a role or a kind you know to be
+wrong, and strike any placing fact beyond identification, a region, a distance, a population, a
+history, that no evidence carries.
+
 A sentence is **unsupported** when any of these holds:
 
 - a fact in it appears in no cited evidence, or only in an uncited article of another story;
@@ -53,7 +61,9 @@ the editor, so mark it unsupported only when it states something the evidence do
 
 Separately, note departures from the writing guidelines: unattributed colour or idiom, a paragraph per
 outlet restating the same fact, an outlet named in prose where the marker would do, suspense before
-the answer, a budget exceeded. These are advisory and are never strikes. One line each.
+the answer, a budget exceeded, a name the reader cannot place (a person without a role at first
+mention, a place or a facility without its kind, above all in a headline). These are advisory and
+are never strikes. One line each.
 
 ## The output
 

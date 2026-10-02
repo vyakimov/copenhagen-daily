@@ -3,7 +3,7 @@
 Status: first draft, 28 September 2026, written from the three editions that exist (15 September,
 19 September, 24 September) and the checker's notes on them. The [handbook](HANDBOOK.md) holds the
 method and the hard rules; the [architecture](../docs/editorial-architecture.md) holds the
-eight writing guidelines. This page settles the small choices those leave open, so two editions read
+nine writing guidelines. This page settles the small choices those leave open, so two editions read
 as one paper. Where it is silent, follow the golden example. Every rule here is guidance for the
 editor and a note for the checker; none is a validator.
 
@@ -80,12 +80,24 @@ speaker named. Never carry a teaser's mood into the paper's own voice.
 
 ## Names and places
 
-- People: full name at first mention, surname after. Role in lower case, after the name, set off by
-  commas: "Jeppe Bruus, the defence minister"; "Christian Kettel Thomsen, Nationalbanken's governor";
-  "Kristina Siig, professor of maritime law at Aalborg University". "Prime minister" and "foreign
-  minister" are lower case. Never "Mr", "Ms", or "Dr".
-- Foreign leaders take their title on first mention only where it is needed to place them: "Donald
-  Trump" needs nothing; "Ulf Kristersson, Sweden's prime minister" does.
+- The reader is a Copenhagen reader of an English paper who has not read the Danish press that
+  morning. Every name is placed for them at first mention, the way the Economist calls the OECD "a
+  club of mostly rich countries": better to over-explain than under. A name the reader cannot place
+  costs them the sentence; an explanation they did not need costs a few words.
+- People: full name and role at first mention, surname after. Role in lower case, after the name,
+  set off by commas: "Jeppe Bruus, the defence minister"; "Christian Kettel Thomsen, Nationalbanken's
+  governor"; "Kristina Siig, professor of maritime law at Aalborg University". The famous are no
+  exception in the body: "Donald Trump, the US president"; "Ulf Kristersson, Sweden's prime
+  minister". The headline is the one place a well-known name stands alone: "Trump rejects Iran's
+  plan" needs nothing there, and the body's first mention still carries "the US president". "Prime
+  minister" and "foreign minister" are lower case. Never "Mr", "Ms", or "Dr".
+- Places and facilities the reader cannot be assumed to know take their kind at first mention and in
+  the headline: "the Borris shooting range", "the town of Langeskov", "a vote-fraud case in Borlänge,
+  a Swedish town". Copenhagen, Aarhus, Odense, Aalborg, Jutland, Zealand, Funen, Bornholm, Greenland,
+  the Faroe Islands, and foreign capitals stand alone; a village, a firing range, a barracks, an
+  airfield, or a town does not. The kind of thing a name denotes is translation ("Borris
+  Skydeterræn" is "the Borris shooting range") and needs no further evidence; where it is ("in
+  western Jutland") is a fact and needs a source.
 - Danish institutions keep their Danish name when it is what the reader will meet: Folketing,
   Nationalbanken, Klimarådet, Rigsrevisionen, Christiansborg. Give the English gloss once in the story
   when the name does not explain itself: "Klimarådet, the climate council". Ministries and courts take
@@ -120,6 +132,9 @@ the evidence does not contain when a plainer one does.
   speaking: "Klimarådet: food VAT cut would add 520,000 tonnes of CO2 globally".
 - The headline is checked like any sentence: every fact in it is in the evidence. "Talks begin" needs a
   source that says talks began.
+- The headline stands alone. A name in it is one the reader can place unaided or carries its kind:
+  "Defence Command admits soldiers fired as passenger plane crossed the Borris shooting range", never
+  "crossed Borris". The deck and the body do not rescue a headline.
 - The deck adds the second fact or the consequence, in one sentence, with a full stop; a semicolon
   joins two short facts: "Ambassador summoned; Frederiksen says Moscow is testing NATO."
 - `headline_short` is a shorter true headline, not a fragment: "Greenland deal signed".

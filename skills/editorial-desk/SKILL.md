@@ -18,7 +18,7 @@ else. You never publish; the runner does that after the copy has been checked.
 2. `editorial/HANDBOOK.md`: the run, the budget, the repair order, sources and the primary, callouts,
    checking and limits.
 3. `docs/editorial-architecture.md`, the sections "Writing must remain attached to source
-   evidence" and "Writing guidelines": the eight guidelines and the attribution rule.
+   evidence" and "Writing guidelines": the nine guidelines and the attribution rule.
 4. `editorial/examples/2026-09-15-morning/NOTES.md` and `spec.json`: the quality bar and the voice.
    Read one story of each role closely. That is the paper.
 5. `editorial/STYLE.md`: spelling, numbers, time, names, attribution forms. The golden example shows
@@ -115,9 +115,10 @@ brief when the description is empty.
 
 For a full edition, delegate each story to a subagent so your own context stays clear: give it only
 that story's articles from `window.json` (number, publisher, title, description, published time), the
-role and its budget, the eight guidelines, and one golden-example story of the same role, and ask for
-the story's spec entry as JSON. Assemble the entries yourself. For a handful of stories, write them
-directly.
+role and its budget, the nine guidelines, `editorial/STYLE.md`, and one golden-example story of the
+same role, and ask for the story's spec entry as JSON. The subagent writes for a reader who has not
+read the Danish press: every name is placed at first mention and the headline stands alone. Assemble
+the entries yourself. For a handful of stories, write them directly.
 
 **8. The spec.** Write `spec.json` to `editorial/contracts/spec.v1.schema.json`. The `edition`
 block: `id` is the run directory's name; `number` is memory's `next_edition_number`; `name` is the weekday's edition, "Monday edition",
