@@ -1,6 +1,6 @@
 // The device path as one call: fit, capture, quantize, verify. Throws a publisher error with the fit
 // report in its details on any failure; the store decides what a failure means for publication.
-import type { EditionContractV1 } from "../contract/edition-contract.generated.ts";
+import type { EditionContract } from "../contract/edition-contract.ts";
 import { hashBytes } from "../publish/hash.ts";
 import { DeviceBrowser, FRAME } from "./browser.ts";
 import { fitEdition, type FitReport, type TitleLike } from "./fit.ts";
@@ -38,7 +38,7 @@ export async function withBrowser<T>(projectRoot: string, body: (browser: Device
 
 export async function buildDevice(
   projectRoot: string,
-  edition: EditionContractV1,
+  edition: EditionContract,
   config: TitleLike,
   options: { capture?: boolean } = {},
 ): Promise<DeviceOutput> {

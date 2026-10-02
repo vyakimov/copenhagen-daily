@@ -10,6 +10,7 @@ from typing import Any
 
 from .bundle import Bundle
 from .policy import Policy
+from .wire import wire_agency
 
 SCHEMA_VERSION = 1
 READ_IN_FULL_HOURS = 24
@@ -72,6 +73,7 @@ def build_window(bundle: Bundle, policy: Policy, cutoff: str, previous_cutoff: s
                 "feeds": sorted({a["surface_id"] for a in seen}),
                 "prominence": prominence,
                 "content_hash": article["content_hash"],
+                "wire": wire_agency(article, policy.wire_agencies),
             }
         )
     rows.sort(key=lambda r: (r["published_at"], r["source"], r["source_id"]), reverse=True)
@@ -104,7 +106,8 @@ def _reading_view(window: dict[str, Any]) -> str:
         f"# Candidate window to {window['cutoff_at']}",
         "",
         f"{len(window['articles'])} articles. Danish articles from the last {READ_IN_FULL_HOURS} hours carry their",
-        "description; every other article is its headline. Refer to articles by number.",
+        "description; every other article is its headline. Refer to articles by number. An article",
+        "flagged wire:<agency> is that agency's copy, carried by the outlet it is listed under.",
         "",
     ]
     groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -118,6 +121,8 @@ def _reading_view(window: dict[str, Any]) -> str:
         for a in rows:
             sections = ",".join(a["sections"]) or "-"
             flags = " opinion" if a["opinion"] else ""
+            if a.get("wire"):
+                flags += f" wire:{a['wire']}"
             lines.append(f"- [{a['n']}] {a['published_at'][:16]} {sections}{flags}: {a['title']}")
             if status != "linked" and a["published_at"] >= full_since and a["description"]:
                 lines.append(f"  {a['description']}")

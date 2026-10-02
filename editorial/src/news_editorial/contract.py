@@ -16,14 +16,14 @@ from urllib.parse import urlsplit
 import yaml
 from jsonschema import Draft202012Validator, FormatChecker
 
-from .paths import REPO, SCHEMA_PATH
+from .paths import REPO, SCHEMA_PATHS
 
 TITLE_CONFIG = REPO / "publisher" / "config" / "title.yaml"
 
 
-@lru_cache(maxsize=1)
-def _validator() -> Draft202012Validator:
-    schema = json.loads(SCHEMA_PATH.read_text(encoding="utf8"))
+@lru_cache(maxsize=None)
+def _validator(version: int) -> Draft202012Validator:
+    schema = json.loads(SCHEMA_PATHS[version].read_text(encoding="utf8"))
     return Draft202012Validator(schema, format_checker=FormatChecker())
 
 
@@ -74,6 +74,7 @@ def _https_without_userinfo(url: str) -> bool:
 def _semantic(doc: dict[str, Any], title: dict[str, Any]) -> list[tuple[str, str]]:
     issues: list[tuple[str, str]] = []
     publishers = title["publishers"]
+    agencies = title.get("agencies") or {}
     if doc["title"] != title["id"]:
         issues.append(("/title", f"title must equal the configured title id {title['id']}"))
     try:
@@ -108,6 +109,8 @@ def _semantic(doc: dict[str, Any], title: dict[str, Any]) -> list[tuple[str, str
         for j, source in enumerate(sources):
             if source["source"] not in publishers:
                 issues.append((f"{p}/sources/{j}/source", "publisher mapping is unknown"))
+            if "wire" in source and source["wire"] not in agencies:
+                issues.append((f"{p}/sources/{j}/wire", "agency mapping is unknown"))
             if source["input_id"] not in input_ids:
                 issues.append((f"{p}/sources/{j}/input_id", "input reference does not exist"))
             if not _https_without_userinfo(source["url"]):
@@ -157,8 +160,11 @@ def _semantic(doc: dict[str, Any], title: dict[str, Any]) -> list[tuple[str, str
 
 def validate_edition(document: Any) -> list[str]:
     """Return `pointer: message` strings; an empty list means block 3 will accept the document."""
+    version = document.get("schema_version") if isinstance(document, dict) else None
+    if isinstance(version, bool) or version not in SCHEMA_PATHS:
+        return ["/schema_version: supported edition schema versions are 1 and 2"]
     schema_errors = sorted(
-        (schema_pointer(e), e.message) for e in _validator().iter_errors(document)
+        (schema_pointer(e), e.message) for e in _validator(version).iter_errors(document)
     )
     if schema_errors:
         return [f"{p}: {m}" for p, m in schema_errors]

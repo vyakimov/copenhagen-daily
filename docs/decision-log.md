@@ -275,6 +275,23 @@ breadth nor prominence; but when a scoring publisher reports a story the release
 text is attached as evidence for the writer the way a linked publisher's is. The scoring list is nine
 Danish outlets, not the ten named in the 14 September entry above, for this reason.
 
+**Wire copy is credited to its agency and linked to its carrier. Settled 30 September 2026.** Every one
+of the 21 primaries in the 30 September edition was a Ritzau piece on Kristeligt Dagblad's page. The
+cause is mechanical: that outlet's `nyheder` feed carries whole articles (median 2,440 characters of
+description against 74 to 197 for the other Danish outlets), so under "the article that supplied the
+most of the copy" it wins, and 99 of its 151 articles in the window were Ritzau's. The rule for the
+primary is kept, because the fullest evidence is the right thing to write from and the carrier's page
+is open to read. What changes is the credit. An article with no byline whose text ends in the agency's
+sign-off ("RITZAU", "RITZAU/AFP") is marked `wire: ritzau` by `build` from `wire_agencies` in the
+policy, deterministically and never by the editor; all 99 matched and no bylined article did. The page
+names Ritzau where it named the carrier, the link still goes to the carrier because the agency
+publishes no public page for its wire, and prose that must name a source names the agency. An outlet
+whose feed description is a teaser shows no sign-off and is not recognised; TV 2 carries Ritzau copy
+this way. Breadth is unchanged and still counts the carrier as a publisher reporting the story;
+whether one wire piece should count once across its carriers is open. The field is an optional
+addition to a source, so by the rule above it is edition contract version 2; version 1 editions stay
+valid and are validated against their own schema.
+
 **Coverage comes from block 1's `health`, not from the export manifest. Settled 30 September 2026.**
 The manifest's `coverage_gaps` and `warnings` are written empty, so the desk stopped reading them for
 coverage. Before the window is exported the run asks block 1 for `health`, records every configured

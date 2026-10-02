@@ -214,14 +214,14 @@ A story that does not stand goes back to the editor once (`limits.check_send_bac
 
 ## The edition is the contract with block 3
 
-Block 3 owns the schema, `publisher/contracts/edition-contract.v1.schema.json`, and `build` validates against the identical schema and the same semantic checks before block 3's `validate` runs as the final preflight, so a malformed edition fails with the same pointer before a subprocess is spawned. The edition carries:
+Block 3 owns the schema, `publisher/contracts/edition-contract.v2.schema.json`, and `build` validates against the identical schema and the same semantic checks before block 3's `validate` runs as the final preflight, so a malformed edition fails with the same pointer before a subprocess is spawned. The edition carries:
 
 | Part | Content |
 |---|---|
 | Identity and time | Title `copenhagen-daily`, edition id, number, name, date, `Europe/Copenhagen`, English, cutoff, generation time. |
 | Coverage | The feed inventory from block 1's health, `checked_from` and `checked_until`, a status derived from the inventory, and the editor's coverage note. |
 | Inputs | The bundle's `input_id` and manifest digest. |
-| Stories | In authoritative order, lead first. Each with role, kicker, optional secondary kicker, copy (headline, optional deck and short headline, lede, body variants), callouts of the five declared kinds, complete sources with one primary, and limitations. |
+| Stories | In authoritative order, lead first. Each with role, kicker, optional secondary kicker, copy (headline, optional deck and short headline, lede, body variants), callouts of the five declared kinds, complete sources with one primary, and limitations. A source that is agency wire copy carries `wire`, the agency's id, beside the outlet that carried it. |
 | Presentation | An emphasis of `one_big_story`, `quiet_day`, or `many_stories`, and the right ear text. Hints. |
 | Device fields | `device_participation` and `fit_policy`, filled mechanically by `build`: the lead is `required`, every other story `optional`, so block 3 fits the kitchen screen from the most prominent stories down and omits from the least prominent end. The editor writes nothing about participation, fallbacks, or short headlines. |
 

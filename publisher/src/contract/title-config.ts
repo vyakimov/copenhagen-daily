@@ -9,6 +9,7 @@ export type TitleConfig = {
   composition_order: string[];
   web_layout?: "grid" | "sheet";
   publishers: Record<string, string>;
+  agencies?: Record<string, string>;
 };
 
 export const titleConfigPath = fileURLToPath(new URL("../../config/title.yaml", import.meta.url));
@@ -25,6 +26,11 @@ export function loadTitleConfig(path: string = titleConfigPath): TitleConfig {
     });
   }
   const config = raw as TitleConfig;
+  const shared = Object.keys(config.agencies ?? {}).filter((id) => id in config.publishers);
+  if (shared.length > 0) {
+    const message = `title config at ${path} names an agency with a publisher's id: ${shared.join(", ")}`;
+    throw Object.assign(new Error(message), { type: "publish_root_invalid", details: { path } });
+  }
   if (path === titleConfigPath) cached = config;
   return config;
 }

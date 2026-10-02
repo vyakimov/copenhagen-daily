@@ -24,21 +24,24 @@ contract string is escaped before it reaches a template.
 
 ## The edition contract
 
-The edition is the publishing unit. Its shape is `contracts/edition-contract.v1.schema.json`, a
+The edition is the publishing unit. Its shape is `contracts/edition-contract.v2.schema.json`, a
 hand-written JSON Schema 2020-12 owned by block 3; the TypeScript types are generated from it, never
 the reverse, so Python and TypeScript validate one artifact identically. Golden editions and a
 rejection corpus are in `contracts/examples/`, beside the schemas for what block 3 writes. Story
 order in the contract is authoritative; a story has a role (lead, secondary, brief), up to three body
 variants, an optional short headline, callouts of five kinds (`quote`, `figure`, `facts`, `box`,
 `timeline`), and complete sources. `config/title.yaml` holds what belongs to the title rather than
-the day: id, masthead, device profile, web composition, and the publisher id to display name map.
+the day: id, masthead, device profile, web composition, the publisher id to display name map, and the
+wire agency id to display name map. Version 2 adds one optional field to version 1, a source's
+`wire` agency; editions of both versions are accepted, each validated against its own schema, so the
+editions already in the store stay valid.
 
-`validate` reads at most 4 MiB of UTF-8 JSON, accepts only `schema_version` 1, validates with Ajv in
+`validate` reads at most 4 MiB of UTF-8 JSON, accepts `schema_version` 1 or 2, validates with Ajv in
 strict mode with full format checking, then applies the semantic rules in `src/contract/edition-contract.ts`:
 the title matches the configured id; ids are unique; exactly one lead, first, `required`, without a
 fallback; only a secondary may fall back to brief, and anything that can be a brief has a lede; a
 sourced story has one primary source, every source names a configured publisher and an existing input
-over HTTPS, and every citation names one of the story's sources; the fit policy's lists match the
+over HTTPS, a source's `wire` names a configured agency, and every citation names one of the story's sources; the fit policy's lists match the
 `reserve` and `optional` stories exactly; and the coverage status agrees with the feed inventory.
 
 ## The web edition
@@ -76,6 +79,11 @@ the same points, with a drop cap on the lead. The headline links to the primary 
 callout follows the header, the rest follow the body. Paragraph citations are not rendered inline;
 the footer is one line naming every contributing publisher once, primary first, which opens a
 disclosure with the limitations note and every article with its original title, publisher, and time.
+Wire copy is credited to its agency (`assets/html/credit.ts`): the line names "Ritzau" in place of the
+outlet that carried the piece, the disclosure reads "Ritzau via Kristeligt Dagblad", a quote callout
+says "quoted by Ritzau" when every article the outlet contributed is the agency's, and the dateline
+counts the agency. Links are untouched, so the headline still opens the carrier's page. The device
+page credits the same way.
 The web adds a warm paper tone and one dark-red accent, which `web.css` uses for link hover and
 focus, the pull-quote rule, the source-list toggle marker, the titles of facts, box, and timeline
 callouts, the edition id in the folio, and the latest marks in the archive. The archive is a register

@@ -29,3 +29,7 @@ publishers:
   wapo: The Washington Post
   wsj: The Wall Street Journal
   via_ritzau: Via Ritzau
+# Wire agencies whose copy a publisher carries. A source marked with an agency is credited to it by
+# this name and still links to the carrier's page. An agency id never collides with a publisher id.
+agencies:
+  ritzau: Ritzau

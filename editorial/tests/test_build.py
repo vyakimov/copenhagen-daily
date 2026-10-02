@@ -1,7 +1,7 @@
 import copy
 
 import pytest
-from conftest import BUNDLE, EDITORIAL_EXAMPLES, read_json
+from conftest import BUNDLE, EDITORIAL_EXAMPLES, WIRE_ARTICLE, read_json, wired_bundle
 
 from news_editorial.build import BuildError, build_edition, validate_spec
 from news_editorial.bundle import load_bundle
@@ -105,3 +105,14 @@ def test_a_spec_without_device_fields_builds_an_edition_the_device_can_fit():
     doc = build_edition(spec, load_bundle(BUNDLE), feeds=read_json(GOLDEN / "feeds.json"))
     assert [s["id"] for s in doc["stories"] if s["device_participation"] == "required"] == [doc["stories"][0]["id"]]
     assert doc["fit_policy"]["omittable_story_ids"] == [s["id"] for s in doc["stories"] if s["device_participation"] == "optional"]
+
+
+def test_a_wire_article_is_credited_to_its_agency_and_links_to_its_carrier():
+    edition = build_edition(golden_spec(), wired_bundle(), feeds=read_json(GOLDEN / "feeds.json"))
+    assert validate_edition(edition) == []
+    assert edition["schema_version"] == 2
+    sources = [s for story in edition["stories"] for s in story["sources"]]
+    wire = next(s for s in sources if s["source_id"] == WIRE_ARTICLE)
+    assert wire["wire"] == "ritzau"
+    assert wire["source"] == "kristeligt_dagblad" and "kristeligt-dagblad.dk" in wire["url"]
+    assert all("wire" not in s for s in sources if s is not wire)

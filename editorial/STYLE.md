@@ -35,8 +35,14 @@ Keep the chain of attribution when the speaker is unnamed or the report is secon
 quoted by Børsen", "tells Berlingske", "carried by Kristeligt Dagblad from Berlingske". Never shorten
 "an analyst quoted by Børsen" to "an analyst".
 
-A press release from Via Ritzau is a claim by an interested party. Attribute it to the sender, not to
-Ritzau: "the ministry says in a statement", never "Ritzau reports".
+Wire copy is the agency's reporting, not the outlet's. An article the window flags `wire:ritzau` was
+written by Ritzau and carried by the outlet it is listed under. A fact of record from it names nobody,
+like any other: the source line under the story credits Ritzau, so the prose does not. When the test
+above calls for a name, the name is the agency, never the carrier: "tells Ritzau", "Ritzau writes
+that", not "tells Kristeligt Dagblad". Cite the paragraph by the carrier's publisher id as usual.
+
+A press release from Via Ritzau is not wire copy. It is a claim by an interested party. Attribute it
+to the sender, not to Ritzau: "the ministry says in a statement", never "Ritzau reports".
 
 Do not label a source's genre unless the evidence does: an article is not "an analysis" or "a
 commentary" because it reads like one. "Politiken's commentator Michael Jarlner" is fine when the

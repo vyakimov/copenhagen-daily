@@ -1,4 +1,4 @@
-from conftest import BUNDLE, CUTOFF, PREVIOUS_CUTOFF, read_json
+from conftest import BUNDLE, CUTOFF, PREVIOUS_CUTOFF, WIRE_ARTICLE, read_json, wired_bundle
 from news_editorial.bundle import load_bundle
 from news_editorial.window import build_window, write_window
 
@@ -62,3 +62,19 @@ def test_window_file_carries_bundle_identity(policy, run_dir):
     assert saved["bundle"]["manifest_sha256"].startswith("sha256:")
     assert saved["cutoff_at"] == CUTOFF
     assert (run_dir / "window.md").exists()
+
+
+def test_wire_copy_is_marked_with_its_agency(policy):
+    window = build_window(wired_bundle(), policy, cutoff=CUTOFF, previous_cutoff=PREVIOUS_CUTOFF)
+    assert _find(window, "kristeligt_dagblad", WIRE_ARTICLE)["wire"] == "ritzau"
+    assert _find(window, "dr", GEDSER_PM)["wire"] is None
+
+
+def test_the_reading_view_flags_wire_copy(policy, run_dir):
+    window = build_window(wired_bundle(), policy, cutoff=CUTOFF, previous_cutoff=PREVIOUS_CUTOFF)
+    write_window(window, run_dir)
+    wire = _find(window, "kristeligt_dagblad", WIRE_ARTICLE)
+    lines = (run_dir / "window.md").read_text().splitlines()
+    assert next(line for line in lines if line.startswith(f"- [{wire['n']}] ")).split(": ")[0].endswith(" wire:ritzau")
+    own = _find(window, "dr", GEDSER_PM)
+    assert "wire:" not in next(line for line in lines if line.startswith(f"- [{own['n']}] ")).split(": ")[0]

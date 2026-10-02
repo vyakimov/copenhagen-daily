@@ -3,9 +3,11 @@
 // briefs, folio. Empty bands are omitted and the lead takes the room; nothing scales with copy length.
 import { escapeHtml } from "../../assets/html/escape.ts";
 import { renderCallout } from "../../assets/html/callout.ts";
+import { quoteNames, sourceName, storyCredits, type CreditNames } from "../../assets/html/credit.ts";
 import { formatCutoff, formatEditionDate } from "../../assets/html/format.ts";
 import { softHyphenate } from "../../assets/html/hyphenate.ts";
-import type { EditionContractV1, Story } from "../contract/edition-contract.generated.ts";
+import type { Story } from "../contract/edition-contract.generated.ts";
+import type { EditionContract } from "../contract/edition-contract.ts";
 import { LAYOUT_VERSION } from "../contract/version.ts";
 
 export type BodyVariant = "extended" | "standard" | "short";
@@ -30,25 +32,20 @@ export const STYLESHEET_URL = `/a/${LAYOUT_VERSION}/device.css`;
 
 const e = escapeHtml;
 
-function leadingPublishers(stories: Story[], names: Record<string, string>): string[] {
+function leadingPublishers(stories: Story[], names: CreditNames): string[] {
   const count = new Map<string, number>();
   for (const s of stories) {
-    for (const id of new Set(s.sources.map((x) => x.source))) count.set(id, (count.get(id) ?? 0) + 1);
+    for (const name of storyCredits(s.sources, names)) count.set(name, (count.get(name) ?? 0) + 1);
   }
-  const nameOf = (id: string) => names[id] ?? id;
-  return [...count.keys()]
-    .sort((a, b) => count.get(b)! - count.get(a)! || nameOf(a).localeCompare(nameOf(b)))
-    .slice(0, 5)
-    .map(nameOf);
+  return [...count.keys()].sort((a, b) => count.get(b)! - count.get(a)! || a.localeCompare(b)).slice(0, 5);
 }
 
-function sourceRow(story: Story, names: Record<string, string>): string {
-  const primary = story.sources.find((s) => s.primary);
-  const ids = [...new Set([...(primary ? [primary.source] : []), ...story.sources.map((s) => s.source)])];
-  if (ids.length === 0) return "";
+function sourceRow(story: Story, names: CreditNames): string {
+  const credits = storyCredits(story.sources, names);
+  if (credits.length === 0) return "";
   // The panel names the primary and up to three more publishers; the web page carries the full list.
-  const shown = ids.slice(0, 4).map((id) => e(names[id] ?? id));
-  const more = ids.length > 4 ? ` · +${ids.length - 4}` : "";
+  const shown = credits.slice(0, 4).map(e);
+  const more = credits.length > 4 ? ` · +${credits.length - 4}` : "";
   return `<div class="src">${shown.join(" · ")}${more}</div>`;
 }
 
@@ -58,9 +55,9 @@ function kicker(story: Story, publisher?: string): string {
   return `<div class="kicker">${e(story.kicker)}${sec}</div>`;
 }
 
-function primaryName(story: Story, names: Record<string, string>): string | undefined {
+function primaryName(story: Story, names: CreditNames): string | undefined {
   const primary = story.sources.find((s) => s.primary) ?? story.sources[0];
-  return primary ? (names[primary.source] ?? primary.source) : undefined;
+  return primary ? sourceName(primary, names) : undefined;
 }
 
 function paragraphs(story: Story, variant: BodyVariant | null, language: string): string {
@@ -78,20 +75,22 @@ function cellClass(index: number, total: number): string {
 }
 
 export function renderDevicePage(
-  edition: EditionContractV1,
+  edition: EditionContract,
   plan: DevicePlan,
-  config: { masthead: string; publishers: Record<string, string> },
+  config: { masthead: string } & CreditNames,
 ): string {
   const meta = edition.edition;
   const byId = new Map(edition.stories.map((s) => [s.id, s]));
-  const names = config.publishers;
+  const names: CreditNames = { publishers: config.publishers, agencies: config.agencies };
   const language = meta.language;
   const placed = plan.placements.map((p) => ({ p, story: byId.get(p.story_id)! }));
   const lead = placed.find((x) => x.p.role_as_placed === "lead");
   const secondaries = placed.filter((x) => x.p.role_as_placed === "secondary");
   const briefs = placed.filter((x) => x.p.role_as_placed === "brief");
   const callout = (story: Story, index: number | null) =>
-    index === null ? "" : renderCallout(story.callouts[index] as Record<string, unknown>, names);
+    index === null
+      ? ""
+      : renderCallout(story.callouts[index] as Record<string, unknown>, quoteNames(story.sources, names));
   const headline = (story: Story, variant: Placement["headline_variant"]) =>
     e(variant === "headline_short" && story.copy.headline_short ? story.copy.headline_short : story.copy.headline);
 

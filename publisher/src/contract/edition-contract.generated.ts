@@ -103,8 +103,8 @@ export type Callout =
           ];
     };
 
-export interface EditionContractV1 {
-  schema_version: 1;
+export interface EditionContractV2 {
+  schema_version: 2;
   title: Id;
   edition: Edition;
   presentation?: Presentation;
@@ -329,6 +329,7 @@ export interface Source {
   published_at: Timestamp;
   content_hash: Digest;
   primary: boolean;
+  wire?: Id;
 }
 export interface FitPolicy {
   allow_role_fallback: boolean;

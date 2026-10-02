@@ -61,6 +61,7 @@ class Policy(BaseModel):
     schedule: Schedule
     scoring_publishers: list[str]
     corroborating_publishers: list[str]
+    wire_agencies: dict[str, str]
     weights: Weights
     section_weights: dict[str, float]
     unsectioned_weight: float

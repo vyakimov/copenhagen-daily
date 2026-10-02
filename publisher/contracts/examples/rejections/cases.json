@@ -21,11 +21,24 @@
     {
      "op": "replace",
      "path": "/schema_version",
-     "value": 2
+     "value": 3
     }
    ],
    "expected_code": "contract_unsupported_schema_version",
    "expected_pointer": "/schema_version"
+  },
+  {
+   "name": "wire-agency-in-version-1",
+   "invariant": "a wire agency on a source belongs to schema version 2",
+   "ops": [
+    {
+     "op": "add",
+     "path": "/stories/0/sources/0/wire",
+     "value": "ritzau"
+    }
+   ],
+   "expected_code": "contract_invalid",
+   "expected_pointer": "/stories/0/sources/0/wire"
   },
   {
    "name": "title-mismatch",

@@ -4,7 +4,10 @@ import { readFile, readdir } from "node:fs/promises";
 import { resolve } from "node:path";
 import AjvModule from "ajv/dist/2020.js";
 import addFormatsModule from "ajv-formats";
+import { writeFile, mkdtemp } from "node:fs/promises";
+import { tmpdir } from "node:os";
 import { validateEdition } from "../src/contract/edition-contract.ts";
+import { loadTitleConfig } from "../src/contract/title-config.ts";
 
 const root = resolve(import.meta.dirname, "..");
 const examples = resolve(root, "contracts/examples");
@@ -15,7 +18,7 @@ const Ajv2020 = ((AjvModule as unknown as { default?: unknown }).default ?? AjvM
 const addFormats = ((addFormatsModule as unknown as { default?: unknown }).default ??
   addFormatsModule) as unknown as (a: object, o?: object) => void;
 
-test("all eight golden editions validate", async () => {
+test("all nine golden editions validate", async () => {
   const files = (await readdir(examples)).filter((f) => f.endsWith(".json")).sort();
   assert.deepEqual(files, [
     "all-callout-kinds.json",
@@ -26,6 +29,7 @@ test("all eight golden editions validate", async () => {
     "partial-coverage.json",
     "required-overflow.json",
     "sparse.json",
+    "wire.json",
   ]);
   for (const file of files) {
     const result = validateEdition(await readJson(resolve(examples, file)));
@@ -88,4 +92,36 @@ test("the rejection corpus rejects each document with the expected code and poin
       `${c.name}: pointer, got ${JSON.stringify(result.issues)}`,
     );
   }
+});
+
+test("a version 2 edition credits a configured wire agency and refuses an unknown one", async () => {
+  const wire = await readJson(resolve(examples, "wire.json"));
+  assert.equal(wire.schema_version, 2);
+  assert.equal(wire.stories[0].sources[0].wire, "ritzau");
+  assert.equal(validateEdition(wire).valid, true);
+  wire.stories[0].sources[0].wire = "reuters";
+  const result = validateEdition(wire);
+  assert.equal(result.valid, false);
+  if (result.valid) return;
+  assert.deepEqual(
+    result.issues.map((i) => [i.code, i.pointer]),
+    [["contract_invalid", "/stories/0/sources/0/wire"]],
+  );
+});
+
+test("a version 1 edition is still accepted", async () => {
+  const minimal = await readJson(resolve(examples, "minimal.json"));
+  assert.equal(minimal.schema_version, 1);
+  assert.equal(validateEdition(minimal).valid, true);
+});
+
+test("a title config whose agency id is also a publisher id is refused", async () => {
+  const path = resolve(await mkdtemp(resolve(tmpdir(), "publisher-title-")), "title.yaml");
+  const title = await readFile(resolve(root, "config/title.yaml"), "utf8");
+  await writeFile(path, title.replace("  ritzau: Ritzau", "  dr: Danmarks Radio"));
+  assert.throws(
+    () => loadTitleConfig(path),
+    (e: any) => e.type === "publish_root_invalid" && /dr/.test(e.message),
+  );
+  assert.deepEqual(loadTitleConfig(resolve(root, "config/title.yaml")).agencies, { ritzau: "Ritzau" });
 });

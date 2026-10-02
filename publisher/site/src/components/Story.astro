@@ -1,9 +1,17 @@
 ---
 import Callout from "./Callout.astro";
+import { quoteNames, sourceCredit, storyCredits } from "../../../assets/html/credit.ts";
 import { formatPublished } from "../../../assets/html/format.ts";
 import { softHyphenate } from "../../../assets/html/hyphenate.ts";
-const { story, publishers, language, timezone, twoColumn = false } = Astro.props;
-type Source = { source: string; url: string; primary: boolean; original_title: string; published_at: string };
+const { story, publishers, agencies = {}, language, timezone, twoColumn = false } = Astro.props;
+type Source = {
+  source: string;
+  wire?: string;
+  url: string;
+  primary: boolean;
+  original_title: string;
+  published_at: string;
+};
 type Attributed = { text: string; sources: string[] };
 const sources: Source[] = story.sources;
 const primary = sources.find((s) => s.primary);
@@ -19,9 +27,11 @@ const limitations: Record<string, string> = {
 const note = story.limitations.map((x: string) => limitations[x]).join(", ");
 // One name per contributing publisher, the primary first, in the order they appear in the contract. The
 // row is the summary of the source list: clicking it opens the full evidence trail with titles and
-// times, so the names carry no links of their own.
-const publisherIds = [...new Set([...(primary ? [primary.source] : []), ...sources.map((s) => s.source)])];
-const publisherNames = publisherIds.map((id) => publishers[id] ?? id);
+// times, so the names carry no links of their own. Wire copy is credited to its agency here; the
+// evidence trail names the agency and the carrier whose page the link opens.
+const names = { publishers, agencies };
+const publisherNames = storyCredits(sources, names);
+const quoted = quoteNames(sources, names);
 // Paragraph citations stay in the contract but are not rendered inline on the web: the source line under
 // each story carries the publishers. Inline markers unsettled the line breaking in narrow columns.
 // Body copy and ledes get build-time soft hyphens so every browser breaks words at the same points.
@@ -38,7 +48,7 @@ const hy = (text: string) => softHyphenate(text, language);
   {story.copy.lede && story.role === "brief" && (
     <p class="lede">{hy(story.copy.lede.text)}</p>
   )}
-  {story.callouts.length > 0 && <Callout callout={story.callouts[0]} publishers={publishers} />}
+  {story.callouts.length > 0 && <Callout callout={story.callouts[0]} publishers={quoted} />}
   {body.length > 0 && (
     <div class:list={["body", { two: twoColumn && body.length > 1, dropcap: story.role === "lead" }]}>
       {body.map((p) => (
@@ -46,7 +56,7 @@ const hy = (text: string) => softHyphenate(text, language);
       ))}
     </div>
   )}
-  {story.callouts.slice(1).map((callout: any) => <Callout callout={callout} publishers={publishers} />)}
+  {story.callouts.slice(1).map((callout: any) => <Callout callout={callout} publishers={quoted} />)}
   <footer class="attribution">
     {sources.length > 0 && (
       <details class="sources">
@@ -59,7 +69,7 @@ const hy = (text: string) => softHyphenate(text, language);
           {sources.map((s) => (
             <li>
               <a href={s.url}>{s.original_title}</a>{" "}
-              <span>{publishers[s.source]}, {formatPublished(s.published_at, language, timezone)}</span>
+              <span>{sourceCredit(s, names)}, {formatPublished(s.published_at, language, timezone)}</span>
             </li>
           ))}
         </ul>

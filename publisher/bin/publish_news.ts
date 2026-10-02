@@ -28,7 +28,7 @@ import {
 import {
   readEdition,
   validateEdition,
-  type EditionContractV1,
+  type EditionContract,
 } from "../src/contract/edition-contract.ts";
 import {
   CLI_VERSION,
@@ -84,7 +84,7 @@ function fail(
   throw publisherError(type, message, details);
 }
 
-async function loadValidEdition(path: string): Promise<EditionContractV1> {
+async function loadValidEdition(path: string): Promise<EditionContract> {
   const checked = validateEdition(await readEdition(path));
   if (!checked.valid) {
     const first = checked.issues[0]!;

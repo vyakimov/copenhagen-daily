@@ -13,6 +13,7 @@ from jsonschema import Draft202012Validator, FormatChecker
 from .bundle import Bundle
 from .contract import schema_pointer, validate_edition
 from .paths import SPEC_SCHEMA_PATH
+from .wire import wire_agency
 
 TITLE = "copenhagen-daily"
 TIMEZONE = "Europe/Copenhagen"
@@ -58,8 +59,8 @@ class Resolver:
         return hits[0]
 
 
-def _source(article: dict[str, Any], input_id: str, primary: bool) -> dict[str, Any]:
-    return {
+def _source(article: dict[str, Any], input_id: str, primary: bool, wire: dict[str, str]) -> dict[str, Any]:
+    source = {
         "source": article["source"],
         "source_id": article["source_id"],
         "input_id": input_id,
@@ -69,9 +70,17 @@ def _source(article: dict[str, Any], input_id: str, primary: bool) -> dict[str, 
         "content_hash": article["content_hash"],
         "primary": primary,
     }
+    # Wire copy keeps its carrier as the source, so the link and the evidence trail are the outlet's;
+    # the agency is named beside it and block 3 credits it.
+    agency = wire_agency(article, wire)
+    if agency:
+        source["wire"] = agency
+    return source
 
 
-def _story(spec: dict[str, Any], resolver: Resolver, input_id: str, scoring: set[str], corroborating: set[str]) -> dict[str, Any]:
+def _story(
+    spec: dict[str, Any], resolver: Resolver, input_id: str, scoring: set[str], corroborating: set[str], wire: dict[str, str]
+) -> dict[str, Any]:
     story_id = spec["id"]
     articles = [resolver.resolve(ref, story_id) for ref in spec["sources"]]
     seen: set[tuple[str, str]] = set()
@@ -80,7 +89,7 @@ def _story(spec: dict[str, Any], resolver: Resolver, input_id: str, scoring: set
         if key in seen:
             raise BuildError(f"{story_id}: source {key[0]}:{key[1]} listed twice")
         seen.add(key)
-    sources = [_source(a, input_id, primary=(i == 0)) for i, a in enumerate(articles)]
+    sources = [_source(a, input_id, primary=(i == 0), wire=wire) for i, a in enumerate(articles)]
     publishers = [s["source"] for s in sources]
     cited = set(publishers)
     danish = scoring | corroborating
@@ -151,6 +160,7 @@ def build_edition(
     memory: dict[str, Any] | None = None,
     scoring: set[str] | None = None,
     corroborating: set[str] | None = None,
+    wire_agencies: dict[str, str] | None = None,
 ) -> dict[str, Any]:
     errors = validate_spec(spec)
     if errors:
@@ -163,17 +173,18 @@ def build_edition(
     from .paths import POLICY_PATH
     from .policy import load_policy
 
-    if scoring is None or corroborating is None:
+    if scoring is None or corroborating is None or wire_agencies is None:
         policy = load_policy(POLICY_PATH)
-        scoring = set(policy.scoring_publishers)
-        corroborating = set(policy.corroborating_publishers)
+        scoring = set(policy.scoring_publishers) if scoring is None else scoring
+        corroborating = set(policy.corroborating_publishers) if corroborating is None else corroborating
+        wire_agencies = policy.wire_agencies if wire_agencies is None else wire_agencies
     edition = spec["edition"]
     resolver = Resolver(bundle, window)
-    stories = [_story(s, resolver, edition["input_id"], scoring, corroborating) for s in spec["stories"]]
+    stories = [_story(s, resolver, edition["input_id"], scoring, corroborating, wire_agencies) for s in spec["stories"]]
     feeds = sorted(feeds, key=lambda f: f["feed_id"])
     generated_at = edition.get("generated_at") or dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H:%M:%S.%fZ")
     doc = {
-        "schema_version": 1,
+        "schema_version": 2,
         "title": TITLE,
         "edition": {
             "id": edition["id"],

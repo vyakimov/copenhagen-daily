@@ -30,7 +30,7 @@ import {
 import { dirname, join, relative, resolve, sep } from "node:path";
 import { randomUUID } from "node:crypto";
 import { spawnSync } from "node:child_process";
-import type { EditionContractV1 } from "../contract/edition-contract.generated.ts";
+import type { EditionContract } from "../contract/edition-contract.ts";
 import { canonical, hashBytes, hashFile } from "./hash.ts";
 import { publisherError } from "./errors.ts";
 import {
@@ -51,7 +51,7 @@ import {
 export type PublishOptions = {
   root: string;
   projectRoot: string;
-  edition: EditionContractV1;
+  edition: EditionContract;
   dryRun: boolean;
   skipDevice: boolean;
   requireDevice: boolean;

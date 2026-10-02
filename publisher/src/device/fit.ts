@@ -1,10 +1,8 @@
 // Section 10, reduced to one composition: place required and optional stories in contract order,
 // measure, and repair the first clipped slot down a fixed ladder until the page fits or a required
 // story cannot be placed. Then try reserves one at a time. Every transition is recorded.
-import type {
-  EditionContractV1,
-  Story,
-} from "../contract/edition-contract.generated.ts";
+import type { Story } from "../contract/edition-contract.generated.ts";
+import type { EditionContract } from "../contract/edition-contract.ts";
 import { publisherError, type PublisherFailure } from "../publish/errors.ts";
 import type { DeviceBrowser, Measurement } from "./browser.ts";
 import {
@@ -40,6 +38,7 @@ export type FitResult = {
 export type TitleLike = {
   masthead: string;
   publishers: Record<string, string>;
+  agencies?: Record<string, string>;
 };
 
 const MAX_CANDIDATES = 80;
@@ -111,7 +110,7 @@ function assign(
 
 export async function fitEdition(
   browser: DeviceBrowser,
-  edition: EditionContractV1,
+  edition: EditionContract,
   config: TitleLike,
 ): Promise<FitResult> {
   const byId = new Map(edition.stories.map((s) => [s.id, s]));

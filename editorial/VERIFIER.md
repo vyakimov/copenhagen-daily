@@ -15,10 +15,12 @@ One file, `check-input.json` in the run directory:
     `standard[i]`, `short[i]`, `extended[i]`, or `callouts[i]`), a `sentence` index within that
     location, the `text`, and `cites`, the publisher ids the paragraph cites.
   - `evidence`: every article the story carries, each with `source` (the publisher id), `title`,
-    `description`, `authors`, `categories`, `published_at`, and `url`. The description is the RSS
+    `description`, `authors`, `categories`, `published_at`, `url`, and `wire`. The description is the RSS
     description, often a teaser; with the title, the byline, and the categories it is all the
     evidence there is. Nothing outside it counts. A byline supports naming the writer as the source of
     a judgement ("Politiken's commentator Elisabet Svane"); a category tag supports a topic, not a fact.
+    `wire` is null, or the agency (`ritzau`) whose copy the article is: the outlet in `source` only
+    carries it. What such an article reports was told to, and written by, the agency.
   - The headline, the deck, and every callout except a quote cite the whole of the story's evidence,
     because they distil the story; a paragraph cites what its marker names.
 
@@ -37,7 +39,8 @@ A sentence is **unsupported** when any of these holds:
 - the evidence contradicts it, including a different number, date, actor, or outcome;
 - a quotation is not verbatim in the evidence (in translation) or has no speaker;
 - a claim is attributed to the wrong party, or a judgement is stated as the paper's own when the
-  evidence gives it as someone's view;
+  evidence gives it as someone's view; for evidence marked `wire`, the agency is the right party
+  ("tells Ritzau") and the outlet that carries it ("tells Kristeligt Dagblad") is the wrong one;
 - it adds background, context, or explanation that no evidence carries, however true it may be;
 - for a callout: a quote fails the quotation test, a figure or a timeline row is not in the evidence.
 

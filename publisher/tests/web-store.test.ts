@@ -255,6 +255,23 @@ test("the other composition builds from the same story markup", async () => {
   for (const story of dense.stories) assert.match(html, new RegExp(story.id));
 });
 
+test("wire copy is credited to its agency and links to its carrier", async () => {
+  const wire = await edition("wire.json");
+  const work = await mkdtemp(join(tmpdir(), "publisher-wire-"));
+  const dist = await buildWeb(projectRoot, work, wire, [indexEntry(wire, "skipped")]);
+  const html = await readFile(join(dist, "n", wire.edition.id, "index.html"), "utf8");
+  const primary = wire.stories[0]!.sources[0]!;
+  assert.match(html, new RegExp(`<h1[^>]*><a href="${escapeRegExp(primary.url)}"`));
+  assert.match(primary.url, /kristeligt-dagblad\.dk/);
+  // The source line credits the agency once, first, and no longer names the carrier on its own.
+  assert.match(html, /<span class="pubs"[^>]*>Ritzau · DR · Berlingske · Jyllands-Posten · TV 2 · Politiken<\/span>/);
+  // The evidence list names the agency and the outlet whose page the link opens.
+  assert.match(html, /<span[^>]*>Ritzau via Kristeligt Dagblad, /);
+  assert.match(html, /quoted by Ritzau/);
+  // The dateline counts the agency, not the carrier.
+  assert.doesNotMatch(html.replace(/Ritzau via Kristeligt Dagblad/g, ""), /Kristeligt Dagblad/);
+});
+
 test("standalone web builds are deterministic and load no remote resources", async () => {
   const work = await mkdtemp(join(tmpdir(), "publisher-determinism-"));
   const wrapper = resolve(projectRoot, "publish_news.sh");

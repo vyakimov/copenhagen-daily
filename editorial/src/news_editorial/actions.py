@@ -203,6 +203,7 @@ def build_action(args: argparse.Namespace) -> dict[str, Any]:
         edition = build_edition(
             spec, bundle, feeds, window=window_doc, memory=memory_doc,
             scoring=set(policy.scoring_publishers), corroborating=set(policy.corroborating_publishers),
+            wire_agencies=policy.wire_agencies,
         )
     except BuildError as exc:
         raise ActionError("spec_invalid", str(exc), {"spec": str(spec_path)}) from exc

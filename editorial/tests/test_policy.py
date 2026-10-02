@@ -26,3 +26,7 @@ def test_policy_bounds_the_sessions_by_turns(policy):
 def test_policy_carries_no_device_decisions(policy):
     assert not hasattr(policy.limits, "fit_rounds_with_editor")
     assert not hasattr(policy.budgets, "device_capacity")
+
+
+def test_policy_names_the_wire_agencies_and_their_sign_offs(policy):
+    assert policy.wire_agencies == {"ritzau": "RITZAU"}

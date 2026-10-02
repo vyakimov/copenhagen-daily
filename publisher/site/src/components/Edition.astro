@@ -3,9 +3,11 @@ import Masthead from "./Masthead.astro";
 import Grid from "./layouts/Grid.astro";
 import Sheet from "./layouts/Sheet.astro";
 import { formatEditionDate } from "../../../assets/html/format.ts";
+import { sourceName, storyCredits } from "../../../assets/html/credit.ts";
 const { edition, config, device } = Astro.props;
 const meta = edition.edition;
-const common = { publishers: config.publishers, language: meta.language, timezone: meta.timezone };
+const names = { publishers: config.publishers, agencies: config.agencies ?? {} };
+const common = { ...names, language: meta.language, timezone: meta.timezone };
 
 // The composition is a title-level choice (config/title.yaml, web_layout). Both compositions render the
 // same Story component and share one type scale, so switching is one word and nothing drifts.
@@ -20,23 +22,20 @@ const roles = {
 };
 // The dateline names the publishers that contributed to the most stories, at most five, and counts
 // the rest. Stories rather than articles, so a wire-heavy outlet cannot climb the line by volume.
-// Each story's source row still names its own publishers in full.
+// Each story's source row still names its own publishers in full. Wire copy counts for its agency,
+// as it does in the source row.
 const storiesBy = new Map<string, number>();
 const articlesBy = new Map<string, number>();
 for (const s of stories) {
-  const ids = new Set<string>(s.sources.map((x: any) => x.source));
-  for (const id of ids) storiesBy.set(id, (storiesBy.get(id) ?? 0) + 1);
-  for (const x of s.sources) articlesBy.set(x.source, (articlesBy.get(x.source) ?? 0) + 1);
+  for (const name of storyCredits(s.sources, names)) storiesBy.set(name, (storiesBy.get(name) ?? 0) + 1);
+  for (const x of s.sources) {
+    const name = sourceName(x, names);
+    articlesBy.set(name, (articlesBy.get(name) ?? 0) + 1);
+  }
 }
-const nameOf = (id: string) => String(config.publishers[id] ?? id);
-const ranked = [...storiesBy.keys()]
-  .sort(
-    (a, b) =>
-      storiesBy.get(b)! - storiesBy.get(a)! ||
-      articlesBy.get(b)! - articlesBy.get(a)! ||
-      nameOf(a).localeCompare(nameOf(b)),
-  )
-  .map(nameOf);
+const ranked = [...storiesBy.keys()].sort(
+  (a, b) => storiesBy.get(b)! - storiesBy.get(a)! || articlesBy.get(b)! - articlesBy.get(a)! || a.localeCompare(b),
+);
 const leading = { names: ranked.slice(0, 5), others: Math.max(0, ranked.length - 5) };
 ---
 <main class:list={["page", `layout-${layout}`]}>

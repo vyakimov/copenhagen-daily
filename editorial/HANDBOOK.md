@@ -56,6 +56,11 @@ cap with a schema version, not to drop evidence.
 The primary is the scoring publisher's article that supplied the most of the copy. On a tie, the one
 with the fuller description; on a further tie, the earlier one. The headline links to it.
 
+Wire copy is an outlet's article like any other for these rules, the primary included. An article
+flagged `wire:<agency>` in the window is the agency's piece on that outlet's page: list it as a source
+by its number, and `build` marks it, so the page credits the agency under the story while the headline
+still links to the outlet that carries it. The style guide says whom the prose names.
+
 ## Callouts
 
 Use at most one callout on a secondary and up to three on a lead. General guidance, not an

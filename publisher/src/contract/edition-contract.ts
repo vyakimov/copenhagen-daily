@@ -2,11 +2,16 @@ import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import AjvModule, { type ErrorObject } from "ajv/dist/2020.js";
 import addFormatsModule from "ajv-formats";
-import schema from "../../contracts/edition-contract.v1.schema.json" with { type: "json" };
-import type { EditionContractV1 } from "./edition-contract.generated.ts";
+import schemaV1 from "../../contracts/edition-contract.v1.schema.json" with { type: "json" };
+import schemaV2 from "../../contracts/edition-contract.v2.schema.json" with { type: "json" };
+import type { EditionContractV2 } from "./edition-contract.generated.ts";
 import { loadTitleConfig, type TitleConfig } from "./title-config.ts";
+import { SUPPORTED_EDITION_SCHEMA_VERSIONS } from "./version.ts";
 
-export type { EditionContractV1 };
+type Version = (typeof SUPPORTED_EDITION_SCHEMA_VERSIONS)[number];
+/** An edition of any supported version. Version 2 adds only an optional field to version 1, so its
+ * generated type describes both; each document is still validated against its own version's schema. */
+export type EditionContract = Omit<EditionContractV2, "schema_version"> & { schema_version: Version };
 export type ValidationIssue = { code: string; pointer: string; message: string };
 type AjvConstructor = new (options?: Record<string, unknown>) => {
   compile<T>(schema: object): ((data: unknown) => data is T) & { errors?: ErrorObject[] | null };
@@ -23,7 +28,7 @@ const ajv = new Ajv2020({
   useDefaults: false,
 });
 addFormats(ajv, { mode: "full" });
-const validateSchema = ajv.compile<EditionContractV1>(schema);
+const validators = { 1: ajv.compile<EditionContract>(schemaV1), 2: ajv.compile<EditionContract>(schemaV2) };
 
 const escapePointer = (segment: unknown) => String(segment).replaceAll("~", "~0").replaceAll("/", "~1");
 
@@ -39,7 +44,7 @@ function issue(pointer: string, message: string): ValidationIssue {
   return { code: "contract_invalid", pointer, message };
 }
 
-function semantic(doc: EditionContractV1, title: TitleConfig): ValidationIssue[] {
+function semantic(doc: EditionContract, title: TitleConfig): ValidationIssue[] {
   const issues: ValidationIssue[] = [];
   const publisherNames = title.publishers;
   if (doc.title !== title.id) issues.push(issue("/title", `title must equal the configured title id ${title.id}`));
@@ -70,6 +75,8 @@ function semantic(doc: EditionContractV1, title: TitleConfig): ValidationIssue[]
     story.sources.forEach((source, j) => {
       if (!publisherNames[source.source])
         issues.push(issue(`${p}/sources/${j}/source`, "publisher mapping is unknown"));
+      if (source.wire !== undefined && !title.agencies?.[source.wire])
+        issues.push(issue(`${p}/sources/${j}/wire`, "agency mapping is unknown"));
       if (!inputIds.has(source.input_id))
         issues.push(issue(`${p}/sources/${j}/input_id`, "input reference does not exist"));
       try {
@@ -133,25 +140,27 @@ function semantic(doc: EditionContractV1, title: TitleConfig): ValidationIssue[]
 export function validateEdition(
   value: unknown,
   title: TitleConfig = loadTitleConfig(),
-): { valid: true; value: EditionContractV1 } | { valid: false; issues: ValidationIssue[] } {
-  if (!value || typeof value !== "object" || (value as { schema_version?: unknown }).schema_version !== 1) {
+): { valid: true; value: EditionContract } | { valid: false; issues: ValidationIssue[] } {
+  const version = (value as { schema_version?: unknown } | null)?.schema_version;
+  if (!value || typeof value !== "object" || !SUPPORTED_EDITION_SCHEMA_VERSIONS.includes(version as Version)) {
     return {
       valid: false,
       issues: [
         {
           code: "contract_unsupported_schema_version",
           pointer: "/schema_version",
-          message: "supported edition schema version is 1",
+          message: `supported edition schema versions are ${SUPPORTED_EDITION_SCHEMA_VERSIONS.join(" and ")}`,
         },
       ],
     };
   }
+  const validateSchema = validators[version as Version];
   if (!validateSchema(value))
     return {
       valid: false,
       issues: (validateSchema.errors ?? []).map((e: ErrorObject) => issue(pointerFor(e), e.message ?? "invalid")),
     };
-  const edition = value as EditionContractV1;
+  const edition = value as EditionContract;
   const issues = semantic(edition, title);
   return issues.length ? { valid: false, issues } : { valid: true, value: edition };
 }
@@ -171,5 +180,5 @@ export async function readEdition(path: string): Promise<unknown> {
 }
 
 export const editionSchemaPath = fileURLToPath(
-  new URL("../../contracts/edition-contract.v1.schema.json", import.meta.url),
+  new URL("../../contracts/edition-contract.v2.schema.json", import.meta.url),
 );

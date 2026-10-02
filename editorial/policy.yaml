@@ -27,6 +27,13 @@ scoring_publishers: [dr, tv2, politiken, berlingske, jp, borsen, information, al
 # also carry, their text is attached as evidence for the writer, the way a linked publisher's is.
 corroborating_publishers: [via_ritzau]
 
+# Agency wire copy a publisher carries: agency id to the sign-off that ends the piece. An article with no
+# byline whose text closes on the sign-off ("RITZAU", "RITZAU/AFP") is the agency's reporting, and the
+# outlet is its carrier: the source is credited to the agency and links to the carrier's page. The
+# agency's display name is block 3's, in publisher/config/title.yaml.
+wire_agencies:
+  ritzau: RITZAU
+
 # score = (0.45 breadth + 0.10 peak_prominence + 0.30 recency + 0.15 thread_strength) x section_weight
 weights:
   breadth: 0.45

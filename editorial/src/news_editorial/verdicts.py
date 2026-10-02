@@ -260,6 +260,7 @@ def check_input(edition: dict[str, Any], window: dict[str, Any]) -> dict[str, An
                     "published_at": source["published_at"],
                     "url": source["url"],
                     "primary": source["primary"],
+                    "wire": source.get("wire"),
                 }
             )
         stories.append({"id": story["id"], "role": story["role"], "sentences": sentences, "evidence": evidence})

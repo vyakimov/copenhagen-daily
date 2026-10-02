@@ -49,3 +49,23 @@ def test_rejection_corpus_fails_at_the_expected_pointer():
         errors = validate_edition(_apply(base, case["ops"]))
         assert errors, case["name"]
         assert any(e.startswith(case["expected_pointer"] + ":") for e in errors), (case["name"], errors)
+
+
+def test_a_version_1_edition_is_still_accepted():
+    document = json.loads((EXAMPLES / "minimal.json").read_text())
+    assert document["schema_version"] == 1
+    assert validate_edition(document) == []
+
+
+def test_a_version_2_edition_may_credit_a_wire_agency():
+    document = json.loads((EXAMPLES / "wire.json").read_text())
+    assert document["schema_version"] == 2
+    assert document["stories"][0]["sources"][0]["wire"] == "ritzau"
+    assert validate_edition(document) == []
+
+
+def test_an_unconfigured_wire_agency_is_refused():
+    document = json.loads((EXAMPLES / "wire.json").read_text())
+    document["stories"][0]["sources"][0]["wire"] = "reuters"
+    errors = validate_edition(document)
+    assert any(e.startswith("/stories/0/sources/0/wire:") for e in errors), errors

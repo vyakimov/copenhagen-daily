@@ -14,6 +14,7 @@ import {
 import { loadTitleConfig } from "../src/contract/title-config.ts";
 import { buildDevice, withBrowser } from "../src/device/index.ts";
 import { fitEdition } from "../src/device/fit.ts";
+import { renderDevicePage } from "../src/device/render.ts";
 import {
   MAGICK_ARGS,
   pngHeader,
@@ -260,4 +261,31 @@ test("the saved device page links the versioned stylesheet that the release actu
     await stat(served).then((s) => s.isFile()),
     `${match![1]} is in the release`,
   );
+});
+
+test("the device page credits wire copy to its agency", async () => {
+  const wire = await edition("wire.json");
+  const story = wire.stories[0]!;
+  const html = renderDevicePage(
+    wire,
+    {
+      composition: "lead-wide",
+      placements: [
+        {
+          story_id: story.id,
+          role_as_placed: "lead",
+          slot: "lead",
+          headline_variant: "headline",
+          copy_variant: null,
+          callout_index: story.callouts.findIndex((c) => c.kind === "quote"),
+        },
+      ],
+      omitted: [],
+      dropped_callouts: [],
+    },
+    config,
+  );
+  assert.match(html, /<div class="src">Ritzau · DR · Berlingske · Jyllands-Posten · \+2<\/div>/);
+  assert.match(html, /quoted by Ritzau/);
+  assert.doesNotMatch(html, /Kristeligt Dagblad/);
 });

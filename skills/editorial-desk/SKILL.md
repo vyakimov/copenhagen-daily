@@ -51,6 +51,7 @@ dates, the previous cutoff, and the next edition number.
 
 **2. The window.** Read `window.md` in full. It is the reading view: Danish articles from the last 24
 hours with their descriptions, everything else by headline, all grouped by publisher and numbered.
+An article flagged `wire:ritzau` is the agency's copy carried by that outlet.
 Use `window.json` when you need an article in full. Refer to articles by number everywhere.
 
 **3. Cluster.** Write `clusters.json`:

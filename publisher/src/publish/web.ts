@@ -2,7 +2,7 @@ import { cp, mkdir, readFile, symlink, writeFile } from "node:fs/promises";
 import { spawnSync } from "node:child_process";
 import { resolve } from "node:path";
 import { parse } from "yaml";
-import type { EditionContractV1 } from "../contract/edition-contract.generated.ts";
+import type { EditionContract } from "../contract/edition-contract.ts";
 import { canonical } from "./hash.ts";
 import { publisherError } from "./errors.ts";
 
@@ -22,7 +22,7 @@ export type IndexEntry = {
 };
 
 export function indexEntry(
-  edition: EditionContractV1,
+  edition: EditionContract,
   deviceStatus: IndexEntry["device_status"],
 ): IndexEntry {
   const e = edition.edition;
@@ -57,7 +57,7 @@ export function sortEntries(entries: IndexEntry[]): IndexEntry[] {
 export async function buildWeb(
   projectRoot: string,
   run: string,
-  edition: EditionContractV1,
+  edition: EditionContract,
   entries: IndexEntry[],
   options: { layout?: "grid" | "sheet" } = {},
 ): Promise<string> {
