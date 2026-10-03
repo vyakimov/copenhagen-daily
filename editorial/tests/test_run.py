@@ -734,6 +734,51 @@ def test_a_cached_story_is_reused_only_with_the_brief_that_produced_it(policy, t
     assert fakes.writer_modes == [("russian-frigate-flares-gedser", "write")]
 
 
+def test_declared_explanations_are_looked_up_and_handed_to_the_checker_as_references(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    looked_up = []
+
+    def defining_writer(brief_path, timeout):
+        record = fakes.writer(brief_path, timeout)
+        brief = read_json(brief_path)
+        if brief["story"]["role"] == "lead":
+            copy = json.loads(record["result"])
+            copy["definitions"] = [
+                {"term": "Gedser", "definition": "a port on Denmark's southern tip", "wikipedia": "Gedser"},
+                {"term": "Fennec", "definition": "a light helicopter", "wikipedia": "No Such Page"},
+            ]
+            record["result"] = json.dumps(copy)
+        return record
+
+    def fake_lookup(title):
+        looked_up.append(title)
+        if title == "Gedser":
+            return {"requested": title, "status": "found", "title": "Gedser", "extract": "Gedser is a town at the southern tip of Falster.", "url": "https://en.wikipedia.org/wiki/Gedser"}
+        return {"requested": title, "status": "missing", "url": "https://en.wikipedia.org/api/rest_v1/page/summary/No_Such_Page"}
+
+    seen = {}
+    original_checker = fakes.checker
+
+    def checker(run_dir, timeout):
+        seen["input"] = read_json(run_dir / "check-input.json")
+        return original_checker(run_dir, timeout)
+
+    runner = make_runner(policy, tmp_path, fakes, writer=defining_writer, checker=checker, lookup=fake_lookup)
+    status = runner.run()
+    assert status["outcome"] == "published", status["failure"]
+    assert looked_up == ["Gedser", "No Such Page"]
+    lead = next(s for s in seen["input"]["stories"] if s["id"] == "russian-frigate-flares-gedser")
+    references = [e for e in lead["evidence"] if e.get("reference")]
+    assert [r["source_id"] for r in references] == ["Gedser"], "only a found article becomes a reference row"
+    assert references[0]["source"] == "wikipedia" and references[0]["term"] == "Gedser" and "Falster" in references[0]["description"]
+    lookups = read_json(runner.run_dir / "stories" / "russian-frigate-flares-gedser" / "lookups.json")
+    assert [(r["requested"], r["status"]) for r in lookups] == [("Gedser", "found"), ("No Such Page", "missing")]
+    # The spec and the contract never carry the definitions; they are for the checker alone.
+    assert "definitions" not in next(s for s in read_json(runner.run_dir / "spec.json")["stories"] if s["role"] == "lead")
+    other = next(s for s in seen["input"]["stories"] if s["id"] != "russian-frigate-flares-gedser")
+    assert not any(e.get("reference") for e in other["evidence"])
+
+
 def test_a_writer_whose_copy_cites_a_publisher_outside_its_sources_is_asked_again(policy, tmp_path):
     fakes = Fakes(tmp_path)
     seen = []

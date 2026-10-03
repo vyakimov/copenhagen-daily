@@ -521,6 +521,26 @@ now validated, bound to its brief, and written atomically.
 
 ---
 
+## Clarity, and the one fact from outside the evidence (3 October 2026)
+
+The 2 October lead said "as passenger plane crossed Borris" and never said what Borris was. The style
+guide now carries a clarity rule modelled on The Economist: every name, place, institution or term a
+reader outside Denmark could not place is explained on first mention in the body, after the name and
+set off by commas, the well known included ("Elon Musk, Tesla's chief executive"), nested when one
+explanation is not enough; headlines avoid such terms where a plainer phrase carries the news, and
+when the term is the story the body's first sentence explains it. Kristeligt Dagblad's own copy on
+the Borris story did exactly this.
+
+**Such an explanation may come from the writer's knowledge, and it is verified.** It is the only
+fact allowed from outside the evidence. The writer declares each one with the Wikipedia article that
+confirms it; the runner fetches the article's summary (the only host a run reaches besides delivery,
+and never from a session, which keeps the boundary in AGENTS.md as it was); the summary joins the
+story's evidence as a reference row; the checker verifies the explanation against it and may use it
+for nothing else. Wikipedia is treated as authoritative for identifying facts of this kind. A lookup
+that fails leaves the explanation unsupported, so it is struck or rewritten, never trusted.
+
+---
+
 ## Deferred, with gates
 
 **Edition revisions and correction notices.** Designed in the [roadmap](roadmap.md). The first release

@@ -113,7 +113,10 @@ paper, never a padded or a late one.
 - Every quotation is verbatim in a source and has a speaker.
 - Every sentence that rests on a judgement names its source in the sentence; every fact of record
   cites by marker only.
-- No fact, background, or explanation from outside the sources.
+- No fact, background, or explanation from outside the sources, except the explanation of a name or
+  term on first mention, declared with the copy and verified against Wikipedia (the style guide's
+  clarity rule).
+- No name, place, institution or term left unexplained that a reader outside Denmark could not place.
 - Word budgets respected as ceilings: lead 120 to 180, secondary 60 to 110, brief under 35.
 - The coverage note says what was read and what failed.
 - The edition id has not been published before.

@@ -48,7 +48,24 @@ def _copy_validator() -> Draft202012Validator:
         "type": "object",
         "additionalProperties": False,
         "required": ["headline"],
-        "properties": {k: v for k, v in story["properties"].items() if k in COPY_FIELDS},
+        "properties": {
+            **{k: v for k, v in story["properties"].items() if k in COPY_FIELDS},
+            # Explanations the writer took from its own knowledge, each with the article that confirms it.
+            "definitions": {
+                "type": "array",
+                "maxItems": 16,
+                "items": {
+                    "type": "object",
+                    "additionalProperties": False,
+                    "required": ["term", "definition", "wikipedia"],
+                    "properties": {
+                        "term": {"$ref": "#/$defs/text"},
+                        "definition": {"$ref": "#/$defs/text"},
+                        "wikipedia": {"type": "string", "pattern": "^(da:)?\\S.*$", "maxLength": 300},
+                    },
+                },
+            },
+        },
         "$defs": spec_schema["$defs"],
     }
     return Draft202012Validator(schema, format_checker=FormatChecker())

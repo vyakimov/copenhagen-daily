@@ -146,7 +146,7 @@ session has the Read tool and nothing else; and a change any session makes anywh
 outside its run directory stops the run before `publish`.
 
 The runner records what it writes for the sessions (`window.json`, `window.md`, `window-linked.md`,
-`memory.json`, `feeds.json`, `check-input.json`, the writers' briefs under `stories/`, and the bundle)
+`memory.json`, `feeds.json`, `check-input.json`, the writers' briefs and Wikipedia lookups under `stories/`, and the bundle)
 as digests in `runs/<id>/inputs.json`. After every
 session, and at the start of every run in the `inputs` phase, the files on disk must match that
 record.

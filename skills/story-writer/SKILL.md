@@ -33,6 +33,13 @@ agency text. With the title and the byline, the description is all the evidence 
 number, name, date, background, or explanation enters the copy from anywhere else, including your own
 knowledge. A paraphrase is never a quotation; a quotation is verbatim in translation and has a speaker.
 
+Explain every name, place, institution or term a reader outside Denmark could not place, on its
+first mention in the body, after the name and set off by commas, the way the style guide's clarity
+rule says; keep such terms out of the headline when a plainer phrase carries the news. That
+explanation is the one thing you may take from your own knowledge rather than the evidence, and each
+one must be declared (see the answer below) so the checker can verify it against Wikipedia. Prefer the
+explanation the evidence gives when it gives one, and a stable description to one that can go stale.
+
 Every paragraph you write is `[text, [publisher ids]]`, and every id you cite is a `source` in
 `articles`. Facts of record are cited by the marker and name nobody: not "DR reports that the vote
 passed" but "The vote passed", with `dr` in the marker. Only a judgement, an observation, or a
@@ -68,5 +75,11 @@ left out when ambiguous. Copy is English.
 ## The answer
 
 One JSON object with only these keys, as the role needs them: `headline`, `headline_short`, `deck`,
-`lede`, `extended`, `standard`, `short`, `callouts`. No `id`, `role`, `kicker` or `sources`: the desk
-decided those. Nothing after the closing brace.
+`lede`, `extended`, `standard`, `short`, `callouts`, and `definitions`. No `id`, `role`, `kicker` or
+`sources`: the desk decided those. Nothing after the closing brace.
+
+`definitions` lists every explanation you took from your own knowledge, one entry each:
+`{"term": "Borris Skydeterræn", "definition": "a military firing range in West Jutland", "wikipedia": "Borris Skydeterræn"}`,
+where `wikipedia` is the title of the English Wikipedia article that confirms it, or `"da:<title>"`
+for a Danish one when no English article exists. Leave the list out when every explanation came from
+the evidence. An explanation you cannot name an article for does not go in the copy.

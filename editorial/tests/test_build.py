@@ -116,3 +116,13 @@ def test_a_wire_article_is_credited_to_its_agency_and_links_to_its_carrier():
     assert wire["wire"] == "ritzau"
     assert wire["source"] == "kristeligt_dagblad" and "kristeligt-dagblad.dk" in wire["url"]
     assert all("wire" not in s for s in sources if s is not wire)
+
+
+def test_story_copy_may_declare_definitions_but_the_spec_entry_never_carries_them():
+    from news_editorial.build import spec_story, validate_story_copy
+
+    copy = {"headline": "H", "lede": ["A sentence.", ["dr"]], "definitions": [{"term": "X", "definition": "a thing", "wikipedia": "X"}]}
+    assert validate_story_copy(copy, "brief") == []
+    assert "definitions" not in spec_story({"id": "s", "role": "brief", "kicker": "K", "sources": [1]}, copy)
+    bad = {**copy, "definitions": [{"term": "X", "definition": "a thing"}]}
+    assert validate_story_copy(bad, "brief")

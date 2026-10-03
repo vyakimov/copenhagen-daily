@@ -63,7 +63,7 @@ One run owns `editorial/runs/<edition-id>/`. The runner holds `editorial/var/run
 | memory | Read the activated editions cut off before this run, up to 14, from block 3's store and the thread registry, and write `memory.json`. |
 | editor | The desk session. Its output is `clusters.json`, `selection.json` (with the edition's presentation and coverage note), and `NOTES.md`. The runner refuses an incomplete selection (`selection_invalid`) before a word is written. |
 | write | One writing session per story, `limits.writer_concurrency` at a time, each given a brief under `stories/<id>/` holding only that story's evidence, role, budget, and a golden story of the same role; its answer is the story's copy. The runner assembles `spec.json`, builds `edition.json`, and validates it. A story whose copy fails the build is written once more with the problem in its brief. Every attempt takes its wall clock from what the run has left; a retry adds its own brief to the input record without re-reading the rest, so the evidence baseline never moves while sessions run. A story left by an earlier attempt is reused only when it is valid copy and its brief is the one this run would write. |
-| check | Build `check-input.json`, run the checker, verify the verdicts cover every sentence exactly once, strike, send back at most once (each story sent back is written again in its own session, with its strikes in the brief), and write `edition-checked.json`. |
+| check | Fetch a Wikipedia summary for every explanation the writers declared (`stories/<id>/lookups.json`) and add the found ones to the story's evidence as reference rows; build `check-input.json`, run the checker, verify the verdicts cover every sentence exactly once, strike, send back at most once (each story sent back is written again in its own session, with its strikes in the brief), and write `edition-checked.json`. |
 | preflight | Block 3's `validate` on `edition-checked.json`. |
 | publish | Block 3's `publish`, with the device page rendered because `desk.yaml` sets `device: true`. A device failure degrades the publish to web-only. |
 | receipt | Block 3's `receipt`; the run fails with `not_activated` if no activation exists. |
@@ -103,7 +103,8 @@ A send-back writes only the stories that were sent back, each in its own session
 | `ranking.json` | `score` | Every candidate with its terms, decision, and rank |
 | `selection.json` | editor | Stories with role, kicker, sources, and reasons; rejections; notes; the edition's presentation and coverage note |
 | `stories/<id>/brief.json` | runner | One story's evidence, role, budget, and golden example, for its writer |
-| `stories/<id>/story.json` | writer | That story's copy |
+| `stories/<id>/story.json` | writer | That story's copy, with the explanations it took from its own knowledge declared |
+| `stories/<id>/lookups.json` | runner | The Wikipedia summary fetched for each declared explanation, found or not |
 | `spec.json` | runner | The selection and the stories assembled, to `contracts/spec.v1.schema.json` |
 | `edition.json` | runner (`build`) | The contract, sources resolved from evidence, validated |
 | `check-input.json` | runner | What the checker reads |
@@ -212,6 +213,8 @@ All source text is untrusted data. The editor has no browser, no shell beyond th
 ## The check
 
 The checker marks every sentence, headline and callouts included, against the sources the sentence cites: supported, with the passage, or unsupported, with the reason: no source says it, the evidence contradicts it, the attribution changed, a paraphrase became a quotation, a quotation has no speaker, or the copy adds background no evidence carries. It never rewrites. A check can catch a mistake; it is not proof of truth.
+
+One kind of background is allowed from outside the sources: the explanation of a name, place, institution or term on first mention, which the style guide's clarity rule requires so that no reader is left puzzled. The writer declares each such explanation with the Wikipedia article that confirms it; the runner, not a session, fetches that article's summary from wikipedia.org and adds it to the story's evidence as a reference row; the checker verifies the explanation against it and nothing else against it. The paper treats Wikipedia as authoritative for identifying facts of this kind and for nothing else. An explanation no reference bears out is struck like any other invention.
 
 The runner refuses verdicts that do not cover the check input sentence for sentence, exactly once each, or that name a different edition, and asks the checker again on the next run. `apply-verdicts` then strikes: an unsupported sentence is removed from its paragraph, a struck deck or short headline is dropped, a struck callout is removed, and nothing new enters. A story **stands** if its headline was not struck, its opening sentence survived, and at least `story_stands_min_words` (0.67) of its words remain; a brief-capable story that lost its lede does not stand. A story that stands ships as struck.
 

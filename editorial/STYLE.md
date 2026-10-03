@@ -19,6 +19,33 @@ Every sentence carries a new fact. A sentence that only characterises is cut, no
 evidence makes a short story. A brief is one sentence under 35 words and carries at least one number,
 name, or decision; when the description is empty, the headline with its link is the whole brief.
 
+## Clarity: do not leave the reader puzzled
+
+The reader is intelligent and not assumed to be knowledgeable. A name, a place, an institution, a
+term, or an abbreviation that a reader outside Denmark could not place is explained on first mention
+in the body, the way The Economist does it: the explanation sits after the name, set off by commas,
+and is as short as it can be while answering "what is that". "Borris Skydeterræn, a military firing
+range in West Jutland", never "Borris". "Jacob Bundsgaard, the former mayor of Aarhus". The rule
+holds for the well known too: "Elon Musk, Tesla's chief executive", or "Elon Musk, the world's
+richest man", whichever the story needs. Explanations may nest when one is not enough: "Jane Fraser,
+chief executive of Citigroup, one of America's largest banks". Explain once; after that the bare
+name.
+
+Headlines are the exception, because an explanation there is unwieldy. Keep puzzling terms out of
+the headline where a plainer phrase carries the news: "Mexico's president" rather than "Claudia
+Sheinbaum"; "a firing range" rather than "Borris". When the term is the story and cannot be avoided,
+it may stand in the headline, and the first sentence of the body then explains it. The deck follows
+the headline's rule.
+
+An explanation is the one place the writer may draw on its own knowledge rather than the evidence:
+"Tesla's chief executive" need not appear in any source. Every such explanation is declared with the
+copy, with the Wikipedia article that would confirm it, and the checker verifies it against that
+article, which the paper treats as authoritative for identifying facts of this kind. An explanation
+the article does not support is struck like any other unsupported fact, so prefer the explanation
+the evidence itself gives when it gives one, and prefer a plain, stable description ("a military
+firing range") to one that can go out of date ("the chief executive") when the stable one serves.
+Nothing else in the copy may come from the writer's knowledge: not a date, not a number, not a cause.
+
 ## Attribution
 
 A fact of record is cited by the marker and names nobody: "The three leaders signed the agreement in
@@ -86,12 +113,17 @@ speaker named. Never carry a teaser's mood into the paper's own voice.
 
 ## Names and places
 
-- People: full name at first mention, surname after. Role in lower case, after the name, set off by
-  commas: "Jeppe Bruus, the defence minister"; "Christian Kettel Thomsen, Nationalbanken's governor";
-  "Kristina Siig, professor of maritime law at Aalborg University". "Prime minister" and "foreign
-  minister" are lower case. Never "Mr", "Ms", or "Dr".
-- Foreign leaders take their title on first mention only where it is needed to place them: "Donald
-  Trump" needs nothing; "Ulf Kristersson, Sweden's prime minister" does.
+- People: full name at first mention, surname after, and the explanation the clarity rule asks for
+  on first mention in the body. Role in lower case, after the name, set off by commas: "Jeppe Bruus,
+  the defence minister"; "Christian Kettel Thomsen, Nationalbanken's governor"; "Kristina Siig,
+  professor of maritime law at Aalborg University". "Prime minister" and "foreign minister" are lower
+  case. Never "Mr", "Ms", or "Dr".
+- Foreign leaders too: "Donald Trump, the American president" on first mention in the body, "Ulf
+  Kristersson, Sweden's prime minister". In a headline the office often serves better than the name:
+  "Sweden's prime minister", unless the name is what the reader will recognise.
+- Places the reader cannot place take a few words: "Borris Skydeterræn, a military firing range in
+  West Jutland"; "Tønder, near the German border". Copenhagen, Aarhus, Jutland, Greenland need
+  nothing.
 - Danish institutions keep their Danish name when it is what the reader will meet: Folketing,
   Nationalbanken, Klimarådet, Rigsrevisionen, Christiansborg. Give the English gloss once in the story
   when the name does not explain itself: "Klimarådet, the climate council". Ministries and courts take
@@ -124,6 +156,9 @@ the evidence does not contain when a plainer one does.
 - The headline states the news in the present tense with a verb: "Government halts new pig
   production for twelve months". No question headlines, no puns, no colon-labels except an institution
   speaking: "Klimarådet: food VAT cut would add 520,000 tonnes of CO2 globally".
+- The headline leaves no term unexplained that it could have avoided: "soldiers fired as passenger
+  plane crossed firing range", not "crossed Borris". A term that is the story may stand, and the
+  body's first sentence then says what it is (the clarity rule above).
 - The headline is checked like any sentence: every fact in it is in the evidence. "Talks begin" needs a
   source that says talks began.
 - The deck adds the second fact or the consequence, in one sentence, with a full stop; a semicolon

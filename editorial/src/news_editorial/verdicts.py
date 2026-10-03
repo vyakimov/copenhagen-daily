@@ -217,9 +217,11 @@ def coverage_problems(check_input_doc: dict[str, Any], verdicts: dict[str, Any])
     }
 
 
-def check_input(edition: dict[str, Any], window: dict[str, Any]) -> dict[str, Any]:
-    """What the checker reads: every sentence with its address, and the story's evidence. Nothing else."""
+def check_input(edition: dict[str, Any], window: dict[str, Any], references: dict[str, list[dict[str, Any]]] | None = None) -> dict[str, Any]:
+    """What the checker reads: every sentence with its address, and the story's evidence. Nothing else,
+    except the reference rows the runner fetched for the explanations a writer declared."""
     articles = {(a["source"], a["source_id"]): a for a in window["articles"]}
+    references = references or {}
     stories = []
     for story in edition["stories"]:
         copy_ = story["copy"]
@@ -261,6 +263,26 @@ def check_input(edition: dict[str, Any], window: dict[str, Any]) -> dict[str, An
                     "url": source["url"],
                     "primary": source["primary"],
                     "wire": source.get("wire"),
+                }
+            )
+        for lookup in references.get(story["id"], []):
+            if lookup.get("status") != "found":
+                continue
+            evidence.append(
+                {
+                    "source": "wikipedia",
+                    "source_id": lookup["requested"],
+                    "title": lookup["title"],
+                    "description": lookup["extract"],
+                    "authors": [],
+                    "categories": ["reference"],
+                    "published_at": lookup.get("fetched_at"),
+                    "url": lookup["url"],
+                    "primary": False,
+                    "wire": None,
+                    "reference": True,
+                    "term": lookup.get("term"),
+                    "definition": lookup.get("definition"),
                 }
             )
         stories.append({"id": story["id"], "role": story["role"], "sentences": sentences, "evidence": evidence})

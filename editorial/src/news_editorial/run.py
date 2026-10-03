@@ -37,6 +37,7 @@ from .bundle import BundleError, load_bundle
 from .clusters import check_clusters, write_checked  # noqa: F401 -- re-exported for the desk
 from .contract import validate_edition
 from .deliver import deliver, push_device
+from .lookups import wikipedia_summary
 from .notify import notify
 from .memory import build_memory, load_registry, save_registry, write_memory
 from .paths import EDITORIAL, REPO, RUNS, VAR
@@ -256,6 +257,7 @@ class Runner:
         editor: Callable[[str, Path, int], dict[str, Any]] = invoke_editor,
         writer: Callable[[Path, int], dict[str, Any]] = invoke_writer,
         checker: Callable[[Path, int], dict[str, Any]] = invoke_checker,
+        lookup: Callable[[str], dict[str, Any]] = wikipedia_summary,
         git: Callable[..., None] = _git,
         stray_changes: Callable[[], list[str]] = _stray_changes,
         lock_path: Path = LOCK_PATH,
@@ -296,6 +298,7 @@ class Runner:
         self.publisher = publisher
         self.editor = editor
         self.writer = writer
+        self.lookup = lookup
         self._inputs_lock = threading.Lock()
         self.checker = checker
         self.git = git
@@ -863,6 +866,9 @@ class Runner:
             ]
             previous = json.loads((self.run_dir / "stories" / sid / "story.json").read_text(encoding="utf8"))
             extra[sid] = {"strikes": strikes, "previous": previous}
+            lookups_path = self.run_dir / "stories" / sid / "lookups.json"
+            if lookups_path.is_file():
+                extra[sid]["lookups"] = [{k: v for k, v in row.items() if k in ("term", "definition", "requested", "status", "title")} for row in json.loads(lookups_path.read_text(encoding="utf8"))]
         rows = [r for r in selection["stories"] if r["id"] in story_ids]
         self._write_stories(rows, "revise", extra)
         self._build_with_repair("revise", extra, set())
@@ -885,11 +891,44 @@ class Runner:
         except (json.JSONDecodeError, KeyError, TypeError, ValueError):
             return False
 
+    def _references(self, edition: dict[str, Any]) -> dict[str, list[dict[str, Any]]]:
+        """For every explanation a writer declared, the Wikipedia summary that should confirm it, fetched
+        by the runner and kept beside the story as lookups.json. A lookup that fails leaves no reference
+        row, and the checker then treats the explanation as the unsupported fact it is."""
+        references: dict[str, list[dict[str, Any]]] = {}
+        for story in edition["stories"]:
+            story_dir = self.run_dir / "stories" / story["id"]
+            story_path = story_dir / "story.json"
+            if not story_path.is_file():
+                continue
+            definitions = json.loads(story_path.read_text(encoding="utf8")).get("definitions") or []
+            if not definitions:
+                continue
+            lookups_path = story_dir / "lookups.json"
+            existing = {}
+            if lookups_path.is_file():
+                try:
+                    existing = {row["requested"]: row for row in json.loads(lookups_path.read_text(encoding="utf8"))}
+                except (json.JSONDecodeError, KeyError, TypeError):
+                    existing = {}
+            rows = []
+            for definition in definitions:
+                title = definition["wikipedia"]
+                row = existing.get(title)
+                if row is None or row.get("status") != "found":
+                    row = self.lookup(title)
+                    row["fetched_at"] = _now()
+                rows.append({**row, "term": definition["term"], "definition": definition["definition"]})
+            self._write_json_atomic(lookups_path, rows)
+            references[story["id"]] = rows
+        return references
+
     def _check_once(self, edition: dict[str, Any], final: bool, resume: bool = False) -> dict[str, Any]:
         window = self._read("window.json")
-        check_input_doc = check_input(edition, window)
+        check_input_doc = check_input(edition, window, self._references(edition))
         if resume and self._verdicts_on_disk_for(check_input_doc):
             self.resumed_checks += 1
+            self._record_inputs()
         else:
             self._write("check-input.json", check_input_doc)
             self._record_inputs()
@@ -992,8 +1031,9 @@ class Runner:
         if bundle.is_dir():
             for path in sorted(p for p in bundle.rglob("*") if p.is_file()):
                 digests[path.relative_to(self.run_dir).as_posix()] = _digest(path)
-        for path in sorted((self.run_dir / "stories").glob("*/brief*.json")):
-            digests[path.relative_to(self.run_dir).as_posix()] = _digest(path)
+        for pattern in ("*/brief*.json", "*/lookups.json"):
+            for path in sorted((self.run_dir / "stories").glob(pattern)):
+                digests[path.relative_to(self.run_dir).as_posix()] = _digest(path)
         return digests
 
     def _record_inputs(self) -> None:
