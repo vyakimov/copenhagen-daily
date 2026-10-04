@@ -1,189 +1,309 @@
 # Style guide
 
-Status: first draft, 28 September 2026, written from the three editions that exist (15 September,
-19 September, 24 September) and the checker's notes on them. The [handbook](HANDBOOK.md) holds the
-method and the hard rules; the [architecture](../docs/editorial-architecture.md) holds the
-eight writing guidelines. This page settles the small choices those leave open, so two editions read
-as one paper. Where it is silent, follow the golden example. Every rule here is guidance for the
-editor and a note for the checker; none is a validator.
+Status: rewritten 4 October 2026, from the first draft of 28 September and the checker's notes on the
+editions since. The [handbook](HANDBOOK.md) holds the method; the
+[architecture](../docs/editorial-architecture.md) holds the eight writing guidelines. This page is in
+three parts, and they do not carry the same authority.
 
-## Voice
+**Part one is the law.** The checker strikes copy that breaks it. **Part two is the house's choices**,
+settled so that two editions read as one paper; follow them without thought. **Part three is how to
+sound.** It is advice, the checker notes departures from it and strikes nothing, and the last of
+Orwell's rules governs all of it: break any of them sooner than write anything barbarous.
 
-The paper's own voice is plain: a fact, a number, a name, no adjective. "The overnight count left two
-seats between the blocs" is the voice. "It is a thriller that may drag on" is a teaser's voice and
-does not appear unless someone is named as having said it. Answer first: the result and what happens
-next, then how it unfolded, then reactions and analysis. The headline and the deck carry the drama;
-the body may be flat.
+---
 
-Every sentence carries a new fact. A sentence that only characterises is cut, not rewritten. Thin
-evidence makes a short story. A brief is one sentence under 35 words and carries at least one number,
-name, or decision; when the description is empty, the headline with its link is the whole brief.
+## Part one: the law
 
-## Clarity: do not leave the reader puzzled
+### Evidence
 
-The reader is intelligent and not assumed to be knowledgeable. A name, a place, an institution, a
-term, or an abbreviation that a reader outside Denmark could not place is explained on first mention
-in the body, the way The Economist does it: the explanation sits after the name, set off by commas,
-and is as short as it can be while answering "what is that". "Borris Skydeterræn, a military firing
-range in West Jutland", never "Borris". "Jacob Bundsgaard, the former mayor of Aarhus". The rule
-holds for the well known too: "Elon Musk, Tesla's chief executive", or "Elon Musk, the world's
-richest man", whichever the story needs. Explanations may nest when one is not enough: "Jane Fraser,
-chief executive of Citigroup, one of America's largest banks". Explain once; after that the bare
-name.
+Every fact rests on the evidence: the titles and descriptions of the articles the story cites, their
+bylines and categories, and nothing else. No date, number, name, cause, or piece of background enters
+from the writer's knowledge, however true. The one exception is the explanation of a name or term
+under *Clarity*, and that is declared and verified.
 
-Headlines are the exception, because an explanation there is unwieldy. Keep puzzling terms out of
-the headline where a plainer phrase carries the news: "Mexico's president" rather than "Claudia
-Sheinbaum"; "a firing range" rather than "Borris". When the term is the story and cannot be avoided,
-it may stand in the headline, and the first sentence of the body then explains it. The deck follows
-the headline's rule.
+### Attribution
 
-An explanation is the one place the writer may draw on its own knowledge rather than the evidence:
-"Tesla's chief executive" need not appear in any source. Every such explanation is declared with the
-copy, with the Wikipedia article that would confirm it, and the checker verifies it against that
-article, which the paper treats as authoritative for identifying facts of this kind. An explanation
-the article does not support is struck like any other unsupported fact, so prefer the explanation
-the evidence itself gives when it gives one, and prefer a plain, stable description ("a military
-firing range") to one that can go out of date ("the chief executive") when the stable one serves.
-Nothing else in the copy may come from the writer's knowledge: not a date, not a number, not a cause.
+A **fact of record** is cited by the marker and names nobody: **The three leaders signed the agreement
+in New York on Tuesday.** A **judgement, an observation, or a report that rests on one outlet's
+access** names the outlet in the sentence: **Kristeligt Dagblad writes that the party is now far from
+government.** The test is whose authority the sentence rests on. Naming an outlet for a fact suggests
+the fact is contested; naming nobody for a judgement makes it the paper's own. Both are wrong.
 
-## Attribution
+Name a source once per judgement, not once per sentence. When outlets disagree, name both, because
+the disagreement is the news: **Politiken puts the vote at 29 to 26; DR reports 28 to 27.**
 
-A fact of record is cited by the marker and names nobody: "The three leaders signed the agreement in
-New York on Tuesday." A judgement, an observation, or access names its source in the sentence:
-"Kristeligt Dagblad writes that the party is now far from government." The test is whose authority the
-sentence rests on. Naming an outlet for a fact suggests the fact is contested; naming nobody for a
-judgement presents it as the paper's own. Both are wrong.
+Keep the chain of attribution: **an analyst quoted by Børsen**, never **an analyst**; **tells
+Berlingske**; **carried by Kristeligt Dagblad from Berlingske**.
 
-Name the source once per story for one judgement, not once per sentence. If the marker already carries
-the outlet and the sentence is a fact, the outlet stays out of the prose. When outlets disagree, both
-are named and the disagreement is the news: "Politiken puts the vote at 29 to 26; DR reports 28 to 27."
+Wire copy is the agency's reporting. An article flagged `wire:ritzau` was written by Ritzau and
+carried by the outlet it is listed under. A fact from it names nobody, as usual; when a name is
+called for, the name is the agency: **tells Ritzau**, never **tells Kristeligt Dagblad**. The source
+line under the story credits the agency, so the prose need not.
 
-Keep the chain of attribution when the speaker is unnamed or the report is second-hand: "an analyst
-quoted by Børsen", "tells Berlingske", "carried by Kristeligt Dagblad from Berlingske". Never shorten
-"an analyst quoted by Børsen" to "an analyst".
+A press release from Via Ritzau is a claim by an interested party, not wire copy. Attribute it to the
+sender: **the ministry says in a statement**, never **Ritzau reports**.
 
-Wire copy is the agency's reporting, not the outlet's. An article the window flags `wire:ritzau` was
-written by Ritzau and carried by the outlet it is listed under. A fact of record from it names nobody,
-like any other: the source line under the story credits Ritzau, so the prose does not. When the test
-above calls for a name, the name is the agency, never the carrier: "tells Ritzau", "Ritzau writes
-that", not "tells Kristeligt Dagblad". Cite the paragraph by the carrier's publisher id as usual.
+Do not label a source's genre unless the evidence does. An article is not **an analysis** because it
+reads like one. **Politiken's commentator Michael Jarlner** is fine when the byline says so.
 
-A press release from Via Ritzau is not wire copy. It is a claim by an interested party. Attribute it
-to the sender, not to Ritzau: "the ministry says in a statement", never "Ritzau reports".
+### Quotations
 
-Do not label a source's genre unless the evidence does: an article is not "an analysis" or "a
-commentary" because it reads like one. "Politiken's commentator Michael Jarlner" is fine when the
-byline or the teaser says so.
+A quotation is verbatim in translation, in single marks, with a named speaker: **Frederiksen called
+the incident 'unfortunately not surprising'.** A paraphrase is never a quotation. A fragment sits
+inside the paper's sentence; a full quoted sentence keeps its full stop inside the marks. Nested
+quotation takes double marks. A quote callout carries the words, the speaker with a role, and the
+reporting publisher.
 
-## Quotations
+Translate Danish idiom to its plain meaning, or keep it as the speaker's words with the speaker named.
+A teaser's mood never becomes the paper's voice.
 
-A quotation is verbatim in translation, in single quotation marks, with a named speaker: Frederiksen
-called the incident 'unfortunately not surprising'. A paraphrase is never a quotation. Quoted
-fragments sit inside the paper's sentence; a full quoted sentence keeps its own full stop inside the
-marks. Nested quotation uses double marks. A quote callout carries the words, the speaker with their
-role ("Mette Frederiksen, prime minister"), and the reporting publisher.
+### Clarity
 
-Translate Danish idiom to its plain meaning, or keep it as the speaker's characterisation with the
-speaker named. Never carry a teaser's mood into the paper's own voice.
+The reader is intelligent and is not assumed to be knowledgeable. Explain every name, place,
+institution, term or abbreviation that a reader outside Denmark could not place, on its first mention
+in the body, after the name and set off by commas, as briefly as answers "what is that": **Borris
+Skydeterræn, a military firing range in West Jutland**, never **Borris**; **Jacob Bundsgaard, the
+former mayor of Aarhus**. The well known too, when the story has not already placed them: **Elon
+Musk, Tesla's chief executive** or **Elon Musk, the world's richest man**, whichever the story needs.
+Nest when one explanation is not enough: **Jane Fraser, chief executive of Citigroup, one of
+America's largest banks**. Explain once; after that the bare name.
 
-## Numbers
+Headlines are the exception: an explanation there is unwieldy, so keep the puzzling term out where a
+plainer phrase carries the news. **Mexico's president**, not **Claudia Sheinbaum**; **crossed a
+firing range**, not **crossed Borris**. When the term is the story it may stand in the headline, and
+the body's first sentence then explains it. The deck follows the headline's rule.
 
-- Spell out one to nine; figures from 10. Figures always with units, percentages, money, ages, times,
-  and in headlines: "4 per cent", "one in three", "twelve months" in prose but "12-month" as a modifier.
-- "per cent", two words, never "%" in prose. Decimals with a point: "11.8 per cent".
-- Thousands with a comma: "520,000 tonnes", "1,000 documents". Millions and billions in words: "1.4
-  million", "129 million". Do not abbreviate to "m" or "bn".
-- Report the number the evidence gives, in its strength. "More than 450,000" is not "about 450,000";
-  "just under two weeks" is not "two weeks". Round only when every source rounds.
-- Money in kroner: "19 kroner", "129 million kroner", never "DKK" or "kr." in prose. Convert nothing.
-  Foreign currency as the source gives it, spelled out: "dollars", "euros".
-- Rates and shares: "a third", "half", "one in three" when the evidence supports the fraction; the
-  exact figure when it gives one.
+An explanation is the one thing the writer may take from its own knowledge. Each one is declared with
+the copy, naming the Wikipedia article that confirms it, and the checker verifies it against that
+article; an explanation the article does not bear out is struck like any invention. So prefer the
+explanation the evidence gives when it gives one, and a description that cannot go stale (**a
+military firing range**) to one that can (**the chief executive**) when the stable one serves.
 
-## Time
+---
 
-- Weekdays for the current week: "on Tuesday", "on Wednesday evening". Dates with the day first and
-  the month in words: "18 September", "10 January". No ordinals, no year unless it is not this one.
-- Clock times with a colon on the 24-hour clock: "23:02". Never "at 11pm".
-- A weekday must come from the evidence or from the cited article's own timestamp. When the sources
-  disagree on the day, the copy names no day. "Last weekend", "yesterday", and "this summer" are used
-  only when a source says so; a Thursday timestamp does not make "last weekend" true.
-- Convert the source's relative time to the edition's: a Danish teaser's "i dag" published Wednesday is
-  "on Wednesday", not "today". The edition date is the reader's today.
+## Part two: the house's choices
 
-## Names and places
+### Spelling and usage
 
-- People: full name at first mention, surname after, and the explanation the clarity rule asks for
-  on first mention in the body. Role in lower case, after the name, set off by commas: "Jeppe Bruus,
-  the defence minister"; "Christian Kettel Thomsen, Nationalbanken's governor"; "Kristina Siig,
-  professor of maritime law at Aalborg University". "Prime minister" and "foreign minister" are lower
-  case. Never "Mr", "Ms", or "Dr".
-- Foreign leaders too: "Donald Trump, the American president" on first mention in the body, "Ulf
-  Kristersson, Sweden's prime minister". In a headline the office often serves better than the name:
-  "Sweden's prime minister", unless the name is what the reader will recognise.
-- Places the reader cannot place take a few words: "Borris Skydeterræn, a military firing range in
-  West Jutland"; "Tønder, near the German border". Copenhagen, Aarhus, Jutland, Greenland need
-  nothing.
-- Danish institutions keep their Danish name when it is what the reader will meet: Folketing,
-  Nationalbanken, Klimarådet, Rigsrevisionen, Christiansborg. Give the English gloss once in the story
-  when the name does not explain itself: "Klimarådet, the climate council". Ministries and courts take
-  the English name: the Defence Ministry, the Foreign Ministry, the Defence Command, the Supreme Court
-  (for Højesteret), the High Court (for Landsret). "The government" is Denmark's unless said otherwise.
-- Parties: Danish parties by their Danish name, with the gloss once if needed: "Venstre", "Radikale
-  Venstre", "Enhedslisten". The Social Democrats and the Moderates take the English name because it is
-  the one in common use. Swedish parties likewise: "Vänsterpartiet", "the Centre Party". Never expand
-  an abbreviation the source did not.
-- Places in the English form where one is established: Copenhagen, Zealand, Jutland, Funen, the Faroe
-  Islands, Greenland; otherwise the Danish spelling with its diacritics: Aarhus, Gedser, Nuuk, Ærø. No
-  "Oresund"; write "the Øresund". A municipality is "Aarhus Municipality".
-- Companies as they style themselves: Novo Nordisk, Mærsk, Ørsted, Nvidia. Media outlets as the
-  masthead reads: DR, TV 2, Politiken, Børsen, Jyllands-Posten, Kristeligt Dagblad, the Guardian, the
-  New York Times.
-- Danish letters æ, ø, å are kept everywhere, in names, places, and quotations.
+British spelling: defence, organisation, prioritise, behaviour, centre, programme, licence (the
+noun). **Per cent**, two words; **towards**; single quotation marks; no serial comma; no exclamation
+marks; no contractions. **Which** with a comma opens a clause that could be left out; **that**
+without one opens a clause that could not. Danish letters æ, ø, å stay everywhere: in names, places,
+quotations.
 
-## Spelling and usage
+### Numbers
 
-British spelling: defence, organisation, prioritise, behaviour, centre, programme, licence (noun).
-"Per cent". "Towards". Single quotation marks. The serial comma is not used. "Which" with a comma for
-a non-defining clause; "that" without one for a defining clause. No exclamation marks. No contractions.
+Spell out one to nine; figures from 10. Figures always with units, percentages, money, ages, times,
+and in headlines: **4 per cent**, **one in three**, **twelve months** in prose but **12-month** as a
+modifier. Decimals with a point: **11.8 per cent**. Thousands with a comma: **520,000 tonnes**.
+Millions and billions in words: **1.4 million**, **129 million**; never **m** or **bn**.
 
-Avoid: "amid", "slams", "sparks", "in the wake of", "iconic", "major" without a measure, "reportedly"
-(name who reported), "controversial" (say who objects), "sources say" (name the outlet), and any word
-the evidence does not contain when a plainer one does.
+Give the number the evidence gives, at its strength. **More than 450,000** is not **about 450,000**;
+**just under two weeks** is not **two weeks**. Round only when every source rounds.
 
-## Headlines, decks, and kickers
+Kroner in words: **19 kroner**, **129 million kroner**, never **DKK** or **kr.** in prose. Convert
+nothing. Foreign currency as the source gives it: **dollars**, **euros**. Fractions when the evidence
+supports them, **a third**, **half**, **one in three**; the exact figure when it gives one.
 
-- The headline states the news in the present tense with a verb: "Government halts new pig
-  production for twelve months". No question headlines, no puns, no colon-labels except an institution
-  speaking: "Klimarådet: food VAT cut would add 520,000 tonnes of CO2 globally".
-- The headline leaves no term unexplained that it could have avoided: "soldiers fired as passenger
-  plane crossed firing range", not "crossed Borris". A term that is the story may stand, and the
-  body's first sentence then says what it is (the clarity rule above).
-- The headline is checked like any sentence: every fact in it is in the evidence. "Talks begin" needs a
-  source that says talks began.
-- The deck adds the second fact or the consequence, in one sentence, with a full stop; a semicolon
-  joins two short facts: "Ambassador summoned; Frederiksen says Moscow is testing NATO."
-- `headline_short` is a shorter true headline, not a fragment: "Greenland deal signed".
-- The kicker is from the policy's vocabulary. Use the more specific one when it helps the reader:
-  "Defence" rather than "Denmark", "Prices" rather than "Economy". "Opinion" and "Analysis" are
-  secondary kickers only.
+### Time
 
-## Callouts
+Weekdays for the current week: **on Tuesday**, **on Wednesday evening**. Dates with the day first and
+the month in words: **18 September**; no ordinals, no year unless it is not this one. Clock times on
+the 24-hour clock with a colon: **23:02**, never **11pm**.
 
-A figure when one number is the story; a quote when the words carry the news and are verbatim with a
-named speaker; a timeline when the order is the point, three or four dated rows each traceable to a
-source; facts for two to four short items the reader would otherwise assemble; a box for one phrase
-that is itself news. Timeline rows use the same time forms as prose: "Monday", "23:02", "Tuesday".
-At most one callout on a secondary, three on a lead.
+A weekday comes from the evidence or from the cited article's own timestamp. When the sources
+disagree on the day, name no day. **Last weekend**, **yesterday**, **this summer** only when a source
+says so; a Thursday timestamp does not make **last weekend** true. Convert the source's relative time
+to the edition's: a teaser's **i dag** published on Wednesday is **on Wednesday**, not **today**. The
+edition date is the reader's today.
 
-## The coverage note and the log
+### Names and places
 
-The coverage note says what was read and in what form: "Built from headlines and RSS descriptions
+People: full name at first mention, surname after. The role in lower case after the name, set off by
+commas, which is also the explanation *Clarity* asks for: **Jeppe Bruus, the defence minister**;
+**Kristina Siig, professor of maritime law at Aalborg University**. **Prime minister** and **foreign
+minister** in lower case. Never **Mr**, **Ms**, **Dr**.
+
+Foreign leaders take an explanation where the story needs one to place them: **Ulf Kristersson,
+Sweden's prime minister** does; **Donald Trump** in a sentence about his movement does not. In a
+headline the office often serves better than the name: **Sweden's prime minister**.
+
+Danish institutions keep their Danish name where the reader will meet it, with the English gloss once
+when the name does not explain itself: **Folketing**, **Nationalbanken**, **Klimarådet, the climate
+council**, **Rigsrevisionen**, **Christiansborg**. Ministries and courts take the English name: **the
+Defence Ministry**, **the Defence Command**, **the Supreme Court** (for Højesteret), **the High Court**
+(for Landsret). **The government** is Denmark's unless said otherwise.
+
+Parties by their Danish name, glossed once if needed: **Venstre**, **Radikale Venstre**,
+**Enhedslisten**; but **the Social Democrats** and **the Moderates**, because that is the name in use.
+Swedish parties likewise: **Vänsterpartiet**, **the Centre Party**. Never expand an abbreviation the
+source did not.
+
+Places in the English form where one is established: **Copenhagen**, **Zealand**, **Jutland**,
+**Funen**, **the Faroe Islands**, **Greenland**; otherwise the Danish spelling with its diacritics:
+**Aarhus**, **Gedser**, **Nuuk**, **Ærø**. **The Øresund**, never **Oresund**. A municipality is
+**Aarhus Municipality**. A place the reader cannot place takes a few words: **Tønder, near the German
+border**.
+
+Companies as they style themselves: **Novo Nordisk**, **Mærsk**, **Ørsted**, **Nvidia**. Outlets as
+the masthead reads: **DR**, **TV 2**, **Politiken**, **Børsen**, **Jyllands-Posten**, **Kristeligt
+Dagblad**, **the Guardian**, **the New York Times**.
+
+### Headlines, decks and kickers
+
+The headline states the news in the present tense with a verb: **Government halts new pig production
+for twelve months**. No questions, no puns, no colon-labels except an institution speaking:
+**Klimarådet: food VAT cut would add 520,000 tonnes of CO2 globally**. It is checked like any
+sentence: **Talks begin** needs a source that says talks began. It leaves no term unexplained that it
+could have avoided (*Clarity*).
+
+The deck adds the second fact or the consequence, in one sentence with a full stop; a semicolon joins
+two short facts: **Ambassador summoned; Frederiksen says Moscow is testing NATO.** `headline_short`
+is a shorter true headline, not a fragment: **Greenland deal signed**.
+
+The kicker is from the policy's vocabulary, the more specific one when it helps: **Defence** rather
+than **Denmark**, **Prices** rather than **Economy**. **Opinion** and **Analysis** are secondary
+kickers only.
+
+### Callouts
+
+A **figure** when one number is the story. A **quote** when the words carry the news, verbatim, with a
+named speaker. A **timeline** when the order is the point: three or four dated rows, each traceable to
+a source, in the time forms above. **Facts** for two to four short items the reader would otherwise
+assemble. A **box** for one phrase that is itself news. At most one callout on a secondary, three on a
+lead.
+
+### The coverage note and the log
+
+The coverage note says what was read and in what form: **Built from headlines and RSS descriptions
 published between 05:30 on Sunday and 05:30 on Wednesday Copenhagen time, from 132 feeds at seventeen
 publishers, all polled successfully. Danish outlets decide what is news; international titles are
-linked where they cover the same story. Nothing else was read." When a feed failed, it says which.
+linked where they cover the same story. Nothing else was read.** When a feed failed, it says which.
 
 The editorial log names every decision with its reason in the decision vocabulary
 (`already_covered`, `new_development`, `outside_budget`, `not_in_danish_media`,
 `insufficient_evidence`), every departure from the ranking, every validator split the editor
 disagreed with, and anything that felt wrong. It is written for the owner, in the paper's voice.
+
+---
+
+## Part three: how to sound
+
+### The target
+
+Write as The Economist's news pages would write this story if they had only this evidence: plain,
+exact, dry, and over before the reader is tired. Not its leaders, which argue; not its columns, which
+perform. When the evidence is thin, sound like Reuters instead: a short, plain report of what is
+known. The paper's own voice has no adjectives it cannot prove and no mood it did not borrow from a
+named speaker. The headline and the deck carry the drama; the body may be flat.
+
+### Orwell's six rules
+
+They are the whole of this part in short:
+
+1. Never use a metaphor, simile or other figure of speech which you are used to seeing in print.
+2. Never use a long word where a short one will do.
+3. If it is possible to cut a word out, always cut it out.
+4. Never use the passive where you can use the active.
+5. Never use a foreign phrase, a scientific word or a jargon word if you can think of an everyday
+   English equivalent.
+6. Break any of these rules sooner than say anything outright barbarous.
+
+The sixth governs the other five and everything below. A rule followed into dullness has been
+misread. Something slightly unexpected is what makes a paragraph worth reading, and no rule can
+supply it; the rules only clear the ground.
+
+### Answer first
+
+The result and what happens next, then how it unfolded, then reactions. A teaser's suspense is
+inverted, never kept. Every sentence carries something the reader did not have: an actor, a number, a
+time, a place, a decision, a consequence. A sentence that only characterises is cut, not rewritten.
+Thin evidence makes a short story, and a short story is finished when the facts are.
+
+### Rhythm
+
+One fact per sentence, applied evenly, is monotony. Vary the length: a short sentence after a long
+one lands. Let one sentence in a paragraph state a consequence rather than a fact, because the reader
+wants to know what it means as well as what happened. Keep the subject and its verb close; an
+explanation that opens between them and runs on is a sentence the reader must hold open, so put it
+where a clause ends, or in the next sentence. One explanation per sentence: **Latvia First, a party
+inspired by Donald Trump's Maga movement, is set to come second**, not **Latvia First, a party
+inspired by Donald Trump, the American president, and his Maga movement, is set to come second**.
+
+### Short words
+
+Use them. Prefer **about** to **approximately**, **after** to **following**, **let** to **permit**,
+**but** to **however**, **use** to **utilise**, **make** to **manufacture**, **plant** to
+**facility**, **take part** to **participate**, **set up** to **establish**, **enough** to
+**sufficient**, **show** to **demonstrate**, **begin** to **commence**, **buy** to **purchase**,
+**end** to **terminate**, **help** to **assist**, **rich** to **wealthy**, **people** to **persons**.
+**Poor** countries, not **underdeveloped** ones; **big**, not **large-scale**; **rain**, not
+**precipitation**. Avoid the noun built from a verb: **cuts**, not **cutbacks**; **a record**, not **a
+track record**.
+
+### Unnecessary words
+
+Some words add nothing but length. Cut adjectives that do not make the meaning more precise. Try a
+sentence without **very**; if it loses nothing, it was nothing. **He was tall** has more force than
+**He was very tall**. Cut **currently**, **in order to**, **the fact that**, **it is worth noting
+that**, **at the present time**, **in terms of**. Strike actions are **strikes**; the business
+community is **business**; weather conditions are **weather**.
+
+### Metaphors and borrowed phrases
+
+A dead metaphor is a word again and may be used; a dying one is a cliché and may not. Avoid **in the
+wake of**, **amid**, **at the end of the day**, **game-changer**, **iconic**, **landmark** (unless it
+is a building), **sparks**, **slams**, **blasts**, **row** (unless the evidence calls it one),
+**bombshell**, **crisis** (unless someone named says so), **key** (keys open doors), **major** without
+a measure. Danish teasers run on figures of speech: **valggyser**, **vidste ikke hvilket ben de skulle
+stå på**. Translate them to their plain meaning, or keep them as the outlet's words with the outlet
+named. Never carry them into the paper's own voice.
+
+### Jargon
+
+If a word would puzzle a reader at a kitchen table, find another. **Terms of reference** needs
+**the group's instructions** beside it on first use; **kommissorium** needs it more. Military,
+legal, financial and EU terms take a plain gloss or a plain substitute. A technical term is used when
+it is the precise one and then explained once (*Clarity*).
+
+### Active, not passive
+
+**The Defence Command admitted** rather than **it was admitted by the Defence Command**. The passive
+hides the actor, and the actor is usually the news. Use it only when the actor is unknown or does not
+matter: **the plane was diverted to Tabuk**.
+
+### Words with meanings
+
+A short list, in the manner of the house style sheets, of words the paper uses only in their sense.
+
+- **Affect** changes something; **effect** is the result, or, as a verb, brings about.
+- **Alternative** is one of two. Three are **options**.
+- **Anticipate** is not **expect**. To anticipate a decision is to act before it.
+- **Comprise** means is made up of. The coalition comprises five parties; five parties make up the
+  coalition. Never **comprised of**.
+- **Convince** is of a fact; **persuade** is to an action. Persuaded to vote; convinced that it was
+  right.
+- **Decimate** is to destroy a tenth. Say **cut by half** or **destroyed** as the case is.
+- **Due to** follows a noun: **the delay, due to fog**. Otherwise **because of**.
+- **Effectively** means with effect. If you mean **in effect**, say it.
+- **Estimated** is for an estimate someone made: **an estimated 300** only when a source estimated.
+- **Fewer** for things counted, **less** for things measured: fewer seats, less money.
+- **Finally** means at last, not lastly.
+- **Hopefully** describes a manner of hoping. Say **with luck** or name who hopes.
+- **Important**: say why, and to whom.
+- **Last** is the final one. The most recent is **latest**; the one before this is **the previous**.
+- **Like** compares; **such as** introduces examples.
+- **Major** without a measure is a noise. Give the measure.
+- **None** usually takes a singular verb.
+- **Only** sits next to the word it qualifies: **these animals mate only in June**.
+- **Presently** means soon. For now, say **now**.
+- **Reportedly**: say who reported. **Sources say**: name the outlet. **Controversial**: say who
+  objects.
+- **Unlike** is not followed by **in**.
+- **Verbal** means in words; spoken is **oral**.
+- **Warn** takes an object: warn someone, or give warning.
+
+---
+
+Where this page is silent, follow the golden example. Where it and the example disagree with a
+sentence that reads well, trust the sentence, and say so in the log.
