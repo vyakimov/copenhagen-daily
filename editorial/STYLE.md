@@ -68,6 +68,10 @@ Musk, Tesla's chief executive** or **Elon Musk, the world's richest man**, which
 Nest when one explanation is not enough: **Jane Fraser, chief executive of Citigroup, one of
 America's largest banks**. Explain once; after that the bare name.
 
+An explanation identifies and does no more. A true detail the story does not need reads as a clue:
+**Kastrup, a Copenhagen suburb**, not **Kastrup, a Copenhagen suburb by the airport**, unless the
+airport is in the story.
+
 Headlines are the exception: an explanation there is unwieldy, so keep the puzzling term out where a
 plainer phrase carries the news. **Mexico's president**, not **Claudia Sheinbaum**; **crossed a
 firing range**, not **crossed Borris**. When the term is the story it may stand in the headline, and
