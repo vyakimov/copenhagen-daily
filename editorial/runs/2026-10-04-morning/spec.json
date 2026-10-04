@@ -1,0 +1,546 @@
+{
+  "edition": {
+    "id": "2026-10-04-morning",
+    "number": 18,
+    "name": "Sunday edition",
+    "date": "2026-10-04",
+    "cutoff_at": "2026-10-04T03:30:00.000000Z",
+    "checked_from": "2026-10-01T03:30:00.000000Z",
+    "input_id": "export-2026-10-04-0330",
+    "presentation": {
+      "emphasis": "many_stories",
+      "ear_right": "Inside: teenagers charged over the Kastrup shots, what border shopping really costs, Tennessee's prison chief quits"
+    },
+    "note": "Built from headlines and RSS descriptions published in the 72 hours to 05:30 on Sunday 4 October 2026: 3,265 articles, 1,501 of them from Danish publishers. 128 of 132 feeds at 17 publishers polled; four Financial Times feeds (Climate Capital, Life & Arts, Opinion, Work & Careers) failed."
+  },
+  "stories": [
+    {
+      "id": "latvia-kulbergs-unity-list-wins",
+      "role": "lead",
+      "kicker": "World",
+      "sources": [
+        22,
+        10,
+        141,
+        540,
+        626,
+        561,
+        139
+      ],
+      "headline": "Latvia's governing party heads for clear election win",
+      "headline_short": "Latvia's governing party leads election",
+      "deck": "The prime minister's centrist party has 36 per cent with most votes counted; he rules out governing with the Trump-inspired runner-up.",
+      "extended": [
+        [
+          "Andris Kulbergs, Latvia's prime minister, looks set to win Saturday's parliamentary election by a wide margin. With 84 per cent of the votes counted, his centrist party, United List, has 36 per cent, far more than polls before the vote suggested.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ],
+        [
+          "Latvia First, a party inspired by Donald Trump, the American president, and his Maga movement, is set to come second with 13.3 per cent. On Saturday evening Kulbergs ruled out a coalition with it and rejected any cooperation with pro-Russian parties.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "politiken"
+          ]
+        ],
+        [
+          "Sovereign Power, a pro-Russian party, has 11.1 per cent and the National Alliance, a Latvian nationalist party, 9.3 per cent. The Progressive Party, led by Andris Spruds, a former defence minister, has 6.7 per cent and wants at least 5 per cent of GDP spent on defence.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "The current coalition is United List, the National Alliance, New Unity and the Union of Greens and Farmers. The last two have between 5 and 6 per cent, against a threshold of 5 per cent.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Kulbergs said early on Saturday evening, after an exit poll gave the party 35.6 per cent: 'It is incredibly good. I had not expected such a result.'",
+          [
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        ]
+      ],
+      "standard": [
+        [
+          "Andris Kulbergs, Latvia's prime minister, looks set to win Saturday's parliamentary election by a wide margin. With 84 per cent of the votes counted, his centrist party, United List, has 36 per cent, far more than polls before the vote suggested.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ],
+        [
+          "Latvia First, a party inspired by Donald Trump, the American president, and his Maga movement, is set to come second with 13.3 per cent. On Saturday evening Kulbergs ruled out a coalition with it and rejected any cooperation with pro-Russian parties.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "politiken"
+          ]
+        ],
+        [
+          "Sovereign Power, a pro-Russian party, has 11.1 per cent. The war in Ukraine and relations with Russia ran through the campaign.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Andris Kulbergs, Latvia's prime minister, looks set to win Saturday's parliamentary election: with 84 per cent of the votes counted, his centrist United List has 36 per cent. He has ruled out a coalition with the runner-up, Latvia First, a party inspired by Donald Trump, the American president, which has 13.3 per cent.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "politiken"
+          ]
+        ]
+      ],
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "It is incredibly good. I had not expected such a result.",
+          "attribution": "Andris Kulbergs, prime minister",
+          "attribution_source": "kristeligt_dagblad"
+        }
+      ]
+    },
+    {
+      "id": "kastrup-teens-charged-flat-shooting",
+      "role": "secondary",
+      "kicker": "Crime",
+      "sources": [
+        559,
+        557,
+        433,
+        495
+      ],
+      "headline": "Teenagers charged after 15 shots hit a flat where three children slept",
+      "headline_short": "Teenagers charged over flat shooting",
+      "deck": "Prosecutors say the three were paid to kill the family; all deny the charges.",
+      "standard": [
+        [
+          "Three young Danes have been charged with attempted murder after 15 shots were fired at about 01:55 on 31 March through the windows of a flat in Kastrup, a Copenhagen suburb by the airport, where two parents and three children were asleep. No one was hit.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr",
+            "tv2"
+          ]
+        ],
+        [
+          "According to the indictment, the three, then aged 17, 17 and 18, were paid for the job, and the 18-year-old fired an AK-47. Two of them are also charged over two other attempted murders in the Copenhagen area in the days before.",
+          [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        ],
+        [
+          "All three deny the charges. The trial begins at Copenhagen City Court on 25 January 2027.",
+          [
+            "kristeligt_dagblad",
+            "tv2"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Three young Danes have been charged with attempted murder after 15 shots hit a flat in Kastrup, a Copenhagen suburb by the airport, where a family of five slept on 31 March. Prosecutors say they were paid for the job; all three deny the charges.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "tv2"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "border-shopping-loss-overstated",
+      "role": "secondary",
+      "kicker": "Prices",
+      "sources": [
+        289,
+        419,
+        518,
+        615
+      ],
+      "headline": "State loses far less to border shopping than the Tax Ministry estimates",
+      "headline_short": "Border shopping costs the state less than thought",
+      "deck": "Researchers put the 2019 loss at 415 million kroner, not 1.16 billion.",
+      "standard": [
+        [
+          "When Danes drive to Germany for sweets, soft drinks and beer, the state loses nowhere near as much in VAT and duties as the Tax Ministry estimates, a University of Copenhagen study finds.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        ],
+        [
+          "The ministry put the 2019 loss, excluding tobacco, at 1.16 billion kroner; the researchers put it at 415 million kroner, more than 60 per cent lower.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "The researchers studied shopping during the coronavirus lockdowns of 2020 and 2021, when border shopping was also shut off, and measured how much of that trade returned to Danish shops.",
+          [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        ],
+        [
+          "For most Danish households, the study finds, border shopping makes no difference to the effect of the duties.",
+          [
+            "berlingske"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "A University of Copenhagen study puts the state's 2019 loss to border shopping in Germany, excluding tobacco, at 415 million kroner, more than 60 per cent below the Tax Ministry's estimate of 1.16 billion kroner.",
+          [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "tax-dispute-interest-deposit",
+      "role": "secondary",
+      "kicker": "Politics",
+      "sources": [
+        508,
+        492,
+        1061
+      ],
+      "headline": "Tax minister plans deposit scheme to stop interest outgrowing tax claims",
+      "headline_short": "Deposit scheme planned for tax disputes",
+      "deck": "In one case a 158 million kroner claim ended with 362 million kroner in interest.",
+      "standard": [
+        [
+          "Taxpayers will be able to deposit the disputed amount during a tax case, so interest cannot outgrow the claim itself, under a scheme in next year's budget, Jakob Engel-Schmidt, the tax and growth minister, says in a statement.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ],
+        [
+          "The ministry cites a case from January 2023 in which a company first owed 158 million kroner and ended up facing 362 million kroner in interest. Engel-Schmidt calls it 'completely unreasonable' that the state can pursue a case through the courts for years while interest keeps running.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "The state earns 70 million kroner a year from such interest; a tax expert quoted by Berlingske calls the plan 'excellent'.",
+          [
+            "berlingske"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Taxpayers will be able to deposit the disputed amount during a tax case, so interest cannot outgrow the claim, under a scheme in next year's budget, Jakob Engel-Schmidt, the tax and growth minister, says.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "tennessee-prison-chief-strada-quits",
+      "role": "secondary",
+      "kicker": "World",
+      "sources": [
+        186,
+        166,
+        184,
+        85,
+        119,
+        143,
+        161,
+        214
+      ],
+      "headline": "Tennessee's prisons chief resigns after failed execution",
+      "headline_short": "Tennessee prisons chief quits",
+      "deck": "The prisoner survived two lethal injections; the governor has halted executions for the rest of the year.",
+      "standard": [
+        [
+          "Frank Strada, head of Tennessee's department of correction, will step down at the end of October while an independent investigation examines why Wednesday's execution of Christa Pike failed, Bill Lee, the state's governor, said on Saturday.",
+          [
+            "kristeligt_dagblad",
+            "guardian",
+            "nytimes",
+            "wapo",
+            "berlingske"
+          ]
+        ],
+        [
+          "Pike, 50, sentenced to death in 1996 for killing a schoolmate, survived two lethal injections. Her lawyers said on Saturday that she is unconscious and on a ventilator, and that the failure 'goes far beyond any one person'.",
+          [
+            "kristeligt_dagblad",
+            "bbc",
+            "nytimes"
+          ]
+        ],
+        [
+          "It is Tennessee's second failed execution this year: in May, staff could not find a usable vein. Lee has halted executions for the rest of the year.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "wapo"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Frank Strada, head of Tennessee's department of correction, will step down while an independent investigation examines why Wednesday's execution of Christa Pike failed. Pike survived two lethal injections and is on a ventilator.",
+          [
+            "kristeligt_dagblad",
+            "guardian",
+            "nytimes",
+            "bbc"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "district-heating-pool-200m",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        368,
+        360,
+        354,
+        370,
+        280
+      ],
+      "headline": "Government adds 200 million kroner to district-heating fund and lengthens loans",
+      "lede": [
+        "The government's 2027 budget proposal adds 200 million kroner to a fund helping district-heating companies move homes off gas and oil boilers, and lets their municipal loans run up to 45 years, not 30.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "borsen"
+        ]
+      ]
+    },
+    {
+      "id": "social-media-night-block-poll",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        583,
+        546,
+        632,
+        616
+      ],
+      "headline": "Nearly two in three Danes want social media blocked for teenagers at night",
+      "lede": [
+        "Nearly two in three Danes, 62.3 per cent, want social media obliged to block 15-17-year-olds from 00:00 to 06:00, in a poll for the organisation Digitalt Ansvar.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "tv2"
+        ]
+      ]
+    },
+    {
+      "id": "kastrup-man-shot-saturday",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        52,
+        1,
+        51
+      ],
+      "headline": "Man, 38, in critical condition after shooting near Copenhagen",
+      "lede": [
+        "A 38-year-old man was shot outdoors on Saturday evening in Kastrup, a suburb of Copenhagen, and is in hospital in a critical but stable condition; police have made no arrests.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "planetarium-humanoid-robots",
+      "role": "brief",
+      "kicker": "Science",
+      "sources": [
+        415,
+        394,
+        414,
+        579,
+        567
+      ],
+      "headline": "Copenhagen science museum gets two humanoid robots that talk in Danish and English",
+      "lede": [
+        "Planetarium, a science museum in Copenhagen, has bought two 182-centimetre humanoid robots, made in China and able to converse in Danish and English, which visitors can meet three times a day at weekends.",
+        [
+          "kristeligt_dagblad",
+          "politiken"
+        ]
+      ]
+    },
+    {
+      "id": "after-school-clubs-mapped",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        682,
+        680
+      ],
+      "headline": "Education minister wants after-school provision surveyed across municipalities",
+      "lede": [
+        "Magnus Heunicke, the education minister, wants a study of after-school provision across municipalities; Morsø, a municipality in North Jutland, and Bornholm, a Baltic island, have no municipal club for children past third grade.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "flydubai-attack-called-terror",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        549,
+        516,
+        502,
+        544,
+        539,
+        44,
+        154,
+        233,
+        248,
+        343
+      ],
+      "headline": "Prosecutor says co-pilot attempted terror attack with axe on flight to Israel",
+      "lede": [
+        "The co-pilot of Wednesday's Flydubai flight from Dubai to Israel attempted a 'terrorist attack', striking the captain in the cockpit with an emergency axe, the United Arab Emirates' prosecutor general said on Saturday.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "politiken",
+          "borsen",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "spain-housing-protests-madrid",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        314,
+        303,
+        278,
+        7,
+        250
+      ],
+      "headline": "Tens of thousands protest in Spain after parliament rejects emergency housing law",
+      "lede": [
+        "Tens of thousands protested in Madrid and other Spanish cities on Saturday for fairer terms for renters, a day after parliament rejected the government's emergency housing legislation.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "guardian",
+          "bbc"
+        ]
+      ]
+    },
+    {
+      "id": "white-house-ai-group-clayton",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        41,
+        25,
+        40,
+        6
+      ],
+      "headline": "America's intelligence chief to lead White House task force on AI",
+      "lede": [
+        "Jay Clayton, America's national intelligence chief, will lead a White House task force that has 120 days to recommend what role the American government should play in overseeing artificial intelligence.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "greenland-deal-fox-news-offer",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        95
+      ],
+      "headline": "Americans proposed Fox News for every Greenlander during deal talks",
+      "lede": [
+        "During talks on the Greenland agreement, which Berlingske says nearly fell apart, the Americans proposed at one of seven meetings in Washington that every Greenlander get access to the television channel Fox News.",
+        [
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "us-drops-diesel-export-ban",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        213,
+        834
+      ],
+      "headline": "US drops threatened diesel export ban as G7 agrees to release 100 million barrels",
+      "lede": [
+        "Donald Trump, the American president, dropped a threatened ban on diesel exports on Friday after the G7, a forum of seven large industrialised democracies, agreed to release 100 million barrels of oil.",
+        [
+          "borsen",
+          "ft"
+        ]
+      ]
+    },
+    {
+      "id": "mercury-notebook-sold-auction",
+      "role": "brief",
+      "kicker": "Culture",
+      "sources": [
+        78,
+        73,
+        104,
+        68
+      ],
+      "headline": "Freddie Mercury's notebook of lyrics sells for just under 2.5 million kroner",
+      "lede": [
+        "A notebook of handwritten lyrics by Freddie Mercury, Queen's lead singer, for his debut solo album, Mr. Bad Guy, sold at auction for 277,000 pounds, just under 2.5 million kroner.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "damsgaard-misses-wales",
+      "role": "brief",
+      "kicker": "Sport",
+      "sources": [
+        126,
+        169
+      ],
+      "headline": "Injured Damsgaard misses match against Wales",
+      "lede": [
+        "Mikkel Damsgaard, a Danish footballer, is injured and cannot play against Wales on Sunday; Mathias Kvistgaarden, also a Danish footballer, replaces him.",
+        [
+          "berlingske",
+          "dr"
+        ]
+      ]
+    }
+  ]
+}

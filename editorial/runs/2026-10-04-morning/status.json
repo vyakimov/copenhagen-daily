@@ -1,0 +1,181 @@
+{
+ "schema_version": 1,
+ "edition_id": "2026-10-04-morning",
+ "cutoff_at": "2026-10-04T03:30:00.000000Z",
+ "started_at": "2026-10-04T03:30:05.989618Z",
+ "dry_run": false,
+ "outcome": "published",
+ "phases": [
+  {
+   "name": "reconcile",
+   "finished_at": "2026-10-04T03:30:06.423930Z",
+   "activated": false
+  },
+  {
+   "name": "inputs",
+   "finished_at": "2026-10-04T03:30:06.424402Z",
+   "recorded": false
+  },
+  {
+   "name": "collect",
+   "finished_at": "2026-10-04T03:30:50.675351Z",
+   "skipped": true,
+   "reason": "recent_poll",
+   "last_poll_at": "2026-10-04T03:22:32.696277Z",
+   "age_minutes": 8.3
+  },
+  {
+   "name": "window",
+   "finished_at": "2026-10-04T03:31:10.984687Z",
+   "articles": 3265,
+   "feeds": 132,
+   "failed_feeds": 4
+  },
+  {
+   "name": "memory",
+   "finished_at": "2026-10-04T03:31:11.169184Z",
+   "editions": [
+    "2026-10-03-morning",
+    "2026-10-02-morning",
+    "2026-10-01-morning",
+    "2026-09-30-morning-second-printing",
+    "2026-09-30-morning",
+    "2026-09-29-morning",
+    "2026-09-28-morning",
+    "2026-09-27-evening",
+    "2026-09-27-morning",
+    "2026-09-21-evening",
+    "2026-09-19-evening",
+    "2026-09-18-afternoon",
+    "2026-09-17-midday",
+    "2026-09-16-morning"
+   ],
+   "threads": 11,
+   "next_edition_number": 18
+  },
+  {
+   "name": "editor",
+   "finished_at": "2026-10-04T03:36:38.581748Z",
+   "session": {
+    "command": [
+     "claude",
+     "-p"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 327.2,
+    "session_id": "5fd6f5ae-089b-4752-a0d2-b7eb72982534",
+    "num_turns": 46,
+    "duration_ms": 326151,
+    "total_cost_usd": 4.2341622,
+    "is_error": false,
+    "subtype": "success",
+    "permission_denials": [
+     {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01NhnzuX4bAiNeaGXs2PTL5u",
+      "tool_input": {
+       "command": "/Users/vy/Documents/Development/copenhagen-daily/editorial/edit_news.sh --help",
+       "description": "Show editorial wrapper usage"
+      }
+     }
+    ],
+    "result": "The desk work for 2026-10-04-morning is done and all the phase files are in the run directory. The runner takes over from here.\n\n**The edition:** 17 stories, which is 1 lead, 4 secondaries and 12 briefs, under the cap of 24.\n- **Lead:** Latvia's election. Six Danish outlets carried it, and it is the only result that came in overnight. The ranking put it 44th, but only because world stories carry a lower section weight. NOTES.md explains the departure.\n- **Secondaries:** three young men charged over the 15 shots fired into a Kastrup flat; a University of Copenhagen study finding the state loses far less to cross-border shopping than the Tax Ministry says; a new deposit scheme for tax disputes; and Tennessee's prison chief resigning after Christa Pike's failed execution.\n- **Briefs:** district heating (the ranking's first place, cut to a brief because it is one line of the finance bill), the social-media poll, Saturday's Kastrup shooting, the Planetarium robots, a survey of after-school clubs, the Flydubai attack now called terror, Spain's housing protests, the White House AI working group, Berlingske's inside story of the Greenland talks, the dropped US diesel ban, the Freddie Mercury auction, and Damsgaard missing the Wales match.\n\n**Things you might want to look at:**\n- **Override of the ranking:** 21 of its top 24 were Denmark items, and most of those were single-outlet features lifted by the Denmark section weight. I ran six-outlet foreign stories over them instead. That keeps the Denmark section to 7 of 17 stories. Every departure has a reason in `selection.json`.\n- **Latvia has no foreign sources:** the subagent attached no foreign coverage to Latvia, which is odd for a European election. The lead rests on Danish outlets only.\n- **Validator:** it made one change, removing the English copy of the Via Ritzau press release from the border-trade story. The Danish copy has the same text, so nothing is lost.\n- **Coverage note:** 128 of 132 feeds polled. Four Financial Times feeds failed, and the coverage note in the edition says so.\n\nThe decisions and reasons are in `selection.json` and `NOTES.md`."
+   },
+   "stories": 17
+  },
+  {
+   "name": "write",
+   "finished_at": "2026-10-04T03:38:09.792014Z",
+   "stories": 17,
+   "sessions": 18,
+   "cost_usd": 2.7772,
+   "resumed_stories": 0
+  },
+  {
+   "name": "check",
+   "finished_at": "2026-10-04T03:43:51.497579Z",
+   "rounds": 1,
+   "struck": 0,
+   "send_back": [],
+   "fallen": [],
+   "resumed": false
+  },
+  {
+   "name": "preflight",
+   "finished_at": "2026-10-04T03:43:51.735975Z",
+   "valid": true
+  },
+  {
+   "name": "publish",
+   "finished_at": "2026-10-04T03:43:58.685420Z",
+   "status": "published",
+   "device_status": "published"
+  },
+  {
+   "name": "receipt",
+   "finished_at": "2026-10-04T03:43:58.851592Z",
+   "activated": true,
+   "web_stories": 17
+  },
+  {
+   "name": "threads",
+   "finished_at": "2026-10-04T03:43:58.864043Z",
+   "touched": 3,
+   "total": 11
+  },
+  {
+   "name": "deliver",
+   "finished_at": "2026-10-04T03:44:01.148991Z",
+   "bucket": "copenhagen-daily-live",
+   "synced": true,
+   "invalidated": "E67FD57M9R899"
+  },
+  {
+   "name": "device_push",
+   "finished_at": "2026-10-04T03:44:01.828181Z",
+   "pushed": true,
+   "to": "MisterGentleman:/volume1/web/todays_news.png",
+   "bytes": 121741
+  },
+  {
+   "name": "archive",
+   "finished_at": "2026-10-04T03:44:01.831063Z",
+   "committed": 13
+  }
+ ],
+ "failure": null,
+ "published": {
+  "edition": "/Users/vy/Documents/Development/copenhagen-daily/editorial/runs/2026-10-04-morning/edition-checked.json",
+  "status": "published",
+  "device_status": "published",
+  "bundle": {
+   "manifest_sha256": "sha256:dcd674622e924eb13c7c70271fcae3b72e803b9e181e96a1ca862300f0bc49dc",
+   "path": "n/2026-10-04-morning/"
+  },
+  "receipt": {
+   "sequence": 19,
+   "manifest_sha256": "sha256:dcd674622e924eb13c7c70271fcae3b72e803b9e181e96a1ca862300f0bc49dc",
+   "web_story_ids": [
+    "latvia-kulbergs-unity-list-wins",
+    "kastrup-teens-charged-flat-shooting",
+    "border-shopping-loss-overstated",
+    "tax-dispute-interest-deposit",
+    "tennessee-prison-chief-strada-quits",
+    "district-heating-pool-200m",
+    "social-media-night-block-poll",
+    "kastrup-man-shot-saturday",
+    "planetarium-humanoid-robots",
+    "after-school-clubs-mapped",
+    "flydubai-attack-called-terror",
+    "spain-housing-protests-madrid",
+    "white-house-ai-group-clayton",
+    "greenland-deal-fox-news-offer",
+    "us-drops-diesel-export-ban",
+    "mercury-notebook-sold-auction",
+    "damsgaard-misses-wales"
+   ]
+  }
+ },
+ "updated_at": "2026-10-04T03:44:01.831661Z",
+ "elapsed_s": 835.8
+}
