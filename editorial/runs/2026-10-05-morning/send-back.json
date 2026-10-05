@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-10-05-morning",
+  "send_back": [],
+  "fallen": [],
+  "stories": {},
+  "strikes": [
+    {
+      "story": "dementia-plan-680-million",
+      "location": "extended[2]",
+      "sentence": 0,
+      "verdict": "unsupported",
+      "reason": "The cited title and description support 170 million kroner annually from 2027, but do not identify the item as a government press release.",
+      "cites": [
+        "via_ritzau"
+      ]
+    }
+  ]
+}

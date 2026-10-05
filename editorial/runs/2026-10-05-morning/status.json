@@ -1,0 +1,180 @@
+{
+ "schema_version": 1,
+ "edition_id": "2026-10-05-morning",
+ "cutoff_at": "2026-10-05T03:30:00.000000Z",
+ "started_at": "2026-10-05T03:30:00.312004Z",
+ "dry_run": false,
+ "outcome": "published",
+ "phases": [
+  {
+   "name": "reconcile",
+   "finished_at": "2026-10-05T03:30:00.790725Z",
+   "activated": false
+  },
+  {
+   "name": "inputs",
+   "finished_at": "2026-10-05T03:30:00.791140Z",
+   "recorded": false
+  },
+  {
+   "name": "collect",
+   "finished_at": "2026-10-05T03:30:49.655219Z",
+   "skipped": true,
+   "reason": "recent_poll",
+   "last_poll_at": "2026-10-05T03:30:38.589328Z",
+   "age_minutes": 0.2
+  },
+  {
+   "name": "window",
+   "finished_at": "2026-10-05T03:31:16.622368Z",
+   "articles": 2645,
+   "feeds": 132,
+   "failed_feeds": 0
+  },
+  {
+   "name": "memory",
+   "finished_at": "2026-10-05T03:31:16.806836Z",
+   "editions": [
+    "2026-10-04-morning",
+    "2026-10-03-morning",
+    "2026-10-02-morning",
+    "2026-10-01-morning",
+    "2026-09-30-morning-second-printing",
+    "2026-09-30-morning",
+    "2026-09-29-morning",
+    "2026-09-28-morning",
+    "2026-09-27-evening",
+    "2026-09-27-morning",
+    "2026-09-21-evening",
+    "2026-09-19-evening",
+    "2026-09-18-afternoon",
+    "2026-09-17-midday"
+   ],
+   "threads": 11,
+   "next_edition_number": 19
+  },
+  {
+   "name": "editor",
+   "finished_at": "2026-10-05T03:35:45.207161Z",
+   "session": {
+    "command": [
+     "claude",
+     "-p"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 268.2,
+    "session_id": "0974c5e5-d786-4a54-8904-58aae7625ac2",
+    "num_turns": 45,
+    "duration_ms": 267053,
+    "total_cost_usd": 3.757865,
+    "is_error": false,
+    "subtype": "success",
+    "permission_denials": [],
+    "result": "I've finished the desk work for edition 2026-10-05-morning, and all five files are in the run directory: `clusters.json`, `clusters-checked.json`, `ranking.json`, `selection.json` and `NOTES.md`. The runner takes over from here.\n\n- **Clusters:** I grouped the window into 39 events. The subagent attached foreign outlets to 13 of them.\n- **Validator:** it split two articles off their clusters. One split is wrong: article 608 is TV 2's report of the same SAS flight, but that story wasn't selected. The other, the party-bus story, is fine. Both are noted in the log.\n- **The edition:** 21 stories, with emphasis set to \"many stories\". All 132 feeds at 17 publishers were polled.\n  - **Lead:** the government's 680-million-kroner dementia plan. It ranked first, five scoring outlets carried it, and it belongs to the finance-bill thread.\n  - **Secondaries:** Brazil's presidential runoff, which opens a new thread; the report that more than one pupil in four is now taught outside the public folkeskole; France closing 400 to 500 upper-secondary schools; and Russia hitting a Kyiv bridge again during the German chancellor's visit.\n  - **Briefs:** 16, including four politics items, three crime items, the British frigate offer and Denmark's 1-0 win in Wales.\n\n**Departures from the ranking.** The scorer's top 24 was mostly single-outlet Altinget and Berlingske opinion pieces and features. Below them, because world stories count at 0.7, were stories that four or five Danish outlets carried. I promoted eight world stories, the frigate offer and the football over that tail. Every departure has a written reason.\n\n**Rejected:** the Bilka and Aars fires, ranked 4th and 6th, because no one was hurt. The update on Christa Pike's condition adds nothing new to the 4 October story, so I left it out.\n\n**Repeats run as developments:** three stories follow ones published on 4 October, and each reason names what is new. They are the Kastrup shooting charge, Netanyahu's flight-security review and the US bombers leaving Fairford.\n\n**Two things that felt wrong, both in `NOTES.md`:**\n- Breadth counts Ritzau copy carried by several outlets as several outlets, which flatters wire stories.\n- World stories make up 8 of 21, which is heavy for a Danish paper but under the half-page cap."
+   },
+   "stories": 21
+  },
+  {
+   "name": "write",
+   "finished_at": "2026-10-05T03:37:38.477611Z",
+   "stories": 21,
+   "sessions": 21,
+   "cost_usd": 3.5899,
+   "resumed_stories": 0
+  },
+  {
+   "name": "check",
+   "finished_at": "2026-10-05T03:46:11.618382Z",
+   "rounds": 2,
+   "struck": 1,
+   "send_back": [
+    "gade-undecided-on-standing-again",
+    "taarnby-councillor-confidentiality-charge",
+    "red-cross-collection-15-million"
+   ],
+   "fallen": [],
+   "resumed": false
+  },
+  {
+   "name": "preflight",
+   "finished_at": "2026-10-05T03:46:11.870356Z",
+   "valid": true
+  },
+  {
+   "name": "publish",
+   "finished_at": "2026-10-05T03:46:19.755362Z",
+   "status": "published",
+   "device_status": "published"
+  },
+  {
+   "name": "receipt",
+   "finished_at": "2026-10-05T03:46:19.931567Z",
+   "activated": true,
+   "web_stories": 21
+  },
+  {
+   "name": "threads",
+   "finished_at": "2026-10-05T03:46:19.942895Z",
+   "touched": 4,
+   "total": 12
+  },
+  {
+   "name": "deliver",
+   "finished_at": "2026-10-05T03:46:22.289667Z",
+   "bucket": "copenhagen-daily-live",
+   "synced": true,
+   "invalidated": "E67FD57M9R899"
+  },
+  {
+   "name": "device_push",
+   "finished_at": "2026-10-05T03:46:22.583921Z",
+   "pushed": true,
+   "to": "MisterGentleman:/volume1/web/todays_news.png",
+   "bytes": 124203
+  },
+  {
+   "name": "archive",
+   "finished_at": "2026-10-05T03:46:22.585512Z",
+   "committed": 13
+  }
+ ],
+ "failure": null,
+ "published": {
+  "edition": "/Users/vy/Documents/Development/copenhagen-daily/editorial/runs/2026-10-05-morning/edition-checked.json",
+  "status": "published",
+  "device_status": "published",
+  "bundle": {
+   "manifest_sha256": "sha256:302b26e2c92b4dde26bdecc19fa11b3fa19583d44bf723479604fce3701a648c",
+   "path": "n/2026-10-05-morning/"
+  },
+  "receipt": {
+   "sequence": 20,
+   "manifest_sha256": "sha256:302b26e2c92b4dde26bdecc19fa11b3fa19583d44bf723479604fce3701a648c",
+   "web_story_ids": [
+    "dementia-plan-680-million",
+    "brazil-lula-bolsonaro-runoff",
+    "folkeskole-one-in-four-outside",
+    "france-lycees-shut-500",
+    "kyiv-bridge-hit-during-merz-visit",
+    "finance-bill-scraps-common-area-tax",
+    "three-coalition-parties-citizenship-2055",
+    "gade-undecided-on-standing-again",
+    "radikale-back-prosecutor-headscarf-ban",
+    "uk-frigate-intelligence-offer",
+    "ebike-serious-injuries-record",
+    "kastrup-shooting-51-year-old-charged",
+    "taarnby-councillor-confidentiality-charge",
+    "shadow-hotel-sent-to-bailiff",
+    "red-cross-collection-15-million",
+    "us-pulls-b1-bombers-from-fairford",
+    "bosnia-presidency-vote-leaders",
+    "halden-hunting-party-shooting",
+    "fbi-arrests-china-spy-suspect",
+    "netanyahu-orders-flight-security-review",
+    "denmark-beat-wales-hojlund-penalty"
+   ]
+  }
+ },
+ "updated_at": "2026-10-05T03:46:22.585784Z",
+ "elapsed_s": 982.3
+}

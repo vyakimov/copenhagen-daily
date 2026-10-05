@@ -1,0 +1,612 @@
+{
+  "edition": {
+    "id": "2026-10-05-morning",
+    "number": 19,
+    "name": "Monday edition",
+    "date": "2026-10-05",
+    "cutoff_at": "2026-10-05T03:30:00.000000Z",
+    "checked_from": "2026-10-02T03:30:00.000000Z",
+    "input_id": "export-2026-10-05-0330",
+    "presentation": {
+      "emphasis": "many_stories",
+      "ear_right": "Inside: Brazil heads for a runoff, one pupil in four outside the folkeskole, France shuts its lycées"
+    },
+    "note": "Built from headlines and RSS descriptions published between 05:30 on 2 October and 05:30 on 5 October, Copenhagen time. All 132 feeds at 17 publishers polled."
+  },
+  "stories": [
+    {
+      "id": "dementia-plan-680-million",
+      "role": "lead",
+      "kicker": "Welfare",
+      "sources": [
+        731,
+        443,
+        712,
+        634,
+        629,
+        651
+      ],
+      "headline": "Government sets aside 680 million kroner for a new dementia plan",
+      "headline_short": "Government funds new dementia plan",
+      "deck": "The plan itself is still to be written; a patient group objects that the money is temporary.",
+      "extended": [
+        [
+          "The government will set aside 680 million kroner over four years for a new dementia plan in its draft budget for next year. Pia Olsen Dyhr, the economy and interior minister, says there is no concrete plan yet; the money comes first.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "borsen"
+          ]
+        ],
+        [
+          "She expects the plan to look at giving more people with dementia a permanent coordinator and at training care staff. More than 100,000 Danes over 65 have a dementia diagnosis, and about 400,000 are relatives of someone with the disease. The previous action plan ran out in 2025.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "A government press release puts the sum at 170 million kroner a year from 2027.",
+          [
+            "via_ritzau"
+          ]
+        ],
+        [
+          "Mette Raun Fjordside, director of Alzheimerforeningen, a patient association, is 'very disappointed' that temporary money is once again going to 'a chronic, fatal brain disease'. She wants dementia to get its own package as a chronic disease.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Christoffer Melson, health spokesperson for Venstre, a liberal party, called the sum 'not immediately impressive'. Venstre had proposed 250 million kroner in 2027 and 500 million a year after that, permanently.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "standard": [
+        [
+          "The government will set aside 680 million kroner over four years for a new dementia plan in its draft budget for next year. Pia Olsen Dyhr, the economy and interior minister, says there is no concrete plan yet; the money comes first.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "borsen"
+          ]
+        ],
+        [
+          "She expects the plan to look at giving more people with dementia a permanent coordinator and at training care staff. More than 100,000 Danes over 65 have a dementia diagnosis.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Mette Raun Fjordside, director of Alzheimerforeningen, a patient association, is 'very disappointed' that temporary money is once again going to 'a chronic, fatal brain disease'.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Christoffer Melson, health spokesperson for Venstre, a liberal party, called the sum 'not immediately impressive'. Venstre had proposed 500 million kroner a year, permanently, from 2028.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "The government will set aside 680 million kroner over four years for a new dementia plan that is not yet written. The director of Alzheimerforeningen, a patient association, is 'very disappointed' that the money is temporary.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "borsen"
+          ]
+        ]
+      ],
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "We are very disappointed that once again we can see temporary money being added to a health challenge that is a chronic, fatal brain disease.",
+          "attribution": "Mette Raun Fjordside, director of Alzheimerforeningen",
+          "attribution_source": "kristeligt_dagblad"
+        }
+      ]
+    },
+    {
+      "id": "brazil-lula-bolsonaro-runoff",
+      "role": "secondary",
+      "kicker": "World",
+      "sources": [
+        110,
+        31,
+        84,
+        45,
+        5,
+        19,
+        26,
+        32,
+        48,
+        16
+      ],
+      "headline": "Brazil's president trails his predecessor's son and faces a run-off",
+      "headline_short": "Brazil's election goes to a run-off",
+      "deck": "The former president's son took 47.1 per cent to the president's 45.1; the two meet again on 25 October.",
+      "standard": [
+        [
+          "Flávio Bolsonaro, a right-wing senator for the state of Rio de Janeiro, won the first round of Brazil's presidential election on Sunday with 47.1 per cent of the vote. Luiz Inácio Lula da Silva, the left-wing president, took 45.1 per cent. As neither won more than 50 per cent, the two meet in a run-off on 25 October.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske"
+          ]
+        ],
+        [
+          "Lula, 80, called the result 'unexpected'; he had been convinced he would win in the first round. Bolsonaro, 45, is the son of Jair Bolsonaro, the former president Lula beat four years ago. His father is serving 27 years in prison for a failed coup attempt after the 2022 election.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Flávio Bolsonaro, son of the former president Jair Bolsonaro, won the first round of Brazil's presidential election on Sunday with 47.1 per cent, ahead of Luiz Inácio Lula da Silva, the president, on 45.1 per cent. The two meet in a run-off on 25 October.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "folkeskole-one-in-four-outside",
+      "role": "secondary",
+      "kicker": "Denmark",
+      "sources": [
+        11,
+        9,
+        404
+      ],
+      "headline": "More than one in four Danish pupils are now taught outside public schools",
+      "headline_short": "More parents leave public schools",
+      "deck": "On Bornholm it is more than four in ten; the government has set aside 500 million kroner against school closures.",
+      "standard": [
+        [
+          "More than one in four Danish pupils are now taught outside the folkeskole, Denmark's public primary and lower secondary school. Nearly 20 years ago it was about one in five.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "jp"
+          ]
+        ],
+        [
+          "On Bornholm, a Danish island in the Baltic Sea, and in several municipalities in South and West Zealand, the share is more than four in ten.",
+          [
+            "kristeligt_dagblad",
+            "jp"
+          ]
+        ],
+        [
+          "The figures come from a report by AE, an economic think tank linked to the labour movement. Its chief analyst, Troels Lund Jensen, says the main reason is that parents see quality falling. From next year the government will spend 500 million kroner to prevent school closures.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "More than one in four Danish pupils are now taught outside the folkeskole, Denmark's public primary and lower secondary school, up from about one in five nearly 20 years ago. On Bornholm, a Danish island in the Baltic Sea, it is more than four in ten.",
+          [
+            "kristeligt_dagblad",
+            "jp"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "france-lycees-shut-500",
+      "role": "secondary",
+      "kicker": "World",
+      "sources": [
+        318,
+        302,
+        300,
+        264,
+        173,
+        319,
+        338
+      ],
+      "headline": "France suspends lessons at up to 500 high schools after student protests",
+      "headline_short": "France shuts hundreds of schools",
+      "deck": "More than 5,000 people, most of them minors, have been arrested since the protests began.",
+      "standard": [
+        [
+          "Lessons will be fully or partly suspended at 400 to 500 French high schools on Monday because security conditions 'have not been fulfilled', Édouard Geffray, the education minister, said on Sunday. Twenty-four schools have been burnt or ransacked; 78 staff and about 170 pupils have been injured.",
+          [
+            "kristeligt_dagblad",
+            "guardian",
+            "bbc"
+          ]
+        ],
+        [
+          "The protests began at a Paris school on 17 September, over teacher absence, long school days and worn-out buildings. More than 5,000 people, most of them minors, have since been arrested.",
+          [
+            "kristeligt_dagblad",
+            "guardian"
+          ]
+        ],
+        [
+          "Gérald Darmanin, the justice minister, has asked prosecutors to hold parents liable, saying they should 'pay for the repairs'.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Lessons will be fully or partly suspended at 400 to 500 French high schools on Monday after weeks of student protests, Édouard Geffray, the education minister, said on Sunday. More than 5,000 people, most of them minors, have been arrested.",
+          [
+            "kristeligt_dagblad",
+            "bbc",
+            "guardian"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "kyiv-bridge-hit-during-merz-visit",
+      "role": "secondary",
+      "kicker": "World",
+      "sources": [
+        681,
+        530,
+        387,
+        510,
+        427,
+        276,
+        271,
+        35
+      ],
+      "headline": "Russian drone hits Kyiv bridge as Germany's chancellor visits",
+      "headline_short": "Drone hits Kyiv bridge during German visit",
+      "deck": "Germany pledges 1 billion euros in military aid and 350 million euros to repair Ukraine's energy sector.",
+      "standard": [
+        [
+          "A Russian drone hit Kyiv's Northern Bridge on Sunday, shortly after Friedrich Merz, Germany's chancellor, arrived on an unannounced visit. Two people were injured, said Vitali Klitschko, the city's mayor. It was the fourth day in a row that Russia had targeted the bridges between Kyiv's two banks.",
+          [
+            "guardian",
+            "bbc",
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Merz pledged 1 billion euros in military aid and 350 million euros for repairs to Ukraine's energy sector. Executives travelling with him signed 14 agreements worth about 6.6 billion euros, German officials said.",
+          [
+            "guardian",
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        ],
+        [
+          "'If Russia is not stopped, the country's war machine will sooner or later turn against us,' Merz said.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "borsen"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "A Russian drone hit Kyiv's Northern Bridge on Sunday as Friedrich Merz, Germany's chancellor, visited. Merz pledged 1 billion euros in military aid and 350 million euros for repairs to Ukraine's energy sector.",
+          [
+            "guardian",
+            "kristeligt_dagblad"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "finance-bill-scraps-common-area-tax",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        626,
+        527
+      ],
+      "headline": "Government to scrap tax on homeowners' associations' common areas",
+      "lede": [
+        "The government's next finance bill is expected to scrap the land tax on homeowners' associations' common areas from the new year and set aside 10 million kroner a year.",
+        [
+          "jp",
+          "borsen"
+        ]
+      ]
+    },
+    {
+      "id": "three-coalition-parties-citizenship-2055",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        444
+      ],
+      "headline": "Three government parties oppose their own government's citizenship policy",
+      "lede": [
+        "Three government parties, the Moderates, the left-wing SF and the social-liberal Radikale Venstre, say 2,055 people should get Danish passports without waiting for an expert group, as government policy requires.",
+        [
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "gade-undecided-on-standing-again",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        421,
+        412,
+        400
+      ],
+      "headline": "Parliament's outgoing speaker has not decided whether to stand again",
+      "lede": [
+        "Søren Gade of Venstre, a conservative-liberal party, says he has not decided whether to stand again at the next general election; he is stepping down as speaker of Denmark's parliament.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "borsen"
+        ]
+      ]
+    },
+    {
+      "id": "radikale-back-prosecutor-headscarf-ban",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        489,
+        457
+      ],
+      "headline": "Government party drops opposition to headscarf ban for prosecutors",
+      "lede": [
+        "Radikale Venstre, one of the four governing parties, said on Sunday it is open to barring prosecutors from wearing religious symbols in court, as judges are, two days after rejecting the idea.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "uk-frigate-intelligence-offer",
+      "role": "brief",
+      "kicker": "Defence",
+      "sources": [
+        13
+      ],
+      "headline": "Britain proposes closer military ties with Denmark, including more intelligence sharing",
+      "lede": [
+        "Britain has proposed that Denmark's purchase of new frigates could grow into much closer military ties between the two countries, including more sharing of intelligence.",
+        [
+          "jp"
+        ]
+      ]
+    },
+    {
+      "id": "ebike-serious-injuries-record",
+      "role": "brief",
+      "kicker": "Transport",
+      "sources": [
+        596,
+        540,
+        392
+      ],
+      "headline": "Serious e-bike injuries reach a six-year high",
+      "lede": [
+        "The Danish Road Directorate's figures, analysed by the insurer Alm. Brand, show 133 people seriously injured on e-bikes in 2025, the most in six years; 11 were killed.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "jp"
+        ]
+      ]
+    },
+    {
+      "id": "kastrup-shooting-51-year-old-charged",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        451,
+        449
+      ],
+      "headline": "51-year-old charged with attempted murder after shooting near Copenhagen Airport",
+      "lede": [
+        "Copenhagen Police on Sunday charged a 51-year-old man with attempted murder after a 38-year-old was shot on Saturday evening in Kastrup, near Copenhagen Airport; the suspect faces a judge on Monday.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "taarnby-councillor-confidentiality-charge",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        738,
+        424
+      ],
+      "headline": "Prosecutors seek prison for councillor charged with leaking committee information",
+      "lede": [
+        "Prosecutors are seeking a prison sentence for Liv Gam, a councillor in Tårnby, a municipality bordering Copenhagen, charged with passing confidential information from a committee meeting to an outsider.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "shadow-hotel-sent-to-bailiff",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        419,
+        418,
+        402,
+        315
+      ],
+      "headline": "Company that ran seven Copenhagen flats as a hotel faces eviction",
+      "lede": [
+        "The case against Dehn-A ApS, which let seven Copenhagen flats short-term on Booking.com against its lease, has gone to the bailiff's court for enforcement after the High Court rejected its appeal.",
+        [
+          "kristeligt_dagblad",
+          "borsen"
+        ]
+      ]
+    },
+    {
+      "id": "red-cross-collection-15-million",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        232,
+        215,
+        235
+      ],
+      "headline": "Red Cross national collection raises 15 million kroner",
+      "lede": [
+        "The Danish Red Cross says its national collection on Sunday raised 15 million kroner for emergency aid, one million more than last year, with more than 16,000 volunteers taking part.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "via_ritzau"
+        ]
+      ]
+    },
+    {
+      "id": "us-pulls-b1-bombers-from-fairford",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        80,
+        71,
+        94,
+        95,
+        88,
+        111,
+        82,
+        89,
+        85
+      ],
+      "headline": "US withdraws its bombers from British air base after suspected terror plot",
+      "lede": [
+        "The United States has sent all its bombers at RAF Fairford, an air base northwest of London, back to their home bases after British police said they suspected a terror plot against the base.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "bbc",
+          "guardian",
+          "ft"
+        ]
+      ]
+    },
+    {
+      "id": "bosnia-presidency-vote-leaders",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        165,
+        151,
+        162,
+        290,
+        539,
+        70,
+        138
+      ],
+      "headline": "A leftist and two nationalists lead Bosnia's presidency vote",
+      "lede": [
+        "A leftist, Denis Becirovic, and two nationalists, Zeljka Cvijanovic and Darijana Filipovic, led partial results after Sunday's vote for Bosnia and Herzegovina's three-member presidency, which represents its Serbs, Croats and Bosniaks.",
+        [
+          "kristeligt_dagblad",
+          "borsen",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "halden-hunting-party-shooting",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        557,
+        442,
+        621,
+        611,
+        498
+      ],
+      "headline": "Father and son from hunting party shot dead in Norway",
+      "lede": [
+        "A father and son were shot dead and a third man badly hurt in Halden, about 100 kilometres south-east of Oslo, on Sunday; a man in his late 20s is charged with murder.",
+        [
+          "kristeligt_dagblad",
+          "jp",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "fbi-arrests-china-spy-suspect",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        8,
+        7
+      ],
+      "headline": "FBI arrests woman accused of spying for China",
+      "lede": [
+        "The FBI, America's federal police, has arrested a 34-year-old woman at a Los Angeles airport, accused of spying for China on a Taiwanese official's relative in Seattle; she is due before a judge on Monday.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "netanyahu-orders-flight-security-review",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        168,
+        153,
+        166,
+        102
+      ],
+      "headline": "Israel orders security review of foreign flights after cockpit axe attack",
+      "lede": [
+        "Benjamin Netanyahu, Israel's prime minister, has ordered a review of security on foreign flights to Israel after a co-pilot attacked the pilot with an axe on Wednesday's Flydubai flight from Dubai.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "wapo"
+        ]
+      ]
+    },
+    {
+      "id": "denmark-beat-wales-hojlund-penalty",
+      "role": "brief",
+      "kicker": "Sport",
+      "sources": [
+        133,
+        139,
+        109,
+        126,
+        127,
+        81
+      ],
+      "headline": "Late penalty gives Denmark 1-0 win in Wales",
+      "lede": [
+        "Denmark beat Wales 1-0 in Cardiff on Sunday evening in the Nations League, a European competition for national teams, with a late penalty from Rasmus Højlund, a Danish striker.",
+        [
+          "berlingske",
+          "dr",
+          "politiken"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+[
+ {
+  "requested": "UEFA Nations League",
+  "status": "found",
+  "title": "UEFA Nations League",
+  "extract": "The UEFA Nations League is an international European football competition played by the senior men's national teams of the member associations of UEFA, the sport's European governing body. The competition was devised to minimise friendlies and give nations competitive encounters with equally ranked teams. Teams from all the European associations compete in a league structure featuring promotion and relegation.",
+  "url": "https://en.wikipedia.org/wiki/UEFA_Nations_League",
+  "type": "standard",
+  "fetched_at": "2026-10-05T03:37:40.275800Z",
+  "term": "Nations League",
+  "definition": "a European competition for national teams"
+ },
+ {
+  "requested": "Rasmus Højlund",
+  "status": "found",
+  "title": "Rasmus Højlund",
+  "extract": "Rasmus Winther Højlund is a Danish professional footballer who plays as a striker for Serie A club Napoli and the Denmark national team.",
+  "url": "https://en.wikipedia.org/wiki/Rasmus_H%C3%B8jlund",
+  "type": "standard",
+  "fetched_at": "2026-10-05T03:37:40.317004Z",
+  "term": "Rasmus Højlund",
+  "definition": "a Danish striker"
+ }
+]

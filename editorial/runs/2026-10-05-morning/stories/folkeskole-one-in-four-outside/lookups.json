@@ -1,0 +1,35 @@
+[
+ {
+  "requested": "Folkeskole",
+  "status": "found",
+  "title": "Folkeskole",
+  "extract": "The Danish–Norwegian term Folkeskole may refer to any of the following:Danish Folkeskole Education, the Danish primary and lower secondary educational system\nVolksschule, a historical primary school system that was in use in Germany\nFolkeskole, the Norwegian historical equivalent of the German system; see Education in Norway\nfolkskola, the Swedish historical equivalent of the German system; see Education in Sweden",
+  "url": "https://en.wikipedia.org/wiki/Folkeskole",
+  "type": "disambiguation",
+  "fetched_at": "2026-10-05T03:37:39.043393Z",
+  "term": "folkeskole",
+  "definition": "Denmark's public primary and lower secondary school"
+ },
+ {
+  "requested": "Bornholm",
+  "status": "found",
+  "title": "Bornholm",
+  "extract": "Bornholm is a Danish island in the Baltic Sea, to the east of the rest of Denmark, south of Sweden, northeast of Germany and north of Poland.",
+  "url": "https://en.wikipedia.org/wiki/Bornholm",
+  "type": "standard",
+  "fetched_at": "2026-10-05T03:37:39.091964Z",
+  "term": "Bornholm",
+  "definition": "a Danish island in the Baltic Sea"
+ },
+ {
+  "requested": "da:Arbejderbevægelsens Erhvervsråd",
+  "status": "found",
+  "title": "Arbejderbevægelsens Erhvervsråd",
+  "extract": "Arbejderbevægelsens Erhvervsråd (AE) - tidligere forkortet AE-rådet - er en blanding af forskningsinstitution, lobbyorganisation, tænketank og analyseinstitut på det statistiske område med tilknytning til fagbevægelsen og Socialdemokratiet. AE's medlemmer er LO og LO's medlemsforbund, som sammen med indtægter fra konsulentarbejde finansierer AE. AE er stiftet i 1936 og er dermed Danmarks ældste tænketank.",
+  "url": "https://da.wikipedia.org/wiki/Arbejderbev%C3%A6gelsens_Erhvervsr%C3%A5d",
+  "type": "standard",
+  "fetched_at": "2026-10-05T03:37:39.238226Z",
+  "term": "AE",
+  "definition": "an economic think tank linked to the labour movement"
+ }
+]
