@@ -29,6 +29,13 @@ access** names the outlet in the sentence: **Kristeligt Dagblad writes that the 
 government.** The test is whose authority the sentence rests on. Naming an outlet for a fact suggests
 the fact is contested; naming nobody for a judgement makes it the paper's own. Both are wrong.
 
+**The outlet is not the originator.** The rule above is about the outlet that carried the story. When
+the news is a report, survey, statistic, poll or statement, the body that produced it is part of the
+news, not a citation: name it in the sentence that gives its finding, in the first paragraph, with its
+explanation. **More than one in four Danish pupils are taught outside the folkeskole, according to a
+report by AE, an economic think tank**, not the figures alone with **The figures come from AE** in
+paragraph three. The outlet that reported the report still names nobody.
+
 Name a source once per judgement, not once per sentence. When outlets disagree, name both, because
 the disagreement is the news: **Politiken puts the vote at 29 to 26; DR reports 28 to 27.**
 
@@ -75,7 +82,16 @@ airport is relevant to the story.
 Headlines are the exception: an explanation there is unwieldy, so keep the puzzling term out where a
 plainer phrase carries the news. **Mexico's president**, not **Claudia Sheinbaum**; **crossed a
 firing range**, not **crossed Borris**. When the term is the story it may stand in the headline, and
-the body's first sentence then explains it. The deck follows the headline's rule.
+the body's first sentence then explains it. The deck may explain what the headline named (*Headlines,
+decks and kickers*).
+
+The office stands in for one name, not a chain of them. A headline the reader must decode is worse
+than one with a name in it: **Lula trails Bolsonaro's son and faces a run-off in Brazil**, not
+**Brazil's president trails his predecessor's son and faces a run-off**. Name the people the reader is
+likely to know, and let the one they are not be described through them. It is a trade-off:
+familiarity first, flow second. An unfamiliar name may stand only when every substitute is harder to
+read than the name, and then the deck explains it; a brief, which has no deck, explains it in its one
+sentence. The body explains it again on its first mention, whatever the deck has done.
 
 As always, use your discretion and do not write barbarously: you can use Elon Musk or
 Donald Trump's name in a headline with no further explanation if it improves the flow; you may even
@@ -116,9 +132,9 @@ supports them, **a third**, **half**, **one in three**; the exact figure when it
 
 ### Time
 
-Weekdays for the current week: **on Tuesday**, **on Wednesday evening**. Dates with the day first and
-the month in words: **18 September**; no ordinals, no year unless it is not this one. Clock times on
-the 24-hour clock with a colon: **23:02**, never **11pm**.
+Weekdays for the six days before the edition: **on Tuesday**, **on Wednesday evening**; a date before
+that. Dates with the day first and the month in words: **18 September**; no ordinals, no year unless
+it is not this one. Clock times on the 24-hour clock with a colon: **23:02**, never **11pm**.
 
 A weekday comes from the evidence or from the cited article's own timestamp. When the sources
 disagree on the day, name no day. **Last weekend**, **yesterday**, **this summer** only when a source
@@ -135,7 +151,8 @@ minister** in lower case. Never **Mr**, **Ms**, **Dr**.
 
 Foreign leaders take an explanation where the story needs one to place them: **Ulf Kristersson,
 Sweden's prime minister** does; **Donald Trump** in a sentence about his movement does not. In a
-headline the office often serves better than the name: **Sweden's prime minister**.
+headline the office often serves better than an unfamiliar name: **Sweden's prime minister**; a
+name the reader knows serves better than an office they must work out (*Clarity*).
 
 Danish institutions keep their Danish name where the reader will meet it, with the English gloss once
 when the name does not explain itself: **Folketing**, **Nationalbanken**, **Klimarådet, the climate
@@ -147,6 +164,26 @@ Parties by their Danish name, glossed once if needed: **Venstre**, **Radikale Ve
 **Enhedslisten**; but **the Social Democrats** and **the Moderates**, because that is the name in use.
 Swedish parties likewise: **Vänsterpartiet**, **the Centre Party**. Never expand an abbreviation the
 source did not.
+
+Danish parties take the same gloss in every story, so that two stories read as one paper. Use these
+words and no others, declared against the Wikipedia article named:
+
+| Party | Gloss | Wikipedia |
+|---|---|---|
+| the Social Democrats | none; the name explains itself | |
+| Venstre | a liberal party | Venstre (Denmark) |
+| the Moderates | a liberal party founded by Lars Løkke Rasmussen, a former prime minister | Moderates (Denmark) |
+| SF | a left-wing party | Green Left (Denmark) |
+| Radikale Venstre | a social-liberal party | Danish Social Liberal Party |
+| Enhedslisten | a far-left party | Red–Green Alliance (Denmark) |
+| Danmarksdemokraterne | a right-wing populist party | Denmark Democrats |
+| Liberal Alliance | a libertarian party | Liberal Alliance (Denmark) |
+| the Conservatives | a centre-right party | Conservative People's Party (Denmark) |
+| Dansk Folkeparti | a nationalist party | Danish People's Party |
+| Alternativet | a green party | The Alternative (Denmark) |
+| Borgernes Parti | a far-right populist party | Citizens' Party (Denmark) |
+
+A party not listed takes the shortest gloss its Wikipedia article bears out.
 
 Places in the English form where one is established: **Copenhagen**, **Zealand**, **Jutland**,
 **Funen**, **the Faroe Islands**, **Greenland**; otherwise the Danish spelling with its diacritics:
@@ -167,7 +204,10 @@ sentence: **Talks begin** needs a source that says talks began. It leaves no ter
 could have avoided (*Clarity*).
 
 The deck adds the second fact or the consequence, in one sentence with a full stop; a semicolon joins
-two short facts: **Ambassador summoned; Frederiksen says Moscow is testing NATO.** `headline_short`
+two short facts: **Ambassador summoned; Frederiksen says Moscow is testing NATO.** It is also where a
+name the headline could not explain is explained, briefly and set off by commas, alongside the second
+fact and never instead of it: **Flávio Bolsonaro, a right-wing senator and the former president's
+son, took 47.1 per cent to Lula's 45.1; the run-off is on 25 October.** `headline_short`
 is a shorter true headline, not a fragment: **Greenland deal signed**.
 
 The kicker is from the policy's vocabulary, the more specific one when it helps: **Defence** rather
@@ -225,8 +265,9 @@ supply it; the rules only clear the ground.
 ### Answer first
 
 The result and what happens next, then how it unfolded, then reactions. A teaser's suspense is
-inverted, never kept. Every sentence carries something the reader did not have: an actor, a number, a
-time, a place, a decision, a consequence. A sentence that only characterises is cut, not rewritten.
+inverted, never kept. When the news is a finding or a claim, who found or claims it is part of the
+answer and comes with it. Every sentence carries something the reader did not have: an actor, a
+number, a time, a place, a decision, a consequence. A sentence that only characterises is cut, not rewritten.
 Thin evidence makes a short story, and a short story is finished when the facts are.
 
 ### Rhythm
@@ -235,9 +276,12 @@ One fact per sentence, applied evenly, is monotony. Vary the length: a short sen
 one lands. Let one sentence in a paragraph state a consequence rather than a fact, because the reader
 wants to know what it means as well as what happened. Keep the subject and its verb close; an
 explanation that opens between them and runs on is a sentence the reader must hold open, so put it
-where a clause ends, or in the next sentence. One explanation per sentence: **Latvia First, a party
-inspired by Donald Trump's Maga movement, is set to come second**, not **Latvia First, a party
-inspired by Donald Trump, the American president, and his Maga movement, is set to come second**.
+where a clause ends, or in the next sentence. End a sentence on its news, not on a qualifier whose
+attachment the reader must guess (**as government policy requires**, **as judges are**). After two or
+more people have been named, use the name again rather than **he** or **his father**. One explanation
+per sentence: **Latvia First, a party inspired by Donald Trump's Maga movement, is set to come
+second**, not **Latvia First, a party inspired by Donald Trump, the American president, and his Maga
+movement, is set to come second**.
 
 ### Short words
 

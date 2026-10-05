@@ -44,8 +44,10 @@ Every paragraph you write is `[text, [publisher ids]]`, and every id you cite is
 `articles`. Facts of record are cited by the marker and name nobody: not "DR reports that the vote
 passed" but "The vote passed", with `dr` in the marker. Only a judgement, an observation, or a
 quotation names its source in the sentence, because the sentence rests on that source's authority.
-Naming an outlet for a plain fact is the most common fault the checker notes; the marker is enough. Thin evidence makes a short story. A headline with an
-empty description is a complete brief.
+Naming an outlet for a plain fact is the most common fault the checker notes; the marker is enough.
+This is about outlets only. A think tank, agency, ministry, company or researcher whose report or
+figures are the news is the story's actor; name it in the first sentence that uses its finding.
+Thin evidence makes a short story. A headline with an empty description is a complete brief.
 
 ## What to write, by role
 
