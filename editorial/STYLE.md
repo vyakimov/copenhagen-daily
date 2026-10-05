@@ -59,23 +59,28 @@ A teaser's mood never becomes the paper's voice.
 
 ### Clarity
 
-The reader is intelligent and is not assumed to be knowledgeable. Explain every name, place,
-institution, term or abbreviation that a reader outside Denmark could not place, on its first mention
-in the body, after the name and set off by commas, as briefly as answers "what is that": **Borris
-Skydeterræn, a military firing range in West Jutland**, never **Borris**; **Jacob Bundsgaard, the
-former mayor of Aarhus**. The well known too, when the story has not already placed them: **Elon
+Assume the reader is intelligent but do not assume they are knowledgeable. Explain names, places,
+institutions, terms or abbreviations that a reader is even a slightly likely to find confusing,
+on their first mention in the body. Do so after the name and set off by commas, as briefly as answers
+"what is that"; for example **Borris Skydeterræn, a military firing range in West Jutland**, never **Borris**;
+**Jacob Bundsgaard, the former mayor of Aarhus**. The well known too, when the story has not already placed them: **Elon
 Musk, Tesla's chief executive** or **Elon Musk, the world's richest man**, whichever the story needs.
 Nest when one explanation is not enough: **Jane Fraser, chief executive of Citigroup, one of
 America's largest banks**. Explain once; after that the bare name.
 
 An explanation identifies and does no more. A true detail the story does not need reads as a clue:
-**Kastrup, a Copenhagen suburb**, not **Kastrup, a Copenhagen suburb by the airport**, unless the
-airport is in the story.
+**Kastrup, a Copenhagen suburb**, is preferable to **Kastrup, a Copenhagen suburb by the airport**, unless the
+airport is relevant to the story.
 
 Headlines are the exception: an explanation there is unwieldy, so keep the puzzling term out where a
 plainer phrase carries the news. **Mexico's president**, not **Claudia Sheinbaum**; **crossed a
 firing range**, not **crossed Borris**. When the term is the story it may stand in the headline, and
 the body's first sentence then explains it. The deck follows the headline's rule.
+
+As always, use your discretion and do not write barbarously: you can use Elon Musk or
+Donald Trump's name in a headline with no further explanation if it improves the flow; you may even
+do so in the body if you think it makes a story read better. It comes down to good taste, and I trust you
+to use your judgement.
 
 An explanation is the one thing the writer may take from its own knowledge. Each one is declared with
 the copy, naming the Wikipedia article that confirms it, and the checker verifies it against that
