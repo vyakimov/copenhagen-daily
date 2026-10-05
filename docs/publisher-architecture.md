@@ -70,8 +70,7 @@ September", both read off the cutoff in the edition's timezone, in Danish for a 
 right ear is the edition's `ear_right` when block 2 supplies one, else "Edition N". The dateline
 carries the date, the paper's number, and the five publishers that contributed to the most stories
 with a "+N more" tail. The navigation line links the previous and next editions through the `go/`
-stubs, the archive, and, when the edition has a device page, "View as printed page" at
-`/n/<id>/device/page-1.png`, an edition-absolute link that stays right in the archive.
+stubs and the archive. It does not link the device page.
 
 Each story renders its longest supplied body variant, justified, soft-hyphenated at build time from
 TeX patterns for the edition's language (`config/hyphenation.json`) so every browser breaks words at
@@ -178,8 +177,8 @@ The site is served but not listed: every page carries
 `<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">`, the release root carries a
 `robots.txt` that disallows everything, and CloudFront adds an `x-robots-tag: noindex` header for files
 that are not HTML. Block 3 does none of the delivery. After an activated publish the desk syncs `live/`
-to the S3 bucket and invalidates the CloudFront distribution, then copies `live/device/current.png` to
-the NAS with `scp -O`; see [editorial/OPERATIONS.md](../editorial/OPERATIONS.md) and
+to the S3 bucket and invalidates the CloudFront distribution, and the kitchen screen reads
+`device/current.png` from the site; see [editorial/OPERATIONS.md](../editorial/OPERATIONS.md) and
 [aws-delivery.md](aws-delivery.md). Publisher licensing is the open question behind the unlisted posture.
 
 ## Decisions and what remains

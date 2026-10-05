@@ -4,7 +4,7 @@ import Grid from "./layouts/Grid.astro";
 import Sheet from "./layouts/Sheet.astro";
 import { formatEditionDate } from "../../../assets/html/format.ts";
 import { sourceName, storyCredits } from "../../../assets/html/credit.ts";
-const { edition, config, device } = Astro.props;
+const { edition, config } = Astro.props;
 const meta = edition.edition;
 const names = { publishers: config.publishers, agencies: config.agencies ?? {} };
 const common = { ...names, language: meta.language, timezone: meta.timezone };
@@ -40,7 +40,7 @@ const leading = { names: ranked.slice(0, 5), others: Math.max(0, ranked.length -
 ---
 <main class:list={["page", `layout-${layout}`]}>
   <Masthead edition={meta} masthead={config.masthead} earRight={edition.presentation?.ear_right}
-    leading={leading} device={device} />
+    leading={leading} />
   <Layout {...roles} common={common} />
 
   <div class="coverage">

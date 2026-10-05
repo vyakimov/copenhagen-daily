@@ -50,11 +50,9 @@ adds an `X-Robots-Tag: noindex` header for files that are not HTML, and `verify-
 
 With `device: true` in `config/desk.yaml`, every publish also fits and renders block 3's device page
 from the same contract; the desk makes no device decisions. A device failure degrades the publish to
-web-only and the web edition is unaffected. After delivery, `device_push` copies the newest page
-(`live/device/current.png`) to the NAS with `scp -O` (the NAS has no SFTP subsystem); the host is an
-alias in `~/.ssh/config` and its key's passphrase is in the login keychain, so the job carries no
-secret. A failed push is recorded in the run's status and notified, never fatal. By hand:
-`edit_news.sh push-device`. Block 3 needs its pinned Chromium (`publisher/OPERATIONS.md`) on the Mac.
+web-only and the web edition is unaffected. The newest page is always at
+`https://copenhagen-daily.net/device/current.png`, which `deliver` syncs and invalidates with the rest
+of the site; the screen's TRMNL Image Display plugin reads it from there. Block 3 needs its pinned Chromium (`publisher/OPERATIONS.md`) on the Mac.
 
 ## Looking before publishing
 
@@ -93,9 +91,8 @@ message to the owner.
 ## This deployment's names
 
 `config/desk.yaml` is committed and holds the shape and the defaults. The names that belong to this
-deployment alone, the bucket, the distribution id, the CLI profile, the kitchen screen's host and
-path, live in `var/desk.local.yaml`, which git ignores and which is laid over the committed file key
-by key when the desk starts. Without it, delivery and the device push are skipped.
+deployment alone, the bucket, the distribution id, the CLI profile, live in `var/desk.local.yaml`, which git ignores and which is laid over the committed file key
+by key when the desk starts. Without it, delivery is skipped.
 
 ## Being told
 
@@ -132,7 +129,7 @@ session: clusters, ranking, selection, the log), `write` (one read-only session 
 time, then the spec and the contract assembled by the runner), `check`
 (the checker session and the strikes, with at most one send-back, which rewrites only the stories sent
 back, each in its own session again), `preflight`, `publish`, `receipt`,
-`threads`, `deliver`, `device_push`, `archive` (the commit). With `device: true` in `config/desk.yaml`,
+`threads`, `deliver`, `archive` (the commit). With `device: true` in `config/desk.yaml`,
 as it is, the publish also renders the device page from the same contract; the desk makes no device
 decisions. On the final check a story that no longer stands falls to a headline, and a struck
 headline is replaced by the primary source's own title. Each phase appends to `runs/<id>/status.json`,
@@ -193,8 +190,7 @@ Read `runs/<id>/status.json`: `failure.phase` and `failure.type` say which step 
   the run first asks block 3 for the edition's receipt, and when the edition is already
   activated it skips straight to the steps after the publish, each of which is safe to repeat. The
   notification for such a failure says the edition is activated locally but may not be on the site.
-  Earlier failures stay in `status.json` under `previous_failures`. `device_push` never fails the
-  run: a failed push is recorded in the phase and notified, and `edit_news.sh push-device` repeats it.
+  Earlier failures stay in `status.json` under `previous_failures`.
 - `recovery_required`: block 3 holds a pending publication from an interrupted run. Run
   `publisher/publish_news.sh recover --publish-root <root>`, then rerun.
 
@@ -203,6 +199,6 @@ A published edition id is never rerun; the next edition corrects it.
 ## Rehearsing without publishing
 
 `edit_news.sh run --dry-run` does everything up to `publish --dry-run`, which assembles and removes a
-release under the publish root, and skips `reconcile`, `receipt`, `threads`, `deliver`, `device_push`,
+release under the publish root, and skips `reconcile`, `receipt`, `threads`, `deliver`,
 and `archive`. The `inputs` check and the collect still run. Use it after changing the handbook, the
 policy, or a skill.

@@ -223,6 +223,10 @@ alias whose key passphrase is in the login keychain. It is a copy of a file alre
 failed push is notified and never fatal, and the screen keeps the last page it had. The same file is
 also on the site at `device/current.png`, which is where TRMNL's Image Display plugin would read it
 if the panel is ever pointed at the site instead.
+Reversed on 5 October 2026: the panel reads `https://copenhagen-daily.net/device/current.png`, and
+the desk's `device_push` phase, its `push-device` action, and the NAS host alias are gone. The web
+edition's "View as printed page" link went at the same time; the PNG stays at
+`n/<id>/device/page-1.png`, unlinked.
 
 ---
 

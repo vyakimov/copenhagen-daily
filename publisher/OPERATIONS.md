@@ -54,8 +54,9 @@ listed in `DEVICE_INTEGRITY_ERRORS` (`src/device/index.ts`: `network_access_bloc
 `composition.json`, and `fit-report.json` into `--output` without touching a publish root, which is the
 quickest way to get a PNG for the panel; `fit` only measures and reports. The device page is served
 from the docroot at `device/current.png` (the newest edition with a page) and at
-`n/<edition-id>/device/page-1.png`. Block 3 itself uploads nothing: syncing `live/` to the bucket and
-pushing the page to the NAS are the desk's phases, see `editorial/OPERATIONS.md`.
+`n/<edition-id>/device/page-1.png`; the kitchen screen reads
+`https://copenhagen-daily.net/device/current.png`. Block 3 itself uploads nothing: syncing `live/` to
+the bucket is the desk's phase, see `editorial/OPERATIONS.md`.
 
 The device path needs the hermetic Chromium above and `magick` on `PATH`; under cron, where Homebrew's
 `/opt/homebrew/bin` is often absent, set `PUBLISHER_MAGICK=/opt/homebrew/bin/magick` in the environment.

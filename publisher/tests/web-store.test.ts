@@ -506,11 +506,10 @@ test("verify and receipt reject a bundle whose manifest no longer matches its ac
   );
 });
 
-test("the printed-page link is edition-absolute so it works from the home page too", async () => {
+test("the web edition does not link to the device page", async () => {
   const work = await mkdtemp(join(tmpdir(), "publish-devicelink-"));
   const doc = await edition("minimal.json");
   const dist = await buildWeb(projectRoot, work, doc, [indexEntry(doc, "published")]);
   const page = await readFile(join(dist, "n", doc.edition.id, "index.html"), "utf8");
-  assert.match(page, new RegExp(`href="/n/${escapeRegExp(doc.edition.id)}/device/page-1.png"`));
-  assert.doesNotMatch(page, /href="\.\/device\//);
+  assert.doesNotMatch(page, /device\/|printed page/i);
 });

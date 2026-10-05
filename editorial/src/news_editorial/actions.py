@@ -397,14 +397,3 @@ def verify_live_action(args: argparse.Namespace) -> dict[str, Any]:
         raise ActionError("live_site_problem", "; ".join(report["problems"]) or report["state"], report)
     return report
 
-
-@action("push-device")
-def push_device_action(args: argparse.Namespace) -> dict[str, Any]:
-    from .deliver import push_device
-    from .run import load_desk_config
-
-    config = load_desk_config()
-    try:
-        return push_device(_publish_root(args), config.get("device_push") or {})
-    except Exception as exc:  # scp's failure is the message.
-        raise ActionError("push_failed", str(exc)) from exc

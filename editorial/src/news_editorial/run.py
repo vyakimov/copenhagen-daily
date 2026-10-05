@@ -36,7 +36,7 @@ from .build import BuildError, build_edition, spec_story, validate_story_copy, w
 from .bundle import BundleError, load_bundle
 from .clusters import check_clusters, write_checked  # noqa: F401 -- re-exported for the desk
 from .contract import validate_edition
-from .deliver import deliver, push_device
+from .deliver import deliver
 from .lookups import wikipedia_summary
 from .notify import notify
 from .memory import build_memory, load_registry, save_registry, write_memory
@@ -268,7 +268,6 @@ class Runner:
         notifier: Callable[[str, str], Any] | None = None,
         deliverer: Callable[[Path], dict[str, Any]] | None = None,
         device: bool = False,
-        device_pusher: Callable[[Path], dict[str, Any]] | None = None,
         retry: bool = False,
         collect_wait_seconds: int = 30,
         collect_max_attempts: int = 20,
@@ -283,7 +282,6 @@ class Runner:
         self.notifier = notifier
         self.deliverer = deliverer
         self.device = device
-        self.device_pusher = device_pusher
         self.retry = retry
         self.activated_before = False
         self.stray_changes = stray_changes
@@ -399,7 +397,6 @@ class Runner:
                 ("receipt", self._receipt),
                 ("threads", self._threads),
                 ("deliver", self._deliver),
-                ("device_push", self._push_device),
                 ("archive", self._archive),
             ):
                 if self.activated_before and phase in self.BEFORE_ACTIVATION:
@@ -1202,26 +1199,6 @@ class Runner:
         result = self.deliverer(self.publish_root)
         self._phase("deliver", **(result or {}))
 
-    def _push_device(self) -> None:
-        """Copy the device page to the kitchen screen's host. The paper is already out, so a failure here
-        is recorded and reported, never raised."""
-        published = (self.status.get("published") or {}).get("device_status")
-        if self.dry_run or self.device_pusher is None or published != "published":
-            self._phase("device_push", skipped=True, reason="dry run" if self.dry_run else "no device page")
-            return
-        try:
-            result = self.device_pusher(self.publish_root)
-        except Exception as exc:  # noqa: BLE001 -- the paper is published; the push is best effort.
-            self._phase("device_push", failed=True, error=str(exc))
-            if self.notifier:
-                try:
-                    self.notifier(f"Copenhagen Daily: the device page was not pushed for {self.edition_id}",
-                                  f"The web edition is live. Pushing the device page failed: {exc}")
-                except Exception as note:  # noqa: BLE001
-                    sys.stderr.write(f"notification failed: {note}\n")
-            return
-        self._phase("device_push", **(result or {}))
-
     def _archive(self) -> None:
         if self.dry_run or not self.commit:
             self._phase("archive", skipped=True)
@@ -1266,7 +1243,6 @@ def run_edition(args: Any, policy: Policy) -> dict[str, Any]:
         notifier=lambda subject, body: notify(subject, body, config.get("notify") or {}),
         deliverer=lambda root: deliver(root, config.get("delivery") or {}),
         device=bool(config.get("device", False)),
-        device_pusher=lambda root: push_device(root, config.get("device_push") or {}),
         retry=getattr(args, "retry", False),
     )
     return runner.run()

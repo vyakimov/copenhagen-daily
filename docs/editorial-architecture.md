@@ -23,7 +23,7 @@ flowchart LR
     C --> K[Checker session: verdicts.json]
     K --> V[apply-verdicts: strikes, one send-back, fall to headline]
     V --> P[Block 3: validate, publish, receipt]
-    P --> D[S3 sync, CloudFront invalidation, device page to the NAS]
+    P --> D[S3 sync, CloudFront invalidation]
     P --> T
     P --> G[git commit of the run]
     Y[policy.yaml] --> E
@@ -69,7 +69,6 @@ One run owns `editorial/runs/<edition-id>/`. The runner holds `editorial/var/run
 | receipt | Block 3's `receipt`; the run fails with `not_activated` if no activation exists. |
 | threads | Advance `var/threads.json` from the web set of the activated receipt, never earlier. |
 | deliver | `aws s3 sync --delete` of block 3's `live/` tree to the bucket and a CloudFront invalidation, under the scoped IAM profile. Skipped with no bucket configured. |
-| device_push | `scp -O` of `live/device/current.png` to the NAS, only when the publish produced a device page. A failure is recorded and notified, never fatal. |
 | archive | `git commit --only` of the run's own small files. The bundle, the window, and the session records stay on disk, uncommitted. |
 
 `run --dry-run` does everything up to `publish --dry-run` and skips the receipt, the threads, delivery, the push, and the commit. `run --retry` runs only when today's edition has not already ended as published, dry run, or skipped.
@@ -251,7 +250,7 @@ A quiet day is a shorter paper: two secondaries and five briefs is a complete ed
 
 ### The device page is block 3's
 
-Block 3 renders the kitchen screen's page from the same contract at every publish, and `device_push` copies it to the NAS. The desk makes no device decisions and writes no shorter forms for it; the page shows the lead and as many of the next stories as fit.
+Block 3 renders the kitchen screen's page from the same contract at every publish, and `deliver` puts it on the site at `device/current.png`, where the screen reads it. The desk makes no device decisions and writes no shorter forms for it; the page shows the lead and as many of the next stories as fit.
 
 ## Memory and repeat suppression
 

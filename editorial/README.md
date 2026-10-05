@@ -10,7 +10,7 @@ the rules are deterministic tools behind `edit_news.sh`. The design is
 ```sh
 ./edit_news.sh list-actions
 ./edit_news.sh run --dry-run                 # today's edition: inputs, collect, window, memory, editor, check, preflight, publish --dry-run
-./edit_news.sh run                           # reconcile, inputs, collect, window, memory, editor, check, preflight, publish, receipt, threads, deliver, device_push, archive
+./edit_news.sh run                           # reconcile, inputs, collect, window, memory, editor, check, preflight, publish, receipt, threads, deliver, archive
 ./edit_news.sh run [--cutoff <RFC 3339 UTC>] [--edition <id>] [--publish-root <dir>] [--no-collect] [--checker claude|codex] [--retry]
 ./edit_news.sh status
 ./edit_news.sh window --run runs/<id> --cutoff 2026-09-24T03:30:00Z [--previous-cutoff <ts>] [--bundle <dir>] [--feeds <file>]
@@ -21,7 +21,6 @@ the rules are deterministic tools behind `edit_news.sh`. The design is
 ./edit_news.sh apply-verdicts --run runs/<id> [--edition <file>] [--verdicts <file>] [--output <file>] [--final]
 ./edit_news.sh deliver [--publish-root <dir>]
 ./edit_news.sh freshness [--publish-root <dir>] [--max-age-hours <n>] [--notify]
-./edit_news.sh push-device [--publish-root <dir>]
 ./edit_news.sh verify-live [--publish-root <dir>] [--site-url <url>] [--fix] [--notify]
 ```
 
@@ -41,8 +40,7 @@ schedule and what to do when a run fails.
 - `STYLE.md`: spelling, numbers, time, names, and attribution forms, drafted from the first editions.
 - `VERIFIER.md`: the checker's brief, tool-agnostic.
 - `config/desk.yaml`: where block 3's publish root is, which tools and models run the sessions
-  (`checker`, `editor_model`), whether the device page is rendered (`device`) and where it is pushed
-  (`device_push`), the AWS `delivery` settings, how the owner is told (`notify`), and
+  (`checker`, `editor_model`), whether the device page is rendered (`device`), the AWS `delivery` settings, how the owner is told (`notify`), and
   `max_edition_age_hours` for the freshness check.
 - `contracts/`: the spec schema and the verdicts schema, the two files the sessions must satisfy.
 - `runs/<edition-id>/`: one directory per run, the editorial record. The small files are committed

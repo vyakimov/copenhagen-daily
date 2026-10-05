@@ -2,7 +2,7 @@
 import { formatEar, formatEditionDate } from "../../../assets/html/format.ts";
 // The masthead, the ruled dateline, and the navigation line. Prev/next go through the shell-owned
 // go/ stubs so an archived page never needs rewriting when a newer edition arrives.
-const { edition, masthead, earRight, leading, device } = Astro.props;
+const { edition, masthead, earRight, leading } = Astro.props;
 const names = leading.names.join(" · ");
 const ear = formatEar(edition.cutoff_at, edition.language, edition.timezone);
 const date = formatEditionDate(edition.date, edition.language);
@@ -19,13 +19,6 @@ const date = formatEditionDate(edition.date, edition.language);
 </div>
 <nav class="editions" aria-label="Edition navigation">
   <a href={`/go/${edition.id}/prev/`}>← Previous edition</a>
-  <span>
-    <a href="/archive/">Edition archive</a>
-    {device && (
-      <span class="device-note">
-        {" · "}<a href={`/n/${edition.id}/device/page-1.png`}>View as printed page (1872 × 1404)</a>
-      </span>
-    )}
-  </span>
+  <a href="/archive/">Edition archive</a>
   <a href={`/go/${edition.id}/next/`}>Next edition →</a>
 </nav>

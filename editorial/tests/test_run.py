@@ -148,7 +148,7 @@ def test_happy_path_publishes_and_records(policy, tmp_path):
     status = runner.run()
     assert status["outcome"] == "published", status
     assert [p["name"] for p in status["phases"]] == [
-        "reconcile", "inputs", "collect", "window", "memory", "editor", "write", "check", "preflight", "publish", "receipt", "threads", "deliver", "device_push", "archive"]
+        "reconcile", "inputs", "collect", "window", "memory", "editor", "write", "check", "preflight", "publish", "receipt", "threads", "deliver", "archive"]
     write = next(p for p in status["phases"] if p["name"] == "write")
     assert write["stories"] == len(read_json(GOLDEN / "spec.json")["stories"]) and write["sessions"] == write["stories"]
     assert (runner.run_dir / "stories" / "russian-frigate-flares-gedser" / "brief.json").exists()
@@ -464,38 +464,6 @@ def test_the_device_page_is_rendered_only_when_the_desk_config_asks(policy, tmp_
     fakes = Fakes(tmp_path / "again")
     make_runner(policy, tmp_path / "again", fakes).run()
     assert "--skip-device" in fakes.publish_args
-
-
-def test_the_device_page_is_pushed_after_delivery_and_a_push_failure_does_not_fail_the_edition(policy, tmp_path):
-    fakes = Fakes(tmp_path)
-    pushed = []
-    runner = make_runner(policy, tmp_path, fakes, device=True, device_pusher=lambda root: pushed.append(root) or {"pushed": True, "to": "host:/x.png"})
-    status = runner.run()
-    assert status["outcome"] == "published"
-    names = [p["name"] for p in status["phases"]]
-    assert names.index("device_push") == names.index("deliver") + 1
-    assert pushed == [fakes.publish_root]
-
-    def broken(root):
-        raise RuntimeError("scp: connection refused")
-
-    fakes = Fakes(tmp_path / "broken")
-    notes = []
-    runner = make_runner(policy, tmp_path / "broken", fakes, device=True, device_pusher=broken, notifier=lambda s, b: notes.append(s))
-    status = runner.run()
-    assert status["outcome"] == "published"
-    phase = next(p for p in status["phases"] if p["name"] == "device_push")
-    assert phase["failed"] and "connection refused" in phase["error"]
-    assert any("device" in n.lower() for n in notes)
-
-
-def test_the_device_push_is_skipped_when_no_device_page_was_published(policy, tmp_path):
-    fakes = Fakes(tmp_path)
-    fakes.device_status = "failed"
-    pushed = []
-    status = make_runner(policy, tmp_path, fakes, device=True, device_pusher=lambda root: pushed.append(root)).run()
-    assert status["outcome"] == "published" and pushed == []
-    assert next(p for p in status["phases"] if p["name"] == "device_push")["skipped"]
 
 
 # ---- block 2 review, 30 September: the trust boundary and the retry paths ----------------------------

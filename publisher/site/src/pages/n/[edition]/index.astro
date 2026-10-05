@@ -1,15 +1,14 @@
 ---
 import Broadsheet from "../../../layouts/Broadsheet.astro";
 import Edition from "../../../components/Edition.astro";
-import { config, order } from "../../../lib.ts";
+import { config } from "../../../lib.ts";
 import { getCollection } from "astro:content";
 export async function getStaticPaths() {
   const entries = await getCollection("editions");
   return entries.map((entry) => ({ params: { edition: entry.data.edition.id }, props: { edition: entry.data } }));
 }
 const { edition } = Astro.props;
-const entry = order.find((x) => x.id === edition.edition.id);
 ---
 <Broadsheet title={`${edition.edition.name} — ${config.masthead}`} language={edition.edition.language}>
-  <Edition edition={edition} config={config} device={entry?.device_status === "published"} />
+  <Edition edition={edition} config={config} />
 </Broadsheet>

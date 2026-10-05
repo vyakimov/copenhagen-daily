@@ -404,10 +404,9 @@ split a sentence across pages; a story moves whole. The receipt and the composit
 **File naming is already reserved.** `device/page-1.png` is numbered so that `page-2.png` is additive.
 Each page is its own document at its own URL; never stack pages in one document and clip.
 
-**Delivery is a second file on the NAS, or a second playlist slot.** Today the desk pushes
-`live/device/current.png` to the house NAS by scp after delivery and the kitchen screen reads it from
-there; the same file is on the site, where TRMNL's Image Display plugin could point instead. A second
-page is a second file pushed the same way, `page-2.png` beside it, and on the TRMNL side one Image
+**Delivery is a second file on the site, or a second playlist slot.** Today the kitchen screen's
+TRMNL Image Display plugin reads `device/current.png` from the site. A second page is a second file
+delivered the same way, beside it, and on the TRMNL side one Image
 Display instance per active page, in reading order, with page number, page count, edition date, and
 edition ID visible on every page. Publication and device refresh are separate events, and a playlist
 is not a transactional document viewer: the hosted service may refresh slots at different times. With

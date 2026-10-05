@@ -55,7 +55,6 @@ ACTIONS: dict[str, dict[str, Any]] = {
     "status": {"description": "Report the most recent run.", "mutates": False},
     "deliver": {"description": "Sync block 3's live site to the configured bucket and invalidate the distribution.", "mutates": True},
     "freshness": {"description": "Check the age of the latest activated edition; fail when it is stale.", "mutates": False},
-    "push-device": {"description": "Copy the newest device page to the kitchen screen's image host.", "mutates": True},
     "verify-live": {
         "description": "Compare the live site with the newsroom's copy; with --fix deliver again when that is the remedy.",
         "mutates": False,
@@ -134,8 +133,6 @@ def build_parser() -> JSONArgumentParser:
     p.add_argument("--publish-root", help="block 3's publish root; defaults to config/desk.yaml")
     p.add_argument("--max-age-hours", type=float, help="defaults to config/desk.yaml")
     p.add_argument("--notify", action="store_true", help="send the failure notification when stale")
-    p = sub.add_parser("push-device")
-    p.add_argument("--publish-root", help="block 3's publish root; defaults to config/desk.yaml")
     p = sub.add_parser("verify-live")
     p.add_argument("--publish-root", help="block 3's publish root; defaults to config/desk.yaml")
     p.add_argument("--site-url", help="the live site; defaults to delivery.site_url in config/desk.yaml")

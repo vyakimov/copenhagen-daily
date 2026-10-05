@@ -11,12 +11,6 @@ collect_before_export: true                    # poll block 1 once before export
 commit_runs: true                              # git-commit the run directory after an activated publish
 device: true                                   # also render the kitchen screen's page; a device failure leaves the web edition untouched
 
-# Where the device page goes after delivery: scp -O to host:path, from var/desk.local.yaml. The host
-# is a ~/.ssh/config alias whose key passphrase lives in the login keychain. No host, no push.
-device_push:
-  host: null
-  path: null
-
 # Delivery to AWS. Leave bucket empty until the bucket and distribution exist; the run then skips it.
 # The bucket, distribution and profile are this deployment's own and live in var/desk.local.yaml,
 # which git ignores and which is laid over this file key by key (see load_desk_config).
