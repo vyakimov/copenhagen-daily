@@ -20,8 +20,9 @@ const roles = {
   secondaries: stories.filter((s) => s.role === "secondary"),
   briefs: stories.filter((s) => s.role === "brief"),
 };
-// The dateline names the publishers that contributed to the most stories, at most five, and counts
-// the rest. Stories rather than articles, so a wire-heavy outlet cannot climb the line by volume.
+// The dateline names the publishers that contributed to the most stories, as many as fit in about a
+// date's length (DATELINE_NAME_CHARS, always at least one), and counts the rest, so the edition number
+// between them stays centred. Stories rather than articles, so a wire-heavy outlet cannot climb the line by volume.
 // Each story's source row still names its own publishers in full. Wire copy counts for its agency,
 // as it does in the source row.
 const storiesBy = new Map<string, number>();
@@ -36,7 +37,10 @@ for (const s of stories) {
 const ranked = [...storiesBy.keys()].sort(
   (a, b) => storiesBy.get(b)! - storiesBy.get(a)! || articlesBy.get(b)! - articlesBy.get(a)! || a.localeCompare(b),
 );
-const leading = { names: ranked.slice(0, 5), others: Math.max(0, ranked.length - 5) };
+const DATELINE_NAME_CHARS = 30;
+let shown = 1;
+while (shown < ranked.length && ranked.slice(0, shown + 1).join(" · ").length <= DATELINE_NAME_CHARS) shown++;
+const leading = { names: ranked.slice(0, shown), others: Math.max(0, ranked.length - shown) };
 ---
 <main class:list={["page", `layout-${layout}`]}>
   <Masthead edition={meta} masthead={config.masthead} earRight={edition.presentation?.ear_right}

@@ -50,7 +50,7 @@ Astro runs once per edition in a scratch directory, with `TZ=Europe/Copenhagen` 
 `SOURCE_DATE_EPOCH=0`. Only that edition is in the content collection; the archive, the latest
 pointer, and the `go/<id>/prev|next` stubs are built from the store's index snapshot, the only way the
 build can know about editions it does not render. Every page links its stylesheet at
-`/a/<layout version>/web.css`; the layout version is `broadsheet-v3` (`src/contract/version.ts`).
+`/a/<layout version>/web.css`; the layout version is `broadsheet-v4` (`src/contract/version.ts`).
 Assets are `tokens.css` concatenated with `web.css` or `device.css` plus the vendored variable WOFF2
 files of Newsreader and Libre Franklin; no font loads from the network.
 
@@ -67,9 +67,10 @@ Two compositions exist; `web_layout` in the title config selects one, and `--lay
 
 The masthead's left ear is the weekday edition label ("Monday edition") and "News through 8am, 28
 September", both read off the cutoff in the edition's timezone, in Danish for a Danish edition. The
-right ear is the edition's `ear_right` when block 2 supplies one, else "Edition N". The dateline
-carries the date, the paper's number, and the five publishers that contributed to the most stories
-with a "+N more" tail. The navigation line links the previous and next editions through the `go/`
+right ear is the edition's `ear_right` when block 2 supplies one, else "Edition N". Both ears are
+hidden below 1100px, where the title leaves no room for them. The dateline carries the date, the
+paper's number, and as many of the publishers that contributed to the most stories as fit in about a
+date's length (30 characters, at least one), with a "+N more" tail. The navigation line links the previous and next editions through the `go/`
 stubs and the archive. It does not link the device page.
 
 Each story renders its longest supplied body variant, justified, soft-hyphenated at build time from

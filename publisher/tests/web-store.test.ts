@@ -324,7 +324,7 @@ test("a release carries every layout version the store holds, so archived pages 
     join(root, "live", "n", doc.edition.id, "index.html"),
     "utf8",
   );
-  assert.match(html, /href="\/a\/broadsheet-v3\/web.css"/);
+  assert.match(html, /href="\/a\/broadsheet-v4\/web.css"/);
 });
 
 test("the archive is a month-grouped register that names the latest edition", async () => {
@@ -361,7 +361,7 @@ test("the flow is three build-time stacks, not balanced CSS columns", async () =
   );
   assert.equal((html.match(/class="col"/g) ?? []).length, 3);
   const css = await readFile(
-    join(root, "live", "a", "broadsheet-v3", "web.css"),
+    join(root, "live", "a", "broadsheet-v4", "web.css"),
     "utf8",
   );
   assert.doesNotMatch(css, /\.flow\{[^}]*column-count/);

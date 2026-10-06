@@ -19,13 +19,16 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 /* masthead, dateline, navigation */
 .masthead{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;column-gap:24px}
-.ear{font-family:var(--label);font-size:13.5px;line-height:1.4;color:var(--secondary);white-space:nowrap}
+.ear{font-family:var(--label);font-size:13.5px;line-height:1.4;color:var(--secondary)}
 .ear.right{text-align:right;white-space:normal}
 .ear .lbl{display:inline-block;margin-bottom:1px;text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:700;color:var(--ink)}
 .title{font-family:var(--display);font-weight:800;font-size:76px;line-height:.95;text-align:center;letter-spacing:-.02em;white-space:nowrap}
-.dateline{display:flex;justify-content:space-between;gap:16px;margin-top:8px;padding:6px 0 5px;border-top:4px solid var(--rule);border-bottom:1px solid var(--rule);font-family:var(--label);font-size:12.5px;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+/* Dateline and navigation share the masthead's 1fr auto 1fr grid so the middle item sits under the
+   title whatever the sides' lengths; nowrap lets a long side widen its column rather than wrap. */
+.dateline{display:grid;grid-template-columns:1fr auto 1fr;column-gap:24px;white-space:nowrap;margin-top:8px;padding:6px 0 5px;border-top:4px solid var(--rule);border-bottom:1px solid var(--rule);font-family:var(--label);font-size:12.5px;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
 .dateline .mid,.dateline .more{color:var(--tertiary);font-weight:400}
-nav.editions{display:flex;justify-content:space-between;gap:16px;font-family:var(--label);font-size:13px;color:var(--tertiary);padding:5px 0;border-bottom:1px solid var(--hairline)}
+.dateline>:last-child,nav.editions>:last-child{justify-self:end}
+nav.editions{display:grid;grid-template-columns:1fr auto 1fr;column-gap:24px;white-space:nowrap;font-family:var(--label);font-size:13px;color:var(--tertiary);padding:5px 0;border-bottom:1px solid var(--hairline)}
 nav.editions a{text-decoration:none;color:var(--secondary)}
 nav.editions a:hover{color:var(--accent)}
 
@@ -130,6 +133,8 @@ header{break-after:avoid}
 .register li.latest .name::after{content:" · Latest";color:var(--accent);font-weight:700}
 .stub{margin-top:24px;font-size:19px}
 
+/* Between 900 and 1100px the 76px title leaves no room for the ears beside it. */
+@media (max-width:1100px){.masthead{grid-template-columns:1fr}.ear{display:none}}
 @media (max-width:900px){
   .page{padding:16px 16px 32px}
   .masthead{grid-template-columns:1fr}
@@ -144,6 +149,7 @@ header{break-after:avoid}
   .body.two{column-count:1}
   .sheet{column-count:2}
   h1,.sheet .story.lead h1{font-size:36px}h2{font-size:23px}.deck{font-size:19px}
+  .dateline,nav.editions{display:flex;justify-content:space-between;white-space:normal}
   .dateline,nav.editions,.folio{flex-wrap:wrap;gap:6px}
   .register li{grid-template-columns:4.5em 1fr;row-gap:2px}
   .register .name{grid-column:2}
