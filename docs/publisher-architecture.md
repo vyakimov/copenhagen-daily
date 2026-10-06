@@ -50,7 +50,7 @@ Astro runs once per edition in a scratch directory, with `TZ=Europe/Copenhagen` 
 `SOURCE_DATE_EPOCH=0`. Only that edition is in the content collection; the archive, the latest
 pointer, and the `go/<id>/prev|next` stubs are built from the store's index snapshot, the only way the
 build can know about editions it does not render. Every page links its stylesheet at
-`/a/<layout version>/web.css`; the layout version is `broadsheet-v4` (`src/contract/version.ts`).
+`/a/<layout version>/web.css`; the layout version is `broadsheet-v5` (`src/contract/version.ts`).
 Assets are `tokens.css` concatenated with `web.css` or `device.css` plus the vendored variable WOFF2
 files of Newsreader and Libre Franklin; no font loads from the network.
 

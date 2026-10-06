@@ -10,6 +10,8 @@ export type TitleConfig = {
   web_layout?: "grid" | "sheet";
   publishers: Record<string, string>;
   agencies?: Record<string, string>;
+  /** The newsroom's address, printed in the folio of every page. */
+  contact?: string;
 };
 
 export const titleConfigPath = fileURLToPath(new URL("../../config/title.yaml", import.meta.url));

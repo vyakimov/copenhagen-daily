@@ -1,5 +1,7 @@
 id: copenhagen-daily
 masthead: Copenhagen Daily
+# The address readers write to, printed in the folio of every page; leave out to print none.
+contact: newsroom@copenhagen-daily.net
 device_profile:
   width: 1872
   height: 1404

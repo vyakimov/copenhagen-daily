@@ -52,6 +52,8 @@ const leading = { names: ranked.slice(0, shown), others: Math.max(0, ranked.leng
   </div>
   <footer class="folio">
     <span>Edition <b>{meta.id}</b> · {formatEditionDate(meta.date, meta.language)}</span>
-    <span>{config.masthead} is a personal newspaper; it is not affiliated with any publisher listed.</span>
+    <span>{config.masthead} is a personal newspaper; it is not affiliated with any publisher listed.{config.contact && (
+      <> Write to <a href={`mailto:${config.contact}`}>{config.contact}</a>.</>
+    )}</span>
   </footer>
 </main>

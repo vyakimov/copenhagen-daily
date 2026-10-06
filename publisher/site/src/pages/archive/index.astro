@@ -37,5 +37,11 @@ for (const row of rows) {
         </ol>
       </section>
     ))}
+    {config.contact && (
+      <footer class="folio">
+        <span>{config.masthead} is a personal newspaper.</span>
+        <span>Write to <a href={`mailto:${config.contact}`}>{config.contact}</a>.</span>
+      </footer>
+    )}
   </main>
 </Broadsheet>

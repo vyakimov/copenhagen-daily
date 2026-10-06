@@ -120,6 +120,8 @@ header{break-after:avoid}
 .coverage .t{text-transform:uppercase;letter-spacing:.1em;font-weight:600;font-size:12px;color:var(--ink)}
 .folio{border-top:1px solid var(--rule);padding-top:6px;margin-top:16px;display:flex;justify-content:space-between;gap:16px;font-family:var(--label);font-size:13px;color:var(--tertiary)}
 .folio b{color:var(--accent);font-weight:600}
+.folio a{color:var(--secondary)}
+.folio a:hover{color:var(--accent);text-decoration-color:currentColor}
 /* archive register: one ruled row per edition, the month as a running head */
 .register{margin-top:22px}
 .register+.register{margin-top:30px}

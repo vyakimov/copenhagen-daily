@@ -34,7 +34,7 @@ Publication, preview, recovery, receipt reconciliation, and archive verification
 stubs come from that root's live index, so navigation is the real thing; `--layout grid|sheet`
 overrides the composition and `--output DIR` writes the site there instead of serving it.
 
-The layout version is `broadsheet-v4` (`src/contract/version.ts`). Every web page links
+The layout version is `broadsheet-v5` (`src/contract/version.ts`). Every web page links
 `/a/<layout version>/web.css` and the device page `/a/<layout version>/device.css`; a release carries
 every layout version the store holds, so archived pages keep the stylesheet they were published with.
 The archive page is a register grouped by month, numbered by the paper's own number carried in the
