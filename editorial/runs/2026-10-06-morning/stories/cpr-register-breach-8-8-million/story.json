@@ -1,0 +1,119 @@
+{
+ "headline": "Unauthorised access exposes ID numbers of 8.8 million people in Denmark",
+ "headline_short": "8.8 million Danish ID numbers exposed",
+ "deck": "Someone misused a small company's lawful access to the register for ten days in September; the minister says security was not good enough.",
+ "extended": [
+  [
+   "Unauthorised people obtained the names, addresses and personal identification numbers of about 8.8 million people by misusing a small Danish company's lawful access to the CPR, Denmark's central register of personal data, the digitalisation ministry said on Monday. The misuse lasted about ten days in September. The register holds about 11 million people, including the dead and those who have moved abroad.",
+   [
+    "kristeligt_dagblad",
+    "politiken",
+    "borsen",
+    "tv2"
+   ]
+  ],
+  [
+   "'It is clear to me that the security measures around this company's access to CPR have not been good enough,' Christina Egelund, the digitalisation minister, told Ritzau. The access has been shut. Egelund has ordered a security review of the whole system and does not rule out new CPR numbers for everyone.",
+   [
+    "kristeligt_dagblad",
+    "berlingske"
+   ]
+  ],
+  [
+   "A CPR employee spotted the unusual activity on Friday 2 October. The case has been reported to Datatilsynet, the data protection authority, and the police are investigating. The names and addresses of people with name and address protection were not affected.",
+   [
+    "kristeligt_dagblad",
+    "berlingske",
+    "politiken"
+   ]
+  ],
+  [
+   "DI, an employers' organisation, says in a statement that the leak raises the risk of fraud against companies, and urges them to review their identity checks at once.",
+   [
+    "via_ritzau"
+   ]
+  ]
+ ],
+ "standard": [
+  [
+   "Unauthorised people obtained the names, addresses and personal identification numbers of about 8.8 million people by misusing a small Danish company's lawful access to the CPR, Denmark's central register of personal data, the digitalisation ministry said on Monday. The misuse lasted about ten days in September, and the register also covers the dead and those who have moved abroad.",
+   [
+    "kristeligt_dagblad",
+    "politiken",
+    "borsen",
+    "tv2"
+   ]
+  ],
+  [
+   "'It is clear to me that the security measures around this company's access to CPR have not been good enough,' Christina Egelund, the digitalisation minister, told Ritzau. The access has been shut. Egelund has ordered a security review of the whole system and does not rule out new CPR numbers for everyone.",
+   [
+    "kristeligt_dagblad",
+    "berlingske"
+   ]
+  ],
+  [
+   "The case has been reported to Datatilsynet, the data protection authority, and the police are investigating.",
+   [
+    "kristeligt_dagblad",
+    "politiken"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "Unauthorised people obtained the names, addresses and personal identification numbers of about 8.8 million people by misusing a small Danish company's access to the CPR, Denmark's central register of personal data, for about ten days in September. Christina Egelund, the digitalisation minister, says security was not good enough and does not rule out new CPR numbers.",
+   [
+    "kristeligt_dagblad",
+    "berlingske",
+    "tv2"
+   ]
+  ]
+ ],
+ "callouts": [
+  {
+   "kind": "quote",
+   "text": "As Danes we must show greater scepticism than we normally do towards each other if we are contacted by someone who knows our name, address and CPR number.",
+   "attribution": "Christina Egelund, digitalisation minister",
+   "attribution_source": "kristeligt_dagblad"
+  },
+  {
+   "kind": "timeline",
+   "title": "How it unfolded",
+   "rows": [
+    {
+     "date": "September",
+     "text": "A company's access to the CPR is misused for about ten days"
+    },
+    {
+     "date": "Friday",
+     "text": "A CPR employee spots unusual activity"
+    },
+    {
+     "date": "Sunday",
+     "text": "Datatilsynet receives notice of the breach"
+    },
+    {
+     "date": "Monday",
+     "text": "The ministry makes the breach public"
+    }
+   ]
+  }
+ ],
+ "definitions": [
+  {
+   "term": "CPR",
+   "definition": "Denmark's central register of personal data",
+   "wikipedia": "Personal identification number (Denmark)"
+  },
+  {
+   "term": "Datatilsynet",
+   "definition": "the data protection authority",
+   "wikipedia": "da:Datatilsynet"
+  },
+  {
+   "term": "DI",
+   "definition": "an employers' organisation",
+   "wikipedia": "Confederation of Danish Industry"
+  }
+ ]
+}

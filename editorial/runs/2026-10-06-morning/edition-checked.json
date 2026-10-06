@@ -1,0 +1,2671 @@
+{
+  "schema_version": 2,
+  "title": "copenhagen-daily",
+  "edition": {
+    "id": "2026-10-06-morning",
+    "number": 20,
+    "name": "Tuesday edition",
+    "date": "2026-10-06",
+    "timezone": "Europe/Copenhagen",
+    "language": "en",
+    "cutoff_at": "2026-10-06T03:30:00.000000Z",
+    "generated_at": "2026-10-06T03:44:03.944384Z"
+  },
+  "presentation": {
+    "emphasis": "one_big_story",
+    "ear_right": "Inside: Store Bededag returns, 2,055 citizenships tabled again, Spain votes early"
+  },
+  "coverage": {
+    "status": "complete",
+    "checked_from": "2026-10-03T03:30:00.000000Z",
+    "checked_until": "2026-10-06T03:30:00.000000Z",
+    "feeds": [
+      {
+        "feed_id": "altinget.arbejdsmarked",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.287516Z"
+      },
+      {
+        "feed_id": "altinget.by",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.390385Z"
+      },
+      {
+        "feed_id": "altinget.christiansborg",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.151991Z"
+      },
+      {
+        "feed_id": "altinget.eu",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.179212Z"
+      },
+      {
+        "feed_id": "altinget.forside",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.126824Z"
+      },
+      {
+        "feed_id": "altinget.forsvar",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.312553Z"
+      },
+      {
+        "feed_id": "altinget.klima",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.206394Z"
+      },
+      {
+        "feed_id": "altinget.kommunal",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.337087Z"
+      },
+      {
+        "feed_id": "altinget.sundhed",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.234304Z"
+      },
+      {
+        "feed_id": "altinget.uddannelse",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.363335Z"
+      },
+      {
+        "feed_id": "bbc.business",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.664636Z"
+      },
+      {
+        "feed_id": "bbc.culture",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:54.034563Z"
+      },
+      {
+        "feed_id": "bbc.europe",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.615717Z"
+      },
+      {
+        "feed_id": "bbc.health",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.849835Z"
+      },
+      {
+        "feed_id": "bbc.politics",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.919463Z"
+      },
+      {
+        "feed_id": "bbc.science",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.794310Z"
+      },
+      {
+        "feed_id": "bbc.technology",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.761223Z"
+      },
+      {
+        "feed_id": "bbc.top",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.535321Z"
+      },
+      {
+        "feed_id": "bbc.world",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.584952Z"
+      },
+      {
+        "feed_id": "berlingske.business",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.119764Z"
+      },
+      {
+        "feed_id": "berlingske.kultur",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.139973Z"
+      },
+      {
+        "feed_id": "berlingske.latest",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.056075Z"
+      },
+      {
+        "feed_id": "berlingske.opinion",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.160442Z"
+      },
+      {
+        "feed_id": "berlingske.samfund",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.078444Z"
+      },
+      {
+        "feed_id": "borsen.baeredygtig",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.172047Z"
+      },
+      {
+        "feed_id": "borsen.breaking",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.165243Z"
+      },
+      {
+        "feed_id": "borsen.ejendomme",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.242388Z"
+      },
+      {
+        "feed_id": "borsen.executive",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.336314Z"
+      },
+      {
+        "feed_id": "borsen.finans",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.270945Z"
+      },
+      {
+        "feed_id": "borsen.homepage",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.113176Z"
+      },
+      {
+        "feed_id": "borsen.investor",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.299000Z"
+      },
+      {
+        "feed_id": "borsen.longread",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.372120Z"
+      },
+      {
+        "feed_id": "borsen.markedsberetninger",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.403321Z"
+      },
+      {
+        "feed_id": "borsen.okonomi",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.674393Z"
+      },
+      {
+        "feed_id": "borsen.opinion",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.463622Z"
+      },
+      {
+        "feed_id": "borsen.pleasure",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.497312Z"
+      },
+      {
+        "feed_id": "borsen.politik",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.531789Z"
+      },
+      {
+        "feed_id": "borsen.tech",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.564091Z"
+      },
+      {
+        "feed_id": "borsen.udland",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.592863Z"
+      },
+      {
+        "feed_id": "borsen.virksomheder",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.623584Z"
+      },
+      {
+        "feed_id": "dr.indland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.211543Z"
+      },
+      {
+        "feed_id": "dr.kultur",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.461228Z"
+      },
+      {
+        "feed_id": "dr.latest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.178340Z"
+      },
+      {
+        "feed_id": "dr.musik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.490589Z"
+      },
+      {
+        "feed_id": "dr.penge",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.280092Z"
+      },
+      {
+        "feed_id": "dr.politik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.345501Z"
+      },
+      {
+        "feed_id": "dr.regionale",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.581418Z"
+      },
+      {
+        "feed_id": "dr.regionale_bornholm",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.643868Z"
+      },
+      {
+        "feed_id": "dr.regionale_fyn",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.703176Z"
+      },
+      {
+        "feed_id": "dr.regionale_kbh",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.609839Z"
+      },
+      {
+        "feed_id": "dr.regionale_nord",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.792929Z"
+      },
+      {
+        "feed_id": "dr.regionale_oestjylland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.877850Z"
+      },
+      {
+        "feed_id": "dr.regionale_sjaelland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.851347Z"
+      },
+      {
+        "feed_id": "dr.regionale_syd",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.670580Z"
+      },
+      {
+        "feed_id": "dr.regionale_trekanten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.820848Z"
+      },
+      {
+        "feed_id": "dr.regionale_vest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.761965Z"
+      },
+      {
+        "feed_id": "dr.senestesport",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.403030Z"
+      },
+      {
+        "feed_id": "dr.sporten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.376398Z"
+      },
+      {
+        "feed_id": "dr.udland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.250555Z"
+      },
+      {
+        "feed_id": "dr.vejret",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.552847Z"
+      },
+      {
+        "feed_id": "dr.viden",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.431843Z"
+      },
+      {
+        "feed_id": "economist.briefing",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:54.451836Z"
+      },
+      {
+        "feed_id": "economist.business",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:54.452114Z"
+      },
+      {
+        "feed_id": "economist.culture",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:54.452242Z"
+      },
+      {
+        "feed_id": "economist.europe",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:54.451910Z"
+      },
+      {
+        "feed_id": "economist.finance",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:54.452049Z"
+      },
+      {
+        "feed_id": "economist.international",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:54.451978Z"
+      },
+      {
+        "feed_id": "economist.latest",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:54.105704Z"
+      },
+      {
+        "feed_id": "economist.leaders",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:54.451645Z"
+      },
+      {
+        "feed_id": "economist.science",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:54.452181Z"
+      },
+      {
+        "feed_id": "ft.climate_capital",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:50.938600Z"
+      },
+      {
+        "feed_id": "ft.companies",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:50.842592Z"
+      },
+      {
+        "feed_id": "ft.global_economy",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:50.798967Z"
+      },
+      {
+        "feed_id": "ft.homepage.international",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:50.695500Z"
+      },
+      {
+        "feed_id": "ft.life_arts",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.083262Z"
+      },
+      {
+        "feed_id": "ft.markets",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:50.873198Z"
+      },
+      {
+        "feed_id": "ft.opinion",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.014002Z"
+      },
+      {
+        "feed_id": "ft.technology",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:50.905036Z"
+      },
+      {
+        "feed_id": "ft.work_careers",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.048894Z"
+      },
+      {
+        "feed_id": "ft.world",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:50.729385Z"
+      },
+      {
+        "feed_id": "guardian.business",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:55.046435Z"
+      },
+      {
+        "feed_id": "guardian.culture",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:55.471810Z"
+      },
+      {
+        "feed_id": "guardian.environment",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:55.285610Z"
+      },
+      {
+        "feed_id": "guardian.europe",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:54.973090Z"
+      },
+      {
+        "feed_id": "guardian.international",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:54.541296Z"
+      },
+      {
+        "feed_id": "guardian.opinion",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:55.678664Z"
+      },
+      {
+        "feed_id": "guardian.science",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:55.361634Z"
+      },
+      {
+        "feed_id": "guardian.technology",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:55.195140Z"
+      },
+      {
+        "feed_id": "guardian.world",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:54.863341Z"
+      },
+      {
+        "feed_id": "information.feed",
+        "source": "information",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.103380Z"
+      },
+      {
+        "feed_id": "jp.seneste",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.085928Z"
+      },
+      {
+        "feed_id": "jp.topnyheder",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.065579Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.artikler",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.446432Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.nyheder",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.416166Z"
+      },
+      {
+        "feed_id": "nytimes.arts",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:50.385793Z"
+      },
+      {
+        "feed_id": "nytimes.books",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:50.530583Z"
+      },
+      {
+        "feed_id": "nytimes.business",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:49.903672Z"
+      },
+      {
+        "feed_id": "nytimes.climate",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:50.270699Z"
+      },
+      {
+        "feed_id": "nytimes.europe",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:49.847156Z"
+      },
+      {
+        "feed_id": "nytimes.health",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:50.204355Z"
+      },
+      {
+        "feed_id": "nytimes.homepage",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:49.562445Z"
+      },
+      {
+        "feed_id": "nytimes.opinion",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:50.616939Z"
+      },
+      {
+        "feed_id": "nytimes.science",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:50.099103Z"
+      },
+      {
+        "feed_id": "nytimes.technology",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:50.024572Z"
+      },
+      {
+        "feed_id": "nytimes.world",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:49.678576Z"
+      },
+      {
+        "feed_id": "politiken.debat",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.947857Z"
+      },
+      {
+        "feed_id": "politiken.forbrugogliv",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.974176Z"
+      },
+      {
+        "feed_id": "politiken.ibyen",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.001251Z"
+      },
+      {
+        "feed_id": "politiken.indland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.723086Z"
+      },
+      {
+        "feed_id": "politiken.kultur",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.830828Z"
+      },
+      {
+        "feed_id": "politiken.latest",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.692411Z"
+      },
+      {
+        "feed_id": "politiken.oekonomi",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.801479Z"
+      },
+      {
+        "feed_id": "politiken.politik",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.773145Z"
+      },
+      {
+        "feed_id": "politiken.rejser",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.030381Z"
+      },
+      {
+        "feed_id": "politiken.sport",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.859210Z"
+      },
+      {
+        "feed_id": "politiken.udland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.748542Z"
+      },
+      {
+        "feed_id": "politiken.viden",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:51.917811Z"
+      },
+      {
+        "feed_id": "tv2.nyheder",
+        "source": "tv2",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:52.931422Z"
+      },
+      {
+        "feed_id": "via_ritzau.latest",
+        "source": "via_ritzau",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:53.473420Z"
+      },
+      {
+        "feed_id": "wapo.business",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:55.829052Z"
+      },
+      {
+        "feed_id": "wapo.national",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:55.779230Z"
+      },
+      {
+        "feed_id": "wapo.opinions",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:55.845084Z"
+      },
+      {
+        "feed_id": "wapo.politics",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:55.809455Z"
+      },
+      {
+        "feed_id": "wapo.technology",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:55.838219Z"
+      },
+      {
+        "feed_id": "wapo.world",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:55.754557Z"
+      },
+      {
+        "feed_id": "wsj.business",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:56.034757Z"
+      },
+      {
+        "feed_id": "wsj.economy",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:56.252421Z"
+      },
+      {
+        "feed_id": "wsj.markets",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:56.179011Z"
+      },
+      {
+        "feed_id": "wsj.opinion",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:56.436053Z"
+      },
+      {
+        "feed_id": "wsj.politics",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:56.298834Z"
+      },
+      {
+        "feed_id": "wsj.technology",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:56.331800Z"
+      },
+      {
+        "feed_id": "wsj.world",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-06T03:26:55.918520Z"
+      }
+    ],
+    "note": "Built from headlines and RSS descriptions published between 05:30 on 3 October and 05:30 on 6 October, Copenhagen time: 2,701 articles. All 132 feeds at 17 publishers polled."
+  },
+  "inputs": [
+    {
+      "id": "export-2026-10-06-0330",
+      "sha256": "sha256:fc7d2e2156f7791e3b8162f3b5b9cde1401b8768a56321bdd0f3afcbbcbff833"
+    }
+  ],
+  "stories": [
+    {
+      "id": "cpr-register-breach-8-8-million",
+      "device_participation": "required",
+      "role": "lead",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Unauthorised access exposes ID numbers of 8.8 million people in Denmark",
+        "body": {
+          "extended": [
+            {
+              "text": "Unauthorised people obtained the names, addresses and personal identification numbers of about 8.8 million people by misusing a small Danish company's lawful access to the CPR, Denmark's central register of personal data, the digitalisation ministry said on Monday. The misuse lasted about ten days in September. The register holds about 11 million people, including the dead and those who have moved abroad.",
+              "sources": [
+                "kristeligt_dagblad",
+                "politiken",
+                "borsen",
+                "tv2"
+              ]
+            },
+            {
+              "text": "'It is clear to me that the security measures around this company's access to CPR have not been good enough,' Christina Egelund, the digitalisation minister, told Ritzau. The access has been shut. Egelund has ordered a security review of the whole system and does not rule out new CPR numbers for everyone.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "A CPR employee spotted the unusual activity on Friday 2 October. The case has been reported to Datatilsynet, the data protection authority, and the police are investigating. The names and addresses of people with name and address protection were not affected.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "politiken"
+              ]
+            },
+            {
+              "text": "DI, an employers' organisation, says in a statement that the leak raises the risk of fraud against companies, and urges them to review their identity checks at once.",
+              "sources": [
+                "via_ritzau"
+              ]
+            }
+          ],
+          "standard": [
+            {
+              "text": "Unauthorised people obtained the names, addresses and personal identification numbers of about 8.8 million people by misusing a small Danish company's lawful access to the CPR, Denmark's central register of personal data, the digitalisation ministry said on Monday. The misuse lasted about ten days in September, and the register also covers the dead and those who have moved abroad.",
+              "sources": [
+                "kristeligt_dagblad",
+                "politiken",
+                "borsen",
+                "tv2"
+              ]
+            },
+            {
+              "text": "'It is clear to me that the security measures around this company's access to CPR have not been good enough,' Christina Egelund, the digitalisation minister, told Ritzau. The access has been shut. Egelund has ordered a security review of the whole system and does not rule out new CPR numbers for everyone.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "The case has been reported to Datatilsynet, the data protection authority, and the police are investigating.",
+              "sources": [
+                "kristeligt_dagblad",
+                "politiken"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Unauthorised people obtained the names, addresses and personal identification numbers of about 8.8 million people by misusing a small Danish company's access to the CPR, Denmark's central register of personal data, for about ten days in September. Christina Egelund, the digitalisation minister, says security was not good enough and does not rule out new CPR numbers.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "tv2"
+              ]
+            }
+          ]
+        },
+        "headline_short": "8.8 million Danish ID numbers exposed",
+        "deck": "Someone misused a small company's lawful access to the register for ten days in September; the minister says security was not good enough."
+      },
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "As Danes we must show greater scepticism than we normally do towards each other if we are contacted by someone who knows our name, address and CPR number.",
+          "attribution": "Christina Egelund, digitalisation minister",
+          "attribution_source": "kristeligt_dagblad"
+        },
+        {
+          "kind": "timeline",
+          "title": "How it unfolded",
+          "rows": [
+            {
+              "date": "September",
+              "text": "A company's access to the CPR is misused for about ten days"
+            },
+            {
+              "date": "Friday",
+              "text": "A CPR employee spots unusual activity"
+            },
+            {
+              "date": "Sunday",
+              "text": "Datatilsynet receives notice of the breach"
+            },
+            {
+              "date": "Monday",
+              "text": "The ministry makes the breach public"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "b4c5b11f-1e9c-4fb3-a076-80052d67e5eb",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Uvedkommende har fået adgang til 8,8 millioner CPR-numre i Danmark",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/uvedkommende-har-faaet-adgang-til-88-millioner-cpr-numre",
+          "published_at": "2026-10-05T05:16:13.000000Z",
+          "content_hash": "sha256:9a7fc9e9b5268c245200ec025acb4fdce64c94394149d6e58e2707c28e8a38a0",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "8ff93e01-f124-4d78-acb1-ce821323cd9b",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Misbrug af CPR-adgang stod på i ti dage: Minister erkender svigt",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/misbrug-af-cpr-adgang-stod-paa-i-ti-dage-minister-erkender-svigt",
+          "published_at": "2026-10-05T08:53:23.000000Z",
+          "content_hash": "sha256:793e2234ae052fa75ece321297244e8750e6f57dca610e37245a26f123278d72",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:a600708e-ad31-5935-997e-d7194fca44db",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Minister efter orientering: Udelukker ikke nye CPR-numre efter læk",
+          "url": "https://www.berlingske.dk/politik/minister-efter-orientering-udelukker-ikke-nye-cpr-numre-efter-laek",
+          "published_at": "2026-10-05T16:25:49.000000Z",
+          "content_hash": "sha256:43fc659326c797a7006f50dcbf2d678462eae2337e3e5f29a5592df78fdfda21",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:f38dd426-f2e9-5582-8b39-dbac76fbbed7",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "OVERBLIK: Det ved vi om sikkerhedshændelsen i CPR-registret",
+          "url": "https://www.berlingske.dk/danmark/overblik-det-ved-vi-om-sikkerhedshaendelsen-i-cpr-registret",
+          "published_at": "2026-10-05T06:40:46.000000Z",
+          "content_hash": "sha256:d4d493ab4fb18dbedfce15c272af18138732a7295b228fad843651ec49d50075",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11008787",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Uvedkommende har skaffet sig adgang til cpr-oplysninger på millioner af danskere",
+          "url": "https://politiken.dk/danmark/art11008787/Uvedkommende-har-skaffet-sig-adgang-til-cpr-oplysninger-p%C3%A5-millioner-af-danskere1",
+          "published_at": "2026-10-05T05:09:57.000000Z",
+          "content_hash": "sha256:fa53a704c3d1c14a04f287470c86f9caeb39ed8979055dd9e8bb0c8ea1a6acc9",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:reel:bc9e4bf9-dae5-4665-96d4-39e4e28d1700",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Minister om stjålne CPR-numre: Det er 'meget alvorligt'",
+          "url": "https://www.dr.dk/nyheder/indland/reels/minister-om-stjaalne-cpr-numre-det-er-meget-alvorligt",
+          "published_at": "2026-10-05T07:21:58.000000Z",
+          "content_hash": "sha256:9c20a37649c8b3d114acc8cf0b7cdfd4f9d94db88ce6f1d72c3b3f9cbc4e4353",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19707046",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "8,8 mio. CPR-numre lækket – hvad er konsekvenserne?",
+          "url": "https://jyllands-posten.dk/tech/ECE19707046/88-mio-cprnumre-laekket-hvad-er-konsekvenserne/",
+          "published_at": "2026-10-05T13:08:02.000000Z",
+          "content_hash": "sha256:776ad5ee35950964cb73d76c2046ce0aed36d40583b8a838fc5b09f02020cc48",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/samfund/uvedkommende-har-faet-adgang-til-88-mio-cpr-numre",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Uvedkommende har fået adgang til 8,8 mio. cpr-numre",
+          "url": "https://borsen.dk/nyheder/samfund/uvedkommende-har-faet-adgang-til-88-mio-cpr-numre",
+          "published_at": "2026-10-05T05:23:48.000000Z",
+          "content_hash": "sha256:2d2da3a599d414e0094b5ffbff610213d29134ad0073561b0700681519a0be5f",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/samfund/2026-10-05-88-millioner-cpr-numre-er-blevet-kompromitteret",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "8,8 millioner CPR-numre er blevet kompromitteret",
+          "url": "https://nyheder.tv2.dk/samfund/2026-10-05-88-millioner-cpr-numre-er-blevet-kompromitteret",
+          "published_at": "2026-10-05T09:27:38.000000Z",
+          "content_hash": "sha256:d45104f62b79bbcf98520baabe28575fdd03531e7cab0c2c5c67a2ea594cbba1",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15205753/?publisherId=2869389&lang=da",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Omfattende uautoriseret adgang til borgeres CPR-oplysninger",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15205753/omfattende-uautoriseret-adgang-til-borgeres-cpr-oplysninger?lang=da",
+          "published_at": "2026-10-05T05:00:00.000000Z",
+          "content_hash": "sha256:30ed3c98ef9f3e3bb243ce99cf38b916569c654636ccb07d5eaa5415ee90a4cb",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15207898/?publisherId=5524343&lang=da",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "DI: CPR-læk øger risikoen for svindel mod virksomheder",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15207898/di-cpr-laek-oger-risikoen-for-svindel-mod-virksomheder?lang=da",
+          "published_at": "2026-10-05T13:23:19.000000Z",
+          "content_hash": "sha256:8b382c10145a4b2403a824f783a138e4b0306283c87653be345b332df147aef2",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "store-bededag-restored-2030",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Government will propose bringing back an abolished public holiday in 2030",
+        "body": {
+          "standard": [
+            {
+              "text": "The government will put forward a bill in spring 2027 to restore store bededag from 2030.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "borsen",
+                "politiken"
+              ]
+            },
+            {
+              "text": "Pia Olsen Dyhr, the economy and interior minister, told Ritzau the bill is timed to be settled before private-sector wage talks. The day was abolished in 2023 to help pay for defence. Under the coalition agreement, it returns only after a further rise in employment equal to the one its abolition brought. She says that will happen 'in any case in 2030'.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "According to DR, employees will have to pay for the day themselves.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "The government will put forward a bill in spring 2027 to restore store bededag from 2030. Store bededag was a public holiday from 1686 until it was abolished in 2023 to help pay for defence.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "borsen"
+              ]
+            },
+            {
+              "text": "According to DR, employees will have to pay for the day themselves.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Government plans to restore abolished holiday",
+        "deck": "The bill comes in spring 2027, before wage talks; DR reports that employees will pay for the day."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "ebf1a1f8-2bc2-4833-ad64-134a9b2810b9",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Lovforslag om genindførsel af store bededag i 2030 kommer i foråret",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/lovforslag-om-genindfoersel-af-store-bededag-i-2030-kommer-i-foraaret",
+          "published_at": "2026-10-05T15:33:46.000000Z",
+          "content_hash": "sha256:9e8529d5b34912538e7426b01e97440c58055e46eae7d5b0f8e2128d0d940f86",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:c5eaae58-dc50-551d-9f86-324d3b0682d0",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Nu er regeringen klar: Store bededag vender tilbage",
+          "url": "https://www.berlingske.dk/politik/nu-er-regeringen-klar-store-bededag-vender-tilbage",
+          "published_at": "2026-10-05T12:55:24.000000Z",
+          "content_hash": "sha256:d5bd623f25c0a968980aa0050116da50db9438c22f95fe64203d2b035ed52006",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/politik/lovforslag-pa-vej-store-bededag-vender-tilbage",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Lovforslag på vej: Store bededag vender tilbage",
+          "url": "https://borsen.dk/nyheder/politik/lovforslag-pa-vej-store-bededag-vender-tilbage",
+          "published_at": "2026-10-05T14:33:35.000000Z",
+          "content_hash": "sha256:85fab0f2b16b3759a4fa4d30274e699c12a05ed7a90247f470d7c1ff96edf034",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11010042",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Bekræfter: Regeringen vil fremsætte lovforslag om at genindføre Store Bededag",
+          "url": "https://politiken.dk/danmark/politik/art11010042/Regeringen-vil-frems%C3%A6tte-lovforslag-om-at-genindf%C3%B8re-Store-Bededag",
+          "published_at": "2026-10-05T15:35:30.000000Z",
+          "content_hash": "sha256:9760b4be2183189f899a849f4d969a49508011c9c142e44e19eb5c4d0ca1d175",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "citizenship-bill-2055-retabled",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Government brings back citizenship bill for 2,055 approved applicants",
+        "body": {
+          "standard": [
+            {
+              "text": "The government will bring back a bill granting citizenship to 2,055 previously approved applicants and their children in the first half of 2027, Morten Bødskov, the immigration and integration minister, said on Monday. It lapsed when an election was called.",
+              "sources": [
+                "kristeligt_dagblad",
+                "dr"
+              ]
+            },
+            {
+              "text": "Each applicant will first be checked again, and some may be dropped. They will not face the values screening the government wants for other applicants, which an expert group is still studying.",
+              "sources": [
+                "kristeligt_dagblad",
+                "dr",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "Venstre, a liberal party, backed the bill in February. On Monday its leader, Troels Lund Poulsen, wrote that the government should wait for the screening. Liberal Alliance, a libertarian party, calls it a 'gigantic broken promise'.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "The government will bring back a bill granting citizenship to 2,055 previously approved applicants after a fresh check of each, Morten Bødskov, the immigration and integration minister, said on Monday. Venstre, a liberal party, backed the bill in February but now wants the government to wait for a values screening.",
+              "sources": [
+                "kristeligt_dagblad",
+                "dr"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Citizenship bill returns",
+        "deck": "Each applicant will be checked again; Venstre, which backed the bill in February, now wants it to wait."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "9b1eaa80-214e-46df-9676-8e4f5a56a2b6",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Regeringen genfremsætter lovforslag om statsborgerskab til 2055 ansøgere",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/regeringen-genfremsaetter-lovforslag-om-statsborgerskab-til-2055-ansoegere",
+          "published_at": "2026-10-05T04:30:01.000000Z",
+          "content_hash": "sha256:8491555cdf2bd65bf57495b29ed48fa244fdca5b4c6bb2ff7c6c30172b032bb1",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "305a90c8-65ae-443a-865b-dff0b1edf992",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Venstre kritiserer statsborgerskabsforslag partiet selv støttede",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/venstre-kritiserer-statsborgerskabsforslag-partiet-selv-stoettede",
+          "published_at": "2026-10-05T13:02:24.000000Z",
+          "content_hash": "sha256:2ebf02f32ebef3c2c7c696d8120c450b59f13d9e37dc07349e3069ff1dc77c9d",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:9442db13-34ff-52b9-909a-754d9b84c4ce",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "S dropper krav om værditjek af 2.055 ansøgere: LA raser over »gigantisk løftebrud«",
+          "url": "https://www.berlingske.dk/politik/s-dropper-krav-om-vaerditjek-af-2055-ansoegere-la-raser-over-gigantisk-loeftebrud",
+          "published_at": "2026-10-05T14:23:51.000000Z",
+          "content_hash": "sha256:bd7c367b339cef77da115d27bf8c32021b5306c73eed12935c2d95d3df342748",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:b38b9229-cb13-4a4d-a4c1-c4e55f54e961",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Lov om statsborgerskab til 2.055 personer bliver genfremsat efter intern uenighed i regeringen",
+          "url": "https://www.dr.dk/nyheder/politik/lov-om-statsborgerskab-til-2-055-personer-bliver-genfremsat-efter-intern-uenighed-i-regeringen",
+          "published_at": "2026-10-05T07:01:49.000000Z",
+          "content_hash": "sha256:85925ed488267745780252f0ff9f26f62fc433d2b1eeadb26f76080e72d21b64",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11009326",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Nyhedsanalyse: Julen falder tidligt i Dansk Folkeparti i år",
+          "url": "https://politiken.dk/danmark/politik/art11009326/Julen-falder-tidligt-i-Dansk-Folkeparti-i-%C3%A5r",
+          "published_at": "2026-10-05T14:59:31.000000Z",
+          "content_hash": "sha256:0e120527f8e787cc59e18e10db6b2435b55be0b4986caa3a5843d361cb14cb09",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "dementia-assessment-auditors-criticism",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Health",
+      "copy": {
+        "headline": "Dementia assessments take more than five times as long as the law allows",
+        "body": {
+          "standard": [
+            {
+              "text": "In recent years 84 per cent of patients due a dementia assessment have waited longer than the 30 days the law allows, according to a report by Rigsrevisionen, the national audit office.",
+              "sources": [
+                "kristeligt_dagblad",
+                "via_ritzau"
+              ]
+            },
+            {
+              "text": "Statsrevisorerne, who check that the state spends taxpayers' money properly, gave the regions the second-sharpest criticism on their scale. They also faulted the 24 days that patients from strong social backgrounds gain over those from weak ones.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "The regions want family doctors to do more of the assessments.",
+              "sources": [
+                "kristeligt_dagblad",
+                "via_ritzau"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "In recent years 84 per cent of patients due a dementia assessment have waited longer than the 30 days the law allows, according to a report by Rigsrevisionen, the national audit office. The average wait last year was 165 days.",
+              "sources": [
+                "kristeligt_dagblad",
+                "via_ritzau"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Auditors fault dementia waits",
+        "deck": "State auditors sharply criticise the regions; patients in Zealand wait 244 days on average."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "44484664-95aa-401e-b99c-1da01743fcf6",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Patienter som skal udredes for demens venter i for lang tid",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/patienter-som-skal-udredes-demens-venter-i-lang-tid",
+          "published_at": "2026-10-05T12:04:04.000000Z",
+          "content_hash": "sha256:3dcc5c0b91135e4f4e477249cb2e5f77bb42338e6060ce154d8acc6d7067ccb3",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:32b2a19d-2cf4-4466-aeea-460b44dae9ab",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Lange ventetider til udredning for demens møder kritik: De fleste bliver ikke udredt inden for reglerne",
+          "url": "https://www.dr.dk/nyheder/indland/lange-ventetider-til-udredning-demens-moeder-kritik-de-fleste-bliver-ikke-udredt-inden-reglerne",
+          "published_at": "2026-10-05T12:30:54.000000Z",
+          "content_hash": "sha256:a826f076175a4c4ef388c60cfc322600f2ee9da6333808d9ea9bfa1d48a04df4",
+          "primary": false
+        },
+        {
+          "source": "altinget",
+          "source_id": "https://www.altinget.dk/sundhed/artikel/skarp-kritik-af-regioners-demensudredning-det-er-simpelthen-ikke-i-orden",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Skarp kritik af regioners demensudredning: \"Det er simpelthen ikke i orden\"",
+          "url": "https://www.altinget.dk/sundhed/artikel/skarp-kritik-af-regioners-demensudredning-det-er-simpelthen-ikke-i-orden",
+          "published_at": "2026-10-06T03:00:00.000000Z",
+          "content_hash": "sha256:b9893e62600eb5f5c7b72a8b94d37427b0cfd269d84eb7a0ec51971db08b92b4",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15206947/?publisherId=13561070&lang=da",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Danske Regioner efter kritik: Demensområdet skal tænkes forfra",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15206947/danske-regioner-efter-kritik-demensomradet-skal-taenkes-forfra?lang=da",
+          "published_at": "2026-10-05T11:40:49.000000Z",
+          "content_hash": "sha256:48a6cd0ed9fb2a330fed11dce9dc9da57077346cd963b6596b677e88e38a341d",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "echr-president-chisinau-not-roadmap",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Human rights court says a 46-nation call on deportations will not set its course",
+        "body": {
+          "standard": [
+            {
+              "text": "Mattias Guyomar, president of the European Court of Human Rights, said in a speech last week that a declaration by the 46 countries behind the court 'is not a roadmap for the court's work'. The countries, members of the Council of Europe, signed it in Chisinau, Moldova's capital, in May, seeking more freedom to deport foreign criminals.",
+              "sources": [
+                "kristeligt_dagblad",
+                "politiken"
+              ]
+            },
+            {
+              "text": "Mette Frederiksen, the prime minister, led the push, and her government's deportation reform assumes the court will change its practice over time. 'If it turns out that the court does not change course, the new Danish rules will have no effect,' Jens Elo Rytter, professor of constitutional law at the University of Copenhagen, tells Ritzau.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Mattias Guyomar, president of the European Court of Human Rights, said last week that a declaration by the 46 countries behind the court on deporting foreign criminals 'is not a roadmap for the court's work'. Jens Elo Rytter, professor of constitutional law at the University of Copenhagen, tells Ritzau that if the court does not change course, Denmark's new deportation rules will have no effect.",
+              "sources": [
+                "kristeligt_dagblad",
+                "politiken"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Rights court holds its course",
+        "deck": "Denmark's new deportation rules would have no effect if the court does not change course, a law professor says."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "5b0f9d08-e7f7-4967-a612-c4ae2476b7cb",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Professor ser gulvtæppet forsvinde under regeringens udvisningsplan",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/professer-ser-gulvtaeppet-forsvinde-under-regeringens-udvisningsplan",
+          "published_at": "2026-10-05T13:15:48.000000Z",
+          "content_hash": "sha256:ba37ac0eec71ee6d44d3cfe4c904151573ccb035295a3144c853fd70aa9e103a",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "fda51638-3237-47de-af66-b1552963bfbf",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Domstolspræsident: Europæisk erklæring om udvisninger er ikke køreplan",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/domstolspraesident-europaeisk-erklaering-om-udvisninger-er-ikke-koereplan",
+          "published_at": "2026-10-05T07:59:31.000000Z",
+          "content_hash": "sha256:8d33363a765c5e4ade2a325657b85825159401b380d2edebfefd09ea3c0019f9",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "politiken",
+          "source_id": "11008462",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Domstolspræsident sår kraftigt tvivl ved regeringens udvisningsstrategi",
+          "url": "https://politiken.dk/danmark/politik/art11008462/Domstolspr%C3%A6sident-s%C3%A5r-kraftigt-tvivl-ved-regeringens-udvisningsstrategi",
+          "published_at": "2026-10-05T11:22:44.000000Z",
+          "content_hash": "sha256:f7b363d1d729db7966af24262126e14e1c24461e7202d12117008f47074c6d5b",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:62afc518-e970-531a-823d-f82e15e022c1",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Professor med dårligt nyt til regeringen: Tale i Strasbourg kan forpurre Mette Frederiksens udvisningsreform",
+          "url": "https://www.berlingske.dk/politik/professor-med-daarligt-nyt-til-regeringen-tale-i-strasbourg-kan-forpurre-mette-frederiksens-udvisningsreform",
+          "published_at": "2026-10-05T18:33:59.000000Z",
+          "content_hash": "sha256:a7b1bfb86549aabe45e15c4f0963088ab0466126d35c58b2cb92bcede21b8c89",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "spain-snap-election-november-29",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "World",
+      "copy": {
+        "headline": "Spain's prime minister calls an early election after losing housing votes",
+        "body": {
+          "standard": [
+            {
+              "text": "Pedro Sánchez, Spain's Socialist prime minister, has called an early election for 29 November. He announced it on Monday, three days after parliament voted down two of his minority government's housing bills. 'We must renew the people's support,' he said, according to Reuters.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "dr",
+                "politiken"
+              ]
+            },
+            {
+              "text": "Average rents have doubled in about a decade; on Saturday tens of thousands marched in Madrid. The vote had been due by 22 August 2027.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Polls put the conservative Partido Popular ahead; the likeliest government would pair it with Vox, a far-right party. That would bring the far right into government for the first time since Spain became a democracy after General Franco's death in 1975.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Pedro Sánchez, Spain's prime minister, has called an early election for 29 November, three days after parliament voted down two of his government's housing bills. Polls favour the conservative Partido Popular, most likely in government with the far-right Vox.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "politiken"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Spain votes on 29 November",
+        "deck": "Pedro Sánchez's Socialists trail the conservative Partido Popular in the polls."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "e1d374be-ecdb-439f-a5b4-bb762dc089eb",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Spansk premierminister udskriver valg efter bolignederlag",
+          "url": "https://www.kristeligt-dagblad.dk/udland/spansk-premierminister-udskriver-valg-efter-bolignederlag",
+          "published_at": "2026-10-05T07:16:25.000000Z",
+          "content_hash": "sha256:552315ccc73f019bae5a5c8eb91a9734f832e2b8aa7183491bd2dd446c9587b1",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "8997b276-625f-43be-9fb9-299554545269",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Trods modvind og dårlige målinger kan Sánchez aldrig afskrives",
+          "url": "https://www.kristeligt-dagblad.dk/udland/trods-modvind-og-daarlige-maalinger-kan-sanchez-aldrig-afskrives",
+          "published_at": "2026-10-05T12:00:02.000000Z",
+          "content_hash": "sha256:7a9d5412748999e7e44e9534c4c76d3f14756f59ccb577cb50f3d7bdefdfb873",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:a4759dd9-122b-5b4c-81f5-e74fe05ccd39",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Spansk premierminister udskriver valg efter bolignederlag",
+          "url": "https://www.berlingske.dk/internationalt/spansk-premierminister-udskriver-valg-efter-bolignederlag",
+          "published_at": "2026-10-05T08:56:45.000000Z",
+          "content_hash": "sha256:fb1eaa0696ba8e9a8e226134148180a6a23ff296dd4e26ee01f8942511ca9e89",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:e73e6c8f-535c-49c5-8f6d-91f2f9aa395a",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Pedro Sánchez udskriver valg i Spanien",
+          "url": "https://www.dr.dk/nyheder/udland/pedro-sanchez-udskriver-valg-i-spanien",
+          "published_at": "2026-10-05T07:10:52.000000Z",
+          "content_hash": "sha256:04f455df4e2bac571260f6a232ecb28833ff66c3e5fccdf6b844cc466ea50137",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11008877",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Spansk regerings­leder efter politisk lussing",
+          "url": "https://politiken.dk/internationalt/art11008877/Spansk-regerings%C2%ADleder-efter-politisk-lussing",
+          "published_at": "2026-10-05T07:20:31.000000Z",
+          "content_hash": "sha256:ee13e805c3e47edd5e83b6de33a578f27609206f69db6bd34b738831674075c9",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cmdx39k49xw0o",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Spanish PM Sánchez calls early election after housing protests",
+          "url": "https://www.bbc.co.uk/news/articles/cmdx39k49xw0o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-05T10:18:47.000000Z",
+          "content_hash": "sha256:d51d15d40ae64f12e390831f6d4c2463ad1071a72e50e598f893dbfc983bea32",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "866dea03-4cee-4009-b130-6f7a191336c4",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Spanish Prime Minister Pedro Sánchez calls snap election",
+          "url": "https://www.ft.com/content/866dea03-4cee-4009-b130-6f7a191336c4",
+          "published_at": "2026-10-05T09:00:07.000000Z",
+          "content_hash": "sha256:b8f4ad700b4b85e0f27a16da5f544496893a12f024ff0c45b8be145750f5a56e",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "7c6bfe8f-eae2-47f7-98e5-19e714195c58",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Embattled Pedro Sánchez seeks political lifeline in snap Spanish election",
+          "url": "https://www.ft.com/content/7c6bfe8f-eae2-47f7-98e5-19e714195c58",
+          "published_at": "2026-10-05T15:33:30.000000Z",
+          "content_hash": "sha256:2cf51a9ff4f16843376fad6e3a0180abbb70a381681c28e796d81aeac719b59c",
+          "primary": false
+        },
+        {
+          "source": "economist",
+          "source_id": "3ce820e6-411f-4e1f-89c2-0d08f234b5e5",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Pedro Sánchez gambles on a snap election—and populist policies",
+          "url": "https://www.economist.com/europe/2026/10/05/pedro-sanchez-gambles-on-a-snap-election-and-populist-policies",
+          "published_at": "2026-10-05T13:16:24.000000Z",
+          "content_hash": "sha256:847923188d4bde593ba3885dcc73d71cba6f00d69bc28e73e8e095122c6ce61f",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/live/2026/10/05/world/spain-elections-sanchez",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Spain’s Leader Calls an Early Election",
+          "url": "https://www.nytimes.com/live/2026/10/05/world/spain-elections-sanchez",
+          "published_at": "2026-10-05T18:16:05.000000Z",
+          "content_hash": "sha256:f975bc304ed4a5f1f20aed9bcc255f31204f34bb67ed9e1cfc11640eb96d1aa5",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/05/world/europe/spain-snap-elections-sanchez.html",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Spain’s Leader Calls Early Election After Housing Crisis Roils Government",
+          "url": "https://www.nytimes.com/2026/10/05/world/europe/spain-snap-elections-sanchez.html",
+          "published_at": "2026-10-05T18:16:04.000000Z",
+          "content_hash": "sha256:fb3d20c5a772ae9aa65d0ab9ac794a859f9f55d1d1d53ee58422bc35cdad52d1",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/05/spain-prime-minister-pedro-sanchez-snap-election-housing-crisis",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Spain’s PM Pedro Sánchez calls snap election after housing law fails to pass",
+          "url": "https://www.theguardian.com/world/2026/oct/05/spain-prime-minister-pedro-sanchez-snap-election-housing-crisis",
+          "published_at": "2026-10-05T14:09:31.000000Z",
+          "content_hash": "sha256:19dc1054f5b519290413be9ebc5c8b3e18baa6525d2a412040ba6ae447502a1a",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/world/2026/10/05/spain-pedro-snchez-main-critic-trump-europe-calls-snap-elections/",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Spain’s Pedro Sánchez, main critic of Trump in Europe, calls snap elections",
+          "url": "https://www.washingtonpost.com/world/2026/10/05/spain-pedro-snchez-main-critic-trump-europe-calls-snap-elections/",
+          "published_at": "2026-10-05T12:17:25.000000Z",
+          "content_hash": "sha256:9fd3bcca3fa45da75b318959641f83ac894a6b2fde6e408d19c113ebfe8c7535",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003948534",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Spanish Leader Calls for Elections, Riding Wave of Anger Over Housing Costs",
+          "url": "https://www.wsj.com/world/europe/spains-prime-minister-sanchez-calls-snap-elections-44caae73?mod=rss_worldnews",
+          "published_at": "2026-10-05T10:00:00.000000Z",
+          "content_hash": "sha256:7a3dbab4af0d45349aec661790e1cb6cc608849e7b14ddf9697978be1cb0157b",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "ck5yn81qqde0o",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Spain PM pins hopes on housing crisis to help win snap election",
+          "url": "https://www.bbc.co.uk/news/articles/ck5yn81qqde0o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-05T19:30:50.000000Z",
+          "content_hash": "sha256:76b19eb217d396e1207729886361bfac2ddc37d1da60450c239d6b94f8ec498c",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "vegan-hospital-meals-appeal-ruling",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Appeal court clears region over vegan hospital meals",
+        "body": {},
+        "lede": {
+          "text": "The High Court on Monday cleared the Capital Region over the vegan meals its Hvidovre Hospital served a patient in 2020, in a case brought by the Danish Vegetarian Association.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "f6ffed88-e602-425c-ba22-0b7b9211c2d8",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Landsret frifinder region i sag om veganske måltider",
+          "url": "https://www.kristeligt-dagblad.dk/landsret-frifinder-region-i-sag-om-veganske-maaltider",
+          "published_at": "2026-10-05T08:20:42.000000Z",
+          "content_hash": "sha256:bae75bd3fc74221a689afb2f8452498dfc2d3648e11f508e25e99b0dfe3b2722",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:f2f84907-948c-4df1-8a19-21ec81de4c06",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Landsret frifinder region i sag om veganske måltider",
+          "url": "https://www.dr.dk/nyheder/indland/landsret-frifinder-region-i-sag-om-veganske-maaltider",
+          "published_at": "2026-10-05T09:52:18.000000Z",
+          "content_hash": "sha256:332581e2cd73ab663cda7503b6b46aa5f0053cde7ea1fd7e9922f4eaccf09f50",
+          "primary": false
+        },
+        {
+          "source": "information",
+          "source_id": "843107 at https://www.information.dk",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Det er en menneskeret at få tilbudt vegansk mad, når man er indlagt på et hospital. Alligevel tabte veganer retssag imod Region H",
+          "url": "https://www.information.dk/moti/2026/10/menneskeret-faa-tilbudt-vegansk-mad-naar-indlagt-paa-hospital-alligevel-tabte-veganer-retssag-imod-region-h",
+          "published_at": "2026-10-05T09:27:02.000000Z",
+          "content_hash": "sha256:39dc6ed2e565aa6b6d8076a133a51cf32cc86deb9c4994e6cd613d2107cbdd5c",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15207040/?publisherId=13559515&lang=da",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Dansk Vegetarisk Forening: Dom sikrer, at hospitaler skal sørge for vegansk mad",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15207040/dansk-vegetarisk-forening-dom-sikrer-at-hospitaler-skal-sorge-for-vegansk-mad?lang=da",
+          "published_at": "2026-10-05T10:05:02.000000Z",
+          "content_hash": "sha256:d19112a73261a043f07433866ef5cec55526b56c7cfd7c7653c8a9dc9a20547d",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "salling-group-buys-proshop",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Business",
+      "copy": {
+        "headline": "Salling Group buys online shop Proshop in its second-largest deal",
+        "body": {},
+        "lede": {
+          "text": "Salling Group, a grocery group, is buying Proshop, an Aarhus online shop with revenue of almost 4.5 billion kroner in 2025, for an undisclosed sum in its second-largest acquisition ever.",
+          "sources": [
+            "kristeligt_dagblad",
+            "borsen",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "bff43335-2c26-44b9-a6c0-5ceb2523cf35",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Salling Group køber Proshop for milliardbeløb",
+          "url": "https://www.kristeligt-dagblad.dk/salling-group-koeber-proshop-milliardbeloeb",
+          "published_at": "2026-10-05T07:12:13.000000Z",
+          "content_hash": "sha256:bd71ade1caf46c5aeb58819923016811be6aff11607e389c53daac89987475be",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/virksomheder/salling-group-kober-proshop-i-milliardhandel",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Salling Group køber Proshop i milliardhandel",
+          "url": "https://borsen.dk/nyheder/virksomheder/salling-group-kober-proshop-i-milliardhandel",
+          "published_at": "2026-10-05T06:41:33.000000Z",
+          "content_hash": "sha256:3e04727bfbaf3b86e2255c164086c84d8854837f490fb80e6ce4a3335c32af13",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:9d5b408c-65f3-4678-adf3-a2a65fafe413",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Salling shopper igennem: Køber dansk netbutik i milliardhandel",
+          "url": "https://www.dr.dk/nyheder/indland/salling-shopper-igennem-koeber-dansk-netbutik-i-milliardhandel",
+          "published_at": "2026-10-05T14:06:03.000000Z",
+          "content_hash": "sha256:25282dbc5f3b57fb850eb26529063dc96e08744181b9365b6cbad825426abbc4",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15206204/?publisherId=3307957&lang=da",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Salling Group køber Proshop og øger online-ambitionerne",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15206204/salling-group-kober-proshop-og-oger-online-ambitionerne?lang=da",
+          "published_at": "2026-10-05T07:00:00.000000Z",
+          "content_hash": "sha256:8aa41ad8ea8ecf8f64546088fe6ee1677f37f96e3cb8ee28cdb39618db004eeb",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "folketing-opens-frandsen-speaker",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Parliament to make a Moderate who joined in 2022 its speaker",
+        "body": {},
+        "lede": {
+          "text": "A majority backs Henrik Frandsen of the Moderates, a liberal party founded by Lars Løkke Rasmussen, a former prime minister, as parliament's speaker when it opens on Tuesday, though he became an MP only in 2022.",
+          "sources": [
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "7593a6ee-a622-4e79-bffe-5fa22cdc13f1",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Folketinget åbner med ny formand og Lars Løkke som ny nestor",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/folketinget-aabner-med-ny-formand-og-lars-loekke-som-ny-nestor",
+          "published_at": "2026-10-05T11:04:54.000000Z",
+          "content_hash": "sha256:5f01f054ee8b181d59aa1c43e6b43a96f0effea6e2ed4e7afcbc799e5d9b3d7f",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:a05c0be4-72c9-5636-8507-e466658ba1f6",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Allerede inden han er valgt, taler Enhedslisten om at vælte Folketingets formand",
+          "url": "https://www.berlingske.dk/politik/allerede-inden-han-er-valgt-taler-enhedslisten-om-at-vaelte-folketingets-formand",
+          "published_at": "2026-10-05T19:48:09.000000Z",
+          "content_hash": "sha256:d0c662766d3441f77160b6043b2551208b6598ea5c2bc39557a1a01327989f20",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "stephanie-lose-chairs-state-auditors",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Stephanie Lose elected to chair Denmark's state auditors",
+        "body": {},
+        "lede": {
+          "text": "Stephanie Lose, deputy leader of Venstre, a liberal party, was elected on Monday to chair Statsrevisorerne, the six state auditors who check that taxpayers' money is spent effectively and lawfully.",
+          "sources": [
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "2c72cd34-f760-4781-ba9e-28fd686c5c04",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Stephanie Lose er valgt som ny formand for Statsrevisorerne",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/stephanie-lose-er-valgt-som-ny-formand-som-statsrevisorerne",
+          "published_at": "2026-10-05T11:14:02.000000Z",
+          "content_hash": "sha256:32bc9e15ed8c98bdd10269cb91fcef7c2f0de9001be2b29b97398c46397e6f82",
+          "primary": true,
+          "wire": "ritzau"
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "grid-permitting-two-years-shorter",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Government plans to cut years from power-grid permits",
+        "body": {},
+        "lede": {
+          "text": "Samira Nawa, the climate and energy minister, hopes to cut one to three years from permitting for new power lines across most of Denmark; talks with parliament were due to start on Monday.",
+          "sources": [
+            "kristeligt_dagblad",
+            "via_ritzau"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "f2f30096-3ebf-42aa-8183-8db58c4c9a63",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Regeringen vil forkorte tilladelsesprocesser til elnet landet over",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/regeringen-vil-forkorte-tilladelsesprocesser-til-elnet-landet-over",
+          "published_at": "2026-10-05T07:33:43.000000Z",
+          "content_hash": "sha256:5f1438dd91fa34750fe5ce1a507c7283c7c2989f85115159c33ac64e01c01628",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "politiken",
+          "source_id": "11006857",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Klimaminister vil redde overbelastet elnet med stærkt kontroversielle tiltag",
+          "url": "https://politiken.dk/klima/art11006857/Klimaminister-vil-redde-overbelastet-elnet-med-st%C3%A6rkt-kontroversielle-tiltag",
+          "published_at": "2026-10-05T09:00:17.000000Z",
+          "content_hash": "sha256:feab0b8eb0716c0a9a6060faf7bbb93a7ed10d6a1fd4639494c0f9bc34f7beb6",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15206121/?publisherId=9426318&lang=da",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Nyt udspil: Regeringen vil styrke elnettet og de lokale hensyn",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15206121/nyt-udspil-regeringen-vil-styrke-elnettet-og-de-lokale-hensyn?lang=da",
+          "published_at": "2026-10-05T06:30:50.000000Z",
+          "content_hash": "sha256:44d4ded8376e6343b72866d1269ae0caa727556131a993157479a85e10e7f6d8",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "soegaard-lidell-hydrogen-denmark",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Venstre MP will not stand again and becomes a green lobbyist",
+        "body": {},
+        "lede": {
+          "text": "Linea Søgaard-Lidell, an MP for Venstre, a liberal party, will not stand at the next general election; she will become director of Hydrogen Denmark, a green lobby group, but stays in the party.",
+          "sources": [
+            "altinget",
+            "politiken"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "altinget",
+          "source_id": "https://www.altinget.dk/klima/artikel/linea-soegaard-lidell-genopstiller-ikke-til-folketinget-skal-vaere-groen-lobbyist",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Linea Søgaard-Lidell genopstiller ikke til Folketinget: Skal være grøn lobbyist",
+          "url": "https://www.altinget.dk/klima/artikel/linea-soegaard-lidell-genopstiller-ikke-til-folketinget-skal-vaere-groen-lobbyist",
+          "published_at": "2026-10-06T03:00:00.000000Z",
+          "content_hash": "sha256:065899a4b6587e8784fb7e500a85563d8e626cbddfc482f7b1c0667d8c2e45b4",
+          "primary": true
+        },
+        {
+          "source": "politiken",
+          "source_id": "11009021",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Venstre-profil forlader politik: »Jeg håber meget, at Troels bliver«",
+          "url": "https://politiken.dk/danmark/politik/art11009021/%C2%BBJeg-h%C3%A5ber-meget-at-Troels-bliver%C2%AB",
+          "published_at": "2026-10-05T19:03:11.000000Z",
+          "content_hash": "sha256:0d10186fbe179b7028b966988cdba8ef18cd98c253f35ad31cb0d4f79be62128",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "stig-andersen-gyldendal-dies",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Obituary",
+      "copy": {
+        "headline": "Former publishing chief Stig Andersen dies at 72",
+        "body": {},
+        "lede": {
+          "text": "Stig Andersen, who ran Gyldendal, a Danish publishing house, from 1999 until he retired in 2018, has died at 72 after a long illness, Gyldendal says.",
+          "sources": [
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "f0c10714-4ba9-4b09-85c2-e3dc7990ebdb",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Tidligere forlagsdirektør Stig Andersen er død i en alder af 72 år",
+          "url": "https://www.kristeligt-dagblad.dk/kultur/tidligere-forlagsdirektoer-stig-andersen-er-doed-i-en-alder-af-72-aar",
+          "published_at": "2026-10-05T13:35:30.000000Z",
+          "content_hash": "sha256:c375e57b7ba62eb6d82ac42dd0a3765254634f6a312cea2eee21345dd52a0dcf",
+          "primary": true,
+          "wire": "ritzau"
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "odense-pizzeria-killing-14-years",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "Man gets 14 years and expulsion for shooting former partner in Odense pizzeria",
+        "body": {},
+        "lede": {
+          "text": "A court in Odense on Monday sentenced a 52-year-old Turkish man to 14 years in prison and permanent expulsion for killing his former partner, 54, at a pizzeria near the city in September 2025.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "00a4e61c-3078-4a46-b708-d95de205d089",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Mand idømt 14 års fængsel og udvisning for drab på ekskæreste",
+          "url": "https://www.kristeligt-dagblad.dk/mand-idoemt-14-aars-faengsel-og-udvisning-drab-paa-ekskaereste",
+          "published_at": "2026-10-05T11:35:02.000000Z",
+          "content_hash": "sha256:ec99802a60315642bbd3f2d3b12651bbacffffafcac09f2b52a044454695592d",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:073f6acd-96e2-48e5-87f3-865e825ffa41",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "52-årig mand idømt 14 års fængsel for drab på ekskæreste",
+          "url": "https://www.dr.dk/nyheder/seneste/52-aarig-mand-idoemt-14-aars-faengsel-drab-paa-ekskaereste",
+          "published_at": "2026-10-05T12:47:39.000000Z",
+          "content_hash": "sha256:66337f6506d08a8f7211813793fb2fe5b5f465361eee6f41fa56e124a9048936",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "hammerum-stabbing-man-dies",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "Man, 57, dies after being stabbed in his home near Herning",
+        "body": {},
+        "lede": {
+          "text": "A 57-year-old man was stabbed to death in his home in Hammerum, near Herning in central Jutland, on Monday; police suspect a dispute among substance abusers and have made no arrests.",
+          "sources": [
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "ae680215-2caa-4f76-81b6-727cd0d615cd",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "57-årig mand død efter knivstikkeri i Hammerum",
+          "url": "https://www.kristeligt-dagblad.dk/politiet-undersoeger-mistaenkeligt-forhold-i-hammerum",
+          "published_at": "2026-10-05T22:24:02.000000Z",
+          "content_hash": "sha256:7a56c2c3f4727d777e58a6478de48d9800cbaa025cad11fe4aaa27b12f761aba",
+          "primary": true,
+          "wire": "ritzau"
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "swedish-bomb-sentences-upheld",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "High Court toughens punishment in case of bomb brought from Sweden to Denmark",
+        "body": {},
+        "lede": {
+          "text": "The High Court on Monday found a 19-year-old Swede guilty of bringing a bomb with 4.4 kilos of plastic explosive from Sweden to Denmark in December 2023, and toughened the punishment in the case.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "259e4285-5b27-4f2a-9bdb-012c46916316",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Landsret finder svensker skyldig i at bringe bombe til Danmark",
+          "url": "https://www.kristeligt-dagblad.dk/landsret-finder-svensker-skyldig-i-bringe-bombe-til-danmark",
+          "published_at": "2026-10-05T09:29:33.000000Z",
+          "content_hash": "sha256:d79d7f795dd66d3dbdde8db0bb7850c793a315976f9cc4cd131896acf284e485",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:e52b0c23-e7bf-5df2-ab88-ca6daad31c58",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Landsret skærper straf i sag om bombe bragt fra Sverige til Danmark",
+          "url": "https://www.berlingske.dk/indland/landsret-skaerper-straf-i-sag-om-bombe-bragt-fra-sverige-til-danmark",
+          "published_at": "2026-10-05T14:34:45.000000Z",
+          "content_hash": "sha256:beacad52ded4bd9b12a613aef5fa5dc1cefb2c1977e476215fd9690909efe2dd",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "motorring-3-four-lanes",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Transport",
+      "copy": {
+        "headline": "Copenhagen's ring motorway to get a fourth lane each way",
+        "body": {},
+        "lede": {
+          "text": "Motorring 3, the motorway around Copenhagen, will be widened from three to four lanes each way along most of its length, using the hard shoulder, and get noise-reducing asphalt.",
+          "sources": [
+            "dr",
+            "tv2"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:d2b8042c-4e91-42bc-a695-a75de30060d3",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "En af Danmarks mest trafikerede motorveje skal nu udvides",
+          "url": "https://www.dr.dk/nyheder/indland/en-af-danmarks-mest-trafikerede-motorveje-skal-nu-udvides",
+          "published_at": "2026-10-05T05:00:00.000000Z",
+          "content_hash": "sha256:f4ab20bfc2605d6a19644e26e0173de5f1d55db6035ec4a26c0a4da40f123a33",
+          "primary": true
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/trafik/2026-10-05-koeplaget-motorvej-udvides-med-flere-spor",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Køplaget motorvej udvides med flere spor",
+          "url": "https://nyheder.tv2.dk/trafik/2026-10-05-koeplaget-motorvej-udvides-med-flere-spor",
+          "published_at": "2026-10-05T06:28:49.000000Z",
+          "content_hash": "sha256:0efc934c5416fb18d4286852762a4f4034131eb146a0df428b945a0dc101d973",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15202767/?publisherId=5278762&lang=da",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Øget fremkommelighed og mindre støj på Motorring 3",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15202767/oget-fremkommelighed-og-mindre-stoj-pa-motorring-3?lang=da",
+          "published_at": "2026-10-05T05:01:26.000000Z",
+          "content_hash": "sha256:009ba5ea8ffd4e96ab5d7d6b059ebf66b768330d348cf5961b3812b8478e8405",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "cancer-five-year-survival-seven-in-ten",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "More than seven in ten Danish cancer patients survive five years",
+        "body": {},
+        "lede": {
+          "text": "Figures from Sundhedsdatastyrelsen, Denmark's health data agency, show just over seven in ten cancer patients alive five years after diagnosis, up from just over six in ten in 2011-2013, though gains have slowed.",
+          "sources": [
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "db7959c7-50ba-4a74-9b29-fc9dd85506e2",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Flere overlever kræft: Syv ud af ti er i live fem år efter diagnosen",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/flere-overlever-kraeft-syv-ud-af-ti-er-i-live-fem-aar-efter-diagnosen",
+          "published_at": "2026-10-05T12:47:50.000000Z",
+          "content_hash": "sha256:ee40fcac6f5c665bbc96be2512684775dcca7c8ac34093dfda379dd16212bccc",
+          "primary": true,
+          "wire": "ritzau"
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "nobel-medicine-optogenetics-2026",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Science",
+      "copy": {
+        "headline": "Three scientists who switch brain cells on and off with light win the Nobel prize in medicine",
+        "body": {},
+        "lede": {
+          "text": "Peter Hegemann and Georg Nagel of Germany and Karl Deisseroth of America won the Nobel prize in medicine on Monday for optogenetics, a method of switching single brain cells on and off with light.",
+          "sources": [
+            "kristeligt_dagblad",
+            "politiken",
+            "nytimes"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "7891c525-1031-4300-b3e7-540070f7fbee",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Forskning i hjernens nerveceller udløser Nobelpris",
+          "url": "https://www.kristeligt-dagblad.dk/udland/forskning-i-neurovidenskab-udloeser-nobelpris",
+          "published_at": "2026-10-05T09:50:13.000000Z",
+          "content_hash": "sha256:8d4fe0d3f40dbfbdb73383b9e7a68a559fd42a86d24484b63d0df12732de6c1a",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "politiken",
+          "source_id": "10992293",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Nobelpristagere kan fjernstyre hjernen med algeprotein og lys",
+          "url": "https://politiken.dk/viden/viden/art10992293/Nobelpristagere-kan-fjernstyre-hjernen-med-algeprotein-og-lys",
+          "published_at": "2026-10-05T16:08:22.000000Z",
+          "content_hash": "sha256:b4701e30dc80f1f7054a85251c4d632221ef46f54f6a00b15146dfc971842151",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "c5ev3ypmzly8o",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Nobel Prize awarded for revealing inner workings of the brain",
+          "url": "https://www.bbc.co.uk/news/articles/c5ev3ypmzly8o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-05T11:04:37.000000Z",
+          "content_hash": "sha256:ddbfcd2552b03b1e8bb8986a7f89dc866362ef15bd3d945f8ceeebd9e4dd2d43",
+          "primary": false
+        },
+        {
+          "source": "economist",
+          "source_id": "84d09014-3618-41d0-8b06-9b4c883bd838",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "The Nobel for medicine goes to lighting up the brain",
+          "url": "https://www.economist.com/science-and-technology/2026/10/05/the-nobel-for-medicine-goes-to-lighting-up-the-brain",
+          "published_at": "2026-10-05T15:44:14.000000Z",
+          "content_hash": "sha256:2340cdcd816bde97ec2c73baea10a880c0e1d15329d8846d17da1cecdfcb9e18",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/05/health/nobel-prize-medicine-physiology.html",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Nobel Prize in Physiology or Medicine Is Awarded for Discoveries in Neuroscience",
+          "url": "https://www.nytimes.com/2026/10/05/health/nobel-prize-medicine-physiology.html",
+          "published_at": "2026-10-05T21:09:36.000000Z",
+          "content_hash": "sha256:4307ab9563929c178afdf60ac2288ce3aaf18b51df6c54ffcbdaae4c33a32fc2",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/science/video/2026/oct/05/nobel-prize-in-medicine-2026-unlocking-the-mysteries-of-the-brain",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Nobel prize in medicine 2026: unlocking the mysteries of the brain",
+          "url": "https://www.theguardian.com/science/video/2026/oct/05/nobel-prize-in-medicine-2026-unlocking-the-mysteries-of-the-brain",
+          "published_at": "2026-10-05T18:20:44.000000Z",
+          "content_hash": "sha256:8d6f57c982713575e3bba93799a3883a54678cf53f3846ffc1574d20ea294054",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/science/2026/oct/05/nobel-prize-medicine-2026-winner",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Nobel prize in medicine 2026 awarded for research into mysteries of brain",
+          "url": "https://www.theguardian.com/science/2026/oct/05/nobel-prize-medicine-2026-winner",
+          "published_at": "2026-10-05T09:52:07.000000Z",
+          "content_hash": "sha256:b92ca85a39512c56cafb76809b67caed711375490dd9a500e61d9aec85caff42",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/health/2026/10/05/nobel-prize-medicine-awarded-3-scientists-optogenetics-work/",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Nobel for medicine awarded to 3 scientists for work that helps map the brain",
+          "url": "https://www.washingtonpost.com/health/2026/10/05/nobel-prize-medicine-awarded-3-scientists-optogenetics-work/",
+          "published_at": "2026-10-05T13:54:11.000000Z",
+          "content_hash": "sha256:031d10f50262c5b32f78affc1a5528d812c2964a091cd6b0f33829f6e7b981a2",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003948692",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Trio Awarded Nobel Prize in Physiology or Medicine for Neuroscience Discoveries",
+          "url": "https://www.wsj.com/science/trio-awarded-nobel-prize-in-physiology-or-medicine-for-neuroscience-discoveries-55005d95?mod=rss_Technology",
+          "published_at": "2026-10-05T17:18:00.000000Z",
+          "content_hash": "sha256:55adb67ebd82386a3f3a98d4d9dc15c5c36d3db85cbf049edffd6d19f5c188c1",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "siberia-plague-lab-death-denied",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Russia denies Siberian lab worker died of plague",
+        "body": {},
+        "lede": {
+          "text": "Russian authorities denied on Monday that a 28-year-old laboratory technician in Siberia died of plague, citing pneumonia of unknown cause; the World Health Organisation says the risk to people in Russia seems low.",
+          "sources": [
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "98ed7494-51c6-4e49-8c77-b461bb2f7cc7",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "WHO vurderer lav risiko for pestsmitte i Rusland efter ulykke",
+          "url": "https://www.kristeligt-dagblad.dk/udland/who-vurderer-lav-risiko-pestsmitte-i-rusland-efter-ulykke",
+          "published_at": "2026-10-05T20:47:08.000000Z",
+          "content_hash": "sha256:5fb1da5a005cff8feae58cc234ea1db1ee796c2c3cda346a3d843d44c34e715f",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "2a91787d-47b1-416a-a028-d1d6900f6773",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Rusland afviser rygter om pestulykke på laboratorium",
+          "url": "https://www.kristeligt-dagblad.dk/udland/rusland-afviser-rygter-om-pestulykke-paa-laboratorium",
+          "published_at": "2026-10-05T12:52:42.000000Z",
+          "content_hash": "sha256:fb47fa90cf4b2e6d054ab96f2e2f5c8d267fafb36084c813471b6caba77f87b5",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "politiken",
+          "source_id": "11008871",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "189 mennesker er indlagt efter mistanke om udbrud af pest i Rusland",
+          "url": "https://politiken.dk/internationalt/art11008871/189-mennesker-er-indlagt-efter-mistanke-om-udbrud-af-pest-i-Rusland",
+          "published_at": "2026-10-05T15:56:58.000000Z",
+          "content_hash": "sha256:5dd08617e46b293fcb46a8a7a738866e933ac2a4130f609f2168cf98d867c807",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cv5yn3nwp5n5o",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "US 'watching closely' after plague researcher dies in Russia",
+          "url": "https://www.bbc.co.uk/news/articles/cv5yn3nwp5n5o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-05T21:33:49.000000Z",
+          "content_hash": "sha256:ba0246819a6c3947a5718689a57e97a329963f80ff9ec159a358f5695411fb78",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "0a45595f-4889-4436-847f-1bddce813009",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "US ‘monitoring’ situation around suspected case of plague in Russia",
+          "url": "https://www.ft.com/content/0a45595f-4889-4436-847f-1bddce813009",
+          "published_at": "2026-10-05T13:37:31.000000Z",
+          "content_hash": "sha256:b5f8a0515d1d057cdcb3f3bf8521610e88e9eea478edd322ca0b5c26ae0b1a9e",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/05/russia-lab-worker-possibly-dies-of-plague-siberia-quarantine-measures-irkutsk",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "US closely monitoring case of lab worker who ‘possibly’ died of plague in Siberia, says Rubio",
+          "url": "https://www.theguardian.com/world/2026/oct/05/russia-lab-worker-possibly-dies-of-plague-siberia-quarantine-measures-irkutsk",
+          "published_at": "2026-10-05T15:36:37.000000Z",
+          "content_hash": "sha256:3e7fa3cfb53621e246dcefebaecb746df847690d0495f9509d88f74382b13c0d",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/politics/2026/10/05/us-officials-seeking-details-reported-russian-plague-death-quarantines/",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "U.S. officials seeking details of reported Russian plague death, quarantines",
+          "url": "https://www.washingtonpost.com/politics/2026/10/05/us-officials-seeking-details-reported-russian-plague-death-quarantines/",
+          "published_at": "2026-10-05T20:40:14.000000Z",
+          "content_hash": "sha256:420b743b86473f5de0e2c6229da0616683c6bd50b4f5cf1e91c78c56b712318f",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003949226",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Russia Probes Death of Woman Who Worked at Antiplague Institute",
+          "url": "https://www.wsj.com/world/russia-probes-death-of-woman-who-worked-at-anti-plague-institute-0e2c8ffe?mod=rss_worldnews",
+          "published_at": "2026-10-05T14:49:00.000000Z",
+          "content_hash": "sha256:21fe9da2e0370b5aa75246972c9cd0c9e476d32332ef1bddfb3cb206c701f700",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/05/world/europe/russia-plague-siberia.html",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Russia Moves to Tamp Down Rumors About Plague Outbreak in Siberia",
+          "url": "https://www.nytimes.com/2026/10/05/world/europe/russia-plague-siberia.html",
+          "published_at": "2026-10-05T21:29:00.000000Z",
+          "content_hash": "sha256:f3f5cfecdb8e8cb8a436e50dafd0a6221c6204cc6ae940c0c1d8e85f82965b66",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "german-spy-chief-russia-conflict-risk",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "German spy chief warns of risk of violent conflict with Russia",
+        "body": {},
+        "lede": {
+          "text": "Germany risks being drawn into a violent conflict with Russia, Martin Jäger, head of its foreign intelligence service, told a parliamentary hearing on Monday, accusing Moscow of waging a 'shadow war'.",
+          "sources": [
+            "kristeligt_dagblad",
+            "ft"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "0e5f63ae-047e-4158-b1e3-a23afa327782",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Tysk spionchef advarer om fare for voldelig konflikt med Rusland",
+          "url": "https://www.kristeligt-dagblad.dk/udland/tysk-spionchef-advarer-om-fare-voldelig-konflikt-med-rusland",
+          "published_at": "2026-10-05T12:49:28.000000Z",
+          "content_hash": "sha256:8ee29c19aebdd3b755f80cbb6452e23787d8d9f73bf9861557e54e43626ac006",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "ft",
+          "source_id": "44788116-0ff7-4fef-abfb-e121fcb5797c",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Russia’s ‘shadow war’ with Europe enters new phase, Germany warns",
+          "url": "https://www.ft.com/content/44788116-0ff7-4fef-abfb-e121fcb5797c",
+          "published_at": "2026-10-05T11:40:16.000000Z",
+          "content_hash": "sha256:f08753ae6a5772952d5b430b4575b2748e75197c4a2c03a2070082d967824514",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "lens-pupil-loses-hand-protest",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "French pupil, 15, loses hand to police stun grenade at school protest",
+        "body": {},
+        "lede": {
+          "text": "A 15-year-old pupil lost his hand on Monday after picking up a police stun grenade at a protest against run-down schools in Lens, in northern France, and an investigation has been opened.",
+          "sources": [
+            "kristeligt_dagblad",
+            "guardian",
+            "bbc"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "fda0af74-6367-4ab9-9c76-f0b7c31fa552",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "15-årig dreng mister hånd under protest i Frankrig",
+          "url": "https://www.kristeligt-dagblad.dk/udland/15-aarig-dreng-mister-haand-under-protest-i-frankrig",
+          "published_at": "2026-10-05T11:35:56.000000Z",
+          "content_hash": "sha256:b8f12956f82643dde5c99ab3be8e16727b0362ad31166b3d7b350865fe2c0c33",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "bbc",
+          "source_id": "c9zrdmxp4vy6o",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Teenager's hand blown off during confrontation between France school protesters and police",
+          "url": "https://www.bbc.co.uk/news/articles/c9zrdmxp4vy6o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-05T16:32:18.000000Z",
+          "content_hash": "sha256:7f7bbd2e0d7a016539aa9e779bf5683e724c3760bad3ef3d2c645d9f8d982564",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/05/schoolboy-loses-hand-police-stun-grenade-french-school-protests",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "France braces for national day of school protests as boy loses hand",
+          "url": "https://www.theguardian.com/world/2026/oct/05/schoolboy-loses-hand-police-stun-grenade-french-school-protests",
+          "published_at": "2026-10-05T15:50:50.000000Z",
+          "content_hash": "sha256:b247a60afbabcd524e5bcfcda8fd4d04016964466ed51e340b68392fc7269b40",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "quebec-parti-quebecois-wins",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Separatists win Quebec election but fall short of a majority",
+        "body": {},
+        "lede": {
+          "text": "The Parti Québécois, a separatist party, won Quebec's election on Monday without a majority; its leader, Paul St-Pierre Plamondon, has promised an independence referendum, but not while Donald Trump is president.",
+          "sources": [
+            "kristeligt_dagblad",
+            "bbc",
+            "nytimes"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "66a19aa9-d41f-4e89-8fdc-0107f12d423a",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Separatister tager valgsejr i Canadas største provins",
+          "url": "https://www.kristeligt-dagblad.dk/udland/separatister-tager-valgsejr-i-canadas-stoerste-provins",
+          "published_at": "2026-10-06T01:34:44.000000Z",
+          "content_hash": "sha256:8a003d6117f9d9ee1437e704b4a9f686510bf94ae74440d53c79cb6161fa7d6d",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "bbc",
+          "source_id": "crly09gz7ew4o",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Separatist party projected to win Quebec election, adding new test to Canada's unity",
+          "url": "https://www.bbc.co.uk/news/articles/crly09gz7ew4o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-06T02:37:46.000000Z",
+          "content_hash": "sha256:411b4360d32057e0b5cba032a75a7920267f22063a2764777f89e6590f3c05ce",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/05/world/canada/quebec-election-parti-quebecois-separatism.html",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "The Separatist Parti Québécois Wins Quebec Election, Reviving Sovereignty Push",
+          "url": "https://www.nytimes.com/2026/10/05/world/canada/quebec-election-parti-quebecois-separatism.html",
+          "published_at": "2026-10-06T02:29:31.000000Z",
+          "content_hash": "sha256:1cdd43b5b3f450fe3f08c3500ed2a717703b9631fdff5a577aa16fef474814fb",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "fort-hood-hasan-firing-squad-approved",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Trump approves firing squad for gunman who killed 13 at Texas army base",
+        "body": {},
+        "lede": {
+          "text": "Donald Trump has approved the first military execution since 1961: Nidal Hasan, an army psychiatrist who killed 13 people at Fort Hood, a Texas army base, in 2009, is to face a firing squad.",
+          "sources": [
+            "kristeligt_dagblad",
+            "bbc",
+            "guardian"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "49685ebf-417e-4633-bb54-ac8422b913a1",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Trump godkender skydning af manden bag Fort Hood-massakren",
+          "url": "https://www.kristeligt-dagblad.dk/udland/trump-godkender-skydning-af-manden-bag-fort-hood-massakren",
+          "published_at": "2026-10-06T01:32:22.000000Z",
+          "content_hash": "sha256:73c2fb1240989b82336016f32c21a736d83a9000710f76eb9bb073a2c8d5a44d",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "bbc",
+          "source_id": "cq8ezkkkrpy1o",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Fort Hood shooter to be executed by firing squad, in first since World War Two",
+          "url": "https://www.bbc.co.uk/news/articles/cq8ezkkkrpy1o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-06T02:22:24.000000Z",
+          "content_hash": "sha256:1cb536c3d7f06e62a9b3806867e3908c83b437079e3d6505884416ce1254d924",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/us-news/2026/oct/05/trump-fort-hood-shooter-execution",
+          "input_id": "export-2026-10-06-0330",
+          "original_title": "Trump approves firing-squad execution of Fort Hood shooter, Pentagon says",
+          "url": "https://www.theguardian.com/us-news/2026/oct/05/trump-fort-hood-shooter-execution",
+          "published_at": "2026-10-06T01:33:44.000000Z",
+          "content_hash": "sha256:09b5aa96b2dc210232138c6d38310cecf6e48fd5028d6b5e1b605fe57c4b76ce",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    }
+  ],
+  "fit_policy": {
+    "allow_role_fallback": true,
+    "allow_composition_substitution": true,
+    "reserve_story_ids": [],
+    "omittable_story_ids": [
+      "store-bededag-restored-2030",
+      "citizenship-bill-2055-retabled",
+      "dementia-assessment-auditors-criticism",
+      "echr-president-chisinau-not-roadmap",
+      "spain-snap-election-november-29",
+      "vegan-hospital-meals-appeal-ruling",
+      "salling-group-buys-proshop",
+      "folketing-opens-frandsen-speaker",
+      "stephanie-lose-chairs-state-auditors",
+      "grid-permitting-two-years-shorter",
+      "soegaard-lidell-hydrogen-denmark",
+      "stig-andersen-gyldendal-dies",
+      "odense-pizzeria-killing-14-years",
+      "hammerum-stabbing-man-dies",
+      "swedish-bomb-sentences-upheld",
+      "motorring-3-four-lanes",
+      "cancer-five-year-survival-seven-in-ten",
+      "nobel-medicine-optogenetics-2026",
+      "siberia-plague-lab-death-denied",
+      "german-spy-chief-russia-conflict-risk",
+      "lens-pupil-loses-hand-protest",
+      "quebec-parti-quebecois-wins",
+      "fort-hood-hasan-firing-squad-approved"
+    ]
+  }
+}

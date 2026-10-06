@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-10-06-morning",
+  "send_back": [],
+  "fallen": [],
+  "stories": {},
+  "strikes": [
+    {
+      "story": "store-bededag-restored-2030",
+      "location": "standard[0]",
+      "sentence": 1,
+      "verdict": "unsupported",
+      "reason": "'Has been a public holiday since 1686' implies continuing public-holiday status. The evidence says it had been a holiday since 1686 and was abolished in 2023, disappearing in 2024.",
+      "cites": [
+        "kristeligt_dagblad"
+      ]
+    },
+    {
+      "story": "store-bededag-restored-2030",
+      "location": "standard[0]",
+      "sentence": 2,
+      "verdict": "unsupported",
+      "reason": "The evidence says the legislative programme will be presented on Tuesday; it does not establish that it has been presented.",
+      "cites": [
+        "kristeligt_dagblad",
+        "borsen"
+      ]
+    },
+    {
+      "story": "dementia-assessment-auditors-criticism",
+      "location": "standard[0]",
+      "sentence": 1,
+      "verdict": "unsupported",
+      "reason": "The waiting-time figures are supported, but neither the cited reporting nor the supplied Wikipedia summary says the regions run Denmark's hospitals. The reference describes administrative entities only.",
+      "cites": [
+        "kristeligt_dagblad",
+        "wikipedia"
+      ]
+    },
+    {
+      "story": "dementia-assessment-auditors-criticism",
+      "location": "standard[2]",
+      "sentence": 0,
+      "verdict": "unsupported",
+      "reason": "The chairman's identity and remarks are supported, but the identifying description of Danske Regioner as the regions' association is absent from the evidence and has no supporting reference row.",
+      "cites": [
+        "kristeligt_dagblad",
+        "via_ritzau"
+      ]
+    },
+    {
+      "story": "dementia-assessment-auditors-criticism",
+      "location": "short[1]",
+      "sentence": 0,
+      "verdict": "unsupported",
+      "reason": "The auditors' role and criticism are supported, but the claim that the regions run Denmark's hospitals is absent from the reporting and the supplied reference summary.",
+      "cites": [
+        "kristeligt_dagblad",
+        "wikipedia"
+      ]
+    }
+  ]
+}

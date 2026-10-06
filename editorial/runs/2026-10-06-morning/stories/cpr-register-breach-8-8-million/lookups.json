@@ -1,0 +1,35 @@
+[
+ {
+  "requested": "Personal identification number (Denmark)",
+  "status": "found",
+  "title": "Personal identification number (Denmark)",
+  "extract": "The Danish Personal Identification number is a national identification number, which is part of the personal information stored in the Civil Registration System.",
+  "url": "https://en.wikipedia.org/wiki/Personal_identification_number_(Denmark)",
+  "type": "standard",
+  "fetched_at": "2026-10-06T03:40:18.168492Z",
+  "term": "CPR",
+  "definition": "Denmark's central register of personal data"
+ },
+ {
+  "requested": "da:Datatilsynet",
+  "status": "found",
+  "title": "Datatilsynet",
+  "extract": "Datatilsynet er en uafhængig statslig myndighed, der organisatorisk henhører under Justitsministeriet, der dog ikke har instruktionsbeføjelse over myndigheden. Datatilsynet har til opgave at føre tilsyn med, at reglerne i Persondataforordningen og Databeskyttelsesloven, der gennemfører et EU-direktiv, overholdes. Det sker gennem at rådgive, vejlede samt behandle klager og foretage inspektioner hos myndigheder og virksomheder. Datatilsynet består af et sekretariat og et råd (Datarådet).",
+  "url": "https://da.wikipedia.org/wiki/Datatilsynet",
+  "type": "standard",
+  "fetched_at": "2026-10-06T03:40:18.330975Z",
+  "term": "Datatilsynet",
+  "definition": "the data protection authority"
+ },
+ {
+  "requested": "Confederation of Danish Industry",
+  "status": "found",
+  "title": "Confederation of Danish Industry",
+  "extract": "The Confederation of Danish Industry (DI) is Denmark's largest business organization (chambers of commerce) and employers' organization. DI's members are 18,000 private enterprises in manufacturing and the service industry, from virtually all sub-sectors. Also, a number of sectoral employers' associations and branch federations are included in DI's framework, being integrated in part or in full in DI. Moreover, the members of DI in each county constitute a regional federation dealing with regional policy as well as educational issues. The organization represents its members in public discussions of new political ideas, and it comments on current events in Denmark. The DI director general and CEO is Lars Sandahl Sørensen.",
+  "url": "https://en.wikipedia.org/wiki/Confederation_of_Danish_Industry",
+  "type": "standard",
+  "fetched_at": "2026-10-06T03:40:18.505947Z",
+  "term": "DI",
+  "definition": "an employers' organisation"
+ }
+]

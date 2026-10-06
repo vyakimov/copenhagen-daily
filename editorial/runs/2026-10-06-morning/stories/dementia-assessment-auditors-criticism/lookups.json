@@ -1,0 +1,33 @@
+[
+ {
+  "requested": "da:Rigsrevisionen",
+  "status": "found",
+  "title": "Rigsrevisionen",
+  "extract": "Rigsrevisionen er Folketingets uafhængige revisionsmyndighed og en af de institutioner, der varetager den parlamentariske kontrol i Danmark. Institutionen reviderer statens regnskaber med rigsrevisoren som øverste chef og har til formål at fremme en redelig og effektiv statsforvaltning.",
+  "url": "https://da.wikipedia.org/wiki/Rigsrevisionen",
+  "type": "standard",
+  "fetched_at": "2026-10-06T03:40:18.887851Z",
+  "term": "Rigsrevisionen",
+  "definition": "the national audit office"
+ },
+ {
+  "requested": "Regions of Denmark",
+  "status": "found",
+  "title": "Regions of Denmark",
+  "extract": "The five regions of Denmark were created as administrative entities at a level above the municipalities and below the central government in the public sector as part of the 2007 Danish Municipal Reform, when the 13 counties (amter) were abolished. At the same time, the number of municipalities (kommuner) was cut from 270 to 98. The reform was approved and made into a law by the lawmakers in the Folketing 26 June 2005 with elections to the 98 municipalities and 5 regions being held Tuesday 15 November 2005.",
+  "url": "https://en.wikipedia.org/wiki/Regions_of_Denmark",
+  "type": "standard",
+  "fetched_at": "2026-10-06T03:40:19.047965Z",
+  "term": "the regions",
+  "definition": "which run Denmark's hospitals"
+ },
+ {
+  "requested": "Danish Regions",
+  "status": "missing",
+  "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Danish_Regions",
+  "http_status": 404,
+  "fetched_at": "2026-10-06T03:44:04.119847Z",
+  "term": "Danske Regioner",
+  "definition": "the regions' association"
+ }
+]

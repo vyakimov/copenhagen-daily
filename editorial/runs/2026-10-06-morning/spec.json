@@ -1,0 +1,709 @@
+{
+  "edition": {
+    "id": "2026-10-06-morning",
+    "number": 20,
+    "name": "Tuesday edition",
+    "date": "2026-10-06",
+    "cutoff_at": "2026-10-06T03:30:00.000000Z",
+    "checked_from": "2026-10-03T03:30:00.000000Z",
+    "input_id": "export-2026-10-06-0330",
+    "presentation": {
+      "emphasis": "one_big_story",
+      "ear_right": "Inside: Store Bededag returns, 2,055 citizenships tabled again, Spain votes early"
+    },
+    "note": "Built from headlines and RSS descriptions published between 05:30 on 3 October and 05:30 on 6 October, Copenhagen time: 2,701 articles. All 132 feeds at 17 publishers polled."
+  },
+  "stories": [
+    {
+      "id": "cpr-register-breach-8-8-million",
+      "role": "lead",
+      "kicker": "Denmark",
+      "sources": [
+        1186,
+        1009,
+        412,
+        1121,
+        1192,
+        1074,
+        675,
+        1178,
+        949,
+        1214,
+        656
+      ],
+      "headline": "Unauthorised access exposes ID numbers of 8.8 million people in Denmark",
+      "headline_short": "8.8 million Danish ID numbers exposed",
+      "deck": "Someone misused a small company's lawful access to the register for ten days in September; the minister says security was not good enough.",
+      "extended": [
+        [
+          "Unauthorised people obtained the names, addresses and personal identification numbers of about 8.8 million people by misusing a small Danish company's lawful access to the CPR, Denmark's central register of personal data, the digitalisation ministry said on Monday. The misuse lasted about ten days in September. The register holds about 11 million people, including the dead and those who have moved abroad.",
+          [
+            "kristeligt_dagblad",
+            "politiken",
+            "borsen",
+            "tv2"
+          ]
+        ],
+        [
+          "'It is clear to me that the security measures around this company's access to CPR have not been good enough,' Christina Egelund, the digitalisation minister, told Ritzau. The access has been shut. Egelund has ordered a security review of the whole system and does not rule out new CPR numbers for everyone.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ],
+        [
+          "A CPR employee spotted the unusual activity on Friday 2 October. The case has been reported to Datatilsynet, the data protection authority, and the police are investigating. The names and addresses of people with name and address protection were not affected.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "politiken"
+          ]
+        ],
+        [
+          "DI, an employers' organisation, says in a statement that the leak raises the risk of fraud against companies, and urges them to review their identity checks at once.",
+          [
+            "via_ritzau"
+          ]
+        ]
+      ],
+      "standard": [
+        [
+          "Unauthorised people obtained the names, addresses and personal identification numbers of about 8.8 million people by misusing a small Danish company's lawful access to the CPR, Denmark's central register of personal data, the digitalisation ministry said on Monday. The misuse lasted about ten days in September, and the register also covers the dead and those who have moved abroad.",
+          [
+            "kristeligt_dagblad",
+            "politiken",
+            "borsen",
+            "tv2"
+          ]
+        ],
+        [
+          "'It is clear to me that the security measures around this company's access to CPR have not been good enough,' Christina Egelund, the digitalisation minister, told Ritzau. The access has been shut. Egelund has ordered a security review of the whole system and does not rule out new CPR numbers for everyone.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ],
+        [
+          "The case has been reported to Datatilsynet, the data protection authority, and the police are investigating.",
+          [
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Unauthorised people obtained the names, addresses and personal identification numbers of about 8.8 million people by misusing a small Danish company's access to the CPR, Denmark's central register of personal data, for about ten days in September. Christina Egelund, the digitalisation minister, says security was not good enough and does not rule out new CPR numbers.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "tv2"
+          ]
+        ]
+      ],
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "As Danes we must show greater scepticism than we normally do towards each other if we are contacted by someone who knows our name, address and CPR number.",
+          "attribution": "Christina Egelund, digitalisation minister",
+          "attribution_source": "kristeligt_dagblad"
+        },
+        {
+          "kind": "timeline",
+          "title": "How it unfolded",
+          "rows": [
+            {
+              "date": "September",
+              "text": "A company's access to the CPR is misused for about ten days"
+            },
+            {
+              "date": "Friday",
+              "text": "A CPR employee spots unusual activity"
+            },
+            {
+              "date": "Sunday",
+              "text": "Datatilsynet receives notice of the breach"
+            },
+            {
+              "date": "Monday",
+              "text": "The ministry makes the breach public"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "store-bededag-restored-2030",
+      "role": "secondary",
+      "kicker": "Politics",
+      "sources": [
+        483,
+        694,
+        558,
+        482
+      ],
+      "headline": "Government will propose bringing back an abolished public holiday in 2030",
+      "headline_short": "Government plans to restore abolished holiday",
+      "deck": "The bill comes in spring 2027, before wage talks; DR reports that employees will pay for the day.",
+      "standard": [
+        [
+          "The government will put forward a bill in spring 2027 to restore store bededag from 2030. Store bededag has been a public holiday since 1686 and falls on the fourth Friday after Easter. The plan is in the legislative programme presented on Tuesday.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "borsen",
+            "politiken"
+          ]
+        ],
+        [
+          "Pia Olsen Dyhr, the economy and interior minister, told Ritzau the bill is timed to be settled before private-sector wage talks. The day was abolished in 2023 to help pay for defence. Under the coalition agreement, it returns only after a further rise in employment equal to the one its abolition brought. She says that will happen 'in any case in 2030'.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "According to DR, employees will have to pay for the day themselves.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "The government will put forward a bill in spring 2027 to restore store bededag from 2030. Store bededag was a public holiday from 1686 until it was abolished in 2023 to help pay for defence.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "borsen"
+          ]
+        ],
+        [
+          "According to DR, employees will have to pay for the day themselves.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "citizenship-bill-2055-retabled",
+      "role": "secondary",
+      "kicker": "Politics",
+      "sources": [
+        1233,
+        682,
+        568,
+        1094,
+        530
+      ],
+      "headline": "Government brings back citizenship bill for 2,055 approved applicants",
+      "headline_short": "Citizenship bill returns",
+      "deck": "Each applicant will be checked again; Venstre, which backed the bill in February, now wants it to wait.",
+      "standard": [
+        [
+          "The government will bring back a bill granting citizenship to 2,055 previously approved applicants and their children in the first half of 2027, Morten Bødskov, the immigration and integration minister, said on Monday. It lapsed when an election was called.",
+          [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        ],
+        [
+          "Each applicant will first be checked again, and some may be dropped. They will not face the values screening the government wants for other applicants, which an expert group is still studying.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske"
+          ]
+        ],
+        [
+          "Venstre, a liberal party, backed the bill in February. On Monday its leader, Troels Lund Poulsen, wrote that the government should wait for the screening. Liberal Alliance, a libertarian party, calls it a 'gigantic broken promise'.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "The government will bring back a bill granting citizenship to 2,055 previously approved applicants after a fresh check of each, Morten Bødskov, the immigration and integration minister, said on Monday. Venstre, a liberal party, backed the bill in February but now wants the government to wait for a values screening.",
+          [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "dementia-assessment-auditors-criticism",
+      "role": "secondary",
+      "kicker": "Health",
+      "sources": [
+        744,
+        716,
+        12,
+        775
+      ],
+      "headline": "Dementia assessments take more than five times as long as the law allows",
+      "headline_short": "Auditors fault dementia waits",
+      "deck": "State auditors sharply criticise the regions; patients in Zealand wait 244 days on average.",
+      "standard": [
+        [
+          "In recent years 84 per cent of patients due a dementia assessment have waited longer than the 30 days the law allows, according to a report by Rigsrevisionen, the national audit office. The regions, which run Denmark's hospitals, took 165 days on average last year: 133 in Southern Denmark and 244 in Zealand.",
+          [
+            "kristeligt_dagblad",
+            "via_ritzau"
+          ]
+        ],
+        [
+          "Statsrevisorerne, who check that the state spends taxpayers' money properly, gave the regions the second-sharpest criticism on their scale. They also faulted the 24 days that patients from strong social backgrounds gain over those from weak ones.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Mads Duedahl, chairman of Danske Regioner, the regions' association, calls the criticism justified and says the field must be 'rethought'. The regions want family doctors to do more of the assessments.",
+          [
+            "kristeligt_dagblad",
+            "via_ritzau"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "In recent years 84 per cent of patients due a dementia assessment have waited longer than the 30 days the law allows, according to a report by Rigsrevisionen, the national audit office. The average wait last year was 165 days.",
+          [
+            "kristeligt_dagblad",
+            "via_ritzau"
+          ]
+        ],
+        [
+          "Statsrevisorerne, who check that the state spends taxpayers' money properly, sharply criticised the regions, which run Denmark's hospitals.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "echr-president-chisinau-not-roadmap",
+      "role": "secondary",
+      "kicker": "Politics",
+      "sources": [
+        668,
+        1053,
+        801,
+        294
+      ],
+      "headline": "Human rights court says a 46-nation call on deportations will not set its course",
+      "headline_short": "Rights court holds its course",
+      "deck": "Denmark's new deportation rules would have no effect if the court does not change course, a law professor says.",
+      "standard": [
+        [
+          "Mattias Guyomar, president of the European Court of Human Rights, said in a speech last week that a declaration by the 46 countries behind the court 'is not a roadmap for the court's work'. The countries, members of the Council of Europe, signed it in Chisinau, Moldova's capital, in May, seeking more freedom to deport foreign criminals.",
+          [
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        ],
+        [
+          "Mette Frederiksen, the prime minister, led the push, and her government's deportation reform assumes the court will change its practice over time. 'If it turns out that the court does not change course, the new Danish rules will have no effect,' Jens Elo Rytter, professor of constitutional law at the University of Copenhagen, tells Ritzau.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Mattias Guyomar, president of the European Court of Human Rights, said last week that a declaration by the 46 countries behind the court on deporting foreign criminals 'is not a roadmap for the court's work'. Jens Elo Rytter, professor of constitutional law at the University of Copenhagen, tells Ritzau that if the court does not change course, Denmark's new deportation rules will have no effect.",
+          [
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "spain-snap-election-november-29",
+      "role": "secondary",
+      "kicker": "World",
+      "sources": [
+        1080,
+        754,
+        1007,
+        1086,
+        1078,
+        875,
+        996,
+        484,
+        667,
+        308,
+        309,
+        588,
+        735,
+        904,
+        250
+      ],
+      "headline": "Spain's prime minister calls an early election after losing housing votes",
+      "headline_short": "Spain votes on 29 November",
+      "deck": "Pedro Sánchez's Socialists trail the conservative Partido Popular in the polls.",
+      "standard": [
+        [
+          "Pedro Sánchez, Spain's Socialist prime minister, has called an early election for 29 November. He announced it on Monday, three days after parliament voted down two of his minority government's housing bills. 'We must renew the people's support,' he said, according to Reuters.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr",
+            "politiken"
+          ]
+        ],
+        [
+          "Average rents have doubled in about a decade; on Saturday tens of thousands marched in Madrid. The vote had been due by 22 August 2027.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Polls put the conservative Partido Popular ahead; the likeliest government would pair it with Vox, a far-right party. That would bring the far right into government for the first time since Spain became a democracy after General Franco's death in 1975.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Pedro Sánchez, Spain's prime minister, has called an early election for 29 November, three days after parliament voted down two of his government's housing bills. Polls favour the conservative Partido Popular, most likely in government with the far-right Vox.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "politiken"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "vegan-hospital-meals-appeal-ruling",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        1031,
+        916,
+        950,
+        888
+      ],
+      "headline": "Appeal court clears region over vegan hospital meals",
+      "lede": [
+        "The High Court on Monday cleared the Capital Region over the vegan meals its Hvidovre Hospital served a patient in 2020, in a case brought by the Danish Vegetarian Association.",
+        [
+          "kristeligt_dagblad",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "salling-group-buys-proshop",
+      "role": "brief",
+      "kicker": "Business",
+      "sources": [
+        1084,
+        1119,
+        594,
+        1106
+      ],
+      "headline": "Salling Group buys online shop Proshop in its second-largest deal",
+      "lede": [
+        "Salling Group, a grocery group, is buying Proshop, an Aarhus online shop with revenue of almost 4.5 billion kroner in 2025, for an undisclosed sum in its second-largest acquisition ever.",
+        [
+          "kristeligt_dagblad",
+          "borsen",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "folketing-opens-frandsen-speaker",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        825,
+        237
+      ],
+      "headline": "Parliament to make a Moderate who joined in 2022 its speaker",
+      "lede": [
+        "A majority backs Henrik Frandsen of the Moderates, a liberal party founded by Lars Løkke Rasmussen, a former prime minister, as parliament's speaker when it opens on Tuesday, though he became an MP only in 2022.",
+        [
+          "kristeligt_dagblad"
+        ]
+      ]
+    },
+    {
+      "id": "stephanie-lose-chairs-state-auditors",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        812
+      ],
+      "headline": "Stephanie Lose elected to chair Denmark's state auditors",
+      "lede": [
+        "Stephanie Lose, deputy leader of Venstre, a liberal party, was elected on Monday to chair Statsrevisorerne, the six state auditors who check that taxpayers' money is spent effectively and lawfully.",
+        [
+          "kristeligt_dagblad"
+        ]
+      ]
+    },
+    {
+      "id": "grid-permitting-two-years-shorter",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        1068,
+        994,
+        1127
+      ],
+      "headline": "Government plans to cut years from power-grid permits",
+      "lede": [
+        "Samira Nawa, the climate and energy minister, hopes to cut one to three years from permitting for new power lines across most of Denmark; talks with parliament were due to start on Monday.",
+        [
+          "kristeligt_dagblad",
+          "via_ritzau"
+        ]
+      ]
+    },
+    {
+      "id": "soegaard-lidell-hydrogen-denmark",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        16,
+        268
+      ],
+      "headline": "Venstre MP will not stand again and becomes a green lobbyist",
+      "lede": [
+        "Linea Søgaard-Lidell, an MP for Venstre, a liberal party, will not stand at the next general election; she will become director of Hydrogen Denmark, a green lobby group, but stays in the party.",
+        [
+          "altinget",
+          "politiken"
+        ]
+      ]
+    },
+    {
+      "id": "stig-andersen-gyldendal-dies",
+      "role": "brief",
+      "kicker": "Obituary",
+      "sources": [
+        642
+      ],
+      "headline": "Former publishing chief Stig Andersen dies at 72",
+      "lede": [
+        "Stig Andersen, who ran Gyldendal, a Danish publishing house, from 1999 until he retired in 2018, has died at 72 after a long illness, Gyldendal says.",
+        [
+          "kristeligt_dagblad"
+        ]
+      ]
+    },
+    {
+      "id": "odense-pizzeria-killing-14-years",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        785,
+        706
+      ],
+      "headline": "Man gets 14 years and expulsion for shooting former partner in Odense pizzeria",
+      "lede": [
+        "A court in Odense on Monday sentenced a 52-year-old Turkish man to 14 years in prison and permanent expulsion for killing his former partner, 54, at a pizzeria near the city in September 2025.",
+        [
+          "kristeligt_dagblad",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "hammerum-stabbing-man-dies",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        130
+      ],
+      "headline": "Man, 57, dies after being stabbed in his home near Herning",
+      "lede": [
+        "A 57-year-old man was stabbed to death in his home in Hammerum, near Herning in central Jutland, on Monday; police suspect a dispute among substance abusers and have made no arrests.",
+        [
+          "kristeligt_dagblad"
+        ]
+      ]
+    },
+    {
+      "id": "swedish-bomb-sentences-upheld",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        947,
+        555
+      ],
+      "headline": "High Court toughens punishment in case of bomb brought from Sweden to Denmark",
+      "lede": [
+        "The High Court on Monday found a 19-year-old Swede guilty of bringing a bomb with 4.4 kilos of plastic explosive from Sweden to Denmark in December 2023, and toughened the punishment in the case.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "motorring-3-four-lanes",
+      "role": "brief",
+      "kicker": "Transport",
+      "sources": [
+        1216,
+        1129,
+        1201
+      ],
+      "headline": "Copenhagen's ring motorway to get a fourth lane each way",
+      "lede": [
+        "Motorring 3, the motorway around Copenhagen, will be widened from three to four lanes each way along most of its length, using the hard shoulder, and get noise-reducing asphalt.",
+        [
+          "dr",
+          "tv2"
+        ]
+      ]
+    },
+    {
+      "id": "cancer-five-year-survival-seven-in-ten",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        705
+      ],
+      "headline": "More than seven in ten Danish cancer patients survive five years",
+      "lede": [
+        "Figures from Sundhedsdatastyrelsen, Denmark's health data agency, show just over seven in ten cancer patients alive five years after diagnosis, up from just over six in ten in 2011-2013, though gains have slowed.",
+        [
+          "kristeligt_dagblad"
+        ]
+      ]
+    },
+    {
+      "id": "nobel-medicine-optogenetics-2026",
+      "role": "brief",
+      "kicker": "Science",
+      "sources": [
+        920,
+        431,
+        826,
+        473,
+        171,
+        306,
+        917,
+        622,
+        352
+      ],
+      "headline": "Three scientists who switch brain cells on and off with light win the Nobel prize in medicine",
+      "lede": [
+        "Peter Hegemann and Georg Nagel of Germany and Karl Deisseroth of America won the Nobel prize in medicine on Monday for optogenetics, a method of switching single brain cells on and off with light.",
+        [
+          "kristeligt_dagblad",
+          "politiken",
+          "nytimes"
+        ]
+      ]
+    },
+    {
+      "id": "siberia-plague-lab-death-denied",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        191,
+        699,
+        456,
+        151,
+        640,
+        481,
+        199,
+        537,
+        157
+      ],
+      "headline": "Russia denies Siberian lab worker died of plague",
+      "lede": [
+        "Russian authorities denied on Monday that a 28-year-old laboratory technician in Siberia died of plague, citing pneumonia of unknown cause; the World Health Organisation says the risk to people in Russia seems low.",
+        [
+          "kristeligt_dagblad"
+        ]
+      ]
+    },
+    {
+      "id": "german-spy-chief-russia-conflict-risk",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        704,
+        776
+      ],
+      "headline": "German spy chief warns of risk of violent conflict with Russia",
+      "lede": [
+        "Germany risks being drawn into a violent conflict with Russia, Martin Jäger, head of its foreign intelligence service, told a parliamentary hearing on Monday, accusing Moscow of waging a 'shadow war'.",
+        [
+          "kristeligt_dagblad",
+          "ft"
+        ]
+      ]
+    },
+    {
+      "id": "lens-pupil-loses-hand-protest",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        780,
+        405,
+        461
+      ],
+      "headline": "French pupil, 15, loses hand to police stun grenade at school protest",
+      "lede": [
+        "A 15-year-old pupil lost his hand on Monday after picking up a police stun grenade at a protest against run-down schools in Lens, in northern France, and an investigation has been opened.",
+        [
+          "kristeligt_dagblad",
+          "guardian",
+          "bbc"
+        ]
+      ]
+    },
+    {
+      "id": "quebec-parti-quebecois-wins",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        53,
+        26,
+        31
+      ],
+      "headline": "Separatists win Quebec election but fall short of a majority",
+      "lede": [
+        "The Parti Québécois, a separatist party, won Quebec's election on Monday without a majority; its leader, Paul St-Pierre Plamondon, has promised an independence referendum, but not while Donald Trump is president.",
+        [
+          "kristeligt_dagblad",
+          "bbc",
+          "nytimes"
+        ]
+      ]
+    },
+    {
+      "id": "fort-hood-hasan-firing-squad-approved",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        59,
+        32,
+        57
+      ],
+      "headline": "Trump approves firing squad for gunman who killed 13 at Texas army base",
+      "lede": [
+        "Donald Trump has approved the first military execution since 1961: Nidal Hasan, an army psychiatrist who killed 13 people at Fort Hood, a Texas army base, in 2009, is to face a firing squad.",
+        [
+          "kristeligt_dagblad",
+          "bbc",
+          "guardian"
+        ]
+      ]
+    }
+  ]
+}

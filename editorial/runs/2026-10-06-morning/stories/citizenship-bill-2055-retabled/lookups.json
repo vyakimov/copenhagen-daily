@@ -1,0 +1,24 @@
+[
+ {
+  "requested": "Venstre (Denmark)",
+  "status": "found",
+  "title": "Venstre (Denmark)",
+  "extract": "Venstre, full name Venstre, Danmarks Liberale Parti, is a conservative-liberal, agrarian political party in Denmark. Founded as part of a peasants' movement against the landed aristocracy, today it espouses an economically liberal, pro-free-market ideology.",
+  "url": "https://en.wikipedia.org/wiki/Venstre_(Denmark)",
+  "type": "standard",
+  "fetched_at": "2026-10-06T03:40:18.560791Z",
+  "term": "Venstre",
+  "definition": "a liberal party"
+ },
+ {
+  "requested": "Liberal Alliance (Denmark)",
+  "status": "found",
+  "title": "Liberal Alliance (Denmark)",
+  "extract": "The Liberal Alliance is a classical liberal and right-libertarian political party in Denmark. The party is a component of the centre-right bloc in Danish politics. The party's platform is based upon economic liberalism, promotion of tax cuts, reduction of welfare programmes, socially libertarian policies, and a pragmatic, but oppositional stance towards European integration.",
+  "url": "https://en.wikipedia.org/wiki/Liberal_Alliance_(Denmark)",
+  "type": "standard",
+  "fetched_at": "2026-10-06T03:40:18.724965Z",
+  "term": "Liberal Alliance",
+  "definition": "a libertarian party"
+ }
+]
