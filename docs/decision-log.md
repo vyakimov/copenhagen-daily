@@ -545,6 +545,20 @@ that fails leaves the explanation unsupported, so it is struck or rewritten, nev
 
 ---
 
+## The alpha starts at No. 1 (6 October 2026)
+
+The paper moved from pilot to an alpha shared with friends, and the pilot's editions were removed
+rather than hidden, so the site, the store and the desk agree on what has been published. The 19
+pilot editions, the second printing, and the Tuesday 6 October edition as first published (No. 20)
+were deleted from the publish root and the bucket, and their run directories from the tree (they
+remain in git history and in a tarball outside the repository). The same checked copy of 6 October
+was published again as `2026-10-06-morning` with the number 1, so numbering restarts from it. The
+thread registry was kept: readers never see it, and it spares the first editions repeating stories
+the pilot already ran. The golden example and the test fixtures, which are working parts of the
+newsroom rather than editions, are unchanged.
+
+---
+
 ## Deferred, with gates
 
 **Edition revisions and correction notices.** Designed in the [roadmap](roadmap.md). The first release
