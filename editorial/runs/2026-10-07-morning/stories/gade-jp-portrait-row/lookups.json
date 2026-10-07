@@ -1,0 +1,24 @@
+[
+ {
+  "requested": "Venstre (Denmark)",
+  "status": "found",
+  "title": "Venstre (Denmark)",
+  "extract": "Venstre, full name Venstre, Danmarks Liberale Parti, is a conservative-liberal, agrarian political party in Denmark. Founded as part of a peasants' movement against the landed aristocracy, today it espouses an economically liberal, pro-free-market ideology.",
+  "url": "https://en.wikipedia.org/wiki/Venstre_(Denmark)",
+  "type": "standard",
+  "fetched_at": "2026-10-07T03:41:04.058407Z",
+  "term": "Venstre",
+  "definition": "a liberal party"
+ },
+ {
+  "requested": "Jyllands-Posten",
+  "status": "found",
+  "title": "Jyllands-Posten",
+  "extract": "Morgenavisen Jyllands-Posten, commonly shortened to Jyllands-Posten or JP, is a Danish daily broadsheet newspaper. It is based in Aarhus C, Jutland, and with a weekday circulation of approximately 120,000 copies.",
+  "url": "https://en.wikipedia.org/wiki/Jyllands-Posten",
+  "type": "standard",
+  "fetched_at": "2026-10-07T03:41:04.207789Z",
+  "term": "Jyllands-Posten",
+  "definition": "a Danish daily newspaper"
+ }
+]

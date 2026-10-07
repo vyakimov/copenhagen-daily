@@ -1,0 +1,13 @@
+[
+ {
+  "requested": "Personal identification number (Denmark)",
+  "status": "found",
+  "title": "Personal identification number (Denmark)",
+  "extract": "The Danish Personal Identification number is a national identification number, which is part of the personal information stored in the Civil Registration System.",
+  "url": "https://en.wikipedia.org/wiki/Personal_identification_number_(Denmark)",
+  "type": "standard",
+  "fetched_at": "2026-10-07T03:41:03.603010Z",
+  "term": "CPR number",
+  "definition": "Denmark's personal identity number"
+ }
+]

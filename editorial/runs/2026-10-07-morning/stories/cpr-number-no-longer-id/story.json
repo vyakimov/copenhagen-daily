@@ -1,0 +1,106 @@
+{
+ "headline": "Danish ID number no longer proves identity after data on 8.8 million people is taken",
+ "headline_short": "Danish ID number no longer proves identity",
+ "deck": "A large invoice to a small company gave the theft away; pharmacies may now ask for ID.",
+ "extended": [
+  [
+   "The CPR number, Denmark's personal identity number, can no longer be trusted to identify anyone, the Agency for Societal Security said on Tuesday. Over ten days in September, unauthorised people harvested data on 8.8 million people from the CPR register.",
+   [
+    "kristeligt_dagblad",
+    "jp",
+    "via_ritzau"
+   ]
+  ],
+  [
+   "'You can no longer count on having identified a specific citizen if you are given a CPR number,' said Laila Reenberg, the agency's director. Companies should use MitID or another two-factor login, or a one-time code by text or email. Pharmacies may ask customers for ID or security questions before handing out medicine.",
+   [
+    "kristeligt_dagblad",
+    "politiken",
+    "berlingske"
+   ]
+  ],
+  [
+   "The data was taken through the legal access of a small Danish company, which the authorities will not name. Each search of the register is billed, and an unusually large invoice gave the theft away. Mainly names and addresses were taken, said Mikkel Leihardt, a head of department at the digitalisation ministry.",
+   [
+    "kristeligt_dagblad",
+    "borsen",
+    "jp"
+   ]
+  ],
+  [
+   "Investigators do not yet know who is behind it, and no one has been charged. Christina Egelund, the digitalisation minister, has ordered a security review of the whole register.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "standard": [
+  [
+   "The CPR number, Denmark's personal identity number, can no longer be trusted to identify anyone, the Agency for Societal Security said on Tuesday. Over ten days in September, unauthorised people harvested data on 8.8 million people from the CPR register.",
+   [
+    "kristeligt_dagblad",
+    "jp",
+    "via_ritzau"
+   ]
+  ],
+  [
+   "'You can no longer count on having identified a specific citizen if you are given a CPR number,' said Laila Reenberg, the agency's director. Pharmacies may ask customers for ID or security questions before handing out medicine.",
+   [
+    "kristeligt_dagblad",
+    "politiken",
+    "berlingske"
+   ]
+  ],
+  [
+   "The data was taken through the legal access of a small Danish company and came to light only when an unusually large invoice was due. Investigators do not yet know who is behind it.",
+   [
+    "kristeligt_dagblad",
+    "borsen",
+    "jp"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "The CPR number, Denmark's personal identity number, can no longer be trusted to identify anyone, the Agency for Societal Security said on Tuesday, after data on 8.8 million people was harvested from the register over ten days in September. An unusually large invoice to a small Danish company gave the theft away.",
+   [
+    "kristeligt_dagblad",
+    "jp",
+    "borsen"
+   ]
+  ]
+ ],
+ "callouts": [
+  {
+   "kind": "quote",
+   "text": "You can no longer count on having identified a specific citizen if you are given a CPR number.",
+   "attribution": "Laila Reenberg, director of the Agency for Societal Security",
+   "attribution_source": "kristeligt_dagblad"
+  },
+  {
+   "kind": "timeline",
+   "title": "How it unfolded",
+   "rows": [
+    {
+     "date": "September",
+     "text": "Data on 8.8 million people harvested over ten days"
+    },
+    {
+     "date": "Monday",
+     "text": "The leak becomes public"
+    },
+    {
+     "date": "Tuesday",
+     "text": "Agency says the CPR number no longer proves identity"
+    }
+   ]
+  }
+ ],
+ "definitions": [
+  {
+   "term": "CPR number",
+   "definition": "Denmark's personal identity number",
+   "wikipedia": "Personal identification number (Denmark)"
+  }
+ ]
+}

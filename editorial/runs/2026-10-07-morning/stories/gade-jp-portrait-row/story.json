@@ -1,0 +1,49 @@
+{
+ "headline": "Denmark's outgoing Speaker says he has 'powerful enemies' in his own party",
+ "headline_short": "Outgoing Speaker cites 'powerful enemies'",
+ "deck": "A newspaper portrait built on 13 anonymous sources called him vain and lazy; the prime minister calls such attacks 'beneath contempt'.",
+ "standard": [
+  [
+   "Søren Gade, who left the post of Speaker of Denmark's parliament on Tuesday, says he has 'powerful enemies in Venstre', a liberal party and his own. He was answering a portrait in Jyllands-Posten, a Danish daily newspaper, in which 13 anonymous sources called him vain, disloyal, selfish, lazy and greedy.",
+   [
+    "kristeligt_dagblad",
+    "borsen"
+   ]
+  ],
+  [
+   "Mette Frederiksen, the prime minister, called anonymous attacks by elected politicians 'beneath contempt'; Troels Lund Poulsen, Venstre's leader, called the piece 'an unusually sad and nasty portrait'.",
+   [
+    "kristeligt_dagblad",
+    "berlingske"
+   ]
+  ],
+  [
+   "The newspaper amended the portrait on Tuesday, saying its first version was 'not sufficiently balanced'; its political editor stands '100 per cent' behind the original.",
+   [
+    "kristeligt_dagblad",
+    "berlingske"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "Søren Gade, who left the post of Speaker of Denmark's parliament on Tuesday, says he has 'powerful enemies in Venstre', a liberal party and his own. Jyllands-Posten, a Danish daily newspaper, had printed a portrait in which 13 anonymous sources called him vain and lazy; it has since amended it.",
+   [
+    "kristeligt_dagblad",
+    "berlingske"
+   ]
+  ]
+ ],
+ "definitions": [
+  {
+   "term": "Venstre",
+   "definition": "a liberal party",
+   "wikipedia": "Venstre (Denmark)"
+  },
+  {
+   "term": "Jyllands-Posten",
+   "definition": "a Danish daily newspaper",
+   "wikipedia": "Jyllands-Posten"
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+[
+ {
+  "requested": "da:Statens Uddannelsesstøtte",
+  "status": "found",
+  "title": "Statens Uddannelsesstøtte",
+  "extract": "Statens Uddannelsesstøtte er en dansk økonomisk uddannelsesstøtte, som studerende kan søge til en række godkendte ungdoms- og videregående uddannelser. Ansøgeren skal opfylde en række betingelser for at kunne få SU og andre tillægsydelser.",
+  "url": "https://da.wikipedia.org/wiki/Statens_Uddannelsesst%C3%B8tte",
+  "type": "standard",
+  "fetched_at": "2026-10-07T03:41:05.083753Z",
+  "term": "SU",
+  "definition": "the state student grant"
+ }
+]

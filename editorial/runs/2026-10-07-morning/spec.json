@@ -1,0 +1,698 @@
+{
+  "edition": {
+    "id": "2026-10-07-morning",
+    "number": 2,
+    "name": "Wednesday edition",
+    "date": "2026-10-07",
+    "cutoff_at": "2026-10-07T03:30:00.000000Z",
+    "checked_from": "2026-10-04T03:30:00.000000Z",
+    "input_id": "export-2026-10-07-0330",
+    "presentation": {
+      "emphasis": "many_stories",
+      "ear_right": "Inside: the Speaker's bitter last day, a German spymaster arrested, 900 million for schools"
+    },
+    "note": "Built from headlines and RSS descriptions published between 05:30 on 4 October and 05:30 on 7 October, Copenhagen time: 3,376 articles. All 132 feeds at 17 publishers polled."
+  },
+  "stories": [
+    {
+      "id": "cpr-number-no-longer-id",
+      "role": "lead",
+      "kicker": "Denmark",
+      "sources": [
+        511,
+        657,
+        616,
+        424,
+        747,
+        584,
+        364,
+        1076
+      ],
+      "headline": "Danish ID number no longer proves identity after data on 8.8 million people is taken",
+      "headline_short": "Danish ID number no longer proves identity",
+      "deck": "A large invoice to a small company gave the theft away; pharmacies may now ask for ID.",
+      "extended": [
+        [
+          "The CPR number, Denmark's personal identity number, can no longer be trusted to identify anyone, the Agency for Societal Security said on Tuesday. Over ten days in September, unauthorised people harvested data on 8.8 million people from the CPR register.",
+          [
+            "kristeligt_dagblad",
+            "jp",
+            "via_ritzau"
+          ]
+        ],
+        [
+          "'You can no longer count on having identified a specific citizen if you are given a CPR number,' said Laila Reenberg, the agency's director. Companies should use MitID or another two-factor login, or a one-time code by text or email. Pharmacies may ask customers for ID or security questions before handing out medicine.",
+          [
+            "kristeligt_dagblad",
+            "politiken",
+            "berlingske"
+          ]
+        ],
+        [
+          "The data was taken through the legal access of a small Danish company, which the authorities will not name. Each search of the register is billed, and an unusually large invoice gave the theft away. Mainly names and addresses were taken, said Mikkel Leihardt, a head of department at the digitalisation ministry.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "jp"
+          ]
+        ],
+        [
+          "Investigators do not yet know who is behind it, and no one has been charged. Christina Egelund, the digitalisation minister, has ordered a security review of the whole register.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "standard": [
+        [
+          "The CPR number, Denmark's personal identity number, can no longer be trusted to identify anyone, the Agency for Societal Security said on Tuesday. Over ten days in September, unauthorised people harvested data on 8.8 million people from the CPR register.",
+          [
+            "kristeligt_dagblad",
+            "jp",
+            "via_ritzau"
+          ]
+        ],
+        [
+          "'You can no longer count on having identified a specific citizen if you are given a CPR number,' said Laila Reenberg, the agency's director. Pharmacies may ask customers for ID or security questions before handing out medicine.",
+          [
+            "kristeligt_dagblad",
+            "politiken",
+            "berlingske"
+          ]
+        ],
+        [
+          "The data was taken through the legal access of a small Danish company and came to light only when an unusually large invoice was due. Investigators do not yet know who is behind it.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "jp"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "The CPR number, Denmark's personal identity number, can no longer be trusted to identify anyone, the Agency for Societal Security said on Tuesday, after data on 8.8 million people was harvested from the register over ten days in September. An unusually large invoice to a small Danish company gave the theft away.",
+          [
+            "kristeligt_dagblad",
+            "jp",
+            "borsen"
+          ]
+        ]
+      ],
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "You can no longer count on having identified a specific citizen if you are given a CPR number.",
+          "attribution": "Laila Reenberg, director of the Agency for Societal Security",
+          "attribution_source": "kristeligt_dagblad"
+        },
+        {
+          "kind": "timeline",
+          "title": "How it unfolded",
+          "rows": [
+            {
+              "date": "September",
+              "text": "Data on 8.8 million people harvested over ten days"
+            },
+            {
+              "date": "Monday",
+              "text": "The leak becomes public"
+            },
+            {
+              "date": "Tuesday",
+              "text": "Agency says the CPR number no longer proves identity"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "frederiksen-opening-speech-2026",
+      "role": "secondary",
+      "kicker": "Politics",
+      "sources": [
+        348,
+        838,
+        748,
+        682,
+        590,
+        437,
+        829
+      ],
+      "headline": "Frederiksen promises Ukraine full support but says Denmark has no money to spare",
+      "headline_short": "Frederiksen pledges support for Ukraine",
+      "deck": "Denmark's Ukraine fund has set aside only 4.4 billion kroner so far this year.",
+      "standard": [
+        [
+          "Mette Frederiksen, the prime minister, promised Denmark's 'full-throated support for Ukraine' in her speech opening the Folketing, Denmark's parliament, on Tuesday. 'Russia does not want peace, the Kremlin wants new land,' she said.",
+          [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        ],
+        [
+          "Payments from the Ukraine Fund, which the government set up when the war began, have fallen since 2023; only 4.4 billion kroner has been set aside this year. Asked by Kristeligt Dagblad how the support would continue, Frederiksen said no country in Europe has much money to spare. 'Neither do we,' she said.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Altinget writes that she could as well have given the speech as head of a Social Democratic government of her own.",
+          [
+            "altinget"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Mette Frederiksen, the prime minister, promised 'full-throated support for Ukraine' in her speech opening the Folketing, Denmark's parliament, on Tuesday. Asked by Kristeligt Dagblad how, she said no country in Europe has much money to spare. 'Neither do we,' she said.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "gade-jp-portrait-row",
+      "role": "secondary",
+      "kicker": "Politics",
+      "sources": [
+        1167,
+        609,
+        1116,
+        548,
+        842,
+        1086
+      ],
+      "headline": "Denmark's outgoing Speaker says he has 'powerful enemies' in his own party",
+      "headline_short": "Outgoing Speaker cites 'powerful enemies'",
+      "deck": "A newspaper portrait built on 13 anonymous sources called him vain and lazy; the prime minister calls such attacks 'beneath contempt'.",
+      "standard": [
+        [
+          "Søren Gade, who left the post of Speaker of Denmark's parliament on Tuesday, says he has 'powerful enemies in Venstre', a liberal party and his own. He was answering a portrait in Jyllands-Posten, a Danish daily newspaper, in which 13 anonymous sources called him vain, disloyal, selfish, lazy and greedy.",
+          [
+            "kristeligt_dagblad",
+            "borsen"
+          ]
+        ],
+        [
+          "Mette Frederiksen, the prime minister, called anonymous attacks by elected politicians 'beneath contempt'; Troels Lund Poulsen, Venstre's leader, called the piece 'an unusually sad and nasty portrait'.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ],
+        [
+          "The newspaper amended the portrait on Tuesday, saying its first version was 'not sufficiently balanced'; its political editor stands '100 per cent' behind the original.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Søren Gade, who left the post of Speaker of Denmark's parliament on Tuesday, says he has 'powerful enemies in Venstre', a liberal party and his own. Jyllands-Posten, a Danish daily newspaper, had printed a portrait in which 13 anonymous sources called him vain and lazy; it has since amended it.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "hanning-arrested-spying",
+      "role": "secondary",
+      "kicker": "Europe",
+      "sources": [
+        1033,
+        474,
+        445,
+        957,
+        951,
+        916,
+        883,
+        763,
+        711,
+        971,
+        448,
+        530
+      ],
+      "headline": "Germany arrests a former spy chief on suspicion of treason",
+      "headline_short": "Former German spy chief arrested",
+      "deck": "August Hanning ran the foreign intelligence service from 1998 to 2005; a kidnapping attempt in South Jutland put police on his trail.",
+      "standard": [
+        [
+          "August Hanning, head of the BND, Germany's foreign intelligence service, from 1998 to 2005, was arrested on Tuesday on suspicion of spying against the German state, passing on state secrets and attempted treason. Germany's federal prosecutors say he also worked as an agent for a foreign intelligence service.",
+          [
+            "kristeligt_dagblad",
+            "guardian"
+          ]
+        ],
+        [
+          "A former department head under Hanning, who left the BND this spring, was arrested too. Prosecutors suspect he passed Hanning about 2,000 documents between 2010 and June 2022, which Hanning used to write a security analysis for a foreign service.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "A kidnapping attempt in South Jutland in 2022 put police on the case. Hanning is also accused of sending mercenaries to Denmark to abduct two children.",
+          [
+            "jp",
+            "berlingske"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "August Hanning, head of the BND, Germany's foreign intelligence service, from 1998 to 2005, was arrested on Tuesday on suspicion of spying and attempted treason. Federal prosecutors say a former subordinate passed him about 2,000 documents. A kidnapping attempt in South Jutland in 2022 put police on the case.",
+          [
+            "kristeligt_dagblad",
+            "guardian",
+            "jp"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "folkeskole-900-million-2027",
+      "role": "secondary",
+      "kicker": "Education",
+      "sources": [
+        257,
+        287,
+        210,
+        245,
+        278
+      ],
+      "headline": "Government plans 900 million kroner for schools after historically weak test results",
+      "headline_short": "Government plans 900 million kroner for schools",
+      "deck": "200 million kroner goes to 100 schools where pupils lag in Danish and maths; there are no plans for a teacher pay rise.",
+      "standard": [
+        [
+          "The government will set aside 900 million kroner for public schools in its 2027 budget proposal, four ministers told Politiken. Of that, 200 million goes to 100 schools where pupils do particularly badly in Danish and maths, 200 million to small rural schools and 500 million to schools generally.",
+          [
+            "kristeligt_dagblad",
+            "politiken",
+            "dr",
+            "borsen"
+          ]
+        ],
+        [
+          "It follows a Pisa survey, which about a month ago found 15-year-olds historically weak in science, maths and reading.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "The government wants more teachers, such as more lessons taught by two, but plans no pay rise. 'I personally think we should look elsewhere,' Mette Frederiksen, the prime minister, told DR.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Gordon Ørskov Madsen, chairman of the teachers' union, called it 'very positive'.",
+          [
+            "kristeligt_dagblad",
+            "via_ritzau"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "The government will set aside 900 million kroner for public schools in its 2027 budget proposal, four ministers told Politiken, 200 million of it for 100 schools where pupils do particularly badly in Danish and maths.",
+          [
+            "kristeligt_dagblad",
+            "politiken",
+            "dr",
+            "borsen"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "frandsen-elected-speaker",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        914,
+        1287,
+        876,
+        1245
+      ],
+      "headline": "Danish parliament elects a speaker criticised over a 2019 land sale",
+      "lede": [
+        "The Folketing, Denmark's parliament, elected Henrik Frandsen of the Moderates, a liberal party founded by Lars Løkke Rasmussen, a former prime minister, as its speaker on Tuesday despite criticism over a 2019 land sale.",
+        [
+          "kristeligt_dagblad",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "kaershovedgaard-prison-unit",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        878,
+        408,
+        869
+      ],
+      "headline": "Government plans prison unit beside centre for foreigners who refuse to leave Denmark",
+      "lede": [
+        "The government plans a prison unit beside Kærshovedgård, a centre for foreigners refusing to leave Denmark, for residents jailed for offences such as breaking reporting rules, Mette Frederiksen, the prime minister, said on Tuesday.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "legislative-programme-2026-27",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        888,
+        840
+      ],
+      "headline": "Government plans higher early pension and a phone ban in schools",
+      "lede": [
+        "The government's legislative programme, published on Tuesday, sets out a 3,000-kroner monthly rise in the early-retirement pension, a mobile-phone ban in schools and the return of Great Prayer Day, a public holiday, from 2030.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "frederiksen-defends-su-cut",
+      "role": "brief",
+      "kicker": "Welfare",
+      "sources": [
+        68,
+        216
+      ],
+      "headline": "Frederiksen defends ending student grants for 81,000 young people living at home",
+      "lede": [
+        "Mette Frederiksen, the prime minister, defended her government's plan to stop SU, the state student grant, for 81,000 young people living at home, saying most 'can easily have a part-time job'.",
+        [
+          "altinget",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "fewer-owe-public-debt",
+      "role": "brief",
+      "kicker": "Economy",
+      "sources": [
+        5,
+        4
+      ],
+      "headline": "Almost half a million fewer people owe money to the public sector",
+      "lede": [
+        "The number of people with debts to the public sector has fallen from more than 1.1 million in 2023 to 687,000, according to Gældsstyrelsen, the public debt-collection agency.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "mobilepay-renamed-vipps",
+      "role": "brief",
+      "kicker": "Business",
+      "sources": [
+        1217,
+        1237,
+        745,
+        1273
+      ],
+      "headline": "MobilePay to be renamed Vipps in January",
+      "lede": [
+        "MobilePay, the payment app used by almost 4.7 million Danes, is renamed Vipps on 12 January 2027, after the Norwegian app it joined in 2022; its owner says the app will work as before.",
+        [
+          "kristeligt_dagblad",
+          "borsen",
+          "dr",
+          "via_ritzau"
+        ]
+      ]
+    },
+    {
+      "id": "genmab-lymphoma-shares-rise",
+      "role": "brief",
+      "kicker": "Business",
+      "sources": [
+        960,
+        1146,
+        1049
+      ],
+      "headline": "Genmab shares rise 8 per cent after lymphoma drug trial",
+      "lede": [
+        "Shares in Genmab, a Danish cancer-drug maker, rose 8 per cent on Tuesday after Epkinly plus chemotherapy cut some lymphoma patients' risk of worsening by 51 per cent against traditional chemotherapy in a trial.",
+        [
+          "kristeligt_dagblad",
+          "borsen",
+          "wsj"
+        ]
+      ]
+    },
+    {
+      "id": "red-bull-influencer-complaint",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        1127,
+        1277,
+        1156,
+        1235
+      ],
+      "headline": "Consumer group accuses Red Bull of marketing energy drinks to children through an influencer",
+      "lede": [
+        "Forbrugerrådet Tænk, a Danish consumer organisation, has asked the Consumer Ombudsman to rule whether Red Bull's promotion with Rasmus Søndergaard, an influencer, breaks the ban on marketing energy drinks to under-18s.",
+        [
+          "kristeligt_dagblad",
+          "via_ritzau",
+          "dr",
+          "tv2"
+        ]
+      ]
+    },
+    {
+      "id": "fdm-two-car-seats-warning",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        1124,
+        1083,
+        1169
+      ],
+      "headline": "Two child car seats fail crash test, Danish car owners' group says",
+      "lede": [
+        "FDM, a Danish organisation for car owners, warned on Tuesday against buying or using two child car seats, the Britax Römer Baby-Safe Pro and Axkid Minikid Core, whose harnesses failed a crash test.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "via_ritzau"
+        ]
+      ]
+    },
+    {
+      "id": "region-rejects-lgbtq-handbook",
+      "role": "brief",
+      "kicker": "Health",
+      "sources": [
+        999,
+        1054,
+        949
+      ],
+      "headline": "Danish region halts LGBTQ+ handbook for health staff",
+      "lede": [
+        "The Region of Southern Denmark's executive committee on Monday withheld approval of an LGBTQ+ handbook for health staff; Bo Libergren, the regional council's chairman, wants its language to start from 'two genders'.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "hammerum-suspect-arrested",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        546,
+        684
+      ],
+      "headline": "Police arrest man wanted over fatal stabbing",
+      "lede": [
+        "Acting on a tip, police on Tuesday arrested a 43-year-old man they had named publicly as the suspect in Monday evening's fatal stabbing of a 57-year-old man in Hammerum, between Herning and Ikast.",
+        [
+          "kristeligt_dagblad"
+        ]
+      ]
+    },
+    {
+      "id": "lise-svanholm-dies",
+      "role": "brief",
+      "kicker": "Obituary",
+      "sources": [
+        703,
+        633
+      ],
+      "headline": "Art historian Lise Svanholm dies at 94",
+      "lede": [
+        "Lise Svanholm, an art historian who wrote several books on the Skagen painters, a community of artists in the northernmost part of Denmark, died of pneumonia on 30 September, aged 94.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "sweden-patriot-to-poland",
+      "role": "brief",
+      "kicker": "Nordics",
+      "sources": [
+        724,
+        739,
+        553
+      ],
+      "headline": "Sweden to send Patriot air defences to guard a Ukraine arms hub in Poland",
+      "lede": [
+        "In December Sweden will send its Patriot air defence system to protect the airport at Rzeszów, in eastern Poland, through which weapons are shipped to Ukraine.",
+        [
+          "kristeligt_dagblad",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "france-school-protests-250000",
+      "role": "brief",
+      "kicker": "Europe",
+      "sources": [
+        778,
+        495,
+        510,
+        308,
+        368,
+        341,
+        160,
+        1047,
+        736,
+        443,
+        497,
+        297,
+        371,
+        372,
+        2,
+        3
+      ],
+      "headline": "More than 250,000 join school protests across France",
+      "lede": [
+        "More than 250,000 pupils, teachers and parents marched across France on Tuesday against teacher shortages, worn-out buildings and long school days, and police fired tear gas in Paris and Marseille.",
+        [
+          "politiken",
+          "berlingske",
+          "guardian",
+          "bbc"
+        ]
+      ]
+    },
+    {
+      "id": "afd-first-state-speaker",
+      "role": "brief",
+      "kicker": "Europe",
+      "sources": [
+        832,
+        733,
+        552,
+        332,
+        492,
+        481
+      ],
+      "headline": "German far right wins a state parliament's speakership for the first time since 1945",
+      "lede": [
+        "Tobias Rausch of the AfD, a far-right party, became speaker of the parliament of Saxony-Anhalt, a state in eastern Germany, on Tuesday, winning 48 votes to 29.",
+        [
+          "kristeligt_dagblad",
+          "guardian"
+        ]
+      ]
+    },
+    {
+      "id": "black-sea-ships-hit-off-bulgaria",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        1063,
+        976,
+        1141,
+        505,
+        283,
+        40,
+        766
+      ],
+      "headline": "Drones hit two ships off Bulgaria and sink one",
+      "lede": [
+        "Drones hit two cargo ships off Bulgaria in the Black Sea on Tuesday, sinking one and leaving its crew missing; Bulgaria is investigating where they came from, and Ukraine's Volodymyr Zelenskyy blames Russia.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "bbc",
+          "nytimes",
+          "guardian"
+        ]
+      ]
+    },
+    {
+      "id": "nobel-physics-halzen-icecube",
+      "role": "brief",
+      "kicker": "Science",
+      "sources": [
+        906,
+        442,
+        917,
+        807,
+        392,
+        806,
+        438
+      ],
+      "headline": "Belgian physicist wins Nobel prize for detecting particles from space at the South Pole",
+      "lede": [
+        "Francis Halzen, a Belgian physicist, won the Nobel prize in physics on Tuesday for IceCube, a detector in the South Pole ice that records neutrinos, particles from deep space often called ghost particles.",
+        [
+          "kristeligt_dagblad",
+          "guardian",
+          "politiken"
+        ]
+      ]
+    },
+    {
+      "id": "paramount-completes-warner-deal",
+      "role": "brief",
+      "kicker": "Business",
+      "sources": [
+        617,
+        485,
+        221,
+        706,
+        585,
+        54,
+        524,
+        6
+      ],
+      "headline": "Paramount completes its takeover of Warner Bros",
+      "lede": [
+        "Paramount completed its takeover of Warner Bros. Discovery on Tuesday, creating a company called Skydance, led by David Ellison, that owns both film studios, CNN, CBS News, HBO Max and Paramount+.",
+        [
+          "kristeligt_dagblad",
+          "guardian",
+          "wsj"
+        ]
+      ]
+    }
+  ]
+}

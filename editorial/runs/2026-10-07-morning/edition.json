@@ -1,0 +1,2842 @@
+{
+  "schema_version": 2,
+  "title": "copenhagen-daily",
+  "edition": {
+    "id": "2026-10-07-morning",
+    "number": 2,
+    "name": "Wednesday edition",
+    "date": "2026-10-07",
+    "timezone": "Europe/Copenhagen",
+    "language": "en",
+    "cutoff_at": "2026-10-07T03:30:00.000000Z",
+    "generated_at": "2026-10-07T03:45:59.372571Z"
+  },
+  "presentation": {
+    "emphasis": "many_stories",
+    "ear_right": "Inside: the Speaker's bitter last day, a German spymaster arrested, 900 million for schools"
+  },
+  "coverage": {
+    "status": "complete",
+    "checked_from": "2026-10-04T03:30:00.000000Z",
+    "checked_until": "2026-10-07T03:30:00.000000Z",
+    "feeds": [
+      {
+        "feed_id": "altinget.arbejdsmarked",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.626801Z"
+      },
+      {
+        "feed_id": "altinget.by",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.721672Z"
+      },
+      {
+        "feed_id": "altinget.christiansborg",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.499026Z"
+      },
+      {
+        "feed_id": "altinget.eu",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.550719Z"
+      },
+      {
+        "feed_id": "altinget.forside",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.476047Z"
+      },
+      {
+        "feed_id": "altinget.forsvar",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.651388Z"
+      },
+      {
+        "feed_id": "altinget.klima",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.575476Z"
+      },
+      {
+        "feed_id": "altinget.kommunal",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.673809Z"
+      },
+      {
+        "feed_id": "altinget.sundhed",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.599929Z"
+      },
+      {
+        "feed_id": "altinget.uddannelse",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.696652Z"
+      },
+      {
+        "feed_id": "bbc.business",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:43.016054Z"
+      },
+      {
+        "feed_id": "bbc.culture",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:43.337449Z"
+      },
+      {
+        "feed_id": "bbc.europe",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.950970Z"
+      },
+      {
+        "feed_id": "bbc.health",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:43.165123Z"
+      },
+      {
+        "feed_id": "bbc.politics",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:43.269530Z"
+      },
+      {
+        "feed_id": "bbc.science",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:43.111963Z"
+      },
+      {
+        "feed_id": "bbc.technology",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:43.078952Z"
+      },
+      {
+        "feed_id": "bbc.top",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.864078Z"
+      },
+      {
+        "feed_id": "bbc.world",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.909624Z"
+      },
+      {
+        "feed_id": "berlingske.business",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.569839Z"
+      },
+      {
+        "feed_id": "berlingske.kultur",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.589150Z"
+      },
+      {
+        "feed_id": "berlingske.latest",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.536116Z"
+      },
+      {
+        "feed_id": "berlingske.opinion",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.608156Z"
+      },
+      {
+        "feed_id": "berlingske.samfund",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.555954Z"
+      },
+      {
+        "feed_id": "borsen.baeredygtig",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.715583Z"
+      },
+      {
+        "feed_id": "borsen.breaking",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.710899Z"
+      },
+      {
+        "feed_id": "borsen.ejendomme",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.749163Z"
+      },
+      {
+        "feed_id": "borsen.executive",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.871667Z"
+      },
+      {
+        "feed_id": "borsen.finans",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.774852Z"
+      },
+      {
+        "feed_id": "borsen.homepage",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.663819Z"
+      },
+      {
+        "feed_id": "borsen.investor",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.802158Z"
+      },
+      {
+        "feed_id": "borsen.longread",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.902884Z"
+      },
+      {
+        "feed_id": "borsen.markedsberetninger",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.932037Z"
+      },
+      {
+        "feed_id": "borsen.okonomi",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.169928Z"
+      },
+      {
+        "feed_id": "borsen.opinion",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.962731Z"
+      },
+      {
+        "feed_id": "borsen.pleasure",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.995142Z"
+      },
+      {
+        "feed_id": "borsen.politik",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.028484Z"
+      },
+      {
+        "feed_id": "borsen.tech",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.091992Z"
+      },
+      {
+        "feed_id": "borsen.udland",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.117648Z"
+      },
+      {
+        "feed_id": "borsen.virksomheder",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.148074Z"
+      },
+      {
+        "feed_id": "dr.indland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.655622Z"
+      },
+      {
+        "feed_id": "dr.kultur",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.923473Z"
+      },
+      {
+        "feed_id": "dr.latest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.626030Z"
+      },
+      {
+        "feed_id": "dr.musik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.952710Z"
+      },
+      {
+        "feed_id": "dr.penge",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.750427Z"
+      },
+      {
+        "feed_id": "dr.politik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.782206Z"
+      },
+      {
+        "feed_id": "dr.regionale",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.002589Z"
+      },
+      {
+        "feed_id": "dr.regionale_bornholm",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.062254Z"
+      },
+      {
+        "feed_id": "dr.regionale_fyn",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.143017Z"
+      },
+      {
+        "feed_id": "dr.regionale_kbh",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.031187Z"
+      },
+      {
+        "feed_id": "dr.regionale_nord",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.201176Z"
+      },
+      {
+        "feed_id": "dr.regionale_oestjylland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.304676Z"
+      },
+      {
+        "feed_id": "dr.regionale_sjaelland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.254226Z"
+      },
+      {
+        "feed_id": "dr.regionale_syd",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.112001Z"
+      },
+      {
+        "feed_id": "dr.regionale_trekanten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.227544Z"
+      },
+      {
+        "feed_id": "dr.regionale_vest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.170646Z"
+      },
+      {
+        "feed_id": "dr.senestesport",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.836377Z"
+      },
+      {
+        "feed_id": "dr.sporten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.808435Z"
+      },
+      {
+        "feed_id": "dr.udland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.721496Z"
+      },
+      {
+        "feed_id": "dr.vejret",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.976799Z"
+      },
+      {
+        "feed_id": "dr.viden",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.864087Z"
+      },
+      {
+        "feed_id": "economist.briefing",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:43.359703Z"
+      },
+      {
+        "feed_id": "economist.business",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:43.672717Z"
+      },
+      {
+        "feed_id": "economist.culture",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:43.672842Z"
+      },
+      {
+        "feed_id": "economist.europe",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:43.409466Z"
+      },
+      {
+        "feed_id": "economist.finance",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:43.672648Z"
+      },
+      {
+        "feed_id": "economist.international",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:43.672531Z"
+      },
+      {
+        "feed_id": "economist.latest",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:43.359574Z"
+      },
+      {
+        "feed_id": "economist.leaders",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:43.359642Z"
+      },
+      {
+        "feed_id": "economist.science",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:43.672778Z"
+      },
+      {
+        "feed_id": "ft.climate_capital",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.522318Z"
+      },
+      {
+        "feed_id": "ft.companies",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.455572Z"
+      },
+      {
+        "feed_id": "ft.global_economy",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.421616Z"
+      },
+      {
+        "feed_id": "ft.homepage.international",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.350114Z"
+      },
+      {
+        "feed_id": "ft.life_arts",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.658152Z"
+      },
+      {
+        "feed_id": "ft.markets",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.459609Z"
+      },
+      {
+        "feed_id": "ft.opinion",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.562901Z"
+      },
+      {
+        "feed_id": "ft.technology",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.492181Z"
+      },
+      {
+        "feed_id": "ft.work_careers",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.627632Z"
+      },
+      {
+        "feed_id": "ft.world",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.370321Z"
+      },
+      {
+        "feed_id": "guardian.business",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:44.257025Z"
+      },
+      {
+        "feed_id": "guardian.culture",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:44.642454Z"
+      },
+      {
+        "feed_id": "guardian.environment",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:44.463008Z"
+      },
+      {
+        "feed_id": "guardian.europe",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:44.185814Z"
+      },
+      {
+        "feed_id": "guardian.international",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:43.761931Z"
+      },
+      {
+        "feed_id": "guardian.opinion",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:44.845496Z"
+      },
+      {
+        "feed_id": "guardian.science",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:44.534574Z"
+      },
+      {
+        "feed_id": "guardian.technology",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:44.360575Z"
+      },
+      {
+        "feed_id": "guardian.world",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:44.046303Z"
+      },
+      {
+        "feed_id": "information.feed",
+        "source": "information",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.471296Z"
+      },
+      {
+        "feed_id": "jp.seneste",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.461693Z"
+      },
+      {
+        "feed_id": "jp.topnyheder",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.442623Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.artikler",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.800465Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.nyheder",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.772103Z"
+      },
+      {
+        "feed_id": "nytimes.arts",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.038490Z"
+      },
+      {
+        "feed_id": "nytimes.books",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.180148Z"
+      },
+      {
+        "feed_id": "nytimes.business",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:39.592099Z"
+      },
+      {
+        "feed_id": "nytimes.climate",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:39.927720Z"
+      },
+      {
+        "feed_id": "nytimes.europe",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:39.543022Z"
+      },
+      {
+        "feed_id": "nytimes.health",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:39.862630Z"
+      },
+      {
+        "feed_id": "nytimes.homepage",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:39.304643Z"
+      },
+      {
+        "feed_id": "nytimes.opinion",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:40.269085Z"
+      },
+      {
+        "feed_id": "nytimes.science",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:39.765259Z"
+      },
+      {
+        "feed_id": "nytimes.technology",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:39.699444Z"
+      },
+      {
+        "feed_id": "nytimes.world",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:39.397901Z"
+      },
+      {
+        "feed_id": "politiken.debat",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.411319Z"
+      },
+      {
+        "feed_id": "politiken.forbrugogliv",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.434610Z"
+      },
+      {
+        "feed_id": "politiken.ibyen",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.486105Z"
+      },
+      {
+        "feed_id": "politiken.indland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.215017Z"
+      },
+      {
+        "feed_id": "politiken.kultur",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.335150Z"
+      },
+      {
+        "feed_id": "politiken.latest",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.186123Z"
+      },
+      {
+        "feed_id": "politiken.oekonomi",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.307809Z"
+      },
+      {
+        "feed_id": "politiken.politik",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.279715Z"
+      },
+      {
+        "feed_id": "politiken.rejser",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.512787Z"
+      },
+      {
+        "feed_id": "politiken.sport",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.359857Z"
+      },
+      {
+        "feed_id": "politiken.udland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.237163Z"
+      },
+      {
+        "feed_id": "politiken.viden",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:41.384622Z"
+      },
+      {
+        "feed_id": "tv2.nyheder",
+        "source": "tv2",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.357573Z"
+      },
+      {
+        "feed_id": "via_ritzau.latest",
+        "source": "via_ritzau",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:42.832672Z"
+      },
+      {
+        "feed_id": "wapo.business",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:45.018018Z"
+      },
+      {
+        "feed_id": "wapo.national",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:44.954091Z"
+      },
+      {
+        "feed_id": "wapo.opinions",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:45.071994Z"
+      },
+      {
+        "feed_id": "wapo.politics",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:44.983873Z"
+      },
+      {
+        "feed_id": "wapo.technology",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:45.060853Z"
+      },
+      {
+        "feed_id": "wapo.world",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:44.925532Z"
+      },
+      {
+        "feed_id": "wsj.business",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:45.229325Z"
+      },
+      {
+        "feed_id": "wsj.economy",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:45.439802Z"
+      },
+      {
+        "feed_id": "wsj.markets",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:45.365809Z"
+      },
+      {
+        "feed_id": "wsj.opinion",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:45.603542Z"
+      },
+      {
+        "feed_id": "wsj.politics",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:45.483326Z"
+      },
+      {
+        "feed_id": "wsj.technology",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:45.517026Z"
+      },
+      {
+        "feed_id": "wsj.world",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-07T03:23:45.119223Z"
+      }
+    ],
+    "note": "Built from headlines and RSS descriptions published between 05:30 on 4 October and 05:30 on 7 October, Copenhagen time: 3,376 articles. All 132 feeds at 17 publishers polled."
+  },
+  "inputs": [
+    {
+      "id": "export-2026-10-07-0330",
+      "sha256": "sha256:9271a6c899904b2f430d6bdff92795d488f7124008506fc6c2d0271282a806e3"
+    }
+  ],
+  "stories": [
+    {
+      "id": "cpr-number-no-longer-id",
+      "device_participation": "required",
+      "role": "lead",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Danish ID number no longer proves identity after data on 8.8 million people is taken",
+        "body": {
+          "extended": [
+            {
+              "text": "The CPR number, Denmark's personal identity number, can no longer be trusted to identify anyone, the Agency for Societal Security said on Tuesday. Over ten days in September, unauthorised people harvested data on 8.8 million people from the CPR register.",
+              "sources": [
+                "kristeligt_dagblad",
+                "jp",
+                "via_ritzau"
+              ]
+            },
+            {
+              "text": "'You can no longer count on having identified a specific citizen if you are given a CPR number,' said Laila Reenberg, the agency's director. Companies should use MitID or another two-factor login, or a one-time code by text or email. Pharmacies may ask customers for ID or security questions before handing out medicine.",
+              "sources": [
+                "kristeligt_dagblad",
+                "politiken",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "The data was taken through the legal access of a small Danish company, which the authorities will not name. Each search of the register is billed, and an unusually large invoice gave the theft away. Mainly names and addresses were taken, said Mikkel Leihardt, a head of department at the digitalisation ministry.",
+              "sources": [
+                "kristeligt_dagblad",
+                "borsen",
+                "jp"
+              ]
+            },
+            {
+              "text": "Investigators do not yet know who is behind it, and no one has been charged. Christina Egelund, the digitalisation minister, has ordered a security review of the whole register.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "standard": [
+            {
+              "text": "The CPR number, Denmark's personal identity number, can no longer be trusted to identify anyone, the Agency for Societal Security said on Tuesday. Over ten days in September, unauthorised people harvested data on 8.8 million people from the CPR register.",
+              "sources": [
+                "kristeligt_dagblad",
+                "jp",
+                "via_ritzau"
+              ]
+            },
+            {
+              "text": "'You can no longer count on having identified a specific citizen if you are given a CPR number,' said Laila Reenberg, the agency's director. Pharmacies may ask customers for ID or security questions before handing out medicine.",
+              "sources": [
+                "kristeligt_dagblad",
+                "politiken",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "The data was taken through the legal access of a small Danish company and came to light only when an unusually large invoice was due. Investigators do not yet know who is behind it.",
+              "sources": [
+                "kristeligt_dagblad",
+                "borsen",
+                "jp"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "The CPR number, Denmark's personal identity number, can no longer be trusted to identify anyone, the Agency for Societal Security said on Tuesday, after data on 8.8 million people was harvested from the register over ten days in September. An unusually large invoice to a small Danish company gave the theft away.",
+              "sources": [
+                "kristeligt_dagblad",
+                "jp",
+                "borsen"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Danish ID number no longer proves identity",
+        "deck": "A large invoice to a small company gave the theft away; pharmacies may now ask for ID."
+      },
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "You can no longer count on having identified a specific citizen if you are given a CPR number.",
+          "attribution": "Laila Reenberg, director of the Agency for Societal Security",
+          "attribution_source": "kristeligt_dagblad"
+        },
+        {
+          "kind": "timeline",
+          "title": "How it unfolded",
+          "rows": [
+            {
+              "date": "September",
+              "text": "Data on 8.8 million people harvested over ten days"
+            },
+            {
+              "date": "Monday",
+              "text": "The leak becomes public"
+            },
+            {
+              "date": "Tuesday",
+              "text": "Agency says the CPR number no longer proves identity"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "6cfc4cf1-fb10-411f-948c-8758a9a8103a",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Styrelse: CPR kan ikke længere bruges til identifikation efter læk",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/styrelse-cpr-kan-ikke-laengere-bruges-til-identifikation-efter-laek",
+          "published_at": "2026-10-06T15:20:42.000000Z",
+          "content_hash": "sha256:f9206550f8f0ec095c31809bcc473a64f798e81cf2efb869ee737d592e50793e",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "fbb9dcd3-cc25-48fd-b7a5-78df986ac02a",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "CPR-læk blev opdaget på grund af dyr faktura",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/det-er-fortsat-uvist-hvem-der-staar-bag-i-cpr-sag",
+          "published_at": "2026-10-06T13:22:53.000000Z",
+          "content_hash": "sha256:4e27a3c654a2d937b433c119c960ffa22a4f03bf62d60c3e87f4a2881379c9ca",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "jp",
+          "source_id": "19712532",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Gigantisk cpr-tyveri blev opdaget på grund af en stor faktura",
+          "url": "https://jyllands-posten.dk/indland/ECE19712532/gigantisk-cprtyveri-blev-opdaget-paa-grund-af-en-stor-faktura/",
+          "published_at": "2026-10-06T13:54:06.000000Z",
+          "content_hash": "sha256:1002545fa57d83b2b3f8e87491360833a37d516f4aabc85fc9f937ab9c25b9b4",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11011814",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Først da en vaks medarbejder skulle sende en regning, opdagede man, at der var noget i gære",
+          "url": "https://politiken.dk/danmark/art11011814/F%C3%B8rst-da-en-vaks-medarbejder-skulle-sende-en-regning-opdagede-man-at-der-var-noget-i-g%C3%A6re",
+          "published_at": "2026-10-06T16:51:23.000000Z",
+          "content_hash": "sha256:0d5b20fc8f14c968ad75e9cc3851e289d2d95a9b2bd24b2874bca7532366fd77",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:54cd1a6f-51c6-4e1a-b8ef-e07e1413c28c",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Sådan blev CPR-databrud opdaget: 'Det er ret chokerende'",
+          "url": "https://www.dr.dk/nyheder/indland/saadan-blev-cpr-databrud-opdaget-det-er-ret-chokerende",
+          "published_at": "2026-10-06T12:10:51.000000Z",
+          "content_hash": "sha256:e80c97ed6bf5f2c467f5f1c0f303fac52645eddbfbac271bcfc10f5c03588551",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/samfund/dyr-faktura-afslorede-cpr-laek",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Dyr faktura afslørede cpr-læk",
+          "url": "https://borsen.dk/nyheder/samfund/dyr-faktura-afslorede-cpr-laek",
+          "published_at": "2026-10-06T14:15:00.000000Z",
+          "content_hash": "sha256:bca65a4e3341bac7b9c80397ca301b47ca2509a61a61638fcbecc533e07a46ca",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:52e9e8d3-2b6c-5258-aa36-f6be717f736c",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Apoteker skærper opmærksomheden ved medicinudlevering efter CPR-læk",
+          "url": "https://www.berlingske.dk/danmark/apoteker-skaerper-opmaerksomheden-ved-medicinudlevering-efter-cpr-laek",
+          "published_at": "2026-10-06T17:43:45.000000Z",
+          "content_hash": "sha256:451062b77608ae830546220507d72fd993e6c828c7a61e17990c94891f5021c8",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15209445/?publisherId=13562509&lang=da",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Myndigheder, organisationer og virksomheder bør supplere deres identitetskontrol efter læk fra CPR-registeret",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15209445/myndigheder-organisationer-og-virksomheder-bor-supplere-deres-identitetskontrol-efter-laek-fra-cpr-registeret?lang=da",
+          "published_at": "2026-10-06T08:13:07.000000Z",
+          "content_hash": "sha256:e08365eab2f08ce9e60a48c9233c0e1476bf91682ee184c276557edc5a5e8ee8",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "frederiksen-opening-speech-2026",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Frederiksen promises Ukraine full support but says Denmark has no money to spare",
+        "body": {
+          "standard": [
+            {
+              "text": "Mette Frederiksen, the prime minister, promised Denmark's 'full-throated support for Ukraine' in her speech opening the Folketing, Denmark's parliament, on Tuesday. 'Russia does not want peace, the Kremlin wants new land,' she said.",
+              "sources": [
+                "kristeligt_dagblad",
+                "dr"
+              ]
+            },
+            {
+              "text": "Payments from the Ukraine Fund, which the government set up when the war began, have fallen since 2023; only 4.4 billion kroner has been set aside this year. Asked by Kristeligt Dagblad how the support would continue, Frederiksen said no country in Europe has much money to spare. 'Neither do we,' she said.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Altinget writes that she could as well have given the speech as head of a Social Democratic government of her own.",
+              "sources": [
+                "altinget"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Mette Frederiksen, the prime minister, promised 'full-throated support for Ukraine' in her speech opening the Folketing, Denmark's parliament, on Tuesday. Asked by Kristeligt Dagblad how, she said no country in Europe has much money to spare. 'Neither do we,' she said.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Frederiksen pledges support for Ukraine",
+        "deck": "Denmark's Ukraine fund has set aside only 4.4 billion kroner so far this year."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "6b039919-8199-45d6-8dd1-094996969c9c",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Mette Frederiksen vil give Ukraine meget mere støtte. Hun har bare ikke råd",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/mette-frederiksen-vil-give-ukraine-meget-mere-stoette-hun-har-bare-ikke-raad",
+          "published_at": "2026-10-06T18:00:00.000000Z",
+          "content_hash": "sha256:8d952e5eacba1b5d929b5774503dfdec124a3633fc811c518c0b4b9478cc3963",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:8b3e8e13-d808-4fae-a2ba-c5ec101d8a7b",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Mette Frederiksen advarer mod Rusland: De vil have nyt land",
+          "url": "https://www.dr.dk/nyheder/politik/live-seneste-nyt-fra-dansk-politik-2?focusId=12583101",
+          "published_at": "2026-10-06T11:04:29.000000Z",
+          "content_hash": "sha256:88e71b79552c8176c94e5a346419be5c8e61787d9cc5844eb95e777b7f401dfa",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:97dfdf21-c392-5928-9889-2f71865d0773",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Et nyt hovedsæde, en ny type bolig og en joke om Løkke: Syv nedslag fra åbningstalen",
+          "url": "https://www.berlingske.dk/politik/et-nyt-hovedsaede-en-ny-type-bolig-og-en-joke-om-loekke-syv-nedslag-fra-aabningstalen",
+          "published_at": "2026-10-06T12:09:51.000000Z",
+          "content_hash": "sha256:7b649b1fc8c8a061463e71c10330b6a70f35c3ae3e03ad9fc8dc62d247a0e2d8",
+          "primary": false
+        },
+        {
+          "source": "altinget",
+          "source_id": "https://www.altinget.dk/christiansborg/artikel/den-tale-kunne-mette-frederiksen-lige-saa-godt-have-holdt-i-en-ren-s-regering",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Den tale kunne Mette Frederiksen lige så godt have holdt i en ren S-regering",
+          "url": "https://www.altinget.dk/christiansborg/artikel/den-tale-kunne-mette-frederiksen-lige-saa-godt-have-holdt-i-en-ren-s-regering",
+          "published_at": "2026-10-06T13:05:00.000000Z",
+          "content_hash": "sha256:b4a9fd5edb32f63ecaab98173e04255c309ef8dfa5aee603a8b3d53449a568e0",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/politik/politisk-redaktor-her-er-tre-pointer-fra-mette-frederiksens-tale",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Politisk redaktør: Her er tre pointer fra Mette Frederiksens tale",
+          "url": "https://borsen.dk/nyheder/politik/politisk-redaktor-her-er-tre-pointer-fra-mette-frederiksens-tale",
+          "published_at": "2026-10-06T14:10:00.000000Z",
+          "content_hash": "sha256:bae2d11000d262a18ccb5af1635e144249ebfa075d246030cb06337587fb8f7e",
+          "primary": false
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "ad71cbc2-6640-4659-a885-eaa3589513c3",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Saunaklub på Lolland fik afslag på udvidelse: statens nye kontor skal sikre færre af den slags benspænd for lokale initiativer",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/statens-nye-kontor-skal-vaere-hovedsaede-lokal-udvikling",
+          "published_at": "2026-10-06T16:38:00.000000Z",
+          "content_hash": "sha256:e33f5f3da0d88836ee12ba24f9890e61775f3f95a35178cea1dd47c5625234a8",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15210199/?publisherId=13560386&lang=da",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Regeringen og Danmark tager fløjlshandskerne af",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15210199/regeringen-og-danmark-tager-flojlshandskerne-af?lang=da",
+          "published_at": "2026-10-06T11:11:26.000000Z",
+          "content_hash": "sha256:d3a8da7af0a174b29e7aa4f4d63964b3539900b8ecc1f1feb8721b5689c75a19",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "gade-jp-portrait-row",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Denmark's outgoing Speaker says he has 'powerful enemies' in his own party",
+        "body": {
+          "standard": [
+            {
+              "text": "Søren Gade, who left the post of Speaker of Denmark's parliament on Tuesday, says he has 'powerful enemies in Venstre', a liberal party and his own. He was answering a portrait in Jyllands-Posten, a Danish daily newspaper, in which 13 anonymous sources called him vain, disloyal, selfish, lazy and greedy.",
+              "sources": [
+                "kristeligt_dagblad",
+                "borsen"
+              ]
+            },
+            {
+              "text": "Mette Frederiksen, the prime minister, called anonymous attacks by elected politicians 'beneath contempt'; Troels Lund Poulsen, Venstre's leader, called the piece 'an unusually sad and nasty portrait'.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "The newspaper amended the portrait on Tuesday, saying its first version was 'not sufficiently balanced'; its political editor stands '100 per cent' behind the original.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Søren Gade, who left the post of Speaker of Denmark's parliament on Tuesday, says he has 'powerful enemies in Venstre', a liberal party and his own. Jyllands-Posten, a Danish daily newspaper, had printed a portrait in which 13 anonymous sources called him vain and lazy; it has since amended it.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Outgoing Speaker cites 'powerful enemies'",
+        "deck": "A newspaper portrait built on 13 anonymous sources called him vain and lazy; the prime minister calls such attacks 'beneath contempt'."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "809cbd8f-2470-4278-90d0-d268cb41ae2d",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Søren Gade efter kritik: Jeg har magtfulde fjender i Venstre",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/soeren-gade-efter-kritik-jeg-har-magtfulde-fjender-i-venstre",
+          "published_at": "2026-10-06T06:56:00.000000Z",
+          "content_hash": "sha256:33892c4ec58c75fcd5b3a4abf32bececaabff42bffe9bf5daf82534d03077ad5",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "c388f3bd-9cb5-404b-8f73-d9af3ccd3b65",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Mette F. forsvarer Gade: Under lavmålet med anonym kritik",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/mette-f-forsvarer-soeren-gade-og-kritiserer-anonyme-politikere",
+          "published_at": "2026-10-06T13:59:15.000000Z",
+          "content_hash": "sha256:a248482f9314b8bd15b62a399e41a3d0d03387cd917dd60e634b97f7c590d67c",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:3500290e-d780-5046-afc4-0a004e0a38e8",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Troels Lund om kritisk portræt af Søren Gade: »Det er et ualmindeligt trist og svinsk portræt«",
+          "url": "https://www.berlingske.dk/politik/troels-lund-om-kritisk-portraet-af-soeren-gade-det-er-et-ualmindeligt-trist-og-svinsk-portraet",
+          "published_at": "2026-10-06T07:51:59.000000Z",
+          "content_hash": "sha256:75152f8bb8f25466871c7510308aa5f405dee1dbfc85c52d6f5ff6c02b2a2609",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:a19f5b57-0b35-5241-9dfb-f8706418eefc",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "JP-redaktør står »hundrede procent på mål« for kritiseret portræt. Nu er det rettet",
+          "url": "https://www.berlingske.dk/politik/jp-redaktoer-staar-hundrede-procent-paa-maal-for-kritiseret-portraet-nu-er-det-rettet",
+          "published_at": "2026-10-06T14:49:13.000000Z",
+          "content_hash": "sha256:65f3a3a30bd5cf544e9601e7a4fc46f95912d5b3e2093dd38bfa6a75e3676f06",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/politik/2026-10-06-svinsk-modbydeligt-og-paa-alle-maader-upassende-vildt-soeren-gade-portraet-faar-borgen-til-at-summe",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "'Svinsk', 'modbydeligt' og 'på alle måder upassende' – vildt Søren Gade-portræt får Borgen til at summe",
+          "url": "https://nyheder.tv2.dk/politik/2026-10-06-svinsk-modbydeligt-og-paa-alle-maader-upassende-vildt-soeren-gade-portraet-faar-borgen-til-at-summe",
+          "published_at": "2026-10-06T11:03:00.000000Z",
+          "content_hash": "sha256:c5cb1088a53f61f38ab7a57b3b1f81c1613bf16fb79e4aff8abab3a7f52eee34",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/politik/soren-gade-jeg-har-magtfulde-fjender-i-venstre",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Søren Gade: Jeg har magtfulde fjender i Venstre",
+          "url": "https://borsen.dk/nyheder/politik/soren-gade-jeg-har-magtfulde-fjender-i-venstre",
+          "published_at": "2026-10-06T08:04:46.000000Z",
+          "content_hash": "sha256:981d8b3e0c37287a228d080a03641c2d75c8b11af938348d7a7c08474055d7cc",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "hanning-arrested-spying",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Europe",
+      "copy": {
+        "headline": "Germany arrests a former spy chief on suspicion of treason",
+        "body": {
+          "standard": [
+            {
+              "text": "August Hanning, head of the BND, Germany's foreign intelligence service, from 1998 to 2005, was arrested on Tuesday on suspicion of spying against the German state, passing on state secrets and attempted treason. Germany's federal prosecutors say he also worked as an agent for a foreign intelligence service.",
+              "sources": [
+                "kristeligt_dagblad",
+                "guardian"
+              ]
+            },
+            {
+              "text": "A former department head under Hanning, who left the BND this spring, was arrested too. Prosecutors suspect he passed Hanning about 2,000 documents between 2010 and June 2022, which Hanning used to write a security analysis for a foreign service.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "A kidnapping attempt in South Jutland in 2022 put police on the case. Hanning is also accused of sending mercenaries to Denmark to abduct two children.",
+              "sources": [
+                "jp",
+                "berlingske"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "August Hanning, head of the BND, Germany's foreign intelligence service, from 1998 to 2005, was arrested on Tuesday on suspicion of spying and attempted treason. Federal prosecutors say a former subordinate passed him about 2,000 documents. A kidnapping attempt in South Jutland in 2022 put police on the case.",
+              "sources": [
+                "kristeligt_dagblad",
+                "guardian",
+                "jp"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Former German spy chief arrested",
+        "deck": "August Hanning ran the foreign intelligence service from 1998 to 2005; a kidnapping attempt in South Jutland put police on his trail."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "c8a1cf70-4fe7-4add-b3aa-993b703b091d",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Tidligere tysk efterretningschef anholdt i spionagesag",
+          "url": "https://www.kristeligt-dagblad.dk/udland/medier-tidligere-tysk-efterretningschef-anholdt-mistanke-om-spionage",
+          "published_at": "2026-10-06T08:55:49.000000Z",
+          "content_hash": "sha256:ce89e7f854daf1ecb2f34cda3248010a2b2381a81484ce4360b6020fe9ab799b",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "jp",
+          "source_id": "19711596",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Kidnapningssag fra Gråsten fik politiet på sporet: Nu er tidligere tysk efterretningschef anholdt og mistænkt for landsforræderi",
+          "url": "https://jyllands-posten.dk/international/europa/ECE19711596/anholdelse-af-tidligere-tysk-efterretningschef-traekker-traade-til-danmark/",
+          "published_at": "2026-10-06T16:00:00.000000Z",
+          "content_hash": "sha256:195152baa253f22a4e9735c66efec42c65114934d827acea783857aa507853a1",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:9d41f385-f7d2-5c19-908b-3b2f21e05eaf",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Først blev spionchefen anklaget for at bortføre børn i Danmark. Nu ryster han Tyskland igen",
+          "url": "https://www.berlingske.dk/internationalt/foerst-blev-spionchefen-anklaget-for-at-bortfoere-boern-i-danmark-nu-ryster-han-tyskland-igen",
+          "published_at": "2026-10-06T16:20:57.000000Z",
+          "content_hash": "sha256:d3f817a74689632606fb7b7b9982ee062942695c19fc76a67ae2ff13f682a2ca",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:d9df6283-1d12-4185-8e60-1591161b231a",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Tidligere tysk efterretningschef anholdt mistænkt for spionage",
+          "url": "https://www.dr.dk/nyheder/udland/tidligere-tysk-efterretningschef-anholdt-mistaenkt-spionage",
+          "published_at": "2026-10-06T09:48:11.000000Z",
+          "content_hash": "sha256:e7898b3c359e7681b590e724ecf8a29b079e33981e3f2deee515916d7fb8dc84",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/tidligere-tysk-efterretningschef-anholdt-i-spionagesag",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Tidligere tysk efterretningschef anholdt i spionagesag",
+          "url": "https://borsen.dk/nyheder/udland/tidligere-tysk-efterretningschef-anholdt-i-spionagesag",
+          "published_at": "2026-10-06T09:50:58.000000Z",
+          "content_hash": "sha256:dd2bf88d0ea0b8a64e377bcc70faca16892516689d7198f67eb29983f6405d65",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "c58jzyer1kr0o",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Former German spy chief arrested for espionage and treason",
+          "url": "https://www.bbc.co.uk/news/articles/c58jzyer1kr0o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-06T10:05:42.000000Z",
+          "content_hash": "sha256:1eda9c7b973b36f638fffab4685846abc4755756b8e2116e52dd5e0d7077da14",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "4c565931-6ac7-4b4c-be72-d86e8e3a8aec",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Former German spy chief arrested for treason",
+          "url": "https://www.ft.com/content/4c565931-6ac7-4b4c-be72-d86e8e3a8aec",
+          "published_at": "2026-10-06T10:34:25.000000Z",
+          "content_hash": "sha256:52acd14c5b29206cb75e5fe4d51d65bfbaba38a2bcb89a5f21268a5f11956426",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/06/germany-august-hanning-bnd-arrest-former-domestic-intelligence-chief",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Germany arrests former intelligence chief over alleged spying",
+          "url": "https://www.theguardian.com/world/2026/oct/06/germany-august-hanning-bnd-arrest-former-domestic-intelligence-chief",
+          "published_at": "2026-10-06T11:57:36.000000Z",
+          "content_hash": "sha256:802dbdacbe03480a349e1ea292b8bb362c6a030775a6e768d8c6332fede8befc",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/06/world/europe/germany-spy-chief-hanning-arrested-espionage.html",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "German Officials Arrest Former Spy Chief on Espionage Charges",
+          "url": "https://www.nytimes.com/2026/10/06/world/europe/germany-spy-chief-hanning-arrested-espionage.html",
+          "published_at": "2026-10-06T12:49:35.000000Z",
+          "content_hash": "sha256:6a59be515bb8e01d6ab10e73d06f66dca64bdaf24e4bd67dcfbd72201c7b0f12",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/06/world/europe/germany-spy-chief-henning-arrested-espionage.html",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "German Officials Arrest Former Spy Chief on Espionage Charges",
+          "url": "https://www.nytimes.com/2026/10/06/world/europe/germany-spy-chief-henning-arrested-espionage.html",
+          "published_at": "2026-10-06T09:35:39.000000Z",
+          "content_hash": "sha256:809cc09f229a43eb01d098da5dee58ea127f42503eb8d7ee5135d2a8c6c5968a",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/world/2026/10/06/germany-arrests-former-intelligence-chief-espionage-case/",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Germany arrests former intelligence chief in espionage case",
+          "url": "https://www.washingtonpost.com/world/2026/10/06/germany-arrests-former-intelligence-chief-espionage-case/",
+          "published_at": "2026-10-06T16:19:11.000000Z",
+          "content_hash": "sha256:95ffc281bccfd4a4b51a1b4112f9c4ac9592df7941f3968ade10d53a5e513de2",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003951981",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Former German Spy Chief Arrested on Suspicion of Espionage",
+          "url": "https://www.wsj.com/world/europe/former-german-spy-chief-arrested-on-suspicion-of-espionage-9e261c69?mod=rss_worldnews",
+          "published_at": "2026-10-06T15:01:00.000000Z",
+          "content_hash": "sha256:f5bf85dadbfe45fee38038669880a9ac2b9c475b0b83b94b64b295c18c3c5fee",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "folkeskole-900-million-2027",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Education",
+      "copy": {
+        "headline": "Government plans 900 million kroner for schools after historically weak test results",
+        "body": {
+          "standard": [
+            {
+              "text": "The government will set aside 900 million kroner for public schools in its 2027 budget proposal, four ministers told Politiken. Of that, 200 million goes to 100 schools where pupils do particularly badly in Danish and maths, 200 million to small rural schools and 500 million to schools generally.",
+              "sources": [
+                "kristeligt_dagblad",
+                "politiken",
+                "dr",
+                "borsen"
+              ]
+            },
+            {
+              "text": "It follows a Pisa survey, which about a month ago found 15-year-olds historically weak in science, maths and reading.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "The government wants more teachers, such as more lessons taught by two, but plans no pay rise. 'I personally think we should look elsewhere,' Mette Frederiksen, the prime minister, told DR.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Gordon Ørskov Madsen, chairman of the teachers' union, called it 'very positive'.",
+              "sources": [
+                "kristeligt_dagblad",
+                "via_ritzau"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "The government will set aside 900 million kroner for public schools in its 2027 budget proposal, four ministers told Politiken, 200 million of it for 100 schools where pupils do particularly badly in Danish and maths.",
+              "sources": [
+                "kristeligt_dagblad",
+                "politiken",
+                "dr",
+                "borsen"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Government plans 900 million kroner for schools",
+        "deck": "200 million kroner goes to 100 schools where pupils lag in Danish and maths; there are no plans for a teacher pay rise."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "2b208add-5af9-4b61-a8be-fa74e2349c9d",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Regeringen vil afsætte 200 millioner til indsats på 100 udvalgte skoler",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/regeringen-vil-afsaette-200-millioner-til-indsats-paa-100-udvalgte-skoler",
+          "published_at": "2026-10-06T19:31:59.000000Z",
+          "content_hash": "sha256:bf62a5f84be75f64f2da2f9795cae1d256137a6046026e6cd3216be8067b87b6",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "politiken",
+          "source_id": "11007533",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Regeringen vil sende stort millionbeløb til folkeskolen",
+          "url": "https://politiken.dk/danmark/uddannelse/art11007533/Regeringen-vil-sende-stort-millionbel%C3%B8b-til-folkeskolen",
+          "published_at": "2026-10-06T19:14:24.000000Z",
+          "content_hash": "sha256:45644a64f86125a53b62e3b6394e7548b0c735161785a4d38f33e29d407af70c",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/politik/regeringen-vil-afsaette-200-mio-til-indsats-pa-100-udvalgte-skoler",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Regeringen vil afsætte 200 mio. til indsats på 100 udvalgte skoler",
+          "url": "https://borsen.dk/nyheder/politik/regeringen-vil-afsaette-200-mio-til-indsats-pa-100-udvalgte-skoler",
+          "published_at": "2026-10-06T20:34:42.000000Z",
+          "content_hash": "sha256:dff988d5a43854e97f7c37f0f0f62c7952e752838fef01070e47c06a42a0c719",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:4730c61f-ed18-454b-bf0e-98ac48217b86",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Regeringen vil afsætte 200 millioner til indsats på 100 udvalgte skoler",
+          "url": "https://www.dr.dk/nyheder/politik/regeringen-vil-afsaette-200-millioner-til-indsats-paa-100-udvalgte-skoler",
+          "published_at": "2026-10-06T19:52:15.000000Z",
+          "content_hash": "sha256:855aa78b6f597fc2ee52f3043253fa8b5219d6c5e60beab39bac2533a05d02d0",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15211224/?publisherId=90383&lang=da",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Investeringer i folkeskolen på vej med finanslovsforslag",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15211224/investeringer-i-folkeskolen-pa-vej-med-finanslovsforslag?lang=da",
+          "published_at": "2026-10-06T19:19:46.000000Z",
+          "content_hash": "sha256:ede704e3377aae268938255b76098cf26e63e6bbd6414d498cc5ea9a283b0995",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "frandsen-elected-speaker",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Danish parliament elects a speaker criticised over a 2019 land sale",
+        "body": {},
+        "lede": {
+          "text": "The Folketing, Denmark's parliament, elected Henrik Frandsen of the Moderates, a liberal party founded by Lars Løkke Rasmussen, a former prime minister, as its speaker on Tuesday despite criticism over a 2019 land sale.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "8854090e-f80c-489e-a5d7-32cde8bc1771",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Folketinget vælger Henrik Frandsen som formand efter kritik",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/folketinget-vaelger-henrik-frandsen-som-formand-efter-kritik",
+          "published_at": "2026-10-06T10:07:00.000000Z",
+          "content_hash": "sha256:72ca11a641b2612a1d33d91a00d29969b4d71f562afc33812cc35e897b2beffa",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "1b4e6119-a7b5-4a62-a263-fe5075cd081d",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Alternativet siger nej til Henrik Frandsen som Folketingets formand",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/alternativet-afviser-henrik-frandsen-som-folketingets-formand",
+          "published_at": "2026-10-06T04:48:12.000000Z",
+          "content_hash": "sha256:7984a1df989f9241676527f941a53c298ae4900496499a685509360c33e815b2",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:02b9fde9-5208-4318-9f79-43f5e9605a6c",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Folketinget vælger Henrik Frandsen som formand efter kritik",
+          "url": "https://www.dr.dk/nyheder/politik/folketinget-vaelger-henrik-frandsen-som-formand-efter-kritik",
+          "published_at": "2026-10-06T10:41:45.000000Z",
+          "content_hash": "sha256:f6136fd3d828c81e0df8b4db54e16e8f386748ad21bf6d2c7182e4159f4e1c70",
+          "primary": false
+        },
+        {
+          "source": "altinget",
+          "source_id": "https://www.altinget.dk/kommunal/artikel/alternativet-traekker-stoetten-til-henrik-frandsen-foer-aabning",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Alternativet trækker støtten til Henrik Frandsen som ny folketingsformand",
+          "url": "https://www.altinget.dk/kommunal/artikel/alternativet-traekker-stoetten-til-henrik-frandsen-foer-aabning",
+          "published_at": "2026-10-06T05:19:00.000000Z",
+          "content_hash": "sha256:534ca9e2fa5182a3e920dea5601ca4bd07f14dc00cf06d2715985dbb7f6421c5",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "kaershovedgaard-prison-unit",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Government plans prison unit beside centre for foreigners who refuse to leave Denmark",
+        "body": {},
+        "lede": {
+          "text": "The government plans a prison unit beside Kærshovedgård, a centre for foreigners refusing to leave Denmark, for residents jailed for offences such as breaking reporting rules, Mette Frederiksen, the prime minister, said on Tuesday.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "b1dae7db-d578-42cf-a96e-71e95fa0cbd7",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Regeringen vil lave fængsel tilknyttet Kærshovedgård",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/regeringen-vil-lave-faengsel-tilknyttet-kaershovedgaard",
+          "published_at": "2026-10-06T10:40:03.000000Z",
+          "content_hash": "sha256:ee3a65b2909e2628642ad08e622b396493dfe2b08131b6244ff011a182bb55b0",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "jp",
+          "source_id": "19708697",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Beboere på udrejsecenter springer over hegnet 40 gange i døgnet: Minister lover konkret handling",
+          "url": "https://jyllands-posten.dk/indland/ECE19708697/40-gange-i-doegnet-hopper-beboere-paa-kaershovedgaard-over-hegnet/",
+          "published_at": "2026-10-06T17:00:00.000000Z",
+          "content_hash": "sha256:81b1dc02b185f7338fdef3b22bc4c3d8968a5f1c2957d997640ebe785fada206",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:8b638f74-dc94-56f1-9b8e-ec269c9f77ca",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Regeringen vil lave fængsel tilknyttet Kærshovedgård",
+          "url": "https://www.berlingske.dk/politik/regeringen-vil-lave-faengsel-tilknyttet-kaershovedgaard",
+          "published_at": "2026-10-06T10:48:46.000000Z",
+          "content_hash": "sha256:eadd089f8afd1f555b0f0f5e274661b79b00fbdd8c1361e0836f10550277e095",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "legislative-programme-2026-27",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Government plans higher early pension and a phone ban in schools",
+        "body": {},
+        "lede": {
+          "text": "The government's legislative programme, published on Tuesday, sets out a 3,000-kroner monthly rise in the early-retirement pension, a mobile-phone ban in schools and the return of Great Prayer Day, a public holiday, from 2030.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "30b31263-21b2-4e03-8e9c-90be4c2198e5",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Regeringen tager fat på USA-aftale og forhøjet Arnepension",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/regeringen-tager-fat-paa-arne-pensionen-i-aar-og-bededag-i-2027",
+          "published_at": "2026-10-06T10:28:51.000000Z",
+          "content_hash": "sha256:397466b2b95d93ea1330038c6e24a5114248e15fb7aebf76688fae9b07bf4478",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:7b5fc11e-95cd-564f-b18a-929bfdbc46eb",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Få overblikket: Her er regeringens planer for det kommende år",
+          "url": "https://www.berlingske.dk/politik/faa-overblikket-her-er-regeringens-planer-for-det-kommende-aar",
+          "published_at": "2026-10-06T11:03:17.000000Z",
+          "content_hash": "sha256:ab5d030f5d214fc75adc67bd192b28332b6a73f5833d3e91e47602783a45f8da",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "frederiksen-defends-su-cut",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Welfare",
+      "copy": {
+        "headline": "Frederiksen defends ending student grants for 81,000 young people living at home",
+        "body": {},
+        "lede": {
+          "text": "Mette Frederiksen, the prime minister, defended her government's plan to stop SU, the state student grant, for 81,000 young people living at home, saying most 'can easily have a part-time job'.",
+          "sources": [
+            "altinget",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "altinget",
+          "source_id": "https://www.altinget.dk/uddannelse/artikel/mette-frederiksen-ser-ingen-problemer-i-su-beskaering-langt-de-fleste-unge-kan-sagtens-have-et-fritidsjob",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Mette Frederiksen ser ingen problemer i SU-beskæring: \"Langt de fleste unge kan sagtens have et fritidsjob\"",
+          "url": "https://www.altinget.dk/uddannelse/artikel/mette-frederiksen-ser-ingen-problemer-i-su-beskaering-langt-de-fleste-unge-kan-sagtens-have-et-fritidsjob",
+          "published_at": "2026-10-07T00:00:00.000000Z",
+          "content_hash": "sha256:c7718ec54416d7f730ca06548d9c7933fbee1ef39c8ace1b8076bea2fa525c0e",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:reel:0c47cd1d-b045-499f-9bb4-6ee6799d5ca0",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Mette F. om SU-besparelser: De har godt af et fritidsjob",
+          "url": "https://www.dr.dk/nyheder/politik/reels/mette-f-om-su-besparelser-de-har-godt-af-et-fritidsjob",
+          "published_at": "2026-10-06T20:25:49.000000Z",
+          "content_hash": "sha256:267699386872e4ba51a30f0d3bee4b5a319ebe4c416b6e88f02c7a2bb60abc8b",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "fewer-owe-public-debt",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Economy",
+      "copy": {
+        "headline": "Almost half a million fewer people owe money to the public sector",
+        "body": {},
+        "lede": {
+          "text": "The number of people with debts to the public sector has fallen from more than 1.1 million in 2023 to 687,000, according to Gældsstyrelsen, the public debt-collection agency.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "f3219da4-3611-442e-88be-e0ef36d59d93",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Knap en halv million færre har gæld til det offentlige",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/knap-en-halv-million-faerre-har-gaeld-til-det-offentlige",
+          "published_at": "2026-10-07T03:00:02.000000Z",
+          "content_hash": "sha256:24a23c5a164a7117bd2abcb2bc2f892cd9a43f4c73fc5f8a0b9c3ab99eedfe17",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:58b0c1e4-7422-5bcd-ab73-caa3390a75be",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Knap en halv million færre har gæld til det offentlige",
+          "url": "https://www.berlingske.dk/danmark/knap-en-halv-million-faerre-har-gaeld-til-det-offentlige",
+          "published_at": "2026-10-07T03:02:44.000000Z",
+          "content_hash": "sha256:990110cebf1bff5e752329750a7d5e0f0911ad8fd08f6f66d5e168320ccba6d3",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "mobilepay-renamed-vipps",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Business",
+      "copy": {
+        "headline": "MobilePay to be renamed Vipps in January",
+        "body": {},
+        "lede": {
+          "text": "MobilePay, the payment app used by almost 4.7 million Danes, is renamed Vipps on 12 January 2027, after the Norwegian app it joined in 2022; its owner says the app will work as before.",
+          "sources": [
+            "kristeligt_dagblad",
+            "borsen",
+            "dr",
+            "via_ritzau"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "8f0afc49-68cf-48dd-b6fe-fb16a08b95ea",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "MobilePay skifter navn og logo",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/mobilepay-skifter-navn-og-logo",
+          "published_at": "2026-10-06T05:57:18.000000Z",
+          "content_hash": "sha256:e30affbdcff2a80dd91bd4cb962fd0fe785171133a2083c276243796f7d2dc92",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/finans/mobilepay-skifter-navn",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Mobilepay skifter navn",
+          "url": "https://borsen.dk/nyheder/finans/mobilepay-skifter-navn",
+          "published_at": "2026-10-06T05:28:13.000000Z",
+          "content_hash": "sha256:e59b98266bfc74239e601fa5150876b2cfd9c8a1fe26eb3dea8885a3afb76baa",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:a19547b3-7ce5-4d04-a956-17b79905a06d",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "MobilePay ofrer 'et af Danmarks stærkeste hverdagsbrands': En helt vild øvelse",
+          "url": "https://www.dr.dk/nyheder/indland/mobilepay-ofrer-et-af-danmarks-staerkeste-hverdagsbrands-en-helt-vild-oevelse",
+          "published_at": "2026-10-06T12:15:00.000000Z",
+          "content_hash": "sha256:617e7532accdd395e9fd51d47229637c027650476ee2fed4fcd074dc49fee898",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15208954/?publisherId=13563025&lang=da",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "MobilePay bliver til Vipps",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15208954/mobilepay-bliver-til-vipps?lang=da",
+          "published_at": "2026-10-06T05:00:00.000000Z",
+          "content_hash": "sha256:174ded24a7ed50474f13a5690d9304b88a384142a33021fb1d67698419b86611",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "genmab-lymphoma-shares-rise",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Business",
+      "copy": {
+        "headline": "Genmab shares rise 8 per cent after lymphoma drug trial",
+        "body": {},
+        "lede": {
+          "text": "Shares in Genmab, a Danish cancer-drug maker, rose 8 per cent on Tuesday after Epkinly plus chemotherapy cut some lymphoma patients' risk of worsening by 51 per cent against traditional chemotherapy in a trial.",
+          "sources": [
+            "kristeligt_dagblad",
+            "borsen",
+            "wsj"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "d72e55e4-0019-434d-9f5f-77bb97f00546",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Genmab-aktien stiger otte procent efter nye kræftdata",
+          "url": "https://www.kristeligt-dagblad.dk/genmab-aktien-stiger-otte-procent-efter-nye-kraeftdata",
+          "published_at": "2026-10-06T09:47:07.000000Z",
+          "content_hash": "sha256:9ed410b2696107d72742e320c64c2f90b69617a4e37313a5e1c02b080d5ebf85",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/marketreports/genmab-storroses-af-analytikere-og-brager-frem-sadan-abner-c25",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Genmab storroses af analytikere og brager frem – sådan åbner C25",
+          "url": "https://borsen.dk/nyheder/marketreports/genmab-storroses-af-analytikere-og-brager-frem-sadan-abner-c25",
+          "published_at": "2026-10-06T07:11:09.000000Z",
+          "content_hash": "sha256:b01c7d60c2eb88eb98bf0e65a1e3e2ee4c9c4695b1e584243889bccd5d1f1cfe",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003951853",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Genmab Shares Climb After Positive Study Results for Blood-Cancer Drug",
+          "url": "https://www.wsj.com/health/pharma/genmab-shares-climb-after-positive-study-results-for-blood-cancer-drug-c444693f?mod=rss_Technology",
+          "published_at": "2026-10-06T08:35:00.000000Z",
+          "content_hash": "sha256:7337eb9f29a12383624d4ca88143b1b153c8974574672fac497f4af5c541a476",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "red-bull-influencer-complaint",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Consumer group accuses Red Bull of marketing energy drinks to children through an influencer",
+        "body": {},
+        "lede": {
+          "text": "Forbrugerrådet Tænk, a Danish consumer organisation, has asked the Consumer Ombudsman to rule whether Red Bull's promotion with Rasmus Søndergaard, an influencer, breaks the ban on marketing energy drinks to under-18s.",
+          "sources": [
+            "kristeligt_dagblad",
+            "via_ritzau",
+            "dr",
+            "tv2"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "960b349a-47c3-4721-854e-1ac6c3b034ad",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Forbrugerråd klager over Red Bulls reklamering på influencers platforme",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/forbrugerraad-klager-over-red-bulls-reklamering-paa-influencers-platforme",
+          "published_at": "2026-10-06T07:30:27.000000Z",
+          "content_hash": "sha256:c99192096f1c012f808c0954a8246ece878cde2962d303c2f4cdaa57f02f15ef",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:ee657f0e-018c-4e02-a50a-d26dd275f454",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Forbrugerråd anmelder populær kreatørs indhold - alkohol og Red Bull er uegnet for børn",
+          "url": "https://www.dr.dk/nyheder/indland/forbrugerraad-anmelder-populaer-kreatoers-indhold-alkohol-og-red-bull-er-uegnet-boern",
+          "published_at": "2026-10-06T05:00:00.000000Z",
+          "content_hash": "sha256:8edaa48d61f5aea5178bb8264909053f74d4e465621121c8af1bd85d115b1f08",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/samfund/2026-10-06-influencer-anklages-for-den-stoerste-overtraedelse-af-markedsfoeringsloven",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Influencer anklages for \"den største overtrædelse af markedsføringsloven\"",
+          "url": "https://nyheder.tv2.dk/samfund/2026-10-06-influencer-anklages-for-den-stoerste-overtraedelse-af-markedsfoeringsloven",
+          "published_at": "2026-10-06T07:01:04.000000Z",
+          "content_hash": "sha256:7151ba50288a2872553fd8c4386ff279e9f35e28acab0aba83b4147895ccebb6",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15206182/?publisherId=13563189&lang=da",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Forbrugerrådet Tænk klager over Red Bulls samarbejde med influenceren Rasmus Søndergaard",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15206182/forbrugerradet-taenk-klager-over-red-bulls-samarbejde-med-influenceren-rasmus-sondergaard?lang=da",
+          "published_at": "2026-10-06T05:30:00.000000Z",
+          "content_hash": "sha256:d3bdca34d1dc287387370536486da9dd14174cb7922bba3557b6130bdea57f81",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "fdm-two-car-seats-warning",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Two child car seats fail crash test, Danish car owners' group says",
+        "body": {},
+        "lede": {
+          "text": "FDM, a Danish organisation for car owners, warned on Tuesday against buying or using two child car seats, the Britax Römer Baby-Safe Pro and Axkid Minikid Core, whose harnesses failed a crash test.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr",
+            "via_ritzau"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "23fda7d8-ba4d-4691-9e9b-99e784484935",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "FDM advarer mod to autostole med livsfarlige fejl",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/fdm-advarer-mod-autostole-med-livsfarlige-fejl",
+          "published_at": "2026-10-06T07:38:05.000000Z",
+          "content_hash": "sha256:1884cfda4c6f1e2e3fda077aac34313cc609f19bfb23086062f1cc27c729e448",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:e2b6366b-eabb-4173-99bc-c098688776b6",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "FDM advarer mod to 'livsfarlige' autostole",
+          "url": "https://www.dr.dk/nyheder/indland/fdm-advarer-mod-livsfarlige-autostole",
+          "published_at": "2026-10-06T08:06:56.000000Z",
+          "content_hash": "sha256:e5ae40b693ee00eaa93f98c54b86187c9b3b2bb885a84a43d16fed59a60c3092",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15207571/?publisherId=13562168&lang=da",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "FDM advarer mod to autostole – de er livsfarlige",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15207571/fdm-advarer-mod-to-autostole-de-er-livsfarlige?lang=da",
+          "published_at": "2026-10-06T06:55:03.000000Z",
+          "content_hash": "sha256:a3c37952ef6b2e1ac9c31eb76306edc866697173b8ec99c7c7b7adf792ac2178",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "region-rejects-lgbtq-handbook",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Health",
+      "copy": {
+        "headline": "Danish region halts LGBTQ+ handbook for health staff",
+        "body": {},
+        "lede": {
+          "text": "The Region of Southern Denmark's executive committee on Monday withheld approval of an LGBTQ+ handbook for health staff; Bo Libergren, the regional council's chairman, wants its language to start from 'two genders'.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "bf4776db-043a-4267-b691-da1a973ba863",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Regionsudvalg forkaster LGBT-håndbog: Der er kun to køn",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/regionsudvalg-forkaster-lgbt-haandbog-der-er-kun-koen",
+          "published_at": "2026-10-06T09:05:25.000000Z",
+          "content_hash": "sha256:0eba8492208d70d7458ef201d6b1771f07247be703d236541968589a8ade3588",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:61b85df1-9396-4bf0-8ab4-b511c4bb3c9b",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "LGBTQ+-håndbog afvist: 'Der er kun to køn'",
+          "url": "https://www.dr.dk/nyheder/indland/lgbtq-haandbog-til-afvist-der-er-kun-koen",
+          "published_at": "2026-10-06T08:32:00.000000Z",
+          "content_hash": "sha256:13c40e4c12ba4b8efcc850ad8d42768e39bd4d34ad29205e2fc526cce58b5627",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:ffed567c-e179-5c6b-b60d-7199ed39b9ed",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Regionsudvalg forkaster LGBT-håndbog: Der er kun to køn",
+          "url": "https://www.berlingske.dk/danmark/regionsudvalg-forkaster-lgbt-haandbog-der-er-kun-to-koen",
+          "published_at": "2026-10-06T09:53:45.000000Z",
+          "content_hash": "sha256:a314c551a1f6d656151095a7bc7b5574749ce5f9ec517b65f0ae06cdd19c64e9",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "hammerum-suspect-arrested",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "Police arrest man wanted over fatal stabbing",
+        "body": {},
+        "lede": {
+          "text": "Acting on a tip, police on Tuesday arrested a 43-year-old man they had named publicly as the suspect in Monday evening's fatal stabbing of a 57-year-old man in Hammerum, between Herning and Ikast.",
+          "sources": [
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "4de703b1-9951-4120-928f-bafaf507cf01",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Efterlyst mand med sår på halsen anholdt for drab",
+          "url": "https://www.kristeligt-dagblad.dk/efterlyst-mand-med-saar-paa-halsen-anholdt-drab",
+          "published_at": "2026-10-06T14:49:23.000000Z",
+          "content_hash": "sha256:a074bd8314ff097abe6e79df744e91d4d29ae53aefca8227ecfce9d8cd718722",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "4c5a4f8e-3c0d-41ef-b2e6-2b1f34144c8e",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Politiet mistænker 43-årig med sår på halsen for knivdrab",
+          "url": "https://www.kristeligt-dagblad.dk/politiet-mistaenker-43-aarig-med-saar-paa-halsen-knivdrab",
+          "published_at": "2026-10-06T13:03:07.000000Z",
+          "content_hash": "sha256:9ae3a83b6822f7ed80da1962a3e75b53b3e5615f70110509f0769792b800e9ba",
+          "primary": false,
+          "wire": "ritzau"
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "lise-svanholm-dies",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Obituary",
+      "copy": {
+        "headline": "Art historian Lise Svanholm dies at 94",
+        "body": {},
+        "lede": {
+          "text": "Lise Svanholm, an art historian who wrote several books on the Skagen painters, a community of artists in the northernmost part of Denmark, died of pneumonia on 30 September, aged 94.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "0f8427dc-3e45-4b21-9b2e-6711ef1c6789",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Kunsthistoriker Lise Svanholm er død - 94 år",
+          "url": "https://www.kristeligt-dagblad.dk/kultur/kunsthistoriker-lise-svanholm-er-doed-94-aar",
+          "published_at": "2026-10-06T12:56:41.000000Z",
+          "content_hash": "sha256:e6b6ea810fc234a9d291d2223e78ad421de8184f8d007bcc61d152b15ce3a1d8",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:a0eee0ac-488f-5c57-9edf-5196ecdeb879",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Kunsthistoriker Lise Svanholm er død - 94 år",
+          "url": "https://www.berlingske.dk/danmark/kunsthistoriker-lise-svanholm-er-doed-94-aar",
+          "published_at": "2026-10-06T13:42:45.000000Z",
+          "content_hash": "sha256:975c23a0590c92f62839b110004d11ac042751b561717884d2a4876cd0b8d6ec",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "sweden-patriot-to-poland",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Nordics",
+      "copy": {
+        "headline": "Sweden to send Patriot air defences to guard a Ukraine arms hub in Poland",
+        "body": {},
+        "lede": {
+          "text": "In December Sweden will send its Patriot air defence system to protect the airport at Rzeszów, in eastern Poland, through which weapons are shipped to Ukraine.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "9d18b5c4-d8ee-492a-b1e2-6637db3654af",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Sverige vil sende luftforsvar til Polen",
+          "url": "https://www.kristeligt-dagblad.dk/udland/sverige-vil-sende-luftforsvar-til-polen",
+          "published_at": "2026-10-06T12:35:05.000000Z",
+          "content_hash": "sha256:929093a596741e41181773a07fd98ab18fe36ff40cb96d674b9e6e5d871421f3",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:c0b77310-ec1c-4906-8484-718e54cf34a7",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Sverige sender bidrag til at forsvare Natos østlige grænse",
+          "url": "https://www.dr.dk/nyheder/udland/sverige-sender-bidrag-til-forsvare-natos-oestlige-graense",
+          "published_at": "2026-10-06T12:22:48.000000Z",
+          "content_hash": "sha256:ac8cd1e5bb964b97f067340e99b521bea42f9d970cc0f9742bf7e0b9f596bca2",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:8ab4ae26-a0b4-5416-b188-3624a2d3019e",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Sverige leverer luftforsvarssystem til Polen: »Voldsomt opgør med egen fortid,« siger korrespondent",
+          "url": "https://www.berlingske.dk/internationalt/sverige-leverer-luftforsvarssystem-til-polen-voldsomt-opgoer-med-egen-fortid-siger-korrespondent",
+          "published_at": "2026-10-06T14:41:34.000000Z",
+          "content_hash": "sha256:588f6eddf14ca902bfd9baff8e7814a71bef31c609110131e9ce1476d10691e2",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "france-school-protests-250000",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Europe",
+      "copy": {
+        "headline": "More than 250,000 join school protests across France",
+        "body": {},
+        "lede": {
+          "text": "More than 250,000 pupils, teachers and parents marched across France on Tuesday against teacher shortages, worn-out buildings and long school days, and police fired tear gas in Paris and Marseille.",
+          "sources": [
+            "politiken",
+            "berlingske",
+            "guardian",
+            "bbc"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "6e43aef8-f0db-41bb-a5a8-c8af53b59e79",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "86.000 elever deltager i protester i Frankrig",
+          "url": "https://www.kristeligt-dagblad.dk/udland/86000-elever-deltager-i-protester-i-frankrig",
+          "published_at": "2026-10-06T11:44:55.000000Z",
+          "content_hash": "sha256:3c790307c5079227edb8e6e5d0b8e4a7a60056fd29a1eafa8f24cbd68f7117dc",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "politiken",
+          "source_id": "11009136",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Flere end 250.000 på gaden for at demonstrere for gymnasieelevernes krav",
+          "url": "https://politiken.dk/internationalt/art11009136/Flere-end-250.000-p%C3%A5-gaden-for-at-demonstrere-for-gymnasieelevernes-krav",
+          "published_at": "2026-10-06T15:34:43.000000Z",
+          "content_hash": "sha256:0d776125978b4b577192e58096923724c9ae777adc34fff3e62c4720e1ce89a0",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:f918373c-8a29-517b-aed8-8b15e9ec7c6f",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "En kvart million estimeres at deltage i skole-protester i Frankrig",
+          "url": "https://www.berlingske.dk/internationalt/en-kvart-million-estimeres-at-deltage-i-skole-protester-i-frankrig",
+          "published_at": "2026-10-06T15:22:47.000000Z",
+          "content_hash": "sha256:fdc1556ab74e85fe7b4879f4f4e442b41d894a464e4d54e5446ae07dd208a8a2",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19713079",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Her er 5 ting, du skal vide om de voldsomme protester i Frankrig",
+          "url": "https://jyllands-posten.dk/international/europa/ECE19713079/forstaa-protesterne-i-frankrig-paa-3-minutter/",
+          "published_at": "2026-10-06T18:45:00.000000Z",
+          "content_hash": "sha256:bada292639fe9eb7d713617738d11f029fe59898929f1f661f6edd5d39c2ded7",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/06/protests-schools-blockade-streets-france",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Riot police fire teargas as 250,000 take part in schools protests across France",
+          "url": "https://www.theguardian.com/world/2026/oct/06/protests-schools-blockade-streets-france",
+          "published_at": "2026-10-06T17:39:16.000000Z",
+          "content_hash": "sha256:6e204e6f91ebc01c3946eb40c96c26a36047054fae99b4e7b88e349a0eb2e1f1",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "c8x23706pvz3o",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Tear gas in Paris and Marseille as school protests grow across France",
+          "url": "https://www.bbc.co.uk/news/articles/c8x23706pvz3o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-06T18:03:19.000000Z",
+          "content_hash": "sha256:3b19df2cc81e4991ca737a9e1215827f2ae9de37204088158a6b19612a3923e2",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cwm26078pkepo",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Watch: Riot police clash with school protesters and use tear gas in France",
+          "url": "https://www.bbc.co.uk/news/videos/cwm26078pkepo?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-06T21:22:22.000000Z",
+          "content_hash": "sha256:f90ef3dd6fd161cdc7a920dbbbb591c612c1dcae1bd166185549acd9bc5aa233",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cr4g1q1elxnjo",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Mass school protests begin in France after days of clashes",
+          "url": "https://www.bbc.co.uk/news/articles/cr4g1q1elxnjo?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-06T08:39:09.000000Z",
+          "content_hash": "sha256:210cda7ec88545e28958443b7d7625b9fc809c7aabd22334017c1f8ddd2a8b60",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/live/2026/oct/06/europe-french-school-protests-paris-germany-afd-bulgaria-drones-russia-ukraine-latest-news-updates",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Clashes in France as tens of thousands join school protests and Paris braces for main march – Europe live",
+          "url": "https://www.theguardian.com/world/live/2026/oct/06/europe-french-school-protests-paris-germany-afd-bulgaria-drones-russia-ukraine-latest-news-updates",
+          "published_at": "2026-10-06T12:24:57.000000Z",
+          "content_hash": "sha256:574e442c8d1aa5a27781361316f40ea380091ceddb8b6bb7ea01f3d59c3b06bb",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/06/french-student-protests-barricades-paris-police",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "‘This is state violence’: Paris students rage at politicians and heavy-handed policing",
+          "url": "https://www.theguardian.com/world/2026/oct/06/french-student-protests-barricades-paris-police",
+          "published_at": "2026-10-06T16:23:12.000000Z",
+          "content_hash": "sha256:ebb22761cd69effc9fbb3a1ba3cd55177bb358bcfeb659efdc858d799ef35589",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/06/world/europe/france-student-strikes-protests.html",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Protests Spread Across France, Growing From School Demonstrations",
+          "url": "https://www.nytimes.com/2026/10/06/world/europe/france-student-strikes-protests.html",
+          "published_at": "2026-10-06T15:32:25.000000Z",
+          "content_hash": "sha256:eec3bb8ef68152930bd4ebfc92b54767b368e94c223fb2f4a8c0c6e1d490b3a6",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/world/2026/10/06/protests-sweep-france-closing-schools-student-walkouts-escalate/",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Protests sweep France, as student walkouts tap into public discontent",
+          "url": "https://www.washingtonpost.com/world/2026/10/06/protests-sweep-france-closing-schools-student-walkouts-escalate/",
+          "published_at": "2026-10-06T19:00:29.000000Z",
+          "content_hash": "sha256:444e098ef46cbf9ecaee2a39a8be2076a1a94089dd621520d48bc3911947e0cb",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/06/world/europe/france-protests-social-welfare-election.html",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "France Student Protests Escalate Amid Fiscal Crisis and an Election",
+          "url": "https://www.nytimes.com/2026/10/06/world/europe/france-protests-social-welfare-election.html",
+          "published_at": "2026-10-06T17:37:07.000000Z",
+          "content_hash": "sha256:f91b8674326e1c9c737d82fdb7bbf574347a0f5477cbd712b9a62a3243b7bdba",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/06/world/europe/france-crisis-autumn-discontent.html",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Strikes, Barricades and Fiscal Turmoil: An Autumn of Discontent Grips France",
+          "url": "https://www.nytimes.com/2026/10/06/world/europe/france-crisis-autumn-discontent.html",
+          "published_at": "2026-10-06T17:37:07.000000Z",
+          "content_hash": "sha256:a1ebb525b3204af7849b705dcae36f222a00e18a6fcd80b6bbbaa432a7d033da",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/live/2026/10/06/world/france-protests-students-schools",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Student Protests Expand to More Than 40 French Cities",
+          "url": "https://www.nytimes.com/live/2026/10/06/world/france-protests-students-schools",
+          "published_at": "2026-10-07T03:04:10.000000Z",
+          "content_hash": "sha256:db0e0b4462e192b143255640aa98648d06c695bdaa6f939aeb3f20acba8af53d",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/06/world/europe/french-student-protest-unions-college.html",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "People of All Ages Join French Student Protests, as Movement Broadens",
+          "url": "https://www.nytimes.com/2026/10/06/world/europe/french-student-protest-unions-college.html",
+          "published_at": "2026-10-07T03:04:08.000000Z",
+          "content_hash": "sha256:3319e8a15dcea349c4b05e5e127c1ef6edd1feec7317dbdded3e4d52ffa66ead",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "afd-first-state-speaker",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Europe",
+      "copy": {
+        "headline": "German far right wins a state parliament's speakership for the first time since 1945",
+        "body": {},
+        "lede": {
+          "text": "Tobias Rausch of the AfD, a far-right party, became speaker of the parliament of Saxony-Anhalt, a state in eastern Germany, on Tuesday, winning 48 votes to 29.",
+          "sources": [
+            "kristeligt_dagblad",
+            "guardian"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "2fdee3dd-d284-4216-bd74-584636f6318f",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "AfD får sin første parlamentsformand i en tysk delstat",
+          "url": "https://www.kristeligt-dagblad.dk/udland/afd-faar-sin-foerste-parlamentsformand-i-en-tysk-delstat",
+          "published_at": "2026-10-06T11:09:29.000000Z",
+          "content_hash": "sha256:f8e0fe6811ae456e04412e1889f6e194e9216166303c2108225ea45ee47aebc4",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:fa4d94f6-ffac-4280-9d37-3702d6e67f96",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "For første gang nogensinde: AfD-medlem valgt som formand for parlament i tysk delstat",
+          "url": "https://www.dr.dk/nyheder/udland/foerste-gang-nogensinde-afd-medlem-valgt-som-formand-parlament-i-tysk-delstat",
+          "published_at": "2026-10-06T12:29:04.000000Z",
+          "content_hash": "sha256:0a322d70339c4c9cfb0c5da25ad0bd0875b9e95ba92a75dd09cc7e01e3fca979",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "c54g1m2g1pg3o",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "AfD candidate elected speaker of German regional parliament for first time",
+          "url": "https://www.bbc.co.uk/news/articles/c54g1m2g1pg3o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-06T14:44:03.000000Z",
+          "content_hash": "sha256:2232b49e06f1924fb97554174971aa3590988667ef61f28f3030a86028b547cb",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "76db879a-2c53-4aee-8354-b30185f1d3a4",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "German far right secures first regional parliament president",
+          "url": "https://www.ft.com/content/76db879a-2c53-4aee-8354-b30185f1d3a4",
+          "published_at": "2026-10-06T18:10:25.000000Z",
+          "content_hash": "sha256:a989199e5d64dffec672a2bdfae25abd8c2ba8b287680899d0bea1e8387b45f3",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/06/germany-afd-first-far-right-tobias-rausch-speaker-since-war",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "State parliament elects Germany’s first far-right speaker since second world war",
+          "url": "https://www.theguardian.com/world/2026/oct/06/germany-afd-first-far-right-tobias-rausch-speaker-since-war",
+          "published_at": "2026-10-06T15:38:58.000000Z",
+          "content_hash": "sha256:bde70fff4471a442d3239666dad783200e4f7f40b78af6d7b84943587106002d",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/06/world/europe/germany-afd-saxony-anhalt.html",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Germany’s Far Right Claims Its First Statehouse Speaker Since 1945",
+          "url": "https://www.nytimes.com/2026/10/06/world/europe/germany-afd-saxony-anhalt.html",
+          "published_at": "2026-10-06T15:54:36.000000Z",
+          "content_hash": "sha256:4e593564f176368e04513edabda61a4cdaf4c2af2a2544de7d40b729fa5ea792",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "black-sea-ships-hit-off-bulgaria",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Drones hit two ships off Bulgaria and sink one",
+        "body": {},
+        "lede": {
+          "text": "Drones hit two cargo ships off Bulgaria in the Black Sea on Tuesday, sinking one and leaving its crew missing; Bulgaria is investigating where they came from, and Ukraine's Volodymyr Zelenskyy blames Russia.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr",
+            "bbc",
+            "nytimes",
+            "guardian"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "e42400a0-f2c4-465b-8a11-6569c8694cc2",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Drone rammer skib i Sortehavet - besætning savnes",
+          "url": "https://www.kristeligt-dagblad.dk/udland/droner-rammer-skibe-ud-bulgarien-redningsoperation-i-gang",
+          "published_at": "2026-10-06T08:25:21.000000Z",
+          "content_hash": "sha256:5c95868f02be013583ded194c63c79c4b006d36a0a2bff4349b5bb6764425ee9",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "politiken",
+          "source_id": "11010601",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Droner rammer skibe ud for Bulgarien – redningsoperation i gang",
+          "url": "https://politiken.dk/internationalt/art11010601/Droner-rammer-skibe-ud-for-Bulgarien-%E2%80%93-redningsoperation-i-gang",
+          "published_at": "2026-10-06T09:31:27.000000Z",
+          "content_hash": "sha256:8ab52b1d0a2ad41ee9db31644a31ff26c14e17b00021b56cea93ac75aaad1a9e",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:7b864fed-fd0a-46ad-a934-311f4ffacfdb",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Besætning savnet efter droneangreb på skibe ud for Bulgarien",
+          "url": "https://www.dr.dk/nyheder/seneste/droner-rammer-skibe-i-bulgariens-del-af-sortehavet",
+          "published_at": "2026-10-06T07:14:59.000000Z",
+          "content_hash": "sha256:14e10846f233343c6f8070f6da4f071a2acbfdfb8c600d0f6e913bb6ceea9185",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:3856d3c8-120a-5be2-aadb-6be0de799860",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "I nat blev det tredje skib ramt: Dødelige droneangreb hærger Sortehavet",
+          "url": "https://www.berlingske.dk/internationalt/i-nat-blev-det-tredje-skib-ramt-doedelige-droneangreb-haerger-sortehavet",
+          "published_at": "2026-10-06T15:28:03.000000Z",
+          "content_hash": "sha256:63346f5d2ac069af0094f4619f44dda350aa58b96fa297fa976a53fd8d3fab51",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/06/world/europe/bulgaria-drones-black-sea.html",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Drones Hit Ships Off Bulgaria’s Black Sea Coast, Prime Minister Says",
+          "url": "https://www.nytimes.com/2026/10/06/world/europe/bulgaria-drones-black-sea.html",
+          "published_at": "2026-10-06T19:15:38.000000Z",
+          "content_hash": "sha256:621c872a72e71599263a3fd1116f280d56c1dd77dc79b8a7ef62f7226999739a",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/07/ukraine-war-briefing-zelenskyy-blames-russia-for-attack-on-bulgarian-vessels-in-black-sea-as-investigation-launched",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Ukraine war briefing: Zelenskyy blames Russia for attack on Bulgarian vessels in Black Sea as investigation launched",
+          "url": "https://www.theguardian.com/world/2026/oct/07/ukraine-war-briefing-zelenskyy-blames-russia-for-attack-on-bulgarian-vessels-in-black-sea-as-investigation-launched",
+          "published_at": "2026-10-07T01:22:44.000000Z",
+          "content_hash": "sha256:c491d7751e732a4f0c608e9929ae6489a39f5ad766ac690f2bc3bd64493333c8",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "c8ly0v5r602eo",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Ship sinks and crew missing after Black Sea drone attack",
+          "url": "https://www.bbc.co.uk/news/articles/c8ly0v5r602eo?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-06T11:53:21.000000Z",
+          "content_hash": "sha256:57c60caaba2504518615ddf5431e43e336eff72ccb74a582fa457c9cbfeaf57c",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "nobel-physics-halzen-icecube",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Science",
+      "copy": {
+        "headline": "Belgian physicist wins Nobel prize for detecting particles from space at the South Pole",
+        "body": {},
+        "lede": {
+          "text": "Francis Halzen, a Belgian physicist, won the Nobel prize in physics on Tuesday for IceCube, a detector in the South Pole ice that records neutrinos, particles from deep space often called ghost particles.",
+          "sources": [
+            "kristeligt_dagblad",
+            "guardian",
+            "politiken"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "a2e7d49a-14cf-41a7-aa72-696c6abf2af8",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Belgisk fysiker får Nobelprisen for partikelopdagelse",
+          "url": "https://www.kristeligt-dagblad.dk/udland/belgisk-fysiker-faar-nobelprisen-partikelopdagelse",
+          "published_at": "2026-10-06T10:10:17.000000Z",
+          "content_hash": "sha256:f5d34bb3a4a334cc9d4d2a089e2ca2245725c6a1ad5a78792675edbeccb213e1",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "politiken",
+          "source_id": "10992289",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Spøgelsespartikler fanget i verdens største isterning udløser en Nobelpris",
+          "url": "https://politiken.dk/viden/viden/art10992289/Sp%C3%B8gelsespartikler-fanget-i-verdens-st%C3%B8rste-isterning-udl%C3%B8ser-en-Nobelpris",
+          "published_at": "2026-10-06T16:24:11.000000Z",
+          "content_hash": "sha256:8d96d57bf80ebb601004058c24ae3fe755666e5fe20471ab1bfd8f43bc45e9a8",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:f7ee2726-760b-4422-9c05-4335a3dcc721",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Nobelprisen i fysik går til forskning i spøgelsespartikler",
+          "url": "https://www.dr.dk/nyheder/seneste/nobelprisen-i-fysik-gaar-til-forskning-i-spoegelsespartikler",
+          "published_at": "2026-10-06T10:05:31.000000Z",
+          "content_hash": "sha256:4d960828decfb60f6484569feeab6adc72185a0d5841ccfbd6501f98ac3b0fe6",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cq203mymlvkeo",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "'Ghost particles' from space telescope wins physics Nobel",
+          "url": "https://www.bbc.co.uk/news/articles/cq203mymlvkeo?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-06T11:24:19.000000Z",
+          "content_hash": "sha256:a1e1c5e232d47dbc8ca87712a795950944138becacabd7b9d08b01d17c044591",
+          "primary": false
+        },
+        {
+          "source": "economist",
+          "source_id": "c575548f-c67f-4b27-8572-0baa128bad37",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "A Nobel for the discovery of high-energy neutrinos",
+          "url": "https://www.economist.com/science-and-technology/2026/10/06/a-nobel-for-the-discovery-of-high-energy-neutrinos",
+          "published_at": "2026-10-06T17:15:53.000000Z",
+          "content_hash": "sha256:f309fdbf84e49438ad34ead02c4259b8ceba1fb576f071fda1295fd0186d0b62",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/science/2026/oct/06/nobel-prize-in-physics-francis-halzen-south-pole-neutrinos-icecube-detector",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Nobel prize in physics goes to Francis Halzen for south pole work on neutrinos",
+          "url": "https://www.theguardian.com/science/2026/oct/06/nobel-prize-in-physics-francis-halzen-south-pole-neutrinos-icecube-detector",
+          "published_at": "2026-10-06T11:25:25.000000Z",
+          "content_hash": "sha256:b038fbdc5d81649f24893e9ada8ed9a34e31aea79c7c1584d967524b16c015b6",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/06/science/nobel-prize-physics.html",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Nobel Prize in Physics Is Awarded to Francis Halzen for Work on Neutrinos",
+          "url": "https://www.nytimes.com/2026/10/06/science/nobel-prize-physics.html",
+          "published_at": "2026-10-06T16:36:32.000000Z",
+          "content_hash": "sha256:c081cc97c59da07084686f820d0c963c42020f659f8a76fec2706df358685aa3",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "paramount-completes-warner-deal",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Business",
+      "copy": {
+        "headline": "Paramount completes its takeover of Warner Bros",
+        "body": {},
+        "lede": {
+          "text": "Paramount completed its takeover of Warner Bros. Discovery on Tuesday, creating a company called Skydance, led by David Ellison, that owns both film studios, CNN, CBS News, HBO Max and Paramount+.",
+          "sources": [
+            "kristeligt_dagblad",
+            "guardian",
+            "wsj"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "62d65722-6518-41ed-b5fb-102b9d8cb744",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Paramount har officielt købt Warner Bros og skabt nyt selskab",
+          "url": "https://www.kristeligt-dagblad.dk/udland/paramount-har-officielt-koebt-warner-bros-og-skabt-nyt-selskab",
+          "published_at": "2026-10-06T13:53:47.000000Z",
+          "content_hash": "sha256:68074795d3a8bcbc0df02089ccd880e8f177b33190229977436dd07314221838",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:0fca0adf-51f5-43ef-8230-de3651cee438",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Budkrig og 737 milliarder senere er kæmpe mediefusion gennemført",
+          "url": "https://www.dr.dk/nyheder/penge/budkrig-og-737-milliarder-senere-er-kaempe-mediefusion-gennemfoert",
+          "published_at": "2026-10-06T15:47:46.000000Z",
+          "content_hash": "sha256:c20cafbd01a4c14a287c61df8fdb752b5c3327ef8451cf2b31ee75e5d11961e9",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cxj0604d33qzo",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Paramount takes over Warner Bros in $110bn Hollywood merger",
+          "url": "https://www.bbc.co.uk/news/articles/cxj0604d33qzo?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-06T20:18:58.000000Z",
+          "content_hash": "sha256:c2da7ec62056d794be1b5a18773007d239c75e47c96e6bbf346cf4c7854a028c",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "93756433-eb78-422d-8ac3-30e8cc243a00",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Paramount closes $111bn takeover of Warner Bros",
+          "url": "https://www.ft.com/content/93756433-eb78-422d-8ac3-30e8cc243a00",
+          "published_at": "2026-10-06T12:52:57.000000Z",
+          "content_hash": "sha256:383057c34a3b8ded435d61aa732ad68a63e703d71bd6f370744d74311e09c004",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/business/2026/oct/06/paramount-warner-bros-skydance-merger",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Paramount completes $111bn acquisition of Warner Bros to form new media empire Skydance",
+          "url": "https://www.theguardian.com/business/2026/oct/06/paramount-warner-bros-skydance-merger",
+          "published_at": "2026-10-06T14:14:56.000000Z",
+          "content_hash": "sha256:7cbe4c5dda0667d68f9f00d43072a57770f89db1b3b7f0d39fa8e27294d0f74d",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/06/business/media/paramount-warner-bros-discovery-skydance.html",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Paramount Closes Merger With Warner Bros. Discovery to Form Skydance",
+          "url": "https://www.nytimes.com/2026/10/06/business/media/paramount-warner-bros-discovery-skydance.html",
+          "published_at": "2026-10-07T00:45:57.000000Z",
+          "content_hash": "sha256:b63324bf2a2d572eb09f7e45dc68dd17e682ea354d0d5c8e850610230765ce89",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/business/2026/10/06/paramount-closes-110b-deal-with-warner-bros-discovery-after-months-wrangling/",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "Paramount closes $110B deal with Warner Bros. Discovery after months of wrangling",
+          "url": "https://www.washingtonpost.com/business/2026/10/06/paramount-closes-110b-deal-with-warner-bros-discovery-after-months-wrangling/",
+          "published_at": "2026-10-06T15:05:29.000000Z",
+          "content_hash": "sha256:49ff5c48e49e9caf2ca62908f26f41bcbc79a05b67fb9dd3783f0a1877941dbb",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003955238",
+          "input_id": "export-2026-10-07-0330",
+          "original_title": "A High-Stakes Gambit Clinched Paramount’s Warner Deal",
+          "url": "https://www.wsj.com/business/media/paramount-warner-bros-deal-873905b0?mod=pls_whats_news_us_business_f",
+          "published_at": "2026-10-07T03:00:00.000000Z",
+          "content_hash": "sha256:5b26b8b5d04a03dd83411da961049ccc0d59e1cd85aec73bb1fd2239e8492e10",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    }
+  ],
+  "fit_policy": {
+    "allow_role_fallback": true,
+    "allow_composition_substitution": true,
+    "reserve_story_ids": [],
+    "omittable_story_ids": [
+      "frederiksen-opening-speech-2026",
+      "gade-jp-portrait-row",
+      "hanning-arrested-spying",
+      "folkeskole-900-million-2027",
+      "frandsen-elected-speaker",
+      "kaershovedgaard-prison-unit",
+      "legislative-programme-2026-27",
+      "frederiksen-defends-su-cut",
+      "fewer-owe-public-debt",
+      "mobilepay-renamed-vipps",
+      "genmab-lymphoma-shares-rise",
+      "red-bull-influencer-complaint",
+      "fdm-two-car-seats-warning",
+      "region-rejects-lgbtq-handbook",
+      "hammerum-suspect-arrested",
+      "lise-svanholm-dies",
+      "sweden-patriot-to-poland",
+      "france-school-protests-250000",
+      "afd-first-state-speaker",
+      "black-sea-ships-hit-off-bulgaria",
+      "nobel-physics-halzen-icecube",
+      "paramount-completes-warner-deal"
+    ]
+  }
+}
