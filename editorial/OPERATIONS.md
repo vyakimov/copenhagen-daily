@@ -94,6 +94,27 @@ message to the owner.
 deployment alone, the bucket, the distribution id, the CLI profile, live in `var/desk.local.yaml`, which git ignores and which is laid over the committed file key
 by key when the desk starts. Without it, delivery is skipped.
 
+## The desk's own login
+
+The Claude sessions need a claude.ai login. Under launchd the CLI reads it from the macOS keychain
+entry, and that entry can lapse: on 2026-10-08 a refresh elsewhere rotated the refresh token, the
+05:30 job's refresh was rejected, and the CLI blanked the entry, so the edition and its retry both
+failed at the desk. To make the jobs independent of the keychain, mint a long-lived token at the
+keyboard and keep it in `var/claude-oauth.env`, owner-readable only:
+
+```sh
+claude setup-token > editorial/var/claude-oauth.env
+chmod 600 editorial/var/claude-oauth.env
+```
+
+The file holds the bare token, or `CLAUDE_CODE_OAUTH_TOKEN=...`. The runner passes it as
+`CLAUDE_CODE_OAUTH_TOKEN` to the desk, writer, and Claude checker sessions and to nothing else; the
+codex checker never sees it. Without the file the sessions use the CLI's own login. The token
+expires a year after it is minted; `Failed to authenticate` from a session is the sign to mint a new
+one. To check the login the jobs will actually use, probe from launchd, not from a Claude Code shell:
+a sandboxed shell cannot read the keychain and falls back to `~/.claude/.credentials.json`, so it can
+look logged in while the jobs are not.
+
 ## Being told
 
 A run that fails notifies the owner once, the freshness job notifies when no edition is fresh, and the

@@ -93,3 +93,58 @@ def test_session_error_result_is_a_run_failure(tmp_path):
     with pytest.raises(RunFailure) as info:
         invoke_editor("desk", run_dir, timeout=5, config={"editor_command": str(failing)})
     assert info.value.error_type == "editor_failed"
+
+
+def token_recording_claude(tmp_path):
+    return fake_cli(tmp_path, "claude", 'printf \'%s\' "${CLAUDE_CODE_OAUTH_TOKEN-unset}" > "$PWD/token.txt"\nprintf \'%s\\n\' \'{"type":"result","is_error":false,"result":"done"}\'\n')
+
+
+@pytest.fixture
+def token_file(tmp_path, monkeypatch):
+    from news_editorial import run as run_module
+    path = tmp_path / "claude-oauth.env"
+    monkeypatch.setattr(run_module, "OAUTH_TOKEN_PATH", path)
+    monkeypatch.delenv("CLAUDE_CODE_OAUTH_TOKEN", raising=False)
+    return path
+
+
+def test_claude_sessions_get_the_long_lived_token_from_var(tmp_path, token_file):
+    token_file.write_text("# the token from `claude setup-token`\nsk-ant-oat01-abc\n")
+    claude = token_recording_claude(tmp_path)
+    run_dir = tmp_path / "run"
+    brief = run_dir / "stories" / "a-story" / "brief.json"
+    brief.parent.mkdir(parents=True)
+    brief.write_text("{}")
+    invoke_editor("desk", run_dir, timeout=30, config={"editor_command": str(claude)})
+    assert (run_dir / "token.txt").read_text() == "sk-ant-oat01-abc"
+    invoke_writer(brief, timeout=30, config={"editor_command": str(claude)})
+    assert (brief.parent / "token.txt").read_text() == "sk-ant-oat01-abc"
+    (run_dir / "token.txt").unlink()
+    invoke_checker(run_dir, timeout=30, config={"checker": "claude", "editor_command": str(claude)})
+    assert (run_dir / "token.txt").read_text() == "sk-ant-oat01-abc"
+
+
+def test_token_file_may_use_the_env_assignment_form(tmp_path, token_file):
+    token_file.write_text('CLAUDE_CODE_OAUTH_TOKEN="sk-ant-oat01-xyz"\n')
+    claude = token_recording_claude(tmp_path)
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    invoke_editor("desk", run_dir, timeout=30, config={"editor_command": str(claude)})
+    assert (run_dir / "token.txt").read_text() == "sk-ant-oat01-xyz"
+
+
+def test_without_the_token_file_sessions_use_the_cli_login(tmp_path, token_file):
+    claude = token_recording_claude(tmp_path)
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    invoke_editor("desk", run_dir, timeout=30, config={"editor_command": str(claude)})
+    assert (run_dir / "token.txt").read_text() == "unset"
+
+
+def test_codex_checker_never_sees_the_token(tmp_path, token_file):
+    token_file.write_text("sk-ant-oat01-abc\n")
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    codex = fake_cli(tmp_path, "codex", 'printf \'%s\' "${CLAUDE_CODE_OAUTH_TOKEN-unset}" > "$PWD/token.txt"\necho ok\n')
+    invoke_checker(run_dir, timeout=30, config={"checker": "codex", "codex_command": str(codex)})
+    assert (run_dir / "token.txt").read_text() == "unset"

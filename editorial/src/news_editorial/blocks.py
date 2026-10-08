@@ -21,12 +21,12 @@ class BlockError(Exception):
         self.details = details or {}
 
 
-def run_in_group(command: list[str], *, timeout: float, cwd: Path | None = None) -> subprocess.CompletedProcess[str]:
+def run_in_group(command: list[str], *, timeout: float, cwd: Path | None = None, env: dict[str, str] | None = None) -> subprocess.CompletedProcess[str]:
     """Run a command in its own process group and, on timeout, take the whole group down.
 
     `subprocess.run(timeout=...)` kills only the direct child; a wrapper's or a session's
     descendants would go on writing after the runner had recorded a timeout and released its lock."""
-    proc = subprocess.Popen(command, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, start_new_session=True)
+    proc = subprocess.Popen(command, cwd=cwd, env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, start_new_session=True)
     try:
         stdout, stderr = proc.communicate(timeout=timeout)
     except subprocess.TimeoutExpired:

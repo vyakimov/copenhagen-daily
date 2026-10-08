@@ -20,6 +20,7 @@ import re
 import threading
 import hashlib
 import json
+import os
 import subprocess
 import traceback
 import sys
@@ -123,10 +124,42 @@ def _session_record(run_dir: Path, name: str, record: dict[str, Any]) -> None:
     (sessions / f"{name}.json").write_text(json.dumps(record, ensure_ascii=False, indent=1) + "\n", encoding="utf8")
 
 
-def _headless(command: list[str], cwd: Path, timeout: int, name: str, run_dir: Path, limit: str) -> dict[str, Any]:
+OAUTH_TOKEN_PATH = VAR / "claude-oauth.env"
+
+
+def claude_oauth_token(path: Path | None = None) -> str | None:
+    """The long-lived token from `claude setup-token`, kept in var/claude-oauth.env either as the bare
+    token or as `CLAUDE_CODE_OAUTH_TOKEN=...`. None without the file, and the sessions then use the
+    CLI's own login, which under launchd is the keychain entry and can lapse."""
+    path = OAUTH_TOKEN_PATH if path is None else path
+    if not path.is_file():
+        return None
+    for line in path.read_text(encoding="utf8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        if "=" in line:
+            key, value = line.split("=", 1)
+            if key.strip() != "CLAUDE_CODE_OAUTH_TOKEN":
+                continue
+            line = value.strip().strip('"').strip("'")
+        return line or None
+    return None
+
+
+def _claude_env() -> dict[str, str] | None:
+    """The environment for a Claude Code session: the runner's, plus the long-lived token when var holds one.
+    The codex checker never gets it; that session can run shell commands and has no use for it."""
+    token = claude_oauth_token()
+    if token is None:
+        return None
+    return {**os.environ, "CLAUDE_CODE_OAUTH_TOKEN": token}
+
+
+def _headless(command: list[str], cwd: Path, timeout: int, name: str, run_dir: Path, limit: str, env: dict[str, str] | None = None) -> dict[str, Any]:
     started = time.monotonic()
     try:
-        proc = blocks.run_in_group(command, cwd=cwd, timeout=timeout)
+        proc = blocks.run_in_group(command, cwd=cwd, timeout=timeout, env=env)
     except subprocess.TimeoutExpired as exc:
         _session_record(run_dir, name, {"command": command[:2], "timed_out_after_s": timeout})
         raise RunFailure(f"{limit}_timeout", f"{name} ran past its wall clock of {timeout}s", {"limit": limit}) from exc
@@ -165,7 +198,7 @@ def invoke_editor(mode: str, run_dir: Path, timeout: int, config: dict[str, Any]
         command += ["--max-turns", str(max_turns)]
     if config.get("editor_model"):
         command += ["--model", config["editor_model"]]
-    return _headless(command, cwd=run_dir, timeout=timeout, name=f"editor-{mode}-{_now()[:19]}", run_dir=run_dir, limit="editor")
+    return _headless(command, cwd=run_dir, timeout=timeout, name=f"editor-{mode}-{_now()[:19]}", run_dir=run_dir, limit="editor", env=_claude_env())
 
 
 def invoke_writer(brief: Path, timeout: int, config: dict[str, Any] | None = None, max_turns: int | None = None) -> dict[str, Any]:
@@ -192,12 +225,13 @@ def invoke_writer(brief: Path, timeout: int, config: dict[str, Any] | None = Non
     model = config.get("writer_model") or config.get("editor_model")
     if model:
         command += ["--model", model]
-    return _headless(command, cwd=brief.parent, timeout=timeout, name=f"writer-{brief.parent.name}-{_now()[:19]}", run_dir=run_dir, limit="writer")
+    return _headless(command, cwd=brief.parent, timeout=timeout, name=f"writer-{brief.parent.name}-{_now()[:19]}", run_dir=run_dir, limit="writer", env=_claude_env())
 
 
 def invoke_checker(run_dir: Path, timeout: int, config: dict[str, Any] | None = None, max_turns: int | None = None) -> dict[str, Any]:
     config = config or load_desk_config()
     tool = config.get("checker", "claude")
+    env = None
     if tool == "codex":
         prompt = (
             f"Read {EDITORIAL / 'VERIFIER.md'} and follow it exactly. Read {run_dir / 'check-input.json'}. "
@@ -225,7 +259,8 @@ def invoke_checker(run_dir: Path, timeout: int, config: dict[str, Any] | None = 
             command += ["--max-turns", str(max_turns)]
         if config.get("checker_model"):
             command += ["--model", config["checker_model"]]
-    return _headless(command, cwd=run_dir, timeout=timeout, name=f"checker-{_now()[:19]}", run_dir=run_dir, limit="checker")
+        env = _claude_env()
+    return _headless(command, cwd=run_dir, timeout=timeout, name=f"checker-{_now()[:19]}", run_dir=run_dir, limit="checker", env=env)
 
 
 def _git(*args: str) -> None:
