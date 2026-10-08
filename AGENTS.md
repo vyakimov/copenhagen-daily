@@ -31,7 +31,7 @@ Cross-block documents live in `docs/` (`editorial-architecture.md`, `ingest-arch
   session has a browser, network tools, or credentials, and after every session the runner refuses to
   go on if the session wrote outside the run directory (`stray_edits`) or changed the runner's own
   inputs (`input_modified`, with the run's files quarantined). The deterministic runner around them
-  holds the one delivery credential (a scoped IAM user), never the sessions; the only secret a session receives is the claude.ai token it needs to call the model (`editorial/OPERATIONS.md`, "The desk's own login"), and the codex checker does not get even that. The runner
+  holds the one delivery credential (a scoped IAM user), never the sessions; the only secret a session receives is the one credential it needs to call the model, the claude.ai token or, as a fallback, the API key (`editorial/OPERATIONS.md`, "The desk's own login"), and the codex checker does not get even that. The runner
   alone fetches the Wikipedia summaries that verify a writer's explanation of a name or term.
 - Every block exposes one self-locating POSIX `sh` wrapper (`ingest/gather_news.sh`,
   `editorial/edit_news.sh`, `publisher/publish_news.sh`) that emits exactly one JSON object on stdout and diagnostics on stderr.

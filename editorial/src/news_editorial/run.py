@@ -125,13 +125,12 @@ def _session_record(run_dir: Path, name: str, record: dict[str, Any]) -> None:
 
 
 OAUTH_TOKEN_PATH = VAR / "claude-oauth.env"
+API_KEY_PATH = VAR / "claude-api-key.env"
+AUTH_FALLBACK_RECORD = "auth-fallback.json"
 
 
-def claude_oauth_token(path: Path | None = None) -> str | None:
-    """The long-lived token from `claude setup-token`, kept in var/claude-oauth.env either as the bare
-    token or as `CLAUDE_CODE_OAUTH_TOKEN=...`. None without the file, and the sessions then use the
-    CLI's own login, which under launchd is the keychain entry and can lapse."""
-    path = OAUTH_TOKEN_PATH if path is None else path
+def read_secret(path: Path, key: str) -> str | None:
+    """A secret kept in var: the bare value on its own line, or `KEY=value`. None without the file or a value."""
     if not path.is_file():
         return None
     for line in path.read_text(encoding="utf8").splitlines():
@@ -139,24 +138,107 @@ def claude_oauth_token(path: Path | None = None) -> str | None:
         if not line or line.startswith("#"):
             continue
         if "=" in line:
-            key, value = line.split("=", 1)
-            if key.strip() != "CLAUDE_CODE_OAUTH_TOKEN":
+            name, value = line.split("=", 1)
+            if name.strip() != key:
                 continue
             line = value.strip().strip('"').strip("'")
         return line or None
     return None
 
 
-def _claude_env() -> dict[str, str] | None:
-    """The environment for a Claude Code session: the runner's, plus the long-lived token when var holds one.
-    The codex checker never gets it; that session can run shell commands and has no use for it."""
-    token = claude_oauth_token()
-    if token is None:
-        return None
-    return {**os.environ, "CLAUDE_CODE_OAUTH_TOKEN": token}
+def claude_oauth_token(path: Path | None = None) -> str | None:
+    """The long-lived token from `claude setup-token`, kept in var/claude-oauth.env."""
+    return read_secret(OAUTH_TOKEN_PATH if path is None else path, "CLAUDE_CODE_OAUTH_TOKEN")
 
 
-def _headless(command: list[str], cwd: Path, timeout: int, name: str, run_dir: Path, limit: str, env: dict[str, str] | None = None) -> dict[str, Any]:
+def _is_auth_failure(record: dict[str, Any]) -> bool:
+    result = str(record.get("result") or "")
+    return bool(record.get("is_error")) and ("Failed to authenticate" in result or "authentication_error" in result)
+
+
+class ClaudeAuth:
+    """Which credential the Claude sessions of one run carry.
+
+    The token from var/claude-oauth.env comes first. The API key from var/claude-api-key.env is the
+    fallback, used only when there is no token or a session failed to authenticate with it, and from
+    then on for the rest of the run: one invalid token is invalid for every session. A new run starts
+    over with the token. The owner is told the first time a run moves to the key, since the key is
+    billed and the token needs renewing. The codex checker never sees either credential."""
+
+    def __init__(self, token_path: Path | None = None, key_path: Path | None = None, notifier: Callable[[str, str], Any] | None = None, edition_id: str = ""):
+        self.token_path = token_path
+        self.key_path = key_path
+        self.notifier = notifier
+        self.edition_id = edition_id
+        self.on_key = False
+
+    def token(self) -> str | None:
+        return read_secret(OAUTH_TOKEN_PATH if self.token_path is None else self.token_path, "CLAUDE_CODE_OAUTH_TOKEN")
+
+    def key(self) -> str | None:
+        return read_secret(API_KEY_PATH if self.key_path is None else self.key_path, "ANTHROPIC_API_KEY")
+
+    def env(self, run_dir: Path | None = None, session: str = "") -> dict[str, str] | None:
+        """The session's environment: the runner's plus one credential, or None to inherit as is."""
+        base = {k: v for k, v in os.environ.items() if k not in ("CLAUDE_CODE_OAUTH_TOKEN", "ANTHROPIC_API_KEY")}
+        if not self.on_key:
+            token = self.token()
+            if token:
+                return {**base, "CLAUDE_CODE_OAUTH_TOKEN": token}
+            if self.fall_back("token_missing", run_dir, session):
+                return {**base, "ANTHROPIC_API_KEY": str(self.key())}
+            return None
+        key = self.key()
+        return {**base, "ANTHROPIC_API_KEY": key} if key else None
+
+    def fall_back(self, reason: str, run_dir: Path | None, session: str) -> bool:
+        """Move the run to the API key if there is one; tell the owner the first time. False without a key."""
+        key = self.key()
+        if not key:
+            return False
+        if self.on_key:
+            return True
+        self.on_key = True
+        if run_dir is not None:
+            _session_record(run_dir, AUTH_FALLBACK_RECORD.removesuffix(".json"), {"reason": reason, "session": session, "at": _now()})
+        self._tell(reason)
+        return True
+
+    def _tell(self, reason: str) -> None:
+        if not self.notifier:
+            return
+        edition = self.edition_id or "today's edition"
+        subject = f"Copenhagen Daily: {edition} is running on the API key"
+        why = "there is no token in editorial/var/claude-oauth.env" if reason == "token_missing" else "a session failed to authenticate with the token in editorial/var/claude-oauth.env"
+        body = (
+            f"The Claude sessions of {edition} are using the API key from editorial/var/claude-api-key.env because {why}. "
+            "The run goes on, billed to the key. Mint a new token at the keyboard with `claude setup-token > editorial/var/claude-oauth.env` "
+            "so the next run is back on the subscription; every run tries the token first."
+        )
+        try:
+            self.notifier(subject, body)
+        except Exception as exc:  # noqa: BLE001 -- a failed notification must not stop the paper; the record in the run directory remains.
+            sys.stderr.write(f"notification failed: {exc}\nNOTIFY {subject}\n{body}\n")
+
+
+AUTH = ClaudeAuth()
+
+
+def _headless(command: list[str], cwd: Path, timeout: int, name: str, run_dir: Path, limit: str, auth: ClaudeAuth | None = None) -> dict[str, Any]:
+    """Run a session once; a Claude session that fails to authenticate on the token is run once more on
+    the API key when `auth` can fall back, and both attempts are on record. `auth` is None for codex."""
+    env = auth.env(run_dir, name) if auth is not None else None
+    record = _headless_once(command, cwd, timeout, name, run_dir, limit, env)
+    if auth is not None and _is_auth_failure(record) and not auth.on_key and auth.fall_back("token_rejected", run_dir, name):
+        record = _headless_once(command, cwd, timeout, f"{name}-api-key", run_dir, limit, auth.env(run_dir, name))
+    if record["exit_code"] != 0 or record.get("is_error"):
+        raise RunFailure(f"{name.split('-')[0]}_failed", f"{name} exited {record['exit_code']}", {"record": record})
+    if auth is not None:
+        record["auth"] = "api_key" if auth.on_key else "token"
+    return record
+
+
+def _headless_once(command: list[str], cwd: Path, timeout: int, name: str, run_dir: Path, limit: str, env: dict[str, str] | None) -> dict[str, Any]:
     started = time.monotonic()
     try:
         proc = blocks.run_in_group(command, cwd=cwd, timeout=timeout, env=env)
@@ -175,12 +257,10 @@ def _headless(command: list[str], cwd: Path, timeout: int, name: str, run_dir: P
         if key in result:
             record[key] = result[key]
     _session_record(run_dir, name, record)
-    if proc.returncode != 0 or result.get("is_error"):
-        raise RunFailure(f"{name.split('-')[0]}_failed", f"{name} exited {proc.returncode}", {"record": record})
     return record
 
 
-def invoke_editor(mode: str, run_dir: Path, timeout: int, config: dict[str, Any] | None = None, max_turns: int | None = None) -> dict[str, Any]:
+def invoke_editor(mode: str, run_dir: Path, timeout: int, config: dict[str, Any] | None = None, max_turns: int | None = None, auth: ClaudeAuth | None = None) -> dict[str, Any]:
     config = config or load_desk_config()
     wrapper = EDITORIAL / "edit_news.sh"
     prompt = (
@@ -198,10 +278,10 @@ def invoke_editor(mode: str, run_dir: Path, timeout: int, config: dict[str, Any]
         command += ["--max-turns", str(max_turns)]
     if config.get("editor_model"):
         command += ["--model", config["editor_model"]]
-    return _headless(command, cwd=run_dir, timeout=timeout, name=f"editor-{mode}-{_now()[:19]}", run_dir=run_dir, limit="editor", env=_claude_env())
+    return _headless(command, cwd=run_dir, timeout=timeout, name=f"editor-{mode}-{_now()[:19]}", run_dir=run_dir, limit="editor", auth=AUTH if auth is None else auth)
 
 
-def invoke_writer(brief: Path, timeout: int, config: dict[str, Any] | None = None, max_turns: int | None = None) -> dict[str, Any]:
+def invoke_writer(brief: Path, timeout: int, config: dict[str, Any] | None = None, max_turns: int | None = None, auth: ClaudeAuth | None = None) -> dict[str, Any]:
     """One story's writing session: it may read, and only read, and its final message is the copy.
 
     Its working directory is the story's own, holding the brief and nothing else, and no other
@@ -225,13 +305,13 @@ def invoke_writer(brief: Path, timeout: int, config: dict[str, Any] | None = Non
     model = config.get("writer_model") or config.get("editor_model")
     if model:
         command += ["--model", model]
-    return _headless(command, cwd=brief.parent, timeout=timeout, name=f"writer-{brief.parent.name}-{_now()[:19]}", run_dir=run_dir, limit="writer", env=_claude_env())
+    return _headless(command, cwd=brief.parent, timeout=timeout, name=f"writer-{brief.parent.name}-{_now()[:19]}", run_dir=run_dir, limit="writer", auth=AUTH if auth is None else auth)
 
 
-def invoke_checker(run_dir: Path, timeout: int, config: dict[str, Any] | None = None, max_turns: int | None = None) -> dict[str, Any]:
+def invoke_checker(run_dir: Path, timeout: int, config: dict[str, Any] | None = None, max_turns: int | None = None, auth: ClaudeAuth | None = None) -> dict[str, Any]:
     config = config or load_desk_config()
     tool = config.get("checker", "claude")
-    env = None
+    session_auth: ClaudeAuth | None = None
     if tool == "codex":
         prompt = (
             f"Read {EDITORIAL / 'VERIFIER.md'} and follow it exactly. Read {run_dir / 'check-input.json'}. "
@@ -259,8 +339,8 @@ def invoke_checker(run_dir: Path, timeout: int, config: dict[str, Any] | None = 
             command += ["--max-turns", str(max_turns)]
         if config.get("checker_model"):
             command += ["--model", config["checker_model"]]
-        env = _claude_env()
-    return _headless(command, cwd=run_dir, timeout=timeout, name=f"checker-{_now()[:19]}", run_dir=run_dir, limit="checker", env=env)
+        session_auth = AUTH if auth is None else auth
+    return _headless(command, cwd=run_dir, timeout=timeout, name=f"checker-{_now()[:19]}", run_dir=run_dir, limit="checker", auth=session_auth)
 
 
 def _git(*args: str) -> None:
@@ -1262,6 +1342,8 @@ def run_edition(args: Any, policy: Policy) -> dict[str, Any]:
     publish_root = Path(args.publish_root or config["publish_root"])
     if not publish_root.is_absolute():
         publish_root = REPO / publish_root
+    notifier = lambda subject, body: notify(subject, body, config.get("notify") or {})  # noqa: E731
+    auth = ClaudeAuth(notifier=notifier, edition_id=edition_id)
     runner = Runner(
         policy=policy,
         run_dir=RUNS / edition_id,
@@ -1269,13 +1351,13 @@ def run_edition(args: Any, policy: Policy) -> dict[str, Any]:
         cutoff=cutoff,
         publish_root=publish_root,
         registry=VAR / "threads.json",
-        editor=lambda mode, run_dir, timeout: invoke_editor(mode, run_dir, timeout, config, max_turns=policy.limits.editor_turns),
-        writer=lambda brief, timeout: invoke_writer(brief, timeout, config, max_turns=policy.limits.writer_turns),
-        checker=lambda run_dir, timeout: invoke_checker(run_dir, timeout, {**config, "checker": args.checker or config.get("checker", "claude")}, max_turns=policy.limits.checker_turns),
+        editor=lambda mode, run_dir, timeout: invoke_editor(mode, run_dir, timeout, config, max_turns=policy.limits.editor_turns, auth=auth),
+        writer=lambda brief, timeout: invoke_writer(brief, timeout, config, max_turns=policy.limits.writer_turns, auth=auth),
+        checker=lambda run_dir, timeout: invoke_checker(run_dir, timeout, {**config, "checker": args.checker or config.get("checker", "claude")}, max_turns=policy.limits.checker_turns, auth=auth),
         collect=config.get("collect_before_export", True) and not args.no_collect,
         dry_run=args.dry_run,
         commit=config.get("commit_runs", True),
-        notifier=lambda subject, body: notify(subject, body, config.get("notify") or {}),
+        notifier=notifier,
         deliverer=lambda root: deliver(root, config.get("delivery") or {}),
         device=bool(config.get("device", False)),
         retry=getattr(args, "retry", False),

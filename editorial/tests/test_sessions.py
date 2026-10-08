@@ -104,7 +104,10 @@ def token_file(tmp_path, monkeypatch):
     from news_editorial import run as run_module
     path = tmp_path / "claude-oauth.env"
     monkeypatch.setattr(run_module, "OAUTH_TOKEN_PATH", path)
+    monkeypatch.setattr(run_module, "API_KEY_PATH", tmp_path / "claude-api-key.env")
+    monkeypatch.setattr(run_module, "AUTH", run_module.ClaudeAuth())
     monkeypatch.delenv("CLAUDE_CODE_OAUTH_TOKEN", raising=False)
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
     return path
 
 
@@ -148,3 +151,116 @@ def test_codex_checker_never_sees_the_token(tmp_path, token_file):
     codex = fake_cli(tmp_path, "codex", 'printf \'%s\' "${CLAUDE_CODE_OAUTH_TOKEN-unset}" > "$PWD/token.txt"\necho ok\n')
     invoke_checker(run_dir, timeout=30, config={"checker": "codex", "codex_command": str(codex)})
     assert (run_dir / "token.txt").read_text() == "unset"
+
+
+# -- the API key as the fallback --------------------------------------------------------------------
+
+def credential_recording_claude(tmp_path, token_fails=True):
+    """Records which credential each call carried; a call on the token fails to authenticate when told to."""
+    body = (
+        'printf \'%s|%s\\n\' "${CLAUDE_CODE_OAUTH_TOKEN-unset}" "${ANTHROPIC_API_KEY-unset}" >> "$PWD/credentials.txt"\n'
+        + ('if [ -n "${CLAUDE_CODE_OAUTH_TOKEN-}" ]; then printf \'%s\\n\' \'{"type":"result","is_error":true,"result":"Failed to authenticate. API Error: 401 OAuth access token is invalid."}\'; exit 1; fi\n' if token_fails else "")
+        + 'printf \'%s\\n\' \'{"type":"result","is_error":false,"result":"done"}\'\n'
+    )
+    return fake_cli(tmp_path, "claude", body)
+
+
+@pytest.fixture
+def auth(tmp_path, token_file, monkeypatch):
+    from news_editorial.run import ClaudeAuth
+    notes = []
+    auth = ClaudeAuth(token_path=token_file, key_path=tmp_path / "claude-api-key.env", notifier=lambda subject, body: notes.append((subject, body)))
+    auth.notes = notes
+    return auth
+
+
+def test_a_session_that_fails_on_the_token_is_rerun_on_the_api_key_and_the_run_stays_there(tmp_path, token_file, auth):
+    token_file.write_text("sk-ant-oat01-stale\n")
+    auth.key_path.write_text("sk-ant-api03-key\n")
+    claude = credential_recording_claude(tmp_path)
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    record = invoke_editor("desk", run_dir, timeout=30, config={"editor_command": str(claude)}, auth=auth)
+    assert record["result"] == "done" and record["auth"] == "api_key"
+    assert (run_dir / "credentials.txt").read_text() == "sk-ant-oat01-stale|unset\nunset|sk-ant-api03-key\n"
+    assert len(auth.notes) == 1 and "API key" in auth.notes[0][0] and "stale" not in auth.notes[0][1]
+    fallback = json.loads((run_dir / "sessions" / "auth-fallback.json").read_text())
+    assert fallback["reason"] == "token_rejected" and fallback["session"].startswith("editor-desk-")
+    # the next session of the run goes straight to the key, no second notification
+    (run_dir / "credentials.txt").unlink()
+    invoke_checker(run_dir, timeout=30, config={"checker": "claude", "editor_command": str(claude)}, auth=auth)
+    assert (run_dir / "credentials.txt").read_text() == "unset|sk-ant-api03-key\n"
+    assert len(auth.notes) == 1
+    # both attempts of the first session are on record
+    names = sorted(p.name for p in (run_dir / "sessions").glob("editor-desk-*.json"))
+    assert len(names) == 2 and any(n.endswith("-api-key.json") for n in names)
+
+
+def test_a_missing_token_file_falls_back_to_the_key_before_the_first_session(tmp_path, token_file, auth):
+    auth.key_path.write_text("ANTHROPIC_API_KEY=sk-ant-api03-key\n")
+    claude = credential_recording_claude(tmp_path)
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    invoke_editor("desk", run_dir, timeout=30, config={"editor_command": str(claude)}, auth=auth)
+    assert (run_dir / "credentials.txt").read_text() == "unset|sk-ant-api03-key\n"
+    assert len(auth.notes) == 1 and "no token" in auth.notes[0][1]
+    assert json.loads((run_dir / "sessions" / "auth-fallback.json").read_text())["reason"] == "token_missing"
+
+
+def test_a_new_run_tries_the_token_again(tmp_path, token_file, auth):
+    from news_editorial.run import ClaudeAuth
+    token_file.write_text("sk-ant-oat01-fresh\n")
+    auth.key_path.write_text("sk-ant-api03-key\n")
+    auth.on_key = True  # the previous run ended on the key
+    fresh = ClaudeAuth(token_path=token_file, key_path=auth.key_path, notifier=auth.notifier)
+    claude = credential_recording_claude(tmp_path, token_fails=False)
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    invoke_editor("desk", run_dir, timeout=30, config={"editor_command": str(claude)}, auth=fresh)
+    assert (run_dir / "credentials.txt").read_text() == "sk-ant-oat01-fresh|unset\n"
+    assert auth.notes == []
+
+
+def test_without_a_key_an_auth_failure_is_the_usual_run_failure(tmp_path, token_file, auth):
+    token_file.write_text("sk-ant-oat01-stale\n")
+    claude = credential_recording_claude(tmp_path)
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    with pytest.raises(RunFailure) as info:
+        invoke_editor("desk", run_dir, timeout=30, config={"editor_command": str(claude)}, auth=auth)
+    assert info.value.error_type == "editor_failed"
+    assert auth.notes == [] and not (run_dir / "sessions" / "auth-fallback.json").exists()
+
+
+def test_a_session_that_fails_for_another_reason_is_not_rerun_on_the_key(tmp_path, token_file, auth):
+    token_file.write_text("sk-ant-oat01-ok\n")
+    auth.key_path.write_text("sk-ant-api03-key\n")
+    failing = fake_cli(tmp_path, "claude", 'printf \'%s\\n\' \'{"type":"result","is_error":true,"result":"boom"}\'\n')
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    with pytest.raises(RunFailure):
+        invoke_editor("desk", run_dir, timeout=30, config={"editor_command": str(failing)}, auth=auth)
+    assert auth.notes == [] and not auth.on_key
+
+
+def test_the_fallback_notification_is_delivered_even_if_the_notifier_raises(tmp_path, token_file, auth, capsys):
+    def broken(subject, body):
+        raise OSError("discord is down")
+    auth.notifier = broken
+    auth.key_path.write_text("sk-ant-api03-key\n")
+    claude = credential_recording_claude(tmp_path)
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    invoke_editor("desk", run_dir, timeout=30, config={"editor_command": str(claude)}, auth=auth)
+    assert "discord is down" in capsys.readouterr().err
+    assert (run_dir / "sessions" / "auth-fallback.json").exists()
+
+
+def test_the_codex_checker_sees_neither_credential(tmp_path, token_file, auth):
+    auth.key_path.write_text("sk-ant-api03-key\n")
+    auth.on_key = True
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    codex = fake_cli(tmp_path, "codex", 'printf \'%s|%s\' "${CLAUDE_CODE_OAUTH_TOKEN-unset}" "${ANTHROPIC_API_KEY-unset}" > "$PWD/credentials.txt"\necho ok\n')
+    invoke_checker(run_dir, timeout=30, config={"checker": "codex", "codex_command": str(codex)}, auth=auth)
+    assert (run_dir / "credentials.txt").read_text() == "unset|unset"

@@ -109,10 +109,22 @@ chmod 600 editorial/var/claude-oauth.env
 
 The file holds the bare token, or `CLAUDE_CODE_OAUTH_TOKEN=...`. The runner passes it as
 `CLAUDE_CODE_OAUTH_TOKEN` to the desk, writer, and Claude checker sessions and to nothing else; the
-codex checker never sees it. Without the file the sessions use the CLI's own login. The token
-expires a year after it is minted; `Failed to authenticate` from a session is the sign to mint a new
-one. To check the login the jobs will actually use, probe from launchd, not from a Claude Code shell:
-a sandboxed shell cannot read the keychain and falls back to `~/.claude/.credentials.json`, so it can
+codex checker never sees it. The token expires a year after it is minted.
+
+An API key in `var/claude-api-key.env` (the bare key, or `ANTHROPIC_API_KEY=...`, owner-readable
+only) is the fallback. Every run tries the token first. When the token file is missing, or a session
+fails to authenticate with the token, the run moves to the key and stays on it for the rest of that
+run: the failed session is run once more on the key, both attempts are kept under `sessions/` (the
+second one named `-api-key`), and `sessions/auth-fallback.json` records why and when. The owner is
+notified the first time a run moves to the key, through the usual channel ("Being told"), because the
+key is billed per token (a morning's sessions cost on the order of ten dollars) and the token needs
+renewing; if that notification cannot be delivered, the text goes to the job's stderr log and the
+fallback record remains. The next run tries the token again, so a renewed token takes effect on its
+own. A session that fails for any other reason is not rerun on the key. With neither file the
+sessions use the CLI's own login, which under launchd is the keychain entry.
+
+To check the login the jobs will actually use, probe from launchd, not from a Claude Code shell: a
+sandboxed shell cannot read the keychain and falls back to `~/.claude/.credentials.json`, so it can
 look logged in while the jobs are not.
 
 ## Being told
@@ -186,6 +198,8 @@ Read `runs/<id>/status.json`: `failure.phase` and `failure.type` say which step 
 - `editor_failed`, `writer_failed`, `checker_failed`: the session exited non-zero or reported an
   error, or a writer's answer was not usable copy twice; `sessions/` holds each record. Run again;
   stories already written are kept under `stories/` and only the missing ones are written.
+  A record whose result starts with `Failed to authenticate` means the login the sessions carry is
+  gone: renew the token, or add the API key, as "The desk's own login" describes, then run again.
 - `phase_output_missing`: a phase ended without writing its file (for example the editor session
   wrote no `edition.json`). Run again.
 - `verdicts_invalid`: the checker's verdicts do not cover the check input sentence for sentence, or
