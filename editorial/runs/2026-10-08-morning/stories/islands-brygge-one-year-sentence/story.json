@@ -1,0 +1,92 @@
+{
+ "headline": "Man jailed for a year over punch that killed a Swede in Copenhagen",
+ "headline_short": "Fatal punch earns a year in prison",
+ "deck": "He has earlier convictions for attempted murder and rape; the government will raise the penalty when simple violence kills.",
+ "extended": [
+  [
+   "Copenhagen City Court on Wednesday sentenced a 31-year-old man to a year in prison for a punch that killed Christian Zedig, a 32-year-old Swede. The man had pleaded guilty, and he is also barred from nightlife for a year.",
+   [
+    "kristeligt_dagblad",
+    "berlingske",
+    "politiken"
+   ]
+  ],
+  [
+   "On 30 June, at a big-screen showing of a World Cup match at Islands Brygge in Copenhagen, he threw two beer cans at a group that included Zedig. Then he punched him on the head or neck. The blow ruptured an artery. Zedig, who worked for the Swedish police, died on 3 July.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "He was convicted of simple rather than aggravated violence. A punch is typically not dangerous, Søren Harbo, a special prosecutor with Copenhagen Police, told the court. The judge counted the man's aggressive behaviour and his earlier convictions, for attempted murder, rape and violence, against him.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "Nicolai Wammen, the justice minister, says the government will raise the penalty when simple violence kills. In some such cases, he says, the sentence is 'unacceptably low'.",
+   [
+    "kristeligt_dagblad",
+    "berlingske"
+   ]
+  ]
+ ],
+ "standard": [
+  [
+   "Copenhagen City Court on Wednesday sentenced a 31-year-old man to a year in prison for a punch that killed Christian Zedig, a 32-year-old Swede. The man had pleaded guilty, and he is also barred from nightlife for a year.",
+   [
+    "kristeligt_dagblad",
+    "berlingske",
+    "politiken"
+   ]
+  ],
+  [
+   "On 30 June, at a big-screen showing of a World Cup match at Islands Brygge in Copenhagen, he punched Zedig on the head or neck, rupturing an artery. Zedig died on 3 July. The man was convicted of simple rather than aggravated violence, despite earlier convictions for attempted murder and rape.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "Nicolai Wammen, the justice minister, says the government will raise the penalty when simple violence kills.",
+   [
+    "kristeligt_dagblad",
+    "berlingske"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "Copenhagen City Court on Wednesday sentenced a 31-year-old man to a year in prison for a punch at a World Cup screening in Copenhagen that killed Christian Zedig, a 32-year-old Swede. Nicolai Wammen, the justice minister, says the government will raise the penalty when simple violence kills.",
+   [
+    "kristeligt_dagblad",
+    "berlingske"
+   ]
+  ]
+ ],
+ "callouts": [
+  {
+   "kind": "quote",
+   "text": "When simple violence ends up costing a person their life, the punishment is in some cases unacceptably low.",
+   "attribution": "Nicolai Wammen, justice minister",
+   "attribution_source": "kristeligt_dagblad"
+  },
+  {
+   "kind": "timeline",
+   "title": "From the screening to the sentence",
+   "rows": [
+    {
+     "date": "30 June",
+     "text": "Punch at a World Cup screening at Islands Brygge, 20:45"
+    },
+    {
+     "date": "3 July",
+     "text": "Christian Zedig dies"
+    },
+    {
+     "date": "Wednesday",
+     "text": "A year in prison and a one-year nightlife ban"
+    }
+   ]
+  }
+ ]
+}

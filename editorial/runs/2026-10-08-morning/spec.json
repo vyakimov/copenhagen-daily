@@ -1,0 +1,587 @@
+{
+  "edition": {
+    "id": "2026-10-08-morning",
+    "number": 3,
+    "name": "Thursday edition",
+    "date": "2026-10-08",
+    "cutoff_at": "2026-10-08T03:30:00.000000Z",
+    "checked_from": "2026-10-05T03:30:00.000000Z",
+    "input_id": "export-2026-10-08-0330",
+    "presentation": {
+      "emphasis": "many_stories",
+      "ear_right": "Inside: Kosovar prison officers charged, the WHO on Russia's plague case, every wolf to be DNA-registered"
+    },
+    "note": "Built from headlines and RSS descriptions published between 05:30 on 5 October and 05:30 on 8 October, Copenhagen time: 3,946 articles. All 132 feeds at 17 publishers polled."
+  },
+  "stories": [
+    {
+      "id": "islands-brygge-one-year-sentence",
+      "role": "lead",
+      "kicker": "Crime",
+      "sources": [
+        564,
+        359,
+        382,
+        229,
+        1310,
+        773
+      ],
+      "headline": "Man jailed for a year over punch that killed a Swede in Copenhagen",
+      "headline_short": "Fatal punch earns a year in prison",
+      "deck": "He has earlier convictions for attempted murder and rape; the government will raise the penalty when simple violence kills.",
+      "extended": [
+        [
+          "Copenhagen City Court on Wednesday sentenced a 31-year-old man to a year in prison for a punch that killed Christian Zedig, a 32-year-old Swede. The man had pleaded guilty, and he is also barred from nightlife for a year.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "politiken"
+          ]
+        ],
+        [
+          "On 30 June, at a big-screen showing of a World Cup match at Islands Brygge in Copenhagen, he threw two beer cans at a group that included Zedig. Then he punched him on the head or neck. The blow ruptured an artery. Zedig, who worked for the Swedish police, died on 3 July.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "He was convicted of simple rather than aggravated violence. A punch is typically not dangerous, Søren Harbo, a special prosecutor with Copenhagen Police, told the court. The judge counted the man's aggressive behaviour and his earlier convictions, for attempted murder, rape and violence, against him.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Nicolai Wammen, the justice minister, says the government will raise the penalty when simple violence kills. In some such cases, he says, the sentence is 'unacceptably low'.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ]
+      ],
+      "standard": [
+        [
+          "Copenhagen City Court on Wednesday sentenced a 31-year-old man to a year in prison for a punch that killed Christian Zedig, a 32-year-old Swede. The man had pleaded guilty, and he is also barred from nightlife for a year.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "politiken"
+          ]
+        ],
+        [
+          "On 30 June, at a big-screen showing of a World Cup match at Islands Brygge in Copenhagen, he punched Zedig on the head or neck, rupturing an artery. Zedig died on 3 July. The man was convicted of simple rather than aggravated violence, despite earlier convictions for attempted murder and rape.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Nicolai Wammen, the justice minister, says the government will raise the penalty when simple violence kills.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Copenhagen City Court on Wednesday sentenced a 31-year-old man to a year in prison for a punch at a World Cup screening in Copenhagen that killed Christian Zedig, a 32-year-old Swede. Nicolai Wammen, the justice minister, says the government will raise the penalty when simple violence kills.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ]
+      ],
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "When simple violence ends up costing a person their life, the punishment is in some cases unacceptably low.",
+          "attribution": "Nicolai Wammen, justice minister",
+          "attribution_source": "kristeligt_dagblad"
+        },
+        {
+          "kind": "timeline",
+          "title": "From the screening to the sentence",
+          "rows": [
+            {
+              "date": "30 June",
+              "text": "Punch at a World Cup screening at Islands Brygge, 20:45"
+            },
+            {
+              "date": "3 July",
+              "text": "Christian Zedig dies"
+            },
+            {
+              "date": "Wednesday",
+              "text": "A year in prison and a one-year nightlife ban"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kosovar-guards-charged-vestre",
+      "role": "secondary",
+      "kicker": "Denmark",
+      "sources": [
+        1032,
+        764,
+        791,
+        733,
+        1058,
+        301,
+        1030
+      ],
+      "headline": "Police charge two Kosovar guards trained for Denmark's prison in Kosovo with beating an inmate",
+      "headline_short": "Kosovar prison guards charged with assault",
+      "deck": "A judge released both men, who deny the charge; the prison service will review their training.",
+      "standard": [
+        [
+          "Copenhagen Police have charged two prison officers from Kosovo with punching an inmate repeatedly in a cell at Vestre Fængsel, a Copenhagen prison, on Monday. Both deny it. A judge released them on Wednesday, finding no risk that they would flee.",
+          [
+            "kristeligt_dagblad",
+            "tv2"
+          ]
+        ],
+        [
+          "They had trained in Denmark to guard inmates at a prison the government is renting in Gjilan, Kosovo, for foreigners sentenced to deportation. It is now expected to open in late 2027 or early 2028.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Ina Eliasen, director of the prison service, says it will look at whether its training of the officers is good enough. Anders Vistisen of Dansk Folkeparti, a nationalist party that backed the 2021 agreement, called Kosovo 'a complete misfire' as a destination.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Two prison officers from Kosovo have been charged with punching an inmate at Vestre Fængsel, a Copenhagen prison, on Monday. Both deny it. They had trained in Denmark to guard inmates at a prison the government is renting in Kosovo.",
+          [
+            "kristeligt_dagblad",
+            "tv2"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "who-cannot-assess-russia-plague",
+      "role": "secondary",
+      "kicker": "World",
+      "sources": [
+        448,
+        928,
+        696,
+        465,
+        912,
+        745,
+        170
+      ],
+      "headline": "WHO says it cannot fully assess a suspected plague death in Russia",
+      "headline_short": "WHO cannot assess suspected Russian plague death",
+      "deck": "Moscow says the Siberian laboratory worker died of pneumonia; America and the WHO want answers about a second case.",
+      "standard": [
+        [
+          "The World Health Organization cannot fully assess the risk from a suspected plague death in Russia. 'We do not yet have the full picture,' Tedros Adhanom Ghebreyesus, its head, said on Wednesday.",
+          [
+            "kristeligt_dagblad",
+            "guardian"
+          ]
+        ],
+        [
+          "Darya Shipilova, a 28-year-old technician at an anti-plague laboratory in Siberia's Irkutsk region, died last week. Russia says she died of pneumonia of unknown cause; unnamed sources told local media she may have caught plague from a broken test tube.",
+          [
+            "kristeligt_dagblad",
+            "guardian",
+            "jp"
+          ]
+        ],
+        [
+          "The WHO and America want answers about a second laboratory worker reported to have pneumonia. Dmitry Peskov, the Russian president's spokesman, said Russia informed the WHO as procedures require and accused the media of spreading false information.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "tv2"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "The World Health Organization says it cannot fully assess the risk from the suspected plague death of a 28-year-old technician at an anti-plague laboratory in Siberia. Russia says she died of pneumonia of unknown cause.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "afghanistan-inquiry-full-openness",
+      "role": "secondary",
+      "kicker": "Politics",
+      "sources": [
+        569,
+        479
+      ],
+      "headline": "Parliament drops anonymity for politicians in Afghanistan study",
+      "headline_short": "Afghanistan study will name politicians",
+      "deck": "Former members of a confidential committee lose the option to be quoted anonymously; the researchers hope to send the study to print before Christmas.",
+      "standard": [
+        [
+          "The Presidium of the Folketing, Denmark's parliament, decided unanimously on Wednesday that former members of its confidential Foreign Policy Committee cannot be quoted anonymously in a study of Denmark's military mission in Afghanistan.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ],
+        [
+          "In May the Presidium had made naming them depend on their consent, arguing that they had spoken expecting 30 years of confidentiality. Veterans objected, 50,000 people signed a citizens' proposal against it, and in September the four governing parties pushed to reverse it.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Peter Kragelund, director of the Danish Institute for International Studies, whose researchers are writing the study, hopes to send it to print before Christmas, with publication probably in the new year.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "The Presidium of the Folketing, Denmark's parliament, decided on Wednesday that former members of its confidential Foreign Policy Committee cannot be quoted anonymously in a study of Denmark's military mission in Afghanistan, reversing a decision from May. The researchers hope to send it to print before Christmas.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "enhedslisten-welfare-profit-demand",
+      "role": "secondary",
+      "kicker": "Welfare",
+      "sources": [
+        339,
+        1024
+      ],
+      "headline": "Far-left party demands a ban on profit from welfare in budget talks",
+      "headline_short": "Far-left party demands welfare profit ban",
+      "deck": "The party calls it one of its priority demands; the prime minister promises nothing.",
+      "standard": [
+        [
+          "Enhedslisten, a far-left party, will demand a ban on profit from publicly funded welfare in the coming budget negotiations. Private providers of supported housing, shelters, crisis centres and elderly care would have to run as self-governing institutions that reinvest any surplus.",
+          [
+            "kristeligt_dagblad",
+            "information"
+          ]
+        ],
+        [
+          "Mette Frederiksen, the prime minister, would not promise a ban but told Information she is 'not super keen' that money can be made 'from other people's misery'.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "SF, a left-wing party, wants first to see whether a new rate model solves the problems. Radikale Venstre, a social-liberal party, accepts profit at crisis centres if it brings more places and better care.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Enhedslisten, a far-left party, will demand a ban on profit from publicly funded welfare, including crisis centres and elderly care, in the coming budget negotiations. Mette Frederiksen, the prime minister, would not promise it.",
+          [
+            "kristeligt_dagblad",
+            "information"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "tilst-speeding-driver-four-years",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        993,
+        997,
+        1235
+      ],
+      "headline": "Speeding driver gets four years for killing woman in her home near Aarhus",
+      "lede": [
+        "A 20-year-old man was sentenced on Wednesday to four years in prison for killing a 64-year-old woman in Tilst, near Aarhus, after fleeing police at 109 km/h and hitting her house.",
+        [
+          "kristeligt_dagblad",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "wolves-dna-register-2027",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        909,
+        318,
+        518
+      ],
+      "headline": "Denmark will identify every wolf by its DNA",
+      "lede": [
+        "Every wolf in Denmark is to be identified by its DNA from 2027, a state agency says; monitoring will cost 7.5 million kroner a year, up from 1.25 million, as the population grows.",
+        [
+          "kristeligt_dagblad",
+          "jp"
+        ]
+      ]
+    },
+    {
+      "id": "marine-nature-parks-68-million",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        617,
+        596
+      ],
+      "headline": "Government proposes 67.8 million kroner for two new marine national parks",
+      "lede": [
+        "The government and Alternativet, a green party, propose 67.8 million kroner over three years in next year's budget for two new marine national parks, with fishing and seabed extraction partly barred.",
+        [
+          "kristeligt_dagblad",
+          "via_ritzau"
+        ]
+      ]
+    },
+    {
+      "id": "mediation-councils-bill-retabled",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        1245,
+        546
+      ],
+      "headline": "Government tries again to make mediation councils a crime",
+      "lede": [
+        "Nicolai Wammen, the justice minister, re-tabled a bill on Wednesday under which taking part in a mediation council with intent to shield a crime from prosecution would carry up to four years in prison.",
+        [
+          "kristeligt_dagblad",
+          "jp"
+        ]
+      ]
+    },
+    {
+      "id": "manniche-20-days-suspended",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        913,
+        868
+      ],
+      "headline": "Doctor gets suspended sentence for issuing covid-test exemptions",
+      "lede": [
+        "The High Court on Wednesday gave Vibeke Manniche, a trained doctor without permission to practise, a 20-day suspended sentence for issuing about 20 covid-test exemptions in 2021 without authority.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "naza-paused-on-anniversary",
+      "role": "brief",
+      "kicker": "Culture",
+      "sources": [
+        1167,
+        1140
+      ],
+      "headline": "Danish cinemas pause Gaza documentary for anniversary of Hamas attack",
+      "lede": [
+        "Several Danish cinemas did not show 'Naza', a documentary about civilian deaths in Gaza, on Wednesday, the third anniversary of Hamas's attack in Israel, at its Israeli directors' request; screenings resume today.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "rigshospitalet-oslo-liver-surgeons",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        893,
+        862
+      ],
+      "headline": "Copenhagen hospital brings in Norwegian surgeon for children's liver transplants",
+      "lede": [
+        "Rigshospitalet, a Copenhagen hospital, will bring in an experienced surgeon from Oslo University Hospital for children's liver transplants after two of its surgeons stopped; pancreas transplants move to Norway from 1 November.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "ssi-expects-high-flu-winter",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        678,
+        676
+      ],
+      "headline": "State institute expects flu to reach a high level this winter",
+      "lede": [
+        "Statens Serum Institut, a Danish government institute for infectious disease, expects flu to reach a high level this winter, with influenza B possibly a larger share, while covid-19 looks set to stay lower.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "royal-gala-apples-recalled",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        671,
+        645
+      ],
+      "headline": "Food group recalls Italian apples over pest risk",
+      "lede": [
+        "Dagrofa, a food group, is recalling Royal Gala apples from Italy sold loose at Meny, Spar, Let-Køb and Min Købmand shops between 30 September and 7 October over a risk of pest contamination.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "kombit-outage-municipal-systems",
+      "role": "brief",
+      "kicker": "Municipalities",
+      "sources": [
+        302,
+        261
+      ],
+      "headline": "Network failure takes municipal IT systems down for five hours",
+      "lede": [
+        "A network failure left municipalities unable to reach some systems run by Kombit, their joint IT body, for five hours on Wednesday; some home-care services could not see which residents to visit.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "nobel-chemistry-kagan-soai",
+      "role": "brief",
+      "kicker": "Science",
+      "sources": [
+        887,
+        412,
+        876,
+        752,
+        285,
+        431,
+        511,
+        639,
+        294,
+        480
+      ],
+      "headline": "French and Japanese chemists win Nobel prize for work on mirror-image molecules",
+      "lede": [
+        "France's Henri Kagan and Japan's Kenso Soai won the Nobel prize in chemistry on Wednesday for showing how reactions can favour one of a molecule's two mirror-image forms, work crucial to drug development.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "guardian",
+          "ft"
+        ]
+      ]
+    },
+    {
+      "id": "ukraine-70-missiles-strike",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        1021,
+        754,
+        309,
+        543,
+        30,
+        429,
+        481,
+        503
+      ],
+      "headline": "Russian attack with 70 missiles kills 28 in Ukraine",
+      "lede": [
+        "A Russian attack with 70 missiles and drones killed 28 people, says Ivan Vyhivskyi, Ukraine's interior minister; 20 died, including five children, in a block of flats in Pryluky, in the northern Chernihiv region.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "guardian"
+        ]
+      ]
+    },
+    {
+      "id": "france-suspends-stun-grenades",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        1074,
+        995,
+        342,
+        659,
+        195
+      ],
+      "headline": "France halts police stun grenades at school protests after a boy loses a hand",
+      "lede": [
+        "Laurent Nuñez, France's interior minister, said on Wednesday that police had stopped using stun grenades at high school protests for now, after a 15-year-old lost a hand on Monday.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "guardian",
+          "bbc"
+        ]
+      ]
+    },
+    {
+      "id": "saudi-airports-three-killed",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        282,
+        257,
+        91,
+        34,
+        1324
+      ],
+      "headline": "Attacks on two Saudi airports kill three",
+      "lede": [
+        "Attacks on two Saudi airports, including the main one in Riyadh, killed three people and injured 36 on Tuesday and Wednesday, Saudi Arabia's civil aviation authority says; Yemen's Iran-backed Houthi movement claimed them.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "nytimes",
+          "wsj"
+        ]
+      ]
+    },
+    {
+      "id": "raaplan-sequel-praised",
+      "role": "brief",
+      "kicker": "Culture",
+      "sources": [
+        144,
+        1033,
+        1119
+      ],
+      "headline": "Critics praise sequel to 2006 Danish youth film",
+      "lede": [
+        "'Råplan', a sequel to the 2006 Danish youth film 'Råzone' by the same director, opens on Thursday to reviews that praise it and find it even more violent than the original.",
+        [
+          "kristeligt_dagblad",
+          "information"
+        ]
+      ]
+    }
+  ]
+}

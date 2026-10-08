@@ -1,0 +1,2323 @@
+{
+  "schema_version": 2,
+  "title": "copenhagen-daily",
+  "edition": {
+    "id": "2026-10-08-morning",
+    "number": 3,
+    "name": "Thursday edition",
+    "date": "2026-10-08",
+    "timezone": "Europe/Copenhagen",
+    "language": "en",
+    "cutoff_at": "2026-10-08T03:30:00.000000Z",
+    "generated_at": "2026-10-08T06:09:20.890212Z"
+  },
+  "presentation": {
+    "emphasis": "many_stories",
+    "ear_right": "Inside: Kosovar prison officers charged, the WHO on Russia's plague case, every wolf to be DNA-registered"
+  },
+  "coverage": {
+    "status": "complete",
+    "checked_from": "2026-10-05T03:30:00.000000Z",
+    "checked_until": "2026-10-08T03:30:00.000000Z",
+    "feeds": [
+      {
+        "feed_id": "altinget.arbejdsmarked",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.958225Z"
+      },
+      {
+        "feed_id": "altinget.by",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.075245Z"
+      },
+      {
+        "feed_id": "altinget.christiansborg",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.823171Z"
+      },
+      {
+        "feed_id": "altinget.eu",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.879149Z"
+      },
+      {
+        "feed_id": "altinget.forside",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.796631Z"
+      },
+      {
+        "feed_id": "altinget.forsvar",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.983475Z"
+      },
+      {
+        "feed_id": "altinget.klima",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.905376Z"
+      },
+      {
+        "feed_id": "altinget.kommunal",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.008581Z"
+      },
+      {
+        "feed_id": "altinget.sundhed",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.931153Z"
+      },
+      {
+        "feed_id": "altinget.uddannelse",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.029079Z"
+      },
+      {
+        "feed_id": "bbc.business",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.250623Z"
+      },
+      {
+        "feed_id": "bbc.culture",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.615093Z"
+      },
+      {
+        "feed_id": "bbc.europe",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.212058Z"
+      },
+      {
+        "feed_id": "bbc.health",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.435486Z"
+      },
+      {
+        "feed_id": "bbc.politics",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.504915Z"
+      },
+      {
+        "feed_id": "bbc.science",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.382775Z"
+      },
+      {
+        "feed_id": "bbc.technology",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.350694Z"
+      },
+      {
+        "feed_id": "bbc.top",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.136824Z"
+      },
+      {
+        "feed_id": "bbc.world",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.180749Z"
+      },
+      {
+        "feed_id": "berlingske.business",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.819288Z"
+      },
+      {
+        "feed_id": "berlingske.kultur",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.838791Z"
+      },
+      {
+        "feed_id": "berlingske.latest",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.784495Z"
+      },
+      {
+        "feed_id": "berlingske.opinion",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.858287Z"
+      },
+      {
+        "feed_id": "berlingske.samfund",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.804763Z"
+      },
+      {
+        "feed_id": "borsen.baeredygtig",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:37.916293Z"
+      },
+      {
+        "feed_id": "borsen.breaking",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:37.911493Z"
+      },
+      {
+        "feed_id": "borsen.ejendomme",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:37.952009Z"
+      },
+      {
+        "feed_id": "borsen.executive",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.071143Z"
+      },
+      {
+        "feed_id": "borsen.finans",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:37.979803Z"
+      },
+      {
+        "feed_id": "borsen.homepage",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:37.860893Z"
+      },
+      {
+        "feed_id": "borsen.investor",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.005828Z"
+      },
+      {
+        "feed_id": "borsen.longread",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.103838Z"
+      },
+      {
+        "feed_id": "borsen.markedsberetninger",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.130823Z"
+      },
+      {
+        "feed_id": "borsen.okonomi",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.379720Z"
+      },
+      {
+        "feed_id": "borsen.opinion",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.160907Z"
+      },
+      {
+        "feed_id": "borsen.pleasure",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.193277Z"
+      },
+      {
+        "feed_id": "borsen.politik",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.228122Z"
+      },
+      {
+        "feed_id": "borsen.tech",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.292660Z"
+      },
+      {
+        "feed_id": "borsen.udland",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.321836Z"
+      },
+      {
+        "feed_id": "borsen.virksomheder",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.355956Z"
+      },
+      {
+        "feed_id": "dr.indland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.910617Z"
+      },
+      {
+        "feed_id": "dr.kultur",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.181038Z"
+      },
+      {
+        "feed_id": "dr.latest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.878262Z"
+      },
+      {
+        "feed_id": "dr.musik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.209470Z"
+      },
+      {
+        "feed_id": "dr.penge",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.007762Z"
+      },
+      {
+        "feed_id": "dr.politik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.039183Z"
+      },
+      {
+        "feed_id": "dr.regionale",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.263296Z"
+      },
+      {
+        "feed_id": "dr.regionale_bornholm",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.326660Z"
+      },
+      {
+        "feed_id": "dr.regionale_fyn",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.414627Z"
+      },
+      {
+        "feed_id": "dr.regionale_kbh",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.292643Z"
+      },
+      {
+        "feed_id": "dr.regionale_nord",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.477457Z"
+      },
+      {
+        "feed_id": "dr.regionale_oestjylland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.602605Z"
+      },
+      {
+        "feed_id": "dr.regionale_sjaelland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.544609Z"
+      },
+      {
+        "feed_id": "dr.regionale_syd",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.381031Z"
+      },
+      {
+        "feed_id": "dr.regionale_trekanten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.507266Z"
+      },
+      {
+        "feed_id": "dr.regionale_vest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.445030Z"
+      },
+      {
+        "feed_id": "dr.senestesport",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.094840Z"
+      },
+      {
+        "feed_id": "dr.sporten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.067331Z"
+      },
+      {
+        "feed_id": "dr.udland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.977587Z"
+      },
+      {
+        "feed_id": "dr.vejret",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.234528Z"
+      },
+      {
+        "feed_id": "dr.viden",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.122605Z"
+      },
+      {
+        "feed_id": "economist.briefing",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.637359Z"
+      },
+      {
+        "feed_id": "economist.business",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.637721Z"
+      },
+      {
+        "feed_id": "economist.culture",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.637850Z"
+      },
+      {
+        "feed_id": "economist.europe",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.637421Z"
+      },
+      {
+        "feed_id": "economist.finance",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.637660Z"
+      },
+      {
+        "feed_id": "economist.international",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.637595Z"
+      },
+      {
+        "feed_id": "economist.latest",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.637213Z"
+      },
+      {
+        "feed_id": "economist.leaders",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.637296Z"
+      },
+      {
+        "feed_id": "economist.science",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.637785Z"
+      },
+      {
+        "feed_id": "ft.climate_capital",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:37.687376Z"
+      },
+      {
+        "feed_id": "ft.companies",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:37.615950Z"
+      },
+      {
+        "feed_id": "ft.global_economy",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:37.611710Z"
+      },
+      {
+        "feed_id": "ft.homepage.international",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:37.523491Z"
+      },
+      {
+        "feed_id": "ft.life_arts",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:37.830666Z"
+      },
+      {
+        "feed_id": "ft.markets",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:37.646175Z"
+      },
+      {
+        "feed_id": "ft.opinion",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:37.728073Z"
+      },
+      {
+        "feed_id": "ft.technology",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:37.650255Z"
+      },
+      {
+        "feed_id": "ft.work_careers",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:37.762277Z"
+      },
+      {
+        "feed_id": "ft.world",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:37.547849Z"
+      },
+      {
+        "feed_id": "guardian.business",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:41.191778Z"
+      },
+      {
+        "feed_id": "guardian.culture",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:41.575941Z"
+      },
+      {
+        "feed_id": "guardian.environment",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:41.412213Z"
+      },
+      {
+        "feed_id": "guardian.europe",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:41.118732Z"
+      },
+      {
+        "feed_id": "guardian.international",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.709179Z"
+      },
+      {
+        "feed_id": "guardian.opinion",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:41.791017Z"
+      },
+      {
+        "feed_id": "guardian.science",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:41.485071Z"
+      },
+      {
+        "feed_id": "guardian.technology",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:41.325671Z"
+      },
+      {
+        "feed_id": "guardian.world",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:41.024291Z"
+      },
+      {
+        "feed_id": "information.feed",
+        "source": "information",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.791710Z"
+      },
+      {
+        "feed_id": "jp.seneste",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.782096Z"
+      },
+      {
+        "feed_id": "jp.topnyheder",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.762146Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.artikler",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.095894Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.nyheder",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.095802Z"
+      },
+      {
+        "feed_id": "nytimes.arts",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:37.203898Z"
+      },
+      {
+        "feed_id": "nytimes.books",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:37.356948Z"
+      },
+      {
+        "feed_id": "nytimes.business",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:36.722632Z"
+      },
+      {
+        "feed_id": "nytimes.climate",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:37.084291Z"
+      },
+      {
+        "feed_id": "nytimes.europe",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:36.670105Z"
+      },
+      {
+        "feed_id": "nytimes.health",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:37.025551Z"
+      },
+      {
+        "feed_id": "nytimes.homepage",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:36.418701Z"
+      },
+      {
+        "feed_id": "nytimes.opinion",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:37.448880Z"
+      },
+      {
+        "feed_id": "nytimes.science",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:36.912509Z"
+      },
+      {
+        "feed_id": "nytimes.technology",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:36.839878Z"
+      },
+      {
+        "feed_id": "nytimes.world",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:36.519928Z"
+      },
+      {
+        "feed_id": "politiken.debat",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.646001Z"
+      },
+      {
+        "feed_id": "politiken.forbrugogliv",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.670569Z"
+      },
+      {
+        "feed_id": "politiken.ibyen",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.729610Z"
+      },
+      {
+        "feed_id": "politiken.indland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.427517Z"
+      },
+      {
+        "feed_id": "politiken.kultur",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.562010Z"
+      },
+      {
+        "feed_id": "politiken.latest",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.396928Z"
+      },
+      {
+        "feed_id": "politiken.oekonomi",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.532351Z"
+      },
+      {
+        "feed_id": "politiken.politik",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.501454Z"
+      },
+      {
+        "feed_id": "politiken.rejser",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.759023Z"
+      },
+      {
+        "feed_id": "politiken.sport",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.586562Z"
+      },
+      {
+        "feed_id": "politiken.udland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.451609Z"
+      },
+      {
+        "feed_id": "politiken.viden",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:38.616047Z"
+      },
+      {
+        "feed_id": "tv2.nyheder",
+        "source": "tv2",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:39.660525Z"
+      },
+      {
+        "feed_id": "via_ritzau.latest",
+        "source": "via_ritzau",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:40.100993Z"
+      },
+      {
+        "feed_id": "wapo.business",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:41.970085Z"
+      },
+      {
+        "feed_id": "wapo.national",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:41.894777Z"
+      },
+      {
+        "feed_id": "wapo.opinions",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:42.022292Z"
+      },
+      {
+        "feed_id": "wapo.politics",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:41.928136Z"
+      },
+      {
+        "feed_id": "wapo.technology",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:42.010296Z"
+      },
+      {
+        "feed_id": "wapo.world",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:41.870902Z"
+      },
+      {
+        "feed_id": "wsj.business",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:42.181489Z"
+      },
+      {
+        "feed_id": "wsj.economy",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:42.403278Z"
+      },
+      {
+        "feed_id": "wsj.markets",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:42.328072Z"
+      },
+      {
+        "feed_id": "wsj.opinion",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:42.579527Z"
+      },
+      {
+        "feed_id": "wsj.politics",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:42.449165Z"
+      },
+      {
+        "feed_id": "wsj.technology",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:42.483804Z"
+      },
+      {
+        "feed_id": "wsj.world",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-08T03:20:42.066005Z"
+      }
+    ],
+    "note": "Built from headlines and RSS descriptions published between 05:30 on 5 October and 05:30 on 8 October, Copenhagen time: 3,946 articles. All 132 feeds at 17 publishers polled."
+  },
+  "inputs": [
+    {
+      "id": "export-2026-10-08-0330",
+      "sha256": "sha256:620dcb07f190d4f4cb22e57f7fd5cedcd6697c3fd90dc81b9583ae1702c1ab19"
+    }
+  ],
+  "stories": [
+    {
+      "id": "islands-brygge-one-year-sentence",
+      "device_participation": "required",
+      "role": "lead",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "Man jailed for a year over punch that killed a Swede in Copenhagen",
+        "body": {
+          "extended": [
+            {
+              "text": "Copenhagen City Court on Wednesday sentenced a 31-year-old man to a year in prison for a punch that killed Christian Zedig, a 32-year-old Swede. The man had pleaded guilty, and he is also barred from nightlife for a year.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "politiken"
+              ]
+            },
+            {
+              "text": "On 30 June, at a big-screen showing of a World Cup match at Islands Brygge in Copenhagen, he threw two beer cans at a group that included Zedig. Then he punched him on the head or neck. The blow ruptured an artery. Zedig, who worked for the Swedish police, died on 3 July.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "He was convicted of simple rather than aggravated violence. A punch is typically not dangerous, Søren Harbo, a special prosecutor with Copenhagen Police, told the court. The judge counted the man's aggressive behaviour and his earlier convictions, for attempted murder, rape and violence, against him.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Nicolai Wammen, the justice minister, says the government will raise the penalty when simple violence kills. In some such cases, he says, the sentence is 'unacceptably low'.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            }
+          ],
+          "standard": [
+            {
+              "text": "Copenhagen City Court on Wednesday sentenced a 31-year-old man to a year in prison for a punch that killed Christian Zedig, a 32-year-old Swede. The man had pleaded guilty, and he is also barred from nightlife for a year.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "politiken"
+              ]
+            },
+            {
+              "text": "On 30 June, at a big-screen showing of a World Cup match at Islands Brygge in Copenhagen, he punched Zedig on the head or neck, rupturing an artery. Zedig died on 3 July. The man was convicted of simple rather than aggravated violence, despite earlier convictions for attempted murder and rape.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Nicolai Wammen, the justice minister, says the government will raise the penalty when simple violence kills.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Copenhagen City Court on Wednesday sentenced a 31-year-old man to a year in prison for a punch at a World Cup screening in Copenhagen that killed Christian Zedig, a 32-year-old Swede. Nicolai Wammen, the justice minister, says the government will raise the penalty when simple violence kills.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Fatal punch earns a year in prison",
+        "deck": "He has earlier convictions for attempted murder and rape; the government will raise the penalty when simple violence kills."
+      },
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "When simple violence ends up costing a person their life, the punishment is in some cases unacceptably low.",
+          "attribution": "Nicolai Wammen, justice minister",
+          "attribution_source": "kristeligt_dagblad"
+        },
+        {
+          "kind": "timeline",
+          "title": "From the screening to the sentence",
+          "rows": [
+            {
+              "date": "30 June",
+              "text": "Punch at a World Cup screening at Islands Brygge, 20:45"
+            },
+            {
+              "date": "3 July",
+              "text": "Christian Zedig dies"
+            },
+            {
+              "date": "Wednesday",
+              "text": "A year in prison and a one-year nightlife ban"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "e713bf5b-9aff-49e4-bf6f-266a893bdd45",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "31-årig får et års fængsel i sag om vold ved VM-visning",
+          "url": "https://www.kristeligt-dagblad.dk/31-aarig-faar-et-aars-faengsel-i-sag-om-vold-ved-vm-visning",
+          "published_at": "2026-10-07T14:34:24.000000Z",
+          "content_hash": "sha256:54958d42132a9fc35d6e3340bc298497d7cf22818f4e743dce4ca3087d8c156f",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:e58aaeae-2b3b-54af-b2f2-058c5891e4d7",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Politikere raser efter »latterlig mild dom«: »Loven skal strammes, hellere i dag end i morgen«",
+          "url": "https://www.berlingske.dk/politik/politikere-raser-efter-latterlig-mild-dom-loven-skal-strammes-hellere-i-dag-end-i-morgen",
+          "published_at": "2026-10-07T17:30:37.000000Z",
+          "content_hash": "sha256:55cf2386d1f07fe5269c948b579c21c90ac27ae898e75f8c22e56bdd25fab7e2",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:cd292b4b-e8ed-5d3a-bd3a-94bbd90588b1",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Svenske Christian Zedig tog til København og kom aldrig hjem igen – onsdag fik drabsmand på Islands Brygge sin straf",
+          "url": "https://www.berlingske.dk/indland/svenske-christian-zedig-tog-til-koebenhavn-og-kom-aldrig-hjem-igen--onsdag-fik-drabsmand-paa-islands-brygge-sin-straf",
+          "published_at": "2026-10-07T17:10:18.000000Z",
+          "content_hash": "sha256:e90d4aae289ecd590e230819c0d17e39aa02669fb12ed2e4f53d5fbaf537bc46",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19717059",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Politikere i harme over længden på dom efter svenskers død: Her er forklaringen",
+          "url": "https://jyllands-posten.dk/indland/ECE19717059/politikere-i-harme-over-laengden-paa-dom-efter-svenskers-doed-her-er-forklaringen/",
+          "published_at": "2026-10-07T19:43:19.000000Z",
+          "content_hash": "sha256:b32a611b022f89d17cc0598d969825636631e51bf95326ba5c21e78faac843cc",
+          "primary": false
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "565bcc4e-2fa6-4f22-9ea5-1fc17a3bafa2",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Svenskers død vakte vrede hos statsministeren: Nu indledes sagen",
+          "url": "https://www.kristeligt-dagblad.dk/svenskers-doed-vakte-vrede-hos-statsministeren-nu-indledes-sagen",
+          "published_at": "2026-10-07T03:30:02.000000Z",
+          "content_hash": "sha256:4175c1fb6b60708c4abf3dd3485e3683d6154ef7dca9f7e6892405d86da8700e",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "politiken",
+          "source_id": "11012945",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "31-årig erkender dødsvold: »Jeg har det forfærdeligt«",
+          "url": "https://politiken.dk/danmark/art11012945/31-%C3%A5rig-erkender-d%C3%B8dsvold-%C2%BBJeg-har-det-forf%C3%A6rdeligt%C2%AB",
+          "published_at": "2026-10-07T11:35:27.000000Z",
+          "content_hash": "sha256:00eb9669b91ed5aa1352ffb483d9f654ea70bb2a1522c573fdb9c21e40c09b6a",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "kosovar-guards-charged-vestre",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Police charge two Kosovar guards trained for Denmark's prison in Kosovo with beating an inmate",
+        "body": {
+          "standard": [
+            {
+              "text": "Copenhagen Police have charged two prison officers from Kosovo with punching an inmate repeatedly in a cell at Vestre Fængsel, a Copenhagen prison, on Monday. Both deny it. A judge released them on Wednesday, finding no risk that they would flee.",
+              "sources": [
+                "kristeligt_dagblad",
+                "tv2"
+              ]
+            },
+            {
+              "text": "They had trained in Denmark to guard inmates at a prison the government is renting in Gjilan, Kosovo, for foreigners sentenced to deportation. It is now expected to open in late 2027 or early 2028.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Ina Eliasen, director of the prison service, says it will look at whether its training of the officers is good enough. Anders Vistisen of Dansk Folkeparti, a nationalist party that backed the 2021 agreement, called Kosovo 'a complete misfire' as a destination.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Two prison officers from Kosovo have been charged with punching an inmate at Vestre Fængsel, a Copenhagen prison, on Monday. Both deny it. They had trained in Denmark to guard inmates at a prison the government is renting in Kosovo.",
+              "sources": [
+                "kristeligt_dagblad",
+                "tv2"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Kosovar prison guards charged with assault",
+        "deck": "A judge released both men, who deny the charge; the prison service will review their training."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "a0af9c1e-923a-4b50-950c-dbaa2d8b89bc",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Fængselsbetjente fra Kosovo sigtes for vold i dansk fængsel",
+          "url": "https://www.kristeligt-dagblad.dk/faengselsbetjente-fra-kosovo-sigtes-vold-i-dansk-faengsel",
+          "published_at": "2026-10-07T08:03:22.000000Z",
+          "content_hash": "sha256:71f00f6388d2a173f86075ca6ac74d3a8a5d505be2703c59df03141b543f8ee4",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "1d631912-eb12-4333-ae3c-f98304d5f25b",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Dommer løslader voldssigtede kosovoske fængselsbetjente",
+          "url": "https://www.kristeligt-dagblad.dk/dommer-loeslader-voldssigtede-kosovoske-faengselsbetjente",
+          "published_at": "2026-10-07T11:42:06.000000Z",
+          "content_hash": "sha256:969e659527433a9bebb4024248b35d2e95624e4743e53910838b21b0db502dd7",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "340ec333-0020-4531-a929-ee48e08c774c",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Uddannelse af kosovoske fængselsbetjente skal gennemgås",
+          "url": "https://www.kristeligt-dagblad.dk/uddannelse-af-kosovoske-faengselsbetjente-skal-gennemgaas",
+          "published_at": "2026-10-07T11:16:48.000000Z",
+          "content_hash": "sha256:2e7fc07c40b43b1acd97773548460b477cf3901104836eba1db38276bb3a65e4",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "68182d8a-7ceb-4f16-b3a6-e3e537ab61c0",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Aftaleparti bag Kosovo-fængsel kalder det et fejlskud",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/aftaleparti-bag-kosovo-faengsel-kalder-det-et-fejlskud",
+          "published_at": "2026-10-07T12:09:42.000000Z",
+          "content_hash": "sha256:5f09398e53446dfb0e568c38e792a9ec8dcac0c33d6cba5b6104b151ec816c2e",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:acd182e3-dce3-420c-bdce-94a64a11ebd2",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Fængselsbetjente fra Kosovo under oplæring sigtet for at slå indsat i Vestre Fængsel",
+          "url": "https://www.dr.dk/nyheder/indland/faengselsbetjente-fra-kosovo-under-oplaering-sigtet-slaa-indsat-i-vestre-faengsel",
+          "published_at": "2026-10-07T07:47:27.000000Z",
+          "content_hash": "sha256:a88da09fb2cbe6ca217b60fb0fab44ae31552267a50026d6a262bb02cc0ffa5e",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:cd64f406-a453-4cf2-8380-2ed4a92794f1",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Organisation advarede om fængselsaftale med Kosovo: ’Jeg er bestemt ikke tryg’",
+          "url": "https://www.dr.dk/nyheder/indland/organisation-advarede-om-faengselsaftale-med-kosovo-jeg-er-bestemt-ikke-tryg",
+          "published_at": "2026-10-07T18:20:00.000000Z",
+          "content_hash": "sha256:e525ab192b38232a80c15b4a5621d6f5e48e47cc5006a70d04ea56eb7c2f5509",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/krimi/2026-10-07-faengselsbetjente-under-oplaering-fra-kosovo-sigtet-for-vold",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Fængselsbetjente fra Kosovo sigtet for vold under oplæring i Danmark",
+          "url": "https://nyheder.tv2.dk/krimi/2026-10-07-faengselsbetjente-under-oplaering-fra-kosovo-sigtet-for-vold",
+          "published_at": "2026-10-07T08:04:14.000000Z",
+          "content_hash": "sha256:b9a1af99f6fe3238155e90b3555489ba9f9005421e27fea2e7120b1e652c7474",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "who-cannot-assess-russia-plague",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "World",
+      "copy": {
+        "headline": "WHO says it cannot fully assess a suspected plague death in Russia",
+        "body": {
+          "standard": [
+            {
+              "text": "The World Health Organization cannot fully assess the risk from a suspected plague death in Russia. 'We do not yet have the full picture,' Tedros Adhanom Ghebreyesus, its head, said on Wednesday.",
+              "sources": [
+                "kristeligt_dagblad",
+                "guardian"
+              ]
+            },
+            {
+              "text": "Darya Shipilova, a 28-year-old technician at an anti-plague laboratory in Siberia's Irkutsk region, died last week. Russia says she died of pneumonia of unknown cause; unnamed sources told local media she may have caught plague from a broken test tube.",
+              "sources": [
+                "kristeligt_dagblad",
+                "guardian",
+                "jp"
+              ]
+            },
+            {
+              "text": "The WHO and America want answers about a second laboratory worker reported to have pneumonia. Dmitry Peskov, the Russian president's spokesman, said Russia informed the WHO as procedures require and accused the media of spreading false information.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "tv2"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "The World Health Organization says it cannot fully assess the risk from the suspected plague death of a 28-year-old technician at an anti-plague laboratory in Siberia. Russia says she died of pneumonia of unknown cause.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ]
+        },
+        "headline_short": "WHO cannot assess suspected Russian plague death",
+        "deck": "Moscow says the Siberian laboratory worker died of pneumonia; America and the WHO want answers about a second case."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "a161c633-9610-4bc3-b954-693a37bb7650",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "WHO: Kan ikke lave en fuld risikovurdering af mistænkt pestdød i Rusland",
+          "url": "https://www.kristeligt-dagblad.dk/udland/who-kan-ikke-lave-en-fuld-risikovurdering-af-mistaenkt-pestdoed-i-rusland",
+          "published_at": "2026-10-07T16:05:16.000000Z",
+          "content_hash": "sha256:87824c258f3cb4021e7c449bd936d3955ae96eb1582ea2fe31eca7d7f2223634",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "76d56c17-b0d0-40a4-815f-41109780d0c8",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "WHO beder Rusland om oplysninger om laboratoriemedarbejdere",
+          "url": "https://www.kristeligt-dagblad.dk/udland/who-beder-rusland-om-oplysninger-om-laboratoriemedarbejdere",
+          "published_at": "2026-10-07T09:35:04.000000Z",
+          "content_hash": "sha256:b7fd0e239e9af0c21676f27b15e9807a6a987e734b97d1867b23f58174f63cad",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:3f858198-4395-5833-a433-e5a6086f2f35",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "USA kræver svar om mystisk dødfald i Rusland: »Måske er det her større, end vi troede«",
+          "url": "https://www.berlingske.dk/internationalt/usa-kraever-svar-om-mystisk-doedfald-i-ruslandmaaske-er-det-her-stoerre-end-vi-troede",
+          "published_at": "2026-10-07T12:54:22.000000Z",
+          "content_hash": "sha256:debb17dd7dc27fc7f0803cf268d7b19563ce33c3d69be1ff06a03a050e5c169f",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19714135",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Hvad døde Darya Shipilova af? Ruslands pest-benægtelse møder modstand",
+          "url": "https://jyllands-posten.dk/international/ECE19714135/situationen-er-fuldstaendig-under-kontrol-siger-rusland-og-saa-er-sagen-om-muligt-pestudbrud-fra-laboratoriet-vel-lukket/",
+          "published_at": "2026-10-07T16:00:00.000000Z",
+          "content_hash": "sha256:4b2c16601b454dfd8e2e932bed2ba72f1d6c82e82ac0b0fab2951d08045cfd0a",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/udland/2026-10-07-who-og-usa-kraever-svar-efter-muligt-nyt-pesttilfaelde-paa-russisk-laboratorium",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "WHO og USA kræver svar efter muligt nyt pesttilfælde på russisk laboratorium",
+          "url": "https://nyheder.tv2.dk/udland/2026-10-07-who-og-usa-kraever-svar-efter-muligt-nyt-pesttilfaelde-paa-russisk-laboratorium",
+          "published_at": "2026-10-07T09:52:02.000000Z",
+          "content_hash": "sha256:8907859d4349734558acee3dccbda70a4a28cb91fd0a01a171d10c8ac1fc1357",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11012051",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "EU maner til besindighed efter ung kvindes død i Rusland",
+          "url": "https://politiken.dk/danmark/sundhed/art11012051/EU-maner-til-besindighed-efter-ung-kvindes-d%C3%B8d-i-Rusland",
+          "published_at": "2026-10-07T11:58:15.000000Z",
+          "content_hash": "sha256:03a6f66d44e5fbf94c3ace8a592f656a4ba346710e9645b70b424d8e41c8c15d",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/07/who-says-it-does-not-have-full-picture-from-russia-following-suspected-plague-death",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "WHO says it does not have ‘full picture’ from Russia following suspected plague death",
+          "url": "https://www.theguardian.com/world/2026/oct/07/who-says-it-does-not-have-full-picture-from-russia-following-suspected-plague-death",
+          "published_at": "2026-10-07T20:46:07.000000Z",
+          "content_hash": "sha256:3cc246ccad398037242dde1a24df0d694ad0d5f693094d235a2c16dd6ecb746e",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "afghanistan-inquiry-full-openness",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Parliament drops anonymity for politicians in Afghanistan study",
+        "body": {
+          "standard": [
+            {
+              "text": "The Presidium of the Folketing, Denmark's parliament, decided unanimously on Wednesday that former members of its confidential Foreign Policy Committee cannot be quoted anonymously in a study of Denmark's military mission in Afghanistan.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "In May the Presidium had made naming them depend on their consent, arguing that they had spoken expecting 30 years of confidentiality. Veterans objected, 50,000 people signed a citizens' proposal against it, and in September the four governing parties pushed to reverse it.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Peter Kragelund, director of the Danish Institute for International Studies, whose researchers are writing the study, hopes to send it to print before Christmas, with publication probably in the new year.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "The Presidium of the Folketing, Denmark's parliament, decided on Wednesday that former members of its confidential Foreign Policy Committee cannot be quoted anonymously in a study of Denmark's military mission in Afghanistan, reversing a decision from May. The researchers hope to send it to print before Christmas.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Afghanistan study will name politicians",
+        "deck": "Former members of a confidential committee lose the option to be quoted anonymously; the researchers hope to send the study to print before Christmas."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "b40d7560-dae3-419a-bfad-1165e1263b9f",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Folketinget dropper mulig anonymisering i Afghanistan-udredning",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/folketinget-dropper-mulig-anonymisering-i-afghanistan-udredning",
+          "published_at": "2026-10-07T14:31:06.000000Z",
+          "content_hash": "sha256:f1963fffb770c54e6b36d130bb709b637c9bc741b912fd08978ed8475664ce45",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:e1a6392b-00eb-5995-be64-94f043445496",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Folketinget dropper mulig anonymisering i Afghanistan-udredning",
+          "url": "https://www.berlingske.dk/politik/folketinget-dropper-mulig-anonymisering-i-afghanistan-udredning",
+          "published_at": "2026-10-07T15:45:44.000000Z",
+          "content_hash": "sha256:364dd356dbd93d2fa02b7b68ad19062ea7299b43933619e5bd29ed1424773630",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "enhedslisten-welfare-profit-demand",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Welfare",
+      "copy": {
+        "headline": "Far-left party demands a ban on profit from welfare in budget talks",
+        "body": {
+          "standard": [
+            {
+              "text": "Enhedslisten, a far-left party, will demand a ban on profit from publicly funded welfare in the coming budget negotiations. Private providers of supported housing, shelters, crisis centres and elderly care would have to run as self-governing institutions that reinvest any surplus.",
+              "sources": [
+                "kristeligt_dagblad",
+                "information"
+              ]
+            },
+            {
+              "text": "Mette Frederiksen, the prime minister, would not promise a ban but told Information she is 'not super keen' that money can be made 'from other people's misery'.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "SF, a left-wing party, wants first to see whether a new rate model solves the problems. Radikale Venstre, a social-liberal party, accepts profit at crisis centres if it brings more places and better care.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Enhedslisten, a far-left party, will demand a ban on profit from publicly funded welfare, including crisis centres and elderly care, in the coming budget negotiations. Mette Frederiksen, the prime minister, would not promise it.",
+              "sources": [
+                "kristeligt_dagblad",
+                "information"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Far-left party demands welfare profit ban",
+        "deck": "The party calls it one of its priority demands; the prime minister promises nothing."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "ceeb1d28-ee6a-4e71-8f17-7079f23cdc30",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Enhedslisten kræver forbud mod profit på velfærd i finanslov",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/enhedslisten-kraever-forbud-mod-profit-paa-velfaerd-i-finanslov",
+          "published_at": "2026-10-07T17:53:26.000000Z",
+          "content_hash": "sha256:2cab7671828fa9b267097b3c8b2f80a7dcb9a4927966d4d16093e93c2aca9b8e",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "information",
+          "source_id": "843155 at https://www.information.dk",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Enhedslisten før finanslovsforhandlinger: Vil have et forbud mod profit på velfærd",
+          "url": "https://www.information.dk/indland/2026/10/enhedslisten-foer-finanslovsforhandlinger-forbud-profit-paa-velfaerd",
+          "published_at": "2026-10-07T08:10:19.000000Z",
+          "content_hash": "sha256:f797ea862e31078eb5258d9e53b6593a11b77cbb144080a85cca3bd7b004e9e7",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "tilst-speeding-driver-four-years",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "Speeding driver gets four years for killing woman in her home near Aarhus",
+        "body": {},
+        "lede": {
+          "text": "A 20-year-old man was sentenced on Wednesday to four years in prison for killing a 64-year-old woman in Tilst, near Aarhus, after fleeing police at 109 km/h and hitting her house.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "08f264ce-7401-41d1-838d-2ce359486c02",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Dødelig påkørsel i villakvarter udløser fire års fængsel",
+          "url": "https://www.kristeligt-dagblad.dk/doedelig-paakoersel-i-villakvarter-udloeser-fire-aars-faengsel",
+          "published_at": "2026-10-07T08:49:04.000000Z",
+          "content_hash": "sha256:598cfcf46a8345f3c9ee5e1ae8e9c0dabf8122388a71fa75a89f247166551e40",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:1408808f-92de-4417-8205-570f1ee1e9da",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Ung vanvidsbilist idømt fire års fængsel: 'Jeg har det forfærdeligt'",
+          "url": "https://www.dr.dk/nyheder/indland/ung-vanvidsbilist-idoemt-fire-aars-faengsel-jeg-har-det-forfaerdeligt",
+          "published_at": "2026-10-07T08:41:34.000000Z",
+          "content_hash": "sha256:fa5eea810ffcb85b2c0736fd322faea185de0dbe4846956a7d189ed610bcab28",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:efcba540-ade5-4940-bff3-7543266eeca7",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "64-årig dræbt i sin seng af vanvidsbilist: Nu falder dommen",
+          "url": "https://www.dr.dk/nyheder/indland/64-aarig-draebt-i-sin-seng-af-vanvidsbilist-nu-falder-dommen",
+          "published_at": "2026-10-07T04:29:00.000000Z",
+          "content_hash": "sha256:b38a563da18f1bb1e63da78205e9650293407c5d35d123e73fc495919ba7bb1a",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "wolves-dna-register-2027",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Denmark will identify every wolf by its DNA",
+        "body": {},
+        "lede": {
+          "text": "Every wolf in Denmark is to be identified by its DNA from 2027, a state agency says; monitoring will cost 7.5 million kroner a year, up from 1.25 million, as the population grows.",
+          "sources": [
+            "kristeligt_dagblad",
+            "jp"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "74e58d18-0316-4a51-ba00-9974cd383c3d",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Danske ulve skal DNA-registreres",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/danske-ulve-skal-dna-registreres",
+          "published_at": "2026-10-07T09:57:34.000000Z",
+          "content_hash": "sha256:c89ee0d6783afc242d8e852cb109727ea06fe6e60155967671ea5d10c106fbbb",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "jp",
+          "source_id": "19717028",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Myndighederne vil tælle alle ulve i Danmark i de næste fem år: Pris per ulv bliver 375.000 kroner",
+          "url": "https://jyllands-posten.dk/indland/ECE19717028/myndighederne-vil-taelle-alle-ulve-i-danmark-i-de-naeste-fem-aar-prisen-per-ulv-bliver-375000-kroner/",
+          "published_at": "2026-10-07T18:02:09.000000Z",
+          "content_hash": "sha256:4fb04e15e1d53c00630e62246779c41c88d26f2a44f4145c0b6838262f1bfb3a",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:309e499d-a862-464e-91ac-beeb1a11611f",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Danske ulve skal DNA-registreres",
+          "url": "https://www.dr.dk/nyheder/indland/danske-ulve-skal-dna-registreres",
+          "published_at": "2026-10-07T15:12:00.000000Z",
+          "content_hash": "sha256:6c7147e6fd6ed4e720f0d4d96851cec6b6d901a305d434dc00446b508e35c805",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "marine-nature-parks-68-million",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Government proposes 67.8 million kroner for two new marine national parks",
+        "body": {},
+        "lede": {
+          "text": "The government and Alternativet, a green party, propose 67.8 million kroner over three years in next year's budget for two new marine national parks, with fishing and seabed extraction partly barred.",
+          "sources": [
+            "kristeligt_dagblad",
+            "via_ritzau"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "3b5625b3-98a0-4553-b1c0-aacccfe6cc00",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Regeringen vil bruge knap 70 millioner på nye marine-naturparker",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/regeringen-vil-bruge-knap-70-millioner-paa-nye-marine-naturparker",
+          "published_at": "2026-10-07T13:54:50.000000Z",
+          "content_hash": "sha256:02110ab0aa3cc2904c01635a97951f6bf353f337078c5839c7933125dfa22fcb",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15213268/?publisherId=13560422&lang=da",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Regeringen sætter penge af til nye marine naturnationalparker",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15213268/regeringen-saetter-penge-af-til-nye-marine-naturnationalparker?lang=da",
+          "published_at": "2026-10-07T14:06:06.000000Z",
+          "content_hash": "sha256:152ebb24a0d62c7b403a9299825ce4c78645589a34e5793d09eda062cd269121",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "mediation-councils-bill-retabled",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Government tries again to make mediation councils a crime",
+        "body": {},
+        "lede": {
+          "text": "Nicolai Wammen, the justice minister, re-tabled a bill on Wednesday under which taking part in a mediation council with intent to shield a crime from prosecution would carry up to four years in prison.",
+          "sources": [
+            "kristeligt_dagblad",
+            "jp"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "d501f1ab-4efe-45c5-b9bd-a648bc308ab5",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Regering prøver igen at kriminalisere mæglingsråd",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/regering-proever-igen-kriminalisere-maeglingsraad",
+          "published_at": "2026-10-07T04:05:02.000000Z",
+          "content_hash": "sha256:1fb28046b8a5db33ef2b62aa0a00347354ab451bd95eb559ccf026ab44d383d6",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "jp",
+          "source_id": "19716116",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "En dag i 2021 blev to personer skudt i en frisørsalon. Nu vil regeringen forbyde det, der foregik bagefter",
+          "url": "https://jyllands-posten.dk/indland/ECE19716116/ny-lov-vil-goere-op-med-skjulte-maeglingsraad-drab-i-frisoersalon-forsoegt-lukket-ned-med-blodpenge/",
+          "published_at": "2026-10-07T14:54:53.000000Z",
+          "content_hash": "sha256:ccead3ab3808ee283b9e666655bf6732500cac30ccf9cf346b131ac040ca985a",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "manniche-20-days-suspended",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "Doctor gets suspended sentence for issuing covid-test exemptions",
+        "body": {},
+        "lede": {
+          "text": "The High Court on Wednesday gave Vibeke Manniche, a trained doctor without permission to practise, a 20-day suspended sentence for issuing about 20 covid-test exemptions in 2021 without authority.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "010f07a6-a5aa-4778-84ad-91f7b81f9a93",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Landsret idømmer Vibeke Manniche betinget dom for corona-erklæringer",
+          "url": "https://www.kristeligt-dagblad.dk/landsret-idoemmer-vibeke-manniche-betinget-dom-corona-erklaeringer",
+          "published_at": "2026-10-07T09:51:12.000000Z",
+          "content_hash": "sha256:dc27e94bbd71e268b2ea9356bcc9202f5e55028a4283b44c6a8ea10dd419c6a2",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:9fd5f45a-27de-524c-86a5-9cce1eb8148c",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Landsret idømmer Vibeke Manniche betinget dom for corona-erklæringer",
+          "url": "https://www.berlingske.dk/indland/landsret-idoemmer-vibeke-manniche-betinget-dom-for-corona-erklaeringer",
+          "published_at": "2026-10-07T10:27:46.000000Z",
+          "content_hash": "sha256:4c9ecf78646d9f01bcfd9bc46f522804fba9293206f5465d468238282bf1c692",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "naza-paused-on-anniversary",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Culture",
+      "copy": {
+        "headline": "Danish cinemas pause Gaza documentary for anniversary of Hamas attack",
+        "body": {},
+        "lede": {
+          "text": "Several Danish cinemas did not show 'Naza', a documentary about civilian deaths in Gaza, on Wednesday, the third anniversary of Hamas's attack in Israel, at its Israeli directors' request; screenings resume today.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "c0bc3eca-b287-466c-8278-8a8824fe3bf8",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Flere biografer pauser dokumentarfilm på treårsdag for Hamas-angreb",
+          "url": "https://www.kristeligt-dagblad.dk/kultur/flere-biografer-pauser-dokumentarfilm-paa-treaarsdag-hamas-angreb",
+          "published_at": "2026-10-07T05:29:22.000000Z",
+          "content_hash": "sha256:d7518bd76ba8f813f2a0dc3f0af6746e863bf13666d97b30c165aaa6d791072a",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:32f07df5-bae7-5fff-9eb0-01222c5c57fc",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Flere biografer pauser dokumentarfilm på treårsdag for Hamas-angreb",
+          "url": "https://www.berlingske.dk/danmark/flere-biografer-pauser-dokumentarfilm-paa-treaarsdag-for-hamas-angreb",
+          "published_at": "2026-10-07T06:03:43.000000Z",
+          "content_hash": "sha256:32c1eaeabcad1ad629aa9076a71132f3d079a820744259e243e9b3426b941215",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "rigshospitalet-oslo-liver-surgeons",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Copenhagen hospital brings in Norwegian surgeon for children's liver transplants",
+        "body": {},
+        "lede": {
+          "text": "Rigshospitalet, a Copenhagen hospital, will bring in an experienced surgeon from Oslo University Hospital for children's liver transplants after two of its surgeons stopped; pancreas transplants move to Norway from 1 November.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "7096a32e-2d0d-43e0-9bcd-878329c633d4",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Rigshospitalet må hente norsk assistance til sjældne transplantationer",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/rigshospitalet-henter-norsk-assistance-til-sjaeldne-transplantationer",
+          "published_at": "2026-10-07T10:01:20.000000Z",
+          "content_hash": "sha256:aaef1a2e8dcd693c15e66a511b72f657e289188ae0cb808d7f08bcf636c50672",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:c4c82fbc-4e23-500f-9012-0061412ffbc0",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Rigshospitalet må hente norsk assistance til sjældne transplantationer",
+          "url": "https://www.berlingske.dk/danmark/rigshospitalet-maa-hente-norsk-assistance-til-sjaeldne-transplantationer",
+          "published_at": "2026-10-07T10:33:44.000000Z",
+          "content_hash": "sha256:06cd149ac7d7114f46a9d68296acfcd98ee08d75c2494893e64e4818ee418d04",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "ssi-expects-high-flu-winter",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "State institute expects flu to reach a high level this winter",
+        "body": {},
+        "lede": {
+          "text": "Statens Serum Institut, a Danish government institute for infectious disease, expects flu to reach a high level this winter, with influenza B possibly a larger share, while covid-19 looks set to stay lower.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "0ac7756c-1769-4ed2-a2da-259cc56257ec",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Seruminstitut forventer højt niveau af influenzasmitte over vinteren",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/seruminstitut-forventer-hoejt-niveau-af-influenzasmitte-over-vinteren",
+          "published_at": "2026-10-07T13:03:24.000000Z",
+          "content_hash": "sha256:45804f65e3cb6de1b5c674e3402f367271df39ce6994d98b0df7e35164468b41",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:2cce0bd9-7a4f-53fb-bddf-003a4963d9ce",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Seruminstitut forventer højt niveau af influenzasmitte over vinteren",
+          "url": "https://www.berlingske.dk/danmark/seruminstitut-forventer-hoejt-niveau-af-influenzasmitte-over-vinteren",
+          "published_at": "2026-10-07T13:04:49.000000Z",
+          "content_hash": "sha256:ef0a0cdc12dd65cb926bba2def4ad0bbd401358d9170bf2fe5ce5fd34e60e4bf",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "royal-gala-apples-recalled",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Food group recalls Italian apples over pest risk",
+        "body": {},
+        "lede": {
+          "text": "Dagrofa, a food group, is recalling Royal Gala apples from Italy sold loose at Meny, Spar, Let-Køb and Min Købmand shops between 30 September and 7 October over a risk of pest contamination.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "396b491f-0c62-4b5f-9301-a18b291cea1d",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Æbler tilbageholdes af frygt for skadedyrsangreb",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/uspiselige-aebler-angrebet-af-skadedyr-tilbagekaldes",
+          "published_at": "2026-10-07T13:10:54.000000Z",
+          "content_hash": "sha256:1a925e4830c0966bd199ed6517be4b61e1dfac2dc2a915c912de7be9740074b3",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:8c6907c6-1afe-58af-9ce8-c541dbf15ce2",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Æbler tilbageholdes af frygt for skadedyrsangreb",
+          "url": "https://www.berlingske.dk/danmark/aebler-tilbageholdes-af-frygt-for-skadedyrsangreb",
+          "published_at": "2026-10-07T13:28:44.000000Z",
+          "content_hash": "sha256:ecf583f6ffba23dcb5374b74ffaf03f6ded93b97a5feb0e9490a9ecc33de5cfb",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "kombit-outage-municipal-systems",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Municipalities",
+      "copy": {
+        "headline": "Network failure takes municipal IT systems down for five hours",
+        "body": {},
+        "lede": {
+          "text": "A network failure left municipalities unable to reach some systems run by Kombit, their joint IT body, for five hours on Wednesday; some home-care services could not see which residents to visit.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "ed9bc168-ac1a-4ad0-9cc7-d776aac2e9a6",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Flere timer langt kommunalt it-nedbrud er overstået",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/it-nedbrud-har-i-flere-timer-skabt-problemer-hos-kommunerne",
+          "published_at": "2026-10-07T18:19:20.000000Z",
+          "content_hash": "sha256:977b92be282329dd30796e6440ac321794327807df01b79d9b16da57a35ca328",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:9b923d5e-9b73-5484-b93b-df97f447ec39",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Flere timer langt kommunalt it-nedbrud er overstået",
+          "url": "https://www.berlingske.dk/danmark/flere-timer-langt-kommunalt-it-nedbrud-er-overstaaet",
+          "published_at": "2026-10-07T19:02:45.000000Z",
+          "content_hash": "sha256:f8a143826cdb77e5debdbef6ecf19145edbd244adee49be9e8f7c0f74a32e9b3",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "nobel-chemistry-kagan-soai",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Science",
+      "copy": {
+        "headline": "French and Japanese chemists win Nobel prize for work on mirror-image molecules",
+        "body": {},
+        "lede": {
+          "text": "France's Henri Kagan and Japan's Kenso Soai won the Nobel prize in chemistry on Wednesday for showing how reactions can favour one of a molecule's two mirror-image forms, work crucial to drug development.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr",
+            "guardian",
+            "ft"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "9820723b-1f8a-417d-89e3-b4ff4ded3195",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Forskere modtager Nobelpris for at løse 100 år gammelt kemimysterie",
+          "url": "https://www.kristeligt-dagblad.dk/udland/fransk-og-japansk-duo-modtager-nobelpris-i-kemi",
+          "published_at": "2026-10-07T10:09:04.000000Z",
+          "content_hash": "sha256:3d7eaf759b11ce42c9b0d3ae906669571ef4ba26c906616f4ee2dd39539f03b0",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:a102a201-349c-4e4b-ab12-64792dc95036",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Japaner og franskmand modtager nobelpris for at løse 100 år gammelt kemimysterie",
+          "url": "https://www.dr.dk/nyheder/udland/japaner-og-franskmand-modtager-nobelpris-loese-100-aar-gammelt-kemimysterie",
+          "published_at": "2026-10-07T16:43:32.000000Z",
+          "content_hash": "sha256:e7393837ea102d57344814e2e3d5859637056b5ae554e35e56adb0b039f2db3d",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "10992301",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Du er homokiral – og det kan to Nobelprismodtagere efterligne i laboratoriet",
+          "url": "https://politiken.dk/viden/viden/art10992301/Du-er-homokiral-%E2%80%93-og-det-kan-to-Nobelprismodtagere-efterligne-i-laboratoriet",
+          "published_at": "2026-10-07T10:19:31.000000Z",
+          "content_hash": "sha256:0337dff0fe94f02fd18a903730fe7c8e493f3a89d7f291a7c0716f641b14f9a8",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "c6ly038jg0d4o",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Chemistry Nobel awarded for solving mystery of life's asymmetry",
+          "url": "https://www.bbc.co.uk/news/articles/c6ly038jg0d4o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-07T11:51:52.000000Z",
+          "content_hash": "sha256:2f67b362ba203005446400877177cc52f1321aa2e93fce4d37613457558ffb7d",
+          "primary": false
+        },
+        {
+          "source": "economist",
+          "source_id": "69acfeed-fd2d-487d-b55d-4c4e926b87d1",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "A Nobel for illuminating life’s asymmetry",
+          "url": "https://www.economist.com/science-and-technology/2026/10/07/a-nobel-for-illuminating-lifes-asymmetry",
+          "published_at": "2026-10-07T18:38:06.000000Z",
+          "content_hash": "sha256:551f0b794ab4dc98284f46f68d90931840c62b860941fbdd8091f5919d5f4553",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "d87ec22e-2bb4-4fce-90b7-3e9dd3f5a810",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Nobel Prize in chemistry honours mirror molecule research",
+          "url": "https://www.ft.com/content/d87ec22e-2bb4-4fce-90b7-3e9dd3f5a810",
+          "published_at": "2026-10-07T16:17:34.000000Z",
+          "content_hash": "sha256:d5fa5f7adc8bf8c18abf67226ddb8bcf19749895961dbb53fc95696934e9483e",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/07/science/nobel-prize-chemistry.html",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Nobel Prize in Chemistry Is Awarded to Henri Kagan and Kenso Soai",
+          "url": "https://www.nytimes.com/2026/10/07/science/nobel-prize-chemistry.html",
+          "published_at": "2026-10-07T15:17:04.000000Z",
+          "content_hash": "sha256:0f4b09721c0139b7d06dc929bdae4185ddfbe23075a459c074f0fc0ecd98cc03",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/science/2026/oct/07/nobel-prize-chemistry-awarded-work-on-mirror-image-molecules",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Nobel prize in chemistry awarded for work on mirror-image molecules",
+          "url": "https://www.theguardian.com/science/2026/oct/07/nobel-prize-chemistry-awarded-work-on-mirror-image-molecules",
+          "published_at": "2026-10-07T13:36:45.000000Z",
+          "content_hash": "sha256:a7c9fcc8ba9208a5b1b4e1415225ac883bfd53b5b135ab65251cb4f7d0f1d303",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/science/video/2026/oct/07/this-is-what-the-2026-nobel-prize-for-chemistry-is-all-about",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "This is what the 2026 Nobel prize for chemistry is all about",
+          "url": "https://www.theguardian.com/science/video/2026/oct/07/this-is-what-the-2026-nobel-prize-for-chemistry-is-all-about",
+          "published_at": "2026-10-07T18:28:21.000000Z",
+          "content_hash": "sha256:7b4efbc3e542f45ff73aeb931f064d8e3c6bc13ea0f105d738948644f154b626",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003955820",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Nobel Prize for Chemistry Awarded for Breakthroughs That Advanced Modern Pharmaceuticals",
+          "url": "https://www.wsj.com/science/nobel-prize-for-chemistry-awarded-for-work-on-asymmetric-synthesis-9d6e3915?mod=rss_worldnews",
+          "published_at": "2026-10-07T15:45:00.000000Z",
+          "content_hash": "sha256:639bfc0f4693fcef7e4fd11a49b8fd8880c99e718707dc463c7a3f0ce097a085",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "ukraine-70-missiles-strike",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Russian attack with 70 missiles kills 28 in Ukraine",
+        "body": {},
+        "lede": {
+          "text": "A Russian attack with 70 missiles and drones killed 28 people, says Ivan Vyhivskyi, Ukraine's interior minister; 20 died, including five children, in a block of flats in Pryluky, in the northern Chernihiv region.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "guardian"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "5d7fe330-e928-4d0c-8bf3-3e0a4bd88772",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Zelenskyj melder om 11 dræbte i russisk angreb med 70 missiler",
+          "url": "https://www.kristeligt-dagblad.dk/udland/zelenskyj-melder-om-11-draebte-i-russisk-angreb-med-70-missiler",
+          "published_at": "2026-10-07T08:12:10.000000Z",
+          "content_hash": "sha256:5c0d6b2815c6f22978d562056bf09d7bc1b301a698671bda07a6a24b056be4c2",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:325115a5-4a45-5dc0-9fa2-ad34ae06580e",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Mindst 20 er dræbt i russiske angreb med 70 missiler",
+          "url": "https://www.berlingske.dk/internationalt/mindst-20-er-draebt-i-russiske-angreb-med-70-missiler",
+          "published_at": "2026-10-07T11:50:44.000000Z",
+          "content_hash": "sha256:c1b74e549475b55d4bc152572f0d761f868c4a43d9a78f92e51e3cc6b8934304",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "ckr5ym098vdeo",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Children killed while they slept as Russian missile kills 19 in block of flats",
+          "url": "https://www.bbc.co.uk/news/articles/ckr5ym098vdeo?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-07T18:12:58.000000Z",
+          "content_hash": "sha256:01b80f0947b613470e2d728a472591ee45f036ff39f2ef4a9ed640931fd310ba",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "a5bd820e-fc7c-4414-ad90-f77bd7aa3a44",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Deadly Russian strikes cut power in several Kyiv districts",
+          "url": "https://www.ft.com/content/a5bd820e-fc7c-4414-ad90-f77bd7aa3a44",
+          "published_at": "2026-10-07T14:57:58.000000Z",
+          "content_hash": "sha256:49c137f08561bf84db52447c619dc976df0403c3156201cd111cbca40fc8acc8",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/08/ukraine-war-briefing-zelenskyy-condemns-vile-attacks-from-russia-that-killed-20-in-one-apartment",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Ukraine war briefing: Zelenskyy condemns ‘vile’ attacks from Russia that killed 20 in one apartment",
+          "url": "https://www.theguardian.com/world/2026/oct/08/ukraine-war-briefing-zelenskyy-condemns-vile-attacks-from-russia-that-killed-20-in-one-apartment",
+          "published_at": "2026-10-08T02:02:33.000000Z",
+          "content_hash": "sha256:50072ebdee90d22aa5491c77d9e87ed7810c8514b37ce7418df87ee27e2e0f9f",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/07/ukraine-accuses-russia-of-bombing-apartment-block-as-birthday-gift-for-putin",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Ukraine says Russia bombed apartment block as birthday gift for Putin",
+          "url": "https://www.theguardian.com/world/2026/oct/07/ukraine-accuses-russia-of-bombing-apartment-block-as-birthday-gift-for-putin",
+          "published_at": "2026-10-07T16:22:44.000000Z",
+          "content_hash": "sha256:c5b361ebb83b3c864b08bcdda323add1660ec2e6580f80f2eadffdcbbca9ff0f",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/video/2026/oct/07/explosion-in-kyiv-as-russian-missiles-strike-across-ukraine-video",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Explosion in Kyiv as Russian missiles strike across Ukraine – video",
+          "url": "https://www.theguardian.com/world/video/2026/oct/07/explosion-in-kyiv-as-russian-missiles-strike-across-ukraine-video",
+          "published_at": "2026-10-07T15:44:36.000000Z",
+          "content_hash": "sha256:1e22fadd4673d92299389b3d42621f7f76650fc7cc10b8f1a2b44d6b5bbe3a40",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003956572",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Heavy Russian Attack Kills at Least 24 in Ukraine, Including Children",
+          "url": "https://www.wsj.com/world/europe/heavy-russian-attack-kills-at-least-24-in-ukraine-including-children-147a90c1?mod=rss_worldnews",
+          "published_at": "2026-10-07T15:25:00.000000Z",
+          "content_hash": "sha256:2bc0721e7b66aee013892b4d722f14f78e9ad605762b075ec23b70f6f88fa694",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "france-suspends-stun-grenades",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "France halts police stun grenades at school protests after a boy loses a hand",
+        "body": {},
+        "lede": {
+          "text": "Laurent Nuñez, France's interior minister, said on Wednesday that police had stopped using stun grenades at high school protests for now, after a 15-year-old lost a hand on Monday.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "guardian",
+            "bbc"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "738414b1-60ba-4902-805f-5b03271779fd",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Frankrig stopper brug af chokgranater under gymnasieprotester",
+          "url": "https://www.kristeligt-dagblad.dk/udland/frankrig-stopper-brug-af-chokgranater-under-gymnasieprotester",
+          "published_at": "2026-10-07T07:27:52.000000Z",
+          "content_hash": "sha256:38d4853cf6b01bf4dbb58ec549a7ca711802a5ed4bac811f3d48d643589de017",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:499302bd-3d5e-5345-b8d5-468a30749108",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Frankrig stopper brug af chokgranater under gymnasieprotester",
+          "url": "https://www.berlingske.dk/internationalt/frankrig-stopper-brug-af-chokgranater-under-gymnasieprotester",
+          "published_at": "2026-10-07T08:44:47.000000Z",
+          "content_hash": "sha256:d0e137dad6f913308854ac053819e9dc1a3671e955f87c46bb5a8ca0da919e76",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cqzjx7z2r4gko",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "France halts use of stun grenades after boy's hand blown off in student protests",
+          "url": "https://www.bbc.co.uk/news/articles/cqzjx7z2r4gko?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-07T17:47:31.000000Z",
+          "content_hash": "sha256:3d4b3ae8074fb823045606c279000179ec5a041833c230ce4d60fc5dcfbbb573",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cqe8r9811n9jo",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Watch: Stop firing stun grenades at student protests, French police told",
+          "url": "https://www.bbc.co.uk/news/articles/cqe8r9811n9jo?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-07T13:19:26.000000Z",
+          "content_hash": "sha256:303d655d5034cf09fc05653f2c3502b0fb611bc3e8b6332a944a838c32294897",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/07/french-police-suspend-use-stun-grenades-high-school-protester-loses-hand",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "French police suspend use of stun grenades at school protests as minister rejects accusations of brutality",
+          "url": "https://www.theguardian.com/world/2026/oct/07/french-police-suspend-use-stun-grenades-high-school-protester-loses-hand",
+          "published_at": "2026-10-07T20:04:00.000000Z",
+          "content_hash": "sha256:8db6074c3a0ab29249cbb2f9a513a48a1d8f5f83c3904d98fc4533597a78a895",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "saudi-airports-three-killed",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Attacks on two Saudi airports kill three",
+        "body": {},
+        "lede": {
+          "text": "Attacks on two Saudi airports, including the main one in Riyadh, killed three people and injured 36 on Tuesday and Wednesday, Saudi Arabia's civil aviation authority says; Yemen's Iran-backed Houthi movement claimed them.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "nytimes",
+            "wsj"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "e7c7f61c-10bd-4389-a5ca-6fc9fbb152e3",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Saudi-Arabien melder tre dræbt i angreb på lufthavne",
+          "url": "https://www.kristeligt-dagblad.dk/udland/saudi-arabien-melder-tre-draebt-i-angreb-paa-lufthavne",
+          "published_at": "2026-10-07T18:43:04.000000Z",
+          "content_hash": "sha256:1fcd12de91d144135aff9c9736cb68954e9f393f0254b76f8b7735ca2c691482",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:5a2f5c2d-e6ac-58df-a10f-41ef72de5b09",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Saudi-Arabien melder tre dræbt i angreb på lufthavne",
+          "url": "https://www.berlingske.dk/internationalt/saudi-arabien-melder-tre-draebt-i-angreb-paa-lufthavne",
+          "published_at": "2026-10-07T19:05:44.000000Z",
+          "content_hash": "sha256:853c2760a9a040cc7c7e27e9407b166ff601c66be9327fc6559856e7057024b3",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/07/world/middleeast/saudi-arabia-airports-houthis.html",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "3 Killed and Dozens Injured in Attacks on Saudi Airports, as Houthis Claim Strikes",
+          "url": "https://www.nytimes.com/2026/10/07/world/middleeast/saudi-arabia-airports-houthis.html",
+          "published_at": "2026-10-07T23:03:49.000000Z",
+          "content_hash": "sha256:3f0bac145fe521b4cf12b70e104e3640cd581c5d95eb2ef21f630559f9e3cf15",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003958023",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Houthis Escalate Attacks on Saudi Airports, Killing 3 and Wounding Dozens",
+          "url": "https://www.wsj.com/world/middle-east/houthis-escalate-attacks-on-saudi-airports-killing-3-and-wounding-dozens-f81ee1ca?mod=rss_worldnews",
+          "published_at": "2026-10-08T01:57:00.000000Z",
+          "content_hash": "sha256:1603bad7d0f4e49cd1facb318592f5d98d7e15f15c6d48a6122b6ad9c3f5c08e",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003951982",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Yemen’s Houthi Rebels Strike Two Airports in Saudi Arabia",
+          "url": "https://www.wsj.com/world/middle-east/yemens-houthi-rebels-strike-two-airports-in-saudi-arabia-072f4dd3?mod=pls_whats_news_us_business_f",
+          "published_at": "2026-10-07T02:32:00.000000Z",
+          "content_hash": "sha256:0475d76f93e251590f72b3e62b443f16c7d0aaf7f62eb3a32c236a8d51b76b4a",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "raaplan-sequel-praised",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Culture",
+      "copy": {
+        "headline": "Critics praise sequel to 2006 Danish youth film",
+        "body": {},
+        "lede": {
+          "text": "'Råplan', a sequel to the 2006 Danish youth film 'Råzone' by the same director, opens on Thursday to reviews that praise it and find it even more violent than the original.",
+          "sources": [
+            "kristeligt_dagblad",
+            "information"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "005a718e-874f-4ab4-aedd-b0114a32e786",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Efterfølger til dansk ungdomsfilm får ros af anmelderne",
+          "url": "https://www.kristeligt-dagblad.dk/kultur/efterfoelger-til-dansk-ungdomsfilm-faar-ros-af-anmelderne",
+          "published_at": "2026-10-07T21:14:07.000000Z",
+          "content_hash": "sha256:1886e9834853c77f607268e63ae6d86368abdc16308a1cdf7ade27e1a380b531",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "information",
+          "source_id": "843154 at https://www.information.dk",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "To generationer af vrede kvinder støder sammen i det sitrende vestegnsdrama ’Råplan’",
+          "url": "https://www.information.dk/kultur/anmeldelse/2026/10/to-generationer-vrede-kvinder-stoeder-sammen-sitrende-vestegnsdrama-raaplan",
+          "published_at": "2026-10-07T08:02:57.000000Z",
+          "content_hash": "sha256:8f4f45b53c19835b150ede6077a7be04777c87197e6a688a7fe8c0c905aeb097",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "10992423",
+          "input_id": "export-2026-10-08-0330",
+          "original_title": "Rollen blev afgørende for Laura Christensen. Nu vender hun tilbage til den efter 20 år",
+          "url": "https://politiken.dk/kultur/film_og_tv/art10992423/Rollen-blev-afg%C3%B8rende-for-Laura-Christensen.-Nu-vender-hun-tilbage-til-den-efter-20-%C3%A5r",
+          "published_at": "2026-10-07T06:43:21.000000Z",
+          "content_hash": "sha256:c2b898ebe5859d8c706255c440c759e6df69b80af833832b3f64ee39879d8ae0",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    }
+  ],
+  "fit_policy": {
+    "allow_role_fallback": true,
+    "allow_composition_substitution": true,
+    "reserve_story_ids": [],
+    "omittable_story_ids": [
+      "kosovar-guards-charged-vestre",
+      "who-cannot-assess-russia-plague",
+      "afghanistan-inquiry-full-openness",
+      "enhedslisten-welfare-profit-demand",
+      "tilst-speeding-driver-four-years",
+      "wolves-dna-register-2027",
+      "marine-nature-parks-68-million",
+      "mediation-councils-bill-retabled",
+      "manniche-20-days-suspended",
+      "naza-paused-on-anniversary",
+      "rigshospitalet-oslo-liver-surgeons",
+      "ssi-expects-high-flu-winter",
+      "royal-gala-apples-recalled",
+      "kombit-outage-municipal-systems",
+      "nobel-chemistry-kagan-soai",
+      "ukraine-70-missiles-strike",
+      "france-suspends-stun-grenades",
+      "saudi-airports-three-killed",
+      "raaplan-sequel-praised"
+    ]
+  }
+}

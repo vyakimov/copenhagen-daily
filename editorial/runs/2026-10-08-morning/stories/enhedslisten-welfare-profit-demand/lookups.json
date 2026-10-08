@@ -1,0 +1,35 @@
+[
+ {
+  "requested": "Red–Green Alliance (Denmark)",
+  "status": "found",
+  "title": "Red–Green Alliance (Denmark)",
+  "extract": "The Red–Green Alliance, or Unity List, is an eco-socialist political party in Denmark. It was founded in 1989 with the merger of three Marxist parties, and is the most left-wing party in the Folketing, where it advocates for the expansion of the welfare state and social justice as well as the socialist transformation of Denmark and the entire globe. During the 2021 Copenhagen City Council election the party placed first, with 24.6% of the votes. The party is also active in various trade unions within Denmark.",
+  "url": "https://en.wikipedia.org/wiki/Red%E2%80%93Green_Alliance_(Denmark)",
+  "type": "standard",
+  "fetched_at": "2026-10-08T06:05:14.807411Z",
+  "term": "Enhedslisten",
+  "definition": "a far-left party"
+ },
+ {
+  "requested": "Green Left (Denmark)",
+  "status": "found",
+  "title": "Green Left (Denmark)",
+  "extract": "The Green Left is a democratic socialist political party in Denmark. The SF was founded on 15 February 1959 by Aksel Larsen, a former leader of the Communist Party of Denmark (DKP), who was removed for criticizing the Soviet intervention in the Hungarian Revolution of 1956. Larsen aimed to create a third way between Denmark's US-oriented social democracy and Soviet-oriented communism, combining democracy with socialism. The SF entered the Folketing in the 1960 Danish general election, while the DKP lost its seats. The SF became involved in peace, anti-nuclear, and grassroots movements, advocating for independence from the Soviet Union.",
+  "url": "https://en.wikipedia.org/wiki/Green_Left_(Denmark)",
+  "type": "standard",
+  "fetched_at": "2026-10-08T06:05:14.961378Z",
+  "term": "SF",
+  "definition": "a left-wing party"
+ },
+ {
+  "requested": "Danish Social Liberal Party",
+  "status": "found",
+  "title": "Danish Social Liberal Party",
+  "extract": "The Danish Social Liberal Party is a social-liberal and green-liberal political party in Denmark. The party was founded as a split from the Venstre Reform Party in 1905. Historically, the centrist to centre-left party has played a central role in Danish politics and has supported governments on both sides of the political spectrum, as co-operation is a primary belief of the party. A pro-European party, it is a member of Liberal International and the ALDE, and has one MEP in the Renew Europe group in the European Parliament.",
+  "url": "https://en.wikipedia.org/wiki/Danish_Social_Liberal_Party",
+  "type": "standard",
+  "fetched_at": "2026-10-08T06:05:15.112824Z",
+  "term": "Radikale Venstre",
+  "definition": "a social-liberal party"
+ }
+]
