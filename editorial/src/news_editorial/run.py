@@ -268,14 +268,14 @@ class CodexAuth:
             return False
         if self.on_key:
             return True
-        self._log_in(key)
+        self.log_in(key)
         self.on_key = True
         if run_dir is not None:
             _session_record(run_dir, "auth-fallback-codex", {"reason": reason, "session": session, "at": _now()})
         self._tell()
         return True
 
-    def _log_in(self, key: str) -> None:
+    def log_in(self, key: str) -> None:
         """Log the key into its own codex home, fresh each time, with the owner's config beside it."""
         self.key_home.mkdir(parents=True, exist_ok=True)
         (self.key_home / "auth.json").unlink(missing_ok=True)

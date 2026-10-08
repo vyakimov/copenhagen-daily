@@ -2,7 +2,7 @@
 
 ## The schedule
 
-The Mac is the newsroom; AWS is delivery only. Five launchd jobs in `config/launchd/` run everything,
+The Mac is the newsroom; AWS is delivery only. Six launchd jobs in `config/launchd/` run everything,
 with logs under `~/Library/Logs/copenhagen-daily/`:
 
 | Job | When | Command |
@@ -12,6 +12,7 @@ with logs under `~/Library/Logs/copenhagen-daily/`:
 | `ai.copenhagen-daily.verify` | 06:00 local | `edit_news.sh verify-live --fix --notify`: checks the live site against the newsroom's copy, delivers again if that is the remedy, and posts the verdict either way |
 | `ai.copenhagen-daily.retry` | 07:30 local | `edit_news.sh run --retry`: skips when today's run already ended as published, dry run, or skipped; otherwise resumes the failed run from its first missing file |
 | `ai.copenhagen-daily.freshness` | 09:00 local | `edit_news.sh freshness --notify`: fails and notifies when the latest activated edition is older than `max_edition_age_hours` |
+| `ai.copenhagen-daily.preflight` | 22:00 local | `edit_news.sh preflight --notify`: makes one cheap request on each login tomorrow's run will carry, and on the API key when a login fails; posts the result, good or bad |
 
 The files in `config/launchd/` are templates: `@REPO@` and `@HOME@` stand for this repository's path
 and the login home. Install or reload them with:
@@ -132,6 +133,12 @@ on its login or its quota (a 401, "Quota exceeded", "usage limit") is run once m
 run stays there, `sessions/auth-fallback-codex.json` records it, and the owner is notified once. The
 next run starts over on the ChatGPT login; `codex login` at the keyboard restores it. The key's
 OpenAI project needs billing enabled, or every call on it answers "Quota exceeded".
+
+The 22:00 preflight job makes that check every evening: one request on the cheapest model with the
+token, then with the API key if the token failed, and the same for the codex checker's ChatGPT login
+and key. The notice says `ready` when every tool answers on its first choice, `will use an API key`
+when a tool only answers on its key, and `CANNOT log in` when a tool has nothing that works; the last
+exits non-zero. `edit_news.sh preflight` runs it by hand (`--notify` to post the result).
 
 To check the login the jobs will actually use, probe from launchd, not from a Claude Code shell: a
 sandboxed shell cannot read the keychain and falls back to `~/.claude/.credentials.json`, so it can

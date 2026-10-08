@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>ai.copenhagen-daily.preflight</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/sh</string>
+		<string>-c</string>
+		<string>@REPO@/editorial/edit_news.sh preflight --notify; exit $?</string>
+	</array>
+	<key>WorkingDirectory</key>
+	<string>@HOME@</string>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>PATH</key>
+		<string>/opt/homebrew/bin:@HOME@/.local/bin:/usr/local/bin:/usr/bin:/bin</string>
+		<key>HOME</key>
+		<string>@HOME@</string>
+		<key>PUBLISHER_MAGICK</key>
+		<string>/opt/homebrew/bin/magick</string>
+	</dict>
+	<key>StartCalendarInterval</key>
+	<dict>
+		<key>Hour</key>
+		<integer>22</integer>
+		<key>Minute</key>
+		<integer>0</integer>
+	</dict>
+	<key>StandardOutPath</key>
+	<string>@HOME@/Library/Logs/copenhagen-daily/preflight.stdout.log</string>
+	<key>StandardErrorPath</key>
+	<string>@HOME@/Library/Logs/copenhagen-daily/preflight.stderr.log</string>
+</dict>
+</plist>

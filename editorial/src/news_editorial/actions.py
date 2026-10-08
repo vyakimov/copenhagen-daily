@@ -347,6 +347,26 @@ def freshness_action(args: argparse.Namespace) -> dict[str, Any]:
     return report
 
 
+@action("preflight")
+def preflight_action(args: argparse.Namespace) -> dict[str, Any]:
+    """Probe tomorrow's logins with one cheap request each; tell the owner the result either way."""
+    from .notify import notify
+    from .preflight import preflight, summary
+    from .run import load_desk_config
+
+    config = load_desk_config()
+    report = preflight(config, checker=args.checker)
+    if args.notify:
+        subject, body = summary(report)
+        try:
+            report["notification"] = notify(subject, body, config.get("notify") or {})
+        except Exception as exc:  # noqa: BLE001 -- the finding stands even when the owner could not be told.
+            report["notification"] = {"delivered": None, "error": str(exc)}
+    if report["state"] == "not_ready":
+        raise ActionError("login_unusable", "a session of tomorrow's run has no working login", report)
+    return report
+
+
 @action("verify-live")
 def verify_live_action(args: argparse.Namespace) -> dict[str, Any]:
     """Compare the live site with the newsroom's live tree; optionally deliver again, and tell the owner the verdict."""
