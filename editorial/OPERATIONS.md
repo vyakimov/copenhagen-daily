@@ -123,6 +123,16 @@ fallback record remains. The next run tries the token again, so a renewed token 
 own. A session that fails for any other reason is not rerun on the key. With neither file the
 sessions use the CLI's own login, which under launchd is the keychain entry.
 
+The codex checker has the same arrangement. It runs on the owner's ChatGPT login in `~/.codex`
+and ignores an API key in the environment, so the fallback is a second codex home,
+`var/codex-api-home/`, which the runner logs in with the key from `var/codex-api-key.env`
+(`OPENAI_API_KEY=...` or the bare key, owner-readable only) through `codex login --with-api-key`
+and gives a copy of `~/.codex/config.toml`, so the model settings are the same. A checker that fails
+on its login or its quota (a 401, "Quota exceeded", "usage limit") is run once more in that home, the
+run stays there, `sessions/auth-fallback-codex.json` records it, and the owner is notified once. The
+next run starts over on the ChatGPT login; `codex login` at the keyboard restores it. The key's
+OpenAI project needs billing enabled, or every call on it answers "Quota exceeded".
+
 To check the login the jobs will actually use, probe from launchd, not from a Claude Code shell: a
 sandboxed shell cannot read the keychain and falls back to `~/.claude/.credentials.json`, so it can
 look logged in while the jobs are not.

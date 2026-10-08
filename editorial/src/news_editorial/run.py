@@ -151,9 +151,6 @@ def claude_oauth_token(path: Path | None = None) -> str | None:
     return read_secret(OAUTH_TOKEN_PATH if path is None else path, "CLAUDE_CODE_OAUTH_TOKEN")
 
 
-def _is_auth_failure(record: dict[str, Any]) -> bool:
-    result = str(record.get("result") or "")
-    return bool(record.get("is_error")) and ("Failed to authenticate" in result or "authentication_error" in result)
 
 
 class ClaudeAuth:
@@ -177,6 +174,12 @@ class ClaudeAuth:
 
     def key(self) -> str | None:
         return read_secret(API_KEY_PATH if self.key_path is None else self.key_path, "ANTHROPIC_API_KEY")
+
+    @staticmethod
+    def rejected(record: dict[str, Any]) -> bool:
+        """Whether a session's record says the credential, not the work, failed."""
+        result = str(record.get("result") or "")
+        return bool(record.get("is_error")) and ("Failed to authenticate" in result or "authentication_error" in result)
 
     def env(self, run_dir: Path | None = None, session: str = "") -> dict[str, str] | None:
         """The session's environment: the runner's plus one credential, or None to inherit as is."""
@@ -223,18 +226,100 @@ class ClaudeAuth:
 
 AUTH = ClaudeAuth()
 
+CODEX_KEY_PATH = VAR / "codex-api-key.env"
+CODEX_KEY_HOME = VAR / "codex-api-home"
+CODEX_REJECTIONS = ("401 Unauthorized", "Missing bearer", "403 Forbidden", "Quota exceeded", "usage limit", "not logged in", "Not logged in")
 
-def _headless(command: list[str], cwd: Path, timeout: int, name: str, run_dir: Path, limit: str, auth: ClaudeAuth | None = None) -> dict[str, Any]:
-    """Run a session once; a Claude session that fails to authenticate on the token is run once more on
-    the API key when `auth` can fall back, and both attempts are on record. `auth` is None for codex."""
+
+class CodexAuth:
+    """Which login the codex checker runs under.
+
+    Codex reads its login from `$CODEX_HOME/auth.json` (by default `~/.codex`), the owner's ChatGPT
+    login, and ignores an API key in the environment. The fallback is a second codex home in var,
+    logged in once with the key from var/codex-api-key.env through `codex login --with-api-key` and
+    carrying a copy of the owner's config.toml so the model settings are the same. A checker that
+    fails on its login or its quota is run once more in that home, and the run stays there; the next
+    run starts over with the ChatGPT login. The owner is told the first time, since the key is billed."""
+
+    def __init__(self, key_path: Path | None = None, key_home: Path | None = None, notifier: Callable[[str, str], Any] | None = None, edition_id: str = "", codex_command: str = "codex"):
+        self.key_path = CODEX_KEY_PATH if key_path is None else key_path
+        self.key_home = CODEX_KEY_HOME if key_home is None else key_home
+        self.notifier = notifier
+        self.edition_id = edition_id
+        self.codex_command = codex_command
+        self.on_key = False
+
+    def key(self) -> str | None:
+        return read_secret(self.key_path, "OPENAI_API_KEY")
+
+    @staticmethod
+    def rejected(record: dict[str, Any]) -> bool:
+        text = str(record.get("stderr_tail") or "") + str(record.get("stdout") or "")
+        return record.get("exit_code") != 0 and any(mark in text for mark in CODEX_REJECTIONS)
+
+    def env(self, run_dir: Path | None = None, session: str = "") -> dict[str, str] | None:
+        if not self.on_key:
+            return None
+        return {**os.environ, "CODEX_HOME": str(self.key_home)}
+
+    def fall_back(self, reason: str, run_dir: Path | None, session: str) -> bool:
+        key = self.key()
+        if not key:
+            return False
+        if self.on_key:
+            return True
+        self._log_in(key)
+        self.on_key = True
+        if run_dir is not None:
+            _session_record(run_dir, "auth-fallback-codex", {"reason": reason, "session": session, "at": _now()})
+        self._tell()
+        return True
+
+    def _log_in(self, key: str) -> None:
+        """Log the key into its own codex home, fresh each time, with the owner's config beside it."""
+        self.key_home.mkdir(parents=True, exist_ok=True)
+        (self.key_home / "auth.json").unlink(missing_ok=True)
+        subprocess.run(
+            [self.codex_command, "login", "--with-api-key"], input=key, text=True, check=True, capture_output=True, timeout=60,
+            env={**os.environ, "CODEX_HOME": str(self.key_home)},
+        )
+        owner_home = Path(os.environ.get("CODEX_HOME") or Path.home() / ".codex")
+        config = owner_home / "config.toml"
+        if config.is_file():
+            (self.key_home / "config.toml").write_text(config.read_text(encoding="utf8"), encoding="utf8")
+
+    def _tell(self) -> None:
+        if not self.notifier:
+            return
+        edition = self.edition_id or "today's edition"
+        subject = f"Copenhagen Daily: the codex checker of {edition} is running on the API key"
+        body = (
+            f"The codex checker of {edition} could not run on the ChatGPT login, so it is running on the API key from "
+            "editorial/var/codex-api-key.env, in its own codex home under editorial/var. The run goes on, billed to the key. "
+            "Run `codex login` at the keyboard to restore the ChatGPT login; every run tries it first."
+        )
+        try:
+            self.notifier(subject, body)
+        except Exception as exc:  # noqa: BLE001 -- a failed notification must not stop the paper; the record in the run directory remains.
+            sys.stderr.write(f"notification failed: {exc}\nNOTIFY {subject}\n{body}\n")
+
+
+CODEX_AUTH = CodexAuth()
+
+
+def _headless(command: list[str], cwd: Path, timeout: int, name: str, run_dir: Path, limit: str, auth: ClaudeAuth | CodexAuth | None = None) -> dict[str, Any]:
+    """Run a session once; a session whose credential was rejected is run once more on the API key
+    when `auth` can fall back, and both attempts are on record."""
     env = auth.env(run_dir, name) if auth is not None else None
     record = _headless_once(command, cwd, timeout, name, run_dir, limit, env)
-    if auth is not None and _is_auth_failure(record) and not auth.on_key and auth.fall_back("token_rejected", run_dir, name):
-        record = _headless_once(command, cwd, timeout, f"{name}-api-key", run_dir, limit, auth.env(run_dir, name))
+    if auth is not None and auth.rejected(record) and not auth.on_key:
+        reason = "login_rejected" if isinstance(auth, CodexAuth) else "token_rejected"
+        if auth.fall_back(reason, run_dir, name):
+            record = _headless_once(command, cwd, timeout, f"{name}-api-key", run_dir, limit, auth.env(run_dir, name))
     if record["exit_code"] != 0 or record.get("is_error"):
         raise RunFailure(f"{name.split('-')[0]}_failed", f"{name} exited {record['exit_code']}", {"record": record})
     if auth is not None:
-        record["auth"] = "api_key" if auth.on_key else "token"
+        record["auth"] = "api_key" if auth.on_key else ("chatgpt" if isinstance(auth, CodexAuth) else "token")
     return record
 
 
@@ -249,6 +334,8 @@ def _headless_once(command: list[str], cwd: Path, timeout: int, name: str, run_d
     if proc.stderr:
         sys.stderr.write(proc.stderr[-4000:])
     record: dict[str, Any] = {"command": command[:2], "exit_code": proc.returncode, "elapsed_s": elapsed}
+    if proc.returncode != 0 and proc.stderr:
+        record["stderr_tail"] = proc.stderr[-1500:]
     try:
         result = json.loads(proc.stdout) if proc.stdout.strip().startswith("{") else {"stdout": proc.stdout[-4000:]}
     except json.JSONDecodeError:
@@ -308,11 +395,13 @@ def invoke_writer(brief: Path, timeout: int, config: dict[str, Any] | None = Non
     return _headless(command, cwd=brief.parent, timeout=timeout, name=f"writer-{brief.parent.name}-{_now()[:19]}", run_dir=run_dir, limit="writer", auth=AUTH if auth is None else auth)
 
 
-def invoke_checker(run_dir: Path, timeout: int, config: dict[str, Any] | None = None, max_turns: int | None = None, auth: ClaudeAuth | None = None) -> dict[str, Any]:
+def invoke_checker(run_dir: Path, timeout: int, config: dict[str, Any] | None = None, max_turns: int | None = None, auth: ClaudeAuth | None = None, codex_auth: CodexAuth | None = None) -> dict[str, Any]:
     config = config or load_desk_config()
     tool = config.get("checker", "claude")
-    session_auth: ClaudeAuth | None = None
+    session_auth: ClaudeAuth | CodexAuth | None = None
     if tool == "codex":
+        session_auth = CODEX_AUTH if codex_auth is None else codex_auth
+        session_auth.codex_command = config.get("codex_command", "codex")
         prompt = (
             f"Read {EDITORIAL / 'VERIFIER.md'} and follow it exactly. Read {run_dir / 'check-input.json'}. "
             "Your final message is the verdicts JSON and nothing else."
@@ -1344,6 +1433,7 @@ def run_edition(args: Any, policy: Policy) -> dict[str, Any]:
         publish_root = REPO / publish_root
     notifier = lambda subject, body: notify(subject, body, config.get("notify") or {})  # noqa: E731
     auth = ClaudeAuth(notifier=notifier, edition_id=edition_id)
+    codex_auth = CodexAuth(notifier=notifier, edition_id=edition_id)
     runner = Runner(
         policy=policy,
         run_dir=RUNS / edition_id,
@@ -1353,7 +1443,7 @@ def run_edition(args: Any, policy: Policy) -> dict[str, Any]:
         registry=VAR / "threads.json",
         editor=lambda mode, run_dir, timeout: invoke_editor(mode, run_dir, timeout, config, max_turns=policy.limits.editor_turns, auth=auth),
         writer=lambda brief, timeout: invoke_writer(brief, timeout, config, max_turns=policy.limits.writer_turns, auth=auth),
-        checker=lambda run_dir, timeout: invoke_checker(run_dir, timeout, {**config, "checker": args.checker or config.get("checker", "claude")}, max_turns=policy.limits.checker_turns, auth=auth),
+        checker=lambda run_dir, timeout: invoke_checker(run_dir, timeout, {**config, "checker": args.checker or config.get("checker", "claude")}, max_turns=policy.limits.checker_turns, auth=auth, codex_auth=codex_auth),
         collect=config.get("collect_before_export", True) and not args.no_collect,
         dry_run=args.dry_run,
         commit=config.get("commit_runs", True),

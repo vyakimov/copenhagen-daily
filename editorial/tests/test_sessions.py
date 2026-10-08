@@ -264,3 +264,101 @@ def test_the_codex_checker_sees_neither_credential(tmp_path, token_file, auth):
     codex = fake_cli(tmp_path, "codex", 'printf \'%s|%s\' "${CLAUDE_CODE_OAUTH_TOKEN-unset}" "${ANTHROPIC_API_KEY-unset}" > "$PWD/credentials.txt"\necho ok\n')
     invoke_checker(run_dir, timeout=30, config={"checker": "codex", "codex_command": str(codex)}, auth=auth)
     assert (run_dir / "credentials.txt").read_text() == "unset|unset"
+
+
+# -- the codex checker's own fallback ---------------------------------------------------------------
+
+def fake_codex(tmp_path, chatgpt_fails=True):
+    """`login --with-api-key` stores the key from stdin in $CODEX_HOME; `exec` fails like an unauthenticated
+    codex unless $CODEX_HOME holds that file, or unless the ChatGPT login is said to work."""
+    body = (
+        'if [ "$1" = "login" ]; then cat > "$CODEX_HOME/auth.json"; echo "Successfully logged in"; exit 0; fi\n'
+        'printf \'%s\' "${CODEX_HOME-unset}" > "$PWD/codex-home.txt"\n'
+        'if [ -f "${CODEX_HOME-/nonexistent}/auth.json" ]; then echo ok; exit 0; fi\n'
+        + ('echo "ERROR: unexpected status 401 Unauthorized: Missing bearer or basic authentication in header" >&2; exit 1\n' if chatgpt_fails else 'echo ok; exit 0\n')
+    )
+    return fake_cli(tmp_path, "codex", body)
+
+
+@pytest.fixture
+def codex_auth(tmp_path, monkeypatch):
+    from news_editorial.run import CodexAuth
+    monkeypatch.delenv("CODEX_HOME", raising=False)
+    notes = []
+    auth = CodexAuth(key_path=tmp_path / "codex-api-key.env", key_home=tmp_path / "codex-api-home", notifier=lambda s, b: notes.append((s, b)), edition_id="2026-10-08-morning")
+    auth.notes = notes
+    return auth
+
+
+def test_a_codex_checker_that_cannot_log_in_is_rerun_in_a_home_logged_in_with_the_key(tmp_path, codex_auth):
+    codex_auth.key_path.write_text("OPENAI_API_KEY=sk-proj-key\n")
+    codex = fake_codex(tmp_path)
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    record = invoke_checker(run_dir, timeout=30, config={"checker": "codex", "codex_command": str(codex)}, codex_auth=codex_auth)
+    assert record["exit_code"] == 0 and record["auth"] == "api_key"
+    assert (run_dir / "codex-home.txt").read_text() == str(codex_auth.key_home)
+    assert (codex_auth.key_home / "auth.json").read_text() == "sk-proj-key"
+    assert len(codex_auth.notes) == 1 and "codex" in codex_auth.notes[0][0].lower() and "sk-proj" not in codex_auth.notes[0][1]
+    fallback = json.loads((run_dir / "sessions" / "auth-fallback-codex.json").read_text())
+    assert fallback["reason"] == "login_rejected" and fallback["session"].startswith("checker-")
+    names = sorted(p.name for p in (run_dir / "sessions").glob("checker-*.json"))
+    assert len(names) == 2 and any(n.endswith("-api-key.json") for n in names)
+    first = json.loads((run_dir / "sessions" / [n for n in names if not n.endswith("-api-key.json")][0]).read_text())
+    assert "401 Unauthorized" in first["stderr_tail"]
+    # the rest of the run stays in the key's home, logged in once
+    (codex_auth.key_home / "auth.json").write_text("sk-proj-key")
+    invoke_checker(run_dir, timeout=30, config={"checker": "codex", "codex_command": str(codex)}, codex_auth=codex_auth)
+    assert len(codex_auth.notes) == 1
+
+
+def test_the_key_home_carries_the_owners_codex_config(tmp_path, codex_auth, monkeypatch):
+    real_home = tmp_path / "real-codex-home"
+    real_home.mkdir()
+    (real_home / "config.toml").write_text('model = "gpt-6-astra"\n')
+    monkeypatch.setenv("CODEX_HOME", str(real_home))
+    codex_auth.key_path.write_text("sk-proj-key\n")
+    codex = fake_codex(tmp_path)
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    invoke_checker(run_dir, timeout=30, config={"checker": "codex", "codex_command": str(codex)}, codex_auth=codex_auth)
+    assert (codex_auth.key_home / "config.toml").read_text() == 'model = "gpt-6-astra"\n'
+    assert (run_dir / "codex-home.txt").read_text() == str(codex_auth.key_home)
+
+
+def test_a_working_chatgpt_login_never_touches_the_key(tmp_path, codex_auth):
+    codex_auth.key_path.write_text("sk-proj-key\n")
+    codex = fake_codex(tmp_path, chatgpt_fails=False)
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    record = invoke_checker(run_dir, timeout=30, config={"checker": "codex", "codex_command": str(codex)}, codex_auth=codex_auth)
+    assert record["auth"] == "chatgpt" and (run_dir / "codex-home.txt").read_text() == "unset"
+    assert not codex_auth.key_home.exists() and codex_auth.notes == []
+
+
+def test_without_a_codex_key_the_failure_stands(tmp_path, codex_auth):
+    codex = fake_codex(tmp_path)
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    with pytest.raises(RunFailure) as info:
+        invoke_checker(run_dir, timeout=30, config={"checker": "codex", "codex_command": str(codex)}, codex_auth=codex_auth)
+    assert info.value.error_type == "checker_failed" and codex_auth.notes == []
+
+
+def test_a_codex_quota_failure_also_moves_to_the_key(tmp_path, codex_auth):
+    codex_auth.key_path.write_text("sk-proj-key\n")
+    codex = fake_cli(tmp_path, "codex", 'if [ "$1" = "login" ]; then cat > "$CODEX_HOME/auth.json"; exit 0; fi\nif [ -f "${CODEX_HOME-/nonexistent}/auth.json" ]; then echo ok; exit 0; fi\necho "ERROR: Quota exceeded. Check your plan and billing details." >&2; exit 1\n')
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    record = invoke_checker(run_dir, timeout=30, config={"checker": "codex", "codex_command": str(codex)}, codex_auth=codex_auth)
+    assert record["auth"] == "api_key" and json.loads((run_dir / "sessions" / "auth-fallback-codex.json").read_text())["reason"] == "login_rejected"
+
+
+def test_a_codex_failure_for_another_reason_is_not_rerun(tmp_path, codex_auth):
+    codex_auth.key_path.write_text("sk-proj-key\n")
+    codex = fake_cli(tmp_path, "codex", 'echo "ERROR: the verdicts did not match the schema" >&2; exit 1\n')
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    with pytest.raises(RunFailure):
+        invoke_checker(run_dir, timeout=30, config={"checker": "codex", "codex_command": str(codex)}, codex_auth=codex_auth)
+    assert codex_auth.notes == [] and not codex_auth.on_key
