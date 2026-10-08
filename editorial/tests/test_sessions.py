@@ -362,3 +362,35 @@ def test_a_codex_failure_for_another_reason_is_not_rerun(tmp_path, codex_auth):
     with pytest.raises(RunFailure):
         invoke_checker(run_dir, timeout=30, config={"checker": "codex", "codex_command": str(codex)}, codex_auth=codex_auth)
     assert codex_auth.notes == [] and not codex_auth.on_key
+
+
+@pytest.mark.parametrize("refusal", [
+    "Failed to authenticate: OAuth session expired",
+    "API Error: 429 rate_limit_error: This request would exceed your organization's rate limit",
+    "You've hit your limit · resets 3pm (Europe/Copenhagen)",
+    "Claude usage limit reached. Your limit will reset at 3pm",
+])
+def test_rate_and_usage_limits_on_the_token_move_the_run_to_the_key_and_say_why(tmp_path, token_file, auth, refusal):
+    token_file.write_text("sk-ant-oat01-capped\n")
+    auth.key_path.write_text("sk-ant-api03-key\n")
+    (tmp_path / "refusal.json").write_text(json.dumps({"type": "result", "is_error": True, "result": refusal}) + "\n")
+    claude = fake_cli(tmp_path, "claude",
+                      'if [ -n "${CLAUDE_CODE_OAUTH_TOKEN-}" ]; then cat "' + str(tmp_path / "refusal.json") + '"; exit 1; fi\n'
+                      'printf \'%s\\n\' \'{"type":"result","is_error":false,"result":"done"}\'\n')
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    record = invoke_editor("desk", run_dir, timeout=30, config={"editor_command": str(claude)}, auth=auth)
+    assert record["auth"] == "api_key" and len(auth.notes) == 1
+    assert refusal[:40] in auth.notes[0][1] and "refused" in auth.notes[0][1]
+    assert json.loads((run_dir / "sessions" / "auth-fallback.json").read_text())["detail"].startswith(refusal[:40])
+
+
+def test_a_model_error_on_the_token_is_not_a_refusal(tmp_path, token_file, auth):
+    token_file.write_text("sk-ant-oat01-ok\n")
+    auth.key_path.write_text("sk-ant-api03-key\n")
+    claude = fake_cli(tmp_path, "claude", 'printf \'%s\\n\' \'{"type":"result","is_error":true,"result":"API Error: 529 overloaded_error"}\'; exit 1\n')
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    with pytest.raises(RunFailure):
+        invoke_editor("desk", run_dir, timeout=30, config={"editor_command": str(claude)}, auth=auth)
+    assert not auth.on_key and auth.notes == []

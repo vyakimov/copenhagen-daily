@@ -218,6 +218,23 @@ def test_editor_timeout_fails_loudly_without_publishing(policy, tmp_path):
     assert read_json(tmp_path / "runs" / EDITION_ID / "status.json")["outcome"] == "failed"
 
 
+def test_archive_discards_the_bundles_of_published_runs(policy, tmp_path):
+    fakes = Fakes(tmp_path)
+    runs = tmp_path / "runs"
+    for name, outcome in (("2026-09-18-morning", "published"), ("2026-09-19-morning", "failed")):
+        (runs / name / "bundle").mkdir(parents=True)
+        (runs / name / "bundle" / "appearances.jsonl").write_text("{}\n")
+        (runs / name / "status.json").write_text(json.dumps({"outcome": outcome}))
+    runner = make_runner(policy, tmp_path, fakes)
+    status = runner.run()
+    assert status["outcome"] == "published"
+    archive = next(p for p in status["phases"] if p["name"] == "archive")
+    assert archive["bundles_discarded"] == 2
+    assert not (runner.run_dir / "bundle").exists() and (runner.run_dir / "window.json").exists()
+    assert not (runs / "2026-09-18-morning" / "bundle").exists()
+    assert (runs / "2026-09-19-morning" / "bundle").exists(), "a failed run keeps its bundle for the retry"
+
+
 def test_dry_run_neither_commits_nor_advances_threads(policy, tmp_path):
     fakes = Fakes(tmp_path)
     status = make_runner(policy, tmp_path, fakes, dry_run=True).run()

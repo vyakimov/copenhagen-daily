@@ -359,10 +359,20 @@ Record a hash of the skill and brief files on every trace, so a change in strike
 the brief change that caused it. The question of how conservative the checker is then becomes a chart
 rather than a transcript search.
 
-**5. The AWS side.** CloudFront already reports requests and errors to CloudWatch for free. A
-CloudWatch alarm on edition age, fed by a small scheduled Lambda that reads `latest.json` from the
-site, would be a second outside check that does not live on the Mac; CloudFront standard logs to S3
-with Athena would answer readership once the link is shared. Neither exists today.
+**5. The AWS side: a CloudWatch Synthetics canary.** The one check that catches a dead Mac is one
+that does not run on it. A CloudWatch Synthetics canary, on the `GET`-only or Node runtime, fetches
+`https://copenhagen-daily.net/live/latest.json` every hour, parses the edition date, and fails when it
+is not today's after 06:30 Copenhagen time; a CloudWatch alarm on the canary's `SuccessPercent` metric
+notifies through an SNS topic to email and, through a small subscription, to the same Discord
+webhook the desk uses. The canary also keeps a screenshot and HAR of the front page on every run,
+which is a free visual record of what readers saw. Cost is on the order of a dollar a month at that
+cadence. It replaces the Lambda sketched here before: same outside vantage point, less to write,
+and the canary, alarm, and topic are the things a reader of a CV recognises. Define it in CDK or a
+CloudFormation template in `docs/aws/` next to the delivery stack, so the whole AWS side is one
+deployable unit. CloudFront already reports requests and errors to CloudWatch for free, and standard
+logs to S3 with Athena would answer readership once the link is shared. None of this exists today.
+Recorded 8 October 2026 after the morning the desk could not log in: the Mac's own notices covered
+that case, but a Mac that is off sends no notice at all.
 
 ### What not to do
 

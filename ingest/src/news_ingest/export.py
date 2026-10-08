@@ -88,11 +88,11 @@ def _export_bundle(database, output, since=None, until=None, changed_since=None)
     if plan["mode"] == "publication_window":
         start = plan["window"]["since"]
         end = plan["window"]["until"]
-        where = "published_at>=? AND published_at<?"
+        where = "a.published_at>=? AND a.published_at<?"
         values = (start, end)
     else:
         start = end = None
-        where = "last_changed_at>=?"
+        where = "a.last_changed_at>=?"
         values = (plan["changed_since"],)
     mode = plan["mode"]
     output = Path(output)
@@ -100,16 +100,16 @@ def _export_bundle(database, output, since=None, until=None, changed_since=None)
     con.execute("BEGIN")
     generated = format_utc(now_utc())
     rows = con.execute(
-        f"SELECT * FROM articles WHERE {where} ORDER BY published_at,source,source_id", values
+        f"SELECT a.* FROM articles a WHERE {where} ORDER BY a.published_at,a.source,a.source_id", values
     ).fetchall()
-    keys = {(r["source"], r["source_id"]) for r in rows}
-    app = [
-        r
-        for r in con.execute(
-            "SELECT * FROM appearances ORDER BY observed_at,source,source_id,surface_id,position"
-        )
-        if (r["source"], r["source_id"]) in keys
-    ]
+    # Only the exported articles' appearances, selected in SQL: the appearances table holds every
+    # sighting ever made and grows by the day, so reading it whole would make each export slower
+    # than the last for the same bundle.
+    app = con.execute(
+        "SELECT p.* FROM appearances p JOIN articles a ON a.source=p.source AND a.source_id=p.source_id "
+        f"WHERE {where} ORDER BY p.observed_at,p.source,p.source_id,p.surface_id,p.position",
+        values,
+    ).fetchall()
     con.close()
     stage = Path(tempfile.mkdtemp(prefix=".staging-", dir=output.parent))
     files = {}

@@ -10,9 +10,9 @@ with logs under `~/Library/Logs/copenhagen-daily/`:
 | `ai.copenhagen-daily.collect` | every fifteen minutes | block 1 `collect --once` |
 | `ai.copenhagen-daily.edition` | 05:30 local | `edit_news.sh run` |
 | `ai.copenhagen-daily.verify` | 06:00 local | `edit_news.sh verify-live --fix --notify`: checks the live site against the newsroom's copy, delivers again if that is the remedy, and posts the verdict either way |
-| `ai.copenhagen-daily.retry` | 07:30 local | `edit_news.sh run --retry`: skips when today's run already ended as published, dry run, or skipped; otherwise resumes the failed run from its first missing file |
+| `ai.copenhagen-daily.retry` | 07:30 and 10:30 local | `edit_news.sh run --retry`: skips when today's run already ended as published, dry run, or skipped; otherwise resumes the failed run from its first missing file. The second firing covers an outage that outlasts the first |
 | `ai.copenhagen-daily.freshness` | 09:00 local | `edit_news.sh freshness --notify`: fails and notifies when the latest activated edition is older than `max_edition_age_hours` |
-| `ai.copenhagen-daily.preflight` | 22:00 local | `edit_news.sh preflight --notify`: makes one cheap request on each login tomorrow's run will carry, and on the API key when a login fails; posts the result, good or bad |
+| `ai.copenhagen-daily.preflight` | 22:00 local | `edit_news.sh preflight --notify`: makes one request with each production model on each login tomorrow's run will carry, and on the API key when a login fails; names feeds that keep failing; posts the result, good or bad |
 
 The files in `config/launchd/` are templates: `@REPO@` and `@HOME@` stand for this repository's path
 and the login home. Install or reload them with:
@@ -54,6 +54,16 @@ from the same contract; the desk makes no device decisions. A device failure deg
 web-only and the web edition is unaffected. The newest page is always at
 `https://copenhagen-daily.net/device/current.png`, which `deliver` syncs and invalidates with the rest
 of the site; the screen's TRMNL Image Display plugin reads it from there. Block 3 needs its pinned Chromium (`publisher/OPERATIONS.md`) on the Mac.
+
+## Disk
+
+Two things grow every day. Block 1's database (`ingest/var/news-ingest.sqlite3`) grows by about
+180 MB a day: every sighting of every item, kept indefinitely. Nothing prunes it yet; see
+`docs/ingest-architecture.md` on raw payload retention. The export bundle a run fetches from block 1
+is a few hundred megabytes, and the archive phase discards it from the run and from every earlier
+run that ended published, once the edition is committed; a failed run keeps its bundle so the retry
+can resume. The committed files and `window.json` keep what the record needs. The backup block 1
+wrote before its sighting migration on 30 September 2026 was deleted on 8 October 2026.
 
 ## Looking before publishing
 
@@ -114,8 +124,10 @@ codex checker never sees it. The token expires a year after it is minted.
 
 An API key in `var/claude-api-key.env` (the bare key, or `ANTHROPIC_API_KEY=...`, owner-readable
 only) is the fallback. Every run tries the token first. When the token file is missing, or a session
-fails to authenticate with the token, the run moves to the key and stays on it for the rest of that
-run: the failed session is run once more on the key, both attempts are kept under `sessions/` (the
+is refused on the token, the run moves to the key and stays on it for the rest of that run. A refusal
+is a failed login or the plan's rate or usage limit (`Failed to authenticate`, `rate_limit`,
+`usage limit`, `hit your limit`, a 429); a model error such as an overload is not one, and such a
+session fails as before. On the key the run: the failed session is run once more on the key, both attempts are kept under `sessions/` (the
 second one named `-api-key`), and `sessions/auth-fallback.json` records why and when. The owner is
 notified the first time a run moves to the key, through the usual channel ("Being told"), because the
 key is billed per token (a morning's sessions cost on the order of ten dollars) and the token needs
@@ -134,11 +146,16 @@ run stays there, `sessions/auth-fallback-codex.json` records it, and the owner i
 next run starts over on the ChatGPT login; `codex login` at the keyboard restores it. The key's
 OpenAI project needs billing enabled, or every call on it answers "Quota exceeded".
 
-The 22:00 preflight job makes that check every evening: one request on the cheapest model with the
-token, then with the API key if the token failed, and the same for the codex checker's ChatGPT login
-and key. The notice says `ready` when every tool answers on its first choice, `will use an API key`
-when a tool only answers on its key, and `CANNOT log in` when a tool has nothing that works; the last
-exits non-zero. `edit_news.sh preflight` runs it by hand (`--notify` to post the result).
+The 22:00 preflight job makes that check every evening: one request with each model the desk is
+configured to use (`editor_model`, `writer_model`, `checker_model`; the cheapest model when none is
+set) with the token, then with the API key if the token failed, and the same for the codex checker's
+ChatGPT login and key, so a retired model is found the night before as well. The notice says `ready`
+when every tool answers on its first choice, `will use an API key` when a tool only answers on its
+key, and `CANNOT log in` when a tool has nothing that works; the last exits non-zero. The same notice
+names every feed that has failed more than twenty polls running, with its last error, which is how
+a moved, renamed, or deleted feed is noticed; one feed's failure never stops the paper, it only
+narrows the window. `edit_news.sh preflight` runs it by hand (`--notify` to post the result). The
+feed check reads block 1's `health`, which integrity-checks the database and takes a minute or two.
 
 To check the login the jobs will actually use, probe from launchd, not from a Claude Code shell: a
 sandboxed shell cannot read the keychain and falls back to `~/.claude/.credentials.json`, so it can

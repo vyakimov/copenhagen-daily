@@ -125,6 +125,7 @@ def _session_record(run_dir: Path, name: str, record: dict[str, Any]) -> None:
 
 
 OAUTH_TOKEN_PATH = VAR / "claude-oauth.env"
+CLAUDE_REJECTIONS = ("Failed to authenticate", "authentication_error", "rate_limit", "rate limit", "usage limit", "hit your limit", "429")
 API_KEY_PATH = VAR / "claude-api-key.env"
 AUTH_FALLBACK_RECORD = "auth-fallback.json"
 
@@ -177,9 +178,10 @@ class ClaudeAuth:
 
     @staticmethod
     def rejected(record: dict[str, Any]) -> bool:
-        """Whether a session's record says the credential, not the work, failed."""
+        """Whether a session's record says the credential, not the work, was refused: a failed login,
+        or the plan's rate or usage limit, which the key is not subject to."""
         result = str(record.get("result") or "")
-        return bool(record.get("is_error")) and ("Failed to authenticate" in result or "authentication_error" in result)
+        return bool(record.get("is_error")) and any(mark in result for mark in CLAUDE_REJECTIONS)
 
     def env(self, run_dir: Path | None = None, session: str = "") -> dict[str, str] | None:
         """The session's environment: the runner's plus one credential, or None to inherit as is."""
@@ -194,7 +196,7 @@ class ClaudeAuth:
         key = self.key()
         return {**base, "ANTHROPIC_API_KEY": key} if key else None
 
-    def fall_back(self, reason: str, run_dir: Path | None, session: str) -> bool:
+    def fall_back(self, reason: str, run_dir: Path | None, session: str, detail: str = "") -> bool:
         """Move the run to the API key if there is one; tell the owner the first time. False without a key."""
         key = self.key()
         if not key:
@@ -203,16 +205,16 @@ class ClaudeAuth:
             return True
         self.on_key = True
         if run_dir is not None:
-            _session_record(run_dir, AUTH_FALLBACK_RECORD.removesuffix(".json"), {"reason": reason, "session": session, "at": _now()})
-        self._tell(reason)
+            _session_record(run_dir, AUTH_FALLBACK_RECORD.removesuffix(".json"), {"reason": reason, "session": session, "detail": detail, "at": _now()})
+        self._tell(reason, detail)
         return True
 
-    def _tell(self, reason: str) -> None:
+    def _tell(self, reason: str, detail: str = "") -> None:
         if not self.notifier:
             return
         edition = self.edition_id or "today's edition"
         subject = f"Copenhagen Daily: {edition} is running on the API key"
-        why = "there is no token in editorial/var/claude-oauth.env" if reason == "token_missing" else "a session failed to authenticate with the token in editorial/var/claude-oauth.env"
+        why = "there is no token in editorial/var/claude-oauth.env" if reason == "token_missing" else f"a session was refused on the token in editorial/var/claude-oauth.env ({detail or 'login, rate or usage limit'})"
         body = (
             f"The Claude sessions of {edition} are using the API key from editorial/var/claude-api-key.env because {why}. "
             "The run goes on, billed to the key. Mint a new token at the keyboard with `claude setup-token > editorial/var/claude-oauth.env` "
@@ -228,7 +230,7 @@ AUTH = ClaudeAuth()
 
 CODEX_KEY_PATH = VAR / "codex-api-key.env"
 CODEX_KEY_HOME = VAR / "codex-api-home"
-CODEX_REJECTIONS = ("401 Unauthorized", "Missing bearer", "403 Forbidden", "Quota exceeded", "usage limit", "not logged in", "Not logged in")
+CODEX_REJECTIONS = ("401 Unauthorized", "Missing bearer", "403 Forbidden", "Quota exceeded", "usage limit", "rate limit", "429", "not logged in", "Not logged in")
 
 
 class CodexAuth:
@@ -262,7 +264,7 @@ class CodexAuth:
             return None
         return {**os.environ, "CODEX_HOME": str(self.key_home)}
 
-    def fall_back(self, reason: str, run_dir: Path | None, session: str) -> bool:
+    def fall_back(self, reason: str, run_dir: Path | None, session: str, detail: str = "") -> bool:
         key = self.key()
         if not key:
             return False
@@ -271,8 +273,8 @@ class CodexAuth:
         self.log_in(key)
         self.on_key = True
         if run_dir is not None:
-            _session_record(run_dir, "auth-fallback-codex", {"reason": reason, "session": session, "at": _now()})
-        self._tell()
+            _session_record(run_dir, "auth-fallback-codex", {"reason": reason, "session": session, "detail": detail, "at": _now()})
+        self._tell(detail)
         return True
 
     def log_in(self, key: str) -> None:
@@ -288,13 +290,13 @@ class CodexAuth:
         if config.is_file():
             (self.key_home / "config.toml").write_text(config.read_text(encoding="utf8"), encoding="utf8")
 
-    def _tell(self) -> None:
+    def _tell(self, detail: str = "") -> None:
         if not self.notifier:
             return
         edition = self.edition_id or "today's edition"
         subject = f"Copenhagen Daily: the codex checker of {edition} is running on the API key"
         body = (
-            f"The codex checker of {edition} could not run on the ChatGPT login, so it is running on the API key from "
+            f"The codex checker of {edition} was refused on the ChatGPT login ({detail or 'login, rate or usage limit'}), so it is running on the API key from "
             "editorial/var/codex-api-key.env, in its own codex home under editorial/var. The run goes on, billed to the key. "
             "Run `codex login` at the keyboard to restore the ChatGPT login; every run tries it first."
         )
@@ -314,7 +316,8 @@ def _headless(command: list[str], cwd: Path, timeout: int, name: str, run_dir: P
     record = _headless_once(command, cwd, timeout, name, run_dir, limit, env)
     if auth is not None and auth.rejected(record) and not auth.on_key:
         reason = "login_rejected" if isinstance(auth, CodexAuth) else "token_rejected"
-        if auth.fall_back(reason, run_dir, name):
+        detail = str(record.get("result") or "")[:200] if isinstance(auth, ClaudeAuth) else next((line for line in str(record.get("stderr_tail") or "").splitlines() if line.startswith("ERROR")), "")[:200]
+        if auth.fall_back(reason, run_dir, name, detail):
             record = _headless_once(command, cwd, timeout, f"{name}-api-key", run_dir, limit, auth.env(run_dir, name))
     if record["exit_code"] != 0 or record.get("is_error"):
         raise RunFailure(f"{name.split('-')[0]}_failed", f"{name} exited {record['exit_code']}", {"record": record})
@@ -1414,12 +1417,39 @@ class Runner:
             return
         # The status committed with the run is the final one, so the outcome is settled here.
         self.status["outcome"] = "published"
-        self.status["phases"].append({"name": "archive", "finished_at": _now(), "committed": len([n for n in SMALL_FILES if (self.run_dir / n).exists()])})
+        discarded = self._discard_bundles()
+        self.status["phases"].append({"name": "archive", "finished_at": _now(), "committed": len([n for n in SMALL_FILES if (self.run_dir / n).exists()]), "bundles_discarded": discarded})
         self._write_status()
         paths = [str(relative / name) for name in SMALL_FILES if (self.run_dir / name).exists()]
         self.git("add", *paths)
         # Only the run's own files: anything else the owner had staged stays staged, uncommitted.
         self.git("commit", "-q", "--only", "-m", f"Archive the {self.edition_id} edition", "--", *paths)
+
+
+    def _discard_bundles(self) -> int:
+        """Remove block 1's export bundle from this run and from every earlier run that ended published.
+        A bundle is a few hundred megabytes that nothing reads once the edition is built and checked;
+        the window and the committed files keep what the record needs. A failed run keeps its bundle
+        so a retry can resume. Returns how many were removed."""
+        import shutil
+
+        removed = 0
+        for run_dir in sorted(self.run_dir.parent.glob("*/")):
+            bundle = run_dir / "bundle"
+            if not bundle.is_dir():
+                continue
+            if run_dir != self.run_dir:
+                status_path = run_dir / "status.json"
+                if not status_path.is_file():
+                    continue
+                try:
+                    if json.loads(status_path.read_text(encoding="utf8")).get("outcome") != "published":
+                        continue
+                except json.JSONDecodeError:
+                    continue
+            shutil.rmtree(bundle, ignore_errors=True)
+            removed += 1
+        return removed
 
 
 def run_edition(args: Any, policy: Policy) -> dict[str, Any]:
