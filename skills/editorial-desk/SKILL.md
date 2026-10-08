@@ -81,8 +81,10 @@ duplicate numbers, dissolves oversized clusters, and splits off members that sha
 named entity, or section with the rest. It is conservative on purpose. Leave its splits in place; if
 you believe a split was wrong, say so in the log.
 
-**6. Score.** Run `score`. Read `ranking.json`: every candidate with its terms, section weight,
-eligibility, and decision reason, ranked. `not_in_danish_media` and `already_covered` are not
+**6. Score.** Run `score`. Read `ranking.json`: the eligible candidates, the forty ranked just past
+the budget, and the covered ones carry their terms, section weight, and decision reason, ranked.
+Every other candidate is one line with its id, rank, and decision; its members are in
+`clusters-checked.json` under the same id. `not_in_danish_media` and `already_covered` are not
 eligible. `outside_budget` is eligible but beyond the limit.
 
 **7. Select.** Write `selection.json`:

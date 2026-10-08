@@ -11,6 +11,13 @@ from .policy import Policy
 SCHEMA_VERSION = 1
 EDITION_DECAY = [1.0, 0.45, 0.15]
 FULL_BREADTH = 10
+# How many candidates past the budget keep their terms. The desk promotes from here when it overrules
+# the top; beyond it, and for every ineligible candidate, one line is enough to look the cluster up.
+RANKING_TAIL = 40
+COMPACT_KEYS = {
+    "outside_budget": ("id", "breadth", "score", "rank", "eligible", "decision"),
+    "not_in_danish_media": ("id", "rank", "eligible", "decision"),
+}
 
 
 def breadth_norm(n: int) -> float:
@@ -147,6 +154,15 @@ def rank(checked: dict[str, Any], window: dict[str, Any], memory: dict[str, Any]
         if position > policy.limits.stories_written:
             candidate["decision"] = "outside_budget"
     candidates.sort(key=lambda c: (c["rank"] is None, c["rank"] or 0, -c["score"], c["id"]))
+    decisions: dict[str, int] = {}
+    for c in candidates:
+        decisions[c["decision"]] = decisions.get(c["decision"], 0) + 1
+    tail_end = policy.limits.stories_written + RANKING_TAIL
+    candidates = [
+        c if c["decision"] in ("eligible", "already_covered") or (c["decision"] == "outside_budget" and c["rank"] <= tail_end)
+        else {k: c[k] for k in COMPACT_KEYS[c["decision"]]}
+        for c in candidates
+    ]
     top = [c for c in eligible[: policy.limits.stories_written]]
     notes = []
     if top:
@@ -170,12 +186,22 @@ def rank(checked: dict[str, Any], window: dict[str, Any], memory: dict[str, Any]
         "weights": policy.weights.model_dump(),
         "previous_cutoffs": previous_cutoffs,
         "limits": {"stories_written": policy.limits.stories_written},
+        "decisions": decisions,
+        "written_in_full": {"eligible": True, "outside_budget_tail": RANKING_TAIL, "already_covered": True},
         "diversity_notes": notes,
         "candidates": candidates,
     }
 
 
 def write_ranking(ranking: dict[str, Any], run_dir: Path) -> Path:
+    """Indented like every other run file, except that a compact candidate takes one line."""
     path = run_dir / "ranking.json"
-    path.write_text(json.dumps(ranking, ensure_ascii=False, indent=1) + "\n", encoding="utf8")
+    head = {k: v for k, v in ranking.items() if k != "candidates"}
+    rows = []
+    for c in ranking["candidates"]:
+        text = json.dumps(c, ensure_ascii=False, indent=1 if "terms" in c else None)
+        rows.append("  " + text.replace("\n", "\n  "))
+    body = json.dumps(head, ensure_ascii=False, indent=1).rstrip("\n}")
+    body += ',\n "candidates": [\n' + ",\n".join(rows) + "\n ]\n}\n"
+    path.write_text(body, encoding="utf8")
     return path

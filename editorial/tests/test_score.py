@@ -133,7 +133,7 @@ def test_candidates_beyond_the_budget_are_outside_budget(policy):
 def test_singletons_rank_too(policy):
     ranking = _rank(policy, _clusters(_cluster("gedser", GEDSER)))
     single = next(r for r in ranking["candidates"] if r["id"] == "s14")  # BBC drone: linked only
-    assert single["members"] == [14] and single["decision"] == "not_in_danish_media"
+    assert single["decision"] == "not_in_danish_media"
     assert any(r["id"].startswith("s") and r["eligible"] for r in ranking["candidates"])
 
 
@@ -142,7 +142,62 @@ def test_ties_break_towards_the_fresher_story(policy):
     memory = _memory(window)
     checked = check_clusters(_clusters(), window)
     ranking = rank(checked, window, memory, policy)
-    ranked = [c for c in ranking["candidates"] if c["rank"] is not None]
+    ranked = [c for c in ranking["candidates"] if c["rank"] is not None and "terms" in c]
+    assert len(ranked) > policy.limits.stories_written
     for earlier, later in zip(ranked, ranked[1:]):
         if earlier["score"] == later["score"] and earlier["breadth"] == later["breadth"]:
             assert earlier["latest_published_at"] >= later["latest_published_at"], (earlier["id"], later["id"])
+
+
+def test_the_ranking_is_capped_to_what_the_desk_can_use(policy):
+    """Eligible rows, a short tail past the budget, and covered rows carry their terms; the rest is a line."""
+    from news_editorial.score import RANKING_TAIL
+
+    policy = policy.model_copy(deep=True)
+    policy.limits.stories_written = 1
+    window = _window(policy)
+    article = next(a for a in window["articles"] if a["n"] == 79)
+    covered = {f"{article['source']}:{article['source_id']}": {"edition_id": "2026-09-14-midday", "story_id": "x"}}
+    ranking = _rank(policy, _clusters(_cluster("gedser", GEDSER), _cluster("ai", AI), _cluster("supreme", SUPREME)), _memory(window, covered=covered))
+    rows = ranking["candidates"]
+    full = [r for r in rows if "terms" in r]
+    compact = [r for r in rows if "terms" not in r]
+    assert ranking["written_in_full"] == {"eligible": True, "outside_budget_tail": RANKING_TAIL, "already_covered": True}
+    assert ranking["decisions"]["not_in_danish_media"] >= 1 and ranking["decisions"]["eligible"] == 1
+    # Everything eligible, the tail, and the covered cluster keep every term.
+    assert all(r["decision"] in {"eligible", "outside_budget", "already_covered"} for r in full)
+    assert sum(1 for r in full if r["decision"] == "outside_budget") == min(RANKING_TAIL, ranking["decisions"]["outside_budget"])
+    assert next(r for r in full if r["id"] == "gedser")["covered_by"]["edition_id"] == "2026-09-14-midday"
+    # Everything else is one line: enough to look it up, nothing to read.
+    assert compact and all(r["decision"] in {"outside_budget", "not_in_danish_media"} for r in compact)
+    assert all(set(r) == {"id", "breadth", "score", "rank", "eligible", "decision"} for r in compact if r["decision"] == "outside_budget")
+    assert next(r for r in compact if r["id"] == "s14") == {"id": "s14", "rank": None, "eligible": False, "decision": "not_in_danish_media"}  # BBC drone
+    # The order and the ranks are unchanged by the cap.
+    assert [r["rank"] for r in rows if r["rank"] is not None] == list(range(1, 1 + ranking["decisions"]["eligible"] + ranking["decisions"]["outside_budget"]))
+
+
+def test_the_tail_is_cut_by_rank_not_by_cluster_size(policy):
+    from news_editorial import score as score_module
+
+    policy = policy.model_copy(deep=True)
+    policy.limits.stories_written = 1
+    original = score_module.RANKING_TAIL
+    score_module.RANKING_TAIL = 2
+    try:
+        ranking = _rank(policy, _clusters())
+    finally:
+        score_module.RANKING_TAIL = original
+    tail = [r for r in ranking["candidates"] if r["decision"] == "outside_budget" and "terms" in r]
+    assert [r["rank"] for r in tail] == [2, 3]
+    assert ranking["written_in_full"]["outside_budget_tail"] == 2
+
+
+def test_the_written_ranking_reads_back_and_keeps_compact_rows_on_one_line(policy, tmp_path):
+    from news_editorial.score import write_ranking
+
+    ranking = _rank(policy, _clusters(_cluster("gedser", GEDSER)))
+    path = write_ranking(ranking, tmp_path)
+    assert read_json(path) == ranking
+    lines = path.read_text(encoding="utf8").splitlines()
+    assert any(line.startswith('  {"id": "s14"') and line.rstrip(",").endswith("}") for line in lines)
+    assert any(line == '   "terms": {' for line in lines)

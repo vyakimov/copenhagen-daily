@@ -99,7 +99,7 @@ A send-back writes only the stories that were sent back, each in its own session
 | `inputs.json` | runner | Digests of everything above |
 | `clusters.json` | editor | Groups with an event line, member numbers, confidence, thread |
 | `clusters-checked.json` | `check-clusters` | The validated clusters, removals, flags, singletons |
-| `ranking.json` | `score` | Every candidate with its terms, decision, and rank |
+| `ranking.json` | `score` | Every candidate with its decision and rank; terms on the eligible, a tail of forty past the budget, and the covered |
 | `selection.json` | editor | Stories with role, kicker, sources, and reasons; rejections; notes; the edition's presentation and coverage note |
 | `stories/<id>/brief.json` | runner | One story's evidence, role, budget, and golden example, for its writer |
 | `stories/<id>/story.json` | writer | That story's copy, with the explanations it took from its own knowledge declared |
@@ -170,7 +170,7 @@ score = base x section_weight
 
 `section_weight` is the highest weight among the story's sections. Multiplying rather than adding gives the property that makes the numbers meaningful: the ratio between two section weights is exactly the margin a story needs to overcome them. With Denmark at 1.0 and technology at 0.5, a technology story must reach twice the base score of the best Danish story to lead.
 
-Every candidate carries a decision: `not_in_danish_media` (no scoring publisher), `already_covered` (any member article appears in a published story in memory), `eligible`, or `outside_budget` (eligible but ranked beyond `limits.stories_written`, 24). Ties break on breadth, then the fresher story, then the id. `score` also writes **diversity notes**, which are advisory: a section holding more than half of the top, or one publisher being the sole scoring publisher on more than half of it.
+Every candidate carries a decision: `not_in_danish_media` (no scoring publisher), `already_covered` (any member article appears in a published story in memory), `eligible`, or `outside_budget` (eligible but ranked beyond `limits.stories_written`, 24). Ties break on breadth, then the fresher story, then the id. The file carries every term only where the desk can act on them: the eligible candidates, the forty ranked just past the budget (`RANKING_TAIL` in `score.py`), and the covered ones, whose `covered_by` names the edition. The rest are one line each, id, rank, and decision, with their members in `clusters-checked.json`; a run of 3,700 candidates writes about 0.5 MB instead of 2.4. `decisions` counts every candidate by decision and `written_in_full` states the cut. `score` also writes **diversity notes**, which are advisory: a section holding more than half of the top, or one publisher being the sole scoring publisher on more than half of it.
 
 ### Selection is the editor's, with reasons
 
