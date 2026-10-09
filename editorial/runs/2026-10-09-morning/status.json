@@ -1,0 +1,179 @@
+{
+ "schema_version": 1,
+ "edition_id": "2026-10-09-morning",
+ "cutoff_at": "2026-10-09T03:30:00.000000Z",
+ "started_at": "2026-10-09T04:32:37.599828Z",
+ "dry_run": false,
+ "outcome": "published",
+ "phases": [
+  {
+   "name": "reconcile",
+   "finished_at": "2026-10-09T04:32:37.915399Z",
+   "activated": false
+  },
+  {
+   "name": "inputs",
+   "finished_at": "2026-10-09T04:32:37.915876Z",
+   "recorded": false
+  },
+  {
+   "name": "collect",
+   "finished_at": "2026-10-09T04:32:38.076727Z",
+   "skipped": true,
+   "reason": "recent_poll",
+   "last_poll_at": "2026-10-09T04:30:35.629384Z",
+   "age_minutes": 2.0
+  },
+  {
+   "name": "window",
+   "finished_at": "2026-10-09T04:32:53.056154Z",
+   "articles": 4092,
+   "feeds": 132,
+   "failed_feeds": 0
+  },
+  {
+   "name": "memory",
+   "finished_at": "2026-10-09T04:32:53.287997Z",
+   "editions": [
+    "2026-10-08-morning",
+    "2026-10-07-morning",
+    "2026-10-06-morning"
+   ],
+   "threads": 15,
+   "next_edition_number": 4
+  },
+  {
+   "name": "editor",
+   "finished_at": "2026-10-09T04:39:30.151456Z",
+   "session": {
+    "command": [
+     "claude",
+     "-p"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 396.7,
+    "session_id": "9b7f9b6c-5712-4457-bfac-be1e0d1f9a62",
+    "num_turns": 59,
+    "duration_ms": 395736,
+    "total_cost_usd": 5.754983800000001,
+    "is_error": false,
+    "subtype": "success",
+    "permission_denials": [
+     {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01H9fP7G3uKaBaK4oAe6Zzkr",
+      "tool_input": {
+       "command": "/Users/vy/Documents/Development/copenhagen-daily/editorial/edit_news.sh --help",
+       "description": "Show the editorial wrapper's usage"
+      }
+     }
+    ],
+    "result": "The desk work for the 2026-10-09 morning edition is done. Every step produced its file in the run directory: `clusters.json`, `clusters-checked.json`, `ranking.json`, `selection.json` and `NOTES.md`. Both tool runs returned ok; the runner writes, checks and publishes from here.\n\n**The edition: 22 stories, out of 81 event clusters**\n- **Lead:** the leaked 2027 finance bill cuts the senior pension for worn-out workers. Four Danish outlets carried it and unions protested within hours. The bill is only formally presented after the cutoff, so the copy must treat it as a leak.\n- **Secondaries:**\n  - A hacker tells Politiken the CPR register was reached with the password 123456.\n  - Parliament's opening debate, dominated by immigration.\n  - Venstre at a record low 5.8 per cent in a poll for DR.\n  - The University of Copenhagen merging away its Faculty of Theology after 549 years.\n- **Briefs:** 17. That is one above the handbook's typical 8 to 16, which is guidance, not a hard limit.\n\n**Where I departed from the ranking**\n- **Section mix:** the ranking's top 24 was all Denmark and politics (13 and 14 of 24), which breaks the rule that no section takes more than half the page. I brought in six world, culture and climate stories it had left out on budget: Anne Carson's Nobel, the public Fort Hood execution, the Kramatorsk bus strike, Trump on Iran, the WWF wildlife report and the Climate Council's flight taxes.\n- **Frederiksen defending the student-grant cut (ranked 2nd):** rejected. She made the same defence on the 7th, and the 18,000-families figure was already reported then.\n- **CPR credit warnings (3rd) and Søren Gade (4th):** both cut to briefs. The first keeps the CPR story to one secondary. The second mostly extends the 7th's story.\n\n**Two weaknesses to check in the log:**\n- I didn't check which foreign outlet each attached article belongs to. The Carson and Hasan source lists may carry two pieces from the same outlet, against the one-per-publisher rule.\n- In the rejected list I wrote that the Saudi airport attacks ran on the 8th, from memory of the previous edition. I didn't confirm how the scorer classified that cluster.\n\nThe validator split one article off each of two clusters (Polish school attacks, coastal protection); neither story runs, so it changes nothing. All 132 feeds at 17 publishers polled successfully.",
+    "auth": "token"
+   },
+   "stories": 22
+  },
+  {
+   "name": "write",
+   "finished_at": "2026-10-09T04:41:51.568194Z",
+   "stories": 22,
+   "sessions": 22,
+   "cost_usd": 4.638,
+   "resumed_stories": 0
+  },
+  {
+   "name": "check",
+   "finished_at": "2026-10-09T04:44:40.745754Z",
+   "rounds": 1,
+   "struck": 0,
+   "send_back": [],
+   "fallen": [],
+   "resumed": false
+  },
+  {
+   "name": "preflight",
+   "finished_at": "2026-10-09T04:44:40.971798Z",
+   "valid": true
+  },
+  {
+   "name": "publish",
+   "finished_at": "2026-10-09T04:44:47.530666Z",
+   "status": "published",
+   "device_status": "published"
+  },
+  {
+   "name": "receipt",
+   "finished_at": "2026-10-09T04:44:47.710429Z",
+   "activated": true,
+   "web_stories": 22
+  },
+  {
+   "name": "threads",
+   "finished_at": "2026-10-09T04:44:47.716260Z",
+   "touched": 6,
+   "total": 15
+  },
+  {
+   "name": "deliver",
+   "finished_at": "2026-10-09T04:44:49.839324Z",
+   "bucket": "copenhagen-daily-live",
+   "synced": true,
+   "invalidated": "E67FD57M9R899"
+  },
+  {
+   "name": "archive",
+   "finished_at": "2026-10-09T04:44:49.889479Z",
+   "committed": 13,
+   "bundles_discarded": 4
+  }
+ ],
+ "failure": null,
+ "published": {
+  "edition": "/Users/vy/Documents/Development/copenhagen-daily/editorial/runs/2026-10-09-morning/edition-checked.json",
+  "status": "published",
+  "device_status": "published",
+  "bundle": {
+   "manifest_sha256": "sha256:6d25eee9ebbc13f4da6b92a28bb40aefbdc8013bead8ed48c9901dd163d0564f",
+   "path": "n/2026-10-09-morning/"
+  },
+  "receipt": {
+   "sequence": 4,
+   "manifest_sha256": "sha256:6d25eee9ebbc13f4da6b92a28bb40aefbdc8013bead8ed48c9901dd163d0564f",
+   "web_story_ids": [
+    "seniorpension-cut-finance-bill-2027",
+    "cpr-hacker-password-123456",
+    "opening-debate-immigration-2026",
+    "venstre-record-low-5-8-poll",
+    "ku-theology-faculty-merged-2028",
+    "cpr-credit-warnings-970000",
+    "gade-character-assassination-claim",
+    "cruise-ship-levy-2028",
+    "is-housewife-two-years",
+    "reverse-ankle-tag-60-days",
+    "kaershovedgaard-prison-four-five-years",
+    "s-faction-coffee-clubs",
+    "deepfake-sharing-ban-bill",
+    "kjaersgaard-reported-hojskolen",
+    "anonymous-graves-majority-cities",
+    "djoef-worst-phrase-2026",
+    "climate-council-flight-taxes",
+    "nobel-literature-anne-carson",
+    "hasan-execution-public",
+    "kramatorsk-buses-strike",
+    "trump-iran-talks-midterms",
+    "wwf-living-planet-73-per-cent"
+   ]
+  }
+ },
+ "previous_failures": [
+  {
+   "phase": "collect",
+   "type": "block_timeout",
+   "message": "gather_news.sh health exceeded 120s",
+   "details": {},
+   "at": "2026-10-09T03:32:05.616034Z"
+  }
+ ],
+ "updated_at": "2026-10-09T04:44:49.889623Z",
+ "elapsed_s": 732.3
+}

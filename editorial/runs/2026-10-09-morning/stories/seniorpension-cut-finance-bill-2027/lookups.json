@@ -1,0 +1,46 @@
+[
+ {
+  "requested": "Danish People's Party",
+  "status": "found",
+  "title": "Danish People's Party",
+  "extract": "The Danish People's Party is a nationalist and right-wing populist political party in Denmark. It was formed in 1995 by former members of the Progress Party (FrP). The party saw a period of significant growth after its founding and lent its support to the Venstre–Conservative People's Party coalition government that ruled from the 2001 Danish general election until the defeat in the 2011 Danish general election.",
+  "url": "https://en.wikipedia.org/wiki/Danish_People's_Party",
+  "type": "standard",
+  "fetched_at": "2026-10-09T04:41:51.654311Z",
+  "term": "Dansk Folkeparti",
+  "definition": "a nationalist party"
+ },
+ {
+  "requested": "Danish Nurses' Organization",
+  "status": "found",
+  "title": "Danish Nurses' Organization",
+  "extract": "The Danish Nurses' Organization is a trade union in Denmark. It represents 95% of all nurses with a membership of 75,000.",
+  "url": "https://en.wikipedia.org/wiki/Danish_Nurses'_Organization",
+  "type": "standard",
+  "fetched_at": "2026-10-09T04:41:51.802060Z",
+  "term": "Dansk Sygeplejeråd",
+  "definition": "the nurses' union"
+ },
+ {
+  "requested": "Confederation of Danish Industry",
+  "status": "found",
+  "title": "Confederation of Danish Industry",
+  "extract": "The Confederation of Danish Industry (DI) is Denmark's largest business organization (chambers of commerce) and employers' organization. DI's members are 18,000 private enterprises in manufacturing and the service industry, from virtually all sub-sectors. Also, a number of sectoral employers' associations and branch federations are included in DI's framework, being integrated in part or in full in DI. Moreover, the members of DI in each county constitute a regional federation dealing with regional policy as well as educational issues. The organization represents its members in public discussions of new political ideas, and it comments on current events in Denmark. The DI director general and CEO is Lars Sandahl Sørensen.",
+  "url": "https://en.wikipedia.org/wiki/Confederation_of_Danish_Industry",
+  "type": "standard",
+  "fetched_at": "2026-10-09T04:41:51.967389Z",
+  "term": "Dansk Industri",
+  "definition": "an employers' organisation"
+ },
+ {
+  "requested": "da:Ældre Sagen",
+  "status": "found",
+  "title": "Ældre Sagen",
+  "extract": "Ældre Sagen er en forening, der arbejder for at forbedre forholdene for ældre i Danmark. Foreningen er stiftet 14. oktober 1986 på initiativ af fonden Ensomme Gamles Værn. Bjarne Hastrup er medstifter og har været foreningens eneste direktør.",
+  "url": "https://da.wikipedia.org/wiki/%C3%86ldre_Sagen",
+  "type": "standard",
+  "fetched_at": "2026-10-09T04:41:52.119812Z",
+  "term": "Ældre Sagen",
+  "definition": "an organisation for older people"
+ }
+]

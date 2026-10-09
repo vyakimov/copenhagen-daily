@@ -1,0 +1,24 @@
+[
+ {
+  "requested": "Venstre (Denmark)",
+  "status": "found",
+  "title": "Venstre (Denmark)",
+  "extract": "Venstre, full name Venstre, Danmarks Liberale Parti, is a conservative-liberal, agrarian political party in Denmark. Founded as part of a peasants' movement against the landed aristocracy, today it espouses an economically liberal, pro-free-market ideology.",
+  "url": "https://en.wikipedia.org/wiki/Venstre_(Denmark)",
+  "type": "standard",
+  "fetched_at": "2026-10-09T04:41:52.839465Z",
+  "term": "Venstre",
+  "definition": "a liberal party"
+ },
+ {
+  "requested": "da:Epinion",
+  "status": "found",
+  "title": "Epinion",
+  "extract": "Epinion er en dansk analyse- og rådgivningsvirksomhed, grundlagt i 2000. Virksomheden har hovedkontor i København og et kontor i Aarhus. Epinion beskæftiger sig med at levere data- og analysebaserede indsigter til både private og offentlige kunder. De kombinerer kvantitative data med kvalitative indsigter for at forstå menneskers holdninger, adfærd og behov.",
+  "url": "https://da.wikipedia.org/wiki/Epinion",
+  "type": "standard",
+  "fetched_at": "2026-10-09T04:41:52.986775Z",
+  "term": "Epinion",
+  "definition": "a polling firm"
+ }
+]

@@ -1,0 +1,682 @@
+{
+  "edition": {
+    "id": "2026-10-09-morning",
+    "number": 4,
+    "name": "Friday edition",
+    "date": "2026-10-09",
+    "cutoff_at": "2026-10-09T03:30:00.000000Z",
+    "checked_from": "2026-10-06T03:30:00.000000Z",
+    "input_id": "export-2026-10-09-0330",
+    "presentation": {
+      "emphasis": "many_stories",
+      "ear_right": "Inside: the CPR password, Venstre at 5.8 per cent, theology after 549 years"
+    },
+    "note": "Built from headlines and RSS descriptions published between 6 and 9 October 2026, a 72-hour window ending at 05:30 Copenhagen time: 4,092 articles. All 132 feeds at 17 publishers polled successfully."
+  },
+  "stories": [
+    {
+      "id": "seniorpension-cut-finance-bill-2027",
+      "role": "lead",
+      "kicker": "Welfare",
+      "sources": [
+        270,
+        313,
+        252,
+        281,
+        163,
+        231,
+        169
+      ],
+      "headline": "Government plans to cut early pension for worn-out workers",
+      "headline_short": "Government plans early pension cut",
+      "deck": "Savings would reach 800 million kroner by 2030; unions and Dansk Folkeparti object.",
+      "extended": [
+        [
+          "The government wants to cut seniorpension, Denmark's early pension for worn-out workers, saving 200 million kroner in 2028 and 800 million kroner in 2030, according to the Finance Ministry. The change is in the finance bill for 2027, which Peter Hummelgaard, the finance minister, presents on Friday. Jyllands-Posten has seen the bill.",
+          [
+            "kristeligt_dagblad",
+            "jp",
+            "berlingske"
+          ]
+        ],
+        [
+          "Today people qualify six years before the state pension age if they can work at most 15 hours a week in their latest job. Under the plan, their capacity would be judged against any job.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Every party behind the 2019 scheme must agree for the change to take effect before an election, Jyllands-Posten writes. Dansk Folkeparti, a nationalist party and one of them, refuses.",
+          [
+            "kristeligt_dagblad",
+            "jp"
+          ]
+        ],
+        [
+          "The Arne pension, a right to retire early after a set number of years in work, would rise by about 3,000 kroner a month from its maximum of 15,650 kroner.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ],
+        [
+          "Unions for childcare workers, nurses and university graduates object. Dorthe Boe Danbjørg, who chairs Dansk Sygeplejeråd, the nurses' union, calls the plan 'deeply unfair'. Søren Kryhlmand of Dansk Industri, an employers' organisation, calls it 'a really good step'.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "standard": [
+        [
+          "The government wants to cut seniorpension, Denmark's early pension for worn-out workers, saving 200 million kroner in 2028 and 800 million kroner in 2030, according to the Finance Ministry. The change is in the finance bill for 2027, which Peter Hummelgaard, the finance minister, presents on Friday.",
+          [
+            "kristeligt_dagblad",
+            "jp",
+            "berlingske"
+          ]
+        ],
+        [
+          "Today people qualify six years before the state pension age if they can work at most 15 hours a week in their latest job. Under the plan, their capacity would be judged against any job.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Dansk Folkeparti, a nationalist party whose consent the change needs before an election, refuses. Unions for childcare workers, nurses and university graduates object.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "The government wants to cut seniorpension, Denmark's early pension for worn-out workers, by judging applicants' capacity for work against any job rather than their latest, saving 800 million kroner a year by 2030. Peter Hummelgaard, the finance minister, presents the finance bill on Friday.",
+          [
+            "kristeligt_dagblad",
+            "jp",
+            "berlingske"
+          ]
+        ]
+      ],
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "We are not going to cut back on the worn-out.",
+          "attribution": "Anders Vistisen, finance spokesman for Dansk Folkeparti",
+          "attribution_source": "kristeligt_dagblad"
+        },
+        {
+          "kind": "quote",
+          "text": "Shall we really tell the bus driver who, because of a bad back, has to park the bus some years before the state pension, that we just need to see whether we can wring a little more out of them in a completely different trade?",
+          "attribution": "Michael Teit Nielsen, deputy director of Ældre Sagen, an organisation for older people",
+          "attribution_source": "kristeligt_dagblad"
+        }
+      ]
+    },
+    {
+      "id": "cpr-hacker-password-123456",
+      "role": "secondary",
+      "kicker": "Denmark",
+      "sources": [
+        307,
+        273,
+        229
+      ],
+      "headline": "Hacker says Denmark's civil register was breached with the password '123456'",
+      "headline_short": "Hacker says '123456' opened the civil register",
+      "deck": "The digitalisation minister admits security was not good enough and has asked for a review.",
+      "standard": [
+        [
+          "An anonymous hacker who claims to have taken 8,749,975 records from the CPR register, Denmark's civil registration system, told Politiken the password was '123456'.",
+          [
+            "politiken",
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ],
+        [
+          "It was the leaked password of a former employee at a small company with access to the register. The hacker says the break-in was on 11 September and there are no plans to sell or leak the records.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Emil Hørning, a security expert at the firm Defend Denmark, examined the file for Politiken and thinks the account is probably true.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Christina Egelund, the digitalisation minister, admits in writing that security was not good enough, says that way in is now closed and has asked for a security review.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "An anonymous hacker who claims to have taken 8,749,975 records from the CPR register, Denmark's civil registration system, told Politiken the way in was a former employee's leaked password, '123456'.",
+          [
+            "politiken",
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ],
+        [
+          "Christina Egelund, the digitalisation minister, admits security was not good enough.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "opening-debate-immigration-2026",
+      "role": "secondary",
+      "kicker": "Politics",
+      "sources": [
+        151,
+        1360,
+        89,
+        701,
+        490,
+        384
+      ],
+      "headline": "Immigration dominates Denmark's opening parliamentary debate",
+      "headline_short": "Immigration dominates opening debate",
+      "deck": "Mette Frederiksen says of certain Muslims, 'I wish they were not here'; the opposition attacks a citizenship plan.",
+      "standard": [
+        [
+          "Immigration policy filled much of Thursday's opening debate in the Folketing, Denmark's parliament, which ran for 16 hours.",
+          [
+            "politiken",
+            "tv2",
+            "altinget"
+          ]
+        ],
+        [
+          "Mette Frederiksen, leader of the Social Democrats, said of certain Muslims: 'I wish they were not here.'",
+          [
+            "tv2"
+          ]
+        ],
+        [
+          "The centre-right opposition attacked the government's plan to grant citizenship to 2,000 foreigners before applicants are screened for anti-democratic views. Anders Vistisen of Dansk Folkeparti, a nationalist party, said that risked making Islamist extremists Danish citizens. Rasmus Stoklund, the Social Democrats' political spokesman, replied that Venstre, a liberal party, had welcomed the 2,000 in January, when it was in government.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Immigration policy filled much of Thursday's opening debate in the Folketing, Denmark's parliament. Mette Frederiksen, leader of the Social Democrats, said of certain Muslims: 'I wish they were not here.'",
+          [
+            "politiken",
+            "tv2"
+          ]
+        ],
+        [
+          "The centre-right opposition attacked a government plan to grant citizenship to 2,000 foreigners before applicants are screened for anti-democratic views.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "venstre-record-low-5-8-poll",
+      "role": "secondary",
+      "kicker": "Politics",
+      "sources": [
+        1426,
+        996
+      ],
+      "headline": "Venstre sinks to 5.8 per cent, its lowest poll ever",
+      "headline_short": "Venstre polls a record low",
+      "deck": "Five of the liberal party's MPs voted against its line on a fertiliser law, and one says he may do so again.",
+      "standard": [
+        [
+          "Venstre, a liberal party, stands at 5.8 per cent in a poll by Epinion, a polling firm, for DR published on Thursday. The party has never polled lower.",
+          [
+            "dr",
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Five of its MPs, Søren Gade among them, voted against the party line on a law tightening farmers' use of fertiliser. On Tuesday Gade said he might again vote 'by his own conviction' on a proposed national pesticide ban.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Søs Marie Serup, the party's former press chief, blames conflicts over farming and climate that built up over a long time, not Troels Lund Poulsen, the party leader. 'This term will be like walking through hell,' she told Kristeligt Dagblad.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Venstre, a liberal party, stands at 5.8 per cent in a poll by Epinion, a polling firm, for DR, its lowest ever. Five of its MPs voted against the party line on a fertiliser law.",
+          [
+            "dr",
+            "kristeligt_dagblad"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "ku-theology-faculty-merged-2028",
+      "role": "secondary",
+      "kicker": "Education",
+      "sources": [
+        754,
+        745,
+        715,
+        709,
+        543,
+        1013
+      ],
+      "headline": "University of Copenhagen will merge its theology faculty into humanities after 549 years",
+      "headline_short": "Copenhagen's theology faculty to merge",
+      "deck": "Law and social sciences will merge too in 2028; two other faculties split in 2029, leaving six.",
+      "standard": [
+        [
+          "The University of Copenhagen will merge its Faculty of Theology, one of the four faculties it was founded with in 1479, into a joint Faculty of Humanities and Theology on 1 January 2028. Law and social sciences will merge on the same day. In 2029 the health and science faculties will each split in two, which leaves the university with six faculties.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr",
+            "politiken",
+            "via_ritzau"
+          ]
+        ],
+        [
+          "The university says most students will notice nothing, because programmes will not change. David Dreyer Lassen, the rector, says in a statement that the faculties have grown very unequal in size and complexity, which strains the university's leadership.",
+          [
+            "kristeligt_dagblad",
+            "via_ritzau"
+          ]
+        ],
+        [
+          "Martin Ravn, a theologian and parish priest, told Kristeligt Dagblad the restructuring made him 'worried about theology's future as a university subject'.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "The University of Copenhagen will merge its Faculty of Theology, one of its four original faculties from 1479, into a joint Faculty of Humanities and Theology on 1 January 2028. The university says programmes will not change.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "via_ritzau"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "cpr-credit-warnings-970000",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        1292,
+        1267,
+        568
+      ],
+      "headline": "Credit warnings nearly quadruple in a week after ID-number leak",
+      "lede": [
+        "Credit warnings, which make borrowing in a person's name harder, covered about 970,000 Danes on 7 October, against just under 250,000 before a leak of 8.8 million ID numbers was announced, ministry figures show.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "gade-character-assassination-claim",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        403,
+        364
+      ],
+      "headline": "Former speaker suspects party colleagues of character assassination",
+      "lede": [
+        "Søren Gade, who stepped down as speaker of parliament on Tuesday, told Ekstra Bladet he suspects fellow MPs in Venstre, a liberal party, of 'a character assassination' through anonymous comments in a newspaper portrait.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "cruise-ship-levy-2028",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        193,
+        192
+      ],
+      "headline": "Government plans cruise ship levy of 200 kroner a passenger",
+      "lede": [
+        "The government's budget will charge cruise ships 200 kroner per passenger calling at Danish ports from 2028, TV 2 and Jyllands-Posten report; TV 2 puts the yield at 300 million kroner a year.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "is-housewife-two-years",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        1012,
+        974,
+        958
+      ],
+      "headline": "High Court convicts woman of supporting Islamic State after earlier acquittal",
+      "lede": [
+        "The High Court on Thursday gave a woman a two-year sentence, six months of it to be served, for supporting Islamic State by going to Syria knowing her husband had joined it.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "reverse-ankle-tag-60-days",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        717,
+        696,
+        708,
+        662
+      ],
+      "headline": "Man jailed for 60 days in first reverse ankle tag case",
+      "lede": [
+        "A court on Thursday jailed a man for 60 days, the first such conviction, after he cut off a reverse ankle tag meant to keep him away from his former girlfriend; he appealed.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "kaershovedgaard-prison-four-five-years",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        969,
+        926,
+        988,
+        825
+      ],
+      "headline": "Promised prison wing at deportation centre could take four to five years",
+      "lede": [
+        "The prison wing the prime minister promised on Tuesday at Kærshovedgård, a centre for foreigners who must leave Denmark, could take four to five years to build, the Justice Ministry says.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "berlingske",
+          "jp"
+        ]
+      ]
+    },
+    {
+      "id": "s-faction-coffee-clubs",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        808,
+        619,
+        750,
+        444
+      ],
+      "headline": "Five Social Democrat MPs leave the party's coffee clubs to form a new faction",
+      "lede": [
+        "Five Social Democrat MPs have left the party's coffee clubs, informal groupings within its parliamentary group, to found a faction that wants to end them.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "altinget"
+        ]
+      ]
+    },
+    {
+      "id": "deepfake-sharing-ban-bill",
+      "role": "brief",
+      "kicker": "Technology",
+      "sources": [
+        1416,
+        1383,
+        1345
+      ],
+      "headline": "Culture minister proposes ban on sharing AI copies of people without consent",
+      "lede": [
+        "Zenia Stampe, the culture minister, put forward a bill on Thursday banning the sharing of realistic AI copies of people's looks and voices without their consent; satire stays legal.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "kjaersgaard-reported-hojskolen",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        342,
+        179,
+        302,
+        566
+      ],
+      "headline": "Influencer reports Pia Kjærsgaard to police for violence, which she denies",
+      "lede": [
+        "Afrah al-Jabouri, an influencer, has reported Pia Kjærsgaard, former leader of Dansk Folkeparti, a nationalist party, to police, saying she was pushed four times during filming of a TV 2 show; Kjærsgaard denies it.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "tv2"
+        ]
+      ]
+    },
+    {
+      "id": "anonymous-graves-majority-cities",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        695,
+        195,
+        190
+      ],
+      "headline": "Most burials in Copenhagen and Aarhus are in anonymous graves",
+      "lede": [
+        "In 2025, 60 per cent of burials at municipal cemeteries in Aarhus and 53 per cent in Copenhagen were in anonymous communal urn graves, according to figures obtained by Kristeligt Dagblad.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "politiken"
+        ]
+      ]
+    },
+    {
+      "id": "djoef-worst-phrase-2026",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        1091,
+        1089,
+        879,
+        1315
+      ],
+      "headline": "Union magazine's readers vote a sports metaphor the worst phrase at work",
+      "lede": [
+        "Readers of Djøfbladet, the magazine of Djøf, a union for academics and managers, voted the sports metaphor 'make each other better' this year's worst workplace phrase; 'ask the chat' came second.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "climate-council-flight-taxes",
+      "role": "brief",
+      "kicker": "Climate",
+      "sources": [
+        844,
+        883,
+        39,
+        1031,
+        1014
+      ],
+      "headline": "Climate council calls for higher taxes on flights",
+      "lede": [
+        "Klimarådet, the climate council, wants passenger taxes raised enough to make Danes drop one flight in three, adding several thousand kroner to a ticket to New York.",
+        [
+          "dr",
+          "altinget",
+          "politiken",
+          "via_ritzau"
+        ]
+      ]
+    },
+    {
+      "id": "nobel-literature-anne-carson",
+      "role": "brief",
+      "kicker": "Culture",
+      "sources": [
+        924,
+        876,
+        938,
+        540,
+        855,
+        635,
+        421,
+        755,
+        669,
+        841,
+        413,
+        136,
+        134,
+        30,
+        173,
+        698
+      ],
+      "headline": "Canadian poet Anne Carson wins the Nobel prize in literature",
+      "lede": [
+        "Anne Carson, a 76-year-old Canadian poet, won the Nobel prize in literature on Thursday for what the Swedish Academy called a 'bold and inventive oeuvre' in 'playful dialogue with the classical tradition'.",
+        [
+          "kristeligt_dagblad",
+          "guardian",
+          "ft",
+          "bbc"
+        ]
+      ]
+    },
+    {
+      "id": "hasan-execution-public",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        148,
+        125,
+        133,
+        127,
+        90,
+        68,
+        82,
+        56
+      ],
+      "headline": "America will stream the Fort Hood gunman's execution live",
+      "lede": [
+        "Nidal Hasan, who killed 13 people at Fort Hood, a Texas military base, in 2009, will be shot by firing squad on 3 December, with the execution streamed live, the Pentagon said on Thursday.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "guardian",
+          "nytimes",
+          "wapo"
+        ]
+      ]
+    },
+    {
+      "id": "kramatorsk-buses-strike",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        1140,
+        973,
+        385,
+        465,
+        835,
+        686,
+        552,
+        551
+      ],
+      "headline": "Russian strike on two buses kills at least 30 in eastern Ukraine",
+      "lede": [
+        "A Russian strike on two buses in Kramatorsk, a front-line city in eastern Ukraine, killed at least 30 people and wounded 18 on Thursday, the regional governor says.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "guardian",
+          "bbc",
+          "ft"
+        ]
+      ]
+    },
+    {
+      "id": "trump-iran-talks-midterms",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        475,
+        443,
+        424,
+        458,
+        228,
+        176,
+        386,
+        393
+      ],
+      "headline": "Trump says America will not attack Iran before the midterms",
+      "lede": [
+        "Donald Trump said on Thursday that the United States would not attack Iran before its midterm elections on 3 November, citing 'productive discussions' with Tehran.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "ft",
+          "wsj"
+        ]
+      ]
+    },
+    {
+      "id": "wwf-living-planet-73-per-cent",
+      "role": "brief",
+      "kicker": "Environment",
+      "sources": [
+        1285,
+        1280,
+        1205,
+        1539,
+        1419
+      ],
+      "headline": "Wildlife populations have fallen by 73 per cent since 1970, WWF says",
+      "lede": [
+        "Wildlife populations have fallen by an average of 73 per cent since 1970, most steeply in South and Central America, Africa and Asia-Pacific, WWF, a conservation group, says in its Living Planet report.",
+        [
+          "kristeligt_dagblad",
+          "via_ritzau"
+        ]
+      ]
+    }
+  ]
+}

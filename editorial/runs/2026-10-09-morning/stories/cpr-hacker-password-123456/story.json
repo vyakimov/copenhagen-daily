@@ -1,0 +1,56 @@
+{
+ "headline": "Hacker says Denmark's civil register was breached with the password '123456'",
+ "headline_short": "Hacker says '123456' opened the civil register",
+ "deck": "The digitalisation minister admits security was not good enough and has asked for a review.",
+ "standard": [
+  [
+   "An anonymous hacker who claims to have taken 8,749,975 records from the CPR register, Denmark's civil registration system, told Politiken the password was '123456'.",
+   [
+    "politiken",
+    "kristeligt_dagblad",
+    "berlingske"
+   ]
+  ],
+  [
+   "It was the leaked password of a former employee at a small company with access to the register. The hacker says the break-in was on 11 September and there are no plans to sell or leak the records.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "Emil Hørning, a security expert at the firm Defend Denmark, examined the file for Politiken and thinks the account is probably true.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "Christina Egelund, the digitalisation minister, admits in writing that security was not good enough, says that way in is now closed and has asked for a security review.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "An anonymous hacker who claims to have taken 8,749,975 records from the CPR register, Denmark's civil registration system, told Politiken the way in was a former employee's leaked password, '123456'.",
+   [
+    "politiken",
+    "kristeligt_dagblad",
+    "berlingske"
+   ]
+  ],
+  [
+   "Christina Egelund, the digitalisation minister, admits security was not good enough.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "definitions": [
+  {
+   "term": "CPR register",
+   "definition": "Denmark's civil registration system",
+   "wikipedia": "Personal identification number (Denmark)"
+  }
+ ]
+}

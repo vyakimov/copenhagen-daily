@@ -1,0 +1,109 @@
+{
+ "headline": "Government plans to cut early pension for worn-out workers",
+ "headline_short": "Government plans early pension cut",
+ "deck": "Savings would reach 800 million kroner by 2030; unions and Dansk Folkeparti object.",
+ "extended": [
+  [
+   "The government wants to cut seniorpension, Denmark's early pension for worn-out workers, saving 200 million kroner in 2028 and 800 million kroner in 2030, according to the Finance Ministry. The change is in the finance bill for 2027, which Peter Hummelgaard, the finance minister, presents on Friday. Jyllands-Posten has seen the bill.",
+   [
+    "kristeligt_dagblad",
+    "jp",
+    "berlingske"
+   ]
+  ],
+  [
+   "Today people qualify six years before the state pension age if they can work at most 15 hours a week in their latest job. Under the plan, their capacity would be judged against any job.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "Every party behind the 2019 scheme must agree for the change to take effect before an election, Jyllands-Posten writes. Dansk Folkeparti, a nationalist party and one of them, refuses.",
+   [
+    "kristeligt_dagblad",
+    "jp"
+   ]
+  ],
+  [
+   "The Arne pension, a right to retire early after a set number of years in work, would rise by about 3,000 kroner a month from its maximum of 15,650 kroner.",
+   [
+    "kristeligt_dagblad",
+    "berlingske"
+   ]
+  ],
+  [
+   "Unions for childcare workers, nurses and university graduates object. Dorthe Boe Danbjørg, who chairs Dansk Sygeplejeråd, the nurses' union, calls the plan 'deeply unfair'. Søren Kryhlmand of Dansk Industri, an employers' organisation, calls it 'a really good step'.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "standard": [
+  [
+   "The government wants to cut seniorpension, Denmark's early pension for worn-out workers, saving 200 million kroner in 2028 and 800 million kroner in 2030, according to the Finance Ministry. The change is in the finance bill for 2027, which Peter Hummelgaard, the finance minister, presents on Friday.",
+   [
+    "kristeligt_dagblad",
+    "jp",
+    "berlingske"
+   ]
+  ],
+  [
+   "Today people qualify six years before the state pension age if they can work at most 15 hours a week in their latest job. Under the plan, their capacity would be judged against any job.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "Dansk Folkeparti, a nationalist party whose consent the change needs before an election, refuses. Unions for childcare workers, nurses and university graduates object.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "The government wants to cut seniorpension, Denmark's early pension for worn-out workers, by judging applicants' capacity for work against any job rather than their latest, saving 800 million kroner a year by 2030. Peter Hummelgaard, the finance minister, presents the finance bill on Friday.",
+   [
+    "kristeligt_dagblad",
+    "jp",
+    "berlingske"
+   ]
+  ]
+ ],
+ "callouts": [
+  {
+   "kind": "quote",
+   "text": "We are not going to cut back on the worn-out.",
+   "attribution": "Anders Vistisen, finance spokesman for Dansk Folkeparti",
+   "attribution_source": "kristeligt_dagblad"
+  },
+  {
+   "kind": "quote",
+   "text": "Shall we really tell the bus driver who, because of a bad back, has to park the bus some years before the state pension, that we just need to see whether we can wring a little more out of them in a completely different trade?",
+   "attribution": "Michael Teit Nielsen, deputy director of Ældre Sagen, an organisation for older people",
+   "attribution_source": "kristeligt_dagblad"
+  }
+ ],
+ "definitions": [
+  {
+   "term": "Dansk Folkeparti",
+   "definition": "a nationalist party",
+   "wikipedia": "Danish People's Party"
+  },
+  {
+   "term": "Dansk Sygeplejeråd",
+   "definition": "the nurses' union",
+   "wikipedia": "Danish Nurses' Organization"
+  },
+  {
+   "term": "Dansk Industri",
+   "definition": "an employers' organisation",
+   "wikipedia": "Confederation of Danish Industry"
+  },
+  {
+   "term": "Ældre Sagen",
+   "definition": "an organisation for older people",
+   "wikipedia": "da:Ældre Sagen"
+  }
+ ]
+}

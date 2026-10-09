@@ -1,0 +1,46 @@
+[
+ {
+  "requested": "Folketing",
+  "status": "found",
+  "title": "Folketing",
+  "extract": "The Folketing, also known as the Parliament of Denmark or the Danish Parliament in English, is the unicameral national legislature (parliament) of the Kingdom of Denmark — Denmark proper together with the Faroe Islands and Greenland. Established in 1849, the Folketing was the lower house of the bicameral parliament called the Rigsdag until 1953; the upper house was the Landsting.",
+  "url": "https://en.wikipedia.org/wiki/Folketing",
+  "type": "standard",
+  "fetched_at": "2026-10-09T04:41:52.438565Z",
+  "term": "Folketing",
+  "definition": "Denmark's parliament"
+ },
+ {
+  "requested": "Mette Frederiksen",
+  "status": "found",
+  "title": "Mette Frederiksen",
+  "extract": "Mette Frederiksen is a Danish politician who has served as the prime minister of Denmark since 2019 and the leader of the Social Democrats since 2015. She is the second woman to hold either office following Helle Thorning-Schmidt, and is also the youngest prime minister in Danish history.",
+  "url": "https://en.wikipedia.org/wiki/Mette_Frederiksen",
+  "type": "standard",
+  "fetched_at": "2026-10-09T04:41:52.588580Z",
+  "term": "Mette Frederiksen",
+  "definition": "leader of the Social Democrats"
+ },
+ {
+  "requested": "Danish People's Party",
+  "status": "found",
+  "title": "Danish People's Party",
+  "extract": "The Danish People's Party is a nationalist and right-wing populist political party in Denmark. It was formed in 1995 by former members of the Progress Party (FrP). The party saw a period of significant growth after its founding and lent its support to the Venstre–Conservative People's Party coalition government that ruled from the 2001 Danish general election until the defeat in the 2011 Danish general election.",
+  "url": "https://en.wikipedia.org/wiki/Danish_People's_Party",
+  "type": "standard",
+  "fetched_at": "2026-10-09T04:41:52.637467Z",
+  "term": "Dansk Folkeparti",
+  "definition": "a nationalist party"
+ },
+ {
+  "requested": "Venstre (Denmark)",
+  "status": "found",
+  "title": "Venstre (Denmark)",
+  "extract": "Venstre, full name Venstre, Danmarks Liberale Parti, is a conservative-liberal, agrarian political party in Denmark. Founded as part of a peasants' movement against the landed aristocracy, today it espouses an economically liberal, pro-free-market ideology.",
+  "url": "https://en.wikipedia.org/wiki/Venstre_(Denmark)",
+  "type": "standard",
+  "fetched_at": "2026-10-09T04:41:52.787830Z",
+  "term": "Venstre",
+  "definition": "a liberal party"
+ }
+]

@@ -1,0 +1,13 @@
+[
+ {
+  "requested": "World Wide Fund for Nature",
+  "status": "found",
+  "title": "World Wildlife Fund",
+  "extract": "WWF is a Swiss-based international non-governmental organization that works in the field of wilderness preservation and the reduction of human impact on the environment. It was founded in 1961 as the World Wildlife Fund. The official name of the Swiss umbrella organization and in some countries is World Wide Fund for Nature following a renaming, while World Wildlife Fund remains the official name in other countries, including Canada and the United States. WWF is the world's largest conservation organization, with over 5 million supporters worldwide, working in more than 100 countries and supporting around 3,000 conservation and environmental projects. It has invested over $1 billion in more than 12,000 conservation initiatives since 1995. WWF is a foundation with 65% of funding from individuals and bequests including The 1001: A Nature Trust, 17% from government sources and 8% from corporations in 2020.",
+  "url": "https://en.wikipedia.org/wiki/World_Wildlife_Fund",
+  "type": "standard",
+  "fetched_at": "2026-10-09T04:41:53.947500Z",
+  "term": "WWF",
+  "definition": "a conservation group"
+ }
+]

@@ -1,0 +1,11 @@
+[
+ {
+  "requested": "Danish Council on Climate Change",
+  "status": "missing",
+  "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Danish_Council_on_Climate_Change",
+  "http_status": 404,
+  "fetched_at": "2026-10-09T04:41:53.901675Z",
+  "term": "Klimarådet",
+  "definition": "the climate council"
+ }
+]

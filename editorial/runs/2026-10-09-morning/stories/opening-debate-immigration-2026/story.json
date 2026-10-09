@@ -1,0 +1,64 @@
+{
+ "headline": "Immigration dominates Denmark's opening parliamentary debate",
+ "headline_short": "Immigration dominates opening debate",
+ "deck": "Mette Frederiksen says of certain Muslims, 'I wish they were not here'; the opposition attacks a citizenship plan.",
+ "standard": [
+  [
+   "Immigration policy filled much of Thursday's opening debate in the Folketing, Denmark's parliament, which ran for 16 hours.",
+   [
+    "politiken",
+    "tv2",
+    "altinget"
+   ]
+  ],
+  [
+   "Mette Frederiksen, leader of the Social Democrats, said of certain Muslims: 'I wish they were not here.'",
+   [
+    "tv2"
+   ]
+  ],
+  [
+   "The centre-right opposition attacked the government's plan to grant citizenship to 2,000 foreigners before applicants are screened for anti-democratic views. Anders Vistisen of Dansk Folkeparti, a nationalist party, said that risked making Islamist extremists Danish citizens. Rasmus Stoklund, the Social Democrats' political spokesman, replied that Venstre, a liberal party, had welcomed the 2,000 in January, when it was in government.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "Immigration policy filled much of Thursday's opening debate in the Folketing, Denmark's parliament. Mette Frederiksen, leader of the Social Democrats, said of certain Muslims: 'I wish they were not here.'",
+   [
+    "politiken",
+    "tv2"
+   ]
+  ],
+  [
+   "The centre-right opposition attacked a government plan to grant citizenship to 2,000 foreigners before applicants are screened for anti-democratic views.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "definitions": [
+  {
+   "term": "Folketing",
+   "definition": "Denmark's parliament",
+   "wikipedia": "Folketing"
+  },
+  {
+   "term": "Mette Frederiksen",
+   "definition": "leader of the Social Democrats",
+   "wikipedia": "Mette Frederiksen"
+  },
+  {
+   "term": "Dansk Folkeparti",
+   "definition": "a nationalist party",
+   "wikipedia": "Danish People's Party"
+  },
+  {
+   "term": "Venstre",
+   "definition": "a liberal party",
+   "wikipedia": "Venstre (Denmark)"
+  }
+ ]
+}

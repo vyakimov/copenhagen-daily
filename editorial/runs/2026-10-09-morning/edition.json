@@ -1,0 +1,2728 @@
+{
+  "schema_version": 2,
+  "title": "copenhagen-daily",
+  "edition": {
+    "id": "2026-10-09-morning",
+    "number": 4,
+    "name": "Friday edition",
+    "date": "2026-10-09",
+    "timezone": "Europe/Copenhagen",
+    "language": "en",
+    "cutoff_at": "2026-10-09T03:30:00.000000Z",
+    "generated_at": "2026-10-09T04:41:51.409913Z"
+  },
+  "presentation": {
+    "emphasis": "many_stories",
+    "ear_right": "Inside: the CPR password, Venstre at 5.8 per cent, theology after 549 years"
+  },
+  "coverage": {
+    "status": "complete",
+    "checked_from": "2026-10-06T03:30:00.000000Z",
+    "checked_until": "2026-10-09T03:30:00.000000Z",
+    "feeds": [
+      {
+        "feed_id": "altinget.arbejdsmarked",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.157439Z"
+      },
+      {
+        "feed_id": "altinget.by",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.234846Z"
+      },
+      {
+        "feed_id": "altinget.christiansborg",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.098571Z"
+      },
+      {
+        "feed_id": "altinget.eu",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.113651Z"
+      },
+      {
+        "feed_id": "altinget.forside",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.082933Z"
+      },
+      {
+        "feed_id": "altinget.forsvar",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.191395Z"
+      },
+      {
+        "feed_id": "altinget.klima",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.127988Z"
+      },
+      {
+        "feed_id": "altinget.kommunal",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.205824Z"
+      },
+      {
+        "feed_id": "altinget.sundhed",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.142795Z"
+      },
+      {
+        "feed_id": "altinget.uddannelse",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.219862Z"
+      },
+      {
+        "feed_id": "bbc.business",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.441412Z"
+      },
+      {
+        "feed_id": "bbc.culture",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.706888Z"
+      },
+      {
+        "feed_id": "bbc.europe",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.417628Z"
+      },
+      {
+        "feed_id": "bbc.health",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.592040Z"
+      },
+      {
+        "feed_id": "bbc.politics",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.638598Z"
+      },
+      {
+        "feed_id": "bbc.science",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.521065Z"
+      },
+      {
+        "feed_id": "bbc.technology",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.482632Z"
+      },
+      {
+        "feed_id": "bbc.top",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.321008Z"
+      },
+      {
+        "feed_id": "bbc.world",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.387666Z"
+      },
+      {
+        "feed_id": "berlingske.business",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.390543Z"
+      },
+      {
+        "feed_id": "berlingske.kultur",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.403164Z"
+      },
+      {
+        "feed_id": "berlingske.latest",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.336929Z"
+      },
+      {
+        "feed_id": "berlingske.opinion",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.414191Z"
+      },
+      {
+        "feed_id": "berlingske.samfund",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.349962Z"
+      },
+      {
+        "feed_id": "borsen.baeredygtig",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.745729Z"
+      },
+      {
+        "feed_id": "borsen.breaking",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.741259Z"
+      },
+      {
+        "feed_id": "borsen.ejendomme",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.790067Z"
+      },
+      {
+        "feed_id": "borsen.executive",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.846695Z"
+      },
+      {
+        "feed_id": "borsen.finans",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.809161Z"
+      },
+      {
+        "feed_id": "borsen.homepage",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.716900Z"
+      },
+      {
+        "feed_id": "borsen.investor",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.826841Z"
+      },
+      {
+        "feed_id": "borsen.longread",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.867208Z"
+      },
+      {
+        "feed_id": "borsen.markedsberetninger",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.886148Z"
+      },
+      {
+        "feed_id": "borsen.okonomi",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.041595Z"
+      },
+      {
+        "feed_id": "borsen.opinion",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.904292Z"
+      },
+      {
+        "feed_id": "borsen.pleasure",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.954250Z"
+      },
+      {
+        "feed_id": "borsen.politik",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.971760Z"
+      },
+      {
+        "feed_id": "borsen.tech",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.990599Z"
+      },
+      {
+        "feed_id": "borsen.udland",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.009797Z"
+      },
+      {
+        "feed_id": "borsen.virksomheder",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.027986Z"
+      },
+      {
+        "feed_id": "dr.indland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.439473Z"
+      },
+      {
+        "feed_id": "dr.kultur",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.598336Z"
+      },
+      {
+        "feed_id": "dr.latest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.424175Z"
+      },
+      {
+        "feed_id": "dr.musik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.615250Z"
+      },
+      {
+        "feed_id": "dr.penge",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.476284Z"
+      },
+      {
+        "feed_id": "dr.politik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.491505Z"
+      },
+      {
+        "feed_id": "dr.regionale",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.679769Z"
+      },
+      {
+        "feed_id": "dr.regionale_bornholm",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.715890Z"
+      },
+      {
+        "feed_id": "dr.regionale_fyn",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.753692Z"
+      },
+      {
+        "feed_id": "dr.regionale_kbh",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.697066Z"
+      },
+      {
+        "feed_id": "dr.regionale_nord",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.824988Z"
+      },
+      {
+        "feed_id": "dr.regionale_oestjylland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.881502Z"
+      },
+      {
+        "feed_id": "dr.regionale_sjaelland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.864450Z"
+      },
+      {
+        "feed_id": "dr.regionale_syd",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.736236Z"
+      },
+      {
+        "feed_id": "dr.regionale_trekanten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.843759Z"
+      },
+      {
+        "feed_id": "dr.regionale_vest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.770506Z"
+      },
+      {
+        "feed_id": "dr.senestesport",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.558810Z"
+      },
+      {
+        "feed_id": "dr.sporten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.543922Z"
+      },
+      {
+        "feed_id": "dr.udland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.459223Z"
+      },
+      {
+        "feed_id": "dr.vejret",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.631956Z"
+      },
+      {
+        "feed_id": "dr.viden",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.578751Z"
+      },
+      {
+        "feed_id": "economist.briefing",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.720715Z"
+      },
+      {
+        "feed_id": "economist.business",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.720945Z"
+      },
+      {
+        "feed_id": "economist.culture",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.721055Z"
+      },
+      {
+        "feed_id": "economist.europe",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.720772Z"
+      },
+      {
+        "feed_id": "economist.finance",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.720887Z"
+      },
+      {
+        "feed_id": "economist.international",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.720832Z"
+      },
+      {
+        "feed_id": "economist.latest",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.720526Z"
+      },
+      {
+        "feed_id": "economist.leaders",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.720648Z"
+      },
+      {
+        "feed_id": "economist.science",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.720999Z"
+      },
+      {
+        "feed_id": "ft.climate_capital",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.607037Z"
+      },
+      {
+        "feed_id": "ft.companies",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.553506Z"
+      },
+      {
+        "feed_id": "ft.global_economy",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.533391Z"
+      },
+      {
+        "feed_id": "ft.homepage.international",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.461695Z"
+      },
+      {
+        "feed_id": "ft.life_arts",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.697434Z"
+      },
+      {
+        "feed_id": "ft.markets",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.570260Z"
+      },
+      {
+        "feed_id": "ft.opinion",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.657268Z"
+      },
+      {
+        "feed_id": "ft.technology",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.588093Z"
+      },
+      {
+        "feed_id": "ft.work_careers",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.676539Z"
+      },
+      {
+        "feed_id": "ft.world",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.476275Z"
+      },
+      {
+        "feed_id": "guardian.business",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:39.189078Z"
+      },
+      {
+        "feed_id": "guardian.culture",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:39.531128Z"
+      },
+      {
+        "feed_id": "guardian.environment",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:39.387532Z"
+      },
+      {
+        "feed_id": "guardian.europe",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:39.127861Z"
+      },
+      {
+        "feed_id": "guardian.international",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.813646Z"
+      },
+      {
+        "feed_id": "guardian.opinion",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:39.698147Z"
+      },
+      {
+        "feed_id": "guardian.science",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:39.440603Z"
+      },
+      {
+        "feed_id": "guardian.technology",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:39.315399Z"
+      },
+      {
+        "feed_id": "guardian.world",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:39.054389Z"
+      },
+      {
+        "feed_id": "information.feed",
+        "source": "information",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.065843Z"
+      },
+      {
+        "feed_id": "jp.seneste",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.051145Z"
+      },
+      {
+        "feed_id": "jp.topnyheder",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.035456Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.artikler",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.271884Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.nyheder",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.250506Z"
+      },
+      {
+        "feed_id": "nytimes.arts",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.227683Z"
+      },
+      {
+        "feed_id": "nytimes.books",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.350955Z"
+      },
+      {
+        "feed_id": "nytimes.business",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:35.892981Z"
+      },
+      {
+        "feed_id": "nytimes.climate",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.144287Z"
+      },
+      {
+        "feed_id": "nytimes.europe",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:35.848187Z"
+      },
+      {
+        "feed_id": "nytimes.health",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.097785Z"
+      },
+      {
+        "feed_id": "nytimes.homepage",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:35.629384Z"
+      },
+      {
+        "feed_id": "nytimes.opinion",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.418795Z"
+      },
+      {
+        "feed_id": "nytimes.science",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:36.004331Z"
+      },
+      {
+        "feed_id": "nytimes.technology",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:35.961708Z"
+      },
+      {
+        "feed_id": "nytimes.world",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:35.713953Z"
+      },
+      {
+        "feed_id": "politiken.debat",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.264751Z"
+      },
+      {
+        "feed_id": "politiken.forbrugogliv",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.281941Z"
+      },
+      {
+        "feed_id": "politiken.ibyen",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.301879Z"
+      },
+      {
+        "feed_id": "politiken.indland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.107518Z"
+      },
+      {
+        "feed_id": "politiken.kultur",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.182094Z"
+      },
+      {
+        "feed_id": "politiken.latest",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.053349Z"
+      },
+      {
+        "feed_id": "politiken.oekonomi",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.162520Z"
+      },
+      {
+        "feed_id": "politiken.politik",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.143470Z"
+      },
+      {
+        "feed_id": "politiken.rejser",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.320394Z"
+      },
+      {
+        "feed_id": "politiken.sport",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.200748Z"
+      },
+      {
+        "feed_id": "politiken.udland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.124910Z"
+      },
+      {
+        "feed_id": "politiken.viden",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.244295Z"
+      },
+      {
+        "feed_id": "tv2.nyheder",
+        "source": "tv2",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:37.928075Z"
+      },
+      {
+        "feed_id": "via_ritzau.latest",
+        "source": "via_ritzau",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:38.298421Z"
+      },
+      {
+        "feed_id": "wapo.business",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:39.861555Z"
+      },
+      {
+        "feed_id": "wapo.national",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:39.770045Z"
+      },
+      {
+        "feed_id": "wapo.opinions",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:39.878167Z"
+      },
+      {
+        "feed_id": "wapo.politics",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:39.797796Z"
+      },
+      {
+        "feed_id": "wapo.technology",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:39.867381Z"
+      },
+      {
+        "feed_id": "wapo.world",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:39.751913Z"
+      },
+      {
+        "feed_id": "wsj.business",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:39.988061Z"
+      },
+      {
+        "feed_id": "wsj.economy",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:40.148667Z"
+      },
+      {
+        "feed_id": "wsj.markets",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:40.102873Z"
+      },
+      {
+        "feed_id": "wsj.opinion",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:40.290312Z"
+      },
+      {
+        "feed_id": "wsj.politics",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:40.180014Z"
+      },
+      {
+        "feed_id": "wsj.technology",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:40.204356Z"
+      },
+      {
+        "feed_id": "wsj.world",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-09T04:30:39.913588Z"
+      }
+    ],
+    "note": "Built from headlines and RSS descriptions published between 6 and 9 October 2026, a 72-hour window ending at 05:30 Copenhagen time: 4,092 articles. All 132 feeds at 17 publishers polled successfully."
+  },
+  "inputs": [
+    {
+      "id": "export-2026-10-09-0330",
+      "sha256": "sha256:b65c76ecfffc887d19eb85d25e9aa3deb5208b300d4a1893ea9628c0d640980d"
+    }
+  ],
+  "stories": [
+    {
+      "id": "seniorpension-cut-finance-bill-2027",
+      "device_participation": "required",
+      "role": "lead",
+      "kicker": "Welfare",
+      "copy": {
+        "headline": "Government plans to cut early pension for worn-out workers",
+        "body": {
+          "extended": [
+            {
+              "text": "The government wants to cut seniorpension, Denmark's early pension for worn-out workers, saving 200 million kroner in 2028 and 800 million kroner in 2030, according to the Finance Ministry. The change is in the finance bill for 2027, which Peter Hummelgaard, the finance minister, presents on Friday. Jyllands-Posten has seen the bill.",
+              "sources": [
+                "kristeligt_dagblad",
+                "jp",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "Today people qualify six years before the state pension age if they can work at most 15 hours a week in their latest job. Under the plan, their capacity would be judged against any job.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Every party behind the 2019 scheme must agree for the change to take effect before an election, Jyllands-Posten writes. Dansk Folkeparti, a nationalist party and one of them, refuses.",
+              "sources": [
+                "kristeligt_dagblad",
+                "jp"
+              ]
+            },
+            {
+              "text": "The Arne pension, a right to retire early after a set number of years in work, would rise by about 3,000 kroner a month from its maximum of 15,650 kroner.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "Unions for childcare workers, nurses and university graduates object. Dorthe Boe Danbjørg, who chairs Dansk Sygeplejeråd, the nurses' union, calls the plan 'deeply unfair'. Søren Kryhlmand of Dansk Industri, an employers' organisation, calls it 'a really good step'.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "standard": [
+            {
+              "text": "The government wants to cut seniorpension, Denmark's early pension for worn-out workers, saving 200 million kroner in 2028 and 800 million kroner in 2030, according to the Finance Ministry. The change is in the finance bill for 2027, which Peter Hummelgaard, the finance minister, presents on Friday.",
+              "sources": [
+                "kristeligt_dagblad",
+                "jp",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "Today people qualify six years before the state pension age if they can work at most 15 hours a week in their latest job. Under the plan, their capacity would be judged against any job.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Dansk Folkeparti, a nationalist party whose consent the change needs before an election, refuses. Unions for childcare workers, nurses and university graduates object.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "The government wants to cut seniorpension, Denmark's early pension for worn-out workers, by judging applicants' capacity for work against any job rather than their latest, saving 800 million kroner a year by 2030. Peter Hummelgaard, the finance minister, presents the finance bill on Friday.",
+              "sources": [
+                "kristeligt_dagblad",
+                "jp",
+                "berlingske"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Government plans early pension cut",
+        "deck": "Savings would reach 800 million kroner by 2030; unions and Dansk Folkeparti object."
+      },
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "We are not going to cut back on the worn-out.",
+          "attribution": "Anders Vistisen, finance spokesman for Dansk Folkeparti",
+          "attribution_source": "kristeligt_dagblad"
+        },
+        {
+          "kind": "quote",
+          "text": "Shall we really tell the bus driver who, because of a bad back, has to park the bus some years before the state pension, that we just need to see whether we can wring a little more out of them in a completely different trade?",
+          "attribution": "Michael Teit Nielsen, deputy director of Ældre Sagen, an organisation for older people",
+          "attribution_source": "kristeligt_dagblad"
+        }
+      ],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "3027496a-f31c-438c-8545-f9e91c42e21e",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Medie: Regeringen vil spare trecifret millionbeløb på seniorpension",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/medie-regeringen-vil-spare-trecifret-millionbeloeb-paa-seniorpension",
+          "published_at": "2026-10-08T19:18:04.000000Z",
+          "content_hash": "sha256:779ef4c2cbc3ea89e5e60d1c41556b8c8c4d67027966ba1a674178ea66f74684",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "jp",
+          "source_id": "19721191",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Finansloven er lækket: Regeringen vil spare på ordning for nedslidte danskere",
+          "url": "https://jyllands-posten.dk/politik/ECE19721191/finansloven-er-laekket-regeringen-vil-spare-paa-ordning-for-nedslidte-danskere/",
+          "published_at": "2026-10-08T18:38:20.000000Z",
+          "content_hash": "sha256:731f1e71653caed26379812590514174040c94f825864206a0c4ce695a2be237",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:9dd8dfdb-8db0-5194-bc6e-a682fc06eaac",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Berlingske erfarer: Regeringen vil skære i seniorpension",
+          "url": "https://www.berlingske.dk/politik/berlingske-erfarer-regeringen-vil-skaere-i-seniorpension",
+          "published_at": "2026-10-08T19:28:18.000000Z",
+          "content_hash": "sha256:b3951e86ffcb4d5809f7391b5f4755248b4ed9e82b50790f7454f4df9b44af35",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/politik/borsen-erfarer-regeringen-vil-skaere-pa-seniorpension-boligstotte-og-erhvervsstotte",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Børsen erfarer: Regeringen vil skære på seniorpension, boligstøtte og erhvervsstøtte",
+          "url": "https://borsen.dk/nyheder/politik/borsen-erfarer-regeringen-vil-skaere-pa-seniorpension-boligstotte-og-erhvervsstotte",
+          "published_at": "2026-10-08T19:07:35.000000Z",
+          "content_hash": "sha256:014dbc823019c092674bf8298bd97160459b9370b680f9702ac818b8a84ff3f6",
+          "primary": false
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "e3a94687-b8fc-430d-b6eb-ce0519e9b6f9",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Fagbevægelsen advarer mod forringelse af seniorpension",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/fagbevaegelsen-advarer-mod-forringelse-af-seniorpension",
+          "published_at": "2026-10-08T21:29:00.000000Z",
+          "content_hash": "sha256:b0b284754334b6365ec5f0aa560786cab289bdc561e2b261a7caf10795135b67",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15216823/?publisherId=13560441&lang=da",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Ældre Sagen er bekymret: Afliver regeringen muligheden for en værdig afsked på arbejdsmarkedet for syge og nedslidte?",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15216823/aeldre-sagen-er-bekymret-afliver-regeringen-muligheden-for-en-vaerdig-afsked-pa-arbejdsmarkedet-for-syge-og-nedslidte?lang=da",
+          "published_at": "2026-10-08T20:01:56.000000Z",
+          "content_hash": "sha256:caabdade160cb323be63ccb0f0238bc217ae665bda66c79f7e737898ab80e90d",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15216973/?publisherId=2974949&lang=da",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "BUPL: Regeringens finanslovsforslag trækker tæppet væk under nedslidte pædagoger",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15216973/bupl-regeringens-finanslovsforslag-traekker-taeppet-vaek-under-nedslidte-paedagoger?lang=da",
+          "published_at": "2026-10-08T21:24:42.000000Z",
+          "content_hash": "sha256:2da9b7ba4bcf1cc10b40669eb5396f8017b2fe370c4887074f30b0a2d5f0c076",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "cpr-hacker-password-123456",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Hacker says Denmark's civil register was breached with the password '123456'",
+        "body": {
+          "standard": [
+            {
+              "text": "An anonymous hacker who claims to have taken 8,749,975 records from the CPR register, Denmark's civil registration system, told Politiken the password was '123456'.",
+              "sources": [
+                "politiken",
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "It was the leaked password of a former employee at a small company with access to the register. The hacker says the break-in was on 11 September and there are no plans to sell or leak the records.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Emil Hørning, a security expert at the firm Defend Denmark, examined the file for Politiken and thinks the account is probably true.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Christina Egelund, the digitalisation minister, admits in writing that security was not good enough, says that way in is now closed and has asked for a security review.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "An anonymous hacker who claims to have taken 8,749,975 records from the CPR register, Denmark's civil registration system, told Politiken the way in was a former employee's leaked password, '123456'.",
+              "sources": [
+                "politiken",
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "Christina Egelund, the digitalisation minister, admits security was not good enough.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Hacker says '123456' opened the civil register",
+        "deck": "The digitalisation minister admits security was not good enough and has asked for a review."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "politiken",
+          "source_id": "11014257",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Hacker deler 8,7 millioner cpr-oplysninger med Politiken: Angrebsmetoden ryster eksperter",
+          "url": "https://politiken.dk/danmark/art11014257/Hacker-deler-87-millioner-cpr-oplysninger-med-Politiken-Angrebsmetoden-ryster-eksperter",
+          "published_at": "2026-10-08T18:45:01.000000Z",
+          "content_hash": "sha256:158a3d471e8ded7209ebf06f91f8220900b798b3cac09d68ef13584c7714a120",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "a9255fce-e4f9-4509-84fd-da9d44ad78b3",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "It-kriminel hævder at stå bag CPR-angreb: Kom ind via simpelt password",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/hacker-haevder-staa-bag-cpr-angreb-kom-ind-simpelt-password",
+          "published_at": "2026-10-08T19:15:46.000000Z",
+          "content_hash": "sha256:3808aa706366e5eeb321d91e19251054e3bbc4872fab76e1498716885773f9f3",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:65e43817-218e-57b4-b4d8-dccf487e682c",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "It-kriminel hævder at stå bag CPR-angreb: Kom ind via simpelt password",
+          "url": "https://www.berlingske.dk/danmark/it-kriminel-haevder-at-staa-bag-cpr-angreb-kom-ind-via-simpelt-password",
+          "published_at": "2026-10-08T20:07:47.000000Z",
+          "content_hash": "sha256:f7c685920db2cd41dc55fea479278b4a6e18c17fda4c4ce490e395020bb9b660",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "opening-debate-immigration-2026",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Immigration dominates Denmark's opening parliamentary debate",
+        "body": {
+          "standard": [
+            {
+              "text": "Immigration policy filled much of Thursday's opening debate in the Folketing, Denmark's parliament, which ran for 16 hours.",
+              "sources": [
+                "politiken",
+                "tv2",
+                "altinget"
+              ]
+            },
+            {
+              "text": "Mette Frederiksen, leader of the Social Democrats, said of certain Muslims: 'I wish they were not here.'",
+              "sources": [
+                "tv2"
+              ]
+            },
+            {
+              "text": "The centre-right opposition attacked the government's plan to grant citizenship to 2,000 foreigners before applicants are screened for anti-democratic views. Anders Vistisen of Dansk Folkeparti, a nationalist party, said that risked making Islamist extremists Danish citizens. Rasmus Stoklund, the Social Democrats' political spokesman, replied that Venstre, a liberal party, had welcomed the 2,000 in January, when it was in government.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Immigration policy filled much of Thursday's opening debate in the Folketing, Denmark's parliament. Mette Frederiksen, leader of the Social Democrats, said of certain Muslims: 'I wish they were not here.'",
+              "sources": [
+                "politiken",
+                "tv2"
+              ]
+            },
+            {
+              "text": "The centre-right opposition attacked a government plan to grant citizenship to 2,000 foreigners before applicants are screened for anti-democratic views.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Immigration dominates opening debate",
+        "deck": "Mette Frederiksen says of certain Muslims, 'I wish they were not here'; the opposition attacks a citizenship plan."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "politiken",
+          "source_id": "11013690",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Klokken lidt i 20 blev tonen pludselig ophedet: »Ordføreren skulle tage og vaske sin mund med sæbe«",
+          "url": "https://politiken.dk/danmark/politik/art11013690/Klokken-lidt-i-20-blev-tonen-pludselig-ophedet-%C2%BBOrdf%C3%B8reren-skulle-tage-og-vaske-sin-mund-med-s%C3%A6be%C2%AB",
+          "published_at": "2026-10-08T21:42:54.000000Z",
+          "content_hash": "sha256:5b91c948d2fe7d7cb6a417e16d85cf904e6d6b3ecb6895d7626d5c6820456638",
+          "primary": true
+        },
+        {
+          "source": "altinget",
+          "source_id": "https://www.altinget.dk/artikel/foelg-den-livlige-maratondebat-altinget-er-med-i-salen-hele-dagen",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "16 timers maratondebat er forbi. Her er dagens højdepunkter",
+          "url": "https://www.altinget.dk/artikel/foelg-den-livlige-maratondebat-altinget-er-med-i-salen-hele-dagen",
+          "published_at": "2026-10-08T04:30:00.000000Z",
+          "content_hash": "sha256:73fe2dd8be67935eb550039456877ba10042f6075b55eeded56d23a80112aa3e",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/politik/2026-10-08-jeg-ville-oenske-de-ikke-var-her-sagde-mette-f-om-bestemte-muslimer-og-fem-andre-nedslag-i-folketingets-aabningsdebat",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "- Jeg ville ønske, de ikke var her, siger Mette F. om bestemte muslimer",
+          "url": "https://nyheder.tv2.dk/politik/2026-10-08-jeg-ville-oenske-de-ikke-var-her-sagde-mette-f-om-bestemte-muslimer-og-fem-andre-nedslag-i-folketingets-aabningsdebat",
+          "published_at": "2026-10-08T23:19:15.000000Z",
+          "content_hash": "sha256:9db1a89568445412e4b7edde05846eb0fced298ff93875cb85fdaf99f175ddb2",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:5236525e-b114-5c20-aa43-5bb2193fb571",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "En vred Messerschmidt langede ud, og Troels Lund erkendte V-nedtur: Her er fire højdepunkter fra debatten",
+          "url": "https://www.berlingske.dk/politik/en-vred-messerschmidt-langede-ud-og-troels-lund-erkendte-v-nedtur-her-er-fire-hoejdepunkter-fra-debatten",
+          "published_at": "2026-10-08T13:44:37.000000Z",
+          "content_hash": "sha256:7c7354e74444eec6f06373c2d84deaa7d41b86499b6af1264e5501ba26b37b1e",
+          "primary": false
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "62baf3ef-fa2c-4c42-b96c-ea259a93f1b2",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Fejlfinderkulturen sprudler i Folketingets første store debat efter valget",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/fejlfinderkulturen-sprudlede-i-folketingets-foerste-store-debat-efter-valget",
+          "published_at": "2026-10-08T16:17:00.000000Z",
+          "content_hash": "sha256:7346df9950f3a66e5911ae77bf8056e6e3f41b0060f32cdbe8d761dba837cd6b",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:reel:a86482f8-90e6-42af-a988-57795d90d42c",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Dragsted og Støjberg har det lidt svært med at være enige",
+          "url": "https://www.dr.dk/nyheder/politik/reels/enhedslisten-og-danmarksdemokraterne-er-helt-enige",
+          "published_at": "2026-10-08T17:31:28.000000Z",
+          "content_hash": "sha256:66d16e1f7c1272f5869e0e9eedccce42d49262b0318883d1365d47114d02cbd8",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "venstre-record-low-5-8-poll",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Venstre sinks to 5.8 per cent, its lowest poll ever",
+        "body": {
+          "standard": [
+            {
+              "text": "Venstre, a liberal party, stands at 5.8 per cent in a poll by Epinion, a polling firm, for DR published on Thursday. The party has never polled lower.",
+              "sources": [
+                "dr",
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Five of its MPs, Søren Gade among them, voted against the party line on a law tightening farmers' use of fertiliser. On Tuesday Gade said he might again vote 'by his own conviction' on a proposed national pesticide ban.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Søs Marie Serup, the party's former press chief, blames conflicts over farming and climate that built up over a long time, not Troels Lund Poulsen, the party leader. 'This term will be like walking through hell,' she told Kristeligt Dagblad.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Venstre, a liberal party, stands at 5.8 per cent in a poll by Epinion, a polling firm, for DR, its lowest ever. Five of its MPs voted against the party line on a fertiliser law.",
+              "sources": [
+                "dr",
+                "kristeligt_dagblad"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Venstre polls a record low",
+        "deck": "Five of the liberal party's MPs voted against its line on a fertiliser law, and one says he may do so again."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:0762e8be-e73f-456b-8436-53032ea74caa",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Historisk lavpunkt - endnu en katastrofal måling for Venstre",
+          "url": "https://www.dr.dk/nyheder/politik/historisk-lavpunkt-endnu-en-katastrofal-maaling-venstre",
+          "published_at": "2026-10-08T04:00:00.000000Z",
+          "content_hash": "sha256:2bd1ec1f2715809359c6a3554ef4ae98dc92d008da1774a7db83f27391a7c127",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "550b04bb-1da1-4f48-8b52-77be936eab0f",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Tidligere pressechef om historisk dårlig måling for Venstre: Denne valgperiode bliver som at gå gennem Helvede",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/tidligere-pressechef-om-historisk-daarlig-maaling-venstre-denne-valgperiode-bliver-som-gaa",
+          "published_at": "2026-10-08T10:20:00.000000Z",
+          "content_hash": "sha256:14a20f98d1fdc58331cb8296910a41fae4b4e348c18826dd35d970f7a01a10aa",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "ku-theology-faculty-merged-2028",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Education",
+      "copy": {
+        "headline": "University of Copenhagen will merge its theology faculty into humanities after 549 years",
+        "body": {
+          "standard": [
+            {
+              "text": "The University of Copenhagen will merge its Faculty of Theology, one of the four faculties it was founded with in 1479, into a joint Faculty of Humanities and Theology on 1 January 2028. Law and social sciences will merge on the same day. In 2029 the health and science faculties will each split in two, which leaves the university with six faculties.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "dr",
+                "politiken",
+                "via_ritzau"
+              ]
+            },
+            {
+              "text": "The university says most students will notice nothing, because programmes will not change. David Dreyer Lassen, the rector, says in a statement that the faculties have grown very unequal in size and complexity, which strains the university's leadership.",
+              "sources": [
+                "kristeligt_dagblad",
+                "via_ritzau"
+              ]
+            },
+            {
+              "text": "Martin Ravn, a theologian and parish priest, told Kristeligt Dagblad the restructuring made him 'worried about theology's future as a university subject'.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "The University of Copenhagen will merge its Faculty of Theology, one of its four original faculties from 1479, into a joint Faculty of Humanities and Theology on 1 January 2028. The university says programmes will not change.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "via_ritzau"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Copenhagen's theology faculty to merge",
+        "deck": "Law and social sciences will merge too in 2028; two other faculties split in 2029, leaving six."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "c3757721-c399-4fee-a98c-05bf8cbeb7f4",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Københavns Universitet nedlægger Det Teologiske Fakultet efter 549 år",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/koebenhavns-universitet-nedlaegger-det-teologiske-fakultet-efter-549-aar",
+          "published_at": "2026-10-08T13:07:49.000000Z",
+          "content_hash": "sha256:9f26c041e053f4cf5adf8ccffa78121de229e9607d295a62c3ce2415bae58eaf",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:ba502507-79b2-5eca-b40e-ecdd1e38ccd1",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Københavns Universitet nedlægger Det Teologiske Fakultet efter 549 år",
+          "url": "https://www.berlingske.dk/danmark/koebenhavns-universitet-nedlaegger-det-teologiske-fakultet-efter-549-aar",
+          "published_at": "2026-10-08T13:11:51.000000Z",
+          "content_hash": "sha256:c797bdacf23f86a203bfc944d54ec65ead392e45e3a3e922abb0c6ebb965b5d8",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:16d3f33b-a1ea-44a4-a6ac-5d3a9ba271a8",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Københavns Universitet nedlægger Det Teologiske Fakultet efter 549 år",
+          "url": "https://www.dr.dk/nyheder/indland/koebenhavns-universitet-nedlaegger-det-teologiske-fakultet-efter-549-aar",
+          "published_at": "2026-10-08T13:32:21.000000Z",
+          "content_hash": "sha256:c328b65d03a503312c0a6d1f85142ca520ed2f8ddeedce38c5d2893593d7b0cf",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11015023",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Københavns Universitet nedlægger Det Teologiske Fakultet efter 549 år",
+          "url": "https://politiken.dk/danmark/uddannelse/art11015023/K%C3%B8benhavns-Universitet-nedl%C3%A6gger-Det-Teologiske-Fakultet-efter-549-%C3%A5r",
+          "published_at": "2026-10-08T13:37:15.000000Z",
+          "content_hash": "sha256:fceec56169688eb1ff0ace2f0dd586e74279a6f3f5db3a220c1dd2b9d4e0b3bf",
+          "primary": false
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "2c5c9535-f819-4818-96cf-4a641f2849a4",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Trist og skelsættende: Landets eneste teologiske fakultet nedlægges",
+          "url": "https://www.kristeligt-dagblad.dk/kirke-og-tro/teologisk-fakultet-nedlaegges-i-koebenhavn-trist-og-skelsaettende-siger-teologer",
+          "published_at": "2026-10-08T15:49:00.000000Z",
+          "content_hash": "sha256:c4c60d2447742928c525460dd0bd427f5f423a5713e70a9123c10501953bd31d",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15214936/?publisherId=13561237&lang=da",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Ny organisering af Københavns Universitets fakulteter på vej",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15214936/ny-organisering-af-kobenhavns-universitets-fakulteter-pa-vej?lang=da",
+          "published_at": "2026-10-08T10:03:58.000000Z",
+          "content_hash": "sha256:5b61f6651a0f61bb68703f2d43cd92d18cf5428dfd4286adff27e014f790ec55",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "cpr-credit-warnings-970000",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Credit warnings nearly quadruple in a week after ID-number leak",
+        "body": {},
+        "lede": {
+          "text": "Credit warnings, which make borrowing in a person's name harder, covered about 970,000 Danes on 7 October, against just under 250,000 before a leak of 8.8 million ID numbers was announced, ministry figures show.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "2e306f41-0b4f-40f3-b03a-f374f60019b6",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Over 700.000 danskere har oprettet kreditadvarsel efter CPR-læk",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/over-700000-danskere-har-oprettet-kreditadvarsel-efter-cpr-laek",
+          "published_at": "2026-10-08T05:28:15.000000Z",
+          "content_hash": "sha256:b783723521b583d1e97933f9ee12b19eed57a2012c62f657cb5b2e608c1f20ac",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:f64ea226-55f8-59ca-a382-30964c1e9ce7",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Over 700.000 danskere har oprettet kreditadvarsel efter CPR-læk",
+          "url": "https://www.berlingske.dk/danmark/over-700000-danskere-har-oprettet-kreditadvarsel-efter-cpr-laek",
+          "published_at": "2026-10-08T05:52:46.000000Z",
+          "content_hash": "sha256:a596a81969e7b4734e029629999a9f57ba6e13b1784dac72f03fa9941a719e27",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:9c8dcff9-f35d-4d11-900b-92f358d47cb2",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Kreditadvarsel er ekstra sikring - men det kan skabe falsk tryghed",
+          "url": "https://www.dr.dk/nyheder/indland/kreditadvarsel-er-ekstra-sikring-men-det-kan-skabe-falsk-tryghed",
+          "published_at": "2026-10-08T15:19:00.000000Z",
+          "content_hash": "sha256:2f6cda16ad6e862656ce84ac33258cb162fa9754c2a952acffb527006b68e127",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "gade-character-assassination-claim",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Former speaker suspects party colleagues of character assassination",
+        "body": {},
+        "lede": {
+          "text": "Søren Gade, who stepped down as speaker of parliament on Tuesday, told Ekstra Bladet he suspects fellow MPs in Venstre, a liberal party, of 'a character assassination' through anonymous comments in a newspaper portrait.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "50801e09-3a8a-40c3-b1d9-0872b586347d",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Søren Gade mistænker partifæller for karaktermord på ham",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/gade-mistaenker-partifaeller-karaktermord-paa-ham",
+          "published_at": "2026-10-08T17:18:00.000000Z",
+          "content_hash": "sha256:80dde4f1f0a4084e11ceb9ceee38bc424a161672010d56ff3832bee837b52c0a",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:78635030-632f-58fa-b20a-0ee8b9829f26",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Søren Gade mistænker partifæller for karaktermord på ham",
+          "url": "https://www.berlingske.dk/politik/soeren-gade-mistaenker-partifaeller-for-karaktermord-paa-ham",
+          "published_at": "2026-10-08T17:46:44.000000Z",
+          "content_hash": "sha256:04db3cca37d027c572e75e4e838fab50aa333cf1e8466fae54b734c4bd2305f2",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "cruise-ship-levy-2028",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Government plans cruise ship levy of 200 kroner a passenger",
+        "body": {},
+        "lede": {
+          "text": "The government's budget will charge cruise ships 200 kroner per passenger calling at Danish ports from 2028, TV 2 and Jyllands-Posten report; TV 2 puts the yield at 300 million kroner a year.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "9e159628-dc9e-4c79-a7ac-65d4d4e9eb78",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Medier: Regeringen vil indføre afgift på krydstogtskibe",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/medier-regeringen-vil-indfoere-afgift-paa-krydstogtskibe",
+          "published_at": "2026-10-08T20:42:14.000000Z",
+          "content_hash": "sha256:19eef81266fd3aee3889f3bd89f6afdb79e0998ebe71f93216786b940d61c2ff",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:271609cc-8eb4-5acd-81d9-04bf9d8c2425",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Medier: Regeringen vil indføre afgift på krydstogtskibe",
+          "url": "https://www.berlingske.dk/politik/medier-regeringen-vil-indfoere-afgift-paa-krydstogtskibe",
+          "published_at": "2026-10-08T20:44:46.000000Z",
+          "content_hash": "sha256:a8c00c21da2ae5909e8ea8d5f7f64edb3e5d25a238feaf0ada91bf18db54d6f4",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "is-housewife-two-years",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "High Court convicts woman of supporting Islamic State after earlier acquittal",
+        "body": {},
+        "lede": {
+          "text": "The High Court on Thursday gave a woman a two-year sentence, six months of it to be served, for supporting Islamic State by going to Syria knowing her husband had joined it.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "34835378-99e9-4e0a-b111-d319e9cdca1e",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Landsret idømmer kvinde fængsel for at være IS-husmor",
+          "url": "https://www.kristeligt-dagblad.dk/landsret-idoemmer-kvinde-faengsel-vaere-husmor",
+          "published_at": "2026-10-08T10:05:21.000000Z",
+          "content_hash": "sha256:694792ce5185671dae5b01afe5c96f5263ace788aa582e1548f20f73b0fc5746",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:bba5ddbc-3287-5ab1-9159-509909f87601",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Landsret idømmer kvinde fængsel for at være IS-husmor",
+          "url": "https://www.berlingske.dk/indland/landsret-idoemmer-kvinde-faengsel-for-at-vaere-is-husmor",
+          "published_at": "2026-10-08T10:44:44.000000Z",
+          "content_hash": "sha256:9e74332835d389fa4a6095162018924aa2fae5a6ddee4483fe9c3dccc7c5987f",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:9e122113-495f-4660-a29e-40d1d6086fad",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Kvinde dømt for at støtte Islamisk Stat",
+          "url": "https://www.dr.dk/nyheder/indland/kvinde-doemt-stoette-islamisk-stat",
+          "published_at": "2026-10-08T10:57:57.000000Z",
+          "content_hash": "sha256:ac6d6db17484f750375a348ae7d3d18c28b0c6f0cb37e1d39df5c6432169afa7",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "reverse-ankle-tag-60-days",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "Man jailed for 60 days in first reverse ankle tag case",
+        "body": {},
+        "lede": {
+          "text": "A court on Thursday jailed a man for 60 days, the first such conviction, after he cut off a reverse ankle tag meant to keep him away from his former girlfriend; he appealed.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "ed6e79e0-e4d8-4434-9d92-fbaa23d7ef84",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Første sag om omvendt fodlænke udløser 60 dages fængsel",
+          "url": "https://www.kristeligt-dagblad.dk/foerste-sag-om-omvendt-fodlaenke-udloeser-60-dages-faengsel",
+          "published_at": "2026-10-08T13:32:01.000000Z",
+          "content_hash": "sha256:5c85166b5ce0823f561534c67b18ec60fbf4af737286c45f2e03c38e78a4c431",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:649a3786-fd4c-5cfa-bd7b-ecbde5fbaf40",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Første sag om omvendt fodlænke udløser 60 dages fængsel",
+          "url": "https://www.berlingske.dk/indland/foerste-sag-om-omvendt-fodlaenke-udloeser-60-dages-faengsel",
+          "published_at": "2026-10-08T13:49:46.000000Z",
+          "content_hash": "sha256:f8ecea308b5fd30c7ba850339cf47434404242fae4a60d2b94642c0e091dffe4",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:04cd857e-1ad5-4ae7-85d9-daa8ae8950a7",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Person kendes skyldig i at bryde reglerne for omvendt fodlænke",
+          "url": "https://www.dr.dk/nyheder/seneste/person-kendes-skyldig-i-bryde-reglerne-omvendt-fodlaenke",
+          "published_at": "2026-10-08T13:40:53.000000Z",
+          "content_hash": "sha256:622a2a68d22e0d0767eedcec10a9af2ba7b751c9998a951908f3616b485dc051",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15216395/?publisherId=13568117&lang=da",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Danner: Farlig fodlænke-sag skriger på politisk handling",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15216395/danner-farlig-fodlaenke-sag-skriger-pa-politisk-handling?lang=da",
+          "published_at": "2026-10-08T14:06:33.000000Z",
+          "content_hash": "sha256:a96c47de3e86bf1158479f67dc863549e2a70cb440532db4fb4c0171017382fd",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "kaershovedgaard-prison-four-five-years",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Promised prison wing at deportation centre could take four to five years",
+        "body": {},
+        "lede": {
+          "text": "The prison wing the prime minister promised on Tuesday at Kærshovedgård, a centre for foreigners who must leave Denmark, could take four to five years to build, the Justice Ministry says.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske",
+            "jp"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "55bc4c8b-7998-4ee0-ab8d-fc24ec909c92",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Fængsel ved Kærshovedgård vil tage fire-fem år at etablere",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/faengsel-ved-kaershovedgaard-vil-tage-4-5-aar-etablere",
+          "published_at": "2026-10-08T10:50:23.000000Z",
+          "content_hash": "sha256:4007c19247b539b86ec50452cb6ea8a5bce65d7194b3712f90b26b028334c45d",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:72489d3d-faa5-5748-a93e-ba836d905e81",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Fængsel ved Kærshovedgård vil tage fire-fem år at etablere",
+          "url": "https://www.berlingske.dk/politik/faengsel-ved-kaershovedgaard-vil-tage-fire-fem-aar-at-etablere",
+          "published_at": "2026-10-08T11:15:44.000000Z",
+          "content_hash": "sha256:759c24762f4b4b8c9ad6754ae762e956f765875c5e13f15373544b7220e79862",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:ab898635-ccac-460d-8ab6-c834ef75340e",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Mette Frederiksens nye fængselsafdeling på Kærshovedgård først klar om flere år",
+          "url": "https://www.dr.dk/nyheder/politik/mette-frederiksens-nye-faengselsafdeling-paa-kaershovedgaard-foerst-klar-om-flere-aar",
+          "published_at": "2026-10-08T10:28:03.000000Z",
+          "content_hash": "sha256:5b109cc3b41ff306bf6fb03a693ca168272bd0d739ff795324454f93e3c367b3",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19719529",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Fængsel ved Kærshovedgård vil tage fire-fem år at etablere",
+          "url": "https://jyllands-posten.dk/indland/ECE19719529/faengsel-ved-kaershovedgaard-vil-tage-firefem-aar-at-etablere/",
+          "published_at": "2026-10-08T12:46:48.000000Z",
+          "content_hash": "sha256:573cb62670d56344d7838df40a2e4a07b63c0325f886473780dfe54a4fc639ef",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "s-faction-coffee-clubs",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Five Social Democrat MPs leave the party's coffee clubs to form a new faction",
+        "body": {},
+        "lede": {
+          "text": "Five Social Democrat MPs have left the party's coffee clubs, informal groupings within its parliamentary group, to found a faction that wants to end them.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "altinget"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "ed38b21f-fce5-439d-b50f-c3dd62fce167",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "S-medlemmer bryder ud af kaffeklubber og stifter ny fraktion i folketingsgruppen",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/s-medlemmer-bryder-ud-af-kaffeklubber-og-stifter-ny-fraktion-i-folketingsgruppen",
+          "published_at": "2026-10-08T13:00:00.000000Z",
+          "content_hash": "sha256:90bb611ee458f2b51d3ade93ff9625f02a9479f07170a87d4dfc6ac9fafe07cd",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:dc0150ee-699b-5036-aa29-f048e171e20a",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Bag kulissen er en ny gruppering dannet i Socialdemokratiet. Berlingske har set deres principprogram",
+          "url": "https://www.berlingske.dk/politik/bag-kulissen-er-en-ny-gruppering-dannet-i-socialdemokratiet-berlingske-har-set-deres-principprogram",
+          "published_at": "2026-10-08T14:50:43.000000Z",
+          "content_hash": "sha256:8e5fa09b204d28c01820d6100eac3912e66a2651deb67e5ef2cf78521f83f728",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/2026-10-08-ny-socialdemokratisk-fraktion-udfordrer-mette-frederiksen",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Ny socialdemokratisk fraktion \"udfordrer\" Mette Frederiksen",
+          "url": "https://nyheder.tv2.dk/2026-10-08-ny-socialdemokratisk-fraktion-udfordrer-mette-frederiksen",
+          "published_at": "2026-10-08T13:10:46.000000Z",
+          "content_hash": "sha256:d64d4c5c0e413429fc6f4782fa77fcba83e6ff2c5f683c07a8ffa4bbe0a160ac",
+          "primary": false
+        },
+        {
+          "source": "altinget",
+          "source_id": "https://www.altinget.dk/artikel/ny-s-forening-tordner-mod-partiets-utidssvarende-kaffeklubber-bidrager-ikke-til-en-hensigtsmaessig-kultur",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Ny S-forening tordner mod partiets \"utidssvarende\" kaffeklubber: \"Bidrager ikke til en hensigtsmæssig kultur\"",
+          "url": "https://www.altinget.dk/artikel/ny-s-forening-tordner-mod-partiets-utidssvarende-kaffeklubber-bidrager-ikke-til-en-hensigtsmaessig-kultur",
+          "published_at": "2026-10-08T16:46:00.000000Z",
+          "content_hash": "sha256:6c69c13e402c111f68ea266c5920f5e1dac87bca1adb7cf94e14e6684b177960",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "deepfake-sharing-ban-bill",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Technology",
+      "copy": {
+        "headline": "Culture minister proposes ban on sharing AI copies of people without consent",
+        "body": {},
+        "lede": {
+          "text": "Zenia Stampe, the culture minister, put forward a bill on Thursday banning the sharing of realistic AI copies of people's looks and voices without their consent; satire stays legal.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "4c3efd2d-f8df-4cb9-a674-167bf13f58ab",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Kulturminister vil forbyde at dele ai-kopier af personer",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/kulturminister-vil-forbyde-dele-ai-kopier-af-personer",
+          "published_at": "2026-10-08T04:00:01.000000Z",
+          "content_hash": "sha256:cd76c870f7dc6c48d4613d7e5b4d24ec0b020dabcb95585313ee8ef1ec2b5c5e",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:c1613ea2-36bd-5780-90eb-146dde70250a",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Kulturminister vil forbyde at dele AI-kopier af personer",
+          "url": "https://www.berlingske.dk/politik/kulturminister-vil-forbyde-at-dele-ai-kopier-af-personer",
+          "published_at": "2026-10-08T04:00:44.000000Z",
+          "content_hash": "sha256:07d86b2a3287ad63adba127b7b772d47b7d588b90969f672a61584a6ca86efc1",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:b8f14c3a-8793-4709-b740-a59e15c81688",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Kulturminister vil forbyde at dele AI-kopier af personer",
+          "url": "https://www.dr.dk/nyheder/indland/kulturminister-vil-forbyde-dele-ai-kopier-af-personer",
+          "published_at": "2026-10-08T04:54:34.000000Z",
+          "content_hash": "sha256:46e1d6066b29e3ea7ef408bf21240805be6b88ec07c7ee906ff2bd2e183fa951",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "kjaersgaard-reported-hojskolen",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Influencer reports Pia Kjærsgaard to police for violence, which she denies",
+        "body": {},
+        "lede": {
+          "text": "Afrah al-Jabouri, an influencer, has reported Pia Kjærsgaard, former leader of Dansk Folkeparti, a nationalist party, to police, saying she was pushed four times during filming of a TV 2 show; Kjærsgaard denies it.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "tv2"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "45ff6221-0da5-4ca0-853d-f2747347d871",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "TV 2-deltager anmelder Pia Kjærsgaard for vold",
+          "url": "https://www.kristeligt-dagblad.dk/tv-2-deltager-anmelder-pia-kjaersgaard-vold",
+          "published_at": "2026-10-08T18:03:54.000000Z",
+          "content_hash": "sha256:9e94147a1ee8101d9a15b810f0369c04481c708798bff205de6a13c5daf4904d",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:23caa515-e489-5f6a-8494-549be7d08a9b",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "TV 2-deltager anmelder Pia Kjærsgaard for vold",
+          "url": "https://www.berlingske.dk/indland/tv-2-deltager-anmelder-pia-kjaersgaard-for-vold",
+          "published_at": "2026-10-08T21:03:51.000000Z",
+          "content_hash": "sha256:0f671b4764fc4286670e991bb05ccadfd2361bf1581ab30cbea238eced82bd46",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/2026-10-08-pia-kjaersgaard-afviser-beskyldninger-om-vold-mod-influencer",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Pia Kjærsgaard afviser beskyldninger om vold mod influencer",
+          "url": "https://nyheder.tv2.dk/2026-10-08-pia-kjaersgaard-afviser-beskyldninger-om-vold-mod-influencer",
+          "published_at": "2026-10-08T18:49:46.000000Z",
+          "content_hash": "sha256:e58378aee1cf631f223e1fb6bde3c668908d387573baf0947ac19ed783f29c4d",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:c2d5574c-b55b-57e1-82e1-64b62e311036",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Voldsomme anklager efter højspændt afsnit af »Højskolen« – tv-chef kan ikke genkende muslimsk influencers udlægning",
+          "url": "https://www.berlingske.dk/skaerm/voldsomme-anklager-efter-hoejspaendt-afsnit-af-hoejskolen--tv-chef-kan-ikke-genkende-muslimsk-influencers-udlaegning",
+          "published_at": "2026-10-08T15:20:11.000000Z",
+          "content_hash": "sha256:2feea5bd0b400daad16a0397aaf1b1059a4372ff8a187d79dcbe1489d13d051b",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "anonymous-graves-majority-cities",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Most burials in Copenhagen and Aarhus are in anonymous graves",
+        "body": {},
+        "lede": {
+          "text": "In 2025, 60 per cent of burials at municipal cemeteries in Aarhus and 53 per cent in Copenhagen were in anonymous communal urn graves, according to figures obtained by Kristeligt Dagblad.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "politiken"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "a827c7e8-5ca5-4f18-8fb1-8f5c585edd77",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "100 år efter den første \"de ukendtes-\"grav foretrækker flertallet i de to største byer nu denne gravstedsform",
+          "url": "https://www.kristeligt-dagblad.dk/liv-og-sjael/100-aar-efter-den-foerste-de-ukendtes-grav-flertallet-i-koebenhavn-og-aarhus",
+          "published_at": "2026-10-08T13:50:00.000000Z",
+          "content_hash": "sha256:7b676c19280cc74c7b3a05ff5810a44c3a06352cccb3b660ec527bf0e1ac0a77",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:ebd4eb67-6a28-56d0-ae20-92349dcc644e",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "De ukendtes grav er mest populær i de største danske byer",
+          "url": "https://www.berlingske.dk/danmark/de-ukendtes-grav-er-mest-populaer-i-de-stoerste-danske-byer",
+          "published_at": "2026-10-08T20:41:44.000000Z",
+          "content_hash": "sha256:b8f3408fd1c1fa470199e5513231c3500657f37bf67c314d6ddb4d3881bdc537",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11015726",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "De ukendtes grav er mest populær i de største danske byer",
+          "url": "https://politiken.dk/danmark/art11015726/De-ukendtes-grav-er-mest-popul%C3%A6r-i-de-st%C3%B8rste-danske-byer",
+          "published_at": "2026-10-08T20:48:40.000000Z",
+          "content_hash": "sha256:6a984c67c81a517eef89d7946cfc465a2d6a8b51d28f0ae71c35c1224fdd0363",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "djoef-worst-phrase-2026",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Union magazine's readers vote a sports metaphor the worst phrase at work",
+        "body": {},
+        "lede": {
+          "text": "Readers of Djøfbladet, the magazine of Djøf, a union for academics and managers, voted the sports metaphor 'make each other better' this year's worst workplace phrase; 'ask the chat' came second.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "cb3dc0de-2fa6-4055-9b6a-692bbcaaa146",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Djøfbladets læsere kårer sportsmetafor som værste udtryk på jobbet",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/djoefbladets-laesere-kaarer-sportsmetafor-som-vaerste-udtryk-paa-jobbet",
+          "published_at": "2026-10-08T09:13:41.000000Z",
+          "content_hash": "sha256:87ab2ee08e44e0eaefbd0710d5f2ad4a832ab150124e4e6f1774cde7e214d342",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:d46a0660-3f21-541d-8b73-2a5a7114615e",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Djøfbladets læsere kårer sportsmetafor som værste udtryk på jobbet",
+          "url": "https://www.berlingske.dk/danmark/djoefbladets-laesere-kaarer-sportsmetafor-som-vaerste-udtryk-paa-jobbet",
+          "published_at": "2026-10-08T09:13:46.000000Z",
+          "content_hash": "sha256:7448670a4fc8b956c734c54646e0a9c01534530dfd42aca7ba22425300e1a7f6",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:1b98b53e-9d5e-4332-8e40-7487697a9ac3",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Djøf's læsere har kåret det mest irriterende ord på jobbet",
+          "url": "https://www.dr.dk/nyheder/indland/djoef-s-laesere-har-kaaret-det-mest-irriterende-ord-paa-jobbet",
+          "published_at": "2026-10-08T11:58:01.000000Z",
+          "content_hash": "sha256:6cb924ae7a2c98c9a2ef918e8dfb6d0efadfd98a63e95a8ef482f2ef647d8e69",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11009354",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Her er det værste udtryk, vi hører i kontorlandskabet",
+          "url": "https://politiken.dk/kultur/art11009354/Her-er-det-v%C3%A6rste-udtryk-vi-h%C3%B8rer-i-kontorlandskabet",
+          "published_at": "2026-10-08T05:02:47.000000Z",
+          "content_hash": "sha256:1560f9caba65d6ea37272cfc04c67867ac1c9ed3f1bc942e241cf262413ff060",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "climate-council-flight-taxes",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Climate",
+      "copy": {
+        "headline": "Climate council calls for higher taxes on flights",
+        "body": {},
+        "lede": {
+          "text": "Klimarådet, the climate council, wants passenger taxes raised enough to make Danes drop one flight in three, adding several thousand kroner to a ticket to New York.",
+          "sources": [
+            "dr",
+            "altinget",
+            "politiken",
+            "via_ritzau"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:841b0253-03fe-4c2d-a09c-50777fdd56f7",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Klimarådet vil gøre det dyrere for danskerne at flyve",
+          "url": "https://www.dr.dk/nyheder/viden/klima/klimaraadet-vil-goere-det-dyrere-danskerne-flyve",
+          "published_at": "2026-10-08T12:26:51.000000Z",
+          "content_hash": "sha256:a29af9d92dc7d1c24b1459f6c011ab53e488b873351ab79ac8958de4fdeaf31e",
+          "primary": true
+        },
+        {
+          "source": "politiken",
+          "source_id": "11012146",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "En flybillet til New York skal være flere tusind kroner dyrere",
+          "url": "https://politiken.dk/rejser/art11012146/En-flybillet-til-New-York-skal-v%C3%A6re-flere-tusind-kroner-dyrere",
+          "published_at": "2026-10-08T11:55:24.000000Z",
+          "content_hash": "sha256:cf59b7eda2da2480c58a7e83f8019ad0851735ee0023cafebe2045a0d8ca41e4",
+          "primary": false
+        },
+        {
+          "source": "altinget",
+          "source_id": "https://www.altinget.dk/klima/artikel/klimaraadet-vil-goere-det-dyrere-at-flyve-men-det-bliver-luftfarten-ikke-groennere-af-indvender-erhvervslivet",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Klimarådet vil gøre det dyrere at flyve. Men det bliver luftfarten ikke grønnere af, indvender erhvervslivet",
+          "url": "https://www.altinget.dk/klima/artikel/klimaraadet-vil-goere-det-dyrere-at-flyve-men-det-bliver-luftfarten-ikke-groennere-af-indvender-erhvervslivet",
+          "published_at": "2026-10-09T02:00:00.000000Z",
+          "content_hash": "sha256:6e88544b1c95be343a752e787ae7d01356d25bedf5398f29a9e055b3fbadc595",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15214676/?publisherId=13559626&lang=da",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Klimarådet anbefaler højere afgifter på flyrejser",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15214676/klimaradet-anbefaler-hojere-afgifter-pa-flyrejser?lang=da",
+          "published_at": "2026-10-08T10:00:00.000000Z",
+          "content_hash": "sha256:fe61ef179f53b50fb9332f02a86c1e6dc723162f8f31a9aa43779d74fba3cb2d",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15215069/?publisherId=11125792&lang=da",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Dansk Luftfart: Højere flyafgifter er ikke en vej til grønnere luftfart",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15215069/dansk-luftfart-hojere-flyafgifter-er-ikke-en-vej-til-gronnere-luftfart?lang=da",
+          "published_at": "2026-10-08T10:01:00.000000Z",
+          "content_hash": "sha256:95371191daeec76844d5e6b195fdbad30b83dc5787040ef5260c948679bb49c8",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "nobel-literature-anne-carson",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Culture",
+      "copy": {
+        "headline": "Canadian poet Anne Carson wins the Nobel prize in literature",
+        "body": {},
+        "lede": {
+          "text": "Anne Carson, a 76-year-old Canadian poet, won the Nobel prize in literature on Thursday for what the Swedish Academy called a 'bold and inventive oeuvre' in 'playful dialogue with the classical tradition'.",
+          "sources": [
+            "kristeligt_dagblad",
+            "guardian",
+            "ft",
+            "bbc"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "f773aa75-e426-4f1d-ac9d-26a7aa9a6efa",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Canadier får Nobelpris for dristigt og nyskabende forfatterskab",
+          "url": "https://www.kristeligt-dagblad.dk/kultur/canadisk-forfatter-modtager-nobelprisen-i-litteratur",
+          "published_at": "2026-10-08T11:17:59.000000Z",
+          "content_hash": "sha256:268edc0f80a47ca82dae08c60bdc0d98ed3f6de2987f52132627f523ce0971db",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:de300b0a-eef7-5e04-9e8a-202241bbcca0",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Canadier får Nobelpris for dristigt og nyskabende forfatterskab",
+          "url": "https://www.berlingske.dk/internationalt/canadier-faar-nobelpris-for-dristigt-og-nyskabende-forfatterskab",
+          "published_at": "2026-10-08T11:59:44.000000Z",
+          "content_hash": "sha256:39d578744c6d5e5fe50110383753241e4fa128011f754f7351e8e39a4eac9c7a",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:eea0450a-9963-4b6f-b6dc-76ca7a34d203",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Canadier får Nobelprisen i litteratur",
+          "url": "https://www.dr.dk/nyheder/kultur/canadier-faar-nobelprisen-i-litteratur",
+          "published_at": "2026-10-08T11:06:11.000000Z",
+          "content_hash": "sha256:3bac3376d46993d529a7a811e0b4679e7fbce081ef68fac470e93cc7b24efaec",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11014375",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Hendes bror døde i København. Nu har værket om sorgen været med til at indbringe hende Nobelprisen",
+          "url": "https://politiken.dk/kultur/art11014375/Hendes-bror-d%C3%B8de-i-K%C3%B8benhavn.-Nu-har-v%C3%A6rket-om-sorgen-v%C3%A6ret-med-til-at-indbringe-hende-Nobelprisen",
+          "published_at": "2026-10-08T15:52:02.000000Z",
+          "content_hash": "sha256:210e2badd132d0083583489ae389312bd0175457eef292e9c1a295c5a4fbbc01",
+          "primary": false
+        },
+        {
+          "source": "information",
+          "source_id": "843191 at https://www.information.dk",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Anne Carson er den perfekte nobelprismodtager",
+          "url": "https://www.information.dk/kultur/2026/10/anne-carson-perfekte-nobelprismodtager",
+          "published_at": "2026-10-08T12:14:16.000000Z",
+          "content_hash": "sha256:2b2b6c3eb1a7232de928c1f9dd4ad9884d13526828b7de5ccb0f8d276da9e8e1",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cq4g1j54nepyo",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "'Bold and inventive' Canadian poet Anne Carson wins Nobel Literature Prize",
+          "url": "https://www.bbc.co.uk/news/articles/cq4g1j54nepyo?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-08T14:33:23.000000Z",
+          "content_hash": "sha256:74be1c6327567ab10958074b31620e89f681f907ae69a807035cd61438ed6cf8",
+          "primary": false
+        },
+        {
+          "source": "economist",
+          "source_id": "889e599e-08c8-431f-b0c7-164b619a0837",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Anne Carson wins the Nobel prize in literature",
+          "url": "https://www.economist.com/culture/2026/10/08/anne-carson-wins-the-nobel-prize-in-literature",
+          "published_at": "2026-10-08T17:07:41.000000Z",
+          "content_hash": "sha256:a132970af465be175a59315cc24d1a1633bc8abd93a1e77e3a966c9f12f53546",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "7eef61f6-2c3f-4c7e-9331-32a25b7dd66a",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Anne Carson awarded the 2026 Nobel Prize in literature",
+          "url": "https://www.ft.com/content/7eef61f6-2c3f-4c7e-9331-32a25b7dd66a",
+          "published_at": "2026-10-08T13:07:36.000000Z",
+          "content_hash": "sha256:b0c96c2af5e72e39fe8ec3e9592545a4072ba896f52513dada234877d2f9c85a",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/books/2026/oct/08/wins-the-nobel-prize-in-literature-2026",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Anne Carson wins Nobel prize in literature 2026",
+          "url": "https://www.theguardian.com/books/2026/oct/08/wins-the-nobel-prize-in-literature-2026",
+          "published_at": "2026-10-08T14:03:29.000000Z",
+          "content_hash": "sha256:fc27dbc0881a5eb86fee6b2fb9588cd1d3b31c3573e3e0bde24ef4a9e091b206",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/books/live/2026/oct/08/nobel-prize-in-literature-2026-winner-latest-news-updates",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Canadian poet Anne Carson wins Nobel prize in literature 2026 – as it happened",
+          "url": "https://www.theguardian.com/books/live/2026/oct/08/nobel-prize-in-literature-2026-winner-latest-news-updates",
+          "published_at": "2026-10-08T12:31:52.000000Z",
+          "content_hash": "sha256:6f48259c440a513bfc45bcadcc9841f3d74fac28a6ee9ae4c239ac79207e71d7",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/books/2026/oct/08/appreciation-of-anne-carson-nobel-prize-in-literature-2026",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "‘Delights await!’: Margaret Atwood and other writers on Nobel winner Anne Carson",
+          "url": "https://www.theguardian.com/books/2026/oct/08/appreciation-of-anne-carson-nobel-prize-in-literature-2026",
+          "published_at": "2026-10-08T17:12:56.000000Z",
+          "content_hash": "sha256:6f9f73b6a1399b2b9ff63c0e385bf2a5dc8e142488da7f6a1b4be00dbd31d520",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/08/books/nobel-prize-literature.html",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Canadian Poet Anne Carson Is Awarded Nobel Prize in Literature",
+          "url": "https://www.nytimes.com/2026/10/08/books/nobel-prize-literature.html",
+          "published_at": "2026-10-08T22:08:07.000000Z",
+          "content_hash": "sha256:761d29ddc6c75577c625873048f8812c93b62f07e1476ca91956c6407da19d58",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/08/books/review/anne-carson-appraisal.html",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Why Anne Carson, the New Nobel Laureate, Is the Easiest Difficult Poet",
+          "url": "https://www.nytimes.com/2026/10/08/books/review/anne-carson-appraisal.html",
+          "published_at": "2026-10-08T22:14:19.000000Z",
+          "content_hash": "sha256:430de9e38b8f8e875ee84c76992f42f5aa94d4e6d7777634a9ebdb001c731a72",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/08/books/anne-carson-nobel-prize-princeton-university-tenure-denied.html",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Princeton Celebrates Anne Carson, a Nobel Prize Winner Who Was Denied Tenure",
+          "url": "https://www.nytimes.com/2026/10/08/books/anne-carson-nobel-prize-princeton-university-tenure-denied.html",
+          "published_at": "2026-10-09T02:15:30.000000Z",
+          "content_hash": "sha256:59e22106627ff536d39d8dc618788ea9ed395fa72a2a3f68a2cc6c63c294f82b",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/08/books/review/anne-carson-best-books.html",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "New to Anne Carson’s Books? Start Here.",
+          "url": "https://www.nytimes.com/2026/10/08/books/review/anne-carson-best-books.html",
+          "published_at": "2026-10-08T21:12:30.000000Z",
+          "content_hash": "sha256:ecfccb7a0dfeae07e5528c191c985cd5bcbb5e2e09c6786f18463421d9e8b309",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003959725",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Canadian Poet Anne Carson Awarded Nobel Prize in Literature",
+          "url": "https://www.wsj.com/world/canadian-poet-anne-carson-awarded-nobel-prize-in-literature-ac8e351f?mod=rss_worldnews",
+          "published_at": "2026-10-08T13:47:00.000000Z",
+          "content_hash": "sha256:bf4c84a1d366d09c87cae75707ebc05fd25d6a8372877485a303aec0d4429062",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "hasan-execution-public",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "America will stream the Fort Hood gunman's execution live",
+        "body": {},
+        "lede": {
+          "text": "Nidal Hasan, who killed 13 people at Fort Hood, a Texas military base, in 2009, will be shot by firing squad on 3 December, with the execution streamed live, the Pentagon said on Thursday.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr",
+            "guardian",
+            "nytimes",
+            "wapo"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "d9e2f3ed-ee40-4fc1-8f4c-636628e1052f",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Hegseth: Henrettelse af dødsdømt major bliver offentlig",
+          "url": "https://www.kristeligt-dagblad.dk/udland/hegseth-henrettelse-af-doedsdoemt-major-bliver-offentlig",
+          "published_at": "2026-10-08T21:48:58.000000Z",
+          "content_hash": "sha256:5beec442a07e689a6e42e148ecb52306ed03a14d5727415be80d5f3c4ff44be1",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:96e22043-7f86-58f3-a18f-65a7b11189b9",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Hegseth: Henrettelse af dødsdømt major bliver offentlig",
+          "url": "https://www.berlingske.dk/internationalt/hegseth-henrettelse-af-doedsdoemt-major-bliver-offentlig",
+          "published_at": "2026-10-08T22:33:46.000000Z",
+          "content_hash": "sha256:073fd6902d7647a95019be5519ceb5fb6305dc334f02a267f7018cacee7f22d1",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:b8bf8d2a-c50c-4cbd-9d5b-a1e4d7dd1d94",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Pentagon: Henrettelse af mand bag massedrab på militærbase skal livestreames",
+          "url": "https://www.dr.dk/nyheder/udland/pentagon-usa-vil-livestreame-henrettelse-af-mand-bag-massedrab-paa-militaerbase",
+          "published_at": "2026-10-08T22:14:36.000000Z",
+          "content_hash": "sha256:46a6032aba2cdc4996c99e25a6bc5a517ce52ce2f43114534d2ff1b2bda398b6",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "0c390d03-427f-40a8-b5cb-d12c8d925d9d",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "US to publicly execute former soldier by firing squad",
+          "url": "https://www.ft.com/content/0c390d03-427f-40a8-b5cb-d12c8d925d9d",
+          "published_at": "2026-10-08T22:28:10.000000Z",
+          "content_hash": "sha256:8e58d69dcbc53a9dbe91c8e69c6d6809df2946469b47ac5e9cfb39a26a5b6ef2",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/us-news/2026/oct/08/hegseth-fort-hood-shooter-public-execution",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Pentagon says execution of Fort Hood shooter will be livestreamed",
+          "url": "https://www.theguardian.com/us-news/2026/oct/08/hegseth-fort-hood-shooter-public-execution",
+          "published_at": "2026-10-08T23:18:29.000000Z",
+          "content_hash": "sha256:3492a17bb429703c3bdef594d1b3220e09da9f3becb1f7934e5621efed14209c",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/08/us/politics/fort-hood-execution-streamed-public.html",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Fort Hood Shooter’s Execution Will Be Public and Streamed Live, Pentagon Says",
+          "url": "https://www.nytimes.com/2026/10/08/us/politics/fort-hood-execution-streamed-public.html",
+          "published_at": "2026-10-09T00:42:30.000000Z",
+          "content_hash": "sha256:8b929973ad2eecfd37b21fd901c7c7776f7725b20b46ce91cad2155b9c23fdf8",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/politics/2026/10/08/hegseth-wants-fort-hood-shooters-execution-by-firing-squad-be-public/",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Fort Hood shooter’s execution will be live-streamed, Defense Dept. says",
+          "url": "https://www.washingtonpost.com/politics/2026/10/08/hegseth-wants-fort-hood-shooters-execution-by-firing-squad-be-public/",
+          "published_at": "2026-10-08T23:56:58.000000Z",
+          "content_hash": "sha256:ce52070ad8a24d9d6cb2307c724a0cf236a7090ad135cc3f31b7da26fbc3eb98",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/commentisfree/2026/oct/09/nidal-hasan-execution-pete-hegseth-us-military-tv-democracy",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Execution TV? Pete Hegseth has taken the once ‘greatest democracy’ to a horrific new low | Paul Daley",
+          "url": "https://www.theguardian.com/commentisfree/2026/oct/09/nidal-hasan-execution-pete-hegseth-us-military-tv-democracy",
+          "published_at": "2026-10-09T01:19:07.000000Z",
+          "content_hash": "sha256:7e7ca1e3e3583375b5b86bac72b7c056a3d7459e127ca35f7780358148ab5b8b",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "kramatorsk-buses-strike",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Russian strike on two buses kills at least 30 in eastern Ukraine",
+        "body": {},
+        "lede": {
+          "text": "A Russian strike on two buses in Kramatorsk, a front-line city in eastern Ukraine, killed at least 30 people and wounded 18 on Thursday, the regional governor says.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "guardian",
+            "bbc",
+            "ft"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "2a8ccca2-32b7-4074-8c5b-c20d6bb747a7",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Ukraine: Russisk angreb mod busser dræber 30 tæt på frontlinjen",
+          "url": "https://www.kristeligt-dagblad.dk/udland/ukraine-russisk-angreb-draeber-12-i-taet-paa-frontlinjen",
+          "published_at": "2026-10-08T08:47:43.000000Z",
+          "content_hash": "sha256:99950e2263c51f35d2390ce9b3342c26c8b931cb4ab0712b01156195a5979aeb",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:d2140254-b44d-54b6-b6bf-0fac1f73f6e9",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Ukraine: Russisk angreb mod busser dræber 30 tæt på frontlinjen",
+          "url": "https://www.berlingske.dk/internationalt/ukraine-russisk-angreb-mod-busser-draeber-30-taet-paa-frontlinjen",
+          "published_at": "2026-10-08T10:44:47.000000Z",
+          "content_hash": "sha256:236d8b244efbcb29b22f3dfcc431911853d2f02ff03afb8bf4e98570ddd67206",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:3d7370cf-312d-5690-870b-a69f1a4544a9",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Kreml har intensiveret angrebene på civile: »For dem er en bus med passagerer et attraktivt mål«",
+          "url": "https://www.berlingske.dk/internationalt/kreml-har-intensiveret-angrebene-paa-civilefor-dem-er-en-bus-med-passagerer-et-attraktivt-maal",
+          "published_at": "2026-10-08T17:30:12.000000Z",
+          "content_hash": "sha256:2c64cd90e3fbff0363ed2529703312684c4f5429977393f9b65fcd0eb0365251",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "c875pwq134l3o",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Russian strike on buses kills at least 30, say officials, as deadly attacks on Ukraine surge",
+          "url": "https://www.bbc.co.uk/news/articles/c875pwq134l3o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-08T16:31:29.000000Z",
+          "content_hash": "sha256:2f0f1222bcb880c20cbf54028f5cba07c03a44fb9ff9df8bd0aff9dd445550f4",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "fb4d6b18-3b72-473c-90a5-3864c1dad27e",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Russian bomb attack kills dozens at Ukraine bus stop",
+          "url": "https://www.ft.com/content/fb4d6b18-3b72-473c-90a5-3864c1dad27e",
+          "published_at": "2026-10-08T12:38:45.000000Z",
+          "content_hash": "sha256:4ed3e423d2cdcfaf81cbb9c644e35b988db547bab9f84b1ecf974db764a1beb5",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/08/russian-attack-buses-ukraine-frontline-kramatorsk",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Russian attack on bus kills at least 30 people near Ukraine frontline",
+          "url": "https://www.theguardian.com/world/2026/oct/08/russian-attack-buses-ukraine-frontline-kramatorsk",
+          "published_at": "2026-10-08T14:00:05.000000Z",
+          "content_hash": "sha256:313cf3ee61393ca1c725789444bcbb148e5047ed375e31ff55e1151394fc8527",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/world/2026/10/08/least-30-dead-russian-bus-strike-moscow-closes-ukraines-fortress-belt/",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "At least 30 dead in Russian bus strike as Moscow closes in on Ukraine’s ‘fortress belt’",
+          "url": "https://www.washingtonpost.com/world/2026/10/08/least-30-dead-russian-bus-strike-moscow-closes-ukraines-fortress-belt/",
+          "published_at": "2026-10-08T15:41:18.000000Z",
+          "content_hash": "sha256:7dce709cb376b98aed00c2da62e0719be0529f9351b0e09cdc1e3d1d4a627e14",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003960601",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Russian Airstrike on Bus Stop Kills at Least 30 in Ukraine",
+          "url": "https://www.wsj.com/world/europe/russian-airstrike-on-bus-stop-kills-at-least-30-in-ukraine-a2bfcce9?mod=rss_worldnews",
+          "published_at": "2026-10-08T15:42:00.000000Z",
+          "content_hash": "sha256:14af962549ea3f8c8b3ed7ee878a0589898d5b3acc6bdb2bfe5698084087895f",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "trump-iran-talks-midterms",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Trump says America will not attack Iran before the midterms",
+        "body": {},
+        "lede": {
+          "text": "Donald Trump said on Thursday that the United States would not attack Iran before its midterm elections on 3 November, citing 'productive discussions' with Tehran.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "ft",
+            "wsj"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "76e752ae-5071-4207-8153-372b49ff72e4",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Trump siger USA holder samtaler med Iran",
+          "url": "https://www.kristeligt-dagblad.dk/udland/trump-siger-usa-holder-samtaler-med-iran",
+          "published_at": "2026-10-08T16:26:00.000000Z",
+          "content_hash": "sha256:bedec4b1c9e788d21b64ee6c94eb7bf057071172f0109fdf892c754bfd056c23",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:7fe8a067-3368-5843-9b1b-51c2d7aa0f64",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Trump siger USA holder samtaler med Iran",
+          "url": "https://www.berlingske.dk/internationalt/trump-siger-usa-holder-samtaler-med-iran",
+          "published_at": "2026-10-08T16:47:46.000000Z",
+          "content_hash": "sha256:af0e28ca8759ffc27ae8dccd7b0e701ced32c6bf04b4d8248a59a381f5be733b",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/trump-usa-har-produktive-samtaler-med-iran",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Trump: USA har “produktive samtaler” med Iran",
+          "url": "https://borsen.dk/nyheder/udland/trump-usa-har-produktive-samtaler-med-iran",
+          "published_at": "2026-10-08T17:04:19.000000Z",
+          "content_hash": "sha256:7e7a11b62cd0a3dbdcc63ca787590a4816b8a052f91d61ee4feb39449a07893d",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:bbb0aef2-0c1b-4142-b169-b221afe930a2",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Trump siger, USA holder samtaler med Iran",
+          "url": "https://www.dr.dk/nyheder/seneste/trump-siger-usa-holder-samtaler-med-iran",
+          "published_at": "2026-10-08T16:36:32.000000Z",
+          "content_hash": "sha256:1de1876dd25379e0f9e6bd7a092ead0ecfee2db4cb6cc0d1a63f5255ad0e8e40",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "e0cc2789-0e71-401d-8096-d58303970a37",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Trump says US ‘will not be attacking Iran’ before midterm elections",
+          "url": "https://www.ft.com/content/e0cc2789-0e71-401d-8096-d58303970a37",
+          "published_at": "2026-10-08T20:08:27.000000Z",
+          "content_hash": "sha256:d2554427938487181d5344943fc1022babda27a0e968990c051848641420d9b0",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/08/us/politics/trump-iran-war-options.html",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Trump Says U.S. Will Not Strike Iran Again Before Midterms as Military Draws Up New Plans",
+          "url": "https://www.nytimes.com/2026/10/08/us/politics/trump-iran-war-options.html",
+          "published_at": "2026-10-08T21:05:33.000000Z",
+          "content_hash": "sha256:5a2f226b860899cf0979cc846e01e6b6173ccca044244a5e726de3c7a358536c",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/politics/2026/10/08/no-new-attack-iran-before-midterm-elections-trump-says/",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "No new attack on Iran before the midterm elections, Trump says",
+          "url": "https://www.washingtonpost.com/politics/2026/10/08/no-new-attack-iran-before-midterm-elections-trump-says/",
+          "published_at": "2026-10-08T17:30:00.000000Z",
+          "content_hash": "sha256:f704d137b4e3b149758efcab302c34a32d6cc641338e4b2fe455eade753aeeb4",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003961001",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "The U.S. won’t attack Iran before the November midterm elections, President Trump said Thursday, citing “productive” talks with Tehran",
+          "url": "https://www.wsj.com/politics/national-security/trump-says-u-s-wont-resume-strikes-on-iran-before-midterms-1e8ed73e?mod=rss_socialpoliticsfeed",
+          "published_at": "2026-10-08T17:25:00.000000Z",
+          "content_hash": "sha256:57d7176d767ee47c87e763f5ff1cdc5ce7bd31c6af2ee0bfe06f647e421469d3",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "wwf-living-planet-73-per-cent",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Environment",
+      "copy": {
+        "headline": "Wildlife populations have fallen by 73 per cent since 1970, WWF says",
+        "body": {},
+        "lede": {
+          "text": "Wildlife populations have fallen by an average of 73 per cent since 1970, most steeply in South and Central America, Africa and Asia-Pacific, WWF, a conservation group, says in its Living Planet report.",
+          "sources": [
+            "kristeligt_dagblad",
+            "via_ritzau"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "69cf2a29-f6d4-4b88-b165-eed456b966d7",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Rapport: Tre ud af fire vilde dyr er forsvundet siden 1970",
+          "url": "https://www.kristeligt-dagblad.dk/udland/rapport-tre-ud-af-fire-vilde-dyr-er-forsvundet-siden-1970",
+          "published_at": "2026-10-08T05:31:21.000000Z",
+          "content_hash": "sha256:4a722d3f5a226c7af4197b8ea33141f18126ea4b8c7f598caca280289f635e50",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:2d3c037b-da07-5e67-86d0-3f0397414c56",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Rapport: Tre ud af fire vilde dyr er forsvundet siden 1970",
+          "url": "https://www.berlingske.dk/internationalt/rapport-tre-ud-af-fire-vilde-dyr-er-forsvundet-siden-1970",
+          "published_at": "2026-10-08T05:33:49.000000Z",
+          "content_hash": "sha256:755a8036ea0ed00953bc3a1d5c0bdf82486b85d2d0ebd8e669875d4449442a48",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/samfund/2026-10-08-verdens-vilde-dyr-forsvinder-dybt-alarmerende-siger-direktoer",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Direktør slår alarm over ny rapport om vilde dyr",
+          "url": "https://nyheder.tv2.dk/samfund/2026-10-08-verdens-vilde-dyr-forsvinder-dybt-alarmerende-siger-direktoer",
+          "published_at": "2026-10-08T07:32:05.000000Z",
+          "content_hash": "sha256:46fd23598774e688430a6c7178b636f5c36d77aa0c0372d593ebe926cca14d76",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:5a491504-4b0f-46d1-957a-65bd73b4d8d4",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Vi mennesker er skyld i, at halvdelen af verdens dyrebestand er i tilbagegang, siger direktør i NGO",
+          "url": "https://www.dr.dk/nyheder/udland/vi-mennesker-er-skyld-i-halvdelen-af-verdens-dyrebestand-er-i-tilbagegang-siger-direktoer-i-ngo",
+          "published_at": "2026-10-07T23:00:00.000000Z",
+          "content_hash": "sha256:d0ac9cf16ec3be1d463bd3de43c22ef6b9f3426b81c678d92ed43ae0a59cf26c",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15213792/?publisherId=11565599&lang=da",
+          "input_id": "export-2026-10-09-0330",
+          "original_title": "Ny rapport: Halvdelen af verdens dyrebestande er i tilbagegang",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15213792/ny-rapport-halvdelen-af-verdens-dyrebestande-er-i-tilbagegang?lang=da",
+          "published_at": "2026-10-08T04:00:00.000000Z",
+          "content_hash": "sha256:9ea12ecc306c6b0df3ab50da308a1df18dcfd51a6901cf6ff46a0ff62c7da71c",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    }
+  ],
+  "fit_policy": {
+    "allow_role_fallback": true,
+    "allow_composition_substitution": true,
+    "reserve_story_ids": [],
+    "omittable_story_ids": [
+      "cpr-hacker-password-123456",
+      "opening-debate-immigration-2026",
+      "venstre-record-low-5-8-poll",
+      "ku-theology-faculty-merged-2028",
+      "cpr-credit-warnings-970000",
+      "gade-character-assassination-claim",
+      "cruise-ship-levy-2028",
+      "is-housewife-two-years",
+      "reverse-ankle-tag-60-days",
+      "kaershovedgaard-prison-four-five-years",
+      "s-faction-coffee-clubs",
+      "deepfake-sharing-ban-bill",
+      "kjaersgaard-reported-hojskolen",
+      "anonymous-graves-majority-cities",
+      "djoef-worst-phrase-2026",
+      "climate-council-flight-taxes",
+      "nobel-literature-anne-carson",
+      "hasan-execution-public",
+      "kramatorsk-buses-strike",
+      "trump-iran-talks-midterms",
+      "wwf-living-planet-73-per-cent"
+    ]
+  }
+}
