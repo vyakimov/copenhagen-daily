@@ -6,6 +6,7 @@ var/
 runs/*/bundle/
 runs/*/window.json
 runs/*/window.md
+runs/*/window-linked.md
 runs/*/sessions/
 runs/*/*.draft.json
 runs/*/*.draft.md

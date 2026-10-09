@@ -105,7 +105,8 @@ and a repeat of an article already placed in the same snapshot (BBC and WSJ do t
 
 One feed's error never stops the others, and the run reports `success`, `partial`, or `failed`. `health`
 reports `degraded` with `feed_failures:<feed_id>` once a feed reaches three consecutive failures, and
-`integrity_check_failed` if SQLite says so. A process lock (`flock` on `var/news-ingest.lock`) guards
+`integrity_check_failed` if SQLite says so under `--deep`; without it `integrity` is `not_checked`,
+because the full check reads every page and takes minutes on a multi-gigabyte database. A process lock (`flock` on `var/news-ingest.lock`) guards
 every mutating command; a second writer gets a machine-readable `lock_busy` error instead of waiting.
 
 ## Configuration carries publisher behaviour

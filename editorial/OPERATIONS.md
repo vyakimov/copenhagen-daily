@@ -155,7 +155,8 @@ key, and `CANNOT log in` when a tool has nothing that works; the last exits non-
 names every feed that has failed more than twenty polls running, with its last error, which is how
 a moved, renamed, or deleted feed is noticed; one feed's failure never stops the paper, it only
 narrows the window. `edit_news.sh preflight` runs it by hand (`--notify` to post the result). The
-feed check reads block 1's `health`, which integrity-checks the database and takes a minute or two.
+feed check reads block 1's `health`, which answers in moments; `gather_news.sh health --deep` adds the
+SQLite integrity check, minutes on a large database, and is not part of any scheduled job.
 
 To check the login the jobs will actually use, probe from launchd, not from a Claude Code shell: a
 sandboxed shell cannot read the keychain and falls back to `~/.claude/.credentials.json`, so it can

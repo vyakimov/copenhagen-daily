@@ -185,10 +185,10 @@ ACTIONS: dict[str, dict[str, Any]] = {
         ],
     },
     "health": {
-        "description": "Read database integrity and per-feed collection health.",
+        "description": "Read per-feed collection health; --deep also runs the SQLite integrity check.",
         "mutates": False,
         "network": False,
-        "params": [CONFIG_PARAM],
+        "params": [CONFIG_PARAM, {"name": "deep", "type": "boolean", "required": False, "default": False}],
     },
     "list-actions": {
         "description": "Return the machine-readable action and parameter catalog.",
@@ -293,6 +293,7 @@ def build_parser() -> JSONArgumentParser:
 
     p = _command(sub, "health", "./gather_news.sh health")
     _add_config(p)
+    p.add_argument("--deep", action="store_true", help="also run PRAGMA integrity_check; minutes on a large database")
 
     p = _command(
         sub,
@@ -509,7 +510,7 @@ def _dispatch(args: argparse.Namespace) -> dict[str, Any]:
         return result
     if action == "health":
         database = _require_database(config.database_path)
-        return health(database, config.failure_alert_threshold)
+        return health(database, config.failure_alert_threshold, deep=args.deep)
     if action == "deduplicate-sightings":
         from .db import deduplication_report
         from .replay import deduplicate_sightings
