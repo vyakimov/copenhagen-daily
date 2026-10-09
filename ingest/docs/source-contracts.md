@@ -50,7 +50,7 @@ despite `lang=da` in its URLs. Article pages and enclosure images are not fetche
 | The Economist (`economist`) | UUID GUID | `/latest/rss.xml` (latest) plus leaders, briefing, europe, international, finance-and-economics, business, science-and-technology, culture | 300 items per feed (~150 KB). `/rss` returns 403. |
 | The Guardian (`guardian`) | GUID (URL) | `/international/rss` (homepage_rss) plus world, europe-news, uk/business, uk/technology, uk/environment, science, uk/culture, uk/commentisfree | Large feeds (100+ items, ~380 KB). |
 | The Washington Post (`wapo`) | GUID (URL) | `feeds.washingtonpost.com/rss/{world,national,politics,business,business/technology,opinions}` | Small feeds (2–13 items). `rss/homepage` returns 400. |
-| The Wall Street Journal (`wsj`) | GUID (`WP-WSJ-…`) | `feeds.content.dowjones.io/public/rss/{RSSWorldNews,WSJcomUSBusiness,RSSMarketsMain,socialeconomyfeed,socialpoliticsfeed,RSSWSJD,RSSOpinion}` | The `feeds.a.dj.com` aliases still answer but stopped updating in January 2025. Feeds list some items twice. |
+| The Wall Street Journal (`wsj`) | GUID (`WP-WSJ-…`) | `feeds.content.dowjones.io/public/rss/{RSSWorldNews,WSJcomUSBusiness,RSSMarketsMain,socialeconomyfeed,socialpoliticsfeed,RSSWSJD,RSSOpinion}` | The `feeds.a.dj.com` aliases still answer but stopped updating in January 2025. Feeds list some items twice. Each feed tags links with its own `mod` parameter, which canonical URLs drop and raw URLs keep. |
 
 Not monitored:
 

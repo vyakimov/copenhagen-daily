@@ -13,7 +13,6 @@ HASH_FIELDS = (
     "title",
     "canonical_url",
     "description",
-    "description_source",
     "public_lead",
     "public_body",
     "public_body_truncated",

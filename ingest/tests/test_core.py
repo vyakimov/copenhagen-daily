@@ -90,6 +90,15 @@ def test_normalization_rules():
         )
         == "https://www.berlingske.dk/politik/example?edition=morning"
     )
+    # WSJ tags each feed's links with its own `mod`; only the canonical URL drops it.
+    assert (
+        normalize_url("wsj", "https://www.wsj.com/opinion/example?mod=rss_opinion&page=2")
+        == "https://www.wsj.com/opinion/example?page=2"
+    )
+    assert (
+        normalize_url("nytimes", "https://www.nytimes.com/a?mod=keep")
+        == "https://www.nytimes.com/a?mod=keep"
+    )
     assert (
         resolve_source_id(
             "berlingske",

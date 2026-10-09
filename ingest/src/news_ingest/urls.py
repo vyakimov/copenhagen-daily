@@ -31,5 +31,6 @@ def normalize_url(source: str, raw_url: str) -> str:
         if not _DROP.match(k)
         and not (source == "ft" and _FT_SYN.match(k))
         and not (source == "berlingske" and k.lower() == "referrer" and v.lower() == "rss")
+        and not (source == "wsj" and k.lower() == "mod")
     ]
     return urlunsplit((parts.scheme.lower(), host, parts.path or "/", urlencode(sorted(pairs)), ""))

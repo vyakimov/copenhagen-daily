@@ -119,6 +119,12 @@ timestamp bounds. Usually one snapshot supplies most fields. Storage scales with
 contributing feeds and distinct retained categories/keywords, not the number of
 repeated observations. Original timestamps and stable sighting order are retained
 so field ties, missing-value fallbacks, authors, and raw metadata remain exact.
+Each state (schema version 2) also holds `revised_at`: when each field, and the
+winning snapshot's own content, last changed within that feed. Combining feeds,
+the newest revision wins and unrevised values fall back to priority, so polling
+the same unchanged article in several feeds writes no versions. The revision
+times cannot be recovered from a version-1 state, which therefore fails validation
+and is rebuilt from history like any invalid cache.
 Priorities are applied when combining feeds, not baked into the cache. Changing
 priorities therefore reevaluates each article on its next observation without
 rereading its history. Configured disabled feeds remain part of that history;
@@ -127,11 +133,36 @@ removing a historical feed's configuration still requires explicit resolution.
 State, watermark, sightings, projection, versions, appearances, and HTTP validators
 share the same per-feed transaction. Failed ingestion rolls all of them back.
 A missing cache/head or structurally invalid cache triggers reconstruction for
-that identity. A full rebuild always derives from original sightings, independently
-compares the cached algorithm's result, and replaces the selected source's cache
+that identity. A full rebuild always derives from original sightings by the same
+per-feed replay that collection uses, verifies that the persisted (JSON) form of
+the resulting states merges to the same article, and replaces the selected source's cache
 on apply. Dry-run reports `merge_states_rebuilt` (the number staged) but makes no
 persistent changes; projection difference counts do not measure cache differences.
 Apply installs missing schema migrations before staging; dry-run never migrates.
+
+### Upgrading to revision-ranked merge state (9 October 2026)
+
+This upgrade changes `content_hash` (it no longer covers `description_source`)
+and the cache format. Collecting with the new code before reconciling would
+bootstrap every article it sees and write one version per article for the hash
+change alone. Pause the collector, rebuild, then resume:
+
+```sh
+launchctl bootout gui/$(id -u)/ai.copenhagen-daily.collect
+./gather_news.sh backup --output var/pre-revision-merge-YYYY-MM-DD.sqlite3
+./gather_news.sh rebuild-articles --dry-run   # every article reports changed
+./gather_news.sh rebuild-articles
+./gather_news.sh rebuild-articles --dry-run   # expect rows_changed 0
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/ai.copenhagen-daily.collect.plist
+```
+
+On a copy of the 9 October database (2.98 million sightings, 28,782 articles),
+each rebuild took about 8.5 minutes and wrote no versions. The merge re-derives
+each sighting's canonical URL from its raw URL with the current rules, so
+rebuilt WSJ projections lose `mod` and the next clean sighting is not a revision;
+stored sightings keep their original text. Any `export --changed-since` consumer
+needs a fresh baseline afterwards: every hash changes, while rebuilt
+`last_changed_at` values can move backwards.
 
 ## Content deduplication (migration 005)
 

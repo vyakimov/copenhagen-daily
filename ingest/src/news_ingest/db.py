@@ -242,8 +242,7 @@ def rebuild_projection(con, priorities, source=None, dry_run=False):
     from datetime import datetime
     from itertools import groupby
 
-    from .feed import SightingCandidate
-    from .merge import MergeAccumulator, merge_feed_states, update_feed_state
+    from .merge import merge_feed_states, update_feed_state
 
     counts = {}
 
@@ -281,7 +280,6 @@ def rebuild_projection(con, priorities, source=None, dry_run=False):
         sightings_read = 0
         states_rebuilt = 0
         for (sid, aid), history in groupby(rows, key=lambda row: (row["source"], row["source_id"])):
-            state = MergeAccumulator(priorities)
             feed_states = {}
             last_hash = last_changed_at = None
             for row in history:
@@ -308,18 +306,11 @@ def rebuild_projection(con, priorities, source=None, dry_run=False):
                         if value is not None:
                             format_utc(value)
                     observed_at = format_utc(datetime.fromisoformat(row["observed_at"]))
-                    state.add(
-                        SightingCandidate(
-                            article,
-                            row["feed_id"],
-                            row["item_position"],
-                            row["publisher_order"],
-                            {},
-                        )
-                    )
-                    merged = ArticleSnapshot.model_validate(state.snapshot().model_dump())
                     feed_states[row["feed_id"]] = update_feed_state(
                         feed_states.get(row["feed_id"]), row["feed_id"], row["sighting_id"], article
+                    )
+                    merged = ArticleSnapshot.model_validate(
+                        merge_feed_states(list(feed_states.values()), priorities).model_dump()
                     )
                 except (ValueError, TypeError) as exc:
                     raise RebuildError(
@@ -331,10 +322,15 @@ def rebuild_projection(con, priorities, source=None, dry_run=False):
                     last_changed_at = observed_at
                     last_hash = merged.content_hash
                 sightings_read += 1
-            if merge_feed_states(list(feed_states.values()), priorities) != merged:
+            # Live collection merges the persisted JSON form of these states.
+            persisted = [
+                FeedMergeState.model_validate_json(item.model_dump_json())
+                for item in feed_states.values()
+            ]
+            if merge_feed_states(persisted, priorities) != merged:
                 raise RebuildError(
                     "rebuild_merge_state_mismatch",
-                    "Merge state differs from full history; projection unchanged.",
+                    "Persisted merge state differs from full history; projection unchanged.",
                     {"source": sid, "source_id": aid},
                 )
             for feed_id, feed_state in sorted(feed_states.items()):

@@ -55,9 +55,18 @@ is therefore repairable without re-collecting, and the evidence trail block 2 re
 
 **The merge is per feed, then across feeds by priority.** Migration 004 keeps a small merge state per
 article and feed (the winning snapshot and the winners of each nonempty field) and a merge head per article
-holding a sighting-id watermark, so a poll reads only sightings above the watermark. Across feeds a field
-is taken from the feed with the highest `description_priority`, then the latest observation, then the
-lowest configured order; that is why DR section descriptions outrank DR latest descriptions.
+holding a sighting-id watermark, so a poll reads only sightings above the watermark. Within a feed the
+latest observation wins. Each feed state also records when each field's value last *changed within that
+feed* (`revised_at`); a feed's first values only introduce the article. Across feeds a field is taken
+from the newest revision; values no feed has revised are taken from the highest `description_priority`,
+then the lowest configured order. Any revision outranks every unrevised value, whatever the feeds'
+priorities. So DR section descriptions outrank DR latest descriptions whichever feed is polled first,
+until one of them changes; an edit made while a feed carries the article wins until a newer one does;
+and re-observing unchanged items never moves a field from one feed to another. The exception: an
+already-edited value that first appears in a feed which never carried the old one is an introduction,
+and loses to an older revision or a higher-ranked introduction. Canonical URLs are re-derived from raw
+URLs with the current rules when merging, so a URL-rule fix reaches history without looking like an edit. `description_source` names the feed whose
+description won; it is provenance, not content, and is excluded from `content_hash`.
 
 **Raw payloads are kept, compressed, indefinitely.** Each distinct response body is stored once, gzipped,
 keyed by its hash. `raw_payload_retention_days` is accepted by configuration and nothing prunes.

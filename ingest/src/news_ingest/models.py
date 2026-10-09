@@ -62,7 +62,8 @@ class MergeRepresentative(Model):
 
 
 class FeedMergeState(Model):
-    schema_version: Literal[1] = 1
+    # Version 2 adds revised_at; a cached version-1 state fails validation and is rebuilt.
+    schema_version: Literal[2] = 2
     source: str
     source_id: str
     feed_id: str
@@ -72,6 +73,9 @@ class FeedMergeState(Model):
     first_seen_at: datetime
     last_seen_at: datetime
     last_checked_at: datetime
+    # When each field's value last changed within this feed (key "snapshot" for the content of
+    # the winning observation). Absent: the value has not changed since the feed introduced it.
+    revised_at: dict[str, datetime] = Field(default_factory=dict)
 
 
 class AppearanceRecord(Model):

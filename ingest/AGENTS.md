@@ -84,6 +84,11 @@ requirement is not summarized here.
   databases apply all of them on first open. A populated database takes 005
   only through `deduplicate-sightings --backup PATH`.
 - Repeated unchanged content must not create an article version.
+- Re-observing an unchanged item in several feeds must not move any field from
+  one feed to another. Across feeds the newest within-feed revision wins and
+  unrevised values follow `description_priority`, then order; observation time
+  alone never decides between feeds. `description_source` is provenance and
+  stays out of `content_hash`.
 - Content transitions `A -> B -> A` must create three ordered versions.
 - Never delete or rewrite original sightings during replay or rebuild.
 - Do not overwrite an existing export directory or backup file.
@@ -129,6 +134,8 @@ requirement is not summarized here.
   The Washington Post, and The Wall Street Journal use their GUIDs. The Guardian
   international feed is a ranked homepage surface. WSJ feeds live at
   `feeds.content.dowjones.io`; the old `feeds.a.dj.com` aliases are stale.
+  WSJ tags each feed's links with its own `mod` parameter; remove it from
+  canonical URLs and retain it in raw URLs.
 - Reuters and the Associated Press publish no first-party RSS feed (Reuters
   returns 401, AP 403 to every client) and are therefore not monitored.
 - A publisher may list the same article twice in one feed snapshot (BBC and WSJ

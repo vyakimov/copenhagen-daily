@@ -335,15 +335,23 @@ def test_persistent_state_survives_restart_and_matches_rebuild(history, capsys, 
         restarted.close()
 
 
-@pytest.mark.parametrize("damage", ["missing_head", "missing_state", "invalid_state"])
+@pytest.mark.parametrize(
+    "damage", ["missing_head", "missing_state", "invalid_state", "version_one_state"]
+)
 def test_cache_bootstraps_once_from_history(history, capsys, monkeypatch, damage):
     db, config_file, config = history
     if damage == "missing_head":
         db.con.execute("DELETE FROM article_merge_heads WHERE source='bbc'")
     elif damage == "missing_state":
         db.con.execute("DELETE FROM article_feed_merge_state WHERE source='bbc'")
-    else:
+    elif damage == "invalid_state":
         db.con.execute("UPDATE article_feed_merge_state SET state_json='{}' WHERE source='bbc'")
+    else:
+        # A cache written before revision times existed is rebuilt, not trusted.
+        db.con.execute(
+            "UPDATE article_feed_merge_state SET state_json="
+            "json_remove(json_set(state_json,'$.schema_version',1),'$.revised_at') WHERE source='bbc'"
+        )
     db.con.commit()
     metrics = repeat_observation(db, config, monkeypatch)
     assert metrics["historical_rows_read"] == 5
@@ -615,3 +623,79 @@ def test_dedup_cli_requires_backup_and_lock_and_preserves_exports(legacy_history
         assert list(read_sightings(saved, include_raw=True)) == before
     finally:
         saved.close()
+
+
+def observe(db, config, monkeypatch, feed_id, minute, title="Headline", url=None, canonical=None):
+    source = feed_id.split(".")[0]
+    feed = next(f for f in config.sources[source].feeds if f.id == feed_id)
+    observed = datetime(2026, 10, 1, tzinfo=UTC) + timedelta(minutes=minute)
+    monkeypatch.setattr("news_ingest.db.now_utc", lambda: observed)
+    url = url or "https://example.com/a"
+    article = ArticleSnapshot(
+        source=source,
+        source_id="rotating",
+        title=title,
+        raw_url=url,
+        canonical_url=canonical or url,
+        description=f"{title} description",
+        description_source=feed_id,
+        published_at=datetime(2026, 10, 1, tzinfo=UTC),
+        timestamp_original="2026-10-01T00:00:00+00:00",
+        first_seen_at=observed,
+        last_seen_at=observed,
+        last_checked_at=observed,
+    )
+    run = db.start_run(source)
+    poll = db.preallocate_poll(run, feed_id, source, None)
+    parsed = ParsedFeed([SightingCandidate(article, feed_id, 1, None, {})], [], 1, 1, [], None)
+    reply = FetchResult(200, f"{feed_id}{minute}".encode(), 1, str(feed.url), None, None, [])
+    priorities = {
+        f.id: (f.description_priority, f.order) for sc in config.sources.values() for f in sc.feeds
+    }
+    db.ingest(poll, feed_id, source, str(feed.url), reply, parsed, priorities, feed.surface)
+
+
+def versions(db, source):
+    query = "SELECT count(*) FROM article_versions WHERE source=?"
+    return db.con.execute(query, (source,)).fetchone()[0]
+
+
+def projected(db, source):
+    query = "SELECT snapshot_json FROM articles WHERE source=?"
+    return json.loads(db.con.execute(query, (source,)).fetchone()[0])
+
+
+def test_unchanged_article_in_equal_priority_feeds_writes_one_version(history, capsys, monkeypatch):
+    db, config_file, config = history
+    feeds = ("nytimes.business", "nytimes.science", "nytimes.health")
+    for minute in range(0, 120, 15):
+        # Sequential commits a few seconds apart, each feed with its own variant.
+        for offset, feed_id in enumerate(feeds):
+            title = feed_id.split(".")[1].title() + " variant"
+            observe(db, config, monkeypatch, feed_id, minute + offset / 20, title=title)
+    assert versions(db, "nytimes") == 1
+    assert projected(db, "nytimes")["title"] == "Business variant"
+    observe(db, config, monkeypatch, "nytimes.health", 120, title="Edited headline")
+    assert versions(db, "nytimes") == 2
+    assert projected(db, "nytimes")["title"] == "Edited headline"
+    code, envelope = invoke(capsys, config_file, "--dry-run")
+    assert code == 0
+    assert envelope["result"]["rows_changed"] == 0
+
+
+def test_wsj_history_with_mod_rebuilds_and_continues_without_versions(history, capsys, monkeypatch):
+    db, config_file, config = history
+    for minute, feed_id in ((0, "wsj.opinion"), (1, "wsj.technology")):
+        url = f"https://www.wsj.com/a?mod=rss_{feed_id.split('.')[1]}"
+        # Stored as normalized before WSJ `mod` left canonical URLs.
+        observe(db, config, monkeypatch, feed_id, minute, url=url, canonical=url)
+    assert invoke(capsys, config_file)[0] == 0
+    assert versions(db, "wsj") == 1
+    assert projected(db, "wsj")["canonical_url"] == "https://www.wsj.com/a"
+    for minute, feed_id in ((15, "wsj.opinion"), (16, "wsj.technology")):
+        url = f"https://www.wsj.com/a?mod=rss_{feed_id.split('.')[1]}"
+        observe(
+            db, config, monkeypatch, feed_id, minute, url=url, canonical="https://www.wsj.com/a"
+        )
+    assert versions(db, "wsj") == 1
+    assert invoke(capsys, config_file, "--dry-run")[1]["result"]["rows_changed"] == 0

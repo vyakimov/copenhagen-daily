@@ -559,6 +559,35 @@ newsroom rather than editions, are unchanged.
 
 ---
 
+## Feeds stop taking turns: revisions, not observations, decide the merge (9 October 2026)
+
+**Measured.** The database grew about 550 MB a day, and `article_versions` was the largest table:
+454,040 versions between 1 and 9 October for about 15,000 distinct article texts. The merge ranked
+feeds of equal `description_priority` by observation time, so an article carried by several feeds
+changed winner every time another feed was polled. The winner's feed was hashed as
+`description_source`, and WSJ's per-feed `mod` link parameter and "Opinion | " title variants were
+too, so every rotation wrote a version. NYT, FT, Børsen and WSJ accounted for most of it.
+
+Ranking feeds by a fixed order instead stops the rotation, but it freezes a stale headline if the
+preferred feed drops an article that is then edited in another feed. Ranking by when each value
+first appeared keeps edits but rewards whichever feed was polled second. That would override the DR
+contract (section descriptions beat latest descriptions) and settle WSJ's two titles by polling order.
+Restricting the merge to feeds that still carry the article also works, but it turns an article
+leaving a feed into an event that rebuilds would have to reproduce.
+
+The chosen rule records, per feed and field, when the value last *changed within that feed*. A feed's
+first values only introduce the article. Across feeds the newest revision wins, and values no feed
+has revised follow priority and order. `description_source` names the feed whose description won and
+is no longer hashed, and WSJ `mod` leaves canonical URLs; the merge re-derives canonical URLs from raw
+URLs with the current rules, so history and new polls compare equal. Replaying all 2.96 million retained
+sightings gives 19,383 versions for 1–9 October instead of 454,040. The remaining cost is accepted:
+an already-edited value that first appears in a feed which never carried the old one is an
+introduction, and it loses to a stale value from a higher-ranked feed or an older revision. Priorities stopped being
+absolute too: an edit in the DR latest feed now beats an unrevised section description until the
+section feed changes. The analysis and the replay were checked independently with Codex.
+
+---
+
 ## Deferred, with gates
 
 **Edition revisions and correction notices.** Designed in the [roadmap](roadmap.md). The first release
