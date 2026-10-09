@@ -1,9 +1,9 @@
 ---
-name: news-gatherer
+name: news-ingest
 description: Operate and maintain the ingest/ RSS ingestion block of the copenhagen-daily repository through its whitelisted JSON CLI. Use for collecting feeds, checking health, exporting or backing up data, capturing fixtures, validating changes, or modifying the news_ingest codebase. Do not use for downstream LLM selection, summarization, or newspaper rendering.
 ---
 
-# News Gatherer
+# News Ingest
 
 `ingest/` (the `news-ingest` package, block 1 of the `copenhagen-daily` repository) is the deterministic acquisition block for a personal newspaper. It polls configured first-party RSS feeds, preserves every valid sighting and raw response, rebuilds an article projection, records publisher placement, and emits immutable JSONL bundles. It never calls an LLM or deduplicates across publishers.
 

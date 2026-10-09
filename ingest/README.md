@@ -52,7 +52,7 @@ restores each article's historical change time on purpose, so repairs it
 applies are not visible to a changed-since export.
 
 The project-local agent skill is
-[`skills/news-gatherer/SKILL.md`](../skills/news-gatherer/SKILL.md) at the repository root. Its short main
+[`skills/news-ingest/SKILL.md`](../skills/news-ingest/SKILL.md) at the repository root. Its short main
 file covers daily use; optional references hold operations, development, and
 data-contract details.
 
