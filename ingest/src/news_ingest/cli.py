@@ -188,7 +188,10 @@ ACTIONS: dict[str, dict[str, Any]] = {
         "description": "Read per-feed collection health; --deep also runs the SQLite integrity check.",
         "mutates": False,
         "network": False,
-        "params": [CONFIG_PARAM, {"name": "deep", "type": "boolean", "required": False, "default": False}],
+        "params": [
+            CONFIG_PARAM,
+            {"name": "deep", "type": "boolean", "required": False, "default": False},
+        ],
     },
     "list-actions": {
         "description": "Return the machine-readable action and parameter catalog.",
@@ -293,7 +296,11 @@ def build_parser() -> JSONArgumentParser:
 
     p = _command(sub, "health", "./gather_news.sh health")
     _add_config(p)
-    p.add_argument("--deep", action="store_true", help="also run PRAGMA integrity_check; minutes on a large database")
+    p.add_argument(
+        "--deep",
+        action="store_true",
+        help="also run PRAGMA integrity_check; minutes on a large database",
+    )
 
     p = _command(
         sub,

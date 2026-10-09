@@ -100,7 +100,8 @@ def _export_bundle(database, output, since=None, until=None, changed_since=None)
     con.execute("BEGIN")
     generated = format_utc(now_utc())
     rows = con.execute(
-        f"SELECT a.* FROM articles a WHERE {where} ORDER BY a.published_at,a.source,a.source_id", values
+        f"SELECT a.* FROM articles a WHERE {where} ORDER BY a.published_at,a.source,a.source_id",
+        values,
     ).fetchall()
     # Only the exported articles' appearances, selected in SQL: the appearances table holds every
     # sighting ever made and grows by the day, so reading it whole would make each export slower
