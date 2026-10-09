@@ -21,6 +21,15 @@ requirement is not summarized here.
   across feeds.
 - Raw payloads and sightings are facts. The `articles` table is a rebuildable
   projection.
+- Only `compact-history` may later fold facts older than `compact_after_days`,
+  and only losslessly for what it keeps: raw payloads move into verified
+  per-feed-day xz archives (every body still readable byte for byte), and an
+  unbroken run of identical sightings or appearances in consecutive successful
+  polls of a feed keeps its first and last rows, with `run_polls` on the first.
+  Removed appearances are restored exactly from the poll log on export; removed
+  sightings keep their content, feed, and poll, but not their parse-time
+  `first_seen_at`/`last_seen_at`/`last_checked_at`, which the merge never needs
+  from a run's interior.
 - Advance HTTP validators only in the same transaction as successfully parsed
   and committed data. A valid `304` records the check without touching them.
 - Isolate publisher/feed failures. The `collect` result carries only the
@@ -91,6 +100,8 @@ requirement is not summarized here.
   stays out of `content_hash`.
 - Content transitions `A -> B -> A` must create three ordered versions.
 - Never delete or rewrite original sightings during replay or rebuild.
+- A rebuild after compaction must reproduce the same projection, and an export
+  the same bytes, as before it.
 - Do not overwrite an existing export directory or backup file.
 - Do not copy a live SQLite main file without its WAL files; use the backup
   command instead.

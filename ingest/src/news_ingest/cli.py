@@ -103,6 +103,16 @@ DRY_RUN_PARAM = {
 }
 
 ACTIONS: dict[str, dict[str, Any]] = {
+    "compact-history": {
+        "description": "Archive old raw payloads and fold repeated old sightings and appearances.",
+        "mutates": True,
+        "network": False,
+        "params": [
+            CONFIG_PARAM,
+            DRY_RUN_PARAM,
+            {"name": "vacuum", "type": "boolean", "required": False, "default": False},
+        ],
+    },
     "deduplicate-sightings": {
         "description": "Measure or migrate lossless sighting-content deduplication.",
         "mutates": True,
@@ -279,6 +289,15 @@ def build_parser() -> JSONArgumentParser:
 
     _command(sub, "list-actions", "./gather_news.sh list-actions")
     _command(sub, "benchmark-collect", "./gather_news.sh benchmark-collect")
+
+    p = _command(sub, "compact-history", "./gather_news.sh compact-history --dry-run")
+    _add_config(p)
+    p.add_argument("--dry-run", action="store_true")
+    p.add_argument(
+        "--vacuum",
+        action="store_true",
+        help="then VACUUM to return freed pages; needs disk for a full copy",
+    )
 
     p = _command(sub, "deduplicate-sightings", "./gather_news.sh deduplicate-sightings --dry-run")
     _add_config(p)
@@ -518,6 +537,16 @@ def _dispatch(args: argparse.Namespace) -> dict[str, Any]:
     if action == "health":
         database = _require_database(config.database_path)
         return health(database, config.failure_alert_threshold, deep=args.deep)
+    if action == "compact-history":
+        from .replay import compact_history
+
+        return compact_history(
+            _require_database(config.database_path),
+            keep_days=config.compact_after_days,
+            lock_path=config.lock_path,
+            dry_run=args.dry_run,
+            vacuum=args.vacuum,
+        )
     if action == "deduplicate-sightings":
         from .db import deduplication_report
         from .replay import deduplicate_sightings

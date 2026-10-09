@@ -89,6 +89,8 @@ class AppConfig(StrictModel):
     homepage_poll_interval_seconds: int = Field(gt=0)
     export_default_lookback_hours: int = Field(gt=0)
     raw_payload_retention_days: int | None = Field(default=None, gt=0)
+    # compact-history leaves everything observed within this many days exactly as collected.
+    compact_after_days: int = Field(default=7, gt=0)
     max_response_bytes: int = Field(gt=0)
     max_public_body_characters: int = Field(gt=0)
     failure_alert_threshold: int = Field(gt=0)

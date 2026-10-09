@@ -83,8 +83,8 @@ with the feed's sightings, projection, versions, and validators.
 observations; it should approach `sightings_inserted` after initialization.
 `merge_state_rows_read` counts loaded per-feed cache rows, and
 `merge_state_bootstraps` counts identities initialized or recovered from history
-(including brand-new articles). `rebuild-articles` independently checks against
-full history and refreshes the selected cache on apply.
+(including brand-new articles). `rebuild-articles` replays full history, checks
+that the persisted cache reproduces it, and refreshes the selected cache on apply.
 
 ```sh
 ./gather_news.sh benchmark-collect
@@ -117,3 +117,18 @@ exact reconstruction of every sighting before committing the migration. It does
 not rebuild articles, alter versions, or run `VACUUM`. The dry-run reports JSON
 savings separately from database page allocation/free space. See
 [`docs/operations.md`](docs/operations.md) for migration and recovery details.
+
+## History compaction
+
+Polling records every item in every feed each time, so most of what accumulates
+repeats the previous poll. `compact-history`, run daily under launchd, archives
+raw payloads older than `compact_after_days` into verified xz archives and folds
+unbroken runs of identical old sightings and appearances to their first and last
+rows. Rebuilds and exports are unchanged by it:
+
+```sh
+./gather_news.sh compact-history --dry-run
+./gather_news.sh compact-history
+```
+
+See [`docs/operations.md`](docs/operations.md) ("History compaction").

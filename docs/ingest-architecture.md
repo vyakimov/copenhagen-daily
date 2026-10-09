@@ -69,7 +69,20 @@ URLs with the current rules when merging, so a URL-rule fix reaches history with
 description won; it is provenance, not content, and is excluded from `content_hash`.
 
 **Raw payloads are kept, compressed, indefinitely.** Each distinct response body is stored once, gzipped,
-keyed by its hash. `raw_payload_retention_days` is accepted by configuration and nothing prunes.
+keyed by its hash. `raw_payload_retention_days` is accepted by configuration and nothing prunes. After
+`compact_after_days`, `compact-history` packs a feed's bodies from one UTC day into a single xz archive
+with an index row per body. Successive bodies of one feed are nearly identical, so the archive is about
+forty times smaller than the separate gzips; every body is verified against its hash before its gzip row
+is removed, and remains readable byte for byte.
+
+**Repeated observations are folded into runs after a week.** A poll records every item in its feed
+whether or not anything changed, so most sightings and appearances repeat the previous poll exactly.
+For history older than `compact_after_days`, an unbroken run of identical observations of one article
+in consecutive successful polls of one feed keeps only its first and last rows; `run_polls` on the first
+counts the polls the run covers. The merge needs only those ends (a revision starts a run, and the
+latest observation ends one), so a rebuild reproduces the same projection. An appearance's observation
+time is its poll's end time, so exports restore the removed appearances from the poll log and are
+byte-identical. A removed sighting's parse-time timestamps are not kept; its content, feed and poll are.
 
 **Sighting content is deduplicated losslessly.** Migration 005 factors the three observation timestamps
 out of each sighting's normalised JSON and stores the remaining content once in `sighting_contents`, keyed

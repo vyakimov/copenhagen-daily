@@ -5,6 +5,7 @@ poll_interval_seconds: 300
 homepage_poll_interval_seconds: 900
 export_default_lookback_hours: 48
 raw_payload_retention_days: null
+compact_after_days: 7
 max_response_bytes: 5242880
 max_public_body_characters: 30000
 failure_alert_threshold: 3

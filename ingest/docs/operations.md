@@ -25,7 +25,8 @@ check fails. `export` waits up to 90 seconds for the collector's process lock
 and holds it while reading, so a poll in flight delays an export rather than
 racing it.
 
-Raw payloads and sightings consume disk; monitor `var/`. launchd writes the
+Raw payloads and sightings consume disk; monitor `var/`. `compact-history`
+(below) bounds their growth. launchd writes the
 collector's stdout and stderr to `~/Library/Logs/copenhagen-daily/`; rotate
 those files externally. Alert on `health` returning `degraded` and read its
 `reasons`. Copy SQLite backups or immutable exports, not the
@@ -52,12 +53,14 @@ history once and counts in `merge_state_bootstraps`.
 The live database uses the migration 005 layout: `sightings` rows are thin
 observation rows that reference shared `sighting_contents`, so a poll that sees
 unchanged items adds rows without repeating their content. The database was
-migrated with `deduplicate-sightings` and vacuumed on 30 September 2026. No
-compaction runs automatically; if free pages accumulate again, `VACUUM` is a
-separate maintenance step needing disk headroom for a full copy.
+migrated with `deduplicate-sightings` and vacuumed on 30 September 2026.
+`compact-history` runs daily (see "History compaction"); the pages it frees are
+reused by later writes, so the file stops growing until they are used up.
+`VACUUM` to return them to the filesystem is a separate step needing disk
+headroom for a full copy.
 
 Do not shorten raw payload retention to save space: compressed payloads are
-small and are the audit trail. Do not lengthen the poll interval to reduce
+small and are the audit trail; `compact-history` archives them instead. Do not lengthen the poll interval to reduce
 load; fifteen minutes is the intended cadence for ten-item feeds.
 
 ## Rebuilding article projections
@@ -151,10 +154,13 @@ change alone. Pause the collector, rebuild, then resume:
 launchctl bootout gui/$(id -u)/ai.copenhagen-daily.collect
 ./gather_news.sh backup --output var/pre-revision-merge-YYYY-MM-DD.sqlite3
 ./gather_news.sh rebuild-articles --dry-run   # every article reports changed
-./gather_news.sh rebuild-articles
+./gather_news.sh rebuild-articles             # also installs migration 006
 ./gather_news.sh rebuild-articles --dry-run   # expect rows_changed 0
-launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/ai.copenhagen-daily.collect.plist
+./gather_news.sh compact-history --vacuum     # first compaction, then VACUUM
+editorial/config/launchd/install.sh           # reloads every job, adds the compact job
 ```
+
+`install.sh` boots every job out and back in, collection included.
 
 On a copy of the 9 October database (2.98 million sightings, 28,782 articles),
 each rebuild took about 8.5 minutes and wrote no versions. The merge re-derives
@@ -214,3 +220,42 @@ active WAL database.
 No compaction is performed automatically. Freed pages are reusable inside SQLite;
 returning that space to the filesystem is a separate, post-validation maintenance
 step. Existing raw-payload retention is unchanged.
+
+## History compaction (migration 006)
+
+`compact-history` runs daily at 03:15 under launchd
+(`ai.copenhagen-daily.compact`) and touches only history older than
+`compact_after_days` (seven). It holds the process lock, so a collection that
+starts meanwhile fails fast with `lock_busy` and the next one catches up.
+
+```sh
+./gather_news.sh compact-history --dry-run   # counts only, read-only snapshot
+./gather_news.sh compact-history             # archive and fold
+./gather_news.sh compact-history --vacuum    # then return freed pages to the filesystem
+```
+
+- **Raw payloads.** Each feed's bodies from one UTC day become one xz archive in
+  `raw_payload_archives`, with a `raw_payload_members` row per body. Every body is
+  checked against its hash inside the archive before its gzip row is deleted, in
+  the same transaction. `db.read_raw_payload()` reads a body from either place, and
+  collection never stores an archived body again.
+- **Sightings and appearances.** An unbroken run of identical rows for one article
+  in consecutive successful polls of one feed keeps its first and last rows;
+  `run_polls` on the first counts the polls covered. For sightings "identical" means
+  the same `content_id`; for appearances, the same position, order and prominence.
+  A `304` or failed poll does not break a run, while a successful poll without the
+  article does. `read_sightings()` returns the kept rows, and `export` restores the
+  removed appearances from `feed_polls`, so bundles are byte-identical before and
+  after. A removed sighting's parse-time timestamps are not kept.
+
+Each feed (or feed-day) commits separately, so an interrupted run leaves the rest
+for the next one. SQLite reuses the freed pages, so the file stops growing until
+they are used up; `--vacuum` needs free disk for a full copy of the compacted file.
+
+On a copy of the 9 October database the first run took about 2.5 minutes. It
+archived 24,585 bodies (234.5 MB of gzips into 19.0 MB), removed 1,021,494
+sightings and 825,836 appearances, and left exports of three windows
+byte-identical and `rebuild-articles --dry-run` at zero changes. A compacted day
+keeps about 4% of its sightings and 20% of its appearances, and its payloads take
+about 2 MB, so steady-state growth is about 75 MB a day, mostly
+`sighting_contents`. `VACUUM` on that copy took under a minute.

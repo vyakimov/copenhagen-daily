@@ -8,7 +8,7 @@ import tempfile
 import time
 from pathlib import Path
 
-from .db import connect
+from .db import connect, expand_appearance_runs
 from .models import AppearanceRecord, ArticleSnapshot, PublisherProminence
 from .time import format_utc, now_utc
 
@@ -111,6 +111,9 @@ def _export_bundle(database, output, since=None, until=None, changed_since=None)
         f"WHERE {where} ORDER BY p.observed_at,p.source,p.source_id,p.surface_id,p.position",
         values,
     ).fetchall()
+    # compact-history keeps the ends of a repeated run; restore the polls between from the same
+    # snapshot, so a bundle is identical before and after compaction.
+    app = expand_appearance_runs(con, app)
     con.close()
     stage = Path(tempfile.mkdtemp(prefix=".staging-", dir=output.parent))
     files = {}

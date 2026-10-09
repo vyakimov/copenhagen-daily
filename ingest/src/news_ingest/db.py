@@ -175,6 +175,8 @@ def read_sightings(con, source=None, source_id=None, after_id=0, poll_id=None, i
                     {"sighting_id": value["sighting_id"]},
                 ) from exc
             value.pop("content_id")
+            # Run bookkeeping from compact-history, not part of the observation.
+            value.pop("run_polls", None)
         yield value
 
 
@@ -444,12 +446,227 @@ def rebuild_projection(con, priorities, source=None, dry_run=False):
         raise
 
 
+def has_column(con, table, column):
+    return any(row[1] == column for row in con.execute(f"PRAGMA table_info({table})"))
+
+
+def has_table(con, table):
+    query = "SELECT 1 FROM sqlite_master WHERE type='table' AND name=?"
+    return con.execute(query, (table,)).fetchone() is not None
+
+
+# Observations that compact-history may fold into one run must agree on every listed column.
+RUN_TABLES = {
+    "sightings": ("sighting_id", "feed_id", ("source", "source_id", "content_id")),
+    "appearances": (
+        "appearance_id",
+        "surface_id",
+        (
+            "source",
+            "source_id",
+            "position",
+            "publisher_order",
+            "is_super_article",
+            "surface",
+            "surface_section",
+            "snapshot_item_count",
+            "prominence_score",
+            "prominence_tier",
+            "prominence_evidence",
+        ),
+    ),
+}
+
+
+def stage_poll_ordinals(con):
+    """Number each feed's successful polls; a run covers consecutive numbers."""
+    con.execute("DROP TABLE IF EXISTS temp.poll_ordinals")
+    con.execute(
+        "CREATE TEMP TABLE poll_ordinals(poll_id INTEGER PRIMARY KEY, feed_id TEXT NOT NULL, "
+        "ord INTEGER NOT NULL, ended_at TEXT)"
+    )
+    con.execute(
+        "INSERT INTO temp.poll_ordinals SELECT poll_id,feed_id,"
+        "row_number() OVER (PARTITION BY feed_id ORDER BY poll_id),ended_at "
+        "FROM feed_polls WHERE status='success'"
+    )
+
+
+def stage_run_plan(con, table, cutoff):
+    """Stage, for rows observed before `cutoff`, which run starts to mark and which rows to drop.
+
+    A row covers its own poll, and a run start also covers the removed polls after it, so the
+    gaps-and-islands key subtracts the polls already covered from the row's ordinal. A row whose
+    observation time differs from its poll's end time cannot be restored from the poll log, so it
+    never joins a run."""
+    key, feed, columns = RUN_TABLES[table]
+    run_polls = "t.run_polls" if has_column(con, table, "run_polls") else "NULL"
+    group = ",".join(f"t.{column}" for column in columns)
+    part = "feed_id," + ",".join(columns) + ",unmatched"
+    con.execute(f"DROP TABLE IF EXISTS temp.{table}_runs")
+    con.execute(
+        f"CREATE TEMP TABLE {table}_runs AS "
+        f"WITH observed AS (SELECT t.{key} AS row_id,t.{feed} AS feed_id,o.ord,{run_polls} AS "
+        f"run_polls,CASE WHEN t.observed_at=o.ended_at THEN 0 ELSE t.{key} END AS unmatched,{group} "
+        f"FROM {table} t JOIN temp.poll_ordinals o ON o.poll_id=t.poll_id AND o.feed_id=t.{feed} "
+        "WHERE t.observed_at<?),"
+        f"islands AS (SELECT *,ord-coalesce(sum(coalesce(run_polls-1,1)) OVER (PARTITION BY {part} "
+        "ORDER BY ord ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING),0) AS island FROM observed),"
+        f"runs AS (SELECT row_id,feed_id,ord,min(ord) OVER r AS first_ord,max(ord) OVER r AS "
+        f"last_ord,count(*) OVER r AS members FROM islands WINDOW r AS (PARTITION BY {part},island)) "
+        "SELECT row_id,feed_id,CASE WHEN ord=first_ord THEN last_ord-first_ord+1 END AS run_polls,"
+        "ord NOT IN (first_ord,last_ord) AS remove FROM runs WHERE members>2",
+        (cutoff,),
+    )
+    # apply_run_plan looks rows up by id and by feed; without these it scans the plan per row.
+    con.execute(f"CREATE UNIQUE INDEX temp.{table}_runs_row ON {table}_runs(row_id)")
+    con.execute(f"CREATE INDEX temp.{table}_runs_feed ON {table}_runs(feed_id,remove)")
+    return con.execute(
+        f"SELECT count(*) FILTER (WHERE run_polls IS NOT NULL),count(*) FILTER (WHERE remove) "
+        f"FROM temp.{table}_runs"
+    ).fetchone()
+
+
+def apply_run_plan(con, table):
+    """Mark run starts and drop interior rows, one feed per transaction."""
+    key, _, _ = RUN_TABLES[table]
+    feeds = [row[0] for row in con.execute(f"SELECT DISTINCT feed_id FROM temp.{table}_runs")]
+    for feed_id in sorted(feeds):
+        with con:
+            con.execute(
+                f"UPDATE {table} SET run_polls=(SELECT r.run_polls FROM temp.{table}_runs r "
+                f"WHERE r.row_id={table}.{key}) WHERE {key} IN (SELECT row_id FROM "
+                f"temp.{table}_runs WHERE feed_id=? AND run_polls IS NOT NULL)",
+                (feed_id,),
+            )
+            con.execute(
+                f"DELETE FROM {table} WHERE {key} IN "
+                f"(SELECT row_id FROM temp.{table}_runs WHERE feed_id=? AND remove)",
+                (feed_id,),
+            )
+
+
+def expand_appearance_runs(con, rows):
+    """Restore the appearances a compacted run stands for, in export order."""
+    expanded = []
+    for row in rows:
+        row = dict(row)
+        expanded.append(row)
+        count = row.get("run_polls")
+        if not count:
+            continue
+        polls = con.execute(
+            "SELECT poll_id,ended_at FROM feed_polls WHERE feed_id=? AND status='success' "
+            "AND poll_id>? ORDER BY poll_id LIMIT ?",
+            (row["surface_id"], row["poll_id"], count - 1),
+        ).fetchall()
+        if len(polls) != count - 1:
+            raise ValueError("compacted appearance run extends beyond the poll log")
+        # The last of these polls is the run's retained end row; the others were removed.
+        for poll_id, ended_at in polls[:-1]:
+            expanded.append({**row, "poll_id": poll_id, "observed_at": ended_at, "run_polls": None})
+    expanded.sort(
+        key=lambda r: (
+            r["observed_at"],
+            r["source"],
+            r["source_id"],
+            r["surface_id"],
+            r["position"],
+        )
+    )
+    return expanded
+
+
+def plan_payload_archives(con, before_day):
+    """Feed-days of raw payloads first stored before `before_day` (YYYY-MM-DD)."""
+    return con.execute(
+        "SELECT p.feed_id,substr(r.first_observed_at,1,10) AS day,count(*) AS bodies,"
+        "sum(length(r.payload)) AS gzip_bytes FROM raw_payloads r "
+        "JOIN feed_polls p ON p.poll_id=r.first_poll_id WHERE r.first_observed_at<? "
+        "GROUP BY p.feed_id,day ORDER BY p.feed_id,day",
+        (before_day,),
+    ).fetchall()
+
+
+def archive_payload_day(con, feed_id, day):
+    """Move one feed-day of raw payloads into a verified xz archive, in one transaction."""
+    from datetime import date, timedelta
+
+    from .payload_archive import pack
+
+    following = (date.fromisoformat(day) + timedelta(days=1)).isoformat()
+    with con:
+        rows = con.execute(
+            "SELECT r.content_hash,r.payload,r.uncompressed_bytes,r.first_poll_id,"
+            "r.first_observed_at FROM raw_payloads r JOIN feed_polls p ON p.poll_id=r.first_poll_id "
+            "WHERE p.feed_id=? AND r.first_observed_at>=? AND r.first_observed_at<? "
+            "ORDER BY r.first_poll_id,r.content_hash",
+            (feed_id, day, following),
+        ).fetchall()
+        if not rows:
+            return 0
+        bodies = []
+        for row in rows:
+            body = gzip.decompress(row["payload"])
+            if len(body) != row["uncompressed_bytes"]:
+                raise ValueError("raw payload length does not match its record")
+            bodies.append((row["content_hash"], body))
+        archive, members = pack(bodies)
+        archive_id = con.execute(
+            "INSERT INTO raw_payload_archives(feed_id,day,compression,payload,member_count,"
+            "uncompressed_bytes,created_at) VALUES(?,?,?,?,?,?,?)",
+            (
+                feed_id,
+                day,
+                "xz",
+                archive,
+                len(members),
+                sum(length for _, _, length in members),
+                format_utc(now_utc()),
+            ),
+        ).lastrowid
+        for row, (content_hash, offset, length) in zip(rows, members, strict=True):
+            con.execute(
+                "INSERT INTO raw_payload_members VALUES(?,?,?,?,?,?)",
+                (
+                    content_hash,
+                    archive_id,
+                    offset,
+                    length,
+                    row["first_poll_id"],
+                    row["first_observed_at"],
+                ),
+            )
+            con.execute("DELETE FROM raw_payloads WHERE content_hash=?", (content_hash,))
+        return len(archive)
+
+
+def read_raw_payload(con, content_hash):
+    """Return a stored feed body, whether it is still gzipped or already archived."""
+    from .payload_archive import extract
+
+    row = con.execute(
+        "SELECT payload FROM raw_payloads WHERE content_hash=?", (content_hash,)
+    ).fetchone()
+    if row is not None:
+        return gzip.decompress(row[0])
+    if not has_table(con, "raw_payload_members"):
+        return None
+    row = con.execute(
+        "SELECT a.payload,m.archive_offset,m.uncompressed_bytes FROM raw_payload_members m "
+        "JOIN raw_payload_archives a USING(archive_id) WHERE m.content_hash=?",
+        (content_hash,),
+    ).fetchone()
+    return None if row is None else extract(row[0], row[1], row[2], content_hash)
+
+
 class Database:
     def __init__(self, path):
         self.path = path
         self.con = connect(path)
         migrate(self.con)
         self.compact_sightings = has_sighting_content(self.con)
+        self.archived_payloads = has_table(self.con, "raw_payload_members")
 
     def close(self):
         self.con.close()
@@ -621,9 +838,16 @@ class Database:
         body = result.body
         digest = "sha256:" + __import__("hashlib").sha256(body).hexdigest()
         with self.con:
+            # A body stored once is not stored again, whether it is still gzipped or archived.
             self.con.execute(
-                "INSERT OR IGNORE INTO raw_payloads VALUES(?,?,?,?,?,?)",
-                (digest, "gzip", gzip.compress(body), len(body), poll, now),
+                "INSERT OR IGNORE INTO raw_payloads SELECT ?,?,?,?,?,?"
+                + (
+                    " WHERE NOT EXISTS (SELECT 1 FROM raw_payload_members WHERE content_hash=?)"
+                    if self.archived_payloads
+                    else ""
+                ),
+                (digest, "gzip", gzip.compress(body), len(body), poll, now)
+                + ((digest,) if self.archived_payloads else ()),
             )
             seen_in_snapshot: set[str] = set()
             for candidate in parsed.entries:

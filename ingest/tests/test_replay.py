@@ -430,7 +430,7 @@ def test_upgrade_initializes_cache_without_rewriting_history(history, capsys, mo
     db.con.commit()
     # Preview on an older schema must not apply migrations or populate persistent state.
     assert invoke(capsys, config_file, "--dry-run")[0] == 0
-    assert db.con.execute("SELECT count(*) FROM schema_migrations").fetchone()[0] == 4
+    assert db.con.execute("SELECT count(*) FROM schema_migrations").fetchone()[0] == 5
     upgraded = Database(db.path)
     try:
         assert {table: dump(upgraded, table) for table in tables} == before
@@ -470,9 +470,15 @@ def legacy_history(history):
         "INSERT INTO sightings VALUES(?,?,?,?,?,?,?,?,?,?,?)",
         [tuple(row[column] for column in columns) for row in rows],
     )
-    db.con.execute("DELETE FROM schema_migrations WHERE version=5")
+    # A database from before migration 005 never received 006 either.
+    db.con.execute("DROP TABLE raw_payload_members")
+    db.con.execute("DROP TABLE raw_payload_archives")
+    db.con.execute("DROP INDEX raw_payloads_observed_idx")
+    db.con.execute("ALTER TABLE appearances DROP COLUMN run_polls")
+    db.con.execute("DELETE FROM schema_migrations WHERE version IN (5,6)")
     db.con.commit()
     db.compact_sightings = False
+    db.archived_payloads = False
     return db, config_file, config
 
 
@@ -495,7 +501,12 @@ def test_content_migration_roundtrip_is_atomic_and_idempotent(legacy_history, mo
     db.con.commit()
     migrate(db.con, allow_content_migration=True)
     assert list(read_sightings(db.con, include_raw=True)) == before
-    assert {table: dump(db, table) for table in tables} == facts
+    after = {table: dump(db, table) for table in tables}
+    # Migration 006 follows 005 and only adds the empty run_polls column to appearances.
+    width = len(facts["appearances"][0])
+    assert all(row[width:] == (None,) for row in after["appearances"])
+    after["appearances"] = [row[:width] for row in after["appearances"]]
+    assert after == facts
     assert db.con.execute("SELECT count(*) FROM sighting_contents").fetchone()[0] < len(before)
     assert (
         db.con.execute("SELECT seq FROM sqlite_sequence WHERE name='sightings'").fetchone()[0]

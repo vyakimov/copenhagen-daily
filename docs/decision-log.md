@@ -588,6 +588,35 @@ section feed changes. The analysis and the replay were checked independently wit
 
 ---
 
+## Old history is folded, not deleted (9 October 2026)
+
+**Measured.** Even with the merge fixed, the database grew about 320 MB a day, about 115 GB a year
+against 91 GB of free disk. Polling about 120 feeds every quarter hour records every item every time,
+so on 7 October 96.4% of sightings repeated the previous sighting of the same article in the same
+feed, and 88% of appearances repeated the previous position. 77% of successful polls returned a new
+body even when no item had changed, and each body was gzipped on its own.
+
+Dropping history after N days would have been simplest and is enough for an edition that reads one
+or two days. It was rejected because it gives up rebuilding the projection and auditing what a
+publisher showed, which is what block 1 was built for. Instead `compact-history`, run daily, touches
+only history older than `compact_after_days` (seven):
+
+- Raw payloads move into one xz archive per feed and UTC day, every body verified against its hash
+  before its gzip row goes. One day's 8,822 bodies took 79.5 MB as separate gzips and 2.0 MB archived.
+- An unbroken run of identical sightings, or identical appearances, of one article in consecutive
+  successful polls of one feed keeps its first and last rows. The merge needs only those ends, so
+  rebuilds are unchanged, and an appearance's time is its poll's end time, so exports restore the
+  rest exactly. The cost is the parse-time timestamps of the removed sightings, which nothing reads.
+
+This changes the rule that every observation is a row: every observation is now either a row or
+provably implied by a run and the poll log. On a copy of the 9 October database the first run took
+about 2.5 minutes, kept 4% of each compacted day's sightings and 20% of its appearances, verified all
+24,585 archived bodies, and left exports byte-identical and rebuilds unchanged. Growth falls to about
+75 MB a day, most of it `sighting_contents`, which keeps raw item JSON the payloads already hold. That
+is left for later, because it backs the exact reconstruction migration 005 verified.
+
+---
+
 ## Deferred, with gates
 
 **Edition revisions and correction notices.** Designed in the [roadmap](roadmap.md). The first release
