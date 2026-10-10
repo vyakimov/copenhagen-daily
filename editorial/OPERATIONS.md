@@ -8,7 +8,7 @@ with logs under `~/Library/Logs/copenhagen-daily/`:
 | Job | When | Command |
 |---|---|---|
 | `ai.copenhagen-daily.collect` | every fifteen minutes | block 1 `collect --once` |
-| `ai.copenhagen-daily.compact` | 03:15 local | block 1 `compact-history`: archives raw payloads and folds repeated sightings and appearances older than `compact_after_days`; collection skips while it holds the lock |
+| `ai.copenhagen-daily.compact` | 03:15, 03:45 and 04:15 local | block 1 `compact-history`: archives raw payloads and folds repeated sightings and appearances older than `compact_after_days`. Whichever of it and collection starts second fails fast with `lock_busy`; the later firings cover a collision and are no-ops once a run has succeeded |
 | `ai.copenhagen-daily.edition` | 05:30 local | `edit_news.sh run` |
 | `ai.copenhagen-daily.verify` | 06:00 local | `edit_news.sh verify-live --fix --notify`: checks the live site against the newsroom's copy, delivers again if that is the remedy, and posts the verdict either way |
 | `ai.copenhagen-daily.retry` | 07:30 and 10:30 local | `edit_news.sh run --retry`: skips when today's run already ended as published, dry run, or skipped; otherwise resumes the failed run from its first missing file. The second firing covers an outage that outlasts the first |

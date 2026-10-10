@@ -26,6 +26,8 @@ requirement is not summarized here.
   per-feed-day xz archives (every body still readable byte for byte), and an
   unbroken run of identical sightings or appearances in consecutive successful
   polls of a feed keeps its first and last rows, with `run_polls` on the first.
+  A sighting folds only if its parse-time timestamps are later than every
+  earlier sighting of that article in that feed.
   Removed appearances are restored exactly from the poll log on export; removed
   sightings keep their content, feed, and poll, but not their parse-time
   `first_seen_at`/`last_seen_at`/`last_checked_at`, which the merge never needs
@@ -102,6 +104,10 @@ requirement is not summarized here.
 - Never delete or rewrite original sightings during replay or rebuild.
 - A rebuild after compaction must reproduce the same projection, and an export
   the same bytes, as before it.
+- Compacted runs are expanded from the feed's successful polls in `poll_id`
+  order, so successful polls are append-only: never mark an old poll successful
+  later, and never insert one with a lower `poll_id` (a future payload replay
+  must record its polls as new ones).
 - Do not overwrite an existing export directory or backup file.
 - Do not copy a live SQLite main file without its WAL files; use the backup
   command instead.

@@ -43,7 +43,7 @@ def make_config(tmp_path, config_path, name):
 
 
 def poll(db, config, monkeypatch, feed_id, at, items, body=None, status=200):
-    """Commit one poll of `feed_id` at `at`; items are (source_id, title) in feed order."""
+    """Commit one poll of `feed_id` at `at`; items are (source_id, title[, parse time])."""
     feed = next(f for f in config.sources["dr"].feeds if f.id == feed_id)
     monkeypatch.setattr("news_ingest.db.now_utc", lambda: at)
     run = db.start_run("dr")
@@ -55,7 +55,8 @@ def poll(db, config, monkeypatch, feed_id, at, items, body=None, status=200):
         db.fail_poll(poll_id, RuntimeError("upstream"), feed_id, "dr", str(feed.url))
         return
     entries = []
-    for position, (source_id, title) in enumerate(items, start=1):
+    for position, (source_id, title, *parsed_at) in enumerate(items, start=1):
+        seen = parsed_at[0] if parsed_at else at
         article = ArticleSnapshot(
             source="dr",
             source_id=source_id,
@@ -66,9 +67,9 @@ def poll(db, config, monkeypatch, feed_id, at, items, body=None, status=200):
             description_source=feed_id,
             published_at=START,
             timestamp_original=START.isoformat(),
-            first_seen_at=at,
-            last_seen_at=at,
-            last_checked_at=at,
+            first_seen_at=seen,
+            last_seen_at=seen,
+            last_checked_at=seen,
         )
         entries.append(SightingCandidate(article, feed_id, position, None, {"title": title}))
     parsed = ParsedFeed(entries, [], len(entries), len(entries), [], None)
@@ -236,3 +237,38 @@ def test_compaction_respects_the_process_lock(twins, capsys):
         assert envelope["error"]["type"] == "lock_busy"
         assert run(capsys, config_file, "compact-history", "--dry-run")[0] == 0
     assert count(config.database_path, "sightings") == before
+
+
+def test_sightings_out_of_parse_time_order_are_kept(tmp_path, config_path, capsys, monkeypatch):
+    """The merge orders a feed's sightings by parse time, so compaction may only fold sightings
+    that arrived in that order; otherwise a removed interior could have been the winner."""
+    config_file, config = make_config(tmp_path, config_path, "compacted")
+    db = Database(config.database_path)
+    clock = START.replace(hour=10)
+    stories = {
+        # A clock correction: the interior A holds the latest time, and B is older than it.
+        "skewed": [("A", 0), ("A", 30), ("A", 15), ("B", 20)],
+        # A is first parsed earlier than X, so it only starts winning at its second sighting.
+        "late": [("X", 5), ("A", 0), ("A", 10), ("A", 20), ("A", 30)],
+    }
+    for hour in range(6):
+        items = [("steady", "Steady")]
+        for source_id, story in stories.items():
+            if hour < len(story):
+                title, minute = story[hour]
+                items.append((source_id, title, clock + timedelta(minutes=minute)))
+        poll(db, config, monkeypatch, "dr.latest", START + timedelta(hours=hour), items)
+    db.close()
+    twin_file, twin = make_config(tmp_path, config_path, "original")
+    backup(config.database_path, twin.database_path)
+    monkeypatch.setattr("news_ingest.time.now_utc", lambda: START + timedelta(days=30))
+
+    code, applied = run(capsys, config_file, "compact-history")
+    assert code == 0
+    rebuilt = run(capsys, config_file, "rebuild-articles", "--dry-run")[1]["result"]
+    assert rebuilt["rows_changed"] == 0
+    assert export(capsys, config_file, tmp_path, "compacted") == export(
+        capsys, twin_file, tmp_path, "original"
+    )
+    # Only "steady" (every interior) and the in-order tail of "late" are folded.
+    assert applied["result"]["sightings"]["rows_removed"] == 4 + 1

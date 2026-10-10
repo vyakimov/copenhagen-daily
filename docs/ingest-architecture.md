@@ -80,7 +80,9 @@ whether or not anything changed, so most sightings and appearances repeat the pr
 For history older than `compact_after_days`, an unbroken run of identical observations of one article
 in consecutive successful polls of one feed keeps only its first and last rows; `run_polls` on the first
 counts the polls the run covers. The merge needs only those ends (a revision starts a run, and the
-latest observation ends one), so a rebuild reproduces the same projection. An appearance's observation
+latest observation ends one), so a rebuild reproduces the same projection. That holds because a
+sighting folds only when its parse-time timestamps are later than every earlier sighting of that
+article in that feed, the order the merge uses; after a clock correction the sightings are kept. An appearance's observation
 time is its poll's end time, so exports restore the removed appearances from the poll log and are
 byte-identical. A removed sighting's parse-time timestamps are not kept; its content, feed and poll are.
 

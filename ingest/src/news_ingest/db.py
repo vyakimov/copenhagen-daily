@@ -498,20 +498,41 @@ def stage_run_plan(con, table, cutoff):
     A row covers its own poll, and a run start also covers the removed polls after it, so the
     gaps-and-islands key subtracts the polls already covered from the row's ordinal. A row whose
     observation time differs from its poll's end time cannot be restored from the poll log, so it
-    never joins a run."""
+    never joins a run.
+
+    The merge picks a feed's winner by parse-time timestamps, not poll order, so a sighting may
+    join a run only if its timestamps are later than every earlier sighting of that article in
+    that feed. Then each sighting of the run wins as it arrives and the interior can never matter
+    again; after a clock correction the affected sightings are simply kept. julianday() reads
+    milliseconds, so near-ties count as unordered."""
     key, feed, columns = RUN_TABLES[table]
     run_polls = "t.run_polls" if has_column(con, table, "run_polls") else "NULL"
     group = ",".join(f"t.{column}" for column in columns)
     part = "feed_id," + ",".join(columns) + ",unmatched"
+    if table == "sightings":
+        stamps = ",".join(
+            f"julianday(json_extract(json_extract(t.observation_json,'$[{i}]'),'$'))"
+            for i in range(3)
+        )
+        times = f"min({stamps}) AS lo,max({stamps}) AS hi"
+        ordered = "(prev_hi IS NULL OR lo>prev_hi+1e-8)"
+    else:
+        # Exports restore an appearance's time from its poll, so no parse time is involved.
+        times = "NULL AS lo,NULL AS hi"
+        ordered = "1"
     con.execute(f"DROP TABLE IF EXISTS temp.{table}_runs")
     con.execute(
         f"CREATE TEMP TABLE {table}_runs AS "
         f"WITH observed AS (SELECT t.{key} AS row_id,t.{feed} AS feed_id,o.ord,{run_polls} AS "
-        f"run_polls,CASE WHEN t.observed_at=o.ended_at THEN 0 ELSE t.{key} END AS unmatched,{group} "
+        f"run_polls,t.observed_at=o.ended_at AS restorable,{times},{group} "
         f"FROM {table} t JOIN temp.poll_ordinals o ON o.poll_id=t.poll_id AND o.feed_id=t.{feed} "
         "WHERE t.observed_at<?),"
+        "previous AS (SELECT *,max(hi) OVER (PARTITION BY feed_id,source,source_id ORDER BY ord "
+        "ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING) AS prev_hi FROM observed),"
+        f"checked AS (SELECT *,CASE WHEN restorable AND {ordered} THEN 0 ELSE row_id END "
+        "AS unmatched FROM previous),"
         f"islands AS (SELECT *,ord-coalesce(sum(coalesce(run_polls-1,1)) OVER (PARTITION BY {part} "
-        "ORDER BY ord ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING),0) AS island FROM observed),"
+        "ORDER BY ord ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING),0) AS island FROM checked),"
         f"runs AS (SELECT row_id,feed_id,ord,min(ord) OVER r AS first_ord,max(ord) OVER r AS "
         f"last_ord,count(*) OVER r AS members FROM islands WINDOW r AS (PARTITION BY {part},island)) "
         "SELECT row_id,feed_id,CASE WHEN ord=first_ord THEN last_ord-first_ord+1 END AS run_polls,"

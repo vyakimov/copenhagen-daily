@@ -217,16 +217,18 @@ new layout. For rollback, stop database writers and restore the verified pre-mig
 backup using the normal SQLite recovery procedure; do not copy a main file over an
 active WAL database.
 
-No compaction is performed automatically. Freed pages are reusable inside SQLite;
+The migration does not run `VACUUM`. Freed pages are reusable inside SQLite;
 returning that space to the filesystem is a separate, post-validation maintenance
-step. Existing raw-payload retention is unchanged.
+step (`compact-history --vacuum`, see "History compaction").
 
 ## History compaction (migration 006)
 
-`compact-history` runs daily at 03:15 under launchd
-(`ai.copenhagen-daily.compact`) and touches only history older than
-`compact_after_days` (seven). It holds the process lock, so a collection that
-starts meanwhile fails fast with `lock_busy` and the next one catches up.
+`compact-history` runs daily under launchd (`ai.copenhagen-daily.compact`, at
+03:15 with retries at 03:45 and 04:15) and touches only history older than
+`compact_after_days` (seven). It and collection share the process lock:
+whichever starts second fails fast with `lock_busy`. A missed collection is
+caught up by the next one, a missed compaction by the next firing; once one
+firing has succeeded the others find nothing to do.
 
 ```sh
 ./gather_news.sh compact-history --dry-run   # counts only, read-only snapshot
@@ -244,7 +246,9 @@ starts meanwhile fails fast with `lock_busy` and the next one catches up.
   `run_polls` on the first counts the polls covered. For sightings "identical" means
   the same `content_id`; for appearances, the same position, order and prominence.
   A `304` or failed poll does not break a run, while a successful poll without the
-  article does. `read_sightings()` returns the kept rows, and `export` restores the
+  article does. A sighting also joins a run only if its parse-time timestamps are
+  later than every earlier sighting of that article in that feed, because the merge
+  orders by those timestamps; after a clock correction such sightings are kept. `read_sightings()` returns the kept rows, and `export` restores the
   removed appearances from `feed_polls`, so bundles are byte-identical before and
   after. A removed sighting's parse-time timestamps are not kept.
 
