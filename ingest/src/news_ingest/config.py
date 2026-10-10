@@ -94,6 +94,8 @@ class AppConfig(StrictModel):
     max_response_bytes: int = Field(gt=0)
     max_public_body_characters: int = Field(gt=0)
     failure_alert_threshold: int = Field(gt=0)
+    # `health` reports the database as degraded when its seven-day growth exceeds this.
+    database_growth_alert_mb_per_day: int = Field(default=250, gt=0)
     item_count_drop_warning_percent: int = Field(ge=0, le=100)
     http: HttpConfig
     sources: dict[str, SourceConfig]

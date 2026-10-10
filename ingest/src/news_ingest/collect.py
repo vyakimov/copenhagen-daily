@@ -135,7 +135,10 @@ async def collect_once(config: AppConfig, source: str | None = None) -> dict:
                 },
                 **counts,
             }
-            db.finish_run(run, status, result, ["partial_failures"] if failures else [])
+            # The run row also records how much of the database is in use, so `health` can report
+            # growth; the command's own result is unchanged.
+            summary = {**result, "database_used_bytes": db.used_bytes()}
+            db.finish_run(run, status, summary, ["partial_failures"] if failures else [])
             return {"status": status, **result}
         finally:
             db.close()

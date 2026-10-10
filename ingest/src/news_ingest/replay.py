@@ -138,3 +138,24 @@ def compact_history(database, *, keep_days, lock_path, dry_run=False, vacuum=Fal
             return result
         finally:
             con.close()
+
+
+def collapse_versions(database, *, lock_path, source=None, dry_run=False):
+    """Remove article versions that repeat their predecessor under the current content rule."""
+    from contextlib import nullcontext
+
+    from .db import remove_staged_versions, stage_version_collapse
+
+    with nullcontext() if dry_run else process_lock(lock_path):
+        con = connect(database, readonly=dry_run)
+        try:
+            if dry_run:
+                con.execute("BEGIN")
+            result = {"dry_run": dry_run, **stage_version_collapse(con, source)}
+            if dry_run:
+                con.rollback()
+                return result
+            remove_staged_versions(con)
+            return result
+        finally:
+            con.close()

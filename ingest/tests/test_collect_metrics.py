@@ -67,6 +67,9 @@ def test_collect_cli_metrics_offline(mode, tmp_path, config_path, monkeypatch, c
             "SELECT summary_json FROM fetch_runs ORDER BY rowid DESC LIMIT 1"
         ).fetchone()[0]
         assert json.loads(summary)["timings_seconds"] == result["timings_seconds"]
+        # The run row records the database's used bytes for `health`; the result does not.
+        assert json.loads(summary)["database_used_bytes"] > 0
+        assert "database_used_bytes" not in result
         assert db.con.execute("PRAGMA integrity_check").fetchone()[0] == "ok"
     finally:
         db.close()

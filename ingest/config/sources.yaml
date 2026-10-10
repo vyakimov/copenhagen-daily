@@ -9,6 +9,7 @@ compact_after_days: 7
 max_response_bytes: 5242880
 max_public_body_characters: 30000
 failure_alert_threshold: 3
+database_growth_alert_mb_per_day: 250
 item_count_drop_warning_percent: 70
 http:
   timeout_seconds: 15

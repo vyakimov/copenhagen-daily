@@ -103,6 +103,12 @@ DRY_RUN_PARAM = {
 }
 
 ACTIONS: dict[str, dict[str, Any]] = {
+    "collapse-versions": {
+        "description": "Remove article versions that repeat the one before under the content rule.",
+        "mutates": True,
+        "network": False,
+        "params": [CONFIG_PARAM, SOURCE_PARAM, DRY_RUN_PARAM],
+    },
     "compact-history": {
         "description": "Archive old raw payloads and fold repeated old sightings and appearances.",
         "mutates": True,
@@ -289,6 +295,11 @@ def build_parser() -> JSONArgumentParser:
 
     _command(sub, "list-actions", "./gather_news.sh list-actions")
     _command(sub, "benchmark-collect", "./gather_news.sh benchmark-collect")
+
+    p = _command(sub, "collapse-versions", "./gather_news.sh collapse-versions --dry-run")
+    _add_config(p)
+    _add_source(p)
+    p.add_argument("--dry-run", action="store_true")
 
     p = _command(sub, "compact-history", "./gather_news.sh compact-history --dry-run")
     _add_config(p)
@@ -502,7 +513,9 @@ def _dispatch(args: argparse.Namespace) -> dict[str, Any]:
 
     config = load_config(args.config)
     source = getattr(args, "source", None)
-    _validate_source(config, source, include_disabled=action == "rebuild-articles")
+    _validate_source(
+        config, source, include_disabled=action in {"rebuild-articles", "collapse-versions"}
+    )
 
     if action == "validate-config":
         return {
@@ -536,7 +549,21 @@ def _dispatch(args: argparse.Namespace) -> dict[str, Any]:
         return result
     if action == "health":
         database = _require_database(config.database_path)
-        return health(database, config.failure_alert_threshold, deep=args.deep)
+        return health(
+            database,
+            config.failure_alert_threshold,
+            deep=args.deep,
+            growth_alert_mb_per_day=config.database_growth_alert_mb_per_day,
+        )
+    if action == "collapse-versions":
+        from .replay import collapse_versions
+
+        return collapse_versions(
+            _require_database(config.database_path),
+            lock_path=config.lock_path,
+            source=source,
+            dry_run=args.dry_run,
+        )
     if action == "compact-history":
         from .replay import compact_history
 

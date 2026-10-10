@@ -128,6 +128,24 @@ def _check_feeds(health: dict[str, Any]) -> dict[str, Any]:
     return {"checked": len(feeds), "failing": failing}
 
 
+def _check_storage(health: dict[str, Any]) -> dict[str, Any]:
+    """Block 1's database size, growth and free disk, and the storage alerts its health raised."""
+    alerts = [r for r in health.get("reasons") or [] if r.startswith(("database_growth", "disk_headroom"))]
+    return {"database": health.get("database") or {}, "alerts": alerts}
+
+
+def _storage_line(storage: dict[str, Any]) -> str | None:
+    database = storage.get("database") or {}
+    if not database:
+        return None
+    growth = database.get("growth_bytes_per_day")
+    change = f"{growth / 2**20:+.0f} MB a day over {database['growth_window_days']:g} days" if growth is not None else "growth not measured yet"
+    facts = f"database {database['file_bytes'] / 2**30:.1f} GB, {change}, {database['disk_free_bytes'] / 2**30:.0f} GB free on disk"
+    if storage.get("alerts"):
+        return f"storage NEEDS ATTENTION ({', '.join(storage['alerts'])}): {facts}. See ingest/docs/operations.md, \"History compaction\"."
+    return f"storage: {facts}"
+
+
 def claude_models(config: dict[str, Any]) -> list[str]:
     """The models tomorrow's Claude sessions will ask for, each once; the cheap probe model when none is configured."""
     models = [m for m in (config.get("editor_model"), config.get("writer_model"), config.get("checker_model") if config.get("checker", "claude") == "claude" else None) if m]
@@ -153,10 +171,13 @@ def preflight(config: dict[str, Any], *, claude_auth: ClaudeAuth | None = None, 
     else:
         state = "ready"
     try:
-        feeds = _check_feeds(health() if callable(health) else health)
+        report = health() if callable(health) else health
+        feeds = _check_feeds(report)
+        storage = _check_storage(report)
     except Exception as exc:  # noqa: BLE001 -- block 1 being unreachable is itself the finding.
         feeds = {"checked": 0, "failing": [], "error": f"{type(exc).__name__}: {exc}"[:200]}
-    return {"state": state, "checker": checker, **tools, "feeds": feeds}
+        storage = {"database": {}, "alerts": []}
+    return {"state": state, "checker": checker, **tools, "feeds": feeds, "storage": storage}
 
 
 def summary(report: dict[str, Any]) -> tuple[str, str]:
@@ -181,6 +202,9 @@ def summary(report: dict[str, Any]) -> tuple[str, str]:
         lines.append(f"feeds FAILING, {len(feeds['failing'])} of {feeds['checked']}: {named}. Check each feed's URL in ingest/config/sources.yaml.")
     else:
         lines.append(f"feeds: {feeds.get('checked', 0)} checked, none failing")
+    storage = report.get("storage") or {}
+    if (line := _storage_line(storage)) is not None:
+        lines.append(line)
     if report["state"] == "ready":
         subject = "Copenhagen Daily: tomorrow's logins are ready"
         tail = "Every session runs on its first choice."
@@ -192,4 +216,6 @@ def summary(report: dict[str, Any]) -> tuple[str, str]:
         tail = "Without a working login the 05:30 run fails at the desk. Renew the login or add a key tonight (editorial/OPERATIONS.md, \"The desk's own login\")."
     if feeds.get("failing"):
         subject += f"; {len(feeds['failing'])} feeds failing"
+    if storage.get("alerts"):
+        subject += "; storage needs attention"
     return subject, "\n".join(lines) + "\n" + tail

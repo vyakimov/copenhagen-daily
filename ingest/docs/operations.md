@@ -25,8 +25,14 @@ check fails. `export` waits up to 90 seconds for the collector's process lock
 and holds it while reading, so a poll in flight delays an export rather than
 racing it.
 
-Raw payloads and sightings consume disk; monitor `var/`. `compact-history`
-(below) bounds their growth. launchd writes the
+Raw payloads and sightings consume disk; `compact-history` (below) bounds their
+growth, and `health` reports it. Its `database` object gives the file, WAL,
+used and free-page bytes, free disk, and growth per day over the last seven
+days, measured from the used bytes each collection records in its `fetch_runs`
+row (none until a full day of samples exists). It adds the reason
+`database_growth:<n>MB_per_day` above `database_growth_alert_mb_per_day` (250),
+and `disk_headroom` when free disk is under twice the database file, the room a
+backup or `VACUUM` needs. The 22:00 preflight notification carries both. launchd writes the
 collector's stdout and stderr to `~/Library/Logs/copenhagen-daily/`; rotate
 those files externally. Alert on `health` returning `degraded` and read its
 `reasons`. Copy SQLite backups or immutable exports, not the
@@ -263,3 +269,22 @@ byte-identical and `rebuild-articles --dry-run` at zero changes. A compacted day
 keeps about 4% of its sightings and 20% of its appearances, and its payloads take
 about 2 MB, so steady-state growth is about 75 MB a day, mostly
 `sighting_contents`. `VACUUM` on that copy took under a minute.
+
+## Collapsing repeated article versions
+
+Until 9 October 2026 the merge let feeds take turns and hashed `description_source`,
+so most stored versions differ from the one before only in provenance or a feed's
+URL tracking. `collapse-versions` removes a version when its snapshot, with the
+canonical URL re-derived as the merge does today, has the same content hash as the
+previous version of that article. The first of each stretch stays, so a genuine
+`A -> B -> A` keeps all three; unreadable snapshots are kept. It holds the process
+lock and commits per source. Take a backup first, and run `compact-history --vacuum`
+afterwards to return the space:
+
+```sh
+./gather_news.sh collapse-versions --dry-run
+./gather_news.sh collapse-versions
+```
+
+The dry run on 10 October 2026 found 551,839 of 640,590 versions redundant. New
+versions written by the current merge are not repeats, so this is a one-off repair.

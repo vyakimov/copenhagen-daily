@@ -446,6 +446,14 @@ def rebuild_projection(con, priorities, source=None, dry_run=False):
         raise
 
 
+def used_bytes(con):
+    pages, free, size = (
+        con.execute(f"PRAGMA {name}").fetchone()[0]
+        for name in ("page_count", "freelist_count", "page_size")
+    )
+    return (pages - free) * size
+
+
 def has_column(con, table, column):
     return any(row[1] == column for row in con.execute(f"PRAGMA table_info({table})"))
 
@@ -598,6 +606,65 @@ def expand_appearance_runs(con, rows):
     return expanded
 
 
+def stage_version_collapse(con, source=None):
+    """Stage article versions that repeat the version before them under the current content rule.
+
+    Older versions were written while the merge let feeds take turns and hashed provenance, so many
+    differ from their predecessor only in `description_source` or a feed's URL tracking. A version
+    is redundant when its snapshot, with the canonical URL re-derived as the merge does today, has
+    the same content hash as the previous version of that article. The first of each stretch is
+    kept, so a genuine A -> B -> A keeps all three. A snapshot that cannot be read is kept."""
+    from .hashing import content_hash
+    from .merge import current_canonical
+
+    con.execute("DROP TABLE IF EXISTS temp.redundant_versions")
+    con.execute(
+        "CREATE TEMP TABLE redundant_versions(version_id INTEGER PRIMARY KEY, source TEXT NOT NULL)"
+    )
+    query = "SELECT version_id,source,source_id,snapshot_json FROM article_versions"
+    params = ()
+    if source is not None:
+        query += " WHERE source=?"
+        params = (source,)
+    article = previous = None
+    total = 0
+    for row in con.execute(query + " ORDER BY source,source_id,version_id", params).fetchall():
+        total += 1
+        if (row["source"], row["source_id"]) != article:
+            article, previous = (row["source"], row["source_id"]), None
+        try:
+            snapshot = current_canonical(ArticleSnapshot.model_validate_json(row["snapshot_json"]))
+            key = content_hash(snapshot)
+        except ValueError:
+            previous = None
+            continue
+        if key == previous:
+            con.execute(
+                "INSERT INTO temp.redundant_versions VALUES(?,?)",
+                (row["version_id"], row["source"]),
+            )
+        previous = key
+    redundant = con.execute("SELECT count(*) FROM temp.redundant_versions").fetchone()[0]
+    by_source = dict(
+        con.execute(
+            "SELECT source,count(*) FROM temp.redundant_versions GROUP BY source ORDER BY source"
+        ).fetchall()
+    )
+    return {"versions": total, "redundant": redundant, "by_source": by_source}
+
+
+def remove_staged_versions(con):
+    """Delete the staged versions, one source per transaction."""
+    sources = [row[0] for row in con.execute("SELECT DISTINCT source FROM temp.redundant_versions")]
+    for source in sorted(sources):
+        with con:
+            con.execute(
+                "DELETE FROM article_versions WHERE version_id IN "
+                "(SELECT version_id FROM temp.redundant_versions WHERE source=?)",
+                (source,),
+            )
+
+
 def plan_payload_archives(con, before_day):
     """Feed-days of raw payloads first stored before `before_day` (YYYY-MM-DD)."""
     return con.execute(
@@ -691,6 +758,10 @@ class Database:
 
     def close(self):
         self.con.close()
+
+    def used_bytes(self):
+        """Bytes in pages that hold data, excluding free pages SQLite will reuse."""
+        return used_bytes(self.con)
 
     def insert_sighting(self, values):
         # Caller owns the feed transaction. Content and its observation must commit together.

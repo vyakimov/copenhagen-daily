@@ -13,7 +13,7 @@ with logs under `~/Library/Logs/copenhagen-daily/`:
 | `ai.copenhagen-daily.verify` | 06:00 local | `edit_news.sh verify-live --fix --notify`: checks the live site against the newsroom's copy, delivers again if that is the remedy, and posts the verdict either way |
 | `ai.copenhagen-daily.retry` | 07:30 and 10:30 local | `edit_news.sh run --retry`: skips when today's run already ended as published, dry run, or skipped; otherwise resumes the failed run from its first missing file. The second firing covers an outage that outlasts the first |
 | `ai.copenhagen-daily.freshness` | 09:00 local | `edit_news.sh freshness --notify`: fails and notifies when the latest activated edition is older than `max_edition_age_hours` |
-| `ai.copenhagen-daily.preflight` | 22:00 local | `edit_news.sh preflight --notify`: makes one request with each production model on each login tomorrow's run will carry, and on the API key when a login fails; names feeds that keep failing; posts the result, good or bad |
+| `ai.copenhagen-daily.preflight` | 22:00 local | `edit_news.sh preflight --notify`: makes one request with each production model on each login tomorrow's run will carry, and on the API key when a login fails; names feeds that keep failing; reports block 1's database size, growth and free disk, flagging the subject when `health` raises a storage alert; posts the result, good or bad |
 
 The files in `config/launchd/` are templates: `@REPO@` and `@HOME@` stand for this repository's path
 and the login home. Install or reload them with:

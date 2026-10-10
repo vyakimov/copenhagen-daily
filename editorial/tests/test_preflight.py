@@ -166,3 +166,18 @@ def test_unreadable_health_is_reported_not_fatal(tmp_path, auths):
     report = run(tmp_path, auths, claude_that(tmp_path, True, False), codex_that(tmp_path, True, False), health=broken)
     assert report["state"] == "ready" and "block 1 is locked" in report["feeds"]["error"]
     assert "feeds: health could not be read" in summary(report)[1]
+
+
+def test_storage_is_reported_and_alerts_reach_the_subject(tmp_path, auths):
+    auths[0].token_path.write_text("sk-ant-oat01-ok\n")
+    database = {"file_bytes": 6 * 2**30, "disk_free_bytes": 85 * 2**30, "growth_bytes_per_day": 75 * 2**20, "growth_window_days": 7}
+    health = {"feeds": [], "database": database, "reasons": []}
+    report = run(tmp_path, auths, claude_that(tmp_path, True, False), codex_that(tmp_path, True, False), health=health)
+    subject, body = summary(report)
+    assert "storage: database 6.0 GB, +75 MB a day over 7 days, 85 GB free on disk" in body
+    assert "storage" not in subject
+    health = {"feeds": [], "database": {**database, "growth_bytes_per_day": None, "disk_free_bytes": 2**30}, "reasons": ["feed_failures:x", "disk_headroom"]}
+    report = run(tmp_path, auths, claude_that(tmp_path, True, False), codex_that(tmp_path, True, False), health=health)
+    subject, body = summary(report)
+    assert subject.endswith("; storage needs attention")
+    assert "storage NEEDS ATTENTION (disk_headroom): database 6.0 GB, growth not measured yet, 1 GB free on disk" in body
