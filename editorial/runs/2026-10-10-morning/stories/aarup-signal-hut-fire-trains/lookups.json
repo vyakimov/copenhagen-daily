@@ -1,0 +1,13 @@
+[
+ {
+  "requested": "Banedanmark",
+  "status": "found",
+  "title": "Banedanmark",
+  "extract": "Banedanmark is a Danish agency that is responsible for the maintenance and traffic control on all of the state owned Danish railway network.",
+  "url": "https://en.wikipedia.org/wiki/Banedanmark",
+  "type": "standard",
+  "fetched_at": "2026-10-10T03:39:46.234171Z",
+  "term": "Banedanmark",
+  "definition": "the agency that runs the rail network"
+ }
+]

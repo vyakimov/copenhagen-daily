@@ -1,0 +1,18 @@
+{
+ "headline": "Hacker had access to Denmark's population register for more than three weeks, documents show",
+ "lede": [
+  "A hacker had access to the CPR register, Denmark's civil registration system, for 21 days and 17 hours, from 10 September to its discovery on 2 October, documents obtained by TV 2 show.",
+  [
+   "kristeligt_dagblad",
+   "tv2",
+   "berlingske"
+  ]
+ ],
+ "definitions": [
+  {
+   "term": "CPR register",
+   "definition": "Denmark's civil registration system",
+   "wikipedia": "Personal identification number (Denmark)"
+  }
+ ]
+}

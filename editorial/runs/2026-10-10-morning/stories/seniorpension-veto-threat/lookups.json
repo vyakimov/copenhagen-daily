@@ -1,0 +1,35 @@
+[
+ {
+  "requested": "Venstre (Denmark)",
+  "status": "found",
+  "title": "Venstre (Denmark)",
+  "extract": "Venstre, full name Venstre, Danmarks Liberale Parti, is a conservative-liberal, agrarian political party in Denmark. Founded as part of a peasants' movement against the landed aristocracy, today it espouses an economically liberal, pro-free-market ideology.",
+  "url": "https://en.wikipedia.org/wiki/Venstre_(Denmark)",
+  "type": "standard",
+  "fetched_at": "2026-10-10T03:39:45.430085Z",
+  "term": "Venstre",
+  "definition": "a liberal party"
+ },
+ {
+  "requested": "Danish People's Party",
+  "status": "found",
+  "title": "Danish People's Party",
+  "extract": "The Danish People's Party is a nationalist and right-wing populist political party in Denmark. It was formed in 1995 by former members of the Progress Party (FrP). The party saw a period of significant growth after its founding and lent its support to the Venstre–Conservative People's Party coalition government that ruled from the 2001 Danish general election until the defeat in the 2011 Danish general election.",
+  "url": "https://en.wikipedia.org/wiki/Danish_People's_Party",
+  "type": "standard",
+  "fetched_at": "2026-10-10T03:39:45.659661Z",
+  "term": "Dansk Folkeparti",
+  "definition": "a nationalist party"
+ },
+ {
+  "requested": "Red–Green Alliance (Denmark)",
+  "status": "found",
+  "title": "Red–Green Alliance (Denmark)",
+  "extract": "The Red–Green Alliance, or Unity List, is an eco-socialist political party in Denmark. It was founded in 1989 with the merger of three Marxist parties, and is the most left-wing party in the Folketing, where it advocates for the expansion of the welfare state and social justice as well as the socialist transformation of Denmark and the entire globe. During the 2021 Copenhagen City Council election the party placed first, with 24.6% of the votes. The party is also active in various trade unions within Denmark.",
+  "url": "https://en.wikipedia.org/wiki/Red%E2%80%93Green_Alliance_(Denmark)",
+  "type": "standard",
+  "fetched_at": "2026-10-10T03:39:45.705895Z",
+  "term": "Enhedslisten",
+  "definition": "a far-left party"
+ }
+]

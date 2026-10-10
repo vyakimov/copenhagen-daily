@@ -1,0 +1,107 @@
+{
+ "headline": "Government's budget raises defence spending and cuts taxes",
+ "headline_short": "Government presents 2027 budget",
+ "deck": "Students living at home lose their state grant to help pay for it; talks with the other parties come next.",
+ "extended": [
+  [
+   "The government presented its finance bill for 2027, the state's budget, on Friday. It would raise defence spending to 3.5 per cent of GDP by 2030 and set aside 10.1 billion kroner that year for tax cuts, among them scrapping the middle-bracket and top-top taxes and lowering corporate tax.",
+   [
+    "kristeligt_dagblad",
+    "borsen",
+    "berlingske"
+   ]
+  ],
+  [
+   "Unlike recent budgets, this one needs financing. Students living at home lose SU, the state study grant; fewer people will qualify for the seniorpension for worn-out workers; cruise ships face a levy; and state administration is to be cut.",
+   [
+    "kristeligt_dagblad",
+    "dr",
+    "tv2",
+    "politiken"
+   ]
+  ],
+  [
+   "'The Danish economy is in top form,' said Peter Hummelgaard, the finance minister. Pia Olsen Dyhr, the economy minister, called the grant cut 'a compromise'. Her party, SF, a left-wing party, has defended the grant.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "The government must now find a majority in the Folketing, Denmark's parliament, and holds back 500 million kroner a year for other parties' wishes. Enhedslisten, a far-left party, and Alternativet, a green party, are expected to join the deal, and criticism of the grant cut has already come from them.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "standard": [
+  [
+   "The government presented its finance bill for 2027, the state's budget, on Friday. It would raise defence spending to 3.5 per cent of GDP by 2030 and set aside 10.1 billion kroner that year for tax cuts, among them scrapping the middle-bracket and top-top taxes and lowering corporate tax.",
+   [
+    "kristeligt_dagblad",
+    "borsen",
+    "berlingske"
+   ]
+  ],
+  [
+   "To pay for it, students living at home lose SU, the state study grant, and fewer people will qualify for the seniorpension for worn-out workers. Cruise ships face a levy.",
+   [
+    "kristeligt_dagblad",
+    "dr",
+    "tv2",
+    "politiken"
+   ]
+  ],
+  [
+   "The government must now find a majority in the Folketing, Denmark's parliament. Pia Olsen Dyhr, the economy minister, called the grant cut 'a compromise'.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "The government presented its finance bill for 2027 on Friday, raising defence spending to 3.5 per cent of GDP by 2030 and setting aside 10.1 billion kroner that year for tax cuts. Students living at home lose their state grant to help pay for it.",
+   [
+    "kristeligt_dagblad",
+    "borsen",
+    "dr",
+    "politiken"
+   ]
+  ]
+ ],
+ "callouts": [
+  {
+   "kind": "quote",
+   "text": "The time in the Danish economy when you could just spend the money is over.",
+   "attribution": "Pia Olsen Dyhr, economy minister",
+   "attribution_source": "kristeligt_dagblad"
+  }
+ ],
+ "definitions": [
+  {
+   "term": "SU",
+   "definition": "the state study grant",
+   "wikipedia": "da:Statens Uddannelsesstøtte"
+  },
+  {
+   "term": "SF",
+   "definition": "a left-wing party",
+   "wikipedia": "Green Left (Denmark)"
+  },
+  {
+   "term": "Folketing",
+   "definition": "Denmark's parliament",
+   "wikipedia": "Folketing"
+  },
+  {
+   "term": "Enhedslisten",
+   "definition": "a far-left party",
+   "wikipedia": "Red–Green Alliance (Denmark)"
+  },
+  {
+   "term": "Alternativet",
+   "definition": "a green party",
+   "wikipedia": "The Alternative (Denmark)"
+  }
+ ]
+}

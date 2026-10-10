@@ -1,0 +1,2797 @@
+{
+  "schema_version": 2,
+  "title": "copenhagen-daily",
+  "edition": {
+    "id": "2026-10-10-morning",
+    "number": 5,
+    "name": "Saturday edition",
+    "date": "2026-10-10",
+    "timezone": "Europe/Copenhagen",
+    "language": "en",
+    "cutoff_at": "2026-10-10T03:30:00.000000Z",
+    "generated_at": "2026-10-10T03:44:11.198414Z"
+  },
+  "presentation": {
+    "emphasis": "many_stories",
+    "ear_right": "Inside: the firm behind the CPR leak, Russian TV's flare film, a Nobel for Navi Pillay"
+  },
+  "coverage": {
+    "status": "complete",
+    "checked_from": "2026-10-07T03:30:00.000000Z",
+    "checked_until": "2026-10-10T03:30:00.000000Z",
+    "feeds": [
+      {
+        "feed_id": "altinget.arbejdsmarked",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.763086Z"
+      },
+      {
+        "feed_id": "altinget.by",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.863852Z"
+      },
+      {
+        "feed_id": "altinget.christiansborg",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.626597Z"
+      },
+      {
+        "feed_id": "altinget.eu",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.654930Z"
+      },
+      {
+        "feed_id": "altinget.forside",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.599375Z"
+      },
+      {
+        "feed_id": "altinget.forsvar",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.788223Z"
+      },
+      {
+        "feed_id": "altinget.klima",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.712851Z"
+      },
+      {
+        "feed_id": "altinget.kommunal",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.814859Z"
+      },
+      {
+        "feed_id": "altinget.sundhed",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.736541Z"
+      },
+      {
+        "feed_id": "altinget.uddannelse",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.838573Z"
+      },
+      {
+        "feed_id": "bbc.business",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:14.076644Z"
+      },
+      {
+        "feed_id": "bbc.culture",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:14.450053Z"
+      },
+      {
+        "feed_id": "bbc.europe",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:14.034609Z"
+      },
+      {
+        "feed_id": "bbc.health",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:14.266983Z"
+      },
+      {
+        "feed_id": "bbc.politics",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:14.337132Z"
+      },
+      {
+        "feed_id": "bbc.science",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:14.211411Z"
+      },
+      {
+        "feed_id": "bbc.technology",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:14.180161Z"
+      },
+      {
+        "feed_id": "bbc.top",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.939668Z"
+      },
+      {
+        "feed_id": "bbc.world",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.987626Z"
+      },
+      {
+        "feed_id": "berlingske.business",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.583452Z"
+      },
+      {
+        "feed_id": "berlingske.kultur",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.606621Z"
+      },
+      {
+        "feed_id": "berlingske.latest",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.549971Z"
+      },
+      {
+        "feed_id": "berlingske.opinion",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.629805Z"
+      },
+      {
+        "feed_id": "berlingske.samfund",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.570237Z"
+      },
+      {
+        "feed_id": "borsen.baeredygtig",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.641594Z"
+      },
+      {
+        "feed_id": "borsen.breaking",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.636572Z"
+      },
+      {
+        "feed_id": "borsen.ejendomme",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.681380Z"
+      },
+      {
+        "feed_id": "borsen.executive",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.773673Z"
+      },
+      {
+        "feed_id": "borsen.finans",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.713255Z"
+      },
+      {
+        "feed_id": "borsen.homepage",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.558172Z"
+      },
+      {
+        "feed_id": "borsen.investor",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.740468Z"
+      },
+      {
+        "feed_id": "borsen.longread",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.812526Z"
+      },
+      {
+        "feed_id": "borsen.markedsberetninger",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.868639Z"
+      },
+      {
+        "feed_id": "borsen.okonomi",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.116819Z"
+      },
+      {
+        "feed_id": "borsen.opinion",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.897258Z"
+      },
+      {
+        "feed_id": "borsen.pleasure",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.927490Z"
+      },
+      {
+        "feed_id": "borsen.politik",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.968063Z"
+      },
+      {
+        "feed_id": "borsen.tech",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.000703Z"
+      },
+      {
+        "feed_id": "borsen.udland",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.030656Z"
+      },
+      {
+        "feed_id": "borsen.virksomheder",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.096441Z"
+      },
+      {
+        "feed_id": "dr.indland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.682929Z"
+      },
+      {
+        "feed_id": "dr.kultur",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.924543Z"
+      },
+      {
+        "feed_id": "dr.latest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.649894Z"
+      },
+      {
+        "feed_id": "dr.musik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.991251Z"
+      },
+      {
+        "feed_id": "dr.penge",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.774376Z"
+      },
+      {
+        "feed_id": "dr.politik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.808103Z"
+      },
+      {
+        "feed_id": "dr.regionale",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.046917Z"
+      },
+      {
+        "feed_id": "dr.regionale_bornholm",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.117978Z"
+      },
+      {
+        "feed_id": "dr.regionale_fyn",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.212883Z"
+      },
+      {
+        "feed_id": "dr.regionale_kbh",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.077790Z"
+      },
+      {
+        "feed_id": "dr.regionale_nord",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.273833Z"
+      },
+      {
+        "feed_id": "dr.regionale_oestjylland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.371100Z"
+      },
+      {
+        "feed_id": "dr.regionale_sjaelland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.338026Z"
+      },
+      {
+        "feed_id": "dr.regionale_syd",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.145686Z"
+      },
+      {
+        "feed_id": "dr.regionale_trekanten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.307399Z"
+      },
+      {
+        "feed_id": "dr.regionale_vest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.242754Z"
+      },
+      {
+        "feed_id": "dr.senestesport",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.865747Z"
+      },
+      {
+        "feed_id": "dr.sporten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.836572Z"
+      },
+      {
+        "feed_id": "dr.udland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.718222Z"
+      },
+      {
+        "feed_id": "dr.vejret",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.017714Z"
+      },
+      {
+        "feed_id": "dr.viden",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.895161Z"
+      },
+      {
+        "feed_id": "economist.briefing",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:14.475741Z"
+      },
+      {
+        "feed_id": "economist.business",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:14.476598Z"
+      },
+      {
+        "feed_id": "economist.culture",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:14.476730Z"
+      },
+      {
+        "feed_id": "economist.europe",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:14.475814Z"
+      },
+      {
+        "feed_id": "economist.finance",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:14.476535Z"
+      },
+      {
+        "feed_id": "economist.international",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:14.476469Z"
+      },
+      {
+        "feed_id": "economist.latest",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:14.475604Z"
+      },
+      {
+        "feed_id": "economist.leaders",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:14.475677Z"
+      },
+      {
+        "feed_id": "economist.science",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:14.476666Z"
+      },
+      {
+        "feed_id": "ft.climate_capital",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.492442Z"
+      },
+      {
+        "feed_id": "ft.companies",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.425324Z"
+      },
+      {
+        "feed_id": "ft.global_economy",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.421149Z"
+      },
+      {
+        "feed_id": "ft.homepage.international",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.328480Z"
+      },
+      {
+        "feed_id": "ft.life_arts",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.526931Z"
+      },
+      {
+        "feed_id": "ft.markets",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.453253Z"
+      },
+      {
+        "feed_id": "ft.opinion",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.496397Z"
+      },
+      {
+        "feed_id": "ft.technology",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.457276Z"
+      },
+      {
+        "feed_id": "ft.work_careers",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.523154Z"
+      },
+      {
+        "feed_id": "ft.world",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.359016Z"
+      },
+      {
+        "feed_id": "guardian.business",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:15.064699Z"
+      },
+      {
+        "feed_id": "guardian.culture",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:15.499876Z"
+      },
+      {
+        "feed_id": "guardian.environment",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:15.314600Z"
+      },
+      {
+        "feed_id": "guardian.europe",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:14.986951Z"
+      },
+      {
+        "feed_id": "guardian.international",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:14.568997Z"
+      },
+      {
+        "feed_id": "guardian.opinion",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:15.714055Z"
+      },
+      {
+        "feed_id": "guardian.science",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:15.391879Z"
+      },
+      {
+        "feed_id": "guardian.technology",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:15.216791Z"
+      },
+      {
+        "feed_id": "guardian.world",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:14.883951Z"
+      },
+      {
+        "feed_id": "information.feed",
+        "source": "information",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.594832Z"
+      },
+      {
+        "feed_id": "jp.seneste",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.586048Z"
+      },
+      {
+        "feed_id": "jp.topnyheder",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.562020Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.artikler",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.899273Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.nyheder",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.884268Z"
+      },
+      {
+        "feed_id": "nytimes.arts",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:10.998483Z"
+      },
+      {
+        "feed_id": "nytimes.books",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.144257Z"
+      },
+      {
+        "feed_id": "nytimes.business",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:10.519367Z"
+      },
+      {
+        "feed_id": "nytimes.climate",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:10.873150Z"
+      },
+      {
+        "feed_id": "nytimes.europe",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:10.462798Z"
+      },
+      {
+        "feed_id": "nytimes.health",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:10.811100Z"
+      },
+      {
+        "feed_id": "nytimes.homepage",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:10.156436Z"
+      },
+      {
+        "feed_id": "nytimes.opinion",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:11.254495Z"
+      },
+      {
+        "feed_id": "nytimes.science",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:10.687647Z"
+      },
+      {
+        "feed_id": "nytimes.technology",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:10.625891Z"
+      },
+      {
+        "feed_id": "nytimes.world",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:10.264405Z"
+      },
+      {
+        "feed_id": "politiken.debat",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.402089Z"
+      },
+      {
+        "feed_id": "politiken.forbrugogliv",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.427644Z"
+      },
+      {
+        "feed_id": "politiken.ibyen",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.457088Z"
+      },
+      {
+        "feed_id": "politiken.indland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.163813Z"
+      },
+      {
+        "feed_id": "politiken.kultur",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.317042Z"
+      },
+      {
+        "feed_id": "politiken.latest",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.135010Z"
+      },
+      {
+        "feed_id": "politiken.oekonomi",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.247263Z"
+      },
+      {
+        "feed_id": "politiken.politik",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.212272Z"
+      },
+      {
+        "feed_id": "politiken.rejser",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.485764Z"
+      },
+      {
+        "feed_id": "politiken.sport",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.342928Z"
+      },
+      {
+        "feed_id": "politiken.udland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.190122Z"
+      },
+      {
+        "feed_id": "politiken.viden",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:12.370343Z"
+      },
+      {
+        "feed_id": "tv2.nyheder",
+        "source": "tv2",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.470144Z"
+      },
+      {
+        "feed_id": "via_ritzau.latest",
+        "source": "via_ritzau",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:13.904461Z"
+      },
+      {
+        "feed_id": "wapo.business",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:15.938859Z"
+      },
+      {
+        "feed_id": "wapo.national",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:15.821918Z"
+      },
+      {
+        "feed_id": "wapo.opinions",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:15.961072Z"
+      },
+      {
+        "feed_id": "wapo.politics",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:15.856581Z"
+      },
+      {
+        "feed_id": "wapo.technology",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:15.946346Z"
+      },
+      {
+        "feed_id": "wapo.world",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:15.790058Z"
+      },
+      {
+        "feed_id": "wsj.business",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:16.132216Z"
+      },
+      {
+        "feed_id": "wsj.economy",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:16.366971Z"
+      },
+      {
+        "feed_id": "wsj.markets",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:16.290107Z"
+      },
+      {
+        "feed_id": "wsj.opinion",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:16.553287Z"
+      },
+      {
+        "feed_id": "wsj.politics",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:16.417874Z"
+      },
+      {
+        "feed_id": "wsj.technology",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:16.452269Z"
+      },
+      {
+        "feed_id": "wsj.world",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-10T03:27:16.011812Z"
+      }
+    ],
+    "note": "Built from headlines and RSS descriptions published between 05:30 on 7 October and 05:30 on 10 October 2026, 4,127 articles in all. All 132 feeds at 17 publishers polled."
+  },
+  "inputs": [
+    {
+      "id": "export-2026-10-10-0330",
+      "sha256": "sha256:00722e2b0411774970b3a75015f5bdc07e56539d7d7e0f21758c635707daf238"
+    }
+  ],
+  "stories": [
+    {
+      "id": "finance-bill-2027-unveiled",
+      "device_participation": "required",
+      "role": "lead",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Government's budget raises defence spending and cuts taxes",
+        "body": {
+          "extended": [
+            {
+              "text": "The government presented its finance bill for 2027, the state's budget, on Friday. It would raise defence spending to 3.5 per cent of GDP by 2030 and set aside 10.1 billion kroner that year for tax cuts, among them scrapping the middle-bracket and top-top taxes and lowering corporate tax.",
+              "sources": [
+                "kristeligt_dagblad",
+                "borsen",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "Unlike recent budgets, this one needs financing. Students living at home lose SU, the state study grant; fewer people will qualify for the seniorpension for worn-out workers; cruise ships face a levy; and state administration is to be cut.",
+              "sources": [
+                "kristeligt_dagblad",
+                "dr",
+                "tv2",
+                "politiken"
+              ]
+            },
+            {
+              "text": "'The Danish economy is in top form,' said Peter Hummelgaard, the finance minister. Pia Olsen Dyhr, the economy minister, called the grant cut 'a compromise'. Her party, SF, a left-wing party, has defended the grant.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "The government must now find a majority in the Folketing, Denmark's parliament, and holds back 500 million kroner a year for other parties' wishes. Enhedslisten, a far-left party, and Alternativet, a green party, are expected to join the deal, and criticism of the grant cut has already come from them.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "standard": [
+            {
+              "text": "The government presented its finance bill for 2027, the state's budget, on Friday. It would raise defence spending to 3.5 per cent of GDP by 2030 and set aside 10.1 billion kroner that year for tax cuts, among them scrapping the middle-bracket and top-top taxes and lowering corporate tax.",
+              "sources": [
+                "kristeligt_dagblad",
+                "borsen",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "To pay for it, students living at home lose SU, the state study grant, and fewer people will qualify for the seniorpension for worn-out workers. Cruise ships face a levy.",
+              "sources": [
+                "kristeligt_dagblad",
+                "dr",
+                "tv2",
+                "politiken"
+              ]
+            },
+            {
+              "text": "The government must now find a majority in the Folketing, Denmark's parliament. Pia Olsen Dyhr, the economy minister, called the grant cut 'a compromise'.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "The government presented its finance bill for 2027 on Friday, raising defence spending to 3.5 per cent of GDP by 2030 and setting aside 10.1 billion kroner that year for tax cuts. Students living at home lose their state grant to help pay for it.",
+              "sources": [
+                "kristeligt_dagblad",
+                "borsen",
+                "dr",
+                "politiken"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Government presents 2027 budget",
+        "deck": "Students living at home lose their state grant to help pay for it; talks with the other parties come next."
+      },
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "The time in the Danish economy when you could just spend the money is over.",
+          "attribution": "Pia Olsen Dyhr, economy minister",
+          "attribution_source": "kristeligt_dagblad"
+        }
+      ],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "87815746-7042-4dad-bd05-32aa221bc283",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Regeringen præsenterer finanslovsforslag med sikkerhedsfokus",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/regeringen-praesenterer-finanslovsforslag-med-forsvarsfokus",
+          "published_at": "2026-10-09T06:15:00.000000Z",
+          "content_hash": "sha256:97e0d6f8eaa12b19271f0dd21b2b71d7a6f10e1beda9124e5ee86c8fc65a002b",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "927d115d-22a7-4449-9822-f13077c6696a",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "SU og seniorpension sender Pia Olsen Dyhr og Hummelgaard i skudlinjen",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/su-og-seniorpension-sender-pia-olsen-dyhr-og-hummelgaard-i-skudlinjen",
+          "published_at": "2026-10-09T12:00:01.000000Z",
+          "content_hash": "sha256:d719f8fce4dccd93fb6dff06e3bb823202c02ce05ec201a7a16e427365dfb39a",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:b32cf54a-1ebc-535c-89ba-e71648dab78d",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Få overblikket: Penge til folkeskole, tandpleje, forsvar – og markante skattelettelser",
+          "url": "https://www.berlingske.dk/politik/faa-overblikket-penge-til-folkeskole-tandpleje-forsvar--og-markante-skattelettelser",
+          "published_at": "2026-10-09T06:22:54.000000Z",
+          "content_hash": "sha256:6c82d13cf739ca9cfe983bed4dd87875691f3daadd5cc1d98bd3f9c8003558c1",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/politik/fa-overblikket-vigtige-nedslag-fra-finanslovsudspillet",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Få overblikket: Vigtige nedslag fra finanslovsudspillet",
+          "url": "https://borsen.dk/nyheder/politik/fa-overblikket-vigtige-nedslag-fra-finanslovsudspillet",
+          "published_at": "2026-10-09T09:29:38.000000Z",
+          "content_hash": "sha256:6b1851d57fb66c2157a8f1330940168d83314b958f58210511963e1375bad727",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:67933862-99c2-4baa-9755-cc3e4a5d8b49",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Her er de vigtigste punkter i regeringens finanslovsudspil",
+          "url": "https://www.dr.dk/nyheder/politik/her-er-de-vigtigste-punkter-i-finansloven",
+          "published_at": "2026-10-09T05:56:46.000000Z",
+          "content_hash": "sha256:a2884aa6b76e5442b281045720bd2a2dd6aba53025188108eeaa4fef391eee41",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11015909",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Her er finansforslaget: Regeringen vil styrke skoler, sundhed og beredskab, mens hjemmeboende unge mister SU",
+          "url": "https://politiken.dk/danmark/art11015909/Her-er-finansforslaget-Regeringen-vil-styrke-skoler-sundhed-og-beredskab-mens-hjemmeboende-unge-mister-SU",
+          "published_at": "2026-10-09T13:22:19.000000Z",
+          "content_hash": "sha256:e13d2d8bbe1b21494b7f76d093377aec632b7ee9c7b52e0f49d1204142bced04",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/politik/2026-10-09-her-er-de-centrale-dele-af-regeringens-udspil-til-finanslov",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Her er de centrale dele af regeringens udspil til finanslov",
+          "url": "https://nyheder.tv2.dk/politik/2026-10-09-her-er-de-centrale-dele-af-regeringens-udspil-til-finanslov",
+          "published_at": "2026-10-09T04:48:53.000000Z",
+          "content_hash": "sha256:b01413baf76c443324aa554eefd95ae940504551072410a0895e050267355769",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19722982",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Regeringens finanslovsudspil: Her er de privatøkonomiske vindere og tabere",
+          "url": "https://jyllands-posten.dk/privatokonomi/ECE19722982/regeringens-finanslovsudspil-her-er-de-privatoekonomiske-vindere-og-tabere/",
+          "published_at": "2026-10-09T11:57:45.000000Z",
+          "content_hash": "sha256:a7c61efa5d15b39128b453d064481ed0afabd959c7e59e6877a83473c20b3d4b",
+          "primary": false
+        },
+        {
+          "source": "altinget",
+          "source_id": "https://www.altinget.dk/uddannelse/artikel/nu-har-hummelgaard-og-co-sagt-hvordan-de-vil-bruge-statens-penge-naeste-aar-her-er-hvad-du-skal-vide",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Nu har Hummelgaard og co. sagt, hvordan de vil bruge pengene næste år. Her er, hvad vi lagde mærke til",
+          "url": "https://www.altinget.dk/uddannelse/artikel/nu-har-hummelgaard-og-co-sagt-hvordan-de-vil-bruge-statens-penge-naeste-aar-her-er-hvad-du-skal-vide",
+          "published_at": "2026-10-09T13:30:00.000000Z",
+          "content_hash": "sha256:bbb6a40d661380a157eeef4af7639cc24ea7d3a76e63afbef1e8fd8e93b08457",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15217270/?publisherId=5524343&lang=da",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "DI: Finansloven skal sikre dansk velstand i fremtiden",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15217270/di-finansloven-skal-sikre-dansk-velstand-i-fremtiden?lang=da",
+          "published_at": "2026-10-09T06:03:01.000000Z",
+          "content_hash": "sha256:83cab3f228ff84ca3f0bb5e22b4fc6f494bd5f70943a5d46e150c7c386f20e29",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15216180/?publisherId=13559244&lang=da",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "FH: Gode takter i finanslovsforslag",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15216180/fh-gode-takter-i-finanslovsforslag?lang=da",
+          "published_at": "2026-10-09T06:18:35.000000Z",
+          "content_hash": "sha256:ee4135e804d1d21daf1f7232a81f829d496c2d19b48eaa4caec65ab1bf3237b7",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "pays-named-cpr-leak-firm",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Funen firm confirms its access was used to leak 8.8 million Danish ID numbers",
+        "body": {
+          "standard": [
+            {
+              "text": "Pays ApS, a software firm in Odense, on Funen, confirmed on Friday that its legal access to the CPR register had been misused in the leak of 8.8 million CPR numbers, Denmark's personal identification numbers. The firm had two employees in July. The intruder had access for 21 days and 17 hours in all, starting on 10 September.",
+              "sources": [
+                "kristeligt_dagblad",
+                "tv2",
+                "dr",
+                "borsen"
+              ]
+            },
+            {
+              "text": "Politiken found that at least three of the firm's profiles, including its administrator account, used the password '123456'. 'There is in reality no security, it is an open door,' Jens Myrup Pedersen, a professor of electrical and computer engineering at Aarhus University, told the paper.",
+              "sources": [
+                "politiken",
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Pays ApS, a software firm in Odense, on Funen, confirmed on Friday that its access to the CPR register had been misused in the leak of 8.8 million CPR numbers, Denmark's personal identification numbers. Politiken found that at least three of its profiles used the password '123456'.",
+              "sources": [
+                "kristeligt_dagblad",
+                "tv2",
+                "politiken"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Firm behind ID leak named",
+        "deck": "Politiken finds that at least three of its profiles, the administrator's among them, used the password '123456'."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "8d79cf9a-4ac5-4131-874c-978dc6502096",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Den fynske it-virksomhed Pays er blevet udnyttet i CPR-sagen",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/den-fynske-it-virksomhed-pays-er-blevet-udnyttet-i-cpr-sagen",
+          "published_at": "2026-10-09T13:49:11.000000Z",
+          "content_hash": "sha256:3b35a67da44410924d609e247f2305bebd11472158ec0e25c37c0ad75d5540c2",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "f70e67dc-90be-49cb-8c46-8a2b987013e6",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Medie: Tre profiler hos virksomhed i datalæksag brugte koden \"123456\"",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/medie-tre-profiler-hos-virksomhed-i-datalaeksag-brugte-koden-123456",
+          "published_at": "2026-10-09T19:54:29.000000Z",
+          "content_hash": "sha256:dd80072e1710633c29c8ed5fa7abaacc48dcd6b194a3cadf2cbcc99dfe7f3d31",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "politiken",
+          "source_id": "11016363",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "»Oh my god«: Fynsk virksomhed havde mindst tre profiler med adgangskoden '123456'",
+          "url": "https://politiken.dk/danmark/art11016363/%C2%BBOh-my-god%C2%AB-Fynsk-virksomhed-havde-mindst-tre-profiler-med-adgangskoden-123456",
+          "published_at": "2026-10-09T16:34:43.000000Z",
+          "content_hash": "sha256:31c4acff26c729b475b972de6e360e6fc3285f8861f246410338760e61a35f3b",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:df5a7cd5-07b0-5912-9142-f03e0c9d6261",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Medie: Tre profiler hos virksomhed i datalæksag brugte koden \"123456\"",
+          "url": "https://www.berlingske.dk/danmark/medie-tre-profiler-hos-virksomhed-i-datalaeksag-brugte-koden-123456",
+          "published_at": "2026-10-09T20:08:48.000000Z",
+          "content_hash": "sha256:b3dc722ccac901ece2b982027a04fc0c21fe18c516eb747370aed0d7b371ad34",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:1553046e-dcda-48ab-a45a-e6dfdd521e58",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Afsløring: Fynsk virksomhed er centrum for massivt CPR-databrud",
+          "url": "https://www.dr.dk/nyheder/indland/afsloering-fynsk-virksomhed-er-centrum-massivt-cpr-databrud",
+          "published_at": "2026-10-09T10:56:45.000000Z",
+          "content_hash": "sha256:2734ba68ed7b2f30de5e0cbcc7009de64b1e5ad42e9aa9dd0b6ff78e492c4410",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:3d348843-3cf9-4706-97d3-b200a96bac9b",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "It-ekspert saver sikkerheden over i fynsk virksomhed, der er i centrum for CPR-databrud",
+          "url": "https://www.dr.dk/nyheder/indland/it-ekspert-saver-sikkerheden-over-i-fynsk-virksomhed-der-er-i-centrum-cpr-databrud",
+          "published_at": "2026-10-09T14:10:05.000000Z",
+          "content_hash": "sha256:09f65e8d3c73856c0c3b49c563d33f1264504279689c2dee43bc8539ce1e7c09",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/business/2026-10-09-her-er-den-fynske-virksomhed-cpr-laekket-gik-igennem",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Her er den fynske virksomhed cpr-lækket gik igennem",
+          "url": "https://nyheder.tv2.dk/business/2026-10-09-her-er-den-fynske-virksomhed-cpr-laekket-gik-igennem",
+          "published_at": "2026-10-09T13:22:40.000000Z",
+          "content_hash": "sha256:2a7116bbfe8e5dfbffb5a9634ede7638490be6a978ac3ae5ba7a58b798373f27",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/samfund/fynsk-it-firma-misbrugt-til-stort-cpr-tyveri-det-ved-vi-nu",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Fynsk it-firma misbrugt til stort cpr-tyveri – det ved vi nu",
+          "url": "https://borsen.dk/nyheder/samfund/fynsk-it-firma-misbrugt-til-stort-cpr-tyveri-det-ved-vi-nu",
+          "published_at": "2026-10-09T11:55:39.000000Z",
+          "content_hash": "sha256:49b776314cef8f348ff0aeb83a9a048900b518da4a4e1328f35281c7e4e74081",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "seniorpension-veto-threat",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Welfare",
+      "copy": {
+        "headline": "Parties threaten to veto the government's cut to early retirement for worn-out workers",
+        "body": {
+          "standard": [
+            {
+              "text": "Venstre, a liberal party, says it will veto the government's plan to tighten access to the seniorpension, an early-retirement scheme for worn-out workers. All parties to the 2019 agreement behind it must agree to changes within a parliamentary term.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "altinget"
+              ]
+            },
+            {
+              "text": "The plan, in the government's budget proposal, would save 1.5 billion kroner up to 2030 by judging applicants' capacity to work in any job, not just their latest. The money would raise the monthly Arne-pension, another early-pension scheme, by 3,095 kroner from 1 January 2027.",
+              "sources": [
+                "kristeligt_dagblad",
+                "altinget"
+              ]
+            },
+            {
+              "text": "Dansk Folkeparti, a nationalist party, also refuses. A deal taking effect after the next election would need Enhedslisten, a far-left party backing the government, and it says no too.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Venstre, a liberal party, says it will veto the government's plan to tighten access to the seniorpension, an early-retirement scheme for worn-out workers, which would save 1.5 billion kroner up to 2030. Dansk Folkeparti, a nationalist party, and Enhedslisten, a far-left party backing the government, also refuse.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "altinget"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Parties threaten pension veto",
+        "deck": "Two parties to the deal behind the scheme refuse; the 1.5 billion kroner saved would fund a rise in another early pension."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "81736f00-89c7-4349-86d0-5079fd6d33db",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Forligspartier og EL siger nej til strammere krav for seniorpension",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/forligspartier-og-el-siger-nej-til-strammere-krav-seniorpension",
+          "published_at": "2026-10-09T08:45:46.000000Z",
+          "content_hash": "sha256:0a104644d741fb7ff67e24d1d36750fe04f5eda1f34a0548f32dd61c3d22a0cf",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:f3979dbe-8c86-554c-89d3-d889ed80094d",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Regeringen vil forringe seniorpensionen. Nu truer flere partier med veto",
+          "url": "https://www.berlingske.dk/politik/regeringen-vil-forringe-seniorpensionen-nu-truer-flere-partier-med-veto",
+          "published_at": "2026-10-09T12:11:52.000000Z",
+          "content_hash": "sha256:1ffe27c934f78baf8c7243636ee9ea48600fc4cf2af0823199af1caffcf1c4ae",
+          "primary": false
+        },
+        {
+          "source": "altinget",
+          "source_id": "https://www.altinget.dk/kommunal/artikel/venstre-vil-ikke-forringe-seniorpensionen-for-at-forbedre-arne",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Venstre vil ikke forringe seniorpensionen for at forbedre Arne",
+          "url": "https://www.altinget.dk/kommunal/artikel/venstre-vil-ikke-forringe-seniorpensionen-for-at-forbedre-arne",
+          "published_at": "2026-10-09T11:18:00.000000Z",
+          "content_hash": "sha256:94c9655b275de8bd059c6dfe8872eab70655070649bbe52a54396fbd6523ed93",
+          "primary": false
+        },
+        {
+          "source": "information",
+          "source_id": "843228 at https://www.information.dk",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Førende velfærdsforsker om ændring af seniorpension: »En forringelse af sikkerhedsnettet for nedslidte«",
+          "url": "https://www.information.dk/indland/2026/10/foerende-velfaerdsforsker-aendring-seniorpension-forringelse-sikkerhedsnettet-nedslidte",
+          "published_at": "2026-10-09T12:24:33.000000Z",
+          "content_hash": "sha256:eba4a742c3592ec58baf9016df60ca6f50afbf4a28937dda96d171d097ffa2fc",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19721930",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Fagbosser kommer med skarp kritik af planer for seniorpension: »Det er en rigtig dårlig idé«",
+          "url": "https://jyllands-posten.dk/indland/ECE19721930/nyhedsoverblik/",
+          "published_at": "2026-10-09T06:56:54.000000Z",
+          "content_hash": "sha256:bf93a210acb9ddf44837040488784a2c1c685dd9498634a54c286838c4a722fb",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:e024c356-504a-49de-a70c-d02734667c9a",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Mette Frederiksens politiske kronjuvel får milliardindsprøjtning - nedslidte seniorpensionister betaler prisen",
+          "url": "https://www.dr.dk/nyheder/politik/mette-frederiksens-politiske-kronjuvel-faar-milliardindsproejtning-nedslidte-seniorpensionister",
+          "published_at": "2026-10-09T19:00:00.000000Z",
+          "content_hash": "sha256:6c1bde4e6f885d8d69a6ff1344933ba8a57125e120ba88b48d627dc2c4dc26de",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15217209/?publisherId=90398&lang=da",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Dansk Metal: Godt med løft af Arne-pensionen – men seniorpensionen skal ikke forringes",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15217209/dansk-metal-godt-med-loft-af-arne-pensionen-men-seniorpensionen-skal-ikke-forringes?lang=da",
+          "published_at": "2026-10-09T06:01:00.000000Z",
+          "content_hash": "sha256:1f30bf31f4e5de8099476a9a4cf973c26f86938a664e9e27e714962b4fd0f1a8",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "russian-tv-flare-footage",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Defence",
+      "copy": {
+        "headline": "Defence minister calls Russian TV report on flare incident misinformation",
+        "body": {
+          "standard": [
+            {
+              "text": "Jeppe Bruus, the defence minister, calls a Russian state-television report on the frigate that fired flares at a Danish military helicopter a 'misinformation campaign' meant to 'sow distrust of the Danish authorities'. The Defence Command says part of the footage was not filmed on the day.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "The report, shown on Thursday, says the helicopter 'entered the ship's safety zone' and does not show the firing. On 14 September the Soobrazitelny fired two flares without warning in international waters off Gedser, a town in southern Denmark; one passed 10 to 15 metres from the helicopter.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Politiken writes that the report turns the firing into a hero's story.",
+              "sources": [
+                "politiken"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Jeppe Bruus, the defence minister, calls a Russian state-television report a 'misinformation campaign'. It covers the frigate that fired two flares at a Danish military helicopter off Gedser, a town in southern Denmark, on 14 September; the Defence Command says part of the footage was not filmed that day.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Denmark calls Russian TV report misinformation",
+        "deck": "The Defence Command says part of the footage of a Russian frigate firing flares at a Danish helicopter was not filmed on the day."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "13c4ecd8-ff54-4592-bd84-c28407af2539",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Forsvarsminister kalder russisk tv-indslag for misinformation",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/forsvarsminister-kalder-russisk-tv-indslag-misinformation",
+          "published_at": "2026-10-09T17:25:09.000000Z",
+          "content_hash": "sha256:6e79b2aba02d3cdedd97ad4b883b9836a5bb1a358dbb68e9fc47db7059b6ea9c",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:01290471-3044-5682-8071-22192a706135",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Russisk stats-tv bringer video af dansk helikopter – men Forsvaret undsiger »en del af« optagelserne",
+          "url": "https://www.berlingske.dk/internationalt/russisk-stats-tv-bringer-video-af-dansk-helikopter--men-forsvaret-undsigeren-del-af-optagelserne",
+          "published_at": "2026-10-09T14:58:31.000000Z",
+          "content_hash": "sha256:ad686f93f030892b7bdc56e8eb64f9e8c932b81c760d58bccab9f72109efa8c1",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:2e04fb6b-9df6-4a1d-9421-c1513bc74ce0",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Russisk tv-indslag om dansk helikopter er en del af propagandafortælling, vurderer ekspert",
+          "url": "https://www.dr.dk/verificerer/russisk-tv-indslag-om-dansk-helikopter-er-en-del-af-propagandafortaelling-vurderer-ekspert",
+          "published_at": "2026-10-09T19:40:00.000000Z",
+          "content_hash": "sha256:d86b27d47d262a6051fec16fecca797e8bbf9cb8f03db01023724d80a6285b15",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:7502ec96-7521-4155-999f-6896369e6360",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Russisk tv-indslag viser dansk Fennec-helikopter og vindmøllepark",
+          "url": "https://www.dr.dk/verificerer/russisk-tv-indslag-viser-dansk-fennec-helikopter-og-vindmoellepark",
+          "published_at": "2026-10-09T16:04:00.000000Z",
+          "content_hash": "sha256:f7f17f19268fe4a95f15d7fe1ad52ca5aa2756536b55b78bba0bc8cfbe218356",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11017850",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Russisk stats-tv hylder affyring mod dansk helikopter",
+          "url": "https://politiken.dk/internationalt/art11017850/Russisk-stats-tv-hylder-affyring-mod-dansk-helikopter",
+          "published_at": "2026-10-09T20:36:01.000000Z",
+          "content_hash": "sha256:983b03e0d9e63f5364526cc83115e97b5b08744e94290cd58fde6399eba5cec2",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/udland/2026-10-09-russisk-tv-viser-billeder-fra-moede-med-dansk-helikopter",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Russisk tv viser billeder fra møde med dansk helikopter",
+          "url": "https://nyheder.tv2.dk/udland/2026-10-09-russisk-tv-viser-billeder-fra-moede-med-dansk-helikopter",
+          "published_at": "2026-10-09T06:50:07.000000Z",
+          "content_hash": "sha256:10c9eaf1dd5ccf046410c035e61b8d4dca9025bd07346c430189244c5a1d4c8a",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "kirkerup-police-review-ordered",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Justice",
+      "copy": {
+        "headline": "Justice minister orders a review of the police investigation into a girl's kidnapping",
+        "body": {
+          "standard": [
+            {
+              "text": "Nicolai Wammen, the justice minister, will set up a special group of experienced investigators to review the police investigation in the Kirkerup case, the kidnapping of a 13-year-old girl in 2023. Investigators from NSK, the National Unit for Special Crime, will take part. Wammen announced the review on Friday in a statement to the Folketing, Denmark's parliament, after a police report raised new questions about the investigation.",
+              "sources": [
+                "berlingske",
+                "kristeligt_dagblad",
+                "tv2"
+              ]
+            },
+            {
+              "text": "The report shows that 'on some of the criticisms raised, the police cannot fully account for what happened', Wammen told Berlingske. Parts of the investigation 'could have been handled differently, faster and better', he said.",
+              "sources": [
+                "berlingske",
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Nicolai Wammen, the justice minister, will have a special group of experienced investigators review the police investigation into the kidnapping of a 13-year-old girl in 2023, after a police report raised new questions. Parts of it 'could have been handled differently, faster and better', Wammen told Berlingske.",
+              "sources": [
+                "berlingske",
+                "kristeligt_dagblad",
+                "tv2"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Kidnapping investigation to be reviewed",
+        "deck": "Nicolai Wammen says the police cannot fully account for parts of the case; experienced investigators will go through it."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:6211f2e4-913c-5a7f-9b5a-cdb3ca490478",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Hastebesked til Folketinget: Wammen forlanger kulegravning af Kirkerup-sag",
+          "url": "https://www.berlingske.dk/indland/hastebesked-til-folketinget-wammen-forlanger-kulegravning-af-kirkerup-sag",
+          "published_at": "2026-10-09T17:23:05.000000Z",
+          "content_hash": "sha256:d88a735b00bb2bb8a0c87ecfdae7fbd009641c7aa1f24e062c251ddfd5cf325f",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "34342121-9a2b-4f60-8eed-e1a91e576338",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Politiets efterforskning i Kirkerup-sag skal undersøges",
+          "url": "https://www.kristeligt-dagblad.dk/politiets-efterforskning-i-kirkerup-sag-skal-undersoeges",
+          "published_at": "2026-10-09T17:43:05.000000Z",
+          "content_hash": "sha256:6cca88bedaf88db185dd1b832b7da2ddc71af8a7908f558fa09bc2956fa72666",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/krimi/2026-10-09-justitsministeren-vil-have-gennemgaaet-efterforskningen-i-kirkerup-sagen",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Justitsministeren vil have gennemgået efterforskningen i Kirkerup-sagen",
+          "url": "https://nyheder.tv2.dk/krimi/2026-10-09-justitsministeren-vil-have-gennemgaaet-efterforskningen-i-kirkerup-sagen",
+          "published_at": "2026-10-09T17:43:55.000000Z",
+          "content_hash": "sha256:a4f59b037642d77424942c486b58e02b227bf23450c908e8ec484ee5d746cb6a",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "navi-pillay-nobel-peace-prize",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "World",
+      "copy": {
+        "headline": "South African jurist who pursued war crimes wins the Nobel Peace Prize",
+        "body": {
+          "standard": [
+            {
+              "text": "Navi Pillay, an 85-year-old South African human rights lawyer, won the Nobel Peace Prize on Friday. The Norwegian Nobel Committee credited her with ensuring that war crimes, crimes against humanity and genocide are prosecuted.",
+              "sources": [
+                "kristeligt_dagblad",
+                "dr",
+                "wapo"
+              ]
+            },
+            {
+              "text": "Under apartheid she defended Nelson Mandela, who became South Africa's first black president. She now sits on the International Court of Justice, the UN's principal court.",
+              "sources": [
+                "kristeligt_dagblad",
+                "information",
+                "wsj"
+              ]
+            },
+            {
+              "text": "A UN commission she chaired concluded last year that Israel was committing genocide in Gaza. Israel condemned the award.",
+              "sources": [
+                "berlingske",
+                "nytimes",
+                "guardian"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Navi Pillay, an 85-year-old South African human rights lawyer, won the Nobel Peace Prize on Friday for her work to see war crimes, crimes against humanity and genocide prosecuted. A UN commission she chaired found last year that Israel was committing genocide in Gaza; Israel condemned the award.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "nytimes"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Navi Pillay wins the Nobel Peace Prize",
+        "deck": "The 85-year-old once defended Nelson Mandela and chaired a UN inquiry that found Israel had committed genocide in Gaza."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "65a5ad5c-1fb0-404d-950e-01399198d7c4",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Sydafrikaner får Nobels fredspris for indsats mod folkedrab",
+          "url": "https://www.kristeligt-dagblad.dk/udland/sydafrikansk-menneskeretsjurist-modtager-nobels-fredspris",
+          "published_at": "2026-10-09T09:22:03.000000Z",
+          "content_hash": "sha256:aeedbd22619bd280f33b22f27b6a55caddb8684cffc6e8e9fc4a9503dc49c3e0",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:2cfa73ff-041d-5746-a706-1ec5ec522c33",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Navi Pillay konkluderede, at Israel begår folkedrab. Nu får hun Nobels fredspris",
+          "url": "https://www.berlingske.dk/internationalt/navi-pillay-konkluderede-at-israel-begaar-folkedrab-nu-faar-hun-nobels-fredspris",
+          "published_at": "2026-10-09T09:03:09.000000Z",
+          "content_hash": "sha256:7e0aaa325f698e5888b40fcfde3ca325cb486a7d2315775aefd09de810028ba4",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:83ae1203-76ec-4a43-a163-544e8f51282e",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Sydafrikansk jurist får Nobels fredspris for at forfølge krigsforbrydelser",
+          "url": "https://www.dr.dk/nyheder/udland/sydafrikansk-jurist-faar-nobels-fredspris-forfoelge-krigsforbrydelser",
+          "published_at": "2026-10-09T09:47:29.000000Z",
+          "content_hash": "sha256:f4a1d8ff3309baf0bf7ff9e65b34b6a973c8ece33445787469179494d26f717c",
+          "primary": false
+        },
+        {
+          "source": "information",
+          "source_id": "843221 at https://www.information.dk",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Jurist bag folkemordsanklager mod Israel modtager Nobels fredspris",
+          "url": "https://www.information.dk/udland/2026/10/jurist-bag-folkemordsanklager-israel-modtager-nobels-fredspris",
+          "published_at": "2026-10-09T10:09:28.000000Z",
+          "content_hash": "sha256:2c70858e093e8e5e5bdff48062b5421ef6074e6b614560fc9b2c883f115677ad",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19724696",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Frygtløs fredsprismodtager forfølger sandheden",
+          "url": "https://jyllands-posten.dk/international/ECE19724696/frygtloes-fredsprismodtager-forfoelger-sandheden/",
+          "published_at": "2026-10-09T13:16:00.000000Z",
+          "content_hash": "sha256:4ea70b606f89801d9810007e23abddbc18a864fb72f27b7ce07275f40e80b2fb",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11013069",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Hun står for alt det, Trump hader",
+          "url": "https://politiken.dk/internationalt/art11013069/Hun-st%C3%A5r-for-alt-det-Trump-hader",
+          "published_at": "2026-10-09T11:46:09.000000Z",
+          "content_hash": "sha256:2244734b305a36443e0ed98b9bbe25351badfdb5029fdd2ffc1664f085637ae4",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cm9wz5kng0x1o",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Navi Pillay, former UN human rights chief, wins Nobel Peace Prize",
+          "url": "https://www.bbc.co.uk/news/articles/cm9wz5kng0x1o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-09T17:37:10.000000Z",
+          "content_hash": "sha256:96d5ed00afe72cf2d130c65757041b5cb2ef5ce1fe2e3d40c329f060a40ccb80",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cq8ezdww6w0do",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Watch: Who is Nobel Peace Prize winner Navi Pillay?",
+          "url": "https://www.bbc.co.uk/news/videos/cq8ezdww6w0do?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-09T15:26:33.000000Z",
+          "content_hash": "sha256:d3d36ba938b3c293a8a53831feec8a2eda077bc093f2a18ff8546330e3f16e0b",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "3ae8dc9c-ee3a-4fe5-9749-b88390b5930b",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Nobel Peace Prize awarded to human rights pioneer Navi Pillay",
+          "url": "https://www.ft.com/content/3ae8dc9c-ee3a-4fe5-9749-b88390b5930b",
+          "published_at": "2026-10-09T13:09:08.000000Z",
+          "content_hash": "sha256:58faf084f33df22b37152aa11916186582519bcf45d6aaceda3ea024c1dc43f0",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/09/navanethem-navi-pillay-wins-nobel-peace-prize",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "ICJ judge Navi Pillay wins Nobel peace prize for promoting international law",
+          "url": "https://www.theguardian.com/world/2026/oct/09/navanethem-navi-pillay-wins-nobel-peace-prize",
+          "published_at": "2026-10-09T16:30:09.000000Z",
+          "content_hash": "sha256:34440c1aac2f5ffb386c6ff72e8b21d654c6664bdd220c34dc8e2767b2c2a496",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/video/2026/oct/09/nobel-peace-prize-winner-navi-pillay-jokes-about-sharing-award-with-donald-trump-video",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Nobel peace prize winner Navi Pillay jokes about sharing award with Donald Trump – video",
+          "url": "https://www.theguardian.com/world/video/2026/oct/09/nobel-peace-prize-winner-navi-pillay-jokes-about-sharing-award-with-donald-trump-video",
+          "published_at": "2026-10-09T12:46:22.000000Z",
+          "content_hash": "sha256:c5927d92cddf64a00a8ecc3bcca0c3aa302fc3f9acd96f7baa31f19cae0d133e",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/live/2026/10/09/world/nobel-peace-prize-winner-2026",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Human Rights Lawyer Navi Pillay Is Awarded Nobel Peace Prize",
+          "url": "https://www.nytimes.com/live/2026/10/09/world/nobel-peace-prize-winner-2026",
+          "published_at": "2026-10-09T23:00:44.000000Z",
+          "content_hash": "sha256:c10b565338abe292a24ad7718f0acac7a8caec7077dcbdaac3c9e82dd2789b8d",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/09/world/europe/nobel-peace-prize-navi-pillay.html",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Navi Pillay, South African Jurist, Is Awarded the Nobel Peace Prize",
+          "url": "https://www.nytimes.com/2026/10/09/world/europe/nobel-peace-prize-navi-pillay.html",
+          "published_at": "2026-10-09T22:24:52.000000Z",
+          "content_hash": "sha256:6ca567da57639bea9ac827329ccd854035a3204108f3360173eed825f75ae60d",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/09/world/europe/nobel-peace-prize-winner-pillay.html",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Navi Pillay, a South African Human Rights Lawyer, Is Awarded the Nobel Peace Prize",
+          "url": "https://www.nytimes.com/2026/10/09/world/europe/nobel-peace-prize-winner-pillay.html",
+          "published_at": "2026-10-09T13:57:46.000000Z",
+          "content_hash": "sha256:c0784bd131f7223dfd5e881acb2fe5eca542e444439e6a71c147a0a56546ee4d",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/world/2026/10/09/navi-pillay-wins-nobel-peace-prize/",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Navi Pillay, leading human rights jurist, awarded Nobel Peace Prize",
+          "url": "https://www.washingtonpost.com/world/2026/10/09/navi-pillay-wins-nobel-peace-prize/",
+          "published_at": "2026-10-09T17:27:11.000000Z",
+          "content_hash": "sha256:3ee537ec56985b9fd3a966b9c5219690661fe70b6fe1c65cd647dff36cbcb79d",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003963047",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Nobel Peace Prize Goes to Navi Pillay, Mandela Lawyer Who Led Human Rights at U.N.",
+          "url": "https://www.wsj.com/world/nobel-peace-prize-winner-2026-39887f84?mod=rss_worldnews",
+          "published_at": "2026-10-09T13:44:00.000000Z",
+          "content_hash": "sha256:0e557fa3f2b78e23a07c5843be15b55bdc20de496e9500ddceefc33c0e79fe81",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "cpr-intruder-access-21-days",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Hacker had access to Denmark's population register for more than three weeks, documents show",
+        "body": {},
+        "lede": {
+          "text": "A hacker had access to the CPR register, Denmark's civil registration system, for 21 days and 17 hours, from 10 September to its discovery on 2 October, documents obtained by TV 2 show.",
+          "sources": [
+            "kristeligt_dagblad",
+            "tv2",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "10175649-aa74-402e-aeae-7aa8c4071182",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Medie: IT-kriminel havde adgang til CPR-register i 21 dage og 17 timer",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/medie-it-kriminel-havde-adgang-til-cpr-register-i-21-dage-og-17-timer",
+          "published_at": "2026-10-09T10:08:17.000000Z",
+          "content_hash": "sha256:56a4e873e3adbfcbbd9813fb8b511040c43b9fdde634428a2db5d60cf5c067c5",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/business/2026-10-09-nye-detaljer-om-cpr-skandale-hacker-var-over-alle-bjerge",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Nye detaljer om cpr-skandale – hacker var over alle bjerge",
+          "url": "https://nyheder.tv2.dk/business/2026-10-09-nye-detaljer-om-cpr-skandale-hacker-var-over-alle-bjerge",
+          "published_at": "2026-10-09T08:15:36.000000Z",
+          "content_hash": "sha256:626db5ef946e57bff168427b4bc7f7d7fff1b9e865fc898da50d564a1c53a42f",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:a452990e-2e76-5655-8ee8-4e60585d5e66",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Medie: IT-kriminel havde adgang til CPR-register i 21 dage og 17 timer",
+          "url": "https://www.berlingske.dk/danmark/medie-it-kriminel-havde-adgang-til-cpr-register-i-21-dage-og-17-timer",
+          "published_at": "2026-10-09T11:16:44.000000Z",
+          "content_hash": "sha256:884e9eb9d3d7e809c0d700a65565178904ca30d0f209fb4bd72e76d15f53d949",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "gade-sues-colleagues-husband",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Former parliament speaker sues a party colleague's husband over a Facebook comment",
+        "body": {},
+        "lede": {
+          "text": "Søren Gade, a former speaker of the Danish parliament, is suing the husband of Trine Jepsen, a fellow MP from Venstre, a liberal party, for 50,000 kroner over a since-deleted Facebook comment.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "politiken"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "33f20e5d-5a94-431f-80a1-40550538dc71",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Søren Gade vil have 50.000 kroner af Trine Jepsens mand i søgsmål",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/soeren-gade-vil-have-50000-kroner-af-trine-jepsens-mand-i-soegsmaal",
+          "published_at": "2026-10-09T09:43:28.000000Z",
+          "content_hash": "sha256:020f438b22a7bf12ee93b8ee9bcb0c53bd9ef3f7c03b7a19453c4786a738ab3e",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "politiken",
+          "source_id": "11015402",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Aktindsigt kaster lys over Søren Gades særprægede retssag",
+          "url": "https://politiken.dk/danmark/politik/art11015402/Aktindsigt-kaster-lys-over-S%C3%B8ren-Gades-s%C3%A6rpr%C3%A6gede-retssag",
+          "published_at": "2026-10-09T07:03:33.000000Z",
+          "content_hash": "sha256:90e62b933d6216091fd64b23fa63c036687fb503728175db9abe071739ecbc81",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:44d90f02-4aeb-5e4c-a48a-f31ac8b6d108",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Søren Gade vil have 50.000 kroner af Trine Jepsens mand i søgsmål",
+          "url": "https://www.berlingske.dk/politik/soeren-gade-vil-have-50000-kroner-af-trine-jepsens-mand-i-soegsmaal",
+          "published_at": "2026-10-09T10:10:47.000000Z",
+          "content_hash": "sha256:ee8adcd5adc8631fc9fac7afec9bf51c1064c2b53ad9181cab2ecfbec2e329f9",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "aarup-signal-hut-fire-trains",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Transport",
+      "copy": {
+        "headline": "Fire in a signal hut disrupts trains across Denmark",
+        "body": {},
+        "lede": {
+          "text": "A fire in a signal hut at Aarup, on western Funen, disrupted trains across Denmark on Friday; Banedanmark, the agency that runs the rail network, says repairs could take several weeks.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske",
+            "politiken"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "61e466d1-3472-4893-bf57-e762fd1f6680",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Togdrift vil være påvirket hele fredag på grund af brand",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/togdrift-vil-vaere-paavirket-hele-fredag-paa-grund-af-brand",
+          "published_at": "2026-10-09T08:50:46.000000Z",
+          "content_hash": "sha256:293cceb297d7ede2976588dc24dcb5227c25b6e79fe8f011e58c624fe17987c9",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:f41e2646-4e80-5add-a0ab-ba2d41d92057",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Togdrift vil være påvirket i lang tid frem efter brand i sikringshytte",
+          "url": "https://www.berlingske.dk/danmark/togdrift-vil-vaere-paavirket-i-lang-tid-frem-efter-brand-i-sikringshytte",
+          "published_at": "2026-10-09T16:35:44.000000Z",
+          "content_hash": "sha256:0148672c02daf6a519b75a0e182a66c627e98ff98db999fe2eb63256d9dbbb22",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:3ddbcc4a-bcda-4990-b631-90168ec6f7aa",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Banedanmark: Alt er sort og smeltet - togtrafikken hårdt ramt resten af dagen",
+          "url": "https://www.dr.dk/nyheder/indland/banedanmark-alt-er-sort-og-smeltet-togtrafikken-haardt-ramt-resten-af-dagen",
+          "published_at": "2026-10-09T08:46:55.000000Z",
+          "content_hash": "sha256:ddb4442d578ec40caae48cc1e6a368d3617c9ae7619e654c8fec057403686628",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11015802",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Brand i sikringsskab aflyser flere tog på tværs af landet frem til middag",
+          "url": "https://politiken.dk/rejser/art11015802/Brand-i-sikringsskab-aflyser-flere-tog-p%C3%A5-tv%C3%A6rs-af-landet-frem-til-middag",
+          "published_at": "2026-10-09T04:37:14.000000Z",
+          "content_hash": "sha256:1a66e1c5883074fca2b8af31d363c814e5a6561e25f87e5ab1c5fcc111ae5a71",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "kosovar-guards-stay-free",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "Court again refuses to hold Kosovar prison officers in custody",
+        "body": {},
+        "lede": {
+          "text": "The High Court on Friday refused to hold two Kosovar prison officers in custody; trainees for Denmark's rented prison in Kosovo, they are charged with assaulting an inmate at Vestre Fængsel, a Copenhagen prison.",
+          "sources": [
+            "berlingske",
+            "dr",
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:2d1ddecd-3d50-51d5-bed3-34f6de3ed10c",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Landsret afviser at spærre sigtede fængselsbetjente fra Kosovo inde",
+          "url": "https://www.berlingske.dk/indland/landsret-afviser-at-spaerre-sigtede-faengselsbetjente-fra-kosovo-inde",
+          "published_at": "2026-10-09T13:02:44.000000Z",
+          "content_hash": "sha256:c1b611d2c07d91d211a7a6e3a49987190be3dc2f5244b182317902f6f50a9c24",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "ed524c9a-1b07-44d2-a9aa-ac1f19901f07",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Nyt krav om indespærring af fængselsbetjente fra Kosovo",
+          "url": "https://www.kristeligt-dagblad.dk/nyt-krav-om-indespaerring-af-faengselsbetjente-fra-kosovo",
+          "published_at": "2026-10-09T08:10:00.000000Z",
+          "content_hash": "sha256:46e9af194f5ae3026294f5ed45028744a0c14b48826e8785abf5079748ec2d6c",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:60aee49e-8818-4ef0-876c-54ad0c8417b8",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Landsret afviser at varetægtsfængsle voldssigtede fængselsbetjente fra Kosovo",
+          "url": "https://www.dr.dk/nyheder/seneste/landsret-afviser-varetaegtsfaengsle-voldssigtede-faengselsbetjente-fra-kosovo",
+          "published_at": "2026-10-09T12:59:12.000000Z",
+          "content_hash": "sha256:5972ed12b544fc314a6b59c282732636e3420f8fd77aa4a050e806c44d887c7e",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "black-swan-adviser-indicted",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "Environmental adviser from TV documentary 'The Black Swan' charged with faking soil reports",
+        "body": {},
+        "lede": {
+          "text": "Prosecutors seek prison and fines of 1.66 million kroner each for an environmental adviser seen in TV 2's documentary 'The Black Swan' and another man, charged with faking soil-analysis reports; both deny it.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "jp"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "e8608f23-ca24-4706-bd57-12b7f86543c0",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Miljørådgiver fra Den sorte svane tiltalt i gigantsag",
+          "url": "https://www.kristeligt-dagblad.dk/miljoeraadgiver-fra-den-sorte-svane-tiltalt-i-gigantsag",
+          "published_at": "2026-10-09T07:14:46.000000Z",
+          "content_hash": "sha256:5cbeb2d53499d48c7e937872ebc583d99917937c292079dd5934dc9276d76736",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:bd6910e3-4a04-5c14-85bf-04962c9f0736",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Miljørådgiver fra Den sorte svane tiltalt i gigantsag",
+          "url": "https://www.berlingske.dk/indland/miljoeraadgiver-fra-den-sorte-svane-tiltalt-i-gigantsag",
+          "published_at": "2026-10-09T10:31:47.000000Z",
+          "content_hash": "sha256:03e3825bb12f7de564e901f78d377433a025d98b390546ce9e7be73dc33139b7",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19721260",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Miljørådgiver fra \"Den sorte svane\" tiltalt for omfattende rapportfusk",
+          "url": "https://jyllands-posten.dk/nyhedsoverblik/ECE19721260/nyhedsoverblik/",
+          "published_at": "2026-10-09T03:00:00.000000Z",
+          "content_hash": "sha256:f6f940ff4de50314c0a95f5c75124f4bb123a981dce1388168e3e8425c81cf75",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "frederiksen-to-meet-zedig-father",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Prime minister to meet father of Swedish officer who died after Copenhagen assault",
+        "body": {},
+        "lede": {
+          "text": "Mette Frederiksen, the prime minister, has agreed to meet the father of a Swedish police officer who died after an assault in Copenhagen; the attacker got one year in prison on Wednesday.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "1571b489-1180-41cf-8a6a-83b942334dbd",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Mette F. skal mødes med faren til svensk offer for vold ved VM-visning",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/mette-f-skal-moedes-med-faren-til-svensk-offer-vold-ved-vm-visning",
+          "published_at": "2026-10-09T15:07:13.000000Z",
+          "content_hash": "sha256:2b46354bcdf8d22b77efae64b0e6dc5afdd52e861b198f4eedd2864947a8b673",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:299a46dc-ade9-4770-a674-9f1e2e47c66f",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Far til dræbt betjent vil mødes med Mette Frederiksen",
+          "url": "https://www.dr.dk/nyheder/indland/far-til-draebt-betjent-vil-moedes-med-mette-frederiksen",
+          "published_at": "2026-10-09T15:02:09.000000Z",
+          "content_hash": "sha256:1b1e23f1a7473899f0451324819fbfa9310e94b7f2b00972f9ac45c1e9d70157",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:b0424ca7-21fc-50bf-b47a-793f504c3c0e",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Mette F. skal mødes med faren til svensk offer for vold ved VM-visning",
+          "url": "https://www.berlingske.dk/politik/mette-f-skal-moedes-med-faren-til-svensk-offer-for-vold-ved-vm-visning",
+          "published_at": "2026-10-09T15:39:45.000000Z",
+          "content_hash": "sha256:d54420d52a9ef04313bfb79b39b4cc85c3bb4a563a7f5d960f6b7a23ce820ae2",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "viborg-eleven-convicted-assault",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "Court jails 11 for humiliating assault on 17-year-old",
+        "body": {},
+        "lede": {
+          "text": "A court in Viborg on Friday convicted ten men and a woman of humiliating violence against a 17-year-old in April 2025, jailing them for 15 to 27 months.",
+          "sources": [
+            "kristeligt_dagblad",
+            "politiken",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "55eabc90-8c79-49bf-a9c2-42e8f3a80cb4",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "11 tiltalte dømmes for ydmygende vold mod 17-årig i Viborg",
+          "url": "https://www.kristeligt-dagblad.dk/11-personer-doemmes-grov-og-ydmygende-vold-i-viborg",
+          "published_at": "2026-10-09T14:17:45.000000Z",
+          "content_hash": "sha256:812c011d5e004fe89d7177f6471c412947fcc0dc73b97753bb0eb5df18cf2e4e",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:29c9e509-d496-42af-94c7-8e1d5cb55ef5",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "11 kidnappere idømt hårde domme i Viborg",
+          "url": "https://www.dr.dk/nyheder/indland/11-kidnappere-idoemt-haarde-domme-i-viborg",
+          "published_at": "2026-10-09T15:24:23.000000Z",
+          "content_hash": "sha256:e8b1eb47a488ab54ad479dbdab19a4d5682f6e1a2417bed94c2cf0f691aef5b7",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11017218",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "11 personer dømmes for grov og ydmygende vold mod 17-årig",
+          "url": "https://politiken.dk/danmark/art11017218/11-personer-d%C3%B8mmes-for-grov-og-ydmygende-vold-mod-17-%C3%A5rig",
+          "published_at": "2026-10-09T14:42:58.000000Z",
+          "content_hash": "sha256:f460bebcc7ae1ed0f1462a1803bdf159918e26553bdae964c744c7f38a162b5e",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "citizenship-cases-reopened",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Citizenship cases resume after criminal-register error",
+        "body": {},
+        "lede": {
+          "text": "Citizenship cases halted on 7 September over an error in the criminal register are resuming, along with some residence and family-reunification applications, after the national police judged the error's consequences 'very limited'.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "c7859944-6a45-4038-84d9-7520ad340386",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Sager om indfødsret genoptages efter registerfejl",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/sager-om-indfoedsret-genoptages-efter-registerfejl",
+          "published_at": "2026-10-09T10:28:19.000000Z",
+          "content_hash": "sha256:de41b6ba4c363597b7b4819b2d9cb6fa7c0456626c928de9cd01a6d0f1da3cd7",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:9c795ca3-fc1b-5a13-bd40-08be67be0ce2",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Sager om indfødsret genoptages efter registerfejl",
+          "url": "https://www.berlingske.dk/politik/sager-om-indfoedsret-genoptages-efter-registerfejl",
+          "published_at": "2026-10-09T10:28:45.000000Z",
+          "content_hash": "sha256:2a24c70d675f22aa8195641cf60d46ff1145817220af6aa14e9ceebe85651609",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:c1aef590-6a59-4293-b857-ad8aa99d70b5",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Sager om indfødsret genoptages efter fejl i register",
+          "url": "https://www.dr.dk/nyheder/seneste/sager-om-indfoedsret-genoptages-efter-fejl-i-register",
+          "published_at": "2026-10-09T10:40:04.000000Z",
+          "content_hash": "sha256:80f7362a294597427180f6eef9ff89504242df7f8883aee47f7900bd69d484a9",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "sperm-bank-inspections-failed",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Health",
+      "copy": {
+        "headline": "Regulator admits it failed to inspect sperm banks as the law requires",
+        "body": {},
+        "lede": {
+          "text": "Denmark's Patient Safety Authority admits it has not inspected sperm banks on site after serious incidents, as the law requires; Ida Auken, the health minister, wants an account by the end of January 2027.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "09428a84-08df-4734-bd9c-b4ba2a4eb888",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Styrelse erkender mangelfuld kontrol med sædbanker",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/styrelse-erkender-mangelfuld-kontrol-med-saedbanker",
+          "published_at": "2026-10-09T04:52:00.000000Z",
+          "content_hash": "sha256:a3ab2b08bc94b1428b1eb00da34ace87bd8a8045bd25a8b21feb21f9b08a967a",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:938233ce-9f1f-4d2f-9671-0f8705397500",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Ny udvikling i sædskandale: Styrelse erkender mangelfuld kontrol med sædbanker",
+          "url": "https://www.dr.dk/nyheder/indland/ny-udvikling-i-saedskandale-styrelse-erkender-mangelfuld-kontrol-med-saedbanker",
+          "published_at": "2026-10-09T04:01:00.000000Z",
+          "content_hash": "sha256:d2e4b9eb169b2197c51802c2a7aa330ababe153834d65cea0f6bc3348b47868c",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:81e5f18f-5e0f-568b-8463-549a6c1a84e2",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Styrelse erkender mangelfuld kontrol med sædbanker",
+          "url": "https://www.berlingske.dk/politik/styrelse-erkender-mangelfuld-kontrol-med-saedbanker",
+          "published_at": "2026-10-09T06:58:47.000000Z",
+          "content_hash": "sha256:ae471e04c901b578e50eb03cab4f6c5f3d9efa8af655d21e77ae61fc1875a6fb",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "trump-russian-diesel-licence",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Trump says Russia will supply diesel as US eases sanctions",
+        "body": {},
+        "lede": {
+          "text": "Russia will at once supply more than 300,000 tonnes of diesel, Donald Trump said on Friday; the US Treasury has temporarily eased sanctions so Russia can sell diesel abroad until 7 April 2027.",
+          "sources": [
+            "kristeligt_dagblad",
+            "borsen",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "dbe3fd55-b026-41c7-bfd9-95f94c636fc8",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Trump lover russisk diesel til trængte amerikanere",
+          "url": "https://www.kristeligt-dagblad.dk/udland/trump-lover-russisk-diesel-til-traengte-amerikanere",
+          "published_at": "2026-10-09T19:03:27.000000Z",
+          "content_hash": "sha256:53824f0dd093435f1f77cbad06a0c9403fd2c0945114c79808b67e99d0c9ac88",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:df9365aa-e4d3-5b01-8850-65c10bd086e9",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Trump lover russisk diesel til trængte amerikanere",
+          "url": "https://www.berlingske.dk/internationalt/trump-lover-russisk-diesel-til-traengte-amerikanere",
+          "published_at": "2026-10-09T20:46:44.000000Z",
+          "content_hash": "sha256:280ba06e85476ef877639d0cd8ab49826f8be70dd3b92e64f3ce211e69db8be6",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/trump-putin-vil-levere-flere-millioner-ton-diesel-til-usa-og-det-globale-marked",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Trump: Putin vil levere flere millioner ton diesel til USA og det globale marked",
+          "url": "https://borsen.dk/nyheder/udland/trump-putin-vil-levere-flere-millioner-ton-diesel-til-usa-og-det-globale-marked",
+          "published_at": "2026-10-09T19:18:00.000000Z",
+          "content_hash": "sha256:e9714ea00185cdca314d5c1abc86e66594ee64e51482f73672b3c1b22b8fcf71",
+          "primary": false
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "076242dd-9024-4806-ad40-8ca3c72d56cc",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Zelenskyj: Trumps dieselaftale giver Putin penge at føre krig for",
+          "url": "https://www.kristeligt-dagblad.dk/udland/zelenskyj-trumps-dieselaftale-giver-putin-penge-foere-krig",
+          "published_at": "2026-10-09T20:20:25.000000Z",
+          "content_hash": "sha256:8acb3a6d1a887aad685bc54673af011d413748a20a5b63369179883ee817476b",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "bbc",
+          "source_id": "cm1dwgr666wno",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Trump announces deal for Russian diesel as Zelensky calls it a gift to Putin",
+          "url": "https://www.bbc.co.uk/news/articles/cm1dwgr666wno?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-10T00:45:51.000000Z",
+          "content_hash": "sha256:b6c1667ca78f3d4d2b5fe9c52eacbf4810dfac3f00fe25b4b34b55b16a27c1f7",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "c5lye9z4xw4yo",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Analysis: Trump's shock Russia deal highlights mounting pressure to curb fuel prices",
+          "url": "https://www.bbc.co.uk/news/articles/c5lye9z4xw4yo?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-09T22:30:22.000000Z",
+          "content_hash": "sha256:c444b5d0e83cb6cc711ea1458f5faf506ad1e17695ad41cf674f25d475c05368",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "84ca76fd-0eed-4fb6-aea4-f72638a9d9c8",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Trump agrees deal with Putin for Russia to release diesel",
+          "url": "https://www.ft.com/content/84ca76fd-0eed-4fb6-aea4-f72638a9d9c8",
+          "published_at": "2026-10-09T22:06:22.000000Z",
+          "content_hash": "sha256:e3504d5e8f286ab13ee033d3a4c250f60cec751edd2a1f0aa2ee7e79447f5a44",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/us-news/live/2026/oct/09/pentagon-fort-hood-livestream-firing-squad-execution-reaction-backlash-pete-hegseth-donald-trump-mussolini-latest-news-updates",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "‘I want to thank President Putin’, Trump says after agreeing to lift sanctions on Russian diesel – as it happened",
+          "url": "https://www.theguardian.com/us-news/live/2026/oct/09/pentagon-fort-hood-livestream-firing-squad-execution-reaction-backlash-pete-hegseth-donald-trump-mussolini-latest-news-updates",
+          "published_at": "2026-10-10T02:02:45.000000Z",
+          "content_hash": "sha256:6ee20abc402faebcf00c2298785c3ad5dc904b0b14f0b4a3167cbe7499effc45",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/us-news/2026/oct/09/trump-putin-russian-diesel-ukraine",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Zelenskyy furious as Trump announces deal to buy Russian diesel",
+          "url": "https://www.theguardian.com/us-news/2026/oct/09/trump-putin-russian-diesel-ukraine",
+          "published_at": "2026-10-09T23:39:31.000000Z",
+          "content_hash": "sha256:49b00f7607b86a4d8e67411fdd366bbbbb7589a3686dac316d3e36bdd9af3d73",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/10/ukraine-war-briefing-trumps-russian-diesel-deal-derided-as-weak-and-a-betrayal-of-ukraine-and-us-national-security",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Ukraine war briefing: Kyiv blasts peace talks as just ‘smokescreen’ for Trump‘s Russian diesel deal",
+          "url": "https://www.theguardian.com/world/2026/oct/10/ukraine-war-briefing-trumps-russian-diesel-deal-derided-as-weak-and-a-betrayal-of-ukraine-and-us-national-security",
+          "published_at": "2026-10-10T01:31:13.000000Z",
+          "content_hash": "sha256:d0bffc8b1cbb201aa6038823628b80e4cca239231540e94f2b81a78128388edf",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/09/us/politics/trump-russia-diesel-putin.html",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Trump Says He Will Import Russian Diesel Fuel Amid High Prices",
+          "url": "https://www.nytimes.com/2026/10/09/us/politics/trump-russia-diesel-putin.html",
+          "published_at": "2026-10-10T03:09:00.000000Z",
+          "content_hash": "sha256:6a3bcaa610288c7e85ebbde28e3a16346f9d7fe66769a1b718ee529bb26ca017",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/politics/2026/10/09/trump-says-putin-will-export-diesel-bid-lower-prices/",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Trump announces diesel deal with Russia in bid to lower prices",
+          "url": "https://www.washingtonpost.com/politics/2026/10/09/trump-says-putin-will-export-diesel-bid-lower-prices/",
+          "published_at": "2026-10-09T20:56:04.000000Z",
+          "content_hash": "sha256:ab3bc2b477c01a0f019b2b88d81a165fc24a4a1e1f61e81a8a3f8a539b1a16ce",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003964821",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "President Trump said his administration has reached an agreement with Russian President Vladimir Putin for Russia to supply hundreds of thousands of tons of diesel fuel in the coming months",
+          "url": "https://www.wsj.com/politics/policy/trump-strikes-deal-with-putin-for-russian-diesel-15751436?mod=rss_socialpoliticsfeed",
+          "published_at": "2026-10-10T01:23:00.000000Z",
+          "content_hash": "sha256:9b4aca48229d1d417dcb9578cc5ac04b14583967f9c292fd774433681a75fabe",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "us-sanctions-icc-allies-object",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Denmark and seven other countries object to American sanctions on the war-crimes court",
+        "body": {},
+        "lede": {
+          "text": "Denmark, Britain, Canada, Japan and four other countries said they 'regret and strongly disagree with' the sanctions America imposed on Friday on the International Criminal Court, the war-crimes tribunal in The Hague.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "bbc",
+            "ft"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "0b408c92-a443-4a1a-82b9-923e27b6bf3e",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "USA indfører sanktioner mod international domstol",
+          "url": "https://www.kristeligt-dagblad.dk/udland/usa-indfoerer-sanktioner-mod-international-domstol",
+          "published_at": "2026-10-09T14:14:41.000000Z",
+          "content_hash": "sha256:56945ffdcd89047c975c88ecf9403cf0182ce7db882af92629f76ec4abf3b147",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "c0bd83f4-479c-4801-9fa2-fbbab1f4ace3",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "ICC-medlemslande udtrykker dyb bekymring over USA's sanktioner",
+          "url": "https://www.kristeligt-dagblad.dk/udland/icc-medlemslande-udtrykker-dyb-bekymring-over-usas-sanktioner",
+          "published_at": "2026-10-09T16:18:35.000000Z",
+          "content_hash": "sha256:b0b00bdb3618809c803c9c3e39c08d1aebd221004d5408e9a518b2d6b971579a",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:754ac0de-ec83-5290-9fe2-c4c86a35cdfd",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "ICC-medlemslande udtrykker dyb bekymring over USA's sanktioner",
+          "url": "https://www.berlingske.dk/internationalt/icc-medlemslande-udtrykker-dyb-bekymring-over-usas-sanktioner",
+          "published_at": "2026-10-09T17:04:53.000000Z",
+          "content_hash": "sha256:65a0432a28c00560196b5fa825679cba81420ca037332923642cd58197eb463d",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/usa-indforer-sanktioner-mod-international-domstol",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "USA indfører sanktioner mod international domstol",
+          "url": "https://borsen.dk/nyheder/udland/usa-indforer-sanktioner-mod-international-domstol",
+          "published_at": "2026-10-09T15:00:05.000000Z",
+          "content_hash": "sha256:a63b76cc40bf9971147397ce9135103c40149b9f78692871da75e013eab18952",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cj20vkkx3rdvo",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "US unveils sanctions on ICC in move court condemns as 'assault on rule of law'",
+          "url": "https://www.bbc.co.uk/news/articles/cj20vkkx3rdvo?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-09T18:40:10.000000Z",
+          "content_hash": "sha256:10978d4fc867decf464237b9272b56e8db7c6181879a75d5a8c37506a48742fd",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "4d5757e9-78b5-42f6-b26b-d9556321c0c8",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "US announces sanctions campaign to ‘end’ ICC",
+          "url": "https://www.ft.com/content/4d5757e9-78b5-42f6-b26b-d9556321c0c8",
+          "published_at": "2026-10-09T15:50:02.000000Z",
+          "content_hash": "sha256:eb11285d128056c1bea6581285d2deae209540ccd5bb02fd2205a6bb7ad71503",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/us-news/2026/oct/09/sanctions-icc-trump",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "US imposes new sanctions on international criminal court",
+          "url": "https://www.theguardian.com/us-news/2026/oct/09/sanctions-icc-trump",
+          "published_at": "2026-10-09T16:13:13.000000Z",
+          "content_hash": "sha256:c89751479ee5ebc5a290cd2e0a941c1a35b7ff001d77d997d220903d26476e4c",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/live/2026/oct/09/2026-nobel-peace-prize-winner-russia-ukraine-sudan-war-france-protests-poland-latest-news-updates",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "US imposes sanctions on ICC, hours after former judge Pillay wins Nobel peace prize – as it happened",
+          "url": "https://www.theguardian.com/world/live/2026/oct/09/2026-nobel-peace-prize-winner-russia-ukraine-sudan-war-france-protests-poland-latest-news-updates",
+          "published_at": "2026-10-09T15:07:00.000000Z",
+          "content_hash": "sha256:baa14b27bec660d50fc79e73f45aab6c35992e56967b9995d4ce55993faf0274",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/09/us/politics/trump-international-criminal-court-sanctions.html",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Trump Administration Hits International Criminal Court With Severe Sanctions",
+          "url": "https://www.nytimes.com/2026/10/09/us/politics/trump-international-criminal-court-sanctions.html",
+          "published_at": "2026-10-09T17:51:25.000000Z",
+          "content_hash": "sha256:4aa06768068d5d1816a291e6980188f399f277b565a158228977e52894a23864",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/world/2026/10/09/trump-hits-international-criminal-court-with-new-us-sanctions/",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Trump hits International Criminal Court with sanctions after Nobel goes to former judge",
+          "url": "https://www.washingtonpost.com/world/2026/10/09/trump-hits-international-criminal-court-with-new-us-sanctions/",
+          "published_at": "2026-10-09T21:00:22.000000Z",
+          "content_hash": "sha256:76aafb71ce8fcd2b3335ebf4a71d8750f22ca01e7cc851c2fa453bdaa8427aaa",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003963977",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "U.S. Sanctions and Threatens to Dismantle International Criminal Court",
+          "url": "https://www.wsj.com/world/europe/u-s-sanctions-and-threatens-to-dismantle-international-criminal-court-1d7417c8?mod=rss_worldnews",
+          "published_at": "2026-10-09T17:42:00.000000Z",
+          "content_hash": "sha256:220828842e60b2ee4abc165cebc1c551a29b2af43dd534299c4149fd50e0387a",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "eu-china-hybrid-car-deal",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Europe",
+      "copy": {
+        "headline": "China agrees to cut hybrid car exports to the EU by more than half",
+        "body": {},
+        "lede": {
+          "text": "China will cut hybrid car exports to the EU by more than half over four years under a deal EU leaders must still approve, Maroš Šefčovič, the EU's trade commissioner, said on Friday.",
+          "sources": [
+            "kristeligt_dagblad",
+            "guardian",
+            "nytimes"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "762a44bf-a928-42a7-bda6-470400c99a97",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "EU og Kina har nået en aftale om handel med hybridbiler og råstoffer",
+          "url": "https://www.kristeligt-dagblad.dk/udland/eu-og-kina-har-naaet-en-aftale-om-handel-med-hybridbiler-og-raastoffer",
+          "published_at": "2026-10-09T13:36:55.000000Z",
+          "content_hash": "sha256:9c5dcdefd5dbb7a3e49a3a00a0e30307904bf402a9eb5f6332f87aeda0d52703",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:b9376857-8088-5aeb-a8ad-ccf39933727b",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Kina går med til at skære i eksport af hybridbiler – korrespondent kalder aftale en »prøveballon«",
+          "url": "https://www.berlingske.dk/internationalt/kina-gaar-med-til-at-skaere-i-eksport-af-hybridbiler--korrespondent-kalder-aftale-en-proeveballon",
+          "published_at": "2026-10-09T17:51:30.000000Z",
+          "content_hash": "sha256:20a425cc066d4cb3ecf6cf6ee4811646a4786d2ef3be8276f3e7b95b23395402",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11017336",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Handelskrig skudt til hjørne. EU har fået overraskende indrømmelser af Kina",
+          "url": "https://politiken.dk/internationalt/art11017336/Handelskrig-skudt-til-hj%C3%B8rne.-EU-har-f%C3%A5et-overraskende-indr%C3%B8mmelser-af-Kina",
+          "published_at": "2026-10-09T16:45:47.000000Z",
+          "content_hash": "sha256:0e960b46dbccb65d2d7de436d351d623a6b7bca361625190f2d5feb916261310",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/eu-indgar-aftale-med-kina-om-tre-tiltag-men-er-langt-fra-vejs-ende",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "EU indgår aftale med Kina om tre tiltag – men er \"langt fra vejs ende\"",
+          "url": "https://borsen.dk/nyheder/udland/eu-indgar-aftale-med-kina-om-tre-tiltag-men-er-langt-fra-vejs-ende",
+          "published_at": "2026-10-09T13:47:50.000000Z",
+          "content_hash": "sha256:1102f45bfde5c8ca9f412c918a83b197066f4508e37939266ac0f65da5b24437",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "2823ef6f-b3d7-494b-b131-414c02d6a59f",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "China and EU avert trade conflict with ‘understanding’ on hybrid cars",
+          "url": "https://www.ft.com/content/2823ef6f-b3d7-494b-b131-414c02d6a59f",
+          "published_at": "2026-10-09T15:41:56.000000Z",
+          "content_hash": "sha256:0e5f86d656218b19e842a7b604c1d0bb5e679ccf0edca6346ad1dc4d4f6eb0b2",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/business/2026/oct/09/china-agrees-to-curb-hybrid-car-exports-to-eu-in-landmark-deal",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "China agrees to ‘halve’ hybrid car exports to EU in landmark deal",
+          "url": "https://www.theguardian.com/business/2026/oct/09/china-agrees-to-curb-hybrid-car-exports-to-eu-in-landmark-deal",
+          "published_at": "2026-10-09T15:05:57.000000Z",
+          "content_hash": "sha256:0f9887ffccf0c9c961da89265cf27432851ed30bd13e7a05b49682439e076b98",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/09/business/china-european-union-trade.html",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "China and Europe Step Back From Trade War With Limits on Chinese Car Exports",
+          "url": "https://www.nytimes.com/2026/10/09/business/china-european-union-trade.html",
+          "published_at": "2026-10-09T18:54:08.000000Z",
+          "content_hash": "sha256:a652319fd75bc8db1cc610943c9861cc3691062c478597e07e5685489749660c",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003963667",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "EU Says it Reached Understanding with China to Cut Back Hybrid Vehicle Exports",
+          "url": "https://www.wsj.com/business/autos/china-eu-move-forward-on-trade-relationship-talks-0f3361b4?mod=pls_whats_news_us_business_f",
+          "published_at": "2026-10-09T16:34:00.000000Z",
+          "content_hash": "sha256:c0c680b3e2723118b3984a701a51ce907aeb4004b65cd58fd115cca2ce69ee0f",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "flydubai-copilot-crash-plot",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Co-pilot planned 9/11-style attack on Israel's main airport, UAE says",
+        "body": {},
+        "lede": {
+          "text": "The Omani co-pilot who attacked the pilot with an axe on a flight from Dubai on 30 September meant to crash it into Ben Gurion, Israel's main airport, Emirati prosecutors said on Friday.",
+          "sources": [
+            "kristeligt_dagblad",
+            "guardian",
+            "wapo"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "e714e1f4-0380-4938-bade-ee6d3a672bd0",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Anklager: Andenpilot fra Flydubai var inspireret af 9/11-angreb",
+          "url": "https://www.kristeligt-dagblad.dk/udland/anklager-andenpilot-fra-flydubai-var-inspireret-af-911-angreb",
+          "published_at": "2026-10-09T17:38:17.000000Z",
+          "content_hash": "sha256:fe21dd68be9b041fe781c557aa98305a94f15d30513a246ca92d930cc5a5da7a",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:e29c9413-704f-489b-8ca5-caca468b4035",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Emiraterne: Pilot ville udføre selvmordsangreb mod Tel Avivs lufthavn",
+          "url": "https://www.dr.dk/nyheder/udland/emiraterne-pilot-ville-udfoere-selvmordsangreb-mod-tel-avivs-lufthavn",
+          "published_at": "2026-10-09T17:46:32.000000Z",
+          "content_hash": "sha256:12be5453380a1a411360772f76a4680f944343b5acff34391dbb856c76c9535c",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:fdb5a427-555a-57cd-a1b8-8b85a0bb2009",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Anklager: Andenpilot fra Flydubai var inspireret af 9/11-angreb",
+          "url": "https://www.berlingske.dk/internationalt/anklager-andenpilot-fra-flydubai-var-inspireret-af-911-angreb",
+          "published_at": "2026-10-09T18:09:44.000000Z",
+          "content_hash": "sha256:a8ad34d61d16a6172bd7d8934dafafdebf60fc6c22047ce984fe821183eae873",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "8f5225d4-539c-40e2-b9f5-19c1b5d6222d",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Flydubai co-pilot planned 9/11-style attack on Tel Aviv airport, UAE says",
+          "url": "https://www.ft.com/content/8f5225d4-539c-40e2-b9f5-19c1b5d6222d",
+          "published_at": "2026-10-09T20:27:56.000000Z",
+          "content_hash": "sha256:fe76b1870bcbd082c7d0c92233bb231c475f0baa03c75f7e45596fef731414ed",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/09/flydubai-co-pilot-planned-suicide-attack-on-israeli-airport-uae-prosecutors-say",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Flydubai co-pilot planned suicide attack on Israeli airport, UAE prosecutors say",
+          "url": "https://www.theguardian.com/world/2026/oct/09/flydubai-co-pilot-planned-suicide-attack-on-israeli-airport-uae-prosecutors-say",
+          "published_at": "2026-10-09T20:38:11.000000Z",
+          "content_hash": "sha256:bc1a474f6c9bfc9f3c2a242ae1b1f140952232889e9186895953d4b729bc1047",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/09/world/middleeast/flydubai-pilot-attack.html",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Attacker in FlyDubai Flight Meant to Crash Into Israeli Airport, Emiratis Say",
+          "url": "https://www.nytimes.com/2026/10/09/world/middleeast/flydubai-pilot-attack.html",
+          "published_at": "2026-10-10T00:10:22.000000Z",
+          "content_hash": "sha256:882a14b9919fe783c8b973a00ccbf746d49756d9920111ef9bb47385fe9544fb",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/world/2026/10/09/flydubai-co-pilot-planned-911-style-attack-israels-main-airport-uae-says/",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "FlyDubai co-pilot planned 9/11-style attack on Israel’s main airport, UAE says",
+          "url": "https://www.washingtonpost.com/world/2026/10/09/flydubai-co-pilot-planned-911-style-attack-israels-main-airport-uae-says/",
+          "published_at": "2026-10-09T21:13:50.000000Z",
+          "content_hash": "sha256:fa50a7ddc87a090e4afb97139fe3489d11a84746594e540f552a43b60eb0d756",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003964404",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "FlyDubai Co-Pilot Planned to Crash Into Israeli Airport, U.A.E. Says",
+          "url": "https://www.wsj.com/world/middle-east/flydubai-co-pilot-planned-to-crash-into-israeli-airport-u-a-e-says-5e337b5f?mod=rss_worldnews",
+          "published_at": "2026-10-09T17:46:00.000000Z",
+          "content_hash": "sha256:34fb77b42a0834801f5afbe3af0e67ed73db3fc12dd96c4c4c83dbcf7dcf770f",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "danish-exports-fall-august",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Economy",
+      "copy": {
+        "headline": "Danish exports fall 3.3 per cent as goods sales to America drop",
+        "body": {},
+        "lede": {
+          "text": "Statistics Denmark says Danish exports fell 3.3 per cent from July to 194 billion kroner in August, pulled down by lower sales of goods to the United States.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "d4fa4159-6850-446e-b79f-68f829afa4e0",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Fald i vareeksport til USA trækker samlet dansk eksport ned",
+          "url": "https://www.kristeligt-dagblad.dk/fald-i-vareeksport-til-usa-traekker-samlet-dansk-eksport-ned",
+          "published_at": "2026-10-09T07:26:50.000000Z",
+          "content_hash": "sha256:cb829dee712eecb5a0fc6844b9e4ccfbe647c5d3925fa2462bbb006c742b4b08",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:4e7f20e9-b020-5624-9a84-7de76da21e67",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Fald i vareeksport til USA trækker samlet dansk eksport ned",
+          "url": "https://www.berlingske.dk/business/fald-i-vareeksport-til-usa-traekker-samlet-dansk-eksport-ned",
+          "published_at": "2026-10-09T08:08:44.000000Z",
+          "content_hash": "sha256:28589552fa7db740f78515940fcd1b9a6178b37b581ec9b046a78113cec0d07c",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:900bdbe9-b13e-47d7-971b-7d680191124b",
+          "input_id": "export-2026-10-10-0330",
+          "original_title": "Eksporten faldt med 3,3 procent i august",
+          "url": "https://www.dr.dk/nyheder/seneste/eksporten-faldt-med-3-3-procent-i-august",
+          "published_at": "2026-10-09T07:25:21.000000Z",
+          "content_hash": "sha256:219b41d68a9ca7677ee9ffa936dc14470d9301871dcb372bc900754c8f2222eb",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    }
+  ],
+  "fit_policy": {
+    "allow_role_fallback": true,
+    "allow_composition_substitution": true,
+    "reserve_story_ids": [],
+    "omittable_story_ids": [
+      "pays-named-cpr-leak-firm",
+      "seniorpension-veto-threat",
+      "russian-tv-flare-footage",
+      "kirkerup-police-review-ordered",
+      "navi-pillay-nobel-peace-prize",
+      "cpr-intruder-access-21-days",
+      "gade-sues-colleagues-husband",
+      "aarup-signal-hut-fire-trains",
+      "kosovar-guards-stay-free",
+      "black-swan-adviser-indicted",
+      "frederiksen-to-meet-zedig-father",
+      "viborg-eleven-convicted-assault",
+      "citizenship-cases-reopened",
+      "sperm-bank-inspections-failed",
+      "trump-russian-diesel-licence",
+      "us-sanctions-icc-allies-object",
+      "eu-china-hybrid-car-deal",
+      "flydubai-copilot-crash-plot",
+      "danish-exports-fall-august"
+    ]
+  }
+}

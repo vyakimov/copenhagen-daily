@@ -1,0 +1,57 @@
+[
+ {
+  "requested": "da:Statens Uddannelsesstøtte",
+  "status": "found",
+  "title": "Statens Uddannelsesstøtte",
+  "extract": "Statens Uddannelsesstøtte er en dansk økonomisk uddannelsesstøtte, som studerende kan søge til en række godkendte ungdoms- og videregående uddannelser. Ansøgeren skal opfylde en række betingelser for at kunne få SU og andre tillægsydelser.",
+  "url": "https://da.wikipedia.org/wiki/Statens_Uddannelsesst%C3%B8tte",
+  "type": "standard",
+  "fetched_at": "2026-10-10T03:39:44.599812Z",
+  "term": "SU",
+  "definition": "the state study grant"
+ },
+ {
+  "requested": "Green Left (Denmark)",
+  "status": "found",
+  "title": "Green Left (Denmark)",
+  "extract": "The Green Left is a democratic socialist political party in Denmark. The SF was founded on 15 February 1959 by Aksel Larsen, a former leader of the Communist Party of Denmark (DKP), who was removed for criticizing the Soviet intervention in the Hungarian Revolution of 1956. Larsen aimed to create a third way between Denmark's US-oriented social democracy and Soviet-oriented communism, combining democracy with socialism. The SF entered the Folketing in the 1960 Danish general election, while the DKP lost its seats. The SF became involved in peace, anti-nuclear, and grassroots movements, advocating for independence from the Soviet Union.",
+  "url": "https://en.wikipedia.org/wiki/Green_Left_(Denmark)",
+  "type": "standard",
+  "fetched_at": "2026-10-10T03:39:44.763701Z",
+  "term": "SF",
+  "definition": "a left-wing party"
+ },
+ {
+  "requested": "Folketing",
+  "status": "found",
+  "title": "Folketing",
+  "extract": "The Folketing, also known as the Parliament of Denmark or the Danish Parliament in English, is the unicameral national legislature (parliament) of the Kingdom of Denmark — Denmark proper together with the Faroe Islands and Greenland. Established in 1849, the Folketing was the lower house of the bicameral parliament called the Rigsdag until 1953; the upper house was the Landsting.",
+  "url": "https://en.wikipedia.org/wiki/Folketing",
+  "type": "standard",
+  "fetched_at": "2026-10-10T03:39:44.912127Z",
+  "term": "Folketing",
+  "definition": "Denmark's parliament"
+ },
+ {
+  "requested": "Red–Green Alliance (Denmark)",
+  "status": "found",
+  "title": "Red–Green Alliance (Denmark)",
+  "extract": "The Red–Green Alliance, or Unity List, is an eco-socialist political party in Denmark. It was founded in 1989 with the merger of three Marxist parties, and is the most left-wing party in the Folketing, where it advocates for the expansion of the welfare state and social justice as well as the socialist transformation of Denmark and the entire globe. During the 2021 Copenhagen City Council election the party placed first, with 24.6% of the votes. The party is also active in various trade unions within Denmark.",
+  "url": "https://en.wikipedia.org/wiki/Red%E2%80%93Green_Alliance_(Denmark)",
+  "type": "standard",
+  "fetched_at": "2026-10-10T03:39:45.064702Z",
+  "term": "Enhedslisten",
+  "definition": "a far-left party"
+ },
+ {
+  "requested": "The Alternative (Denmark)",
+  "status": "found",
+  "title": "The Alternative (Denmark)",
+  "extract": "The Alternative is a green and pro-European political party in Denmark. The party was publicly launched on 27 November 2013 by former Minister of Culture Uffe Elbæk and Josephine Fock; Elbæk had been a parliamentarian for the Social Liberal Party. Elbæk was the leader of the party until February 2020, where he stepped down and was succeeded by Fock. Currently the party is led by Franciska Rosenkilde. The Alternative regards itself as a political movement and a cultural voice, as well as a political party. The party is critical of economic growth, which it views as unsustainable.",
+  "url": "https://en.wikipedia.org/wiki/The_Alternative_(Denmark)",
+  "type": "standard",
+  "fetched_at": "2026-10-10T03:39:45.220343Z",
+  "term": "Alternativet",
+  "definition": "a green party"
+ }
+]

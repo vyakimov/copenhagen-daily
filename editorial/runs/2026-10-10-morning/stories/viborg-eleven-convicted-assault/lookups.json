@@ -1,0 +1,11 @@
+[
+ {
+  "requested": "Viborg, Denmark",
+  "status": "unavailable",
+  "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Viborg%2C_Denmark",
+  "http_status": 429,
+  "fetched_at": "2026-10-10T03:39:46.532406Z",
+  "term": "Viborg",
+  "definition": "a city in central Jutland"
+ }
+]

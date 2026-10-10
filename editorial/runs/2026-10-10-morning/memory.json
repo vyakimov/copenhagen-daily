@@ -1,0 +1,4304 @@
+{
+ "schema_version": 1,
+ "publish_root": "/Users/vy/Documents/Development/copenhagen-daily/publisher/var/evaluation/site",
+ "cutoff_at": "2026-10-10T03:30:00.000000Z",
+ "previous_cutoff_at": "2026-10-09T03:30:00.000000Z",
+ "next_edition_number": 5,
+ "editions": [
+  {
+   "id": "2026-10-09-morning",
+   "number": 4,
+   "date": "2026-10-09",
+   "cutoff_at": "2026-10-09T03:30:00.000000Z",
+   "activated_at": "2026-10-09T04:44:47.499Z",
+   "sequence": 4,
+   "stories": [
+    {
+     "id": "seniorpension-cut-finance-bill-2027",
+     "role": "lead",
+     "kicker": "Welfare",
+     "headline": "Government plans to cut early pension for worn-out workers",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "3027496a-f31c-438c-8545-f9e91c42e21e"
+      },
+      {
+       "source": "jp",
+       "source_id": "19721191"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:9dd8dfdb-8db0-5194-bc6e-a682fc06eaac"
+      },
+      {
+       "source": "borsen",
+       "source_id": "https://borsen.dk/nyheder/politik/borsen-erfarer-regeringen-vil-skaere-pa-seniorpension-boligstotte-og-erhvervsstotte"
+      },
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "e3a94687-b8fc-430d-b6eb-ce0519e9b6f9"
+      },
+      {
+       "source": "via_ritzau",
+       "source_id": "https://via.ritzau.dk/pressemeddelelse/15216823/?publisherId=13560441&lang=da"
+      },
+      {
+       "source": "via_ritzau",
+       "source_id": "https://via.ritzau.dk/pressemeddelelse/15216973/?publisherId=2974949&lang=da"
+      }
+     ],
+     "thread": "finance-bill-2027"
+    },
+    {
+     "id": "cpr-hacker-password-123456",
+     "role": "secondary",
+     "kicker": "Denmark",
+     "headline": "Hacker says Denmark's civil register was breached with the password '123456'",
+     "sources": [
+      {
+       "source": "politiken",
+       "source_id": "11014257"
+      },
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "a9255fce-e4f9-4509-84fd-da9d44ad78b3"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:65e43817-218e-57b4-b4d8-dccf487e682c"
+      }
+     ],
+     "thread": "cpr-register-leak"
+    },
+    {
+     "id": "opening-debate-immigration-2026",
+     "role": "secondary",
+     "kicker": "Politics",
+     "headline": "Immigration dominates Denmark's opening parliamentary debate",
+     "sources": [
+      {
+       "source": "politiken",
+       "source_id": "11013690"
+      },
+      {
+       "source": "altinget",
+       "source_id": "https://www.altinget.dk/artikel/foelg-den-livlige-maratondebat-altinget-er-med-i-salen-hele-dagen"
+      },
+      {
+       "source": "tv2",
+       "source_id": "https://nyheder.tv2.dk/politik/2026-10-08-jeg-ville-oenske-de-ikke-var-her-sagde-mette-f-om-bestemte-muslimer-og-fem-andre-nedslag-i-folketingets-aabningsdebat"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:5236525e-b114-5c20-aa43-5bb2193fb571"
+      },
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "62baf3ef-fa2c-4c42-b96c-ea259a93f1b2"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:reel:a86482f8-90e6-42af-a988-57795d90d42c"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "venstre-record-low-5-8-poll",
+     "role": "secondary",
+     "kicker": "Politics",
+     "headline": "Venstre sinks to 5.8 per cent, its lowest poll ever",
+     "sources": [
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:0762e8be-e73f-456b-8436-53032ea74caa"
+      },
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "550b04bb-1da1-4f48-8b52-77be936eab0f"
+      }
+     ],
+     "thread": "venstre-leadership-crisis"
+    },
+    {
+     "id": "ku-theology-faculty-merged-2028",
+     "role": "secondary",
+     "kicker": "Education",
+     "headline": "University of Copenhagen will merge its theology faculty into humanities after 549 years",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "c3757721-c399-4fee-a98c-05bf8cbeb7f4"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:ba502507-79b2-5eca-b40e-ecdd1e38ccd1"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:16d3f33b-a1ea-44a4-a6ac-5d3a9ba271a8"
+      },
+      {
+       "source": "politiken",
+       "source_id": "11015023"
+      },
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "2c5c9535-f819-4818-96cf-4a641f2849a4"
+      },
+      {
+       "source": "via_ritzau",
+       "source_id": "https://via.ritzau.dk/pressemeddelelse/15214936/?publisherId=13561237&lang=da"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "cpr-credit-warnings-970000",
+     "role": "brief",
+     "kicker": "Denmark",
+     "headline": "Credit warnings nearly quadruple in a week after ID-number leak",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "2e306f41-0b4f-40f3-b03a-f374f60019b6"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:f64ea226-55f8-59ca-a382-30964c1e9ce7"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:9c8dcff9-f35d-4d11-900b-92f358d47cb2"
+      }
+     ],
+     "thread": "cpr-register-leak"
+    },
+    {
+     "id": "gade-character-assassination-claim",
+     "role": "brief",
+     "kicker": "Politics",
+     "headline": "Former speaker suspects party colleagues of character assassination",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "50801e09-3a8a-40c3-b1d9-0872b586347d"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:78635030-632f-58fa-b20a-0ee8b9829f26"
+      }
+     ],
+     "thread": "venstre-leadership-crisis"
+    },
+    {
+     "id": "cruise-ship-levy-2028",
+     "role": "brief",
+     "kicker": "Politics",
+     "headline": "Government plans cruise ship levy of 200 kroner a passenger",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "9e159628-dc9e-4c79-a7ac-65d4d4e9eb78"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:271609cc-8eb4-5acd-81d9-04bf9d8c2425"
+      }
+     ],
+     "thread": "finance-bill-2027"
+    },
+    {
+     "id": "is-housewife-two-years",
+     "role": "brief",
+     "kicker": "Crime",
+     "headline": "High Court convicts woman of supporting Islamic State after earlier acquittal",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "34835378-99e9-4e0a-b111-d319e9cdca1e"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:bba5ddbc-3287-5ab1-9159-509909f87601"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:9e122113-495f-4660-a29e-40d1d6086fad"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "reverse-ankle-tag-60-days",
+     "role": "brief",
+     "kicker": "Crime",
+     "headline": "Man jailed for 60 days in first reverse ankle tag case",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "ed6e79e0-e4d8-4434-9d92-fbaa23d7ef84"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:649a3786-fd4c-5cfa-bd7b-ecbde5fbaf40"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:04cd857e-1ad5-4ae7-85d9-daa8ae8950a7"
+      },
+      {
+       "source": "via_ritzau",
+       "source_id": "https://via.ritzau.dk/pressemeddelelse/15216395/?publisherId=13568117&lang=da"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "kaershovedgaard-prison-four-five-years",
+     "role": "brief",
+     "kicker": "Politics",
+     "headline": "Promised prison wing at deportation centre could take four to five years",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "55bc4c8b-7998-4ee0-ab8d-fc24ec909c92"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:72489d3d-faa5-5748-a93e-ba836d905e81"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:ab898635-ccac-460d-8ab6-c834ef75340e"
+      },
+      {
+       "source": "jp",
+       "source_id": "19719529"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "s-faction-coffee-clubs",
+     "role": "brief",
+     "kicker": "Politics",
+     "headline": "Five Social Democrat MPs leave the party's coffee clubs to form a new faction",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "ed38b21f-fce5-439d-b50f-c3dd62fce167"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:dc0150ee-699b-5036-aa29-f048e171e20a"
+      },
+      {
+       "source": "tv2",
+       "source_id": "https://nyheder.tv2.dk/2026-10-08-ny-socialdemokratisk-fraktion-udfordrer-mette-frederiksen"
+      },
+      {
+       "source": "altinget",
+       "source_id": "https://www.altinget.dk/artikel/ny-s-forening-tordner-mod-partiets-utidssvarende-kaffeklubber-bidrager-ikke-til-en-hensigtsmaessig-kultur"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "deepfake-sharing-ban-bill",
+     "role": "brief",
+     "kicker": "Technology",
+     "headline": "Culture minister proposes ban on sharing AI copies of people without consent",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "4c3efd2d-f8df-4cb9-a674-167bf13f58ab"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:c1613ea2-36bd-5780-90eb-146dde70250a"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:b8f14c3a-8793-4709-b740-a59e15c81688"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "kjaersgaard-reported-hojskolen",
+     "role": "brief",
+     "kicker": "Denmark",
+     "headline": "Influencer reports Pia Kjærsgaard to police for violence, which she denies",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "45ff6221-0da5-4ca0-853d-f2747347d871"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:23caa515-e489-5f6a-8494-549be7d08a9b"
+      },
+      {
+       "source": "tv2",
+       "source_id": "https://nyheder.tv2.dk/2026-10-08-pia-kjaersgaard-afviser-beskyldninger-om-vold-mod-influencer"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:c2d5574c-b55b-57e1-82e1-64b62e311036"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "anonymous-graves-majority-cities",
+     "role": "brief",
+     "kicker": "Denmark",
+     "headline": "Most burials in Copenhagen and Aarhus are in anonymous graves",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "a827c7e8-5ca5-4f18-8fb1-8f5c585edd77"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:ebd4eb67-6a28-56d0-ae20-92349dcc644e"
+      },
+      {
+       "source": "politiken",
+       "source_id": "11015726"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "djoef-worst-phrase-2026",
+     "role": "brief",
+     "kicker": "Denmark",
+     "headline": "Union magazine's readers vote a sports metaphor the worst phrase at work",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "cb3dc0de-2fa6-4055-9b6a-692bbcaaa146"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:d46a0660-3f21-541d-8b73-2a5a7114615e"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:1b98b53e-9d5e-4332-8e40-7487697a9ac3"
+      },
+      {
+       "source": "politiken",
+       "source_id": "11009354"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "climate-council-flight-taxes",
+     "role": "brief",
+     "kicker": "Climate",
+     "headline": "Climate council calls for higher taxes on flights",
+     "sources": [
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:841b0253-03fe-4c2d-a09c-50777fdd56f7"
+      },
+      {
+       "source": "politiken",
+       "source_id": "11012146"
+      },
+      {
+       "source": "altinget",
+       "source_id": "https://www.altinget.dk/klima/artikel/klimaraadet-vil-goere-det-dyrere-at-flyve-men-det-bliver-luftfarten-ikke-groennere-af-indvender-erhvervslivet"
+      },
+      {
+       "source": "via_ritzau",
+       "source_id": "https://via.ritzau.dk/pressemeddelelse/15214676/?publisherId=13559626&lang=da"
+      },
+      {
+       "source": "via_ritzau",
+       "source_id": "https://via.ritzau.dk/pressemeddelelse/15215069/?publisherId=11125792&lang=da"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "nobel-literature-anne-carson",
+     "role": "brief",
+     "kicker": "Culture",
+     "headline": "Canadian poet Anne Carson wins the Nobel prize in literature",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "f773aa75-e426-4f1d-ac9d-26a7aa9a6efa"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:de300b0a-eef7-5e04-9e8a-202241bbcca0"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:eea0450a-9963-4b6f-b6dc-76ca7a34d203"
+      },
+      {
+       "source": "politiken",
+       "source_id": "11014375"
+      },
+      {
+       "source": "information",
+       "source_id": "843191 at https://www.information.dk"
+      },
+      {
+       "source": "bbc",
+       "source_id": "cq4g1j54nepyo"
+      },
+      {
+       "source": "economist",
+       "source_id": "889e599e-08c8-431f-b0c7-164b619a0837"
+      },
+      {
+       "source": "ft",
+       "source_id": "7eef61f6-2c3f-4c7e-9331-32a25b7dd66a"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/books/2026/oct/08/wins-the-nobel-prize-in-literature-2026"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/books/live/2026/oct/08/nobel-prize-in-literature-2026-winner-latest-news-updates"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/books/2026/oct/08/appreciation-of-anne-carson-nobel-prize-in-literature-2026"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/2026/10/08/books/nobel-prize-literature.html"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/2026/10/08/books/review/anne-carson-appraisal.html"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/2026/10/08/books/anne-carson-nobel-prize-princeton-university-tenure-denied.html"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/2026/10/08/books/review/anne-carson-best-books.html"
+      },
+      {
+       "source": "wsj",
+       "source_id": "WP-WSJ-0003959725"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "hasan-execution-public",
+     "role": "brief",
+     "kicker": "World",
+     "headline": "America will stream the Fort Hood gunman's execution live",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "d9e2f3ed-ee40-4fc1-8f4c-636628e1052f"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:96e22043-7f86-58f3-a18f-65a7b11189b9"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:b8bf8d2a-c50c-4cbd-9d5b-a1e4d7dd1d94"
+      },
+      {
+       "source": "ft",
+       "source_id": "0c390d03-427f-40a8-b5cb-d12c8d925d9d"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/us-news/2026/oct/08/hegseth-fort-hood-shooter-public-execution"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/2026/10/08/us/politics/fort-hood-execution-streamed-public.html"
+      },
+      {
+       "source": "wapo",
+       "source_id": "https://www.washingtonpost.com/politics/2026/10/08/hegseth-wants-fort-hood-shooters-execution-by-firing-squad-be-public/"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/commentisfree/2026/oct/09/nidal-hasan-execution-pete-hegseth-us-military-tv-democracy"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "kramatorsk-buses-strike",
+     "role": "brief",
+     "kicker": "World",
+     "headline": "Russian strike on two buses kills at least 30 in eastern Ukraine",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "2a8ccca2-32b7-4074-8c5b-c20d6bb747a7"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:d2140254-b44d-54b6-b6bf-0fac1f73f6e9"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:3d7370cf-312d-5690-870b-a69f1a4544a9"
+      },
+      {
+       "source": "bbc",
+       "source_id": "c875pwq134l3o"
+      },
+      {
+       "source": "ft",
+       "source_id": "fb4d6b18-3b72-473c-90a5-3864c1dad27e"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/world/2026/oct/08/russian-attack-buses-ukraine-frontline-kramatorsk"
+      },
+      {
+       "source": "wapo",
+       "source_id": "https://www.washingtonpost.com/world/2026/10/08/least-30-dead-russian-bus-strike-moscow-closes-ukraines-fortress-belt/"
+      },
+      {
+       "source": "wsj",
+       "source_id": "WP-WSJ-0003960601"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "trump-iran-talks-midterms",
+     "role": "brief",
+     "kicker": "World",
+     "headline": "Trump says America will not attack Iran before the midterms",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "76e752ae-5071-4207-8153-372b49ff72e4"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:7fe8a067-3368-5843-9b1b-51c2d7aa0f64"
+      },
+      {
+       "source": "borsen",
+       "source_id": "https://borsen.dk/nyheder/udland/trump-usa-har-produktive-samtaler-med-iran"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:bbb0aef2-0c1b-4142-b169-b221afe930a2"
+      },
+      {
+       "source": "ft",
+       "source_id": "e0cc2789-0e71-401d-8096-d58303970a37"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/2026/10/08/us/politics/trump-iran-war-options.html"
+      },
+      {
+       "source": "wapo",
+       "source_id": "https://www.washingtonpost.com/politics/2026/10/08/no-new-attack-iran-before-midterm-elections-trump-says/"
+      },
+      {
+       "source": "wsj",
+       "source_id": "WP-WSJ-0003961001"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "wwf-living-planet-73-per-cent",
+     "role": "brief",
+     "kicker": "Environment",
+     "headline": "Wildlife populations have fallen by 73 per cent since 1970, WWF says",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "69cf2a29-f6d4-4b88-b165-eed456b966d7"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:2d3c037b-da07-5e67-86d0-3f0397414c56"
+      },
+      {
+       "source": "tv2",
+       "source_id": "https://nyheder.tv2.dk/samfund/2026-10-08-verdens-vilde-dyr-forsvinder-dybt-alarmerende-siger-direktoer"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:5a491504-4b0f-46d1-957a-65bd73b4d8d4"
+      },
+      {
+       "source": "via_ritzau",
+       "source_id": "https://via.ritzau.dk/pressemeddelelse/15213792/?publisherId=11565599&lang=da"
+      }
+     ],
+     "thread": null
+    }
+   ]
+  },
+  {
+   "id": "2026-10-08-morning",
+   "number": 3,
+   "date": "2026-10-08",
+   "cutoff_at": "2026-10-08T03:30:00.000000Z",
+   "activated_at": "2026-10-08T06:13:36.642Z",
+   "sequence": 3,
+   "stories": [
+    {
+     "id": "islands-brygge-one-year-sentence",
+     "role": "lead",
+     "kicker": "Crime",
+     "headline": "Man jailed for a year over punch that killed a Swede in Copenhagen",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "e713bf5b-9aff-49e4-bf6f-266a893bdd45"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:e58aaeae-2b3b-54af-b2f2-058c5891e4d7"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:cd292b4b-e8ed-5d3a-bd3a-94bbd90588b1"
+      },
+      {
+       "source": "jp",
+       "source_id": "19717059"
+      },
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "565bcc4e-2fa6-4f22-9ea5-1fc17a3bafa2"
+      },
+      {
+       "source": "politiken",
+       "source_id": "11012945"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "kosovar-guards-charged-vestre",
+     "role": "secondary",
+     "kicker": "Denmark",
+     "headline": "Police charge two Kosovar guards trained for Denmark's prison in Kosovo with beating an inmate",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "a0af9c1e-923a-4b50-950c-dbaa2d8b89bc"
+      },
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "1d631912-eb12-4333-ae3c-f98304d5f25b"
+      },
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "340ec333-0020-4531-a929-ee48e08c774c"
+      },
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "68182d8a-7ceb-4f16-b3a6-e3e537ab61c0"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:acd182e3-dce3-420c-bdce-94a64a11ebd2"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:cd64f406-a453-4cf2-8380-2ed4a92794f1"
+      },
+      {
+       "source": "tv2",
+       "source_id": "https://nyheder.tv2.dk/krimi/2026-10-07-faengselsbetjente-under-oplaering-fra-kosovo-sigtet-for-vold"
+      }
+     ],
+     "thread": "kosovo-prison-deal"
+    },
+    {
+     "id": "who-cannot-assess-russia-plague",
+     "role": "secondary",
+     "kicker": "World",
+     "headline": "WHO says it cannot fully assess a suspected plague death in Russia",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "a161c633-9610-4bc3-b954-693a37bb7650"
+      },
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "76d56c17-b0d0-40a4-815f-41109780d0c8"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:3f858198-4395-5833-a433-e5a6086f2f35"
+      },
+      {
+       "source": "jp",
+       "source_id": "19714135"
+      },
+      {
+       "source": "tv2",
+       "source_id": "https://nyheder.tv2.dk/udland/2026-10-07-who-og-usa-kraever-svar-efter-muligt-nyt-pesttilfaelde-paa-russisk-laboratorium"
+      },
+      {
+       "source": "politiken",
+       "source_id": "11012051"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/world/2026/oct/07/who-says-it-does-not-have-full-picture-from-russia-following-suspected-plague-death"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "afghanistan-inquiry-full-openness",
+     "role": "secondary",
+     "kicker": "Politics",
+     "headline": "Parliament drops anonymity for politicians in Afghanistan study",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "b40d7560-dae3-419a-bfad-1165e1263b9f"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:e1a6392b-00eb-5995-be64-94f043445496"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "enhedslisten-welfare-profit-demand",
+     "role": "secondary",
+     "kicker": "Welfare",
+     "headline": "Far-left party demands a ban on profit from welfare in budget talks",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "ceeb1d28-ee6a-4e71-8f17-7079f23cdc30"
+      },
+      {
+       "source": "information",
+       "source_id": "843155 at https://www.information.dk"
+      }
+     ],
+     "thread": "finance-bill-2027"
+    },
+    {
+     "id": "tilst-speeding-driver-four-years",
+     "role": "brief",
+     "kicker": "Crime",
+     "headline": "Speeding driver gets four years for killing woman in her home near Aarhus",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "08f264ce-7401-41d1-838d-2ce359486c02"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:1408808f-92de-4417-8205-570f1ee1e9da"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:efcba540-ade5-4940-bff3-7543266eeca7"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "wolves-dna-register-2027",
+     "role": "brief",
+     "kicker": "Denmark",
+     "headline": "Denmark will identify every wolf by its DNA",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "74e58d18-0316-4a51-ba00-9974cd383c3d"
+      },
+      {
+       "source": "jp",
+       "source_id": "19717028"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:309e499d-a862-464e-91ac-beeb1a11611f"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "marine-nature-parks-68-million",
+     "role": "brief",
+     "kicker": "Politics",
+     "headline": "Government proposes 67.8 million kroner for two new marine national parks",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "3b5625b3-98a0-4553-b1c0-aacccfe6cc00"
+      },
+      {
+       "source": "via_ritzau",
+       "source_id": "https://via.ritzau.dk/pressemeddelelse/15213268/?publisherId=13560422&lang=da"
+      }
+     ],
+     "thread": "finance-bill-2027"
+    },
+    {
+     "id": "mediation-councils-bill-retabled",
+     "role": "brief",
+     "kicker": "Politics",
+     "headline": "Government tries again to make mediation councils a crime",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "d501f1ab-4efe-45c5-b9bd-a648bc308ab5"
+      },
+      {
+       "source": "jp",
+       "source_id": "19716116"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "manniche-20-days-suspended",
+     "role": "brief",
+     "kicker": "Crime",
+     "headline": "Doctor gets suspended sentence for issuing covid-test exemptions",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "010f07a6-a5aa-4778-84ad-91f7b81f9a93"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:9fd5f45a-27de-524c-86a5-9cce1eb8148c"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "naza-paused-on-anniversary",
+     "role": "brief",
+     "kicker": "Culture",
+     "headline": "Danish cinemas pause Gaza documentary for anniversary of Hamas attack",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "c0bc3eca-b287-466c-8278-8a8824fe3bf8"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:32f07df5-bae7-5fff-9eb0-01222c5c57fc"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "rigshospitalet-oslo-liver-surgeons",
+     "role": "brief",
+     "kicker": "Denmark",
+     "headline": "Copenhagen hospital brings in Norwegian surgeon for children's liver transplants",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "7096a32e-2d0d-43e0-9bcd-878329c633d4"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:c4c82fbc-4e23-500f-9012-0061412ffbc0"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "ssi-expects-high-flu-winter",
+     "role": "brief",
+     "kicker": "Denmark",
+     "headline": "State institute expects flu to reach a high level this winter",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "0ac7756c-1769-4ed2-a2da-259cc56257ec"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:2cce0bd9-7a4f-53fb-bddf-003a4963d9ce"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "royal-gala-apples-recalled",
+     "role": "brief",
+     "kicker": "Denmark",
+     "headline": "Food group recalls Italian apples over pest risk",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "396b491f-0c62-4b5f-9301-a18b291cea1d"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:8c6907c6-1afe-58af-9ce8-c541dbf15ce2"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "kombit-outage-municipal-systems",
+     "role": "brief",
+     "kicker": "Municipalities",
+     "headline": "Network failure takes municipal IT systems down for five hours",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "ed9bc168-ac1a-4ad0-9cc7-d776aac2e9a6"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:9b923d5e-9b73-5484-b93b-df97f447ec39"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "nobel-chemistry-kagan-soai",
+     "role": "brief",
+     "kicker": "Science",
+     "headline": "French and Japanese chemists win Nobel prize for work on mirror-image molecules",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "9820723b-1f8a-417d-89e3-b4ff4ded3195"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:a102a201-349c-4e4b-ab12-64792dc95036"
+      },
+      {
+       "source": "politiken",
+       "source_id": "10992301"
+      },
+      {
+       "source": "bbc",
+       "source_id": "c6ly038jg0d4o"
+      },
+      {
+       "source": "economist",
+       "source_id": "69acfeed-fd2d-487d-b55d-4c4e926b87d1"
+      },
+      {
+       "source": "ft",
+       "source_id": "d87ec22e-2bb4-4fce-90b7-3e9dd3f5a810"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/2026/10/07/science/nobel-prize-chemistry.html"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/science/2026/oct/07/nobel-prize-chemistry-awarded-work-on-mirror-image-molecules"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/science/video/2026/oct/07/this-is-what-the-2026-nobel-prize-for-chemistry-is-all-about"
+      },
+      {
+       "source": "wsj",
+       "source_id": "WP-WSJ-0003955820"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "ukraine-70-missiles-strike",
+     "role": "brief",
+     "kicker": "World",
+     "headline": "Russian attack with 70 missiles kills 28 in Ukraine",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "5d7fe330-e928-4d0c-8bf3-3e0a4bd88772"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:325115a5-4a45-5dc0-9fa2-ad34ae06580e"
+      },
+      {
+       "source": "bbc",
+       "source_id": "ckr5ym098vdeo"
+      },
+      {
+       "source": "ft",
+       "source_id": "a5bd820e-fc7c-4414-ad90-f77bd7aa3a44"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/world/2026/oct/08/ukraine-war-briefing-zelenskyy-condemns-vile-attacks-from-russia-that-killed-20-in-one-apartment"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/world/2026/oct/07/ukraine-accuses-russia-of-bombing-apartment-block-as-birthday-gift-for-putin"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/world/video/2026/oct/07/explosion-in-kyiv-as-russian-missiles-strike-across-ukraine-video"
+      },
+      {
+       "source": "wsj",
+       "source_id": "WP-WSJ-0003956572"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "france-suspends-stun-grenades",
+     "role": "brief",
+     "kicker": "World",
+     "headline": "France halts police stun grenades at school protests after a boy loses a hand",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "738414b1-60ba-4902-805f-5b03271779fd"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:499302bd-3d5e-5345-b8d5-468a30749108"
+      },
+      {
+       "source": "bbc",
+       "source_id": "cqzjx7z2r4gko"
+      },
+      {
+       "source": "bbc",
+       "source_id": "cqe8r9811n9jo"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/world/2026/oct/07/french-police-suspend-use-stun-grenades-high-school-protester-loses-hand"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "saudi-airports-three-killed",
+     "role": "brief",
+     "kicker": "World",
+     "headline": "Attacks on two Saudi airports kill three",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "e7c7f61c-10bd-4389-a5ca-6fc9fbb152e3"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:5a2f5c2d-e6ac-58df-a10f-41ef72de5b09"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/2026/10/07/world/middleeast/saudi-arabia-airports-houthis.html"
+      },
+      {
+       "source": "wsj",
+       "source_id": "WP-WSJ-0003958023"
+      },
+      {
+       "source": "wsj",
+       "source_id": "WP-WSJ-0003951982"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "raaplan-sequel-praised",
+     "role": "brief",
+     "kicker": "Culture",
+     "headline": "Critics praise sequel to 2006 Danish youth film",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "005a718e-874f-4ab4-aedd-b0114a32e786"
+      },
+      {
+       "source": "information",
+       "source_id": "843154 at https://www.information.dk"
+      },
+      {
+       "source": "politiken",
+       "source_id": "10992423"
+      }
+     ],
+     "thread": null
+    }
+   ]
+  },
+  {
+   "id": "2026-10-07-morning",
+   "number": 2,
+   "date": "2026-10-07",
+   "cutoff_at": "2026-10-07T03:30:00.000000Z",
+   "activated_at": "2026-10-07T03:49:25.770Z",
+   "sequence": 2,
+   "stories": [
+    {
+     "id": "cpr-number-no-longer-id",
+     "role": "lead",
+     "kicker": "Denmark",
+     "headline": "Danish ID number no longer proves identity after data on 8.8 million people is taken",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "6cfc4cf1-fb10-411f-948c-8758a9a8103a"
+      },
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "fbb9dcd3-cc25-48fd-b7a5-78df986ac02a"
+      },
+      {
+       "source": "jp",
+       "source_id": "19712532"
+      },
+      {
+       "source": "politiken",
+       "source_id": "11011814"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:54cd1a6f-51c6-4e1a-b8ef-e07e1413c28c"
+      },
+      {
+       "source": "borsen",
+       "source_id": "https://borsen.dk/nyheder/samfund/dyr-faktura-afslorede-cpr-laek"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:52e9e8d3-2b6c-5258-aa36-f6be717f736c"
+      },
+      {
+       "source": "via_ritzau",
+       "source_id": "https://via.ritzau.dk/pressemeddelelse/15209445/?publisherId=13562509&lang=da"
+      }
+     ],
+     "thread": "cpr-register-leak"
+    },
+    {
+     "id": "frederiksen-opening-speech-2026",
+     "role": "secondary",
+     "kicker": "Politics",
+     "headline": "Frederiksen promises Ukraine full support but says Denmark has no money to spare",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "6b039919-8199-45d6-8dd1-094996969c9c"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:8b3e8e13-d808-4fae-a2ba-c5ec101d8a7b"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:97dfdf21-c392-5928-9889-2f71865d0773"
+      },
+      {
+       "source": "altinget",
+       "source_id": "https://www.altinget.dk/christiansborg/artikel/den-tale-kunne-mette-frederiksen-lige-saa-godt-have-holdt-i-en-ren-s-regering"
+      },
+      {
+       "source": "borsen",
+       "source_id": "https://borsen.dk/nyheder/politik/politisk-redaktor-her-er-tre-pointer-fra-mette-frederiksens-tale"
+      },
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "ad71cbc2-6640-4659-a885-eaa3589513c3"
+      },
+      {
+       "source": "via_ritzau",
+       "source_id": "https://via.ritzau.dk/pressemeddelelse/15210199/?publisherId=13560386&lang=da"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "gade-jp-portrait-row",
+     "role": "secondary",
+     "kicker": "Politics",
+     "headline": "Denmark's outgoing Speaker says he has 'powerful enemies' in his own party",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "809cbd8f-2470-4278-90d0-d268cb41ae2d"
+      },
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "c388f3bd-9cb5-404b-8f73-d9af3ccd3b65"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:3500290e-d780-5046-afc4-0a004e0a38e8"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:a19f5b57-0b35-5241-9dfb-f8706418eefc"
+      },
+      {
+       "source": "tv2",
+       "source_id": "https://nyheder.tv2.dk/politik/2026-10-06-svinsk-modbydeligt-og-paa-alle-maader-upassende-vildt-soeren-gade-portraet-faar-borgen-til-at-summe"
+      },
+      {
+       "source": "borsen",
+       "source_id": "https://borsen.dk/nyheder/politik/soren-gade-jeg-har-magtfulde-fjender-i-venstre"
+      }
+     ],
+     "thread": "venstre-leadership-crisis"
+    },
+    {
+     "id": "hanning-arrested-spying",
+     "role": "secondary",
+     "kicker": "Europe",
+     "headline": "Germany arrests a former spy chief on suspicion of treason",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "c8a1cf70-4fe7-4add-b3aa-993b703b091d"
+      },
+      {
+       "source": "jp",
+       "source_id": "19711596"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:9d41f385-f7d2-5c19-908b-3b2f21e05eaf"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:d9df6283-1d12-4185-8e60-1591161b231a"
+      },
+      {
+       "source": "borsen",
+       "source_id": "https://borsen.dk/nyheder/udland/tidligere-tysk-efterretningschef-anholdt-i-spionagesag"
+      },
+      {
+       "source": "bbc",
+       "source_id": "c58jzyer1kr0o"
+      },
+      {
+       "source": "ft",
+       "source_id": "4c565931-6ac7-4b4c-be72-d86e8e3a8aec"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/world/2026/oct/06/germany-august-hanning-bnd-arrest-former-domestic-intelligence-chief"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/2026/10/06/world/europe/germany-spy-chief-hanning-arrested-espionage.html"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/2026/10/06/world/europe/germany-spy-chief-henning-arrested-espionage.html"
+      },
+      {
+       "source": "wapo",
+       "source_id": "https://www.washingtonpost.com/world/2026/10/06/germany-arrests-former-intelligence-chief-espionage-case/"
+      },
+      {
+       "source": "wsj",
+       "source_id": "WP-WSJ-0003951981"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "folkeskole-900-million-2027",
+     "role": "secondary",
+     "kicker": "Education",
+     "headline": "Government plans 900 million kroner for schools after historically weak test results",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "2b208add-5af9-4b61-a8be-fa74e2349c9d"
+      },
+      {
+       "source": "politiken",
+       "source_id": "11007533"
+      },
+      {
+       "source": "borsen",
+       "source_id": "https://borsen.dk/nyheder/politik/regeringen-vil-afsaette-200-mio-til-indsats-pa-100-udvalgte-skoler"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:4730c61f-ed18-454b-bf0e-98ac48217b86"
+      },
+      {
+       "source": "via_ritzau",
+       "source_id": "https://via.ritzau.dk/pressemeddelelse/15211224/?publisherId=90383&lang=da"
+      }
+     ],
+     "thread": "finance-bill-2027"
+    },
+    {
+     "id": "frandsen-elected-speaker",
+     "role": "brief",
+     "kicker": "Politics",
+     "headline": "Danish parliament elects a speaker criticised over a 2019 land sale",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "8854090e-f80c-489e-a5d7-32cde8bc1771"
+      },
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "1b4e6119-a7b5-4a62-a263-fe5075cd081d"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:02b9fde9-5208-4318-9f79-43f5e9605a6c"
+      },
+      {
+       "source": "altinget",
+       "source_id": "https://www.altinget.dk/kommunal/artikel/alternativet-traekker-stoetten-til-henrik-frandsen-foer-aabning"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "kaershovedgaard-prison-unit",
+     "role": "brief",
+     "kicker": "Politics",
+     "headline": "Government plans prison unit beside centre for foreigners who refuse to leave Denmark",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "b1dae7db-d578-42cf-a96e-71e95fa0cbd7"
+      },
+      {
+       "source": "jp",
+       "source_id": "19708697"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:8b638f74-dc94-56f1-9b8e-ec269c9f77ca"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "legislative-programme-2026-27",
+     "role": "brief",
+     "kicker": "Politics",
+     "headline": "Government plans higher early pension and a phone ban in schools",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "30b31263-21b2-4e03-8e9c-90be4c2198e5"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:7b5fc11e-95cd-564f-b18a-929bfdbc46eb"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "frederiksen-defends-su-cut",
+     "role": "brief",
+     "kicker": "Welfare",
+     "headline": "Frederiksen defends ending student grants for 81,000 young people living at home",
+     "sources": [
+      {
+       "source": "altinget",
+       "source_id": "https://www.altinget.dk/uddannelse/artikel/mette-frederiksen-ser-ingen-problemer-i-su-beskaering-langt-de-fleste-unge-kan-sagtens-have-et-fritidsjob"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:reel:0c47cd1d-b045-499f-9bb4-6ee6799d5ca0"
+      }
+     ],
+     "thread": "finance-bill-2027"
+    },
+    {
+     "id": "fewer-owe-public-debt",
+     "role": "brief",
+     "kicker": "Economy",
+     "headline": "Almost half a million fewer people owe money to the public sector",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "f3219da4-3611-442e-88be-e0ef36d59d93"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:58b0c1e4-7422-5bcd-ab73-caa3390a75be"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "mobilepay-renamed-vipps",
+     "role": "brief",
+     "kicker": "Business",
+     "headline": "MobilePay to be renamed Vipps in January",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "8f0afc49-68cf-48dd-b6fe-fb16a08b95ea"
+      },
+      {
+       "source": "borsen",
+       "source_id": "https://borsen.dk/nyheder/finans/mobilepay-skifter-navn"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:a19547b3-7ce5-4d04-a956-17b79905a06d"
+      },
+      {
+       "source": "via_ritzau",
+       "source_id": "https://via.ritzau.dk/pressemeddelelse/15208954/?publisherId=13563025&lang=da"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "genmab-lymphoma-shares-rise",
+     "role": "brief",
+     "kicker": "Business",
+     "headline": "Genmab shares rise 8 per cent after lymphoma drug trial",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "d72e55e4-0019-434d-9f5f-77bb97f00546"
+      },
+      {
+       "source": "borsen",
+       "source_id": "https://borsen.dk/nyheder/marketreports/genmab-storroses-af-analytikere-og-brager-frem-sadan-abner-c25"
+      },
+      {
+       "source": "wsj",
+       "source_id": "WP-WSJ-0003951853"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "red-bull-influencer-complaint",
+     "role": "brief",
+     "kicker": "Denmark",
+     "headline": "Consumer group accuses Red Bull of marketing energy drinks to children through an influencer",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "960b349a-47c3-4721-854e-1ac6c3b034ad"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:ee657f0e-018c-4e02-a50a-d26dd275f454"
+      },
+      {
+       "source": "tv2",
+       "source_id": "https://nyheder.tv2.dk/samfund/2026-10-06-influencer-anklages-for-den-stoerste-overtraedelse-af-markedsfoeringsloven"
+      },
+      {
+       "source": "via_ritzau",
+       "source_id": "https://via.ritzau.dk/pressemeddelelse/15206182/?publisherId=13563189&lang=da"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "fdm-two-car-seats-warning",
+     "role": "brief",
+     "kicker": "Denmark",
+     "headline": "Two child car seats fail crash test, Danish car owners' group says",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "23fda7d8-ba4d-4691-9e9b-99e784484935"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:e2b6366b-eabb-4173-99bc-c098688776b6"
+      },
+      {
+       "source": "via_ritzau",
+       "source_id": "https://via.ritzau.dk/pressemeddelelse/15207571/?publisherId=13562168&lang=da"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "region-rejects-lgbtq-handbook",
+     "role": "brief",
+     "kicker": "Health",
+     "headline": "Danish region halts LGBTQ+ handbook for health staff",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "bf4776db-043a-4267-b691-da1a973ba863"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:61b85df1-9396-4bf0-8ab4-b511c4bb3c9b"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:ffed567c-e179-5c6b-b60d-7199ed39b9ed"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "hammerum-suspect-arrested",
+     "role": "brief",
+     "kicker": "Crime",
+     "headline": "Police arrest man wanted over fatal stabbing",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "4de703b1-9951-4120-928f-bafaf507cf01"
+      },
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "4c5a4f8e-3c0d-41ef-b2e6-2b1f34144c8e"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "lise-svanholm-dies",
+     "role": "brief",
+     "kicker": "Obituary",
+     "headline": "Art historian Lise Svanholm dies at 94",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "0f8427dc-3e45-4b21-9b2e-6711ef1c6789"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:a0eee0ac-488f-5c57-9edf-5196ecdeb879"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "sweden-patriot-to-poland",
+     "role": "brief",
+     "kicker": "Nordics",
+     "headline": "Sweden to send Patriot air defences to guard a Ukraine arms hub in Poland",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "9d18b5c4-d8ee-492a-b1e2-6637db3654af"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:c0b77310-ec1c-4906-8484-718e54cf34a7"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:8ab4ae26-a0b4-5416-b188-3624a2d3019e"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "france-school-protests-250000",
+     "role": "brief",
+     "kicker": "Europe",
+     "headline": "More than 250,000 join school protests across France",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "6e43aef8-f0db-41bb-a5a8-c8af53b59e79"
+      },
+      {
+       "source": "politiken",
+       "source_id": "11009136"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:f918373c-8a29-517b-aed8-8b15e9ec7c6f"
+      },
+      {
+       "source": "jp",
+       "source_id": "19713079"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/world/2026/oct/06/protests-schools-blockade-streets-france"
+      },
+      {
+       "source": "bbc",
+       "source_id": "c8x23706pvz3o"
+      },
+      {
+       "source": "bbc",
+       "source_id": "cwm26078pkepo"
+      },
+      {
+       "source": "bbc",
+       "source_id": "cr4g1q1elxnjo"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/world/live/2026/oct/06/europe-french-school-protests-paris-germany-afd-bulgaria-drones-russia-ukraine-latest-news-updates"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/world/2026/oct/06/french-student-protests-barricades-paris-police"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/2026/10/06/world/europe/france-student-strikes-protests.html"
+      },
+      {
+       "source": "wapo",
+       "source_id": "https://www.washingtonpost.com/world/2026/10/06/protests-sweep-france-closing-schools-student-walkouts-escalate/"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/2026/10/06/world/europe/france-protests-social-welfare-election.html"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/2026/10/06/world/europe/france-crisis-autumn-discontent.html"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/live/2026/10/06/world/france-protests-students-schools"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/2026/10/06/world/europe/french-student-protest-unions-college.html"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "afd-first-state-speaker",
+     "role": "brief",
+     "kicker": "Europe",
+     "headline": "German far right wins a state parliament's speakership for the first time since 1945",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "2fdee3dd-d284-4216-bd74-584636f6318f"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:fa4d94f6-ffac-4280-9d37-3702d6e67f96"
+      },
+      {
+       "source": "bbc",
+       "source_id": "c54g1m2g1pg3o"
+      },
+      {
+       "source": "ft",
+       "source_id": "76db879a-2c53-4aee-8354-b30185f1d3a4"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/world/2026/oct/06/germany-afd-first-far-right-tobias-rausch-speaker-since-war"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/2026/10/06/world/europe/germany-afd-saxony-anhalt.html"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "black-sea-ships-hit-off-bulgaria",
+     "role": "brief",
+     "kicker": "World",
+     "headline": "Drones hit two ships off Bulgaria and sink one",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "e42400a0-f2c4-465b-8a11-6569c8694cc2"
+      },
+      {
+       "source": "politiken",
+       "source_id": "11010601"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:7b864fed-fd0a-46ad-a934-311f4ffacfdb"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:3856d3c8-120a-5be2-aadb-6be0de799860"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/2026/10/06/world/europe/bulgaria-drones-black-sea.html"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/world/2026/oct/07/ukraine-war-briefing-zelenskyy-blames-russia-for-attack-on-bulgarian-vessels-in-black-sea-as-investigation-launched"
+      },
+      {
+       "source": "bbc",
+       "source_id": "c8ly0v5r602eo"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "nobel-physics-halzen-icecube",
+     "role": "brief",
+     "kicker": "Science",
+     "headline": "Belgian physicist wins Nobel prize for detecting particles from space at the South Pole",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "a2e7d49a-14cf-41a7-aa72-696c6abf2af8"
+      },
+      {
+       "source": "politiken",
+       "source_id": "10992289"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:f7ee2726-760b-4422-9c05-4335a3dcc721"
+      },
+      {
+       "source": "bbc",
+       "source_id": "cq203mymlvkeo"
+      },
+      {
+       "source": "economist",
+       "source_id": "c575548f-c67f-4b27-8572-0baa128bad37"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/science/2026/oct/06/nobel-prize-in-physics-francis-halzen-south-pole-neutrinos-icecube-detector"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/2026/10/06/science/nobel-prize-physics.html"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "paramount-completes-warner-deal",
+     "role": "brief",
+     "kicker": "Business",
+     "headline": "Paramount completes its takeover of Warner Bros",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "62d65722-6518-41ed-b5fb-102b9d8cb744"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:0fca0adf-51f5-43ef-8230-de3651cee438"
+      },
+      {
+       "source": "bbc",
+       "source_id": "cxj0604d33qzo"
+      },
+      {
+       "source": "ft",
+       "source_id": "93756433-eb78-422d-8ac3-30e8cc243a00"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/business/2026/oct/06/paramount-warner-bros-skydance-merger"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/2026/10/06/business/media/paramount-warner-bros-discovery-skydance.html"
+      },
+      {
+       "source": "wapo",
+       "source_id": "https://www.washingtonpost.com/business/2026/10/06/paramount-closes-110b-deal-with-warner-bros-discovery-after-months-wrangling/"
+      },
+      {
+       "source": "wsj",
+       "source_id": "WP-WSJ-0003955238"
+      }
+     ],
+     "thread": null
+    }
+   ]
+  },
+  {
+   "id": "2026-10-06-morning",
+   "number": 1,
+   "date": "2026-10-06",
+   "cutoff_at": "2026-10-06T03:30:00.000000Z",
+   "activated_at": "2026-10-06T10:42:48.133Z",
+   "sequence": 1,
+   "stories": [
+    {
+     "id": "cpr-register-breach-8-8-million",
+     "role": "lead",
+     "kicker": "Denmark",
+     "headline": "Unauthorised access exposes ID numbers of 8.8 million people in Denmark",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "b4c5b11f-1e9c-4fb3-a076-80052d67e5eb"
+      },
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "8ff93e01-f124-4d78-acb1-ce821323cd9b"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:a600708e-ad31-5935-997e-d7194fca44db"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:f38dd426-f2e9-5582-8b39-dbac76fbbed7"
+      },
+      {
+       "source": "politiken",
+       "source_id": "11008787"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:reel:bc9e4bf9-dae5-4665-96d4-39e4e28d1700"
+      },
+      {
+       "source": "jp",
+       "source_id": "19707046"
+      },
+      {
+       "source": "borsen",
+       "source_id": "https://borsen.dk/nyheder/samfund/uvedkommende-har-faet-adgang-til-88-mio-cpr-numre"
+      },
+      {
+       "source": "tv2",
+       "source_id": "https://nyheder.tv2.dk/samfund/2026-10-05-88-millioner-cpr-numre-er-blevet-kompromitteret"
+      },
+      {
+       "source": "via_ritzau",
+       "source_id": "https://via.ritzau.dk/pressemeddelelse/15205753/?publisherId=2869389&lang=da"
+      },
+      {
+       "source": "via_ritzau",
+       "source_id": "https://via.ritzau.dk/pressemeddelelse/15207898/?publisherId=5524343&lang=da"
+      }
+     ],
+     "thread": "cpr-register-leak"
+    },
+    {
+     "id": "store-bededag-restored-2030",
+     "role": "secondary",
+     "kicker": "Politics",
+     "headline": "Government will propose bringing back an abolished public holiday in 2030",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "ebf1a1f8-2bc2-4833-ad64-134a9b2810b9"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:c5eaae58-dc50-551d-9f86-324d3b0682d0"
+      },
+      {
+       "source": "borsen",
+       "source_id": "https://borsen.dk/nyheder/politik/lovforslag-pa-vej-store-bededag-vender-tilbage"
+      },
+      {
+       "source": "politiken",
+       "source_id": "11010042"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "citizenship-bill-2055-retabled",
+     "role": "secondary",
+     "kicker": "Politics",
+     "headline": "Government brings back citizenship bill for 2,055 approved applicants",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "9b1eaa80-214e-46df-9676-8e4f5a56a2b6"
+      },
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "305a90c8-65ae-443a-865b-dff0b1edf992"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:9442db13-34ff-52b9-909a-754d9b84c4ce"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:b38b9229-cb13-4a4d-a4c1-c4e55f54e961"
+      },
+      {
+       "source": "politiken",
+       "source_id": "11009326"
+      }
+     ],
+     "thread": "citizenship-2055"
+    },
+    {
+     "id": "dementia-assessment-auditors-criticism",
+     "role": "secondary",
+     "kicker": "Health",
+     "headline": "Dementia assessments take more than five times as long as the law allows",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "44484664-95aa-401e-b99c-1da01743fcf6"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:32b2a19d-2cf4-4466-aeea-460b44dae9ab"
+      },
+      {
+       "source": "altinget",
+       "source_id": "https://www.altinget.dk/sundhed/artikel/skarp-kritik-af-regioners-demensudredning-det-er-simpelthen-ikke-i-orden"
+      },
+      {
+       "source": "via_ritzau",
+       "source_id": "https://via.ritzau.dk/pressemeddelelse/15206947/?publisherId=13561070&lang=da"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "echr-president-chisinau-not-roadmap",
+     "role": "secondary",
+     "kicker": "Politics",
+     "headline": "Human rights court says a 46-nation call on deportations will not set its course",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "5b0f9d08-e7f7-4967-a612-c4ae2476b7cb"
+      },
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "fda51638-3237-47de-af66-b1552963bfbf"
+      },
+      {
+       "source": "politiken",
+       "source_id": "11008462"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:62afc518-e970-531a-823d-f82e15e022c1"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "spain-snap-election-november-29",
+     "role": "secondary",
+     "kicker": "World",
+     "headline": "Spain's prime minister calls an early election after losing housing votes",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "e1d374be-ecdb-439f-a5b4-bb762dc089eb"
+      },
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "8997b276-625f-43be-9fb9-299554545269"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:a4759dd9-122b-5b4c-81f5-e74fe05ccd39"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:e73e6c8f-535c-49c5-8f6d-91f2f9aa395a"
+      },
+      {
+       "source": "politiken",
+       "source_id": "11008877"
+      },
+      {
+       "source": "bbc",
+       "source_id": "cmdx39k49xw0o"
+      },
+      {
+       "source": "ft",
+       "source_id": "866dea03-4cee-4009-b130-6f7a191336c4"
+      },
+      {
+       "source": "ft",
+       "source_id": "7c6bfe8f-eae2-47f7-98e5-19e714195c58"
+      },
+      {
+       "source": "economist",
+       "source_id": "3ce820e6-411f-4e1f-89c2-0d08f234b5e5"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/live/2026/10/05/world/spain-elections-sanchez"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/2026/10/05/world/europe/spain-snap-elections-sanchez.html"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/world/2026/oct/05/spain-prime-minister-pedro-sanchez-snap-election-housing-crisis"
+      },
+      {
+       "source": "wapo",
+       "source_id": "https://www.washingtonpost.com/world/2026/10/05/spain-pedro-snchez-main-critic-trump-europe-calls-snap-elections/"
+      },
+      {
+       "source": "wsj",
+       "source_id": "WP-WSJ-0003948534"
+      },
+      {
+       "source": "bbc",
+       "source_id": "ck5yn81qqde0o"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "vegan-hospital-meals-appeal-ruling",
+     "role": "brief",
+     "kicker": "Denmark",
+     "headline": "Appeal court clears region over vegan hospital meals",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "f6ffed88-e602-425c-ba22-0b7b9211c2d8"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:f2f84907-948c-4df1-8a19-21ec81de4c06"
+      },
+      {
+       "source": "information",
+       "source_id": "843107 at https://www.information.dk"
+      },
+      {
+       "source": "via_ritzau",
+       "source_id": "https://via.ritzau.dk/pressemeddelelse/15207040/?publisherId=13559515&lang=da"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "salling-group-buys-proshop",
+     "role": "brief",
+     "kicker": "Business",
+     "headline": "Salling Group buys online shop Proshop in its second-largest deal",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "bff43335-2c26-44b9-a6c0-5ceb2523cf35"
+      },
+      {
+       "source": "borsen",
+       "source_id": "https://borsen.dk/nyheder/virksomheder/salling-group-kober-proshop-i-milliardhandel"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:9d5b408c-65f3-4678-adf3-a2a65fafe413"
+      },
+      {
+       "source": "via_ritzau",
+       "source_id": "https://via.ritzau.dk/pressemeddelelse/15206204/?publisherId=3307957&lang=da"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "folketing-opens-frandsen-speaker",
+     "role": "brief",
+     "kicker": "Politics",
+     "headline": "Parliament to make a Moderate who joined in 2022 its speaker",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "7593a6ee-a622-4e79-bffe-5fa22cdc13f1"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:a05c0be4-72c9-5636-8507-e466658ba1f6"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "stephanie-lose-chairs-state-auditors",
+     "role": "brief",
+     "kicker": "Politics",
+     "headline": "Stephanie Lose elected to chair Denmark's state auditors",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "2c72cd34-f760-4781-ba9e-28fd686c5c04"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "grid-permitting-two-years-shorter",
+     "role": "brief",
+     "kicker": "Politics",
+     "headline": "Government plans to cut years from power-grid permits",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "f2f30096-3ebf-42aa-8183-8db58c4c9a63"
+      },
+      {
+       "source": "politiken",
+       "source_id": "11006857"
+      },
+      {
+       "source": "via_ritzau",
+       "source_id": "https://via.ritzau.dk/pressemeddelelse/15206121/?publisherId=9426318&lang=da"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "soegaard-lidell-hydrogen-denmark",
+     "role": "brief",
+     "kicker": "Politics",
+     "headline": "Venstre MP will not stand again and becomes a green lobbyist",
+     "sources": [
+      {
+       "source": "altinget",
+       "source_id": "https://www.altinget.dk/klima/artikel/linea-soegaard-lidell-genopstiller-ikke-til-folketinget-skal-vaere-groen-lobbyist"
+      },
+      {
+       "source": "politiken",
+       "source_id": "11009021"
+      }
+     ],
+     "thread": "venstre-leadership-crisis"
+    },
+    {
+     "id": "stig-andersen-gyldendal-dies",
+     "role": "brief",
+     "kicker": "Obituary",
+     "headline": "Former publishing chief Stig Andersen dies at 72",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "f0c10714-4ba9-4b09-85c2-e3dc7990ebdb"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "odense-pizzeria-killing-14-years",
+     "role": "brief",
+     "kicker": "Crime",
+     "headline": "Man gets 14 years and expulsion for shooting former partner in Odense pizzeria",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "00a4e61c-3078-4a46-b708-d95de205d089"
+      },
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:073f6acd-96e2-48e5-87f3-865e825ffa41"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "hammerum-stabbing-man-dies",
+     "role": "brief",
+     "kicker": "Crime",
+     "headline": "Man, 57, dies after being stabbed in his home near Herning",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "ae680215-2caa-4f76-81b6-727cd0d615cd"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "swedish-bomb-sentences-upheld",
+     "role": "brief",
+     "kicker": "Crime",
+     "headline": "High Court toughens punishment in case of bomb brought from Sweden to Denmark",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "259e4285-5b27-4f2a-9bdb-012c46916316"
+      },
+      {
+       "source": "berlingske",
+       "source_id": "urn:bm:article:e52b0c23-e7bf-5df2-ab88-ca6daad31c58"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "motorring-3-four-lanes",
+     "role": "brief",
+     "kicker": "Transport",
+     "headline": "Copenhagen's ring motorway to get a fourth lane each way",
+     "sources": [
+      {
+       "source": "dr",
+       "source_id": "urn:dr:umbraco:article:d2b8042c-4e91-42bc-a695-a75de30060d3"
+      },
+      {
+       "source": "tv2",
+       "source_id": "https://nyheder.tv2.dk/trafik/2026-10-05-koeplaget-motorvej-udvides-med-flere-spor"
+      },
+      {
+       "source": "via_ritzau",
+       "source_id": "https://via.ritzau.dk/pressemeddelelse/15202767/?publisherId=5278762&lang=da"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "cancer-five-year-survival-seven-in-ten",
+     "role": "brief",
+     "kicker": "Denmark",
+     "headline": "More than seven in ten Danish cancer patients survive five years",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "db7959c7-50ba-4a74-9b29-fc9dd85506e2"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "nobel-medicine-optogenetics-2026",
+     "role": "brief",
+     "kicker": "Science",
+     "headline": "Three scientists who switch brain cells on and off with light win the Nobel prize in medicine",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "7891c525-1031-4300-b3e7-540070f7fbee"
+      },
+      {
+       "source": "politiken",
+       "source_id": "10992293"
+      },
+      {
+       "source": "bbc",
+       "source_id": "c5ev3ypmzly8o"
+      },
+      {
+       "source": "economist",
+       "source_id": "84d09014-3618-41d0-8b06-9b4c883bd838"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/2026/10/05/health/nobel-prize-medicine-physiology.html"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/science/video/2026/oct/05/nobel-prize-in-medicine-2026-unlocking-the-mysteries-of-the-brain"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/science/2026/oct/05/nobel-prize-medicine-2026-winner"
+      },
+      {
+       "source": "wapo",
+       "source_id": "https://www.washingtonpost.com/health/2026/10/05/nobel-prize-medicine-awarded-3-scientists-optogenetics-work/"
+      },
+      {
+       "source": "wsj",
+       "source_id": "WP-WSJ-0003948692"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "siberia-plague-lab-death-denied",
+     "role": "brief",
+     "kicker": "World",
+     "headline": "Russia denies Siberian lab worker died of plague",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "98ed7494-51c6-4e49-8c77-b461bb2f7cc7"
+      },
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "2a91787d-47b1-416a-a028-d1d6900f6773"
+      },
+      {
+       "source": "politiken",
+       "source_id": "11008871"
+      },
+      {
+       "source": "bbc",
+       "source_id": "cv5yn3nwp5n5o"
+      },
+      {
+       "source": "ft",
+       "source_id": "0a45595f-4889-4436-847f-1bddce813009"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/world/2026/oct/05/russia-lab-worker-possibly-dies-of-plague-siberia-quarantine-measures-irkutsk"
+      },
+      {
+       "source": "wapo",
+       "source_id": "https://www.washingtonpost.com/politics/2026/10/05/us-officials-seeking-details-reported-russian-plague-death-quarantines/"
+      },
+      {
+       "source": "wsj",
+       "source_id": "WP-WSJ-0003949226"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/2026/10/05/world/europe/russia-plague-siberia.html"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "german-spy-chief-russia-conflict-risk",
+     "role": "brief",
+     "kicker": "World",
+     "headline": "German spy chief warns of risk of violent conflict with Russia",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "0e5f63ae-047e-4158-b1e3-a23afa327782"
+      },
+      {
+       "source": "ft",
+       "source_id": "44788116-0ff7-4fef-abfb-e121fcb5797c"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "lens-pupil-loses-hand-protest",
+     "role": "brief",
+     "kicker": "World",
+     "headline": "French pupil, 15, loses hand to police stun grenade at school protest",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "fda0af74-6367-4ab9-9c76-f0b7c31fa552"
+      },
+      {
+       "source": "bbc",
+       "source_id": "c9zrdmxp4vy6o"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/world/2026/oct/05/schoolboy-loses-hand-police-stun-grenade-french-school-protests"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "quebec-parti-quebecois-wins",
+     "role": "brief",
+     "kicker": "World",
+     "headline": "Separatists win Quebec election but fall short of a majority",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "66a19aa9-d41f-4e89-8fdc-0107f12d423a"
+      },
+      {
+       "source": "bbc",
+       "source_id": "crly09gz7ew4o"
+      },
+      {
+       "source": "nytimes",
+       "source_id": "https://www.nytimes.com/2026/10/05/world/canada/quebec-election-parti-quebecois-separatism.html"
+      }
+     ],
+     "thread": null
+    },
+    {
+     "id": "fort-hood-hasan-firing-squad-approved",
+     "role": "brief",
+     "kicker": "World",
+     "headline": "Trump approves firing squad for gunman who killed 13 at Texas army base",
+     "sources": [
+      {
+       "source": "kristeligt_dagblad",
+       "source_id": "49685ebf-417e-4633-bb54-ac8422b913a1"
+      },
+      {
+       "source": "bbc",
+       "source_id": "cq8ezkkkrpy1o"
+      },
+      {
+       "source": "guardian",
+       "source_id": "https://www.theguardian.com/us-news/2026/oct/05/trump-fort-hood-shooter-execution"
+      }
+     ],
+     "thread": null
+    }
+   ]
+  }
+ ],
+ "covered": {
+  "kristeligt_dagblad:3027496a-f31c-438c-8545-f9e91c42e21e": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "seniorpension-cut-finance-bill-2027"
+  },
+  "jp:19721191": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "seniorpension-cut-finance-bill-2027"
+  },
+  "berlingske:urn:bm:article:9dd8dfdb-8db0-5194-bc6e-a682fc06eaac": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "seniorpension-cut-finance-bill-2027"
+  },
+  "borsen:https://borsen.dk/nyheder/politik/borsen-erfarer-regeringen-vil-skaere-pa-seniorpension-boligstotte-og-erhvervsstotte": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "seniorpension-cut-finance-bill-2027"
+  },
+  "kristeligt_dagblad:e3a94687-b8fc-430d-b6eb-ce0519e9b6f9": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "seniorpension-cut-finance-bill-2027"
+  },
+  "via_ritzau:https://via.ritzau.dk/pressemeddelelse/15216823/?publisherId=13560441&lang=da": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "seniorpension-cut-finance-bill-2027"
+  },
+  "via_ritzau:https://via.ritzau.dk/pressemeddelelse/15216973/?publisherId=2974949&lang=da": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "seniorpension-cut-finance-bill-2027"
+  },
+  "politiken:11014257": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "cpr-hacker-password-123456"
+  },
+  "kristeligt_dagblad:a9255fce-e4f9-4509-84fd-da9d44ad78b3": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "cpr-hacker-password-123456"
+  },
+  "berlingske:urn:bm:article:65e43817-218e-57b4-b4d8-dccf487e682c": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "cpr-hacker-password-123456"
+  },
+  "politiken:11013690": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "opening-debate-immigration-2026"
+  },
+  "altinget:https://www.altinget.dk/artikel/foelg-den-livlige-maratondebat-altinget-er-med-i-salen-hele-dagen": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "opening-debate-immigration-2026"
+  },
+  "tv2:https://nyheder.tv2.dk/politik/2026-10-08-jeg-ville-oenske-de-ikke-var-her-sagde-mette-f-om-bestemte-muslimer-og-fem-andre-nedslag-i-folketingets-aabningsdebat": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "opening-debate-immigration-2026"
+  },
+  "berlingske:urn:bm:article:5236525e-b114-5c20-aa43-5bb2193fb571": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "opening-debate-immigration-2026"
+  },
+  "kristeligt_dagblad:62baf3ef-fa2c-4c42-b96c-ea259a93f1b2": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "opening-debate-immigration-2026"
+  },
+  "dr:urn:dr:umbraco:reel:a86482f8-90e6-42af-a988-57795d90d42c": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "opening-debate-immigration-2026"
+  },
+  "dr:urn:dr:umbraco:article:0762e8be-e73f-456b-8436-53032ea74caa": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "venstre-record-low-5-8-poll"
+  },
+  "kristeligt_dagblad:550b04bb-1da1-4f48-8b52-77be936eab0f": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "venstre-record-low-5-8-poll"
+  },
+  "kristeligt_dagblad:c3757721-c399-4fee-a98c-05bf8cbeb7f4": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "ku-theology-faculty-merged-2028"
+  },
+  "berlingske:urn:bm:article:ba502507-79b2-5eca-b40e-ecdd1e38ccd1": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "ku-theology-faculty-merged-2028"
+  },
+  "dr:urn:dr:umbraco:article:16d3f33b-a1ea-44a4-a6ac-5d3a9ba271a8": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "ku-theology-faculty-merged-2028"
+  },
+  "politiken:11015023": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "ku-theology-faculty-merged-2028"
+  },
+  "kristeligt_dagblad:2c5c9535-f819-4818-96cf-4a641f2849a4": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "ku-theology-faculty-merged-2028"
+  },
+  "via_ritzau:https://via.ritzau.dk/pressemeddelelse/15214936/?publisherId=13561237&lang=da": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "ku-theology-faculty-merged-2028"
+  },
+  "kristeligt_dagblad:2e306f41-0b4f-40f3-b03a-f374f60019b6": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "cpr-credit-warnings-970000"
+  },
+  "berlingske:urn:bm:article:f64ea226-55f8-59ca-a382-30964c1e9ce7": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "cpr-credit-warnings-970000"
+  },
+  "dr:urn:dr:umbraco:article:9c8dcff9-f35d-4d11-900b-92f358d47cb2": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "cpr-credit-warnings-970000"
+  },
+  "kristeligt_dagblad:50801e09-3a8a-40c3-b1d9-0872b586347d": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "gade-character-assassination-claim"
+  },
+  "berlingske:urn:bm:article:78635030-632f-58fa-b20a-0ee8b9829f26": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "gade-character-assassination-claim"
+  },
+  "kristeligt_dagblad:9e159628-dc9e-4c79-a7ac-65d4d4e9eb78": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "cruise-ship-levy-2028"
+  },
+  "berlingske:urn:bm:article:271609cc-8eb4-5acd-81d9-04bf9d8c2425": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "cruise-ship-levy-2028"
+  },
+  "kristeligt_dagblad:34835378-99e9-4e0a-b111-d319e9cdca1e": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "is-housewife-two-years"
+  },
+  "berlingske:urn:bm:article:bba5ddbc-3287-5ab1-9159-509909f87601": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "is-housewife-two-years"
+  },
+  "dr:urn:dr:umbraco:article:9e122113-495f-4660-a29e-40d1d6086fad": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "is-housewife-two-years"
+  },
+  "kristeligt_dagblad:ed6e79e0-e4d8-4434-9d92-fbaa23d7ef84": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "reverse-ankle-tag-60-days"
+  },
+  "berlingske:urn:bm:article:649a3786-fd4c-5cfa-bd7b-ecbde5fbaf40": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "reverse-ankle-tag-60-days"
+  },
+  "dr:urn:dr:umbraco:article:04cd857e-1ad5-4ae7-85d9-daa8ae8950a7": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "reverse-ankle-tag-60-days"
+  },
+  "via_ritzau:https://via.ritzau.dk/pressemeddelelse/15216395/?publisherId=13568117&lang=da": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "reverse-ankle-tag-60-days"
+  },
+  "kristeligt_dagblad:55bc4c8b-7998-4ee0-ab8d-fc24ec909c92": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "kaershovedgaard-prison-four-five-years"
+  },
+  "berlingske:urn:bm:article:72489d3d-faa5-5748-a93e-ba836d905e81": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "kaershovedgaard-prison-four-five-years"
+  },
+  "dr:urn:dr:umbraco:article:ab898635-ccac-460d-8ab6-c834ef75340e": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "kaershovedgaard-prison-four-five-years"
+  },
+  "jp:19719529": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "kaershovedgaard-prison-four-five-years"
+  },
+  "kristeligt_dagblad:ed38b21f-fce5-439d-b50f-c3dd62fce167": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "s-faction-coffee-clubs"
+  },
+  "berlingske:urn:bm:article:dc0150ee-699b-5036-aa29-f048e171e20a": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "s-faction-coffee-clubs"
+  },
+  "tv2:https://nyheder.tv2.dk/2026-10-08-ny-socialdemokratisk-fraktion-udfordrer-mette-frederiksen": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "s-faction-coffee-clubs"
+  },
+  "altinget:https://www.altinget.dk/artikel/ny-s-forening-tordner-mod-partiets-utidssvarende-kaffeklubber-bidrager-ikke-til-en-hensigtsmaessig-kultur": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "s-faction-coffee-clubs"
+  },
+  "kristeligt_dagblad:4c3efd2d-f8df-4cb9-a674-167bf13f58ab": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "deepfake-sharing-ban-bill"
+  },
+  "berlingske:urn:bm:article:c1613ea2-36bd-5780-90eb-146dde70250a": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "deepfake-sharing-ban-bill"
+  },
+  "dr:urn:dr:umbraco:article:b8f14c3a-8793-4709-b740-a59e15c81688": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "deepfake-sharing-ban-bill"
+  },
+  "kristeligt_dagblad:45ff6221-0da5-4ca0-853d-f2747347d871": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "kjaersgaard-reported-hojskolen"
+  },
+  "berlingske:urn:bm:article:23caa515-e489-5f6a-8494-549be7d08a9b": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "kjaersgaard-reported-hojskolen"
+  },
+  "tv2:https://nyheder.tv2.dk/2026-10-08-pia-kjaersgaard-afviser-beskyldninger-om-vold-mod-influencer": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "kjaersgaard-reported-hojskolen"
+  },
+  "berlingske:urn:bm:article:c2d5574c-b55b-57e1-82e1-64b62e311036": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "kjaersgaard-reported-hojskolen"
+  },
+  "kristeligt_dagblad:a827c7e8-5ca5-4f18-8fb1-8f5c585edd77": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "anonymous-graves-majority-cities"
+  },
+  "berlingske:urn:bm:article:ebd4eb67-6a28-56d0-ae20-92349dcc644e": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "anonymous-graves-majority-cities"
+  },
+  "politiken:11015726": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "anonymous-graves-majority-cities"
+  },
+  "kristeligt_dagblad:cb3dc0de-2fa6-4055-9b6a-692bbcaaa146": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "djoef-worst-phrase-2026"
+  },
+  "berlingske:urn:bm:article:d46a0660-3f21-541d-8b73-2a5a7114615e": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "djoef-worst-phrase-2026"
+  },
+  "dr:urn:dr:umbraco:article:1b98b53e-9d5e-4332-8e40-7487697a9ac3": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "djoef-worst-phrase-2026"
+  },
+  "politiken:11009354": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "djoef-worst-phrase-2026"
+  },
+  "dr:urn:dr:umbraco:article:841b0253-03fe-4c2d-a09c-50777fdd56f7": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "climate-council-flight-taxes"
+  },
+  "politiken:11012146": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "climate-council-flight-taxes"
+  },
+  "altinget:https://www.altinget.dk/klima/artikel/klimaraadet-vil-goere-det-dyrere-at-flyve-men-det-bliver-luftfarten-ikke-groennere-af-indvender-erhvervslivet": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "climate-council-flight-taxes"
+  },
+  "via_ritzau:https://via.ritzau.dk/pressemeddelelse/15214676/?publisherId=13559626&lang=da": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "climate-council-flight-taxes"
+  },
+  "via_ritzau:https://via.ritzau.dk/pressemeddelelse/15215069/?publisherId=11125792&lang=da": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "climate-council-flight-taxes"
+  },
+  "kristeligt_dagblad:f773aa75-e426-4f1d-ac9d-26a7aa9a6efa": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "nobel-literature-anne-carson"
+  },
+  "berlingske:urn:bm:article:de300b0a-eef7-5e04-9e8a-202241bbcca0": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "nobel-literature-anne-carson"
+  },
+  "dr:urn:dr:umbraco:article:eea0450a-9963-4b6f-b6dc-76ca7a34d203": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "nobel-literature-anne-carson"
+  },
+  "politiken:11014375": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "nobel-literature-anne-carson"
+  },
+  "information:843191 at https://www.information.dk": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "nobel-literature-anne-carson"
+  },
+  "bbc:cq4g1j54nepyo": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "nobel-literature-anne-carson"
+  },
+  "economist:889e599e-08c8-431f-b0c7-164b619a0837": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "nobel-literature-anne-carson"
+  },
+  "ft:7eef61f6-2c3f-4c7e-9331-32a25b7dd66a": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "nobel-literature-anne-carson"
+  },
+  "guardian:https://www.theguardian.com/books/2026/oct/08/wins-the-nobel-prize-in-literature-2026": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "nobel-literature-anne-carson"
+  },
+  "guardian:https://www.theguardian.com/books/live/2026/oct/08/nobel-prize-in-literature-2026-winner-latest-news-updates": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "nobel-literature-anne-carson"
+  },
+  "guardian:https://www.theguardian.com/books/2026/oct/08/appreciation-of-anne-carson-nobel-prize-in-literature-2026": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "nobel-literature-anne-carson"
+  },
+  "nytimes:https://www.nytimes.com/2026/10/08/books/nobel-prize-literature.html": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "nobel-literature-anne-carson"
+  },
+  "nytimes:https://www.nytimes.com/2026/10/08/books/review/anne-carson-appraisal.html": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "nobel-literature-anne-carson"
+  },
+  "nytimes:https://www.nytimes.com/2026/10/08/books/anne-carson-nobel-prize-princeton-university-tenure-denied.html": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "nobel-literature-anne-carson"
+  },
+  "nytimes:https://www.nytimes.com/2026/10/08/books/review/anne-carson-best-books.html": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "nobel-literature-anne-carson"
+  },
+  "wsj:WP-WSJ-0003959725": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "nobel-literature-anne-carson"
+  },
+  "kristeligt_dagblad:d9e2f3ed-ee40-4fc1-8f4c-636628e1052f": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "hasan-execution-public"
+  },
+  "berlingske:urn:bm:article:96e22043-7f86-58f3-a18f-65a7b11189b9": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "hasan-execution-public"
+  },
+  "dr:urn:dr:umbraco:article:b8bf8d2a-c50c-4cbd-9d5b-a1e4d7dd1d94": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "hasan-execution-public"
+  },
+  "ft:0c390d03-427f-40a8-b5cb-d12c8d925d9d": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "hasan-execution-public"
+  },
+  "guardian:https://www.theguardian.com/us-news/2026/oct/08/hegseth-fort-hood-shooter-public-execution": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "hasan-execution-public"
+  },
+  "nytimes:https://www.nytimes.com/2026/10/08/us/politics/fort-hood-execution-streamed-public.html": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "hasan-execution-public"
+  },
+  "wapo:https://www.washingtonpost.com/politics/2026/10/08/hegseth-wants-fort-hood-shooters-execution-by-firing-squad-be-public/": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "hasan-execution-public"
+  },
+  "guardian:https://www.theguardian.com/commentisfree/2026/oct/09/nidal-hasan-execution-pete-hegseth-us-military-tv-democracy": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "hasan-execution-public"
+  },
+  "kristeligt_dagblad:2a8ccca2-32b7-4074-8c5b-c20d6bb747a7": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "kramatorsk-buses-strike"
+  },
+  "berlingske:urn:bm:article:d2140254-b44d-54b6-b6bf-0fac1f73f6e9": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "kramatorsk-buses-strike"
+  },
+  "berlingske:urn:bm:article:3d7370cf-312d-5690-870b-a69f1a4544a9": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "kramatorsk-buses-strike"
+  },
+  "bbc:c875pwq134l3o": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "kramatorsk-buses-strike"
+  },
+  "ft:fb4d6b18-3b72-473c-90a5-3864c1dad27e": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "kramatorsk-buses-strike"
+  },
+  "guardian:https://www.theguardian.com/world/2026/oct/08/russian-attack-buses-ukraine-frontline-kramatorsk": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "kramatorsk-buses-strike"
+  },
+  "wapo:https://www.washingtonpost.com/world/2026/10/08/least-30-dead-russian-bus-strike-moscow-closes-ukraines-fortress-belt/": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "kramatorsk-buses-strike"
+  },
+  "wsj:WP-WSJ-0003960601": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "kramatorsk-buses-strike"
+  },
+  "kristeligt_dagblad:76e752ae-5071-4207-8153-372b49ff72e4": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "trump-iran-talks-midterms"
+  },
+  "berlingske:urn:bm:article:7fe8a067-3368-5843-9b1b-51c2d7aa0f64": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "trump-iran-talks-midterms"
+  },
+  "borsen:https://borsen.dk/nyheder/udland/trump-usa-har-produktive-samtaler-med-iran": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "trump-iran-talks-midterms"
+  },
+  "dr:urn:dr:umbraco:article:bbb0aef2-0c1b-4142-b169-b221afe930a2": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "trump-iran-talks-midterms"
+  },
+  "ft:e0cc2789-0e71-401d-8096-d58303970a37": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "trump-iran-talks-midterms"
+  },
+  "nytimes:https://www.nytimes.com/2026/10/08/us/politics/trump-iran-war-options.html": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "trump-iran-talks-midterms"
+  },
+  "wapo:https://www.washingtonpost.com/politics/2026/10/08/no-new-attack-iran-before-midterm-elections-trump-says/": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "trump-iran-talks-midterms"
+  },
+  "wsj:WP-WSJ-0003961001": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "trump-iran-talks-midterms"
+  },
+  "kristeligt_dagblad:69cf2a29-f6d4-4b88-b165-eed456b966d7": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "wwf-living-planet-73-per-cent"
+  },
+  "berlingske:urn:bm:article:2d3c037b-da07-5e67-86d0-3f0397414c56": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "wwf-living-planet-73-per-cent"
+  },
+  "tv2:https://nyheder.tv2.dk/samfund/2026-10-08-verdens-vilde-dyr-forsvinder-dybt-alarmerende-siger-direktoer": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "wwf-living-planet-73-per-cent"
+  },
+  "dr:urn:dr:umbraco:article:5a491504-4b0f-46d1-957a-65bd73b4d8d4": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "wwf-living-planet-73-per-cent"
+  },
+  "via_ritzau:https://via.ritzau.dk/pressemeddelelse/15213792/?publisherId=11565599&lang=da": {
+   "edition_id": "2026-10-09-morning",
+   "story_id": "wwf-living-planet-73-per-cent"
+  },
+  "kristeligt_dagblad:e713bf5b-9aff-49e4-bf6f-266a893bdd45": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "islands-brygge-one-year-sentence"
+  },
+  "berlingske:urn:bm:article:e58aaeae-2b3b-54af-b2f2-058c5891e4d7": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "islands-brygge-one-year-sentence"
+  },
+  "berlingske:urn:bm:article:cd292b4b-e8ed-5d3a-bd3a-94bbd90588b1": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "islands-brygge-one-year-sentence"
+  },
+  "jp:19717059": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "islands-brygge-one-year-sentence"
+  },
+  "kristeligt_dagblad:565bcc4e-2fa6-4f22-9ea5-1fc17a3bafa2": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "islands-brygge-one-year-sentence"
+  },
+  "politiken:11012945": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "islands-brygge-one-year-sentence"
+  },
+  "kristeligt_dagblad:a0af9c1e-923a-4b50-950c-dbaa2d8b89bc": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "kosovar-guards-charged-vestre"
+  },
+  "kristeligt_dagblad:1d631912-eb12-4333-ae3c-f98304d5f25b": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "kosovar-guards-charged-vestre"
+  },
+  "kristeligt_dagblad:340ec333-0020-4531-a929-ee48e08c774c": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "kosovar-guards-charged-vestre"
+  },
+  "kristeligt_dagblad:68182d8a-7ceb-4f16-b3a6-e3e537ab61c0": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "kosovar-guards-charged-vestre"
+  },
+  "dr:urn:dr:umbraco:article:acd182e3-dce3-420c-bdce-94a64a11ebd2": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "kosovar-guards-charged-vestre"
+  },
+  "dr:urn:dr:umbraco:article:cd64f406-a453-4cf2-8380-2ed4a92794f1": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "kosovar-guards-charged-vestre"
+  },
+  "tv2:https://nyheder.tv2.dk/krimi/2026-10-07-faengselsbetjente-under-oplaering-fra-kosovo-sigtet-for-vold": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "kosovar-guards-charged-vestre"
+  },
+  "kristeligt_dagblad:a161c633-9610-4bc3-b954-693a37bb7650": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "who-cannot-assess-russia-plague"
+  },
+  "kristeligt_dagblad:76d56c17-b0d0-40a4-815f-41109780d0c8": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "who-cannot-assess-russia-plague"
+  },
+  "berlingske:urn:bm:article:3f858198-4395-5833-a433-e5a6086f2f35": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "who-cannot-assess-russia-plague"
+  },
+  "jp:19714135": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "who-cannot-assess-russia-plague"
+  },
+  "tv2:https://nyheder.tv2.dk/udland/2026-10-07-who-og-usa-kraever-svar-efter-muligt-nyt-pesttilfaelde-paa-russisk-laboratorium": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "who-cannot-assess-russia-plague"
+  },
+  "politiken:11012051": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "who-cannot-assess-russia-plague"
+  },
+  "guardian:https://www.theguardian.com/world/2026/oct/07/who-says-it-does-not-have-full-picture-from-russia-following-suspected-plague-death": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "who-cannot-assess-russia-plague"
+  },
+  "kristeligt_dagblad:b40d7560-dae3-419a-bfad-1165e1263b9f": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "afghanistan-inquiry-full-openness"
+  },
+  "berlingske:urn:bm:article:e1a6392b-00eb-5995-be64-94f043445496": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "afghanistan-inquiry-full-openness"
+  },
+  "kristeligt_dagblad:ceeb1d28-ee6a-4e71-8f17-7079f23cdc30": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "enhedslisten-welfare-profit-demand"
+  },
+  "information:843155 at https://www.information.dk": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "enhedslisten-welfare-profit-demand"
+  },
+  "kristeligt_dagblad:08f264ce-7401-41d1-838d-2ce359486c02": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "tilst-speeding-driver-four-years"
+  },
+  "dr:urn:dr:umbraco:article:1408808f-92de-4417-8205-570f1ee1e9da": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "tilst-speeding-driver-four-years"
+  },
+  "dr:urn:dr:umbraco:article:efcba540-ade5-4940-bff3-7543266eeca7": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "tilst-speeding-driver-four-years"
+  },
+  "kristeligt_dagblad:74e58d18-0316-4a51-ba00-9974cd383c3d": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "wolves-dna-register-2027"
+  },
+  "jp:19717028": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "wolves-dna-register-2027"
+  },
+  "dr:urn:dr:umbraco:article:309e499d-a862-464e-91ac-beeb1a11611f": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "wolves-dna-register-2027"
+  },
+  "kristeligt_dagblad:3b5625b3-98a0-4553-b1c0-aacccfe6cc00": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "marine-nature-parks-68-million"
+  },
+  "via_ritzau:https://via.ritzau.dk/pressemeddelelse/15213268/?publisherId=13560422&lang=da": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "marine-nature-parks-68-million"
+  },
+  "kristeligt_dagblad:d501f1ab-4efe-45c5-b9bd-a648bc308ab5": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "mediation-councils-bill-retabled"
+  },
+  "jp:19716116": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "mediation-councils-bill-retabled"
+  },
+  "kristeligt_dagblad:010f07a6-a5aa-4778-84ad-91f7b81f9a93": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "manniche-20-days-suspended"
+  },
+  "berlingske:urn:bm:article:9fd5f45a-27de-524c-86a5-9cce1eb8148c": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "manniche-20-days-suspended"
+  },
+  "kristeligt_dagblad:c0bc3eca-b287-466c-8278-8a8824fe3bf8": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "naza-paused-on-anniversary"
+  },
+  "berlingske:urn:bm:article:32f07df5-bae7-5fff-9eb0-01222c5c57fc": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "naza-paused-on-anniversary"
+  },
+  "kristeligt_dagblad:7096a32e-2d0d-43e0-9bcd-878329c633d4": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "rigshospitalet-oslo-liver-surgeons"
+  },
+  "berlingske:urn:bm:article:c4c82fbc-4e23-500f-9012-0061412ffbc0": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "rigshospitalet-oslo-liver-surgeons"
+  },
+  "kristeligt_dagblad:0ac7756c-1769-4ed2-a2da-259cc56257ec": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "ssi-expects-high-flu-winter"
+  },
+  "berlingske:urn:bm:article:2cce0bd9-7a4f-53fb-bddf-003a4963d9ce": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "ssi-expects-high-flu-winter"
+  },
+  "kristeligt_dagblad:396b491f-0c62-4b5f-9301-a18b291cea1d": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "royal-gala-apples-recalled"
+  },
+  "berlingske:urn:bm:article:8c6907c6-1afe-58af-9ce8-c541dbf15ce2": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "royal-gala-apples-recalled"
+  },
+  "kristeligt_dagblad:ed9bc168-ac1a-4ad0-9cc7-d776aac2e9a6": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "kombit-outage-municipal-systems"
+  },
+  "berlingske:urn:bm:article:9b923d5e-9b73-5484-b93b-df97f447ec39": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "kombit-outage-municipal-systems"
+  },
+  "kristeligt_dagblad:9820723b-1f8a-417d-89e3-b4ff4ded3195": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "nobel-chemistry-kagan-soai"
+  },
+  "dr:urn:dr:umbraco:article:a102a201-349c-4e4b-ab12-64792dc95036": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "nobel-chemistry-kagan-soai"
+  },
+  "politiken:10992301": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "nobel-chemistry-kagan-soai"
+  },
+  "bbc:c6ly038jg0d4o": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "nobel-chemistry-kagan-soai"
+  },
+  "economist:69acfeed-fd2d-487d-b55d-4c4e926b87d1": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "nobel-chemistry-kagan-soai"
+  },
+  "ft:d87ec22e-2bb4-4fce-90b7-3e9dd3f5a810": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "nobel-chemistry-kagan-soai"
+  },
+  "nytimes:https://www.nytimes.com/2026/10/07/science/nobel-prize-chemistry.html": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "nobel-chemistry-kagan-soai"
+  },
+  "guardian:https://www.theguardian.com/science/2026/oct/07/nobel-prize-chemistry-awarded-work-on-mirror-image-molecules": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "nobel-chemistry-kagan-soai"
+  },
+  "guardian:https://www.theguardian.com/science/video/2026/oct/07/this-is-what-the-2026-nobel-prize-for-chemistry-is-all-about": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "nobel-chemistry-kagan-soai"
+  },
+  "wsj:WP-WSJ-0003955820": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "nobel-chemistry-kagan-soai"
+  },
+  "kristeligt_dagblad:5d7fe330-e928-4d0c-8bf3-3e0a4bd88772": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "ukraine-70-missiles-strike"
+  },
+  "berlingske:urn:bm:article:325115a5-4a45-5dc0-9fa2-ad34ae06580e": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "ukraine-70-missiles-strike"
+  },
+  "bbc:ckr5ym098vdeo": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "ukraine-70-missiles-strike"
+  },
+  "ft:a5bd820e-fc7c-4414-ad90-f77bd7aa3a44": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "ukraine-70-missiles-strike"
+  },
+  "guardian:https://www.theguardian.com/world/2026/oct/08/ukraine-war-briefing-zelenskyy-condemns-vile-attacks-from-russia-that-killed-20-in-one-apartment": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "ukraine-70-missiles-strike"
+  },
+  "guardian:https://www.theguardian.com/world/2026/oct/07/ukraine-accuses-russia-of-bombing-apartment-block-as-birthday-gift-for-putin": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "ukraine-70-missiles-strike"
+  },
+  "guardian:https://www.theguardian.com/world/video/2026/oct/07/explosion-in-kyiv-as-russian-missiles-strike-across-ukraine-video": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "ukraine-70-missiles-strike"
+  },
+  "wsj:WP-WSJ-0003956572": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "ukraine-70-missiles-strike"
+  },
+  "kristeligt_dagblad:738414b1-60ba-4902-805f-5b03271779fd": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "france-suspends-stun-grenades"
+  },
+  "berlingske:urn:bm:article:499302bd-3d5e-5345-b8d5-468a30749108": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "france-suspends-stun-grenades"
+  },
+  "bbc:cqzjx7z2r4gko": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "france-suspends-stun-grenades"
+  },
+  "bbc:cqe8r9811n9jo": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "france-suspends-stun-grenades"
+  },
+  "guardian:https://www.theguardian.com/world/2026/oct/07/french-police-suspend-use-stun-grenades-high-school-protester-loses-hand": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "france-suspends-stun-grenades"
+  },
+  "kristeligt_dagblad:e7c7f61c-10bd-4389-a5ca-6fc9fbb152e3": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "saudi-airports-three-killed"
+  },
+  "berlingske:urn:bm:article:5a2f5c2d-e6ac-58df-a10f-41ef72de5b09": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "saudi-airports-three-killed"
+  },
+  "nytimes:https://www.nytimes.com/2026/10/07/world/middleeast/saudi-arabia-airports-houthis.html": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "saudi-airports-three-killed"
+  },
+  "wsj:WP-WSJ-0003958023": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "saudi-airports-three-killed"
+  },
+  "wsj:WP-WSJ-0003951982": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "saudi-airports-three-killed"
+  },
+  "kristeligt_dagblad:005a718e-874f-4ab4-aedd-b0114a32e786": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "raaplan-sequel-praised"
+  },
+  "information:843154 at https://www.information.dk": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "raaplan-sequel-praised"
+  },
+  "politiken:10992423": {
+   "edition_id": "2026-10-08-morning",
+   "story_id": "raaplan-sequel-praised"
+  },
+  "kristeligt_dagblad:6cfc4cf1-fb10-411f-948c-8758a9a8103a": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "cpr-number-no-longer-id"
+  },
+  "kristeligt_dagblad:fbb9dcd3-cc25-48fd-b7a5-78df986ac02a": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "cpr-number-no-longer-id"
+  },
+  "jp:19712532": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "cpr-number-no-longer-id"
+  },
+  "politiken:11011814": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "cpr-number-no-longer-id"
+  },
+  "dr:urn:dr:umbraco:article:54cd1a6f-51c6-4e1a-b8ef-e07e1413c28c": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "cpr-number-no-longer-id"
+  },
+  "borsen:https://borsen.dk/nyheder/samfund/dyr-faktura-afslorede-cpr-laek": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "cpr-number-no-longer-id"
+  },
+  "berlingske:urn:bm:article:52e9e8d3-2b6c-5258-aa36-f6be717f736c": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "cpr-number-no-longer-id"
+  },
+  "via_ritzau:https://via.ritzau.dk/pressemeddelelse/15209445/?publisherId=13562509&lang=da": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "cpr-number-no-longer-id"
+  },
+  "kristeligt_dagblad:6b039919-8199-45d6-8dd1-094996969c9c": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "frederiksen-opening-speech-2026"
+  },
+  "dr:urn:dr:umbraco:article:8b3e8e13-d808-4fae-a2ba-c5ec101d8a7b": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "frederiksen-opening-speech-2026"
+  },
+  "berlingske:urn:bm:article:97dfdf21-c392-5928-9889-2f71865d0773": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "frederiksen-opening-speech-2026"
+  },
+  "altinget:https://www.altinget.dk/christiansborg/artikel/den-tale-kunne-mette-frederiksen-lige-saa-godt-have-holdt-i-en-ren-s-regering": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "frederiksen-opening-speech-2026"
+  },
+  "borsen:https://borsen.dk/nyheder/politik/politisk-redaktor-her-er-tre-pointer-fra-mette-frederiksens-tale": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "frederiksen-opening-speech-2026"
+  },
+  "kristeligt_dagblad:ad71cbc2-6640-4659-a885-eaa3589513c3": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "frederiksen-opening-speech-2026"
+  },
+  "via_ritzau:https://via.ritzau.dk/pressemeddelelse/15210199/?publisherId=13560386&lang=da": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "frederiksen-opening-speech-2026"
+  },
+  "kristeligt_dagblad:809cbd8f-2470-4278-90d0-d268cb41ae2d": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "gade-jp-portrait-row"
+  },
+  "kristeligt_dagblad:c388f3bd-9cb5-404b-8f73-d9af3ccd3b65": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "gade-jp-portrait-row"
+  },
+  "berlingske:urn:bm:article:3500290e-d780-5046-afc4-0a004e0a38e8": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "gade-jp-portrait-row"
+  },
+  "berlingske:urn:bm:article:a19f5b57-0b35-5241-9dfb-f8706418eefc": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "gade-jp-portrait-row"
+  },
+  "tv2:https://nyheder.tv2.dk/politik/2026-10-06-svinsk-modbydeligt-og-paa-alle-maader-upassende-vildt-soeren-gade-portraet-faar-borgen-til-at-summe": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "gade-jp-portrait-row"
+  },
+  "borsen:https://borsen.dk/nyheder/politik/soren-gade-jeg-har-magtfulde-fjender-i-venstre": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "gade-jp-portrait-row"
+  },
+  "kristeligt_dagblad:c8a1cf70-4fe7-4add-b3aa-993b703b091d": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "hanning-arrested-spying"
+  },
+  "jp:19711596": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "hanning-arrested-spying"
+  },
+  "berlingske:urn:bm:article:9d41f385-f7d2-5c19-908b-3b2f21e05eaf": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "hanning-arrested-spying"
+  },
+  "dr:urn:dr:umbraco:article:d9df6283-1d12-4185-8e60-1591161b231a": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "hanning-arrested-spying"
+  },
+  "borsen:https://borsen.dk/nyheder/udland/tidligere-tysk-efterretningschef-anholdt-i-spionagesag": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "hanning-arrested-spying"
+  },
+  "bbc:c58jzyer1kr0o": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "hanning-arrested-spying"
+  },
+  "ft:4c565931-6ac7-4b4c-be72-d86e8e3a8aec": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "hanning-arrested-spying"
+  },
+  "guardian:https://www.theguardian.com/world/2026/oct/06/germany-august-hanning-bnd-arrest-former-domestic-intelligence-chief": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "hanning-arrested-spying"
+  },
+  "nytimes:https://www.nytimes.com/2026/10/06/world/europe/germany-spy-chief-hanning-arrested-espionage.html": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "hanning-arrested-spying"
+  },
+  "nytimes:https://www.nytimes.com/2026/10/06/world/europe/germany-spy-chief-henning-arrested-espionage.html": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "hanning-arrested-spying"
+  },
+  "wapo:https://www.washingtonpost.com/world/2026/10/06/germany-arrests-former-intelligence-chief-espionage-case/": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "hanning-arrested-spying"
+  },
+  "wsj:WP-WSJ-0003951981": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "hanning-arrested-spying"
+  },
+  "kristeligt_dagblad:2b208add-5af9-4b61-a8be-fa74e2349c9d": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "folkeskole-900-million-2027"
+  },
+  "politiken:11007533": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "folkeskole-900-million-2027"
+  },
+  "borsen:https://borsen.dk/nyheder/politik/regeringen-vil-afsaette-200-mio-til-indsats-pa-100-udvalgte-skoler": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "folkeskole-900-million-2027"
+  },
+  "dr:urn:dr:umbraco:article:4730c61f-ed18-454b-bf0e-98ac48217b86": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "folkeskole-900-million-2027"
+  },
+  "via_ritzau:https://via.ritzau.dk/pressemeddelelse/15211224/?publisherId=90383&lang=da": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "folkeskole-900-million-2027"
+  },
+  "kristeligt_dagblad:8854090e-f80c-489e-a5d7-32cde8bc1771": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "frandsen-elected-speaker"
+  },
+  "kristeligt_dagblad:1b4e6119-a7b5-4a62-a263-fe5075cd081d": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "frandsen-elected-speaker"
+  },
+  "dr:urn:dr:umbraco:article:02b9fde9-5208-4318-9f79-43f5e9605a6c": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "frandsen-elected-speaker"
+  },
+  "altinget:https://www.altinget.dk/kommunal/artikel/alternativet-traekker-stoetten-til-henrik-frandsen-foer-aabning": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "frandsen-elected-speaker"
+  },
+  "kristeligt_dagblad:b1dae7db-d578-42cf-a96e-71e95fa0cbd7": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "kaershovedgaard-prison-unit"
+  },
+  "jp:19708697": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "kaershovedgaard-prison-unit"
+  },
+  "berlingske:urn:bm:article:8b638f74-dc94-56f1-9b8e-ec269c9f77ca": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "kaershovedgaard-prison-unit"
+  },
+  "kristeligt_dagblad:30b31263-21b2-4e03-8e9c-90be4c2198e5": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "legislative-programme-2026-27"
+  },
+  "berlingske:urn:bm:article:7b5fc11e-95cd-564f-b18a-929bfdbc46eb": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "legislative-programme-2026-27"
+  },
+  "altinget:https://www.altinget.dk/uddannelse/artikel/mette-frederiksen-ser-ingen-problemer-i-su-beskaering-langt-de-fleste-unge-kan-sagtens-have-et-fritidsjob": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "frederiksen-defends-su-cut"
+  },
+  "dr:urn:dr:umbraco:reel:0c47cd1d-b045-499f-9bb4-6ee6799d5ca0": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "frederiksen-defends-su-cut"
+  },
+  "kristeligt_dagblad:f3219da4-3611-442e-88be-e0ef36d59d93": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "fewer-owe-public-debt"
+  },
+  "berlingske:urn:bm:article:58b0c1e4-7422-5bcd-ab73-caa3390a75be": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "fewer-owe-public-debt"
+  },
+  "kristeligt_dagblad:8f0afc49-68cf-48dd-b6fe-fb16a08b95ea": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "mobilepay-renamed-vipps"
+  },
+  "borsen:https://borsen.dk/nyheder/finans/mobilepay-skifter-navn": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "mobilepay-renamed-vipps"
+  },
+  "dr:urn:dr:umbraco:article:a19547b3-7ce5-4d04-a956-17b79905a06d": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "mobilepay-renamed-vipps"
+  },
+  "via_ritzau:https://via.ritzau.dk/pressemeddelelse/15208954/?publisherId=13563025&lang=da": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "mobilepay-renamed-vipps"
+  },
+  "kristeligt_dagblad:d72e55e4-0019-434d-9f5f-77bb97f00546": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "genmab-lymphoma-shares-rise"
+  },
+  "borsen:https://borsen.dk/nyheder/marketreports/genmab-storroses-af-analytikere-og-brager-frem-sadan-abner-c25": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "genmab-lymphoma-shares-rise"
+  },
+  "wsj:WP-WSJ-0003951853": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "genmab-lymphoma-shares-rise"
+  },
+  "kristeligt_dagblad:960b349a-47c3-4721-854e-1ac6c3b034ad": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "red-bull-influencer-complaint"
+  },
+  "dr:urn:dr:umbraco:article:ee657f0e-018c-4e02-a50a-d26dd275f454": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "red-bull-influencer-complaint"
+  },
+  "tv2:https://nyheder.tv2.dk/samfund/2026-10-06-influencer-anklages-for-den-stoerste-overtraedelse-af-markedsfoeringsloven": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "red-bull-influencer-complaint"
+  },
+  "via_ritzau:https://via.ritzau.dk/pressemeddelelse/15206182/?publisherId=13563189&lang=da": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "red-bull-influencer-complaint"
+  },
+  "kristeligt_dagblad:23fda7d8-ba4d-4691-9e9b-99e784484935": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "fdm-two-car-seats-warning"
+  },
+  "dr:urn:dr:umbraco:article:e2b6366b-eabb-4173-99bc-c098688776b6": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "fdm-two-car-seats-warning"
+  },
+  "via_ritzau:https://via.ritzau.dk/pressemeddelelse/15207571/?publisherId=13562168&lang=da": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "fdm-two-car-seats-warning"
+  },
+  "kristeligt_dagblad:bf4776db-043a-4267-b691-da1a973ba863": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "region-rejects-lgbtq-handbook"
+  },
+  "dr:urn:dr:umbraco:article:61b85df1-9396-4bf0-8ab4-b511c4bb3c9b": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "region-rejects-lgbtq-handbook"
+  },
+  "berlingske:urn:bm:article:ffed567c-e179-5c6b-b60d-7199ed39b9ed": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "region-rejects-lgbtq-handbook"
+  },
+  "kristeligt_dagblad:4de703b1-9951-4120-928f-bafaf507cf01": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "hammerum-suspect-arrested"
+  },
+  "kristeligt_dagblad:4c5a4f8e-3c0d-41ef-b2e6-2b1f34144c8e": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "hammerum-suspect-arrested"
+  },
+  "kristeligt_dagblad:0f8427dc-3e45-4b21-9b2e-6711ef1c6789": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "lise-svanholm-dies"
+  },
+  "berlingske:urn:bm:article:a0eee0ac-488f-5c57-9edf-5196ecdeb879": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "lise-svanholm-dies"
+  },
+  "kristeligt_dagblad:9d18b5c4-d8ee-492a-b1e2-6637db3654af": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "sweden-patriot-to-poland"
+  },
+  "dr:urn:dr:umbraco:article:c0b77310-ec1c-4906-8484-718e54cf34a7": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "sweden-patriot-to-poland"
+  },
+  "berlingske:urn:bm:article:8ab4ae26-a0b4-5416-b188-3624a2d3019e": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "sweden-patriot-to-poland"
+  },
+  "kristeligt_dagblad:6e43aef8-f0db-41bb-a5a8-c8af53b59e79": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "france-school-protests-250000"
+  },
+  "politiken:11009136": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "france-school-protests-250000"
+  },
+  "berlingske:urn:bm:article:f918373c-8a29-517b-aed8-8b15e9ec7c6f": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "france-school-protests-250000"
+  },
+  "jp:19713079": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "france-school-protests-250000"
+  },
+  "guardian:https://www.theguardian.com/world/2026/oct/06/protests-schools-blockade-streets-france": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "france-school-protests-250000"
+  },
+  "bbc:c8x23706pvz3o": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "france-school-protests-250000"
+  },
+  "bbc:cwm26078pkepo": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "france-school-protests-250000"
+  },
+  "bbc:cr4g1q1elxnjo": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "france-school-protests-250000"
+  },
+  "guardian:https://www.theguardian.com/world/live/2026/oct/06/europe-french-school-protests-paris-germany-afd-bulgaria-drones-russia-ukraine-latest-news-updates": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "france-school-protests-250000"
+  },
+  "guardian:https://www.theguardian.com/world/2026/oct/06/french-student-protests-barricades-paris-police": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "france-school-protests-250000"
+  },
+  "nytimes:https://www.nytimes.com/2026/10/06/world/europe/france-student-strikes-protests.html": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "france-school-protests-250000"
+  },
+  "wapo:https://www.washingtonpost.com/world/2026/10/06/protests-sweep-france-closing-schools-student-walkouts-escalate/": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "france-school-protests-250000"
+  },
+  "nytimes:https://www.nytimes.com/2026/10/06/world/europe/france-protests-social-welfare-election.html": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "france-school-protests-250000"
+  },
+  "nytimes:https://www.nytimes.com/2026/10/06/world/europe/france-crisis-autumn-discontent.html": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "france-school-protests-250000"
+  },
+  "nytimes:https://www.nytimes.com/live/2026/10/06/world/france-protests-students-schools": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "france-school-protests-250000"
+  },
+  "nytimes:https://www.nytimes.com/2026/10/06/world/europe/french-student-protest-unions-college.html": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "france-school-protests-250000"
+  },
+  "kristeligt_dagblad:2fdee3dd-d284-4216-bd74-584636f6318f": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "afd-first-state-speaker"
+  },
+  "dr:urn:dr:umbraco:article:fa4d94f6-ffac-4280-9d37-3702d6e67f96": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "afd-first-state-speaker"
+  },
+  "bbc:c54g1m2g1pg3o": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "afd-first-state-speaker"
+  },
+  "ft:76db879a-2c53-4aee-8354-b30185f1d3a4": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "afd-first-state-speaker"
+  },
+  "guardian:https://www.theguardian.com/world/2026/oct/06/germany-afd-first-far-right-tobias-rausch-speaker-since-war": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "afd-first-state-speaker"
+  },
+  "nytimes:https://www.nytimes.com/2026/10/06/world/europe/germany-afd-saxony-anhalt.html": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "afd-first-state-speaker"
+  },
+  "kristeligt_dagblad:e42400a0-f2c4-465b-8a11-6569c8694cc2": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "black-sea-ships-hit-off-bulgaria"
+  },
+  "politiken:11010601": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "black-sea-ships-hit-off-bulgaria"
+  },
+  "dr:urn:dr:umbraco:article:7b864fed-fd0a-46ad-a934-311f4ffacfdb": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "black-sea-ships-hit-off-bulgaria"
+  },
+  "berlingske:urn:bm:article:3856d3c8-120a-5be2-aadb-6be0de799860": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "black-sea-ships-hit-off-bulgaria"
+  },
+  "nytimes:https://www.nytimes.com/2026/10/06/world/europe/bulgaria-drones-black-sea.html": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "black-sea-ships-hit-off-bulgaria"
+  },
+  "guardian:https://www.theguardian.com/world/2026/oct/07/ukraine-war-briefing-zelenskyy-blames-russia-for-attack-on-bulgarian-vessels-in-black-sea-as-investigation-launched": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "black-sea-ships-hit-off-bulgaria"
+  },
+  "bbc:c8ly0v5r602eo": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "black-sea-ships-hit-off-bulgaria"
+  },
+  "kristeligt_dagblad:a2e7d49a-14cf-41a7-aa72-696c6abf2af8": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "nobel-physics-halzen-icecube"
+  },
+  "politiken:10992289": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "nobel-physics-halzen-icecube"
+  },
+  "dr:urn:dr:umbraco:article:f7ee2726-760b-4422-9c05-4335a3dcc721": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "nobel-physics-halzen-icecube"
+  },
+  "bbc:cq203mymlvkeo": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "nobel-physics-halzen-icecube"
+  },
+  "economist:c575548f-c67f-4b27-8572-0baa128bad37": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "nobel-physics-halzen-icecube"
+  },
+  "guardian:https://www.theguardian.com/science/2026/oct/06/nobel-prize-in-physics-francis-halzen-south-pole-neutrinos-icecube-detector": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "nobel-physics-halzen-icecube"
+  },
+  "nytimes:https://www.nytimes.com/2026/10/06/science/nobel-prize-physics.html": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "nobel-physics-halzen-icecube"
+  },
+  "kristeligt_dagblad:62d65722-6518-41ed-b5fb-102b9d8cb744": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "paramount-completes-warner-deal"
+  },
+  "dr:urn:dr:umbraco:article:0fca0adf-51f5-43ef-8230-de3651cee438": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "paramount-completes-warner-deal"
+  },
+  "bbc:cxj0604d33qzo": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "paramount-completes-warner-deal"
+  },
+  "ft:93756433-eb78-422d-8ac3-30e8cc243a00": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "paramount-completes-warner-deal"
+  },
+  "guardian:https://www.theguardian.com/business/2026/oct/06/paramount-warner-bros-skydance-merger": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "paramount-completes-warner-deal"
+  },
+  "nytimes:https://www.nytimes.com/2026/10/06/business/media/paramount-warner-bros-discovery-skydance.html": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "paramount-completes-warner-deal"
+  },
+  "wapo:https://www.washingtonpost.com/business/2026/10/06/paramount-closes-110b-deal-with-warner-bros-discovery-after-months-wrangling/": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "paramount-completes-warner-deal"
+  },
+  "wsj:WP-WSJ-0003955238": {
+   "edition_id": "2026-10-07-morning",
+   "story_id": "paramount-completes-warner-deal"
+  },
+  "kristeligt_dagblad:b4c5b11f-1e9c-4fb3-a076-80052d67e5eb": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "cpr-register-breach-8-8-million"
+  },
+  "kristeligt_dagblad:8ff93e01-f124-4d78-acb1-ce821323cd9b": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "cpr-register-breach-8-8-million"
+  },
+  "berlingske:urn:bm:article:a600708e-ad31-5935-997e-d7194fca44db": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "cpr-register-breach-8-8-million"
+  },
+  "berlingske:urn:bm:article:f38dd426-f2e9-5582-8b39-dbac76fbbed7": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "cpr-register-breach-8-8-million"
+  },
+  "politiken:11008787": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "cpr-register-breach-8-8-million"
+  },
+  "dr:urn:dr:umbraco:reel:bc9e4bf9-dae5-4665-96d4-39e4e28d1700": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "cpr-register-breach-8-8-million"
+  },
+  "jp:19707046": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "cpr-register-breach-8-8-million"
+  },
+  "borsen:https://borsen.dk/nyheder/samfund/uvedkommende-har-faet-adgang-til-88-mio-cpr-numre": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "cpr-register-breach-8-8-million"
+  },
+  "tv2:https://nyheder.tv2.dk/samfund/2026-10-05-88-millioner-cpr-numre-er-blevet-kompromitteret": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "cpr-register-breach-8-8-million"
+  },
+  "via_ritzau:https://via.ritzau.dk/pressemeddelelse/15205753/?publisherId=2869389&lang=da": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "cpr-register-breach-8-8-million"
+  },
+  "via_ritzau:https://via.ritzau.dk/pressemeddelelse/15207898/?publisherId=5524343&lang=da": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "cpr-register-breach-8-8-million"
+  },
+  "kristeligt_dagblad:ebf1a1f8-2bc2-4833-ad64-134a9b2810b9": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "store-bededag-restored-2030"
+  },
+  "berlingske:urn:bm:article:c5eaae58-dc50-551d-9f86-324d3b0682d0": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "store-bededag-restored-2030"
+  },
+  "borsen:https://borsen.dk/nyheder/politik/lovforslag-pa-vej-store-bededag-vender-tilbage": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "store-bededag-restored-2030"
+  },
+  "politiken:11010042": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "store-bededag-restored-2030"
+  },
+  "kristeligt_dagblad:9b1eaa80-214e-46df-9676-8e4f5a56a2b6": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "citizenship-bill-2055-retabled"
+  },
+  "kristeligt_dagblad:305a90c8-65ae-443a-865b-dff0b1edf992": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "citizenship-bill-2055-retabled"
+  },
+  "berlingske:urn:bm:article:9442db13-34ff-52b9-909a-754d9b84c4ce": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "citizenship-bill-2055-retabled"
+  },
+  "dr:urn:dr:umbraco:article:b38b9229-cb13-4a4d-a4c1-c4e55f54e961": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "citizenship-bill-2055-retabled"
+  },
+  "politiken:11009326": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "citizenship-bill-2055-retabled"
+  },
+  "kristeligt_dagblad:44484664-95aa-401e-b99c-1da01743fcf6": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "dementia-assessment-auditors-criticism"
+  },
+  "dr:urn:dr:umbraco:article:32b2a19d-2cf4-4466-aeea-460b44dae9ab": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "dementia-assessment-auditors-criticism"
+  },
+  "altinget:https://www.altinget.dk/sundhed/artikel/skarp-kritik-af-regioners-demensudredning-det-er-simpelthen-ikke-i-orden": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "dementia-assessment-auditors-criticism"
+  },
+  "via_ritzau:https://via.ritzau.dk/pressemeddelelse/15206947/?publisherId=13561070&lang=da": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "dementia-assessment-auditors-criticism"
+  },
+  "kristeligt_dagblad:5b0f9d08-e7f7-4967-a612-c4ae2476b7cb": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "echr-president-chisinau-not-roadmap"
+  },
+  "kristeligt_dagblad:fda51638-3237-47de-af66-b1552963bfbf": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "echr-president-chisinau-not-roadmap"
+  },
+  "politiken:11008462": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "echr-president-chisinau-not-roadmap"
+  },
+  "berlingske:urn:bm:article:62afc518-e970-531a-823d-f82e15e022c1": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "echr-president-chisinau-not-roadmap"
+  },
+  "kristeligt_dagblad:e1d374be-ecdb-439f-a5b4-bb762dc089eb": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "spain-snap-election-november-29"
+  },
+  "kristeligt_dagblad:8997b276-625f-43be-9fb9-299554545269": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "spain-snap-election-november-29"
+  },
+  "berlingske:urn:bm:article:a4759dd9-122b-5b4c-81f5-e74fe05ccd39": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "spain-snap-election-november-29"
+  },
+  "dr:urn:dr:umbraco:article:e73e6c8f-535c-49c5-8f6d-91f2f9aa395a": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "spain-snap-election-november-29"
+  },
+  "politiken:11008877": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "spain-snap-election-november-29"
+  },
+  "bbc:cmdx39k49xw0o": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "spain-snap-election-november-29"
+  },
+  "ft:866dea03-4cee-4009-b130-6f7a191336c4": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "spain-snap-election-november-29"
+  },
+  "ft:7c6bfe8f-eae2-47f7-98e5-19e714195c58": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "spain-snap-election-november-29"
+  },
+  "economist:3ce820e6-411f-4e1f-89c2-0d08f234b5e5": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "spain-snap-election-november-29"
+  },
+  "nytimes:https://www.nytimes.com/live/2026/10/05/world/spain-elections-sanchez": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "spain-snap-election-november-29"
+  },
+  "nytimes:https://www.nytimes.com/2026/10/05/world/europe/spain-snap-elections-sanchez.html": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "spain-snap-election-november-29"
+  },
+  "guardian:https://www.theguardian.com/world/2026/oct/05/spain-prime-minister-pedro-sanchez-snap-election-housing-crisis": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "spain-snap-election-november-29"
+  },
+  "wapo:https://www.washingtonpost.com/world/2026/10/05/spain-pedro-snchez-main-critic-trump-europe-calls-snap-elections/": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "spain-snap-election-november-29"
+  },
+  "wsj:WP-WSJ-0003948534": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "spain-snap-election-november-29"
+  },
+  "bbc:ck5yn81qqde0o": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "spain-snap-election-november-29"
+  },
+  "kristeligt_dagblad:f6ffed88-e602-425c-ba22-0b7b9211c2d8": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "vegan-hospital-meals-appeal-ruling"
+  },
+  "dr:urn:dr:umbraco:article:f2f84907-948c-4df1-8a19-21ec81de4c06": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "vegan-hospital-meals-appeal-ruling"
+  },
+  "information:843107 at https://www.information.dk": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "vegan-hospital-meals-appeal-ruling"
+  },
+  "via_ritzau:https://via.ritzau.dk/pressemeddelelse/15207040/?publisherId=13559515&lang=da": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "vegan-hospital-meals-appeal-ruling"
+  },
+  "kristeligt_dagblad:bff43335-2c26-44b9-a6c0-5ceb2523cf35": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "salling-group-buys-proshop"
+  },
+  "borsen:https://borsen.dk/nyheder/virksomheder/salling-group-kober-proshop-i-milliardhandel": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "salling-group-buys-proshop"
+  },
+  "dr:urn:dr:umbraco:article:9d5b408c-65f3-4678-adf3-a2a65fafe413": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "salling-group-buys-proshop"
+  },
+  "via_ritzau:https://via.ritzau.dk/pressemeddelelse/15206204/?publisherId=3307957&lang=da": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "salling-group-buys-proshop"
+  },
+  "kristeligt_dagblad:7593a6ee-a622-4e79-bffe-5fa22cdc13f1": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "folketing-opens-frandsen-speaker"
+  },
+  "berlingske:urn:bm:article:a05c0be4-72c9-5636-8507-e466658ba1f6": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "folketing-opens-frandsen-speaker"
+  },
+  "kristeligt_dagblad:2c72cd34-f760-4781-ba9e-28fd686c5c04": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "stephanie-lose-chairs-state-auditors"
+  },
+  "kristeligt_dagblad:f2f30096-3ebf-42aa-8183-8db58c4c9a63": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "grid-permitting-two-years-shorter"
+  },
+  "politiken:11006857": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "grid-permitting-two-years-shorter"
+  },
+  "via_ritzau:https://via.ritzau.dk/pressemeddelelse/15206121/?publisherId=9426318&lang=da": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "grid-permitting-two-years-shorter"
+  },
+  "altinget:https://www.altinget.dk/klima/artikel/linea-soegaard-lidell-genopstiller-ikke-til-folketinget-skal-vaere-groen-lobbyist": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "soegaard-lidell-hydrogen-denmark"
+  },
+  "politiken:11009021": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "soegaard-lidell-hydrogen-denmark"
+  },
+  "kristeligt_dagblad:f0c10714-4ba9-4b09-85c2-e3dc7990ebdb": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "stig-andersen-gyldendal-dies"
+  },
+  "kristeligt_dagblad:00a4e61c-3078-4a46-b708-d95de205d089": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "odense-pizzeria-killing-14-years"
+  },
+  "dr:urn:dr:umbraco:article:073f6acd-96e2-48e5-87f3-865e825ffa41": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "odense-pizzeria-killing-14-years"
+  },
+  "kristeligt_dagblad:ae680215-2caa-4f76-81b6-727cd0d615cd": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "hammerum-stabbing-man-dies"
+  },
+  "kristeligt_dagblad:259e4285-5b27-4f2a-9bdb-012c46916316": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "swedish-bomb-sentences-upheld"
+  },
+  "berlingske:urn:bm:article:e52b0c23-e7bf-5df2-ab88-ca6daad31c58": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "swedish-bomb-sentences-upheld"
+  },
+  "dr:urn:dr:umbraco:article:d2b8042c-4e91-42bc-a695-a75de30060d3": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "motorring-3-four-lanes"
+  },
+  "tv2:https://nyheder.tv2.dk/trafik/2026-10-05-koeplaget-motorvej-udvides-med-flere-spor": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "motorring-3-four-lanes"
+  },
+  "via_ritzau:https://via.ritzau.dk/pressemeddelelse/15202767/?publisherId=5278762&lang=da": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "motorring-3-four-lanes"
+  },
+  "kristeligt_dagblad:db7959c7-50ba-4a74-9b29-fc9dd85506e2": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "cancer-five-year-survival-seven-in-ten"
+  },
+  "kristeligt_dagblad:7891c525-1031-4300-b3e7-540070f7fbee": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "nobel-medicine-optogenetics-2026"
+  },
+  "politiken:10992293": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "nobel-medicine-optogenetics-2026"
+  },
+  "bbc:c5ev3ypmzly8o": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "nobel-medicine-optogenetics-2026"
+  },
+  "economist:84d09014-3618-41d0-8b06-9b4c883bd838": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "nobel-medicine-optogenetics-2026"
+  },
+  "nytimes:https://www.nytimes.com/2026/10/05/health/nobel-prize-medicine-physiology.html": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "nobel-medicine-optogenetics-2026"
+  },
+  "guardian:https://www.theguardian.com/science/video/2026/oct/05/nobel-prize-in-medicine-2026-unlocking-the-mysteries-of-the-brain": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "nobel-medicine-optogenetics-2026"
+  },
+  "guardian:https://www.theguardian.com/science/2026/oct/05/nobel-prize-medicine-2026-winner": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "nobel-medicine-optogenetics-2026"
+  },
+  "wapo:https://www.washingtonpost.com/health/2026/10/05/nobel-prize-medicine-awarded-3-scientists-optogenetics-work/": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "nobel-medicine-optogenetics-2026"
+  },
+  "wsj:WP-WSJ-0003948692": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "nobel-medicine-optogenetics-2026"
+  },
+  "kristeligt_dagblad:98ed7494-51c6-4e49-8c77-b461bb2f7cc7": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "siberia-plague-lab-death-denied"
+  },
+  "kristeligt_dagblad:2a91787d-47b1-416a-a028-d1d6900f6773": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "siberia-plague-lab-death-denied"
+  },
+  "politiken:11008871": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "siberia-plague-lab-death-denied"
+  },
+  "bbc:cv5yn3nwp5n5o": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "siberia-plague-lab-death-denied"
+  },
+  "ft:0a45595f-4889-4436-847f-1bddce813009": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "siberia-plague-lab-death-denied"
+  },
+  "guardian:https://www.theguardian.com/world/2026/oct/05/russia-lab-worker-possibly-dies-of-plague-siberia-quarantine-measures-irkutsk": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "siberia-plague-lab-death-denied"
+  },
+  "wapo:https://www.washingtonpost.com/politics/2026/10/05/us-officials-seeking-details-reported-russian-plague-death-quarantines/": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "siberia-plague-lab-death-denied"
+  },
+  "wsj:WP-WSJ-0003949226": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "siberia-plague-lab-death-denied"
+  },
+  "nytimes:https://www.nytimes.com/2026/10/05/world/europe/russia-plague-siberia.html": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "siberia-plague-lab-death-denied"
+  },
+  "kristeligt_dagblad:0e5f63ae-047e-4158-b1e3-a23afa327782": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "german-spy-chief-russia-conflict-risk"
+  },
+  "ft:44788116-0ff7-4fef-abfb-e121fcb5797c": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "german-spy-chief-russia-conflict-risk"
+  },
+  "kristeligt_dagblad:fda0af74-6367-4ab9-9c76-f0b7c31fa552": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "lens-pupil-loses-hand-protest"
+  },
+  "bbc:c9zrdmxp4vy6o": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "lens-pupil-loses-hand-protest"
+  },
+  "guardian:https://www.theguardian.com/world/2026/oct/05/schoolboy-loses-hand-police-stun-grenade-french-school-protests": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "lens-pupil-loses-hand-protest"
+  },
+  "kristeligt_dagblad:66a19aa9-d41f-4e89-8fdc-0107f12d423a": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "quebec-parti-quebecois-wins"
+  },
+  "bbc:crly09gz7ew4o": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "quebec-parti-quebecois-wins"
+  },
+  "nytimes:https://www.nytimes.com/2026/10/05/world/canada/quebec-election-parti-quebecois-separatism.html": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "quebec-parti-quebecois-wins"
+  },
+  "kristeligt_dagblad:49685ebf-417e-4633-bb54-ac8422b913a1": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "fort-hood-hasan-firing-squad-approved"
+  },
+  "bbc:cq8ezkkkrpy1o": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "fort-hood-hasan-firing-squad-approved"
+  },
+  "guardian:https://www.theguardian.com/us-news/2026/oct/05/trump-fort-hood-shooter-execution": {
+   "edition_id": "2026-10-06-morning",
+   "story_id": "fort-hood-hasan-firing-squad-approved"
+  }
+ },
+ "threads": [
+  {
+   "description": "The government's 2027 finance bill: its financing, the parties' demands and the negotiations",
+   "id": "finance-bill-2027",
+   "last_edition_id": "2026-10-09-morning",
+   "last_seen_date": "2026-10-09",
+   "opened_edition_id": "2026-09-29-morning",
+   "peak_breadth": 7,
+   "story_ids": [
+    "finance-bill-ev-tax-su-cut",
+    "enhedslisten-free-transport-demand",
+    "finance-bill-defence-22-billion",
+    "sf-radikale-stand-by-su-cut",
+    "shortcut-ferries-finance-bill-plea",
+    "daycare-staff-training-150m",
+    "district-heating-pool-200m",
+    "dementia-plan-680-million",
+    "finance-bill-scraps-common-area-tax",
+    "folkeskole-900-million-2027",
+    "frederiksen-defends-su-cut",
+    "enhedslisten-welfare-profit-demand",
+    "marine-nature-parks-68-million",
+    "seniorpension-cut-finance-bill-2027",
+    "cruise-ship-levy-2028"
+   ],
+   "editions_since_published": 1
+  },
+  {
+   "description": "Venstre's collapse in the polls and the pressure on Troels Lund Poulsen's leadership",
+   "id": "venstre-leadership-crisis",
+   "last_edition_id": "2026-10-09-morning",
+   "last_seen_date": "2026-10-09",
+   "opened_edition_id": "2026-10-02-morning",
+   "peak_breadth": 5,
+   "story_ids": [
+    "venstre-worst-verian-poll",
+    "soegaard-lidell-hydrogen-denmark",
+    "gade-jp-portrait-row",
+    "venstre-record-low-5-8-poll",
+    "gade-character-assassination-claim"
+   ],
+   "editions_since_published": 1
+  },
+  {
+   "description": "The September 2026 breach of the Danish CPR register and the authorities' response",
+   "id": "cpr-register-leak",
+   "last_edition_id": "2026-10-09-morning",
+   "last_seen_date": "2026-10-09",
+   "opened_edition_id": "2026-10-06-morning",
+   "peak_breadth": 7,
+   "story_ids": [
+    "cpr-register-breach-8-8-million",
+    "cpr-number-no-longer-id",
+    "cpr-hacker-password-123456",
+    "cpr-credit-warnings-970000"
+   ],
+   "editions_since_published": 1
+  },
+  {
+   "description": "Denmark's rented prison places in Kosovo and the problems around the arrangement",
+   "id": "kosovo-prison-deal",
+   "last_edition_id": "2026-10-08-morning",
+   "last_seen_date": "2026-10-08",
+   "opened_edition_id": "2026-10-08-morning",
+   "peak_breadth": 6,
+   "story_ids": [
+    "kosovar-guards-charged-vestre"
+   ],
+   "editions_since_published": 2
+  },
+  {
+   "description": "The lapsed citizenship bill for 2,055 applicants and the fight over screening them",
+   "id": "citizenship-2055",
+   "last_edition_id": "2026-10-06-morning",
+   "last_seen_date": "2026-10-06",
+   "opened_edition_id": "2026-10-06-morning",
+   "peak_breadth": 6,
+   "story_ids": [
+    "citizenship-bill-2055-retabled"
+   ],
+   "editions_since_published": 4
+  },
+  {
+   "description": "The suspected terror plot against the US bomber base at RAF Fairford in England",
+   "id": "raf-fairford-plot",
+   "last_edition_id": "2026-10-05-morning",
+   "last_seen_date": "2026-10-05",
+   "opened_edition_id": "2026-09-29-morning",
+   "peak_breadth": 6,
+   "story_ids": [
+    "raf-fairford-suspects-bailed",
+    "fairford-vans-no-explosives",
+    "fairford-arrest-iran-summons",
+    "us-pulls-b1-bombers-from-fairford"
+   ],
+   "editions_since_published": null
+  },
+  {
+   "description": "Brazil's 2026 presidential election between Lula and Flávio Bolsonaro",
+   "id": "brazil-election-2026",
+   "last_edition_id": "2026-10-05-morning",
+   "last_seen_date": "2026-10-05",
+   "opened_edition_id": "2026-10-05-morning",
+   "peak_breadth": 3,
+   "story_ids": [
+    "brazil-lula-bolsonaro-runoff"
+   ],
+   "editions_since_published": null
+  },
+  {
+   "description": "The Denmark-Greenland-US defence agreement, its terms, approval and reception",
+   "id": "greenland-us-agreement",
+   "last_edition_id": "2026-10-04-morning",
+   "last_seen_date": "2026-10-04",
+   "opened_edition_id": "2026-09-28-morning",
+   "peak_breadth": 5,
+   "story_ids": [
+    "greenland-deal-welcomed-uk-norway",
+    "rubio-greenland-only-security",
+    "greenland-deal-fox-news-offer"
+   ],
+   "editions_since_published": null
+  },
+  {
+   "description": "Record fuel and diesel prices and governments' moves to bring them down",
+   "id": "fuel-price-crisis",
+   "last_edition_id": "2026-10-04-morning",
+   "last_seen_date": "2026-10-04",
+   "opened_edition_id": "2026-10-03-morning",
+   "peak_breadth": 5,
+   "story_ids": [
+    "g7-release-100-million-barrels",
+    "us-drops-diesel-export-ban"
+   ],
+   "editions_since_published": null
+  },
+  {
+   "description": "Forming a Swedish government after the September 2026 election",
+   "id": "sweden-government-formation",
+   "last_edition_id": "2026-10-03-morning",
+   "last_seen_date": "2026-10-03",
+   "opened_edition_id": "2026-09-29-morning",
+   "peak_breadth": 6,
+   "story_ids": [
+    "sweden-andersson-gives-up-government",
+    "sweden-andersson-second-try"
+   ],
+   "editions_since_published": null
+  },
+  {
+   "description": "The Defence Command's account of soldiers firing at suspected drones over the Borris range in September 2025",
+   "id": "borris-drone-shooting",
+   "last_edition_id": "2026-10-03-morning",
+   "last_seen_date": "2026-10-03",
+   "opened_edition_id": "2026-10-02-morning",
+   "peak_breadth": 6,
+   "story_ids": [
+    "borris-shots-during-flight",
+    "bruus-spared-drone-censure"
+   ],
+   "editions_since_published": null
+  },
+  {
+   "description": "The government's halt to pig-farm expansion and its pig-welfare reforms",
+   "id": "pig-production-reform",
+   "last_edition_id": "2026-10-02-morning",
+   "last_seen_date": "2026-10-02",
+   "opened_edition_id": "2026-09-29-morning",
+   "peak_breadth": 7,
+   "story_ids": [
+    "pig-stable-inspections-plan",
+    "animal-welfare-six-years-new-agency",
+    "pig-tripartite-six-months",
+    "bundsgaard-chairs-pig-fourpart"
+   ],
+   "editions_since_published": null
+  },
+  {
+   "description": "Russian hybrid pressure on Denmark and the Danish response",
+   "id": "russia-hybrid-threat",
+   "last_edition_id": "2026-10-01-morning",
+   "last_seen_date": "2026-10-01",
+   "opened_edition_id": "2026-09-27-morning",
+   "peak_breadth": 7,
+   "story_ids": [
+    "fe-russia-hybrid-war-warning",
+    "eu-hybrid-protocol-lukewarm",
+    "estonia-blames-russia-arson",
+    "russia-summons-holmboe"
+   ],
+   "editions_since_published": null
+  },
+  {
+   "description": "OpenAI's AI agents breaking into government websites",
+   "id": "openai-rogue-agents",
+   "last_edition_id": "2026-09-29-morning",
+   "last_seen_date": "2026-09-29",
+   "opened_edition_id": "2026-09-27-morning",
+   "peak_breadth": 5,
+   "story_ids": [
+    "openai-agents-probed-government-sites",
+    "openai-pauses-model-training",
+    "openai-drops-astra-release"
+   ],
+   "editions_since_published": null
+  },
+  {
+   "description": "The White House's exclusion of news outlets from the press pool",
+   "id": "trump-press-access",
+   "last_edition_id": "2026-09-27-morning",
+   "last_seen_date": "2026-09-27",
+   "opened_edition_id": "2026-09-27-morning",
+   "peak_breadth": 3,
+   "story_ids": [
+    "cnn-barred-trump-weekend-trip"
+   ],
+   "editions_since_published": null
+  }
+ ],
+ "dormant_threads": []
+}

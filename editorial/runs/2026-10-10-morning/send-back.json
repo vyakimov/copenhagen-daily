@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-10-10-morning",
+  "send_back": [],
+  "fallen": [],
+  "stories": {},
+  "strikes": [
+    {
+      "story": "navi-pillay-nobel-peace-prize",
+      "location": "standard[1]",
+      "sentence": 1,
+      "verdict": "unsupported",
+      "reason": "The cited evidence says Pillay worked for the Rwanda tribunal and International Criminal Court, but does not specify that she was a judge at either institution. Evidence identifying her as an ICC judge is outside this paragraph's cited sources.",
+      "cites": [
+        "kristeligt_dagblad",
+        "information",
+        "wsj"
+      ]
+    }
+  ]
+}

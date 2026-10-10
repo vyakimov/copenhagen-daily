@@ -1,0 +1,11 @@
+[
+ {
+  "requested": "Statistics Denmark",
+  "status": "unavailable",
+  "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Statistics_Denmark",
+  "http_status": 429,
+  "fetched_at": "2026-10-10T03:39:46.685796Z",
+  "term": "Statistics Denmark",
+  "definition": "the national statistics office"
+ }
+]

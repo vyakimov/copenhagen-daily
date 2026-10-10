@@ -1,0 +1,656 @@
+{
+  "edition": {
+    "id": "2026-10-10-morning",
+    "number": 5,
+    "name": "Saturday edition",
+    "date": "2026-10-10",
+    "cutoff_at": "2026-10-10T03:30:00.000000Z",
+    "checked_from": "2026-10-07T03:30:00.000000Z",
+    "input_id": "export-2026-10-10-0330",
+    "presentation": {
+      "emphasis": "many_stories",
+      "ear_right": "Inside: the firm behind the CPR leak, Russian TV's flare film, a Nobel for Navi Pillay"
+    },
+    "note": "Built from headlines and RSS descriptions published between 05:30 on 7 October and 05:30 on 10 October 2026, 4,127 articles in all. All 132 feeds at 17 publishers polled."
+  },
+  "stories": [
+    {
+      "id": "finance-bill-2027-unveiled",
+      "role": "lead",
+      "kicker": "Politics",
+      "sources": [
+        1229,
+        786,
+        1224,
+        1013,
+        1257,
+        679,
+        1318,
+        792,
+        659,
+        1237,
+        1227
+      ],
+      "headline": "Government's budget raises defence spending and cuts taxes",
+      "headline_short": "Government presents 2027 budget",
+      "deck": "Students living at home lose their state grant to help pay for it; talks with the other parties come next.",
+      "extended": [
+        [
+          "The government presented its finance bill for 2027, the state's budget, on Friday. It would raise defence spending to 3.5 per cent of GDP by 2030 and set aside 10.1 billion kroner that year for tax cuts, among them scrapping the middle-bracket and top-top taxes and lowering corporate tax.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "berlingske"
+          ]
+        ],
+        [
+          "Unlike recent budgets, this one needs financing. Students living at home lose SU, the state study grant; fewer people will qualify for the seniorpension for worn-out workers; cruise ships face a levy; and state administration is to be cut.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "tv2",
+            "politiken"
+          ]
+        ],
+        [
+          "'The Danish economy is in top form,' said Peter Hummelgaard, the finance minister. Pia Olsen Dyhr, the economy minister, called the grant cut 'a compromise'. Her party, SF, a left-wing party, has defended the grant.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "The government must now find a majority in the Folketing, Denmark's parliament, and holds back 500 million kroner a year for other parties' wishes. Enhedslisten, a far-left party, and Alternativet, a green party, are expected to join the deal, and criticism of the grant cut has already come from them.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "standard": [
+        [
+          "The government presented its finance bill for 2027, the state's budget, on Friday. It would raise defence spending to 3.5 per cent of GDP by 2030 and set aside 10.1 billion kroner that year for tax cuts, among them scrapping the middle-bracket and top-top taxes and lowering corporate tax.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "berlingske"
+          ]
+        ],
+        [
+          "To pay for it, students living at home lose SU, the state study grant, and fewer people will qualify for the seniorpension for worn-out workers. Cruise ships face a levy.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "tv2",
+            "politiken"
+          ]
+        ],
+        [
+          "The government must now find a majority in the Folketing, Denmark's parliament. Pia Olsen Dyhr, the economy minister, called the grant cut 'a compromise'.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "The government presented its finance bill for 2027 on Friday, raising defence spending to 3.5 per cent of GDP by 2030 and setting aside 10.1 billion kroner that year for tax cuts. Students living at home lose their state grant to help pay for it.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "dr",
+            "politiken"
+          ]
+        ]
+      ],
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "The time in the Danish economy when you could just spend the money is over.",
+          "attribution": "Pia Olsen Dyhr, economy minister",
+          "attribution_source": "kristeligt_dagblad"
+        }
+      ]
+    },
+    {
+      "id": "pays-named-cpr-leak-firm",
+      "role": "secondary",
+      "kicker": "Denmark",
+      "sources": [
+        631,
+        202,
+        410,
+        190,
+        880,
+        600,
+        678,
+        797
+      ],
+      "headline": "Funen firm confirms its access was used to leak 8.8 million Danish ID numbers",
+      "headline_short": "Firm behind ID leak named",
+      "deck": "Politiken finds that at least three of its profiles, the administrator's among them, used the password '123456'.",
+      "standard": [
+        [
+          "Pays ApS, a software firm in Odense, on Funen, confirmed on Friday that its legal access to the CPR register had been misused in the leak of 8.8 million CPR numbers, Denmark's personal identification numbers. The firm had two employees in July. The intruder had access for 21 days and 17 hours in all, starting on 10 September.",
+          [
+            "kristeligt_dagblad",
+            "tv2",
+            "dr",
+            "borsen"
+          ]
+        ],
+        [
+          "Politiken found that at least three of the firm's profiles, including its administrator account, used the password '123456'. 'There is in reality no security, it is an open door,' Jens Myrup Pedersen, a professor of electrical and computer engineering at Aarhus University, told the paper.",
+          [
+            "politiken",
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Pays ApS, a software firm in Odense, on Funen, confirmed on Friday that its access to the CPR register had been misused in the leak of 8.8 million CPR numbers, Denmark's personal identification numbers. Politiken found that at least three of its profiles used the password '123456'.",
+          [
+            "kristeligt_dagblad",
+            "tv2",
+            "politiken"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "seniorpension-veto-threat",
+      "role": "secondary",
+      "kicker": "Welfare",
+      "sources": [
+        1085,
+        762,
+        834,
+        745,
+        1202,
+        246,
+        1241
+      ],
+      "headline": "Parties threaten to veto the government's cut to early retirement for worn-out workers",
+      "headline_short": "Parties threaten pension veto",
+      "deck": "Two parties to the deal behind the scheme refuse; the 1.5 billion kroner saved would fund a rise in another early pension.",
+      "standard": [
+        [
+          "Venstre, a liberal party, says it will veto the government's plan to tighten access to the seniorpension, an early-retirement scheme for worn-out workers. All parties to the 2019 agreement behind it must agree to changes within a parliamentary term.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "altinget"
+          ]
+        ],
+        [
+          "The plan, in the government's budget proposal, would save 1.5 billion kroner up to 2030 by judging applicants' capacity to work in any job, not just their latest. The money would raise the monthly Arne-pension, another early-pension scheme, by 3,095 kroner from 1 January 2027.",
+          [
+            "kristeligt_dagblad",
+            "altinget"
+          ]
+        ],
+        [
+          "Dansk Folkeparti, a nationalist party, also refuses. A deal taking effect after the next election would need Enhedslisten, a far-left party backing the government, and it says no too.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Venstre, a liberal party, says it will veto the government's plan to tighten access to the seniorpension, an early-retirement scheme for worn-out workers, which would save 1.5 billion kroner up to 2030. Dansk Folkeparti, a nationalist party, and Enhedslisten, a far-left party backing the government, also refuse.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "altinget"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "russian-tv-flare-footage",
+      "role": "secondary",
+      "kicker": "Defence",
+      "sources": [
+        357,
+        549,
+        209,
+        452,
+        161,
+        1206
+      ],
+      "headline": "Defence minister calls Russian TV report on flare incident misinformation",
+      "headline_short": "Denmark calls Russian TV report misinformation",
+      "deck": "The Defence Command says part of the footage of a Russian frigate firing flares at a Danish helicopter was not filmed on the day.",
+      "standard": [
+        [
+          "Jeppe Bruus, the defence minister, calls a Russian state-television report on the frigate that fired flares at a Danish military helicopter a 'misinformation campaign' meant to 'sow distrust of the Danish authorities'. The Defence Command says part of the footage was not filmed on the day.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ],
+        [
+          "The report, shown on Thursday, says the helicopter 'entered the ship's safety zone' and does not show the firing. On 14 September the Soobrazitelny fired two flares without warning in international waters off Gedser, a town in southern Denmark; one passed 10 to 15 metres from the helicopter.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Politiken writes that the report turns the firing into a hero's story.",
+          [
+            "politiken"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Jeppe Bruus, the defence minister, calls a Russian state-television report a 'misinformation campaign'. It covers the frigate that fired two flares at a Danish military helicopter off Gedser, a town in southern Denmark, on 14 September; the Defence Command says part of the footage was not filmed that day.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "kirkerup-police-review-ordered",
+      "role": "secondary",
+      "kicker": "Justice",
+      "sources": [
+        358,
+        334,
+        333
+      ],
+      "headline": "Justice minister orders a review of the police investigation into a girl's kidnapping",
+      "headline_short": "Kidnapping investigation to be reviewed",
+      "deck": "Nicolai Wammen says the police cannot fully account for parts of the case; experienced investigators will go through it.",
+      "standard": [
+        [
+          "Nicolai Wammen, the justice minister, will set up a special group of experienced investigators to review the police investigation in the Kirkerup case, the kidnapping of a 13-year-old girl in 2023. Investigators from NSK, the National Unit for Special Crime, will take part. Wammen announced the review on Friday in a statement to the Folketing, Denmark's parliament, after a police report raised new questions about the investigation.",
+          [
+            "berlingske",
+            "kristeligt_dagblad",
+            "tv2"
+          ]
+        ],
+        [
+          "The report shows that 'on some of the criticisms raised, the police cannot fully account for what happened', Wammen told Berlingske. Parts of the investigation 'could have been handled differently, faster and better', he said.",
+          [
+            "berlingske",
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Nicolai Wammen, the justice minister, will have a special group of experienced investigators review the police investigation into the kidnapping of a 13-year-old girl in 2023, after a police report raised new questions. Parts of it 'could have been handled differently, faster and better', Wammen told Berlingske.",
+          [
+            "berlingske",
+            "kristeligt_dagblad",
+            "tv2"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "navi-pillay-nobel-peace-prize",
+      "role": "secondary",
+      "kicker": "World",
+      "sources": [
+        1023,
+        1042,
+        984,
+        941,
+        691,
+        805,
+        343,
+        505,
+        697,
+        419,
+        728,
+        72,
+        88,
+        615,
+        355,
+        640
+      ],
+      "headline": "South African jurist who pursued war crimes wins the Nobel Peace Prize",
+      "headline_short": "Navi Pillay wins the Nobel Peace Prize",
+      "deck": "The 85-year-old once defended Nelson Mandela and chaired a UN inquiry that found Israel had committed genocide in Gaza.",
+      "standard": [
+        [
+          "Navi Pillay, an 85-year-old South African human rights lawyer, won the Nobel Peace Prize on Friday. The Norwegian Nobel Committee credited her with ensuring that war crimes, crimes against humanity and genocide are prosecuted.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "wapo"
+          ]
+        ],
+        [
+          "Under apartheid she defended Nelson Mandela, who became South Africa's first black president. She was later a judge at the UN's war crimes tribunal for Rwanda and the International Criminal Court, and the UN's high commissioner for human rights. She now sits on the International Court of Justice, the UN's principal court.",
+          [
+            "kristeligt_dagblad",
+            "information",
+            "wsj"
+          ]
+        ],
+        [
+          "A UN commission she chaired concluded last year that Israel was committing genocide in Gaza. Israel condemned the award.",
+          [
+            "berlingske",
+            "nytimes",
+            "guardian"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Navi Pillay, an 85-year-old South African human rights lawyer, won the Nobel Peace Prize on Friday for her work to see war crimes, crimes against humanity and genocide prosecuted. A UN commission she chaired found last year that Israel was committing genocide in Gaza; Israel condemned the award.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "nytimes"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "cpr-intruder-access-21-days",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        944,
+        1113,
+        835
+      ],
+      "headline": "Hacker had access to Denmark's population register for more than three weeks, documents show",
+      "lede": [
+        "A hacker had access to the CPR register, Denmark's civil registration system, for 21 days and 17 hours, from 10 September to its discovery on 2 October, documents obtained by TV 2 show.",
+        [
+          "kristeligt_dagblad",
+          "tv2",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "gade-sues-colleagues-husband",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        993,
+        1184,
+        940
+      ],
+      "headline": "Former parliament speaker sues a party colleague's husband over a Facebook comment",
+      "lede": [
+        "Søren Gade, a former speaker of the Danish parliament, is suing the husband of Trine Jepsen, a fellow MP from Venstre, a liberal party, for 50,000 kroner over a since-deleted Facebook comment.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "politiken"
+        ]
+      ]
+    },
+    {
+      "id": "aarup-signal-hut-fire-trains",
+      "role": "brief",
+      "kicker": "Transport",
+      "sources": [
+        1077,
+        409,
+        1084,
+        1330
+      ],
+      "headline": "Fire in a signal hut disrupts trains across Denmark",
+      "lede": [
+        "A fire in a signal hut at Aarup, on western Funen, disrupted trains across Denmark on Friday; Banedanmark, the agency that runs the rail network, says repairs could take several weeks.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "berlingske",
+          "politiken"
+        ]
+      ]
+    },
+    {
+      "id": "kosovar-guards-stay-free",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        707,
+        1120,
+        720
+      ],
+      "headline": "Court again refuses to hold Kosovar prison officers in custody",
+      "lede": [
+        "The High Court on Friday refused to hold two Kosovar prison officers in custody; trainees for Denmark's rented prison in Kosovo, they are charged with assaulting an inmate at Vestre Fængsel, a Copenhagen prison.",
+        [
+          "berlingske",
+          "dr",
+          "kristeligt_dagblad"
+        ]
+      ]
+    },
+    {
+      "id": "black-swan-adviser-indicted",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        1171,
+        919,
+        1421
+      ],
+      "headline": "Environmental adviser from TV documentary 'The Black Swan' charged with faking soil reports",
+      "lede": [
+        "Prosecutors seek prison and fines of 1.66 million kroner each for an environmental adviser seen in TV 2's documentary 'The Black Swan' and another man, charged with faking soil-analysis reports; both deny it.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "jp"
+        ]
+      ]
+    },
+    {
+      "id": "frederiksen-to-meet-zedig-father",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        532,
+        539,
+        492
+      ],
+      "headline": "Prime minister to meet father of Swedish officer who died after Copenhagen assault",
+      "lede": [
+        "Mette Frederiksen, the prime minister, has agreed to meet the father of a Swedish police officer who died after an assault in Copenhagen; the attacker got one year in prison on Wednesday.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "viborg-eleven-convicted-assault",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        593,
+        511,
+        562
+      ],
+      "headline": "Court jails 11 for humiliating assault on 17-year-old",
+      "lede": [
+        "A court in Viborg on Friday convicted ten men and a woman of humiliating violence against a 17-year-old in April 2025, jailing them for 15 to 27 months.",
+        [
+          "kristeligt_dagblad",
+          "politiken",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "citizenship-cases-reopened",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        925,
+        924,
+        904
+      ],
+      "headline": "Citizenship cases resume after criminal-register error",
+      "lede": [
+        "Citizenship cases halted on 7 September over an error in the criminal register are resuming, along with some residence and family-reunification applications, after the national police judged the error's consequences 'very limited'.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "sperm-bank-inspections-failed",
+      "role": "brief",
+      "kicker": "Health",
+      "sources": [
+        1316,
+        1357,
+        1200
+      ],
+      "headline": "Regulator admits it failed to inspect sperm banks as the law requires",
+      "lede": [
+        "Denmark's Patient Safety Authority admits it has not inspected sperm banks on site after serious incidents, as the law requires; Ida Auken, the health minister, wants an account by the end of January 2027.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "trump-russian-diesel-licence",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        240,
+        154,
+        225,
+        180,
+        38,
+        87,
+        96,
+        10,
+        56,
+        21,
+        3,
+        149,
+        23
+      ],
+      "headline": "Trump says Russia will supply diesel as US eases sanctions",
+      "lede": [
+        "Russia will at once supply more than 300,000 tonnes of diesel, Donald Trump said on Friday; the US Treasury has temporarily eased sanctions so Russia can sell diesel abroad until 7 April 2027.",
+        [
+          "kristeligt_dagblad",
+          "borsen",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "us-sanctions-icc-allies-object",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        595,
+        431,
+        371,
+        544,
+        259,
+        484,
+        441,
+        533,
+        321,
+        144,
+        335
+      ],
+      "headline": "Denmark and seven other countries object to American sanctions on the war-crimes court",
+      "lede": [
+        "Denmark, Britain, Canada, Japan and four other countries said they 'regret and strongly disagree with' the sanctions America imposed on Friday on the International Criminal Court, the war-crimes tribunal in The Hague.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "bbc",
+          "ft"
+        ]
+      ]
+    },
+    {
+      "id": "eu-china-hybrid-car-deal",
+      "role": "brief",
+      "kicker": "Europe",
+      "sources": [
+        646,
+        320,
+        403,
+        635,
+        490,
+        535,
+        250,
+        412
+      ],
+      "headline": "China agrees to cut hybrid car exports to the EU by more than half",
+      "lede": [
+        "China will cut hybrid car exports to the EU by more than half over four years under a deal EU leaders must still approve, Maroš Šefčovič, the EU's trade commissioner, said on Friday.",
+        [
+          "kristeligt_dagblad",
+          "guardian",
+          "nytimes"
+        ]
+      ]
+    },
+    {
+      "id": "flydubai-copilot-crash-plot",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        341,
+        327,
+        285,
+        174,
+        156,
+        48,
+        138,
+        329
+      ],
+      "headline": "Co-pilot planned 9/11-style attack on Israel's main airport, UAE says",
+      "lede": [
+        "The Omani co-pilot who attacked the pilot with an axe on a flight from Dubai on 30 September meant to crash it into Ben Gurion, Israel's main airport, Emirati prosecutors said on Friday.",
+        [
+          "kristeligt_dagblad",
+          "guardian",
+          "wapo"
+        ]
+      ]
+    },
+    {
+      "id": "danish-exports-fall-august",
+      "role": "brief",
+      "kicker": "Economy",
+      "sources": [
+        1158,
+        1122,
+        1160
+      ],
+      "headline": "Danish exports fall 3.3 per cent as goods sales to America drop",
+      "lede": [
+        "Statistics Denmark says Danish exports fell 3.3 per cent from July to 194 billion kroner in August, pulled down by lower sales of goods to the United States.",
+        [
+          "kristeligt_dagblad",
+          "dr"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+ "headline": "Funen firm confirms its access was used to leak 8.8 million Danish ID numbers",
+ "headline_short": "Firm behind ID leak named",
+ "deck": "Politiken finds that at least three of its profiles, the administrator's among them, used the password '123456'.",
+ "standard": [
+  [
+   "Pays ApS, a software firm in Odense, on Funen, confirmed on Friday that its legal access to the CPR register had been misused in the leak of 8.8 million CPR numbers, Denmark's personal identification numbers. The firm had two employees in July. The intruder had access for 21 days and 17 hours in all, starting on 10 September.",
+   [
+    "kristeligt_dagblad",
+    "tv2",
+    "dr",
+    "borsen"
+   ]
+  ],
+  [
+   "Politiken found that at least three of the firm's profiles, including its administrator account, used the password '123456'. 'There is in reality no security, it is an open door,' Jens Myrup Pedersen, a professor of electrical and computer engineering at Aarhus University, told the paper.",
+   [
+    "politiken",
+    "kristeligt_dagblad",
+    "berlingske"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "Pays ApS, a software firm in Odense, on Funen, confirmed on Friday that its access to the CPR register had been misused in the leak of 8.8 million CPR numbers, Denmark's personal identification numbers. Politiken found that at least three of its profiles used the password '123456'.",
+   [
+    "kristeligt_dagblad",
+    "tv2",
+    "politiken"
+   ]
+  ]
+ ],
+ "definitions": [
+  {
+   "term": "CPR numbers",
+   "definition": "Denmark's personal identification numbers",
+   "wikipedia": "Personal identification number (Denmark)"
+  }
+ ]
+}
