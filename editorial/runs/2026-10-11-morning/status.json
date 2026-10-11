@@ -1,0 +1,159 @@
+{
+ "schema_version": 1,
+ "edition_id": "2026-10-11-morning",
+ "cutoff_at": "2026-10-11T03:30:00.000000Z",
+ "started_at": "2026-10-11T03:30:05.554515Z",
+ "dry_run": false,
+ "outcome": "published",
+ "phases": [
+  {
+   "name": "reconcile",
+   "finished_at": "2026-10-11T03:30:06.054300Z",
+   "activated": false
+  },
+  {
+   "name": "inputs",
+   "finished_at": "2026-10-11T03:30:06.054669Z",
+   "recorded": false
+  },
+  {
+   "name": "collect",
+   "finished_at": "2026-10-11T03:30:06.314583Z",
+   "skipped": true,
+   "reason": "recent_poll",
+   "last_poll_at": "2026-10-11T03:16:03.800321Z",
+   "age_minutes": 14.0
+  },
+  {
+   "name": "window",
+   "finished_at": "2026-10-11T03:30:18.675934Z",
+   "articles": 3553,
+   "feeds": 132,
+   "failed_feeds": 0
+  },
+  {
+   "name": "memory",
+   "finished_at": "2026-10-11T03:30:18.894656Z",
+   "editions": [
+    "2026-10-10-morning",
+    "2026-10-09-morning",
+    "2026-10-08-morning",
+    "2026-10-07-morning",
+    "2026-10-06-morning"
+   ],
+   "threads": 15,
+   "next_edition_number": 6
+  },
+  {
+   "name": "editor",
+   "finished_at": "2026-10-11T03:35:47.762872Z",
+   "session": {
+    "command": [
+     "claude",
+     "-p"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 328.6,
+    "session_id": "61b4ddd1-5a65-47f0-bf6a-3d8e4da46b89",
+    "num_turns": 53,
+    "duration_ms": 327681,
+    "total_cost_usd": 5.225604800000001,
+    "is_error": false,
+    "subtype": "success",
+    "permission_denials": [],
+    "result": "The desk work for 2026-10-11-morning is done, and the runner takes it from here. It was a thin Saturday, so I made it a short paper of 18 stories, marked as a quiet day: one lead, four secondaries and 13 briefs.\n\n- **Lead: Trump says Ukraine needs a new president.** I went against the ranking here, which put it 54th. Six Danish outlets and five foreign ones carried it, and no story in the window had more prominence. Its low rank comes from the 0.7 weight on world stories.\n- **Secondaries:**\n  - The Irish EU presidency's proposal to cut the 2028–2034 EU budget by eight per cent.\n  - The CPR administration's letter tightening security for the 1,039 firms with access to the register. This was the ranking's first pick.\n  - Foreign minister Løkke saying Denmark keeps up sanctions pressure after the US–Russia diesel deal.\n  - The crown prince's Politiken interview about his army career.\n- **Briefs:** six Danish items, plus Russia lifting its diesel export ban (new since yesterday's deal story) and six world briefs: Riyadh airport, Hurricane Isaias, Erie, Warsaw, the Palestinian election delay, and Trump on the Nobel committee. The world briefs are also departures from the ranking, and each has its reason in `selection.json`.\n\n**What I dropped:** about a dozen eligible items. Among them are the northern-lights forecast, which is over by publication; motorway crashes cleared the same afternoon; a CPR follow-up carried by only one outlet; and Germany keeping its sanctions, which repeats Løkke's point.\n\n**Cluster check:** the validator made one split, taking a foreign article off the Gulf of Oman ship strike. That story doesn't run, so I left it alone.\n\n**Coverage:** all 132 feeds at 17 publishers were polled, 3,553 articles in the window.\n\n**One thing worth looking at:** on a slow day the section weights outrank breadth too easily. The ranking's top 24 held 19 Denmark-section candidates, many of them single-outlet features. Meanwhile world events carried by five or six Danish outlets sat past rank 50. I note this in `NOTES.md`.\n\nFiles are in `editorial/runs/2026-10-11-morning/`:\n- clusters.json\n- clusters-checked.json\n- ranking.json\n- selection.json\n- NOTES.md",
+    "auth": "token"
+   },
+   "stories": 18
+  },
+  {
+   "name": "write",
+   "finished_at": "2026-10-11T03:37:24.754796Z",
+   "stories": 18,
+   "sessions": 18,
+   "cost_usd": 3.355,
+   "resumed_stories": 0
+  },
+  {
+   "name": "check",
+   "finished_at": "2026-10-11T03:40:41.910481Z",
+   "rounds": 1,
+   "struck": 1,
+   "send_back": [],
+   "fallen": [],
+   "resumed": false
+  },
+  {
+   "name": "preflight",
+   "finished_at": "2026-10-11T03:40:42.163555Z",
+   "valid": true
+  },
+  {
+   "name": "publish",
+   "finished_at": "2026-10-11T03:40:49.868837Z",
+   "status": "published",
+   "device_status": "published"
+  },
+  {
+   "name": "receipt",
+   "finished_at": "2026-10-11T03:40:50.051609Z",
+   "activated": true,
+   "web_stories": 18
+  },
+  {
+   "name": "threads",
+   "finished_at": "2026-10-11T03:40:50.057334Z",
+   "touched": 6,
+   "total": 17
+  },
+  {
+   "name": "deliver",
+   "finished_at": "2026-10-11T03:40:52.014843Z",
+   "bucket": "copenhagen-daily-live",
+   "synced": true,
+   "invalidated": "E67FD57M9R899"
+  },
+  {
+   "name": "archive",
+   "finished_at": "2026-10-11T03:40:52.030844Z",
+   "committed": 13,
+   "bundles_discarded": 1
+  }
+ ],
+ "failure": null,
+ "published": {
+  "edition": "/Users/vy/Documents/Development/copenhagen-daily/editorial/runs/2026-10-11-morning/edition-checked.json",
+  "status": "published",
+  "device_status": "published",
+  "bundle": {
+   "manifest_sha256": "sha256:7b1cafb8c9092503a0cf7ed91f92600e09fd057d4106213e44614c7b7e64915a",
+   "path": "n/2026-10-11-morning/"
+  },
+  "receipt": {
+   "sequence": 6,
+   "manifest_sha256": "sha256:7b1cafb8c9092503a0cf7ed91f92600e09fd057d4106213e44614c7b7e64915a",
+   "web_story_ids": [
+    "trump-calls-for-new-ukraine-president",
+    "eu-budget-irish-eight-per-cent-cut",
+    "cpr-access-firms-warned-1039",
+    "lokke-sanctions-after-diesel-deal",
+    "crown-prince-open-to-deployment",
+    "russia-lifts-diesel-export-ban",
+    "partner-violence-plan-funding-criticised",
+    "phone-use-quarter-of-licence-points",
+    "pensioners-full-time-one-in-seven",
+    "fmc-roenland-layoff-aid-lemvig",
+    "suila-tapit-repayment-waived",
+    "gudenaa-fourth-romanian-remanded",
+    "riyadh-airport-attack-twelve-dead",
+    "hurricane-isaias-four-dead",
+    "erie-shooting-eight-dead",
+    "poland-third-school-attack-warsaw",
+    "palestinian-election-postponed-2027",
+    "trump-nobel-stain-on-norway"
+   ]
+  }
+ },
+ "updated_at": "2026-10-11T03:40:52.031029Z",
+ "elapsed_s": 646.5
+}

@@ -1,0 +1,44 @@
+{
+ "headline": "Denmark reminds 1,039 firms of security rules after a leak of 8.8 million ID numbers",
+ "headline_short": "Firms warned after ID-number leak",
+ "deck": "A hacker had access through a Funen IT firm for 21 days and 17 hours; the minister admits security was not good enough.",
+ "standard": [
+  [
+   "The CPR administration, which runs Denmark's register of personal identity numbers, wrote on Friday to the 1,039 companies with access to the register, among them financial firms, telecoms companies and law firms. Each must have a security officer, check staff access and track its monthly lookups for misuse.",
+   [
+    "kristeligt_dagblad",
+    "berlingske",
+    "dr"
+   ]
+  ],
+  [
+   "Using a former employee's leaked password, a hacker had access to the register through Pays, an IT company on Funen, for 21 days and 17 hours; outsiders gained access to 8.8 million ID numbers. Politiken found that at least three Pays profiles, the administrator's among them, used the password '123456'.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "Christina Egelund, the digitalisation minister, admits security was not good enough.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "The CPR administration, which runs Denmark's register of personal identity numbers, wrote on Friday to the 1,039 companies with access to the register to remind them of its security rules. Outsiders had gained access to 8.8 million ID numbers through Pays, an IT company on Funen.",
+   [
+    "kristeligt_dagblad",
+    "berlingske",
+    "dr"
+   ]
+  ]
+ ],
+ "definitions": [
+  {
+   "term": "CPR administration",
+   "definition": "which runs Denmark's register of personal identity numbers",
+   "wikipedia": "Personal identification number (Denmark)"
+  }
+ ]
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-10-11-morning",
+  "send_back": [],
+  "fallen": [],
+  "stories": {},
+  "strikes": [
+    {
+      "story": "eu-budget-irish-eight-per-cent-cut",
+      "location": "standard[1]",
+      "sentence": 1,
+      "verdict": "unsupported",
+      "reason": "The evidence attributes the demand for cuts of several hundred billion euros to Germany and, separately, Denmark and five unnamed countries. It does not establish that the Netherlands and Sweden also demanded that amount.",
+      "cites": [
+        "kristeligt_dagblad",
+        "berlingske"
+      ]
+    }
+  ]
+}

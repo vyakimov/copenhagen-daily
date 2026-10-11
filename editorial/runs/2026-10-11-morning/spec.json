@@ -1,0 +1,614 @@
+{
+  "edition": {
+    "id": "2026-10-11-morning",
+    "number": 6,
+    "name": "Sunday edition",
+    "date": "2026-10-11",
+    "cutoff_at": "2026-10-11T03:30:00.000000Z",
+    "checked_from": "2026-10-08T03:30:00.000000Z",
+    "input_id": "export-2026-10-11-0330",
+    "presentation": {
+      "emphasis": "quiet_day",
+      "ear_right": "Inside: the EU budget cut, the CPR letter to 1,039 firms, the crown prince's army plans"
+    },
+    "note": "Built from headlines and RSS descriptions published in the 72 hours to 05:30 Copenhagen time on 11 October: 3,553 articles. All 132 feeds at 17 publishers polled."
+  },
+  "stories": [
+    {
+      "id": "trump-calls-for-new-ukraine-president",
+      "role": "lead",
+      "kicker": "World",
+      "sources": [
+        182,
+        165,
+        90,
+        162,
+        104,
+        113,
+        167,
+        14,
+        112,
+        82,
+        110,
+        87,
+        99
+      ],
+      "headline": "Trump says Ukraine needs a new president",
+      "headline_short": "Trump wants a new Ukrainian president",
+      "deck": "Zelensky had called a US deal to buy Russian diesel 'a gift to Putin'; Moscow praises Trump's words.",
+      "extended": [
+        [
+          "Donald Trump said on Saturday that it is time for Ukraine to get a new president, one 'who can get a deal done' to end the war with Russia. Volodymyr Zelensky, Ukraine's president, 'could have made a lot of deals, but for some reason he never does', Trump told reporters.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "berlingske",
+            "guardian",
+            "wapo",
+            "bbc"
+          ]
+        ],
+        [
+          "The remarks came a day after Trump announced a deal with Vladimir Putin, Russia's president, to import millions of tonnes of Russian diesel. Zelensky called the deal 'a gift to Putin' that gives Russia more money for the war.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "bbc",
+            "guardian",
+            "nytimes"
+          ]
+        ],
+        [
+          "Trump said Zelensky has to 'damn well' stop attacking Russian oil and gas plants, which Trump blames for higher fuel prices.",
+          [
+            "kristeligt_dagblad",
+            "guardian",
+            "wsj"
+          ]
+        ],
+        [
+          "Kirill Dmitriev, a close adviser to Putin, called Trump's statement 'iconic and historic'. Andrii Sybiha, Ukraine's foreign minister, wrote on X that Zelensky 'has the support of the Ukrainian people, and they have the right to decide'. Lars Løkke Rasmussen, Denmark's foreign minister, is among the European politicians backing Zelensky.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "On Saturday a Russian attack killed 21 people, four of them children, in Zaporizhzhia, a city in south-eastern Ukraine.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "standard": [
+        [
+          "Donald Trump said on Saturday that it is time for Ukraine to get a new president, one 'who can get a deal done' to end the war with Russia. Volodymyr Zelensky, Ukraine's president, 'could have made a lot of deals, but for some reason he never does', Trump told reporters.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "berlingske",
+            "guardian",
+            "wapo",
+            "bbc"
+          ]
+        ],
+        [
+          "The remarks came a day after Trump announced a deal with Vladimir Putin, Russia's president, to import millions of tonnes of Russian diesel. Zelensky called the deal 'a gift to Putin' that gives Russia more money for the war.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "bbc",
+            "guardian",
+            "nytimes"
+          ]
+        ],
+        [
+          "Kirill Dmitriev, a close adviser to Putin, called Trump's statement 'iconic and historic'. Andrii Sybiha, Ukraine's foreign minister, wrote on X that Zelensky 'has the support of the Ukrainian people, and they have the right to decide'.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Donald Trump said on Saturday that it is time for Ukraine to get a new president, one 'who can get a deal done' to end the war with Russia. It came a day after Volodymyr Zelensky, Ukraine's president, called a US deal to import Russian diesel 'a gift to Putin'.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "guardian",
+            "bbc"
+          ]
+        ]
+      ],
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "I think it is time for Ukraine to get a new president.",
+          "attribution": "Donald Trump, America's president",
+          "attribution_source": "kristeligt_dagblad"
+        },
+        {
+          "kind": "timeline",
+          "title": "How it unfolded",
+          "rows": [
+            {
+              "date": "Friday",
+              "text": "Trump announces a deal to import Russian diesel"
+            },
+            {
+              "date": "Saturday",
+              "text": "Trump says Ukraine needs a new president"
+            },
+            {
+              "date": "Saturday",
+              "text": "A Russian attack kills 21 people in Zaporizhzhia"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eu-budget-irish-eight-per-cent-cut",
+      "role": "secondary",
+      "kicker": "Europe",
+      "sources": [
+        500,
+        364,
+        354,
+        232,
+        490
+      ],
+      "headline": "Ireland proposes trimming the EU's draft budget by 8 per cent",
+      "headline_short": "Ireland proposes a smaller EU budget",
+      "deck": "Farm and regional aid are mostly spared; Germany's chancellor says a deal is still far off.",
+      "standard": [
+        [
+          "Ireland, which holds the EU presidency, proposed on Saturday to cut the European Commission's draft budget for 2028 to 2034 by 8 per cent, to 1,622 billion euros at constant prices. That is still about 30 per cent more than the current budget.",
+          [
+            "kristeligt_dagblad",
+            "ft"
+          ]
+        ],
+        [
+          "Farming, fisheries and regional aid lose only 3 per cent; competitiveness, prosperity and security lose 13. Germany, Denmark, the Netherlands and Sweden, which want money moved from farming towards defence and competitiveness, had sought cuts of 'several hundred billion euros'.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ],
+        [
+          "'Still far from an agreement,' said Friedrich Merz, Germany's chancellor. EU leaders take up the proposal at a summit in Brussels next week.",
+          [
+            "borsen",
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Ireland, which holds the EU presidency, proposed on Saturday to cut the European Commission's draft budget for 2028 to 2034 by 8 per cent, still about 30 per cent more than the current budget. EU leaders take it up at a summit in Brussels next week.",
+          [
+            "kristeligt_dagblad",
+            "ft"
+          ]
+        ],
+        [
+          "'Still far from an agreement,' said Friedrich Merz, Germany's chancellor.",
+          [
+            "borsen"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "cpr-access-firms-warned-1039",
+      "role": "secondary",
+      "kicker": "Denmark",
+      "sources": [
+        73,
+        69,
+        65
+      ],
+      "headline": "Denmark reminds 1,039 firms of security rules after a leak of 8.8 million ID numbers",
+      "headline_short": "Firms warned after ID-number leak",
+      "deck": "A hacker had access through a Funen IT firm for 21 days and 17 hours; the minister admits security was not good enough.",
+      "standard": [
+        [
+          "The CPR administration, which runs Denmark's register of personal identity numbers, wrote on Friday to the 1,039 companies with access to the register, among them financial firms, telecoms companies and law firms. Each must have a security officer, check staff access and track its monthly lookups for misuse.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        ],
+        [
+          "Using a former employee's leaked password, a hacker had access to the register through Pays, an IT company on Funen, for 21 days and 17 hours; outsiders gained access to 8.8 million ID numbers. Politiken found that at least three Pays profiles, the administrator's among them, used the password '123456'.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Christina Egelund, the digitalisation minister, admits security was not good enough.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "The CPR administration, which runs Denmark's register of personal identity numbers, wrote on Friday to the 1,039 companies with access to the register to remind them of its security rules. Outsiders had gained access to 8.8 million ID numbers through Pays, an IT company on Funen.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "lokke-sanctions-after-diesel-deal",
+      "role": "secondary",
+      "kicker": "Politics",
+      "sources": [
+        357,
+        368,
+        346
+      ],
+      "headline": "Denmark's foreign minister says Trump's diesel deal must not undermine sanctions on Russia",
+      "headline_short": "Denmark holds to Russia sanctions",
+      "deck": "America has temporarily eased sanctions to let Russia sell diesel; Ukraine's president says the deal gives Moscow more money for war.",
+      "standard": [
+        [
+          "Lars Løkke Rasmussen, the foreign minister, said on Saturday that the EU's work on sanctions against Russia 'must not be undermined' by a diesel deal between Donald Trump and Vladimir Putin. Extra income for Russia could in the end pay for the war in Ukraine, he told DR.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske"
+          ]
+        ],
+        [
+          "Under the deal, Trump says, Russia will at once deliver 300,000 tonnes of diesel to the American and global market. The US Treasury has given temporary permission for sanctions to be eased so that Russia can sell diesel internationally, until 7 April 2027 according to Reuters.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Volodymyr Zelensky, Ukraine's president, wrote on Friday that the deal would give Russia more money to wage war.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Lars Løkke Rasmussen, the foreign minister, said on Saturday that the EU's work on sanctions against Russia 'must not be undermined' by Donald Trump's diesel deal with Vladimir Putin, which America has backed by temporarily easing sanctions on Russian diesel.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "crown-prince-open-to-deployment",
+      "role": "secondary",
+      "kicker": "Denmark",
+      "sources": [
+        157,
+        101,
+        92,
+        109,
+        88
+      ],
+      "headline": "Denmark's crown prince says he is open to deployment",
+      "headline_short": "Crown prince open to deployment",
+      "deck": "Christian, now a platoon leader in the Royal Life Guards, says he was very unsure about joining the armed forces at first.",
+      "standard": [
+        [
+          "Crown Prince Christian, heir to the Danish throne, is open to staying in the military after he qualifies as a lieutenant, and would 'definitely find it interesting' to be deployed, he told Politiken. He did not say where.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske",
+            "politiken"
+          ]
+        ],
+        [
+          "He became a second lieutenant this summer and is now a platoon leader in the Royal Life Guards, an infantry regiment of the Danish army, helping to train conscripts.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "He doubted his choice when he began conscription in February 2025: 'On the drive down there I was shaking all over,' he said. In the interview he also spoke for the first time about press interest in videos of him at a music festival this summer.",
+          [
+            "kristeligt_dagblad",
+            "politiken",
+            "tv2"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Crown Prince Christian, heir to the Danish throne, would 'definitely find it interesting' to be deployed once he qualifies as a lieutenant, he told Politiken.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "russia-lifts-diesel-export-ban",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        126,
+        125,
+        115,
+        122
+      ],
+      "headline": "Russia partly lifts its diesel export ban after deal with Trump",
+      "lede": [
+        "Russia has partly lifted its ban on diesel exports, letting 500,000 tonnes onto the world market from Saturday, a day after Vladimir Putin struck a diesel deal with Donald Trump.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "borsen",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "partner-violence-plan-funding-criticised",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        663,
+        1430,
+        1895
+      ],
+      "headline": "Critics say the government's plan against partner violence lacks money",
+      "lede": [
+        "The government's budget proposal sets aside 175 million kroner over four years for a strategy against partner violence; Danner, a group fighting violence against women, says the money falls short of the ambition.",
+        [
+          "dr",
+          "kristeligt_dagblad",
+          "via_ritzau"
+        ]
+      ]
+    },
+    {
+      "id": "phone-use-quarter-of-licence-points",
+      "role": "brief",
+      "kicker": "Transport",
+      "sources": [
+        646,
+        632,
+        612
+      ],
+      "headline": "Handheld phones account for one in four licence penalty points",
+      "lede": [
+        "Drivers in Denmark received 20,910 licence penalty points for using a handheld phone in 2025, almost a quarter of all 84,056 and the most in four years, according to police figures.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "pensioners-full-time-one-in-seven",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        372,
+        328,
+        327
+      ],
+      "headline": "One in seven new pensioners now works full time",
+      "lede": [
+        "Of 67-year-olds drawing the state pension, 13.8 per cent worked full time in June, against 2.5 per cent in July 2022, according to Statistics Denmark figures analysed by Sampension, a pension company.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "jp"
+        ]
+      ]
+    },
+    {
+      "id": "fmc-roenland-layoff-aid-lemvig",
+      "role": "brief",
+      "kicker": "Business",
+      "sources": [
+        618,
+        609,
+        716
+      ],
+      "headline": "State pays to find new jobs for 311 laid-off chemical workers",
+      "lede": [
+        "The state is giving Lemvig Municipality almost 4.7 million kroner to help 311 people laid off at FMC Rønland, a West Jutland chemicals plant that is closing, the Employment Ministry said on Saturday.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "via_ritzau"
+        ]
+      ]
+    },
+    {
+      "id": "suila-tapit-repayment-waived",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        212,
+        200,
+        190
+      ],
+      "headline": "Greenland drops its demand to repay an overpaid benefit",
+      "lede": [
+        "Greenland's government, Naalakkersuisut, said in a statement on Saturday that people overpaid Suila-tapit, an in-work benefit, in 2025 because of IT errors need not pay it back; those who already have will be refunded.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "gudenaa-fourth-romanian-remanded",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        480,
+        457,
+        416
+      ],
+      "headline": "Fourth Romanian remanded over body tied to a car battery in a river",
+      "lede": [
+        "A fourth Romanian man was remanded in custody on Saturday over the killing of a compatriot whose body was found in the Gudenå, Denmark's longest river, in late August; he denies murder.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "riyadh-airport-attack-twelve-dead",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        44,
+        58,
+        27,
+        30,
+        62,
+        40,
+        28,
+        20,
+        45
+      ],
+      "headline": "Attack on Riyadh airport kills 12 and injures more than 300",
+      "lede": [
+        "An attack on Saturday on King Khalid airport in Riyadh, Saudi Arabia's capital, killed 12 people and injured more than 300; the Saudi-led military coalition blames the Houthis, Iran-backed rebels in Yemen.",
+        [
+          "berlingske",
+          "dr",
+          "kristeligt_dagblad"
+        ]
+      ]
+    },
+    {
+      "id": "hurricane-isaias-four-dead",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        43,
+        306,
+        48,
+        47,
+        61,
+        85,
+        86
+      ],
+      "headline": "Hurricane Isaias kills four in the south-eastern US",
+      "lede": [
+        "Four people died after Hurricane Isaias struck the Florida panhandle as a category 2 storm, and more than 500,000 were left without power in Florida, Alabama, Georgia and Mississippi.",
+        [
+          "kristeligt_dagblad",
+          "guardian"
+        ]
+      ]
+    },
+    {
+      "id": "erie-shooting-eight-dead",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        140,
+        170,
+        95,
+        60,
+        46
+      ],
+      "headline": "Gunman kills eight, including two children, in Pennsylvania",
+      "lede": [
+        "A man shot dead eight people, among them two children and a pregnant woman, at a home in Erie, a port city in Pennsylvania, on Friday before killing himself; the motive is unknown.",
+        [
+          "kristeligt_dagblad",
+          "politiken",
+          "wapo",
+          "guardian",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "poland-third-school-attack-warsaw",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        282,
+        262,
+        270,
+        280
+      ],
+      "headline": "Knife attack wounds three at Warsaw school, Poland's third school attack in four days",
+      "lede": [
+        "A 21-year-old woman, a student, wounded three people with a knife at an adult vocational school in Warsaw on Saturday, the third knife attack on a Polish school in four days.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "bbc"
+        ]
+      ]
+    },
+    {
+      "id": "palestinian-election-postponed-2027",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        378,
+        344,
+        220,
+        207,
+        1265
+      ],
+      "headline": "Palestinian president delays parliamentary election to September 2027",
+      "lede": [
+        "Mahmoud Abbas, president of the Palestinian Authority, has moved the Legislative Council election from 28 November to 11 September 2027, citing 'obstacles posed by Israeli measures'.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "ft"
+        ]
+      ]
+    },
+    {
+      "id": "trump-nobel-stain-on-norway",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        530,
+        737,
+        375,
+        731,
+        672,
+        744,
+        94,
+        359
+      ],
+      "headline": "Trump calls this year's peace prize a stain on Norway",
+      "lede": [
+        "At a rally on Friday, Donald Trump called the Nobel peace prize for Navi Pillay, a South African former judge at the International Criminal Court, 'disgraceful and embarrassing' and a 'stain' on Norway.",
+        [
+          "borsen",
+          "kristeligt_dagblad",
+          "guardian",
+          "wapo"
+        ]
+      ]
+    }
+  ]
+}

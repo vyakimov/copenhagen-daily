@@ -1,0 +1,121 @@
+{
+ "headline": "Trump says Ukraine needs a new president",
+ "headline_short": "Trump wants a new Ukrainian president",
+ "deck": "Zelensky had called a US deal to buy Russian diesel 'a gift to Putin'; Moscow praises Trump's words.",
+ "extended": [
+  [
+   "Donald Trump said on Saturday that it is time for Ukraine to get a new president, one 'who can get a deal done' to end the war with Russia. Volodymyr Zelensky, Ukraine's president, 'could have made a lot of deals, but for some reason he never does', Trump told reporters.",
+   [
+    "kristeligt_dagblad",
+    "borsen",
+    "berlingske",
+    "guardian",
+    "wapo",
+    "bbc"
+   ]
+  ],
+  [
+   "The remarks came a day after Trump announced a deal with Vladimir Putin, Russia's president, to import millions of tonnes of Russian diesel. Zelensky called the deal 'a gift to Putin' that gives Russia more money for the war.",
+   [
+    "kristeligt_dagblad",
+    "borsen",
+    "bbc",
+    "guardian",
+    "nytimes"
+   ]
+  ],
+  [
+   "Trump said Zelensky has to 'damn well' stop attacking Russian oil and gas plants, which Trump blames for higher fuel prices.",
+   [
+    "kristeligt_dagblad",
+    "guardian",
+    "wsj"
+   ]
+  ],
+  [
+   "Kirill Dmitriev, a close adviser to Putin, called Trump's statement 'iconic and historic'. Andrii Sybiha, Ukraine's foreign minister, wrote on X that Zelensky 'has the support of the Ukrainian people, and they have the right to decide'. Lars Løkke Rasmussen, Denmark's foreign minister, is among the European politicians backing Zelensky.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "On Saturday a Russian attack killed 21 people, four of them children, in Zaporizhzhia, a city in south-eastern Ukraine.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "standard": [
+  [
+   "Donald Trump said on Saturday that it is time for Ukraine to get a new president, one 'who can get a deal done' to end the war with Russia. Volodymyr Zelensky, Ukraine's president, 'could have made a lot of deals, but for some reason he never does', Trump told reporters.",
+   [
+    "kristeligt_dagblad",
+    "borsen",
+    "berlingske",
+    "guardian",
+    "wapo",
+    "bbc"
+   ]
+  ],
+  [
+   "The remarks came a day after Trump announced a deal with Vladimir Putin, Russia's president, to import millions of tonnes of Russian diesel. Zelensky called the deal 'a gift to Putin' that gives Russia more money for the war.",
+   [
+    "kristeligt_dagblad",
+    "borsen",
+    "bbc",
+    "guardian",
+    "nytimes"
+   ]
+  ],
+  [
+   "Kirill Dmitriev, a close adviser to Putin, called Trump's statement 'iconic and historic'. Andrii Sybiha, Ukraine's foreign minister, wrote on X that Zelensky 'has the support of the Ukrainian people, and they have the right to decide'.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "Donald Trump said on Saturday that it is time for Ukraine to get a new president, one 'who can get a deal done' to end the war with Russia. It came a day after Volodymyr Zelensky, Ukraine's president, called a US deal to import Russian diesel 'a gift to Putin'.",
+   [
+    "kristeligt_dagblad",
+    "borsen",
+    "guardian",
+    "bbc"
+   ]
+  ]
+ ],
+ "callouts": [
+  {
+   "kind": "quote",
+   "text": "I think it is time for Ukraine to get a new president.",
+   "attribution": "Donald Trump, America's president",
+   "attribution_source": "kristeligt_dagblad"
+  },
+  {
+   "kind": "timeline",
+   "title": "How it unfolded",
+   "rows": [
+    {
+     "date": "Friday",
+     "text": "Trump announces a deal to import Russian diesel"
+    },
+    {
+     "date": "Saturday",
+     "text": "Trump says Ukraine needs a new president"
+    },
+    {
+     "date": "Saturday",
+     "text": "A Russian attack kills 21 people in Zaporizhzhia"
+    }
+   ]
+  }
+ ],
+ "definitions": [
+  {
+   "term": "Zaporizhzhia",
+   "definition": "a city in south-eastern Ukraine",
+   "wikipedia": "Zaporizhzhia"
+  }
+ ]
+}
