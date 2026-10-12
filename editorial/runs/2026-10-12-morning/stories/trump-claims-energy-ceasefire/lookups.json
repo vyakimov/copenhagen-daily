@@ -1,0 +1,13 @@
+[
+ {
+  "requested": "Zaporizhzhia Nuclear Power Plant",
+  "status": "found",
+  "title": "Zaporizhzhia Nuclear Power Plant",
+  "extract": "The Zaporizhzhia Nuclear Power Station in southeastern Ukraine is the largest nuclear power plant in Europe and among the 10 largest in the world. It has been under Russian control since 2022. It was built by the Soviet Union near the city of Enerhodar, on the southern shore of the Kakhovka Reservoir on the Dnieper river. From 1996 to 2022, it was operated by Energoatom, which operates the other three nuclear power stations in Ukraine.",
+  "url": "https://en.wikipedia.org/wiki/Zaporizhzhia_Nuclear_Power_Plant",
+  "type": "standard",
+  "fetched_at": "2026-10-12T03:37:46.685925Z",
+  "term": "Zaporizhzhia nuclear power plant",
+  "definition": "a plant held by Russia"
+ }
+]

@@ -1,0 +1,24 @@
+[
+ {
+  "requested": "Gravel cycling",
+  "status": "found",
+  "title": "Gravel cycling",
+  "extract": "Gravel cycling, gravel biking or gravel grinding is a sport or a leisure activity in which participants ride bicycles on gravel roads or other unpaved surfaces. While often performed on a specially designed gravel bike, any bicycle capable of covering the terrain can be used.",
+  "url": "https://en.wikipedia.org/wiki/Gravel_cycling",
+  "type": "standard",
+  "fetched_at": "2026-10-12T03:37:47.612169Z",
+  "term": "gravel",
+  "definition": "cycle racing on unpaved roads"
+ },
+ {
+  "requested": "Mads Würtz Schmidt",
+  "status": "found",
+  "title": "Mads Würtz Schmidt",
+  "extract": "Mads Würtz Schmidt is a Danish racing cyclist, who rides for Specialized Off-Road Racing. He rode at the 2013 UCI Road World Championships. In May 2018, he was named in the startlist for the 2018 Giro d'Italia. In July 2019, he was named in the startlist for the 2019 Tour de France. In June 2021, he won the Danish National Road Race Championships.",
+  "url": "https://en.wikipedia.org/wiki/Mads_W%C3%BCrtz_Schmidt",
+  "type": "standard",
+  "fetched_at": "2026-10-12T03:37:47.654980Z",
+  "term": "Mads Würtz Schmidt",
+  "definition": "a Danish cyclist"
+ }
+]

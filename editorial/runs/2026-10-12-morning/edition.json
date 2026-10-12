@@ -1,0 +1,2419 @@
+{
+  "schema_version": 2,
+  "title": "copenhagen-daily",
+  "edition": {
+    "id": "2026-10-12-morning",
+    "number": 7,
+    "name": "Monday edition",
+    "date": "2026-10-12",
+    "timezone": "Europe/Copenhagen",
+    "language": "en",
+    "cutoff_at": "2026-10-12T03:30:00.000000Z",
+    "generated_at": "2026-10-12T03:37:46.472394Z"
+  },
+  "presentation": {
+    "emphasis": "many_stories",
+    "ear_right": "Inside: Hummelgaard rejects the Irish EU budget, Burnham on Russia and Brexit, Greenland rations yeast"
+  },
+  "coverage": {
+    "status": "complete",
+    "checked_from": "2026-10-09T03:30:00.000000Z",
+    "checked_until": "2026-10-12T03:30:00.000000Z",
+    "feeds": [
+      {
+        "feed_id": "altinget.arbejdsmarked",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.450418Z"
+      },
+      {
+        "feed_id": "altinget.by",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.545071Z"
+      },
+      {
+        "feed_id": "altinget.christiansborg",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.316293Z"
+      },
+      {
+        "feed_id": "altinget.eu",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.343121Z"
+      },
+      {
+        "feed_id": "altinget.forside",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.291970Z"
+      },
+      {
+        "feed_id": "altinget.forsvar",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.472987Z"
+      },
+      {
+        "feed_id": "altinget.klima",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.368420Z"
+      },
+      {
+        "feed_id": "altinget.kommunal",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.496352Z"
+      },
+      {
+        "feed_id": "altinget.sundhed",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.425940Z"
+      },
+      {
+        "feed_id": "altinget.uddannelse",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.518979Z"
+      },
+      {
+        "feed_id": "bbc.business",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.758829Z"
+      },
+      {
+        "feed_id": "bbc.culture",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:15.050151Z"
+      },
+      {
+        "feed_id": "bbc.europe",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.725367Z"
+      },
+      {
+        "feed_id": "bbc.health",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.911107Z"
+      },
+      {
+        "feed_id": "bbc.politics",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.978548Z"
+      },
+      {
+        "feed_id": "bbc.science",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.840025Z"
+      },
+      {
+        "feed_id": "bbc.technology",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.808266Z"
+      },
+      {
+        "feed_id": "bbc.top",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.609034Z"
+      },
+      {
+        "feed_id": "bbc.world",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.692269Z"
+      },
+      {
+        "feed_id": "berlingske.business",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.349583Z"
+      },
+      {
+        "feed_id": "berlingske.kultur",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.369130Z"
+      },
+      {
+        "feed_id": "berlingske.latest",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.316888Z"
+      },
+      {
+        "feed_id": "berlingske.opinion",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.386325Z"
+      },
+      {
+        "feed_id": "berlingske.samfund",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.336766Z"
+      },
+      {
+        "feed_id": "borsen.baeredygtig",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.485863Z"
+      },
+      {
+        "feed_id": "borsen.breaking",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.480948Z"
+      },
+      {
+        "feed_id": "borsen.ejendomme",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.521950Z"
+      },
+      {
+        "feed_id": "borsen.executive",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.644507Z"
+      },
+      {
+        "feed_id": "borsen.finans",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.551088Z"
+      },
+      {
+        "feed_id": "borsen.homepage",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.436918Z"
+      },
+      {
+        "feed_id": "borsen.investor",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.607371Z"
+      },
+      {
+        "feed_id": "borsen.longread",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.682643Z"
+      },
+      {
+        "feed_id": "borsen.markedsberetninger",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.711457Z"
+      },
+      {
+        "feed_id": "borsen.okonomi",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.945111Z"
+      },
+      {
+        "feed_id": "borsen.opinion",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.740523Z"
+      },
+      {
+        "feed_id": "borsen.pleasure",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.769389Z"
+      },
+      {
+        "feed_id": "borsen.politik",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.800376Z"
+      },
+      {
+        "feed_id": "borsen.tech",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.865493Z"
+      },
+      {
+        "feed_id": "borsen.udland",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.893348Z"
+      },
+      {
+        "feed_id": "borsen.virksomheder",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.925313Z"
+      },
+      {
+        "feed_id": "dr.indland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.432453Z"
+      },
+      {
+        "feed_id": "dr.kultur",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.652975Z"
+      },
+      {
+        "feed_id": "dr.latest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.403140Z"
+      },
+      {
+        "feed_id": "dr.musik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.716958Z"
+      },
+      {
+        "feed_id": "dr.penge",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.515760Z"
+      },
+      {
+        "feed_id": "dr.politik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.542123Z"
+      },
+      {
+        "feed_id": "dr.regionale",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.766408Z"
+      },
+      {
+        "feed_id": "dr.regionale_bornholm",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.824851Z"
+      },
+      {
+        "feed_id": "dr.regionale_fyn",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.905777Z"
+      },
+      {
+        "feed_id": "dr.regionale_kbh",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.792432Z"
+      },
+      {
+        "feed_id": "dr.regionale_nord",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.961464Z"
+      },
+      {
+        "feed_id": "dr.regionale_oestjylland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.050674Z"
+      },
+      {
+        "feed_id": "dr.regionale_sjaelland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.023372Z"
+      },
+      {
+        "feed_id": "dr.regionale_syd",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.853942Z"
+      },
+      {
+        "feed_id": "dr.regionale_trekanten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.987175Z"
+      },
+      {
+        "feed_id": "dr.regionale_vest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.935254Z"
+      },
+      {
+        "feed_id": "dr.senestesport",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.593905Z"
+      },
+      {
+        "feed_id": "dr.sporten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.570109Z"
+      },
+      {
+        "feed_id": "dr.udland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.462607Z"
+      },
+      {
+        "feed_id": "dr.vejret",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.742193Z"
+      },
+      {
+        "feed_id": "dr.viden",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.621246Z"
+      },
+      {
+        "feed_id": "economist.briefing",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:15.078020Z"
+      },
+      {
+        "feed_id": "economist.business",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:15.078255Z"
+      },
+      {
+        "feed_id": "economist.culture",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:15.078370Z"
+      },
+      {
+        "feed_id": "economist.europe",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:15.078081Z"
+      },
+      {
+        "feed_id": "economist.finance",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:15.078198Z"
+      },
+      {
+        "feed_id": "economist.international",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:15.078138Z"
+      },
+      {
+        "feed_id": "economist.latest",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:15.077884Z"
+      },
+      {
+        "feed_id": "economist.leaders",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:15.077960Z"
+      },
+      {
+        "feed_id": "economist.science",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:15.078314Z"
+      },
+      {
+        "feed_id": "ft.climate_capital",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.270720Z"
+      },
+      {
+        "feed_id": "ft.companies",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.178064Z"
+      },
+      {
+        "feed_id": "ft.global_economy",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.144398Z"
+      },
+      {
+        "feed_id": "ft.homepage.international",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.065785Z"
+      },
+      {
+        "feed_id": "ft.life_arts",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.410050Z"
+      },
+      {
+        "feed_id": "ft.markets",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.209997Z"
+      },
+      {
+        "feed_id": "ft.opinion",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.334660Z"
+      },
+      {
+        "feed_id": "ft.technology",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.237581Z"
+      },
+      {
+        "feed_id": "ft.work_careers",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.405855Z"
+      },
+      {
+        "feed_id": "ft.world",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.090453Z"
+      },
+      {
+        "feed_id": "guardian.business",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:15.673817Z"
+      },
+      {
+        "feed_id": "guardian.culture",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:16.086226Z"
+      },
+      {
+        "feed_id": "guardian.environment",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:15.913035Z"
+      },
+      {
+        "feed_id": "guardian.europe",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:15.595337Z"
+      },
+      {
+        "feed_id": "guardian.international",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:15.166177Z"
+      },
+      {
+        "feed_id": "guardian.opinion",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:16.268047Z"
+      },
+      {
+        "feed_id": "guardian.science",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:15.986933Z"
+      },
+      {
+        "feed_id": "guardian.technology",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:15.826103Z"
+      },
+      {
+        "feed_id": "guardian.world",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:15.496619Z"
+      },
+      {
+        "feed_id": "information.feed",
+        "source": "information",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.287368Z"
+      },
+      {
+        "feed_id": "jp.seneste",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.279204Z"
+      },
+      {
+        "feed_id": "jp.topnyheder",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.259404Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.artikler",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.564039Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.nyheder",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.563954Z"
+      },
+      {
+        "feed_id": "nytimes.arts",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:11.777360Z"
+      },
+      {
+        "feed_id": "nytimes.books",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:11.908052Z"
+      },
+      {
+        "feed_id": "nytimes.business",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:11.361647Z"
+      },
+      {
+        "feed_id": "nytimes.climate",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:11.663817Z"
+      },
+      {
+        "feed_id": "nytimes.europe",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:11.308490Z"
+      },
+      {
+        "feed_id": "nytimes.health",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:11.607855Z"
+      },
+      {
+        "feed_id": "nytimes.homepage",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:11.033781Z"
+      },
+      {
+        "feed_id": "nytimes.opinion",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.003197Z"
+      },
+      {
+        "feed_id": "nytimes.science",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:11.510923Z"
+      },
+      {
+        "feed_id": "nytimes.technology",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:11.456171Z"
+      },
+      {
+        "feed_id": "nytimes.world",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:11.147648Z"
+      },
+      {
+        "feed_id": "politiken.debat",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.196041Z"
+      },
+      {
+        "feed_id": "politiken.forbrugogliv",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.219546Z"
+      },
+      {
+        "feed_id": "politiken.ibyen",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.246208Z"
+      },
+      {
+        "feed_id": "politiken.indland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.994652Z"
+      },
+      {
+        "feed_id": "politiken.kultur",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.124909Z"
+      },
+      {
+        "feed_id": "politiken.latest",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:12.962137Z"
+      },
+      {
+        "feed_id": "politiken.oekonomi",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.098609Z"
+      },
+      {
+        "feed_id": "politiken.politik",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.048347Z"
+      },
+      {
+        "feed_id": "politiken.rejser",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.293688Z"
+      },
+      {
+        "feed_id": "politiken.sport",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.148204Z"
+      },
+      {
+        "feed_id": "politiken.udland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.023182Z"
+      },
+      {
+        "feed_id": "politiken.viden",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:13.169977Z"
+      },
+      {
+        "feed_id": "tv2.nyheder",
+        "source": "tv2",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.126714Z"
+      },
+      {
+        "feed_id": "via_ritzau.latest",
+        "source": "via_ritzau",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:14.569148Z"
+      },
+      {
+        "feed_id": "wapo.business",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:16.383329Z"
+      },
+      {
+        "feed_id": "wapo.national",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:16.342620Z"
+      },
+      {
+        "feed_id": "wapo.opinions",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:16.394918Z"
+      },
+      {
+        "feed_id": "wapo.politics",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:16.362101Z"
+      },
+      {
+        "feed_id": "wapo.technology",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:16.391000Z"
+      },
+      {
+        "feed_id": "wapo.world",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:16.327677Z"
+      },
+      {
+        "feed_id": "wsj.business",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:16.565130Z"
+      },
+      {
+        "feed_id": "wsj.economy",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:16.723394Z"
+      },
+      {
+        "feed_id": "wsj.markets",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:16.657404Z"
+      },
+      {
+        "feed_id": "wsj.opinion",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:16.887181Z"
+      },
+      {
+        "feed_id": "wsj.politics",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:16.803655Z"
+      },
+      {
+        "feed_id": "wsj.technology",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:16.834169Z"
+      },
+      {
+        "feed_id": "wsj.world",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-12T03:27:16.424679Z"
+      }
+    ],
+    "note": "Built from headlines and RSS descriptions published between 05:30 on 9 October and 05:30 on 12 October, Copenhagen time. All 132 feeds at 17 publishers polled."
+  },
+  "inputs": [
+    {
+      "id": "export-2026-10-12-0330",
+      "sha256": "sha256:beb4873fb367981223fa52a9c8c7c1cd6062e506aa4f48b581756ab47a028171"
+    }
+  ],
+  "stories": [
+    {
+      "id": "trump-claims-energy-ceasefire",
+      "device_participation": "required",
+      "role": "lead",
+      "kicker": "World",
+      "copy": {
+        "headline": "Trump says Russia and Ukraine have agreed an energy ceasefire",
+        "body": {
+          "extended": [
+            {
+              "text": "Donald Trump said on Sunday that Russia and Ukraine had agreed an 'energy ceasefire' with immediate effect. 'Both parties have agreed,' he wrote on social media, without saying what the truce covers. Russia has yet to confirm it.",
+              "sources": [
+                "kristeligt_dagblad",
+                "borsen",
+                "guardian",
+                "bbc",
+                "wsj"
+              ]
+            },
+            {
+              "text": "Volodymyr Zelenskyy, Ukraine's president, said the announcement was 'news to me' but that Ukraine would agree if Russia did.",
+              "sources": [
+                "kristeligt_dagblad",
+                "guardian",
+                "dr",
+                "bbc"
+              ]
+            },
+            {
+              "text": "Zelenskyy said Russian strikes later hit power plants in Kyiv, causing outages in the capital, and in Kharkiv, Ukraine's second-largest city. Ukrainian officials said Russian attacks killed six people on Sunday, three of them at a Kharkiv grocery store.",
+              "sources": [
+                "guardian",
+                "borsen"
+              ]
+            },
+            {
+              "text": "Rosatom, Russia's state nuclear company, expects a ceasefire soon at the Zaporizhzhia nuclear power plant, a plant held by Russia, so that repairs can be made.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "On Friday Trump had announced a deal to buy Russian diesel and temporarily ease American sanctions. Zelenskyy called it a 'weak decision'. On Saturday Trump accused him of defying orders not to attack Russian oil refineries and said Ukraine needed a new president.",
+              "sources": [
+                "kristeligt_dagblad",
+                "guardian",
+                "wsj"
+              ]
+            },
+            {
+              "text": "'It's up to our society, up to our people to choose one or another leader,' Zelenskyy told America's ABC News.",
+              "sources": [
+                "guardian"
+              ]
+            }
+          ],
+          "standard": [
+            {
+              "text": "Donald Trump said on Sunday that Russia and Ukraine had agreed an 'energy ceasefire' with immediate effect. 'Both parties have agreed,' he wrote on social media, without saying what the truce covers. Russia has yet to confirm it.",
+              "sources": [
+                "kristeligt_dagblad",
+                "borsen",
+                "guardian",
+                "bbc",
+                "wsj"
+              ]
+            },
+            {
+              "text": "Volodymyr Zelenskyy, Ukraine's president, said the announcement was 'news to me' but that Ukraine would agree if Russia did. He said Russian strikes later hit power plants in Kyiv and in Kharkiv, Ukraine's second-largest city.",
+              "sources": [
+                "kristeligt_dagblad",
+                "guardian",
+                "dr",
+                "borsen"
+              ]
+            },
+            {
+              "text": "On Friday Trump had announced a deal to buy Russian diesel, which Zelenskyy called a 'weak decision'. On Saturday Trump said Ukraine needed a new president.",
+              "sources": [
+                "kristeligt_dagblad",
+                "guardian"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Donald Trump said on Sunday that Russia and Ukraine had agreed an 'energy ceasefire' with immediate effect. Russia has yet to confirm it. Volodymyr Zelenskyy, Ukraine's president, called it 'news to me' but said Ukraine would agree if Russia did.",
+              "sources": [
+                "kristeligt_dagblad",
+                "guardian",
+                "bbc"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Trump claims Ukraine energy ceasefire",
+        "deck": "Zelenskyy says it was news to him but Ukraine will agree if Russia does; Moscow has not confirmed."
+      },
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "Effective immediately, there is an energy ceasefire in the war between Russia and Ukraine. Both parties have agreed.",
+          "attribution": "Donald Trump, US president",
+          "attribution_source": "guardian"
+        },
+        {
+          "kind": "timeline",
+          "title": "How it unfolded",
+          "rows": [
+            {
+              "date": "Friday",
+              "text": "Trump announces a deal to buy Russian diesel"
+            },
+            {
+              "date": "Saturday",
+              "text": "Trump says Ukraine needs a new president"
+            },
+            {
+              "date": "Sunday",
+              "text": "Trump declares an energy ceasefire on social media"
+            },
+            {
+              "date": "Sunday",
+              "text": "Zelenskyy reports strikes on power plants in Kyiv and Kharkiv"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "8bead6b6-c998-4a3e-a225-eb65b15246c6",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Trump: Rusland og Ukraine har indgået energi-våbenhvile",
+          "url": "https://www.kristeligt-dagblad.dk/udland/trump-rusland-og-ukraine-har-indgaaet-energi-vaabenhvile",
+          "published_at": "2026-10-11T14:26:24.000000Z",
+          "content_hash": "sha256:068de7a2293fc76f6119af033af5910f4499fc2e1928f8f96a8e7d1b78662846",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/trump-melder-om-energivabenhvile-mellem-rusland-og-ukraine-en-nyhed-for-zelenskyj",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Trump melder om “energivåbenhvile” mellem Rusland og Ukraine – en “nyhed” for Zelenskyj",
+          "url": "https://borsen.dk/nyheder/udland/trump-melder-om-energivabenhvile-mellem-rusland-og-ukraine-en-nyhed-for-zelenskyj",
+          "published_at": "2026-10-11T14:28:49.000000Z",
+          "content_hash": "sha256:c0c4d4a4a6fd3929879596f329070ad7f66e77238b530087cba5e5d7079639ae",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:f2634884-a2f4-46f9-bf0b-6b500a2e482f",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Ukraine kender ikke detaljer i mulig energi-våbenhvile",
+          "url": "https://www.dr.dk/nyheder/udland/ukraine-kender-ikke-detaljer-i-mulig-energi-vaabenhvile",
+          "published_at": "2026-10-11T17:44:27.000000Z",
+          "content_hash": "sha256:cf43395930645d6af27c373063c1d5d63969be9279f0cdabff1e4748acd4d981",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:7a75ef03-90b0-5ca7-8547-1c821cbe52d3",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Trump: Rusland og Ukraine har indgået energi-våbenhvile",
+          "url": "https://www.berlingske.dk/internationalt/trump-rusland-og-ukraine-har-indgaaet-energi-vaabenhvile",
+          "published_at": "2026-10-11T18:08:46.000000Z",
+          "content_hash": "sha256:5d68bc071299a3c330112672eaac674132cb1d23568e5be13011717aa10259bc",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "c6pvg4jyz1m0o",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Trump's 'energy ceasefire' claim welcomed by Zelensky but Russia silent",
+          "url": "https://www.bbc.co.uk/news/articles/c6pvg4jyz1m0o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-11T21:36:40.000000Z",
+          "content_hash": "sha256:57e4dc23956a5291053d4c9287bb9df383634538c064484c1890c66ead7b7fb5",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/11/zelenskyy-trump-ukraine-russia-energy-ceasefire",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Trump announces partial ceasefire in Ukraine war as Zelenskyy says deal is ‘news to me’",
+          "url": "https://www.theguardian.com/world/2026/oct/11/zelenskyy-trump-ukraine-russia-energy-ceasefire",
+          "published_at": "2026-10-11T17:21:39.000000Z",
+          "content_hash": "sha256:3ca784e953c71bf4e6e30499ee56400192d3f523a33bc5415a5aa0348cb16dd5",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "724ef0e2-4d50-49fd-aef8-abc0534f2f84",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Ukraine’s allies vow to pressure Moscow as Trump claims ‘energy ceasefire’ in place",
+          "url": "https://www.ft.com/content/724ef0e2-4d50-49fd-aef8-abc0534f2f84",
+          "published_at": "2026-10-11T15:46:54.000000Z",
+          "content_hash": "sha256:5eced302fa55eb242db6b2eb01992f678492a8f19f39660b78ad080373e30985",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003967162",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Trump Pushes Russia-Ukraine Energy Ceasefire as Export Deal Draws Criticism",
+          "url": "https://www.wsj.com/world/trump-declares-a-russia-ukraine-energy-ceasefire-but-moscow-hasnt-confirmed-f57414e9",
+          "published_at": "2026-10-11T21:22:00.000000Z",
+          "content_hash": "sha256:79c9161da52942c3891fa3e47acfb406fb73ac7366d2504c7179d585965dfa18",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/12/ukraine-war-briefing-russia-attacks-multiple-power-plants-after-trump-energy-ceasefire-claim",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Ukraine war briefing: Russia attacks multiple power plants after Trump energy ceasefire claim",
+          "url": "https://www.theguardian.com/world/2026/oct/12/ukraine-war-briefing-russia-attacks-multiple-power-plants-after-trump-energy-ceasefire-claim",
+          "published_at": "2026-10-12T02:05:26.000000Z",
+          "content_hash": "sha256:82f48f2040f71f005d472519f79081217ce1f42c48aeb52ed110e7fe7d0ddae7",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cwvgde9vrdd9o",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Watch: What's behind Trump's energy ceasefire claim?",
+          "url": "https://www.bbc.co.uk/news/videos/cwvgde9vrdd9o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-11T20:55:02.000000Z",
+          "content_hash": "sha256:5ec33702155a33226dd69b7e8ef21525564121712b07e6bfdf4b22afafb0541c",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/us-news/live/2026/oct/11/donald-trump-ukraine-russia-energy-ceasefire-diesel-latest-updates",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Zelenskyy signals surprise at Trump claim of Russia-Ukraine ‘energy ceasefire’ but would back it if Moscow does – as it happened",
+          "url": "https://www.theguardian.com/us-news/live/2026/oct/11/donald-trump-ukraine-russia-energy-ceasefire-diesel-latest-updates",
+          "published_at": "2026-10-11T18:36:54.000000Z",
+          "content_hash": "sha256:47ddd637a5539984204a17c6096101a22041669fb8d45ea8a126944356b5d2c3",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "hummelgaard-rejects-irish-budget",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Europe",
+      "copy": {
+        "headline": "Denmark's finance minister says Ireland's EU budget plan cuts the wrong things",
+        "body": {
+          "standard": [
+            {
+              "text": "Peter Hummelgaard, Denmark's finance minister, has rejected Ireland's proposal for the EU's budget for 2028 to 2034. 'The budget is still too high, and the proposed cuts have the wrong focus,' he said. Germany has also rejected it.",
+              "sources": [
+                "kristeligt_dagblad",
+                "borsen",
+                "dr",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "Ireland, which holds the EU's rotating presidency, presented the plan on Saturday. It cuts the European Commission's draft by 8 per cent, but farming, fisheries and regional development by only 3 per cent; competitiveness, prosperity and security lose 13 per cent.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Hummelgaard wants less spent on farming and regional aid. Ireland is among about 20 countries that want such transfers kept high; Thomas Byrne, its Europe minister, said Ireland had been 'an honest broker'.",
+              "sources": [
+                "kristeligt_dagblad",
+                "borsen"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Peter Hummelgaard, Denmark's finance minister, has rejected the plan from Ireland, which holds the EU's rotating presidency, for the 2028 to 2034 budget, saying it is still too high and cuts the wrong things. It trims the European Commission's draft by 8 per cent but farming, fisheries and regional development by only 3 per cent.",
+              "sources": [
+                "kristeligt_dagblad",
+                "borsen",
+                "dr"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Denmark rejects Irish EU budget plan",
+        "deck": "The plan trims the overall budget by 8 per cent but farming and regional aid by only 3; Germany objects too."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "e50c7be2-0730-4576-9e08-07628cd178b2",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Hummelgaard kritiserer irsk EU-budget for at prioritere forkert",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/hummelgaard-kritiserer-irsk-eu-budget-prioritere-forkert",
+          "published_at": "2026-10-11T07:37:47.000000Z",
+          "content_hash": "sha256:94f6a621af55250ff54f0f7b419943b99dc56de527e4a995656b7c27a4726ccc",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:e4a3fc71-3a18-50a4-ba1e-4434903b0bbd",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "»Vi kan ikke løse fremtidens udfordringer med et budget fra fortiden«: Danmark og Tyskland hælder nyt EU-udspil ned ad brættet",
+          "url": "https://www.berlingske.dk/internationalt/vi-kan-ikke-loese-fremtidens-udfordringer-med-et-budget-fra-fortiden-danmark-og-tyskland-haelder-nyt-eu-udspil-ned-ad-braettet",
+          "published_at": "2026-10-11T07:01:44.000000Z",
+          "content_hash": "sha256:7706ddef2ebd5b185621b5e89fd9f9ea6ec202f0cdb0d49d38b0a6ad523489f9",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:541681f6-b1a5-47ac-8e48-fcc6e82d7238",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Hummelgaard har ikke ligefrem set sig varm på irsk udspil til EU-budget",
+          "url": "https://www.dr.dk/nyheder/udland/hummelgaard-har-ikke-ligefrem-set-sig-varm-paa-irsk-udspil-til-eu-budget",
+          "published_at": "2026-10-11T08:23:19.000000Z",
+          "content_hash": "sha256:106aab9d9215e61a448d010c36a2079811998143293d36388c732f14f62f6c6c",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/politik/hummelgaard-kritiserer-irsk-eu-budget-for-at-prioritere-forkert",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Hummelgaard kritiserer irsk EU-budget for at prioritere forkert",
+          "url": "https://borsen.dk/nyheder/politik/hummelgaard-kritiserer-irsk-eu-budget-for-at-prioritere-forkert",
+          "published_at": "2026-10-11T07:52:18.000000Z",
+          "content_hash": "sha256:34d96789a8d082f5982344c2ccf6ba31f9bbf294e39fcc355e54bc989fe0e7cc",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "burnham-says-russia-meddled-brexit",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Europe",
+      "copy": {
+        "headline": "Britain's prime minister says Russia interfered in the Brexit vote",
+        "body": {
+          "standard": [
+            {
+              "text": "Andy Burnham, Britain's prime minister, says it is clear Russia interfered in the 2016 Brexit referendum, the first time a British prime minister has said so directly.",
+              "sources": [
+                "kristeligt_dagblad",
+                "dr",
+                "guardian"
+              ]
+            },
+            {
+              "text": "Burnham said he asked about it when he took office and got 'the clear answer that yes, there was'. He did not say how, or whether it worked. 'I think we have been too passive about it,' he told The Rest Is Politics, a podcast.",
+              "sources": [
+                "kristeligt_dagblad",
+                "bbc"
+              ]
+            },
+            {
+              "text": "Russia, which has not commented, has denied involvement before and accused Britain of 'anti-Russian hysteria', Reuters reports. Boris Johnson, a former prime minister who campaigned for Brexit, said in 2020 that there was no evidence of interference.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Andy Burnham, Britain's prime minister, says it is clear Russia interfered in the 2016 Brexit referendum, the first British prime minister to say so directly. Russia has not commented.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "dr"
+              ]
+            }
+          ]
+        },
+        "headline_short": "UK leader says Russia meddled in Brexit",
+        "deck": "Andy Burnham is the first British prime minister to say so directly; Russia has not commented."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "57ad8200-4978-426b-91c5-bf23cbff381d",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Burnham: Rusland blandede sig i brexit-afstemning",
+          "url": "https://www.kristeligt-dagblad.dk/udland/burnham-rusland-blandede-sig-i-brexit-afstemning",
+          "published_at": "2026-10-11T18:53:14.000000Z",
+          "content_hash": "sha256:b68b98ecbd34dac9d4d5b3a38e8efd2084f8f30ac16d80e8a6ddd36e03d5da4b",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:15b47846-5f05-557e-88c7-4b0bc2e7781e",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Burnham: Rusland blandede sig i brexit-afstemning",
+          "url": "https://www.berlingske.dk/internationalt/burnham-rusland-blandede-sig-i-brexit-afstemning",
+          "published_at": "2026-10-11T20:46:46.000000Z",
+          "content_hash": "sha256:ab939b03b0d8ec968d821d50100bea49e5467f43497dd7460c11a6873b215a1d",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:28d537b2-500b-4f88-8233-6e537e032850",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Der var russisk indblanding i brexit, siger premierminister",
+          "url": "https://www.dr.dk/nyheder/udland/der-var-russisk-indblanding-i-brexit-siger-premierminister",
+          "published_at": "2026-10-11T18:35:04.000000Z",
+          "content_hash": "sha256:30285f5a53a5d7a67ff771b114808eb5dd5212dd972048322a11b7bee732faa5",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/burnham-rusland-blandede-sig-i-brexit-afstemning",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Burnham: Rusland blandede sig i brexit-afstemning",
+          "url": "https://borsen.dk/nyheder/udland/burnham-rusland-blandede-sig-i-brexit-afstemning",
+          "published_at": "2026-10-11T20:05:42.000000Z",
+          "content_hash": "sha256:f74143dcf79c4dbd64517c655c4cc43dd6fde9199ebafb6f20134d6e6ce850d5",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "c6jdm3zggl0ko",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "PM says it is 'clear' Russia interfered with Brexit vote",
+          "url": "https://www.bbc.co.uk/news/articles/c6jdm3zggl0ko?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-11T18:00:30.000000Z",
+          "content_hash": "sha256:65194f61bbf17bf1907f995eb617157c14b718d9f75007c6599a5ca08b0d032d",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "4fcbf57e-c73e-4ced-be4a-5ecc6f4874de",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Russia ‘interfered’ in 2016 Brexit vote, says Burnham",
+          "url": "https://www.ft.com/content/4fcbf57e-c73e-4ced-be4a-5ecc6f4874de",
+          "published_at": "2026-10-11T18:01:02.000000Z",
+          "content_hash": "sha256:d113a24e0683562bbe072e79326ee80e2b9006bfdd60953ebd018ef01abafadb",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/politics/2026/oct/11/andy-burnham-russia-interfered-brexit-vote",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Andy Burnham says it is clear Russia interfered in Brexit referendum",
+          "url": "https://www.theguardian.com/politics/2026/oct/11/andy-burnham-russia-interfered-brexit-vote",
+          "published_at": "2026-10-11T15:33:15.000000Z",
+          "content_hash": "sha256:5c5ac4e177ec4f7d8462cffb23fa171f919618740d3dee68412b462e0709b53b",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "greenland-yeast-rationed-kujalleq",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Greenland grocery chain rations yeast after an alcohol ban",
+        "body": {
+          "standard": [
+            {
+              "text": "KNI Pilersuisoq, a Greenlandic grocery chain, has limited yeast to four packets per household a day after alcohol sales were stopped in Kujalleq, a municipality in southern Greenland. Yeast can be used to brew beer at home.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "dr"
+              ]
+            },
+            {
+              "text": "One customer bought 47 packets, Juliane Henningsen Heilmann, a KNI director, told Sermitsiaq, a Greenlandic outlet. Shops had begun to run out, she said, and KNI does not know when the limit will end.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Naalakkersuisut, Greenland's government, imposed the ban on 2 October at the request of Kujalleq's council. Malene Vahl Rasmussen, the mayor, wrote on Facebook that 'we can no longer defend the way we use alcohol'.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "KNI Pilersuisoq, a Greenlandic grocery chain, has limited yeast to four packets per household a day after alcohol sales were stopped in Kujalleq, a municipality in southern Greenland. One customer bought 47 packets.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "dr"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Greenland chain rations yeast",
+        "deck": "Households may buy four packets a day; one customer bought 47."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "bb37416a-7242-4c6f-89c2-4bf73ff454ed",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Begrænsning på køb af gær indført efter alkoholforbud i Grønland",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/begraensning-paa-koeb-af-gaer-indfoert-efter-alkoholforbud-i-groenland",
+          "published_at": "2026-10-11T09:51:04.000000Z",
+          "content_hash": "sha256:04813c62c0c41e9613c924fbf35caeb46fd966a77f73a602baceaff897dc075a",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:d89ec1f4-01ba-5264-88d9-14bffe5022ff",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Begrænsning på køb af gær indført efter alkoholforbud i Grønland",
+          "url": "https://www.berlingske.dk/danmark/begraensning-paa-koeb-af-gaer-indfoert-efter-alkoholforbud-i-groenland",
+          "published_at": "2026-10-11T10:20:45.000000Z",
+          "content_hash": "sha256:5a2485e65a5948b12c969bfb08d5b4d28b649c363d76005e75d4c7c7b9504f6f",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:4378d4c8-a006-4e8f-9c86-479494a62920",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Butikker bemærker stort salg af gær efter alkoholstop i Sydgrønland",
+          "url": "https://www.dr.dk/nyheder/seneste/butikker-bemaerker-stort-salg-af-gaer-efter-alkoholstop-i-sydgroenland",
+          "published_at": "2026-10-11T09:56:43.000000Z",
+          "content_hash": "sha256:b43b9046d46c2ff969eda6d3fbd4c35ec2d19eee10592310ec9811c87755ec8d",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "senators-urge-diesel-deal-reversal",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "World",
+      "copy": {
+        "headline": "Senators from Trump's own party urge him to reverse his Russian diesel deal",
+        "body": {
+          "standard": [
+            {
+              "text": "Seven American senators, four Republicans and three Democrats, urged Donald Trump on Sunday to reverse his deal for Russia to deliver just under five million tonnes of diesel to America. Trump announced it on Truth Social, his social media platform, after a call with Vladimir Putin, Russia's president, on Friday.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "dr"
+              ]
+            },
+            {
+              "text": "'Congress expressly banned imports of Russian energy in 2022 to prevent American dollars from financing Putin's brutal war against Ukraine,' the senators wrote. They add that the law required the administration to consult Congress and explain its decision, and it did neither.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "The deal comes just under a month before the midterm elections on 3 November.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Seven American senators from both parties urged Donald Trump on Sunday to reverse his deal for Russia to deliver just under five million tonnes of diesel, saying it breaks a 2022 law that bans Russian energy imports.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Senators urge Trump to drop Russian diesel deal",
+        "deck": "Four Republicans and three Democrats say the deal breaks a 2022 ban on Russian energy imports."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "7eb3bd30-79d0-4cd1-8992-9d30689c05ef",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Partifæller og modstandere kritiserer Trumps dieselaftale med Rusland",
+          "url": "https://www.kristeligt-dagblad.dk/udland/partifaeller-og-modstandere-kritiserer-trumps-dieselaftale-med-rusland",
+          "published_at": "2026-10-11T21:12:38.000000Z",
+          "content_hash": "sha256:f07f2b6bef6803a102296c9947fec40864fa2cdd8c56c97b429dbfb5aa645218",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:38782510-1a9a-55ba-b04d-290902bfab4f",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Partifæller og modstandere kritiserer Trumps dieselaftale med Rusland",
+          "url": "https://www.berlingske.dk/internationalt/partifaeller-og-modstandere-kritiserer-trumps-dieselaftale-med-rusland",
+          "published_at": "2026-10-11T21:12:47.000000Z",
+          "content_hash": "sha256:1bae9abab9b19c18f71e9f3be446cf92274572f5b34f6454f83987725c026c6b",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:42236d99-2a4f-48b2-91fe-82b206563fe6",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Partifæller vil stikke kæp i hjulet på Trumps dieselaftale med Rusland",
+          "url": "https://www.dr.dk/nyheder/udland/partifaeller-vil-stikke-kaep-i-hjulet-paa-trumps-dieselaftale-med-rusland",
+          "published_at": "2026-10-11T15:32:36.000000Z",
+          "content_hash": "sha256:570c30cef9f211b10d41b076a6a0a7f272547c154cb1bfe42c148f82d44ffc94",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11018599",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Også på den republikanske fløj kaldes Trumps dieselaftale med Putin en »alvorlig fejl«",
+          "url": "https://politiken.dk/internationalt/art11018599/Ogs%C3%A5-p%C3%A5-den-republikanske-fl%C3%B8j-kaldes-Trumps-dieselaftale-med-Putin-en-%C2%BBalvorlig-fejl%C2%AB",
+          "published_at": "2026-10-11T16:32:19.000000Z",
+          "content_hash": "sha256:b37ef251d0822108f9fb145eb5afda90700d1b781a8ecd7dfc13c66bd8ca5bb3",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "fuglebjerg-tesla-crash-five-hurt",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "Five hurt in crash near Næstved; Tesla driver charged with reckless driving",
+        "body": {},
+        "lede": {
+          "text": "Five people were hurt on Saturday evening near Fuglebjerg, north of Næstved, when a white Tesla whose driver is charged with reckless driving hit another car; police want witnesses.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr",
+            "tv2"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "5f20cb36-6e07-4c4d-97a3-6c421a278e56",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Politi efterlyser vidner til færdselsuheld med fem tilskadekomne",
+          "url": "https://www.kristeligt-dagblad.dk/politi-efterlyser-vidner-til-faerdselsuheld-med-fem-tilskadekomne",
+          "published_at": "2026-10-11T07:57:39.000000Z",
+          "content_hash": "sha256:16be0ad564d58338c37a3eedb2f2a6f9fb98b7ea72141a7cea1dbc6115bc327b",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:19542e70-f688-4be1-b7cb-71a087379ac7",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Politiet søger vidner: Fem personer kom til skade i færdselsuheld",
+          "url": "https://www.dr.dk/nyheder/indland/politiet-soeger-vidner-fem-personer-kom-til-skade-i-faerdselsuheld",
+          "published_at": "2026-10-11T09:06:37.000000Z",
+          "content_hash": "sha256:4f46ec170672cdd5d24ccd41c1bd23c83c8c42f8ec6f391e94e3668a2f4161fe",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/trafik/2026-10-11-politi-soeger-vidner-efter-faerdselsuheld-mistaenker-vanvidskoersel",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Tesla i kæmpe ulykke – politi og otte ambulancer på stedet",
+          "url": "https://nyheder.tv2.dk/trafik/2026-10-11-politi-soeger-vidner-efter-faerdselsuheld-mistaenker-vanvidskoersel",
+          "published_at": "2026-10-11T06:25:19.000000Z",
+          "content_hash": "sha256:bdb9e1aee290f25b6e5cd42ee2302ec27c39af4c1ea6f21c715e6a45e8722fde",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:fb05e5c7-274f-5741-8c52-617ba741eaaf",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Politi efterlyser vidner til færdselsuheld med fem tilskadekomne",
+          "url": "https://www.berlingske.dk/indland/politi-efterlyser-vidner-til-faerdselsuheld-med-fem-tilskadekomne",
+          "published_at": "2026-10-11T08:35:46.000000Z",
+          "content_hash": "sha256:be998490537c43ba0fa0807d9b96a1b714ce9d037147d8e0b199a1a6482ddb8f",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "frederikshavn-teen-stabbed-suspects-freed",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "Police release three men charged over stabbing of 17-year-old",
+        "body": {},
+        "lede": {
+          "text": "Police have released three men still charged with aggravated assault over the stabbing of a 17-year-old in Frederikshavn, a town in North Jutland, on Sunday; he is not in critical condition.",
+          "sources": [
+            "kristeligt_dagblad",
+            "tv2"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "bebfea87-2ff7-4bf0-936d-2441b035b794",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "17-årig stukket tre gange i maven med kniv i Frederikshavn",
+          "url": "https://www.kristeligt-dagblad.dk/17-aarig-stukket-tre-gange-i-maven-med-kniv-i-frederikshavn",
+          "published_at": "2026-10-11T11:56:50.000000Z",
+          "content_hash": "sha256:69a804ee28291fa27fb4e284fb0867df2eb0c81935b50d5166d765c2f5960bda",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "4d4cd1cd-d59b-423a-9883-d4f0c1414952",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Tre yngre mænd løslades efter knivstikkeri i Frederikshavn",
+          "url": "https://www.kristeligt-dagblad.dk/tre-yngre-maend-loeslades-efter-knivstikkeri-i-frederikshavn",
+          "published_at": "2026-10-11T23:08:32.000000Z",
+          "content_hash": "sha256:7188237eeff920e51ef437ae74834a1288814f7adab57998b71c0f8ed44f36e5",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/samfund/2026-10-11-ung-mand-bragt-paa-operationsbordet-efter-knivstikkeri",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Ung mand bragt på operationsbordet efter knivstikkeri",
+          "url": "https://nyheder.tv2.dk/samfund/2026-10-11-ung-mand-bragt-paa-operationsbordet-efter-knivstikkeri",
+          "published_at": "2026-10-11T18:02:50.000000Z",
+          "content_hash": "sha256:43464be3384da83b5a77f912dea937fa7e74450876f6609de95010536ba830a5",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:6431724b-0763-5bf7-a5cb-a31718cd81f6",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "17-årig stukket tre gange i maven med kniv i Frederikshavn",
+          "url": "https://www.berlingske.dk/indland/17-aarig-stukket-tre-gange-i-maven-med-kniv-i-frederikshavn",
+          "published_at": "2026-10-11T12:13:44.000000Z",
+          "content_hash": "sha256:48719a8c83d4a97a10faca210fbde4329f23270d8ee1ce517d5edb582e94e5d7",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "host-drama-reviews-four-stars",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Culture",
+      "copy": {
+        "headline": "Critics mostly praise Danish public television's new farm drama",
+        "body": {},
+        "lede": {
+          "text": "Politiken, Berlingske, Jyllands-Posten and Kristeligt Dagblad gave four stars or hearts to Høst, a farm inheritance drama that DR, the public broadcaster, premiered on Sunday; Børsen called it a disappointment.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "politiken",
+            "jp",
+            "borsen"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "c76071ab-c944-453f-b4f0-c65fac5b9ee3",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Anmeldere kalder ny DR-serie for god reklame for landbruget",
+          "url": "https://www.kristeligt-dagblad.dk/kultur/anmeldere-kalder-ny-dr-serie-god-reklame-landbruget",
+          "published_at": "2026-10-11T21:28:24.000000Z",
+          "content_hash": "sha256:1a012113ece86b88eea469a1bac49e5af9bbb38be3200a1201bd37e12cd3aeef",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:8b0aba09-728f-578a-907c-ccf7e9f14cf9",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Ny DR-serie: Landbruget kunne ikke have ønsket sig en bedre reklame",
+          "url": "https://www.berlingske.dk/skaerm/ny-dr-serie-landbruget-kunne-ikke-have-oensket-sig-en-bedre-reklame",
+          "published_at": "2026-10-11T19:00:04.000000Z",
+          "content_hash": "sha256:b6a5beb131af0ea9ad2eff488468745494df65543fa814fd00c6e81772d1e45b",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11001100",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "DR's nye søndagsserie kunne være sponsoreret af Landbrug & Fødevarer",
+          "url": "https://politiken.dk/kultur/film_og_tv/tvanmeldelser/art11001100/DRs-nye-s%C3%B8ndagsserie-kunne-v%C3%A6re-sponsoreret-af-Landbrug-F%C3%B8devarer",
+          "published_at": "2026-10-11T19:07:14.000000Z",
+          "content_hash": "sha256:7e3177c173a9a616b5579f12ccb110c843972627fc98d735c150cd25ae35def9",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19718434",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Hele familien Feldum er samlet til Gorms 65-års fødselsdag. Så smider han en bombe",
+          "url": "https://jyllands-posten.dk/kultur/film/ECE19718434/hoest-ligner-naesten-en-reklame-for-dansk-landbrug-heldigvis-er-familiedramaet-mere-beskidt/",
+          "published_at": "2026-10-11T19:35:58.000000Z",
+          "content_hash": "sha256:8b6de273f9cd139430b6a9a1ec127cedb5ac42b6f20addd5384c0d0f44d581a5",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/pleasure/tre-soskende-kaemper-om-100-mio-kr-i-ny-dr-serie-hvordan-kan-det-blive-sa-kedeligt",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Tre søskende kæmper om 100 mio. kr. i ny DR-serie. Hvordan kan det blive så kedeligt?",
+          "url": "https://borsen.dk/nyheder/pleasure/tre-soskende-kaemper-om-100-mio-kr-i-ny-dr-serie-hvordan-kan-det-blive-sa-kedeligt",
+          "published_at": "2026-10-11T12:00:00.000000Z",
+          "content_hash": "sha256:ab49ed90df411a28ad417684b0f810e62f120b6511d13abf9f8006c097e31233",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "kastrup-villa-burglary-600000",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "Two men remanded over theft of bags and jewellery worth 600,000 kroner from villa for sale",
+        "body": {},
+        "lede": {
+          "text": "Two men, 19 and 21, were remanded for 23 days on Sunday, charged with stealing bags, jewellery and watches worth more than 600,000 kroner from a villa for sale in Kastrup, a Copenhagen suburb.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "tv2"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "db4313a3-3583-4b38-8e88-4447dcf3a11f",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Tasker og smykker til 600.000 kroner stjålet fra villa til salg",
+          "url": "https://www.kristeligt-dagblad.dk/tasker-og-smykker-til-600000-kroner-stjaalet-fra-villa-til-salg",
+          "published_at": "2026-10-11T09:13:35.000000Z",
+          "content_hash": "sha256:0320d9118007d521d812b3fa645f05f632a6a031306369d665eae20076ce4c87",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:3fee25ae-a404-5e38-84fc-0a844d2bccae",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Tasker og smykker til 600.000 kroner stjålet fra villa til salg",
+          "url": "https://www.berlingske.dk/indland/tasker-og-smykker-til-600000-kroner-stjaalet-fra-villa-til-salg",
+          "published_at": "2026-10-11T11:12:43.000000Z",
+          "content_hash": "sha256:3b8a0053df7db35d7149cd82860c29389c7cdda0e536694e388cb7169dc391e9",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/krimi/2026-10-11-tyve-toemmer-hus-til-salg-for-vaerdier-for-600000",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Tyve tømmer hus til salg for værdier for 600.000",
+          "url": "https://nyheder.tv2.dk/krimi/2026-10-11-tyve-toemmer-hus-til-salg-for-vaerdier-for-600000",
+          "published_at": "2026-10-11T09:46:04.000000Z",
+          "content_hash": "sha256:aee959b2b8a23e8d7737796325bcd336f038db97b36d3623519ca70cf0fa8a80",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "fallen-tree-halts-funen-trains",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Transport",
+      "copy": {
+        "headline": "Fallen tree halts trains between Funen and Jutland",
+        "body": {},
+        "lede": {
+          "text": "A fallen tree stopped trains between Odense, the largest city on Funen, and Fredericia, a town in eastern Jutland; Funen Police said early on Monday it expected them to run again from about 06:00.",
+          "sources": [
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:da1dc963-bc28-56ae-8e85-9cc5dd339dd2",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Væltet træ indstiller togdrift mellem Odense og Fredericia",
+          "url": "https://www.berlingske.dk/indland/vaeltet-trae-indstiller-togdrift-mellem-odense-og-fredericia",
+          "published_at": "2026-10-12T03:25:47.000000Z",
+          "content_hash": "sha256:b986192636ee7d9c55faea44b48dc598339763015d805abf30d8de3ac2f7cc17",
+          "primary": true
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "business-preparedness-223-firms",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Defence",
+      "copy": {
+        "headline": "Business crisis network more than triples its membership in under a year",
+        "body": {},
+        "lede": {
+          "text": "Virksomhedsberedskabet, an organisation that coordinates private companies' resources for use in a crisis, has grown from 63 to 223 members in just over 10 months; it aims for more than 1,000 by 2029.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "77ee6619-9fe1-499e-bfa4-604f75e66977",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Virksomhedsberedskabet er mere end tredoblet på under et år",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/virksomhedsberedskabet-er-mere-end-tredoblet-paa-under-et-aar",
+          "published_at": "2026-10-11T10:25:06.000000Z",
+          "content_hash": "sha256:3686748356a5c794b4fb750f6676c6fb81120a63ef5634d865f0381f3edeb2fa",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:01d56e0f-157a-58de-89e4-f6c64031b237",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Virksomhedsberedskabet er mere end tredoblet på under et år",
+          "url": "https://www.berlingske.dk/danmark/virksomhedsberedskabet-er-mere-end-tredoblet-paa-under-et-aar",
+          "published_at": "2026-10-11T10:26:46.000000Z",
+          "content_hash": "sha256:5c60497b59c0ca6cf4d5003b2bb35e2799a5c7e3822b5f0408a6250d71cc0584",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "greenland-base-size-not-agreed",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Defence",
+      "copy": {
+        "headline": "Denmark corrects Trump: size of American bases in Greenland not agreed",
+        "body": {},
+        "lede": {
+          "text": "Denmark's Foreign Ministry told Jyllands-Posten that no agreement has been reached on the size of the two American bases in Greenland that Donald Trump has called 'very large'.",
+          "sources": [
+            "jp"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "jp",
+          "source_id": "19716415",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Danmarks udenrigsministerium går i rette med Trump: Ingen aftale om størrelsen på USA's »meget store« baser i Grønland",
+          "url": "https://jyllands-posten.dk/politik/ECE19716415/danmarks-udenrigsministerium-gaar-i-rette-med-donald-trumps-udlaegning/",
+          "published_at": "2026-10-12T03:00:00.000000Z",
+          "content_hash": "sha256:2eb50b922ff4e794b006397063c05db42a2baff60f9ec42fab03e5211f472fc9",
+          "primary": true
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "pope-leo-lung-nodule-surgery",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Pope Leo will have surgery to remove a growth on his lung",
+        "body": {},
+        "lede": {
+          "text": "Pope Leo, 71, will have surgery this week to remove a small growth on his lung found at a very early stage, he told pilgrims on Sunday; the Vatican expects about a week's recovery.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr",
+            "guardian",
+            "nytimes"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "0a3ffde5-79be-4775-9137-d447ce5f60d4",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Pave Leo skal opereres efter fund af lungeknude",
+          "url": "https://www.kristeligt-dagblad.dk/udland/pave-leo-skal-opereres-efter-fund-af-lungeknude",
+          "published_at": "2026-10-11T10:40:54.000000Z",
+          "content_hash": "sha256:59a3c929a1981867aa21ab9c497fc5b6676a155fd96cb7b0f0202df0f31558f6",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:0795381c-6ce9-5912-b1cc-1a87ed95edb0",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Pave Leo skal opereres efter fund af lungeknude",
+          "url": "https://www.berlingske.dk/internationalt/pave-leo-skal-opereres-efter-fund-af-lungeknude",
+          "published_at": "2026-10-11T11:15:45.000000Z",
+          "content_hash": "sha256:5e0ad41412963291902c371e3771ebc43c2de8f754d51769da4e9d93c0040fa4",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:60cc5a18-a8ba-4964-b86b-00d17d505ea2",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Der er fundet en lille knude i lungen på pave Leo",
+          "url": "https://www.dr.dk/nyheder/udland/der-er-fundet-en-lille-knude-i-lungen-paa-pave-leo",
+          "published_at": "2026-10-11T10:36:44.000000Z",
+          "content_hash": "sha256:accd004473cfdb3303f4e768a4964d490461c3dc8c30e2396c591bd3d98240e5",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "c6m2dnngvw8xo",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Pope Leo to have surgery after lump found on lung",
+          "url": "https://www.bbc.co.uk/news/articles/c6m2dnngvw8xo?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-11T13:38:55.000000Z",
+          "content_hash": "sha256:bee4e3285b759bbcfb864f46821d348e0c9885a069f9bb7a6ab9827e0ddbbc15",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/11/pope-leo-surgery-remove-nodule-lung",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Pope Leo to have surgery to remove nodule on his lung",
+          "url": "https://www.theguardian.com/world/2026/oct/11/pope-leo-surgery-remove-nodule-lung",
+          "published_at": "2026-10-11T11:55:26.000000Z",
+          "content_hash": "sha256:d396954f2f460e966ab5fcde8c34b77109207b2d0a43ecaf44dfdbf70b1cfe86",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/11/world/europe/pope-leo-lung-surgery.html",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Pope Leo Will Have Surgery to Remove Growth on Lung",
+          "url": "https://www.nytimes.com/2026/10/11/world/europe/pope-leo-lung-surgery.html",
+          "published_at": "2026-10-11T20:15:09.000000Z",
+          "content_hash": "sha256:5ea8eca02c7a4bc526e9fbd26eb4162333756e0c7d82b678f8790f682efb048e",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/world/2026/10/11/pope-will-have-surgery-remove-nodule-his-lung-vatican-says/",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Pope will have surgery after doctors discover nodule in his lung",
+          "url": "https://www.washingtonpost.com/world/2026/10/11/pope-will-have-surgery-remove-nodule-his-lung-vatican-says/",
+          "published_at": "2026-10-11T11:43:02.000000Z",
+          "content_hash": "sha256:aa10cc074bb3212838e9ebf0bf661554529744a3a8d0278f66e7f6ce0eb6fcca",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "tusk-attack-plot-suspect-held",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Europe",
+      "copy": {
+        "headline": "Poland detains man suspected of plotting to attack Tusk",
+        "body": {},
+        "lede": {
+          "text": "Polish police on Sunday detained a man suspected of planning an attack on Donald Tusk, Poland's prime minister, and Wladyslaw Kosiniak-Kamysz, the defence minister.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr",
+            "guardian"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "c5ffb3fc-f96f-4e87-8d79-53de4bbb1ff9",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Polsk premierminister kan have været mål for muligt attentat",
+          "url": "https://www.kristeligt-dagblad.dk/udland/polsk-premierminister-kan-have-vaeret-maal-muligt-attentat",
+          "published_at": "2026-10-11T12:31:24.000000Z",
+          "content_hash": "sha256:b953e987edf419f5a58407589acfa876a4863d9e121cb8984d803c48f2525286",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:817a977a-2a7a-5504-afef-92961a410248",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Polsk premierminister kan have været mål for muligt attentat",
+          "url": "https://www.berlingske.dk/internationalt/polsk-premierminister-kan-have-vaeret-maal-for-muligt-attentat",
+          "published_at": "2026-10-11T15:13:46.000000Z",
+          "content_hash": "sha256:b8df3b6fac757d8ebd544d46f0ab9d424c6116ec7f32f8fd75ba089f30fa0f59",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:d6ce3ee8-90da-4060-bd7f-5bd50da82574",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Polsk politi har anholdt mand efter trusler mod Donald Tusk",
+          "url": "https://www.dr.dk/nyheder/seneste/polsk-politi-har-anholdt-mand-efter-trusler-mod-donald-tusk",
+          "published_at": "2026-10-11T15:21:48.000000Z",
+          "content_hash": "sha256:ac1422e247b4ecfbfa885566e911288f124901068766aaeb6febe28b07898132",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/polsk-talsperson-vi-har-informationer-om-muligt-angreb-mod-tusk",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Polsk talsperson: Vi har informationer om muligt angreb mod Tusk",
+          "url": "https://borsen.dk/nyheder/udland/polsk-talsperson-vi-har-informationer-om-muligt-angreb-mod-tusk",
+          "published_at": "2026-10-11T09:59:24.000000Z",
+          "content_hash": "sha256:81bb5e2a6272ef6736b3cdd8b0e14787fff7e840957a7cee192839498e508752",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "c6n9rvynl5p5o",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Poland detains man suspected of planning assassination of PM Tusk",
+          "url": "https://www.bbc.co.uk/news/articles/c6n9rvynl5p5o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-11T17:27:24.000000Z",
+          "content_hash": "sha256:6843e821b18ddb29c2b67242979dda09d79011515c3e05c6f8aa2be17aa4b742",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/11/poland-possible-plot-attack-prime-minister-donald-tusk",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Donald Tusk says man accused of plotting to kill him detained",
+          "url": "https://www.theguardian.com/world/2026/oct/11/poland-possible-plot-attack-prime-minister-donald-tusk",
+          "published_at": "2026-10-11T16:01:25.000000Z",
+          "content_hash": "sha256:7d527c0cbb3eb2f07aa04570b043e658d00cfbaf167d319516d83eeb2aef0a1d",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "houthis-claim-riyadh-airport",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Houthis claim Riyadh airport strike that killed at least 12",
+        "body": {},
+        "lede": {
+          "text": "On Sunday Yemen's Iran-aligned Houthis claimed the strike that killed at least 12 people and wounded 309 at the airport in Riyadh, Saudi Arabia's capital, on Saturday; the airport was hit again on Sunday.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr",
+            "guardian"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "ae52680c-5cfc-4193-8aec-3914003b406a",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Houthibevægelsen tager ansvar for dødeligt lufthavnsangreb",
+          "url": "https://www.kristeligt-dagblad.dk/udland/houthibevaegelsen-tager-ansvar-doedeligt-lufthavnsangreb",
+          "published_at": "2026-10-11T16:21:26.000000Z",
+          "content_hash": "sha256:415a03b68ad99213a394a2d80509ff84688b6f6d939be765f740fb6f8bd8ecbb",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:96cb85f8-c737-5bef-973f-61f1cf06f269",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Houthibevægelsen tager ansvar for dødeligt lufthavnsangreb",
+          "url": "https://www.berlingske.dk/internationalt/houthibevaegelsen-tager-ansvar-for-doedeligt-lufthavnsangreb",
+          "published_at": "2026-10-11T16:22:44.000000Z",
+          "content_hash": "sha256:02bab461ca60d2336320465b00e216298150a64e0093ff4994c0277f941756f7",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:cb3740b8-3902-4a55-bea6-bf7958c96816",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Houthierne tager ansvar for lufthavnsangreb med 12 dræbte i går",
+          "url": "https://www.dr.dk/nyheder/seneste/houthierne-tager-ansvar-lufthavnsangreb-med-12-draebte-i-gaar",
+          "published_at": "2026-10-11T16:11:44.000000Z",
+          "content_hash": "sha256:ef04181e8654d64525a8f340794f9efed1c8f1f921fba45e3c4064662e9face3",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/live/2026/oct/11/saudi-arabia-riyadh-airport-houthis-yemen-attack-blockade-trump-latest-news-updates",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Middle East crisis: Riyadh airport hit again as Houthis claim attacks, including strike that killed 12 – as it happened",
+          "url": "https://www.theguardian.com/world/live/2026/oct/11/saudi-arabia-riyadh-airport-houthis-yemen-attack-blockade-trump-latest-news-updates",
+          "published_at": "2026-10-11T18:03:22.000000Z",
+          "content_hash": "sha256:66bb5b3f1e154aa8b78c562815e6af4310e36b0ff8ad64e548fd1eb47c2421b7",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "us-probes-tv-boycott-of-trump",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "US investigates TV networks over boycott of Trump coverage",
+        "body": {},
+        "lede": {
+          "text": "The US Justice Department is investigating whether ABC, CBS, CNN, NBC and Fox News broke antitrust law by halting their shared coverage of Trump after the White House barred CNN and two other outlets.",
+          "sources": [
+            "kristeligt_dagblad",
+            "guardian",
+            "bbc"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "1ded0667-9c4d-45d9-ad25-c66226b41329",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Amerikansk ministerium efterforsker tv-stationer efter boykot af Trump",
+          "url": "https://www.kristeligt-dagblad.dk/udland/amerikansk-ministerium-efterforsker-tv-stationer-efter-boykot-af-trump",
+          "published_at": "2026-10-11T02:05:25.000000Z",
+          "content_hash": "sha256:cf7f75f61dfe2319a3782aeac205696e25f0494265466bcd11eba2480b17b0a8",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:b16cf339-fdf7-53a5-8530-11631abad47b",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Amerikansk ministerium efterforsker tv-stationer efter boykot af Trump",
+          "url": "https://www.berlingske.dk/internationalt/amerikansk-ministerium-efterforsker-tv-stationer-efter-boykot-af-trump",
+          "published_at": "2026-10-11T02:15:45.000000Z",
+          "content_hash": "sha256:951055d5d3ef8ee5d409c48be1ca0d0232bbe4dfe1b87aa0af1765947504e46a",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:6ba798b0-2810-4eb1-9edc-9d54deab2d99",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Ministerium efterforsker tv-stationers boykot af Trump",
+          "url": "https://www.dr.dk/nyheder/udland/ministerium-efterforsker-tv-stationers-boykot-af-trump",
+          "published_at": "2026-10-11T06:36:54.000000Z",
+          "content_hash": "sha256:7ba3fbae9fbb41b65b9ceb7e6b8f178291835ce0dc54c5302c3abcaaab9078f4",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "c9vgregzk6gro",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "US justice department investigates TV networks over Trump pool coverage",
+          "url": "https://www.bbc.co.uk/news/articles/c9vgregzk6gro?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-11T05:05:43.000000Z",
+          "content_hash": "sha256:6da57f1fed234ae21bb647488717aae53df94fe73452272d765f76982e5e79d3",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "3004a030-d64e-4ff7-a70d-ea379b4784af",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "US justice department probes TV networks over Trump pool coverage",
+          "url": "https://www.ft.com/content/3004a030-d64e-4ff7-a70d-ea379b4784af",
+          "published_at": "2026-10-11T04:28:25.000000Z",
+          "content_hash": "sha256:3eb856674c1ba055f9ee7da1026106183324d3d386cad5b3095f4dcb0e6627f0",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/us-news/2026/oct/11/justice-department-investigates-tv-networks-trump-pool-coverage",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "US justice department investigating TV networks over Trump pool coverage",
+          "url": "https://www.theguardian.com/us-news/2026/oct/11/justice-department-investigates-tv-networks-trump-pool-coverage",
+          "published_at": "2026-10-11T03:15:05.000000Z",
+          "content_hash": "sha256:edca700b88d83f757db7b4ded18433d20c8e61a722f2615432532c2590f5f375",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/10/business/media/trump-justice-department-tv-networks.html",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Justice Dept. Is Investigating TV Networks Over Trump Pool Coverage",
+          "url": "https://www.nytimes.com/2026/10/10/business/media/trump-justice-department-tv-networks.html",
+          "published_at": "2026-10-11T02:40:53.000000Z",
+          "content_hash": "sha256:d232a93dbb22bd03aca8aa4ecb5d644dd08051f5c83d147204f83cf293e4e57f",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/business/2026/10/10/doj-investigating-five-tv-networks-over-white-house-pool-coverage/",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "DOJ investigating five TV networks over White House pool coverage",
+          "url": "https://www.washingtonpost.com/business/2026/10/10/doj-investigating-five-tv-networks-over-white-house-pool-coverage/",
+          "published_at": "2026-10-11T02:56:14.000000Z",
+          "content_hash": "sha256:570c04919b17e742052f474ee242616aaec0dc5557f5bd492ae92f3555e8d9cf",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003966839",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Justice Department Probes TV Networks Over Suspension of Trump Press-Pool Coverage",
+          "url": "https://www.wsj.com/business/media/justice-department-probes-tv-networks-over-suspension-of-trump-press-pool-coverage-a8bc65ce",
+          "published_at": "2026-10-11T12:50:00.000000Z",
+          "content_hash": "sha256:eeb6f4d9db0d696c3dbbc5da12177c96434592133f2b50b34b1dfb4d8c87a2e3",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "sudan-gold-mine-strike-72-dead",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Air strikes kill 72 at gold mine on Sudan-Egypt border, rights group says",
+        "body": {},
+        "lede": {
+          "text": "Air strikes on Saturday killed 72 people at a gold mine on the border between Sudan and Egypt, according to the Emergency Lawyers, a Sudanese human-rights group, which blames Egypt's air force.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "12c3451d-e1ef-4fb6-8584-172ac7c9184d",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Sudansk ngo: 72 personer dræbt i luftangreb ved guldmine",
+          "url": "https://www.kristeligt-dagblad.dk/udland/sudansk-ngo-72-personer-draebt-i-luftangreb-ved-guldmine",
+          "published_at": "2026-10-11T17:07:06.000000Z",
+          "content_hash": "sha256:c644bac38a2f7cf0508bb7f2e2884e129367a1eb71c8d3a12d81d871376bc3a4",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:e58870cd-011e-5b92-b11d-fdc6b8c196f2",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Sudansk ngo: 72 personer dræbt i luftangreb ved guldmine",
+          "url": "https://www.berlingske.dk/internationalt/sudansk-ngo-72-personer-draebt-i-luftangreb-ved-guldmine",
+          "published_at": "2026-10-11T18:26:43.000000Z",
+          "content_hash": "sha256:b7ba602f54f89a50cf3a7f30adf7b256d5b113ad5714c319bc911db3d10db15a",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cqy43vrk8wv8o",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Dozens of gold prospectors killed in strikes on Egypt-Sudan border, rights group says",
+          "url": "https://www.bbc.co.uk/news/articles/cqy43vrk8wv8o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-11T21:12:44.000000Z",
+          "content_hash": "sha256:4d909357158a09ef555d69ffbfc25830d6f40489d8663767ad95facfc81ff8c1",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "djibouti-migrant-boat-capsizes",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "At least 139 migrants die as boat capsizes off Djibouti",
+        "body": {},
+        "lede": {
+          "text": "At least 139 migrants, 15 of them children, died when a boat carrying 305 people to Yemen capsized off Djibouti on Thursday night, the UN's migration agency says; 84 are still missing.",
+          "sources": [
+            "berlingske",
+            "guardian",
+            "bbc"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "af4104e1-76db-415d-bfdf-9ab630db896d",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "FN: Mindst 109 migranter mister livet i kæntring på vej mod Yemen",
+          "url": "https://www.kristeligt-dagblad.dk/udland/fn-mindst-109-migranter-mister-livet-i-kaentring-paa-vej-mod-yemen",
+          "published_at": "2026-10-11T10:21:20.000000Z",
+          "content_hash": "sha256:186b4824e07dae7fd2a0ac1bfa1034e79f1ee8dd50619541107c88810bb68919",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:0b920b6c-e7bd-5e1f-b3d8-0506af6374e4",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "FN: Mindst 139 migranter mister livet i kæntring på vej mod Yemen",
+          "url": "https://www.berlingske.dk/internationalt/fn-mindst-139-migranter-mister-livet-i-kaentring-paa-vej-mod-yemen",
+          "published_at": "2026-10-11T14:48:46.000000Z",
+          "content_hash": "sha256:a6d9da2016153d5843142c9a88c237a9f8d41a79b2fe7dc1a530f4cce22eb692",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:68552aa4-6fb5-4c9f-a4b9-3189e7809f1e",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Over 100 migranter mister livet i bådforlis",
+          "url": "https://www.dr.dk/nyheder/seneste/over-100-migranter-mister-livet-i-baadforlis",
+          "published_at": "2026-10-11T11:29:09.000000Z",
+          "content_hash": "sha256:382b2ecdb6531ba349f7dc9bb4e3dca99c902dc844569afb913628c68bcec2a4",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cwy7lxx60dg5o",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Children among 139 dead after boat capsizes off Djibouti, UN says",
+          "url": "https://www.bbc.co.uk/news/articles/cwy7lxx60dg5o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-11T15:32:23.000000Z",
+          "content_hash": "sha256:91ad20108c32e7f9c4a08c3b2d3d2e62f7bc5d086d7ae27a2d7dcd4450e1bfac",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/11/deaths-migrant-boat-capsizes-djibouti",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "At least 139 dead including children after migrant boat capsizes off Djibouti",
+          "url": "https://www.theguardian.com/world/2026/oct/11/deaths-migrant-boat-capsizes-djibouti",
+          "published_at": "2026-10-11T13:56:47.000000Z",
+          "content_hash": "sha256:a77a7281b4ac9d669de355bccfc9a3d38b28474c2432658c08f697ce403155aa",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/11/world/africa/migrant-boat-capsize-djibouti-dead-yemen.html",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Over 100 Migrants Are Dead After Boat Capsizes Near Djibouti",
+          "url": "https://www.nytimes.com/2026/10/11/world/africa/migrant-boat-capsize-djibouti-dead-yemen.html",
+          "published_at": "2026-10-11T18:58:00.000000Z",
+          "content_hash": "sha256:68c88a028c204c11a7e8e400e545fd74ac8049121037e616a77ffbe1008ea408",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "klaris-gravel-world-champion",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Sport",
+      "copy": {
+        "headline": "Dane wins gravel cycling world title after the favourite crashes",
+        "body": {},
+        "lede": {
+          "text": "Magnus Bak Klaris, a Dane, won the world title in gravel, cycle racing on unpaved roads, on Sunday morning after the favourite crashed; Mads Würtz Schmidt, a Danish cyclist, finished fourth.",
+          "sources": [
+            "berlingske",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:e78e9b9b-65c3-5b98-8245-a9fee455f741",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "Magnus Bak Klaris er ny verdensmester i gravel",
+          "url": "https://www.berlingske.dk/sport/magnus-bak-klaris-er-ny-verdensmester-i-gravel",
+          "published_at": "2026-10-11T06:47:45.000000Z",
+          "content_hash": "sha256:47b629005c44cef878c4d6a22149b783641e739bd7824d8657bb7ef3cff44c32",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:64cd1279-294d-4c0e-ae80-742e00662837",
+          "input_id": "export-2026-10-12-0330",
+          "original_title": "'Vanvittig overraskelse': Dansker vinder VM efter favorittens styrt",
+          "url": "https://www.dr.dk/sporten/cykling/vanvittig-overraskelse-dansk-hjaelperytter-vinder-vm-efter-kaptajnens-styrt",
+          "published_at": "2026-10-11T07:16:57.000000Z",
+          "content_hash": "sha256:9fb625656db1516de2b037d16546b3fe3e6681dc36c456e6668e7e5195cda8d6",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    }
+  ],
+  "fit_policy": {
+    "allow_role_fallback": true,
+    "allow_composition_substitution": true,
+    "reserve_story_ids": [],
+    "omittable_story_ids": [
+      "hummelgaard-rejects-irish-budget",
+      "burnham-says-russia-meddled-brexit",
+      "greenland-yeast-rationed-kujalleq",
+      "senators-urge-diesel-deal-reversal",
+      "fuglebjerg-tesla-crash-five-hurt",
+      "frederikshavn-teen-stabbed-suspects-freed",
+      "host-drama-reviews-four-stars",
+      "kastrup-villa-burglary-600000",
+      "fallen-tree-halts-funen-trains",
+      "business-preparedness-223-firms",
+      "greenland-base-size-not-agreed",
+      "pope-leo-lung-nodule-surgery",
+      "tusk-attack-plot-suspect-held",
+      "houthis-claim-riyadh-airport",
+      "us-probes-tv-boycott-of-trump",
+      "sudan-gold-mine-strike-72-dead",
+      "djibouti-migrant-boat-capsizes",
+      "klaris-gravel-world-champion"
+    ]
+  }
+}

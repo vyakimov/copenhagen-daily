@@ -1,0 +1,621 @@
+{
+  "edition": {
+    "id": "2026-10-12-morning",
+    "number": 7,
+    "name": "Monday edition",
+    "date": "2026-10-12",
+    "cutoff_at": "2026-10-12T03:30:00.000000Z",
+    "checked_from": "2026-10-09T03:30:00.000000Z",
+    "input_id": "export-2026-10-12-0330",
+    "presentation": {
+      "emphasis": "many_stories",
+      "ear_right": "Inside: Hummelgaard rejects the Irish EU budget, Burnham on Russia and Brexit, Greenland rations yeast"
+    },
+    "note": "Built from headlines and RSS descriptions published between 05:30 on 9 October and 05:30 on 12 October, Copenhagen time. All 132 feeds at 17 publishers polled."
+  },
+  "stories": [
+    {
+      "id": "trump-claims-energy-ceasefire",
+      "role": "lead",
+      "kicker": "World",
+      "sources": [
+        357,
+        356,
+        208,
+        185,
+        85,
+        224,
+        294,
+        89,
+        18,
+        104,
+        166
+      ],
+      "headline": "Trump says Russia and Ukraine have agreed an energy ceasefire",
+      "headline_short": "Trump claims Ukraine energy ceasefire",
+      "deck": "Zelenskyy says it was news to him but Ukraine will agree if Russia does; Moscow has not confirmed.",
+      "extended": [
+        [
+          "Donald Trump said on Sunday that Russia and Ukraine had agreed an 'energy ceasefire' with immediate effect. 'Both parties have agreed,' he wrote on social media, without saying what the truce covers. Russia has yet to confirm it.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "guardian",
+            "bbc",
+            "wsj"
+          ]
+        ],
+        [
+          "Volodymyr Zelenskyy, Ukraine's president, said the announcement was 'news to me' but that Ukraine would agree if Russia did.",
+          [
+            "kristeligt_dagblad",
+            "guardian",
+            "dr",
+            "bbc"
+          ]
+        ],
+        [
+          "Zelenskyy said Russian strikes later hit power plants in Kyiv, causing outages in the capital, and in Kharkiv, Ukraine's second-largest city. Ukrainian officials said Russian attacks killed six people on Sunday, three of them at a Kharkiv grocery store.",
+          [
+            "guardian",
+            "borsen"
+          ]
+        ],
+        [
+          "Rosatom, Russia's state nuclear company, expects a ceasefire soon at the Zaporizhzhia nuclear power plant, a plant held by Russia, so that repairs can be made.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "On Friday Trump had announced a deal to buy Russian diesel and temporarily ease American sanctions. Zelenskyy called it a 'weak decision'. On Saturday Trump accused him of defying orders not to attack Russian oil refineries and said Ukraine needed a new president.",
+          [
+            "kristeligt_dagblad",
+            "guardian",
+            "wsj"
+          ]
+        ],
+        [
+          "'It's up to our society, up to our people to choose one or another leader,' Zelenskyy told America's ABC News.",
+          [
+            "guardian"
+          ]
+        ]
+      ],
+      "standard": [
+        [
+          "Donald Trump said on Sunday that Russia and Ukraine had agreed an 'energy ceasefire' with immediate effect. 'Both parties have agreed,' he wrote on social media, without saying what the truce covers. Russia has yet to confirm it.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "guardian",
+            "bbc",
+            "wsj"
+          ]
+        ],
+        [
+          "Volodymyr Zelenskyy, Ukraine's president, said the announcement was 'news to me' but that Ukraine would agree if Russia did. He said Russian strikes later hit power plants in Kyiv and in Kharkiv, Ukraine's second-largest city.",
+          [
+            "kristeligt_dagblad",
+            "guardian",
+            "dr",
+            "borsen"
+          ]
+        ],
+        [
+          "On Friday Trump had announced a deal to buy Russian diesel, which Zelenskyy called a 'weak decision'. On Saturday Trump said Ukraine needed a new president.",
+          [
+            "kristeligt_dagblad",
+            "guardian"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Donald Trump said on Sunday that Russia and Ukraine had agreed an 'energy ceasefire' with immediate effect. Russia has yet to confirm it. Volodymyr Zelenskyy, Ukraine's president, called it 'news to me' but said Ukraine would agree if Russia did.",
+          [
+            "kristeligt_dagblad",
+            "guardian",
+            "bbc"
+          ]
+        ]
+      ],
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "Effective immediately, there is an energy ceasefire in the war between Russia and Ukraine. Both parties have agreed.",
+          "attribution": "Donald Trump, US president",
+          "attribution_source": "guardian"
+        },
+        {
+          "kind": "timeline",
+          "title": "How it unfolded",
+          "rows": [
+            {
+              "date": "Friday",
+              "text": "Trump announces a deal to buy Russian diesel"
+            },
+            {
+              "date": "Saturday",
+              "text": "Trump says Ukraine needs a new president"
+            },
+            {
+              "date": "Sunday",
+              "text": "Trump declares an energy ceasefire on social media"
+            },
+            {
+              "date": "Sunday",
+              "text": "Zelenskyy reports strikes on power plants in Kyiv and Kharkiv"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hummelgaard-rejects-irish-budget",
+      "role": "secondary",
+      "kicker": "Europe",
+      "sources": [
+        650,
+        663,
+        627,
+        642
+      ],
+      "headline": "Denmark's finance minister says Ireland's EU budget plan cuts the wrong things",
+      "headline_short": "Denmark rejects Irish EU budget plan",
+      "deck": "The plan trims the overall budget by 8 per cent but farming and regional aid by only 3; Germany objects too.",
+      "standard": [
+        [
+          "Peter Hummelgaard, Denmark's finance minister, has rejected Ireland's proposal for the EU's budget for 2028 to 2034. 'The budget is still too high, and the proposed cuts have the wrong focus,' he said. Germany has also rejected it.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "dr",
+            "berlingske"
+          ]
+        ],
+        [
+          "Ireland, which holds the EU's rotating presidency, presented the plan on Saturday. It cuts the European Commission's draft by 8 per cent, but farming, fisheries and regional development by only 3 per cent; competitiveness, prosperity and security lose 13 per cent.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Hummelgaard wants less spent on farming and regional aid. Ireland is among about 20 countries that want such transfers kept high; Thomas Byrne, its Europe minister, said Ireland had been 'an honest broker'.",
+          [
+            "kristeligt_dagblad",
+            "borsen"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Peter Hummelgaard, Denmark's finance minister, has rejected the plan from Ireland, which holds the EU's rotating presidency, for the 2028 to 2034 budget, saying it is still too high and cuts the wrong things. It trims the European Commission's draft by 8 per cent but farming, fisheries and regional development by only 3 per cent.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "dr"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "burnham-says-russia-meddled-brexit",
+      "role": "secondary",
+      "kicker": "Europe",
+      "sources": [
+        161,
+        108,
+        168,
+        125,
+        196,
+        195,
+        303
+      ],
+      "headline": "Britain's prime minister says Russia interfered in the Brexit vote",
+      "headline_short": "UK leader says Russia meddled in Brexit",
+      "deck": "Andy Burnham is the first British prime minister to say so directly; Russia has not commented.",
+      "standard": [
+        [
+          "Andy Burnham, Britain's prime minister, says it is clear Russia interfered in the 2016 Brexit referendum, the first time a British prime minister has said so directly.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "guardian"
+          ]
+        ],
+        [
+          "Burnham said he asked about it when he took office and got 'the clear answer that yes, there was'. He did not say how, or whether it worked. 'I think we have been too passive about it,' he told The Rest Is Politics, a podcast.",
+          [
+            "kristeligt_dagblad",
+            "bbc"
+          ]
+        ],
+        [
+          "Russia, which has not commented, has denied involvement before and accused Britain of 'anti-Russian hysteria', Reuters reports. Boris Johnson, a former prime minister who campaigned for Brexit, said in 2020 that there was no evidence of interference.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Andy Burnham, Britain's prime minister, says it is clear Russia interfered in the 2016 Brexit referendum, the first British prime minister to say so directly. Russia has not commented.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "greenland-yeast-rationed-kujalleq",
+      "role": "secondary",
+      "kicker": "Denmark",
+      "sources": [
+        568,
+        539,
+        566
+      ],
+      "headline": "Greenland grocery chain rations yeast after an alcohol ban",
+      "headline_short": "Greenland chain rations yeast",
+      "deck": "Households may buy four packets a day; one customer bought 47.",
+      "standard": [
+        [
+          "KNI Pilersuisoq, a Greenlandic grocery chain, has limited yeast to four packets per household a day after alcohol sales were stopped in Kujalleq, a municipality in southern Greenland. Yeast can be used to brew beer at home.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        ],
+        [
+          "One customer bought 47 packets, Juliane Henningsen Heilmann, a KNI director, told Sermitsiaq, a Greenlandic outlet. Shops had begun to run out, she said, and KNI does not know when the limit will end.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Naalakkersuisut, Greenland's government, imposed the ban on 2 October at the request of Kujalleq's council. Malene Vahl Rasmussen, the mayor, wrote on Facebook that 'we can no longer defend the way we use alcohol'.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "KNI Pilersuisoq, a Greenlandic grocery chain, has limited yeast to four packets per household a day after alcohol sales were stopped in Kujalleq, a municipality in southern Greenland. One customer bought 47 packets.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "senators-urge-diesel-deal-reversal",
+      "role": "secondary",
+      "kicker": "World",
+      "sources": [
+        96,
+        94,
+        304,
+        256
+      ],
+      "headline": "Senators from Trump's own party urge him to reverse his Russian diesel deal",
+      "headline_short": "Senators urge Trump to drop Russian diesel deal",
+      "deck": "Four Republicans and three Democrats say the deal breaks a 2022 ban on Russian energy imports.",
+      "standard": [
+        [
+          "Seven American senators, four Republicans and three Democrats, urged Donald Trump on Sunday to reverse his deal for Russia to deliver just under five million tonnes of diesel to America. Trump announced it on Truth Social, his social media platform, after a call with Vladimir Putin, Russia's president, on Friday.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        ],
+        [
+          "'Congress expressly banned imports of Russian energy in 2022 to prevent American dollars from financing Putin's brutal war against Ukraine,' the senators wrote. They add that the law required the administration to consult Congress and explain its decision, and it did neither.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "The deal comes just under a month before the midterm elections on 3 November.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Seven American senators from both parties urged Donald Trump on Sunday to reverse his deal for Russia to deliver just under five million tonnes of diesel, saying it breaks a 2022 law that bans Russian energy imports.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "fuglebjerg-tesla-crash-five-hurt",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        639,
+        591,
+        682,
+        624
+      ],
+      "headline": "Five hurt in crash near Næstved; Tesla driver charged with reckless driving",
+      "lede": [
+        "Five people were hurt on Saturday evening near Fuglebjerg, north of Næstved, when a white Tesla whose driver is charged with reckless driving hit another car; police want witnesses.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "dr",
+          "tv2"
+        ]
+      ]
+    },
+    {
+      "id": "frederikshavn-teen-stabbed-suspects-freed",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        463,
+        58,
+        191,
+        449
+      ],
+      "headline": "Police release three men charged over stabbing of 17-year-old",
+      "lede": [
+        "Police have released three men still charged with aggravated assault over the stabbing of a 17-year-old in Frederikshavn, a town in North Jutland, on Sunday; he is not in critical condition.",
+        [
+          "kristeligt_dagblad",
+          "tv2"
+        ]
+      ]
+    },
+    {
+      "id": "host-drama-reviews-four-stars",
+      "role": "brief",
+      "kicker": "Culture",
+      "sources": [
+        87,
+        152,
+        150,
+        138,
+        461
+      ],
+      "headline": "Critics mostly praise Danish public television's new farm drama",
+      "lede": [
+        "Politiken, Berlingske, Jyllands-Posten and Kristeligt Dagblad gave four stars or hearts to Høst, a farm inheritance drama that DR, the public broadcaster, premiered on Sunday; Børsen called it a disappointment.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "politiken",
+          "jp",
+          "borsen"
+        ]
+      ]
+    },
+    {
+      "id": "kastrup-villa-burglary-600000",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        589,
+        491,
+        572
+      ],
+      "headline": "Two men remanded over theft of bags and jewellery worth 600,000 kroner from villa for sale",
+      "lede": [
+        "Two men, 19 and 21, were remanded for 23 days on Sunday, charged with stealing bags, jewellery and watches worth more than 600,000 kroner from a villa for sale in Kastrup, a Copenhagen suburb.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "tv2"
+        ]
+      ]
+    },
+    {
+      "id": "fallen-tree-halts-funen-trains",
+      "role": "brief",
+      "kicker": "Transport",
+      "sources": [
+        1
+      ],
+      "headline": "Fallen tree halts trains between Funen and Jutland",
+      "lede": [
+        "A fallen tree stopped trains between Odense, the largest city on Funen, and Fredericia, a town in eastern Jutland; Funen Police said early on Monday it expected them to run again from about 06:00.",
+        [
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "business-preparedness-223-firms",
+      "role": "brief",
+      "kicker": "Defence",
+      "sources": [
+        536,
+        535
+      ],
+      "headline": "Business crisis network more than triples its membership in under a year",
+      "lede": [
+        "Virksomhedsberedskabet, an organisation that coordinates private companies' resources for use in a crisis, has grown from 63 to 223 members in just over 10 months; it aims for more than 1,000 by 2029.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "greenland-base-size-not-agreed",
+      "role": "brief",
+      "kicker": "Defence",
+      "sources": [
+        9
+      ],
+      "headline": "Denmark corrects Trump: size of American bases in Greenland not agreed",
+      "lede": [
+        "Denmark's Foreign Ministry told Jyllands-Posten that no agreement has been reached on the size of the two American bases in Greenland that Donald Trump has called 'very large'.",
+        [
+          "jp"
+        ]
+      ]
+    },
+    {
+      "id": "pope-leo-lung-nodule-surgery",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        526,
+        488,
+        528,
+        400,
+        464,
+        120,
+        468
+      ],
+      "headline": "Pope Leo will have surgery to remove a growth on his lung",
+      "lede": [
+        "Pope Leo, 71, will have surgery this week to remove a small growth on his lung found at a very early stage, he told pilgrims on Sunday; the Vatican expects about a week's recovery.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "guardian",
+          "nytimes"
+        ]
+      ]
+    },
+    {
+      "id": "tusk-attack-plot-suspect-held",
+      "role": "brief",
+      "kicker": "Europe",
+      "sources": [
+        437,
+        323,
+        315,
+        564,
+        219,
+        272
+      ],
+      "headline": "Poland detains man suspected of plotting to attack Tusk",
+      "lede": [
+        "Polish police on Sunday detained a man suspected of planning an attack on Donald Tusk, Poland's prime minister, and Wladyslaw Kosiniak-Kamysz, the defence minister.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "dr",
+          "guardian"
+        ]
+      ]
+    },
+    {
+      "id": "houthis-claim-riyadh-airport",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        265,
+        264,
+        267,
+        190
+      ],
+      "headline": "Houthis claim Riyadh airport strike that killed at least 12",
+      "lede": [
+        "On Sunday Yemen's Iran-aligned Houthis claimed the strike that killed at least 12 people and wounded 309 at the airport in Riyadh, Saudi Arabia's capital, on Saturday; the airport was hit again on Sunday.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "guardian"
+        ]
+      ]
+    },
+    {
+      "id": "us-probes-tv-boycott-of-trump",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        796,
+        795,
+        675,
+        720,
+        747,
+        784,
+        792,
+        789,
+        429
+      ],
+      "headline": "US investigates TV networks over boycott of Trump coverage",
+      "lede": [
+        "The US Justice Department is investigating whether ABC, CBS, CNN, NBC and Fox News broke antitrust law by halting their shared coverage of Trump after the White House barred CNN and two other outlets.",
+        [
+          "kristeligt_dagblad",
+          "guardian",
+          "bbc"
+        ]
+      ]
+    },
+    {
+      "id": "sudan-gold-mine-strike-72-dead",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        232,
+        174,
+        95
+      ],
+      "headline": "Air strikes kill 72 at gold mine on Sudan-Egypt border, rights group says",
+      "lede": [
+        "Air strikes on Saturday killed 72 people at a gold mine on the border between Sudan and Egypt, according to the Emergency Lawyers, a Sudanese human-rights group, which blames Egypt's air force.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "djibouti-migrant-boat-capsizes",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        538,
+        345,
+        477,
+        307,
+        388,
+        159
+      ],
+      "headline": "At least 139 migrants die as boat capsizes off Djibouti",
+      "lede": [
+        "At least 139 migrants, 15 of them children, died when a boat carrying 305 people to Yemen capsized off Djibouti on Thursday night, the UN's migration agency says; 84 are still missing.",
+        [
+          "berlingske",
+          "guardian",
+          "bbc"
+        ]
+      ]
+    },
+    {
+      "id": "klaris-gravel-world-champion",
+      "role": "brief",
+      "kicker": "Sport",
+      "sources": [
+        670,
+        655
+      ],
+      "headline": "Dane wins gravel cycling world title after the favourite crashes",
+      "lede": [
+        "Magnus Bak Klaris, a Dane, won the world title in gravel, cycle racing on unpaved roads, on Sunday morning after the favourite crashed; Mads Würtz Schmidt, a Danish cyclist, finished fourth.",
+        [
+          "berlingske",
+          "dr"
+        ]
+      ]
+    }
+  ]
+}

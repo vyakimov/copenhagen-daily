@@ -1,0 +1,13 @@
+[
+ {
+  "requested": "DR (broadcaster)",
+  "status": "found",
+  "title": "DR (broadcaster)",
+  "extract": "DR, officially the Danish Broadcasting Corporation in English, is a Danish public-service radio and television broadcasting company. Founded in 1925 as a public-service organization, it is Denmark's oldest and largest electronic media enterprise. DR shares many of its organisational characteristics with its British counterpart, the BBC, on which it was largely modelled. DR is a founding member of the European Broadcasting Union.",
+  "url": "https://en.wikipedia.org/wiki/DR_(broadcaster)",
+  "type": "standard",
+  "fetched_at": "2026-10-12T03:37:47.126398Z",
+  "term": "DR",
+  "definition": "the public broadcaster"
+ }
+]

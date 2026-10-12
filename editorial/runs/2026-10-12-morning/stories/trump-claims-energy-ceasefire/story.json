@@ -1,0 +1,128 @@
+{
+ "headline": "Trump says Russia and Ukraine have agreed an energy ceasefire",
+ "headline_short": "Trump claims Ukraine energy ceasefire",
+ "deck": "Zelenskyy says it was news to him but Ukraine will agree if Russia does; Moscow has not confirmed.",
+ "extended": [
+  [
+   "Donald Trump said on Sunday that Russia and Ukraine had agreed an 'energy ceasefire' with immediate effect. 'Both parties have agreed,' he wrote on social media, without saying what the truce covers. Russia has yet to confirm it.",
+   [
+    "kristeligt_dagblad",
+    "borsen",
+    "guardian",
+    "bbc",
+    "wsj"
+   ]
+  ],
+  [
+   "Volodymyr Zelenskyy, Ukraine's president, said the announcement was 'news to me' but that Ukraine would agree if Russia did.",
+   [
+    "kristeligt_dagblad",
+    "guardian",
+    "dr",
+    "bbc"
+   ]
+  ],
+  [
+   "Zelenskyy said Russian strikes later hit power plants in Kyiv, causing outages in the capital, and in Kharkiv, Ukraine's second-largest city. Ukrainian officials said Russian attacks killed six people on Sunday, three of them at a Kharkiv grocery store.",
+   [
+    "guardian",
+    "borsen"
+   ]
+  ],
+  [
+   "Rosatom, Russia's state nuclear company, expects a ceasefire soon at the Zaporizhzhia nuclear power plant, a plant held by Russia, so that repairs can be made.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "On Friday Trump had announced a deal to buy Russian diesel and temporarily ease American sanctions. Zelenskyy called it a 'weak decision'. On Saturday Trump accused him of defying orders not to attack Russian oil refineries and said Ukraine needed a new president.",
+   [
+    "kristeligt_dagblad",
+    "guardian",
+    "wsj"
+   ]
+  ],
+  [
+   "'It's up to our society, up to our people to choose one or another leader,' Zelenskyy told America's ABC News.",
+   [
+    "guardian"
+   ]
+  ]
+ ],
+ "standard": [
+  [
+   "Donald Trump said on Sunday that Russia and Ukraine had agreed an 'energy ceasefire' with immediate effect. 'Both parties have agreed,' he wrote on social media, without saying what the truce covers. Russia has yet to confirm it.",
+   [
+    "kristeligt_dagblad",
+    "borsen",
+    "guardian",
+    "bbc",
+    "wsj"
+   ]
+  ],
+  [
+   "Volodymyr Zelenskyy, Ukraine's president, said the announcement was 'news to me' but that Ukraine would agree if Russia did. He said Russian strikes later hit power plants in Kyiv and in Kharkiv, Ukraine's second-largest city.",
+   [
+    "kristeligt_dagblad",
+    "guardian",
+    "dr",
+    "borsen"
+   ]
+  ],
+  [
+   "On Friday Trump had announced a deal to buy Russian diesel, which Zelenskyy called a 'weak decision'. On Saturday Trump said Ukraine needed a new president.",
+   [
+    "kristeligt_dagblad",
+    "guardian"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "Donald Trump said on Sunday that Russia and Ukraine had agreed an 'energy ceasefire' with immediate effect. Russia has yet to confirm it. Volodymyr Zelenskyy, Ukraine's president, called it 'news to me' but said Ukraine would agree if Russia did.",
+   [
+    "kristeligt_dagblad",
+    "guardian",
+    "bbc"
+   ]
+  ]
+ ],
+ "callouts": [
+  {
+   "kind": "quote",
+   "text": "Effective immediately, there is an energy ceasefire in the war between Russia and Ukraine. Both parties have agreed.",
+   "attribution": "Donald Trump, US president",
+   "attribution_source": "guardian"
+  },
+  {
+   "kind": "timeline",
+   "title": "How it unfolded",
+   "rows": [
+    {
+     "date": "Friday",
+     "text": "Trump announces a deal to buy Russian diesel"
+    },
+    {
+     "date": "Saturday",
+     "text": "Trump says Ukraine needs a new president"
+    },
+    {
+     "date": "Sunday",
+     "text": "Trump declares an energy ceasefire on social media"
+    },
+    {
+     "date": "Sunday",
+     "text": "Zelenskyy reports strikes on power plants in Kyiv and Kharkiv"
+    }
+   ]
+  }
+ ],
+ "definitions": [
+  {
+   "term": "Zaporizhzhia nuclear power plant",
+   "definition": "a plant held by Russia",
+   "wikipedia": "Zaporizhzhia Nuclear Power Plant"
+  }
+ ]
+}
