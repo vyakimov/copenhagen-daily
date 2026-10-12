@@ -265,8 +265,9 @@ test("wire copy is credited to its agency and links to its carrier", async () =>
   assert.match(primary.url, /kristeligt-dagblad\.dk/);
   // The source line credits the agency once, first, and no longer names the carrier on its own.
   assert.match(html, /<span class="pubs"[^>]*>Ritzau · DR · Berlingske · Jyllands-Posten · TV 2 · Politiken<\/span>/);
-  // The evidence list names the agency and the outlet whose page the link opens.
-  assert.match(html, /<span[^>]*>Ritzau via Kristeligt Dagblad, /);
+  // The evidence list links the agency-and-carrier credit to the article and never shows its headline.
+  assert.match(html, new RegExp(`<a href="${escapeRegExp(primary.url)}">Ritzau via Kristeligt Dagblad</a>, `));
+  assert.doesNotMatch(html, new RegExp(escapeRegExp(primary.original_title)));
   assert.match(html, /quoted by Ritzau/);
   // The dateline counts the agency, not the carrier.
   assert.doesNotMatch(html.replace(/Ritzau via Kristeligt Dagblad/g, ""), /Kristeligt Dagblad/);

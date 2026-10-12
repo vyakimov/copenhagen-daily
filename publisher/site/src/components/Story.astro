@@ -26,9 +26,10 @@ const limitations: Record<string, string> = {
 };
 const note = story.limitations.map((x: string) => limitations[x]).join(", ");
 // One name per contributing publisher, the primary first, in the order they appear in the contract. The
-// row is the summary of the source list: clicking it opens the full evidence trail with titles and
-// times, so the names carry no links of their own. Wire copy is credited to its agency here; the
-// evidence trail names the agency and the carrier whose page the link opens.
+// row is the summary of the source list: clicking it opens the full evidence trail, one linked publisher
+// name and publication time per source, so the names carry no links of their own. The original headline
+// is deliberately not shown: a publisher's own words stay on the publisher's page. Wire copy is credited
+// to its agency here; the evidence trail names the agency and the carrier whose page the link opens.
 const names = { publishers, agencies };
 const publisherNames = storyCredits(sources, names);
 const quoted = quoteNames(sources, names);
@@ -68,8 +69,7 @@ const hy = (text: string) => softHyphenate(text, language);
         <ul>
           {sources.map((s) => (
             <li>
-              <a href={s.url}>{s.original_title}</a>{" "}
-              <span>{sourceCredit(s, names)}, {formatPublished(s.published_at, language, timezone)}</span>
+              <a href={s.url}>{sourceCredit(s, names)}</a>, {formatPublished(s.published_at, language, timezone)}
             </li>
           ))}
         </ul>

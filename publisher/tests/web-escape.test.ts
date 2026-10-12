@@ -50,7 +50,9 @@ function inject(doc: any): number {
       if (callout.items) callout.items = callout.items.map(() => ((rendered += 1), INJECT));
       if (callout.rows) callout.rows = callout.rows.map(() => ((rendered += 2), { date: INJECT, text: INJECT }));
     }
-    for (const source of story.sources) set(source, "original_title");
+    // The evidence trail names the publisher and date and links the article; the original headline is
+    // never shown (publisher licensing, decision log).
+    for (const source of story.sources) set(source, "original_title", false);
   }
   return rendered;
 }

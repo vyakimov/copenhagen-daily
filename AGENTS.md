@@ -11,7 +11,7 @@ JSON envelopes on stdout, and files on disk. Nothing imports across a block boun
 | `publisher/` | Block 3: web edition and TRMNL device page from an accepted edition (TypeScript, Astro, Playwright) | Built: web, store, and a single-composition device page, rendered on every publish and pushed to the kitchen screen. Spec in `docs/publisher-architecture.md`. |
 
 Cross-block documents live in `docs/` (`editorial-architecture.md`, `ingest-architecture.md`,
-`publisher-architecture.md`, `aws-delivery.md`, `decision-log.md`, `roadmap.md`, `design/`,
+`publisher-architecture.md`, `aws-delivery.md`, `going-public.md`, `decision-log.md`, `roadmap.md`, `design/`,
 `reviews/`). Repository-level agent skills live in `skills/`.
 
 ## Boundaries that hold across the whole repository

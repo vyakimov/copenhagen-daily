@@ -617,6 +617,18 @@ is left for later, because it backs the exact reconstruction migration 005 verif
 
 ---
 
+## The evidence trail stops showing publishers' headlines (12 October 2026)
+
+**A source is shown as a linked credit and a time, never as its original headline. Settled 12 October
+2026.** The list under each story used to print every source's own headline as the link text. Ahead of
+promoting the paper, that was the one place a publisher's words were reproduced on the page: the copy is
+written in the paper's own words, callouts quote people rather than articles, and the public edition JSON
+carries no publisher body text. Denmark's press publishers' right (copyright act sections 52c and 69a)
+carves out hyperlinks and very short extracts, and whether a full headline is a very short extract is
+unsettled, so the trail now reads "Ritzau via Kristeligt Dagblad, 29 Sept 2026, 12:09" with the credit
+as the link. The headline stays in the contract, where the desk and the checker need it. The rest of the
+go-public checklist is in [going-public.md](going-public.md).
+
 ## Deferred, with gates
 
 **Edition revisions and correction notices.** Designed in the [roadmap](roadmap.md). The first release
