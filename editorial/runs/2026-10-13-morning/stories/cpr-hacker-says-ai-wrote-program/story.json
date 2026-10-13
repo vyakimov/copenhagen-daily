@@ -1,0 +1,37 @@
+{
+ "headline": "Alleged hacker says AI wrote the program that took 8.7 million Danish ID numbers",
+ "headline_short": "Hacker says AI wrote the code",
+ "deck": "Two experts who reviewed the code for Politiken agree; a bug left out everyone born in 1977.",
+ "standard": [
+  [
+   "The program that took 8,749,975 CPR numbers, Denmark's personal identification numbers, was written by artificial intelligence, the presumed hacker behind the theft told Politiken. 'Any AI model launched within the past year or so could do it,' the hacker wrote. Two experts who reviewed the code for the newspaper agree that it was made by AI.",
+   [
+    "politiken",
+    "kristeligt_dagblad",
+    "berlingske"
+   ]
+  ],
+  [
+   "By the hacker's account, the program reached the register through a website run by Pays, a company on Funen with two employees, using a former employee's leaked password. A bug in the code searched for people born in 1877 instead of 1977, so nobody born in 1977 is in the material the hacker shared.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "The program that took 8,749,975 CPR numbers, Denmark's personal identification numbers, was written by artificial intelligence, the presumed hacker behind the theft told Politiken. Two experts who reviewed the code for the newspaper agree.",
+   [
+    "politiken",
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "definitions": [
+  {
+   "term": "CPR numbers",
+   "definition": "Denmark's personal identification numbers",
+   "wikipedia": "Personal identification number (Denmark)"
+  }
+ ]
+}

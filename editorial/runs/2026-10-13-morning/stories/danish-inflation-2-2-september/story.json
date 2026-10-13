@@ -1,0 +1,99 @@
+{
+ "headline": "Danish inflation rises to 2.2 per cent as fuel prices climb",
+ "headline_short": "Inflation rises to 2.2 per cent",
+ "deck": "Core inflation falls to 1.9 per cent; economists see no sign yet that energy prices are spreading.",
+ "extended": [
+  [
+   "Inflation in Denmark rose to 2.2 per cent in September, up 0.2 percentage points on August, according to figures published on Monday by Statistics Denmark, the national statistics agency. It is the first time in a year that inflation has been above two per cent.",
+   [
+    "kristeligt_dagblad",
+    "dr"
+   ]
+  ],
+  [
+   "Fuel prices drove the rise. Core inflation, which leaves out energy among other things, fell to 1.9 per cent, and cheaper holiday-home rentals, package holidays and food pulled the other way.",
+   [
+    "kristeligt_dagblad",
+    "borsen",
+    "politiken"
+   ]
+  ],
+  [
+   "Mette Hørdum Larsen, chief economist at Lederne, an organisation for managers, writes that the near-removal of the electricity tax this year and next hides much of the rise in energy prices. She sees no sign yet that it is spreading to the rest of the economy. 'There is still a long way to the inflation crisis we experienced in 2022,' she writes.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "Søren Kristensen, chief economist at AL Sydbank, agrees, but says prices have outpaced wages in recent quarters, so Danes have lost purchasing power.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "Ulrik Harald Bie, in an analysis for Berlingske, finds households split: prices have fallen considerably for some and risen markedly for others.",
+   [
+    "berlingske"
+   ]
+  ]
+ ],
+ "standard": [
+  [
+   "Inflation in Denmark rose to 2.2 per cent in September, up 0.2 percentage points on August, according to figures published on Monday by Statistics Denmark, the national statistics agency. It is the first time in a year that inflation has been above two per cent.",
+   [
+    "kristeligt_dagblad",
+    "dr"
+   ]
+  ],
+  [
+   "Fuel prices drove the rise. Core inflation, which leaves out energy among other things, fell to 1.9 per cent.",
+   [
+    "kristeligt_dagblad",
+    "borsen",
+    "politiken"
+   ]
+  ],
+  [
+   "Mette Hørdum Larsen, chief economist at Lederne, an organisation for managers, sees no sign yet that energy prices are spreading to the rest of the economy. 'There is still a long way to the inflation crisis we experienced in 2022,' she writes.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "Søren Kristensen, chief economist at AL Sydbank, says prices have outpaced wages in recent quarters, so Danes have lost purchasing power.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "Inflation in Denmark rose to 2.2 per cent in September on higher fuel prices, according to figures published on Monday by Statistics Denmark, the national statistics agency. Core inflation, which leaves out energy among other things, fell to 1.9 per cent.",
+   [
+    "kristeligt_dagblad",
+    "borsen",
+    "dr"
+   ]
+  ]
+ ],
+ "callouts": [
+  {
+   "kind": "quote",
+   "text": "There is still a long way to the inflation crisis we experienced in 2022.",
+   "attribution": "Mette Hørdum Larsen, chief economist at Lederne",
+   "attribution_source": "kristeligt_dagblad"
+  }
+ ],
+ "definitions": [
+  {
+   "term": "Statistics Denmark",
+   "definition": "the national statistics agency",
+   "wikipedia": "Statistics Denmark"
+  },
+  {
+   "term": "Lederne",
+   "definition": "an organisation for managers",
+   "wikipedia": "da:Lederne"
+  }
+ ]
+}

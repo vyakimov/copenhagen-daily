@@ -1,0 +1,35 @@
+[
+ {
+  "requested": "Venstre (Denmark)",
+  "status": "found",
+  "title": "Venstre (Denmark)",
+  "extract": "Venstre, full name Venstre, Danmarks Liberale Parti, is a conservative-liberal, agrarian political party in Denmark. Founded as part of a peasants' movement against the landed aristocracy, today it espouses an economically liberal, pro-free-market ideology.",
+  "url": "https://en.wikipedia.org/wiki/Venstre_(Denmark)",
+  "type": "standard",
+  "fetched_at": "2026-10-13T03:37:27.220542Z",
+  "term": "Venstre",
+  "definition": "a liberal party"
+ },
+ {
+  "requested": "Nyborg",
+  "status": "found",
+  "title": "Nyborg",
+  "extract": "Nyborg is a city in southern Denmark, located in Nyborg Municipality on the island of Funen and with a population of 17,930 (2026). It is the easternmost settlement on Funen. By road, it is located 34 km east of Odense, 35 km north of Svendborg and 21 km south of Kerteminde. It also connects to Korsør through the Great Belt Bridge. Nyborg is the seat of Nyborg Municipality, and until 1793 it was also the seat of Nyborg County.",
+  "url": "https://en.wikipedia.org/wiki/Nyborg",
+  "type": "standard",
+  "fetched_at": "2026-10-13T03:37:27.356668Z",
+  "term": "Nyborg",
+  "definition": "a town on Funen"
+ },
+ {
+  "requested": "Ritzau",
+  "status": "found",
+  "title": "Ritzau",
+  "extract": "Ritzaus Bureau A/S, or Ritzau for short, sometimes stylized as /ritzau/, is a Danish news agency founded by Erik Ritzau in 1866. It collaborates with three other Scandinavian news agencies to provide Nordic News, an English-language Scandinavian news service. It is based in Copenhagen and Lars Vesterløkke is editor-in-chief and CEO of the company.",
+  "url": "https://en.wikipedia.org/wiki/Ritzau",
+  "type": "standard",
+  "fetched_at": "2026-10-13T03:37:27.583446Z",
+  "term": "Ritzau",
+  "definition": "a Danish news agency"
+ }
+]

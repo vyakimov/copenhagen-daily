@@ -1,0 +1,11 @@
+[
+ {
+  "requested": "Danish Customs and Tax Administration",
+  "status": "missing",
+  "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Danish_Customs_and_Tax_Administration",
+  "http_status": 404,
+  "fetched_at": "2026-10-13T03:37:28.219941Z",
+  "term": "Skat",
+  "definition": "the former Danish tax authority"
+ }
+]

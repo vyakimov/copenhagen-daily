@@ -1,0 +1,24 @@
+[
+ {
+  "requested": "Statistics Denmark",
+  "status": "found",
+  "title": "Statistics Denmark",
+  "extract": "Statistics Denmark is a Danish governmental organization under the Ministry of Digital Affairs, reporting to the Minister for Digital Affairs. The organization is responsible for creating statistics on the Danish society, including employment statistics, trade balance, and demographics.",
+  "url": "https://en.wikipedia.org/wiki/Statistics_Denmark",
+  "type": "standard",
+  "fetched_at": "2026-10-13T03:37:26.872267Z",
+  "term": "Statistics Denmark",
+  "definition": "the national statistics agency"
+ },
+ {
+  "requested": "da:Lederne",
+  "status": "found",
+  "title": "Lederne",
+  "extract": "Lederne er en dansk interesseorganisation, fagforbund med tilhørende a-kasse for ledere, betroede medarbejdere, selvstændige og funktionærer med interesse for ledelse.",
+  "url": "https://da.wikipedia.org/wiki/Lederne",
+  "type": "standard",
+  "fetched_at": "2026-10-13T03:37:27.058191Z",
+  "term": "Lederne",
+  "definition": "an organisation for managers"
+ }
+]

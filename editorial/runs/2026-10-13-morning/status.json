@@ -1,0 +1,172 @@
+{
+ "schema_version": 1,
+ "edition_id": "2026-10-13-morning",
+ "cutoff_at": "2026-10-13T03:30:00.000000Z",
+ "started_at": "2026-10-13T03:30:05.672730Z",
+ "dry_run": false,
+ "outcome": "published",
+ "phases": [
+  {
+   "name": "reconcile",
+   "finished_at": "2026-10-13T03:30:05.943513Z",
+   "activated": false
+  },
+  {
+   "name": "inputs",
+   "finished_at": "2026-10-13T03:30:05.943885Z",
+   "recorded": false
+  },
+  {
+   "name": "collect",
+   "finished_at": "2026-10-13T03:30:06.261723Z",
+   "skipped": true,
+   "reason": "recent_poll",
+   "last_poll_at": "2026-10-13T03:16:24.406669Z",
+   "age_minutes": 13.7
+  },
+  {
+   "name": "window",
+   "finished_at": "2026-10-13T03:30:19.941341Z",
+   "articles": 2586,
+   "feeds": 132,
+   "failed_feeds": 0
+  },
+  {
+   "name": "memory",
+   "finished_at": "2026-10-13T03:30:20.093816Z",
+   "editions": [
+    "2026-10-12-morning",
+    "2026-10-11-morning",
+    "2026-10-10-morning",
+    "2026-10-09-morning",
+    "2026-10-08-morning",
+    "2026-10-07-morning",
+    "2026-10-06-morning"
+   ],
+   "threads": 16,
+   "next_edition_number": 8
+  },
+  {
+   "name": "editor",
+   "finished_at": "2026-10-13T03:35:46.221588Z",
+   "session": {
+    "command": [
+     "claude",
+     "-p"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 325.9,
+    "session_id": "20fe6443-2120-4be4-89da-41e3aa4bf370",
+    "num_turns": 52,
+    "duration_ms": 324819,
+    "total_cost_usd": 4.0829788,
+    "is_error": false,
+    "subtype": "success",
+    "permission_denials": [
+     {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Sqe1rqTLEF3uJNKgx52gZ7",
+      "tool_input": {
+       "command": "/Users/vy/Documents/Development/copenhagen-daily/editorial/edit_news.sh --help",
+       "description": "Show wrapper actions"
+      }
+     }
+    ],
+    "result": "The desk work for 2026-10-13-morning is done and all its files are in the run directory. The runner takes over from here, writing the copy, checking it and publishing.\n\n**Lead:** September inflation at 2.2 per cent. It ranked first, six Danish outlets carried it, and it's the Danish effect of the fuel-price story the paper has been following.\n\n**Secondaries (5):**\n- Greenland's parliament begins its first reading of the US security deal.\n- The US threatens to cut intelligence and weapons to Ukraine if it keeps hitting Russian oil sites.\n- Venstre calls an emergency board meeting.\n- The CPR hacker says AI wrote the program that took the ID numbers.\n- The Nobel prize in economics.\n\n**Briefs (14):** I brought in seven of these from outside the ranking's budget, each with a reason recorded in `selection.json`:\n- Zelensky's count of six ceasefire breaches.\n- The French supermarket cyberattack, which hit Danfoss systems.\n- Burnham blaming Iran over Fairford.\n- The Aubagne school shooting.\n- New EU sanctions on 1,600 Russian people and entities.\n- Jyske Bank raising its profit forecast.\n- Denmark women's 4-3 win over Canada, the page's one sport item.\n\n**Biggest departure from the ranking:** it put 21 of its top 24 stories in the Denmark section, and the handbook caps any section at half the page. I dropped twelve eligible Danish items, among them the Little Belt bridge crash, the weather, the squadron flypast and the Lolland fires. That leaves 9 of the 20 stories in the Denmark section.\n\n**Points for the writers and checker:**\n- **Two numbers conflict between sources:** 12 or 19 scooter cases, and 28 or 29 countries backing Burnham. The copy should not pick one.\n- **TV 2's speed-bump article is left out as a source.** It may be about the same girl who died in Risskov, but no source says so.\n- **The Nobel story lists six foreign articles from four publishers,** against the one-per-publisher rule. I couldn't tell which were the duplicates without reading the foreign-outlet file myself, which the skill hands to a subagent. If the writer uses fewer, the list should be cut down.\n\nThe coverage note says all 132 feeds at 17 publishers were polled successfully.\n\nFiles are in `editorial/runs/2026-10-13-morning/`:\n- `clusters.json`\n- `clusters-checked.json`\n- `ranking.json`\n- `selection.json`\n- `NOTES.md`",
+    "auth": "token"
+   },
+   "stories": 20
+  },
+  {
+   "name": "write",
+   "finished_at": "2026-10-13T03:37:26.691113Z",
+   "stories": 20,
+   "sessions": 20,
+   "cost_usd": 3.5865,
+   "resumed_stories": 0
+  },
+  {
+   "name": "check",
+   "finished_at": "2026-10-13T03:42:36.276027Z",
+   "rounds": 1,
+   "struck": 0,
+   "send_back": [],
+   "fallen": [],
+   "resumed": false
+  },
+  {
+   "name": "preflight",
+   "finished_at": "2026-10-13T03:42:36.528335Z",
+   "valid": true
+  },
+  {
+   "name": "publish",
+   "finished_at": "2026-10-13T03:42:43.998540Z",
+   "status": "published",
+   "device_status": "published"
+  },
+  {
+   "name": "receipt",
+   "finished_at": "2026-10-13T03:42:44.184128Z",
+   "activated": true,
+   "web_stories": 20
+  },
+  {
+   "name": "threads",
+   "finished_at": "2026-10-13T03:42:44.189071Z",
+   "touched": 7,
+   "total": 17
+  },
+  {
+   "name": "deliver",
+   "finished_at": "2026-10-13T03:42:46.510583Z",
+   "bucket": "copenhagen-daily-live",
+   "synced": true,
+   "invalidated": "E67FD57M9R899"
+  },
+  {
+   "name": "archive",
+   "finished_at": "2026-10-13T03:42:46.518475Z",
+   "committed": 13,
+   "bundles_discarded": 1
+  }
+ ],
+ "failure": null,
+ "published": {
+  "edition": "/Users/vy/Documents/Development/copenhagen-daily/editorial/runs/2026-10-13-morning/edition-checked.json",
+  "status": "published",
+  "device_status": "published",
+  "bundle": {
+   "manifest_sha256": "sha256:f795a324b8a6993ed37cada48fe03b4d1505c532ef4b482139e94717825206d9",
+   "path": "n/2026-10-13-morning/"
+  },
+  "receipt": {
+   "sequence": 8,
+   "manifest_sha256": "sha256:f795a324b8a6993ed37cada48fe03b4d1505c532ef4b482139e94717825206d9",
+   "web_story_ids": [
+    "danish-inflation-2-2-september",
+    "greenland-parliament-first-reading",
+    "us-threatens-ukraine-intelligence-cut",
+    "venstre-extraordinary-board-meeting",
+    "cpr-hacker-says-ai-wrote-program",
+    "nobel-economics-hall-woodford",
+    "zelensky-russia-broke-ceasefire-six-times",
+    "french-supermarket-hack-danfoss",
+    "district-heating-dearer-2027",
+    "public-shelters-three-billion",
+    "east-jutland-scooter-fines-wrong",
+    "risskov-ebike-girl-dies",
+    "dsb-odense-fredericia-week-42",
+    "skat-inquiry-467-million",
+    "herning-tiktok-terror-sentence",
+    "burnham-blames-iran-fairford",
+    "aubagne-school-shooting",
+    "jyske-bank-raises-forecast",
+    "eu-sanctions-1600-russians",
+    "denmark-women-beat-canada-4-3"
+   ]
+  }
+ },
+ "updated_at": "2026-10-13T03:42:46.518636Z",
+ "elapsed_s": 760.8
+}

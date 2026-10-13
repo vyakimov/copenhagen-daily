@@ -1,0 +1,24 @@
+[
+ {
+  "requested": "Odense",
+  "status": "found",
+  "title": "Odense",
+  "extract": "Odense is the third largest city in Denmark and the largest city on the island of Funen. As of 1 January 2026, the city proper had a population of 187,558 while Odense Municipality had a population of 213,168, making it the fourth largest municipality in Denmark. Eurostat and OECD have used a definition for the Metropolitan area of Odense, which includes all municipalities in the Province of Funen, with a total population of 504,066 as of 1 July 2022.",
+  "url": "https://en.wikipedia.org/wiki/Odense",
+  "type": "standard",
+  "fetched_at": "2026-10-13T03:37:27.785198Z",
+  "term": "Odense",
+  "definition": "on Funen"
+ },
+ {
+  "requested": "Fredericia",
+  "status": "found",
+  "title": "Fredericia",
+  "extract": "Fredericia is a town located in Fredericia Municipality in the southeastern part of the Jutland peninsula in Denmark. The city is part of the Triangle Region, which includes the neighbouring cities of Kolding and Vejle. It was founded in 1650 by Frederick III, after whom it was named.",
+  "url": "https://en.wikipedia.org/wiki/Fredericia",
+  "type": "standard",
+  "fetched_at": "2026-10-13T03:37:27.836433Z",
+  "term": "Fredericia",
+  "definition": "in Jutland"
+ }
+]

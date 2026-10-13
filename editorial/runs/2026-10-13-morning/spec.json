@@ -1,0 +1,629 @@
+{
+  "edition": {
+    "id": "2026-10-13-morning",
+    "number": 8,
+    "name": "Tuesday edition",
+    "date": "2026-10-13",
+    "cutoff_at": "2026-10-13T03:30:00.000000Z",
+    "checked_from": "2026-10-10T03:30:00.000000Z",
+    "input_id": "export-2026-10-13-0330",
+    "presentation": {
+      "emphasis": "many_stories",
+      "ear_right": "Inside: Greenland debates the US deal, Washington's ultimatum to Kyiv, Venstre's emergency meeting"
+    },
+    "note": "Built from headlines and RSS descriptions published between 05:30 on 10 October and 05:30 on 13 October. All 132 feeds at 17 publishers polled."
+  },
+  "stories": [
+    {
+      "id": "danish-inflation-2-2-september",
+      "role": "lead",
+      "kicker": "Prices",
+      "sources": [
+        954,
+        957,
+        883,
+        668,
+        953,
+        812
+      ],
+      "headline": "Danish inflation rises to 2.2 per cent as fuel prices climb",
+      "headline_short": "Inflation rises to 2.2 per cent",
+      "deck": "Core inflation falls to 1.9 per cent; economists see no sign yet that energy prices are spreading.",
+      "extended": [
+        [
+          "Inflation in Denmark rose to 2.2 per cent in September, up 0.2 percentage points on August, according to figures published on Monday by Statistics Denmark, the national statistics agency. It is the first time in a year that inflation has been above two per cent.",
+          [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        ],
+        [
+          "Fuel prices drove the rise. Core inflation, which leaves out energy among other things, fell to 1.9 per cent, and cheaper holiday-home rentals, package holidays and food pulled the other way.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "politiken"
+          ]
+        ],
+        [
+          "Mette Hørdum Larsen, chief economist at Lederne, an organisation for managers, writes that the near-removal of the electricity tax this year and next hides much of the rise in energy prices. She sees no sign yet that it is spreading to the rest of the economy. 'There is still a long way to the inflation crisis we experienced in 2022,' she writes.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Søren Kristensen, chief economist at AL Sydbank, agrees, but says prices have outpaced wages in recent quarters, so Danes have lost purchasing power.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Ulrik Harald Bie, in an analysis for Berlingske, finds households split: prices have fallen considerably for some and risen markedly for others.",
+          [
+            "berlingske"
+          ]
+        ]
+      ],
+      "standard": [
+        [
+          "Inflation in Denmark rose to 2.2 per cent in September, up 0.2 percentage points on August, according to figures published on Monday by Statistics Denmark, the national statistics agency. It is the first time in a year that inflation has been above two per cent.",
+          [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        ],
+        [
+          "Fuel prices drove the rise. Core inflation, which leaves out energy among other things, fell to 1.9 per cent.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "politiken"
+          ]
+        ],
+        [
+          "Mette Hørdum Larsen, chief economist at Lederne, an organisation for managers, sees no sign yet that energy prices are spreading to the rest of the economy. 'There is still a long way to the inflation crisis we experienced in 2022,' she writes.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Søren Kristensen, chief economist at AL Sydbank, says prices have outpaced wages in recent quarters, so Danes have lost purchasing power.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Inflation in Denmark rose to 2.2 per cent in September on higher fuel prices, according to figures published on Monday by Statistics Denmark, the national statistics agency. Core inflation, which leaves out energy among other things, fell to 1.9 per cent.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "dr"
+          ]
+        ]
+      ],
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "There is still a long way to the inflation crisis we experienced in 2022.",
+          "attribution": "Mette Hørdum Larsen, chief economist at Lederne",
+          "attribution_source": "kristeligt_dagblad"
+        }
+      ]
+    },
+    {
+      "id": "greenland-parliament-first-reading",
+      "role": "secondary",
+      "kicker": "Defence",
+      "sources": [
+        281,
+        206,
+        1085,
+        269
+      ],
+      "headline": "Greenland opposition party wants a referendum on the US defence deal",
+      "headline_short": "Greenland's parliament debates the US deal",
+      "deck": "Parliament held the first reading on Monday; the governing coalition holds 19 of its 31 seats.",
+      "standard": [
+        [
+          "Greenland's parliament, Inatsisartut, held the first reading of the new security and defence agreement with the United States and Denmark on Monday and sent it to a second reading, which has no date yet. The vote comes only at the third reading. The governing coalition holds 19 of the 31 seats.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        ],
+        [
+          "Pele Broberg, leader of Naleraq, an opposition party, wants the deal put to a referendum. He said it 'turns our country's importance into rights for the United States' without a matching economic return for Greenlanders. According to KNR, a Greenlandic news outlet, Jens-Frederik Nielsen, Greenland's head of government, replied that the US had put no 'offers of money on the table'.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "The deal was signed on 22 September. It extends one from 1951 and lets the US set up two more military bases.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Greenland's parliament held the first reading of the new defence agreement with the United States and Denmark on Monday. Naleraq, an opposition party, wants it put to a referendum, but the governing coalition holds 19 of the 31 seats.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "us-threatens-ukraine-intelligence-cut",
+      "role": "secondary",
+      "kicker": "World",
+      "sources": [
+        702,
+        658,
+        610,
+        29,
+        937,
+        631
+      ],
+      "headline": "America threatens to stop sharing intelligence with Ukraine if it hits Russian oil plants",
+      "headline_short": "America warns Ukraine off Russian oil",
+      "deck": "The warning also puts at risk American weapons that European donors buy for Ukraine.",
+      "standard": [
+        [
+          "America will stop giving Ukraine intelligence on Russia if Ukraine attacks Russian oil plants, CNN reports. America's military delivered the warning to Ukraine's military high command at the weekend.",
+          [
+            "kristeligt_dagblad",
+            "jp"
+          ]
+        ],
+        [
+          "The threat follows a deal by Donald Trump to buy Russian diesel, which is under sanctions, to lower fuel prices in America. Strikes on Russian refineries would leave Russia with no diesel to sell.",
+          [
+            "kristeligt_dagblad",
+            "tv2"
+          ]
+        ],
+        [
+          "The intelligence shows where Russian ballistic missiles are launched from and where they are heading. Without it Ukraine's air defence goes blind and more civilians will die, the chair of the Ukrainian parliament's foreign affairs committee warns in DR.",
+          [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "America will stop giving Ukraine intelligence on Russia if Ukraine attacks Russian oil plants, CNN reports. The threat follows a deal by Donald Trump to buy Russian diesel, which is under sanctions.",
+          [
+            "kristeligt_dagblad",
+            "jp",
+            "tv2"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "venstre-extraordinary-board-meeting",
+      "role": "secondary",
+      "kicker": "Politics",
+      "sources": [
+        647,
+        650,
+        366,
+        473
+      ],
+      "headline": "Venstre's leader calls the party's executive to an extraordinary meeting",
+      "headline_short": "Venstre calls an extraordinary meeting",
+      "deck": "The executive meets on 25 October, after the party's worst election result and its lowest poll in Voxmeter's history.",
+      "standard": [
+        [
+          "Troels Lund Poulsen, leader of Venstre, a liberal party, has called its national executive to an extraordinary meeting in Nyborg, a town on Funen, on 25 October. The agenda has one item: the current political situation.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ],
+        [
+          "'After some hard weeks for Venstre it is natural to gather and discuss the way forward,' Stephanie Lose, the deputy leader, told Ritzau, a Danish news agency.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "The party took 10.1 per cent at the election in March, its worst result. Voxmeter, a polling firm, put it at 5.8 per cent on 21 September and 7.4 on Monday.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Two commentators quoted by Berlingske call the meeting 'uncommonly unusual' and a sign of crisis.",
+          [
+            "berlingske"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Troels Lund Poulsen, leader of Venstre, a liberal party, has called its national executive to an extraordinary meeting on 25 October to discuss the current political situation. The party took 10.1 per cent at the election in March, its worst result.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "cpr-hacker-says-ai-wrote-program",
+      "role": "secondary",
+      "kicker": "Denmark",
+      "sources": [
+        256,
+        39,
+        21
+      ],
+      "headline": "Alleged hacker says AI wrote the program that took 8.7 million Danish ID numbers",
+      "headline_short": "Hacker says AI wrote the code",
+      "deck": "Two experts who reviewed the code for Politiken agree; a bug left out everyone born in 1977.",
+      "standard": [
+        [
+          "The program that took 8,749,975 CPR numbers, Denmark's personal identification numbers, was written by artificial intelligence, the presumed hacker behind the theft told Politiken. 'Any AI model launched within the past year or so could do it,' the hacker wrote. Two experts who reviewed the code for the newspaper agree that it was made by AI.",
+          [
+            "politiken",
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ],
+        [
+          "By the hacker's account, the program reached the register through a website run by Pays, a company on Funen with two employees, using a former employee's leaked password. A bug in the code searched for people born in 1877 instead of 1977, so nobody born in 1977 is in the material the hacker shared.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "The program that took 8,749,975 CPR numbers, Denmark's personal identification numbers, was written by artificial intelligence, the presumed hacker behind the theft told Politiken. Two experts who reviewed the code for the newspaper agree.",
+          [
+            "politiken",
+            "kristeligt_dagblad"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "nobel-economics-hall-woodford",
+      "role": "secondary",
+      "kicker": "Economy",
+      "sources": [
+        741,
+        656,
+        754,
+        742,
+        683,
+        219,
+        337,
+        350,
+        493,
+        506,
+        809
+      ],
+      "headline": "Two American economists win the Nobel prize in economics",
+      "headline_short": "Americans win economics Nobel",
+      "deck": "Robert Hall and Michael Woodford are honoured for models that central banks and governments use to smooth out booms and slumps.",
+      "standard": [
+        [
+          "Robert E. Hall of Stanford University and Michael Woodford of Columbia University won this year's Nobel prize in economics on Monday, for what the Royal Swedish Academy of Sciences called 'microeconomic foundations of macroeconomic stabilisation'. The two Americans share 12 million Swedish kronor.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "politiken",
+            "dr"
+          ]
+        ],
+        [
+          "Their models show how fiscal and monetary policy can smooth out booms and slumps. John Hassler, who chairs the prize committee, said the winners' work had given 'a solid theoretical foundation for the models that are used today by central banks and governments around the world'.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "During the financial crisis of 2008 it shaped central banks' monetary policy.",
+          [
+            "borsen",
+            "ft"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Robert E. Hall of Stanford University and Michael Woodford of Columbia University, both Americans, won the Nobel prize in economics on Monday for models that show how fiscal and monetary policy can smooth out booms and slumps.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ],
+        [
+          "Their work shaped central banks' monetary policy during the financial crisis of 2008.",
+          [
+            "borsen",
+            "ft"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "zelensky-russia-broke-ceasefire-six-times",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        485,
+        478,
+        131,
+        346,
+        484
+      ],
+      "headline": "Zelensky says Russia hit six energy sites despite Trump's ceasefire",
+      "lede": [
+        "Russia hit six Ukrainian energy sites on Monday despite an energy ceasefire Donald Trump announced on Sunday, said Volodymyr Zelensky, Ukraine's president, who learned of the ceasefire from the media.",
+        [
+          "kristeligt_dagblad",
+          "borsen",
+          "bbc",
+          "ft",
+          "guardian"
+        ]
+      ]
+    },
+    {
+      "id": "french-supermarket-hack-danfoss",
+      "role": "brief",
+      "kicker": "Business",
+      "sources": [
+        456,
+        607,
+        460,
+        541,
+        589,
+        238,
+        13,
+        339
+      ],
+      "headline": "Danfoss cooling controls hit in cyberattack on French supermarkets",
+      "lede": [
+        "A 'limited number' of cooling controls made by Danfoss, a Danish industrial group, were hit in Monday's cyberattack that heated fridges in hundreds of French supermarkets, the company says.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "borsen"
+        ]
+      ]
+    },
+    {
+      "id": "district-heating-dearer-2027",
+      "role": "brief",
+      "kicker": "Prices",
+      "sources": [
+        995,
+        983,
+        994
+      ],
+      "headline": "District heating will cost more in 2027 as energy prices rise",
+      "lede": [
+        "Ten district-heating companies have so far announced price rises for 2027, mostly of 6 to 10 per cent, according to TV 2; Præstø, in south Zealand, faces a proposed 40 per cent rise.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "public-shelters-three-billion",
+      "role": "brief",
+      "kicker": "Defence",
+      "sources": [
+        587,
+        255
+      ],
+      "headline": "Readying Denmark's public shelters could cost up to three billion kroner",
+      "lede": [
+        "Readying all 1,694 of Denmark's public concrete shelters would cost in the order of two to three billion kroner, Lisbeth Bech-Nielsen, the minister for civil security and preparedness, says in a reply to parliament.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "east-jutland-scooter-fines-wrong",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        858,
+        779,
+        854
+      ],
+      "headline": "East Jutland police apologise for 12 unlawful fines on parents of young e-scooter riders",
+      "lede": [
+        "Police in East Jutland have apologised for fining parents in 12 cases where children under 15 were caught riding e-scooters without an adult, though they had no legal basis to do so.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "risskov-ebike-girl-dies",
+      "role": "brief",
+      "kicker": "Transport",
+      "sources": [
+        788,
+        800,
+        787
+      ],
+      "headline": "Girl, 16, dies after electric-bike crash near Aarhus",
+      "lede": [
+        "A 16-year-old girl has died ten days after losing control of an electric bike while riding downhill at relatively high speed in Risskov, near Aarhus, on the evening of 2 October.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "tv2"
+        ]
+      ]
+    },
+    {
+      "id": "dsb-odense-fredericia-week-42",
+      "role": "brief",
+      "kicker": "Transport",
+      "sources": [
+        517,
+        494,
+        498
+      ],
+      "headline": "Fire slows trains between Funen and Jutland until Sunday",
+      "lede": [
+        "Rail journeys between Odense, on Funen, and Fredericia, in Jutland, are expected to take longer until Sunday 18 October, with regional trains replaced by buses, after a fire in a signal hut on Friday.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "skat-inquiry-467-million",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        481,
+        479,
+        452
+      ],
+      "headline": "Cost of inquiry into Danish tax authority nears half a billion kroner",
+      "lede": [
+        "The commission investigating Skat, the former Danish tax authority, is now budgeted to cost the state 467.3 million kroner over ten years, up from just under 400 million in October 2025.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "herning-tiktok-terror-sentence",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        640,
+        603,
+        597
+      ],
+      "headline": "Man gets suspended sentence for TikTok video condoning Hamas attack",
+      "lede": [
+        "A court in Herning, a town in central Jutland, on Monday gave a 28-year-old man a 60-day suspended sentence for a TikTok video condoning Hamas's 7 October 2023 attack on Israel.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "burnham-blames-iran-fairford",
+      "role": "brief",
+      "kicker": "Europe",
+      "sources": [
+        312,
+        251,
+        375,
+        311
+      ],
+      "headline": "Britain's prime minister blames Iran for incident at air base",
+      "lede": [
+        "Andy Burnham, Britain's prime minister, said on Monday that Iran's Revolutionary Guards almost certainly directed a September incident at RAF Fairford, a British military base; 28 countries, Denmark included, back the assessment.",
+        [
+          "kristeligt_dagblad",
+          "borsen",
+          "guardian"
+        ]
+      ]
+    },
+    {
+      "id": "aubagne-school-shooting",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        786,
+        530,
+        782,
+        149
+      ],
+      "headline": "Pupil, 14, held after two school staff are shot in France",
+      "lede": [
+        "French authorities arrested a 14-year-old pupil after a head teacher and a teacher were shot with a hunting rifle on Monday at a school in Aubagne, near Marseille; neither is in mortal danger.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "dr",
+          "bbc"
+        ]
+      ]
+    },
+    {
+      "id": "jyske-bank-raises-forecast",
+      "role": "brief",
+      "kicker": "Business",
+      "sources": [
+        791,
+        795,
+        749
+      ],
+      "headline": "Jyske Bank raises its profit forecast for the year",
+      "lede": [
+        "Jyske Bank, a Danish bank, raised its forecast for this year's after-tax profit to between 4.7 billion and 5.2 billion kroner on Monday, though even the top end would be its lowest since 2022.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "borsen"
+        ]
+      ]
+    },
+    {
+      "id": "eu-sanctions-1600-russians",
+      "role": "brief",
+      "kicker": "Europe",
+      "sources": [
+        713,
+        712
+      ],
+      "headline": "EU adds 1,600 Russian people and entities to its sanctions list",
+      "lede": [
+        "EU countries on Monday added 1,600 more Russian people and entities to the EU's sanctions list, the largest single expansion since Russia invaded Ukraine, according to António Costa, president of the European Council.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "denmark-women-beat-canada-4-3",
+      "role": "brief",
+      "kicker": "Sport",
+      "sources": [
+        124,
+        117
+      ],
+      "headline": "Denmark's women beat Canada 4-3 in Toronto",
+      "lede": [
+        "Denmark's women's football team beat Canada 4-3 in a friendly in Toronto on Monday evening, and Olivia Holdt scored one of the goals from the centre circle.",
+        [
+          "dr",
+          "berlingske"
+        ]
+      ]
+    }
+  ]
+}

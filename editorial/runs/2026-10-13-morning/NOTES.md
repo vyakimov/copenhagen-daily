@@ -1,0 +1,11 @@
+# Editorial log: Tuesday 13 October 2026, morning edition
+
+**Lead: September inflation at 2.2 per cent.** It ranked first. Six Danish outlets carried it, it is a number of record from Danmarks Statistik, and it is the Danish consequence of the fuel-price thread the paper has run since the 3rd. Børsen's falling core-inflation figure gives the copy a second number. Kristeligt Dagblad's Ritzau text is the primary because it carries the most.
+
+**Secondaries.** The Greenland parliament's first reading of the US agreement, with Naleraq's call for a referendum, is the next step in the Greenland thread. Washington's warning that it will cut intelligence and weapons if Ukraine keeps hitting Russian oil ranked only 28th because of the world weight. Its base score was the day's highest, so this is the main departure from the ranking. Venstre's emergency board meeting moves the leadership thread on. The CPR hacker's claim that AI wrote the program is a new fact in that thread. The economics Nobel was carried by six outlets.
+
+**Briefs.** Most come from the eligible list: district heating, shelters, the scooter fines, the Risskov e-bike death, DSB's week of delays, the Skat inquiry's bill and the Herning TikTok sentence. I brought in six stories from outside the budget to keep the page balanced, each with a reason: Zelensky's count of six ceasefire breaches, the French supermarket hack (Danfoss gives it a Danish angle), Burnham naming Iran over Fairford, the Aubagne shooting, the EU sanctions and Jyske Bank. The women's 4-3 win in Canada is the page's one sport item.
+
+**Left out.** The Little Belt crash, the cyber championship, the weather, the squadron flypast, the Hungarian custody extension and the Lolland fires were all eligible. I dropped them because the ranking put 21 of its top 24 in the Denmark section. The editorial roundup is not an event. Kallas, Peskov and "learned from the media" are side-reactions to a ceasefire that already led.
+
+**Felt wrong.** The sources disagree on two counts (12 fines or 19 cases; 28 countries or 29), and the copy must not reconcile them. TV 2's speed-bump piece may be about the same girl, but nothing says so, so it is not a source. The Nobel story lists six international articles from four publishers; trim it if the writer uses fewer. I did not dispute the validator's split of JP's live items.

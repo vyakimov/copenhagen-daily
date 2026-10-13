@@ -1,0 +1,13 @@
+[
+ {
+  "requested": "Jyske Bank",
+  "status": "found",
+  "title": "Jyske Bank",
+  "extract": "Jyske Bank A/S is the third largest Danish bank in terms of market share.",
+  "url": "https://en.wikipedia.org/wiki/Jyske_Bank",
+  "type": "standard",
+  "fetched_at": "2026-10-13T03:37:28.513892Z",
+  "term": "Jyske Bank",
+  "definition": "a Danish bank"
+ }
+]

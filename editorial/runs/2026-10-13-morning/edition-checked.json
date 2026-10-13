@@ -1,0 +1,2406 @@
+{
+  "schema_version": 2,
+  "title": "copenhagen-daily",
+  "edition": {
+    "id": "2026-10-13-morning",
+    "number": 8,
+    "name": "Tuesday edition",
+    "date": "2026-10-13",
+    "timezone": "Europe/Copenhagen",
+    "language": "en",
+    "cutoff_at": "2026-10-13T03:30:00.000000Z",
+    "generated_at": "2026-10-13T03:37:26.612798Z"
+  },
+  "presentation": {
+    "emphasis": "many_stories",
+    "ear_right": "Inside: Greenland debates the US deal, Washington's ultimatum to Kyiv, Venstre's emergency meeting"
+  },
+  "coverage": {
+    "status": "complete",
+    "checked_from": "2026-10-10T03:30:00.000000Z",
+    "checked_until": "2026-10-13T03:30:00.000000Z",
+    "feeds": [
+      {
+        "feed_id": "altinget.arbejdsmarked",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.236883Z"
+      },
+      {
+        "feed_id": "altinget.by",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.335663Z"
+      },
+      {
+        "feed_id": "altinget.christiansborg",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.095419Z"
+      },
+      {
+        "feed_id": "altinget.eu",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.124563Z"
+      },
+      {
+        "feed_id": "altinget.forside",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.054148Z"
+      },
+      {
+        "feed_id": "altinget.forsvar",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.261175Z"
+      },
+      {
+        "feed_id": "altinget.klima",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.151266Z"
+      },
+      {
+        "feed_id": "altinget.kommunal",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.285896Z"
+      },
+      {
+        "feed_id": "altinget.sundhed",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.202047Z"
+      },
+      {
+        "feed_id": "altinget.uddannelse",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.309806Z"
+      },
+      {
+        "feed_id": "bbc.business",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.623264Z"
+      },
+      {
+        "feed_id": "bbc.culture",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.970842Z"
+      },
+      {
+        "feed_id": "bbc.europe",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.584329Z"
+      },
+      {
+        "feed_id": "bbc.health",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.794715Z"
+      },
+      {
+        "feed_id": "bbc.politics",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.876401Z"
+      },
+      {
+        "feed_id": "bbc.science",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.739133Z"
+      },
+      {
+        "feed_id": "bbc.technology",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.688933Z"
+      },
+      {
+        "feed_id": "bbc.top",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.495568Z"
+      },
+      {
+        "feed_id": "bbc.world",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.540737Z"
+      },
+      {
+        "feed_id": "berlingske.business",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.023606Z"
+      },
+      {
+        "feed_id": "berlingske.kultur",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.046409Z"
+      },
+      {
+        "feed_id": "berlingske.latest",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.989190Z"
+      },
+      {
+        "feed_id": "berlingske.opinion",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.063740Z"
+      },
+      {
+        "feed_id": "berlingske.samfund",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.010225Z"
+      },
+      {
+        "feed_id": "borsen.baeredygtig",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.050456Z"
+      },
+      {
+        "feed_id": "borsen.breaking",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.043069Z"
+      },
+      {
+        "feed_id": "borsen.ejendomme",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.089289Z"
+      },
+      {
+        "feed_id": "borsen.executive",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.217280Z"
+      },
+      {
+        "feed_id": "borsen.finans",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.151138Z"
+      },
+      {
+        "feed_id": "borsen.homepage",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:25.992697Z"
+      },
+      {
+        "feed_id": "borsen.investor",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.180076Z"
+      },
+      {
+        "feed_id": "borsen.longread",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.270227Z"
+      },
+      {
+        "feed_id": "borsen.markedsberetninger",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.294628Z"
+      },
+      {
+        "feed_id": "borsen.okonomi",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.542053Z"
+      },
+      {
+        "feed_id": "borsen.opinion",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.326014Z"
+      },
+      {
+        "feed_id": "borsen.pleasure",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.355914Z"
+      },
+      {
+        "feed_id": "borsen.politik",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.430182Z"
+      },
+      {
+        "feed_id": "borsen.tech",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.459884Z"
+      },
+      {
+        "feed_id": "borsen.udland",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.487459Z"
+      },
+      {
+        "feed_id": "borsen.virksomheder",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.519835Z"
+      },
+      {
+        "feed_id": "dr.indland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.128191Z"
+      },
+      {
+        "feed_id": "dr.kultur",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.373225Z"
+      },
+      {
+        "feed_id": "dr.latest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.081441Z"
+      },
+      {
+        "feed_id": "dr.musik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.436950Z"
+      },
+      {
+        "feed_id": "dr.penge",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.221123Z"
+      },
+      {
+        "feed_id": "dr.politik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.254145Z"
+      },
+      {
+        "feed_id": "dr.regionale",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.487843Z"
+      },
+      {
+        "feed_id": "dr.regionale_bornholm",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.544991Z"
+      },
+      {
+        "feed_id": "dr.regionale_fyn",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.628830Z"
+      },
+      {
+        "feed_id": "dr.regionale_kbh",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.515968Z"
+      },
+      {
+        "feed_id": "dr.regionale_nord",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.698387Z"
+      },
+      {
+        "feed_id": "dr.regionale_oestjylland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.812820Z"
+      },
+      {
+        "feed_id": "dr.regionale_sjaelland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.772339Z"
+      },
+      {
+        "feed_id": "dr.regionale_syd",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.573844Z"
+      },
+      {
+        "feed_id": "dr.regionale_trekanten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.728448Z"
+      },
+      {
+        "feed_id": "dr.regionale_vest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.669735Z"
+      },
+      {
+        "feed_id": "dr.senestesport",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.310561Z"
+      },
+      {
+        "feed_id": "dr.sporten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.283383Z"
+      },
+      {
+        "feed_id": "dr.udland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.192042Z"
+      },
+      {
+        "feed_id": "dr.vejret",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.461165Z"
+      },
+      {
+        "feed_id": "dr.viden",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.340977Z"
+      },
+      {
+        "feed_id": "economist.briefing",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:29.374265Z"
+      },
+      {
+        "feed_id": "economist.business",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:29.374618Z"
+      },
+      {
+        "feed_id": "economist.culture",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:29.374785Z"
+      },
+      {
+        "feed_id": "economist.europe",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:29.374363Z"
+      },
+      {
+        "feed_id": "economist.finance",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:29.374539Z"
+      },
+      {
+        "feed_id": "economist.international",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:29.374450Z"
+      },
+      {
+        "feed_id": "economist.latest",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:29.051588Z"
+      },
+      {
+        "feed_id": "economist.leaders",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:29.374091Z"
+      },
+      {
+        "feed_id": "economist.science",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:29.374697Z"
+      },
+      {
+        "feed_id": "ft.climate_capital",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:25.839932Z"
+      },
+      {
+        "feed_id": "ft.companies",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:25.746351Z"
+      },
+      {
+        "feed_id": "ft.global_economy",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:25.708053Z"
+      },
+      {
+        "feed_id": "ft.homepage.international",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:25.621313Z"
+      },
+      {
+        "feed_id": "ft.life_arts",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:25.962993Z"
+      },
+      {
+        "feed_id": "ft.markets",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:25.778041Z"
+      },
+      {
+        "feed_id": "ft.opinion",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:25.903796Z"
+      },
+      {
+        "feed_id": "ft.technology",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:25.807074Z"
+      },
+      {
+        "feed_id": "ft.work_careers",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:25.930111Z"
+      },
+      {
+        "feed_id": "ft.world",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:25.644718Z"
+      },
+      {
+        "feed_id": "guardian.business",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:30.039955Z"
+      },
+      {
+        "feed_id": "guardian.culture",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:30.445301Z"
+      },
+      {
+        "feed_id": "guardian.environment",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:30.260833Z"
+      },
+      {
+        "feed_id": "guardian.europe",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:29.965942Z"
+      },
+      {
+        "feed_id": "guardian.international",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:29.462500Z"
+      },
+      {
+        "feed_id": "guardian.opinion",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:30.658034Z"
+      },
+      {
+        "feed_id": "guardian.science",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:30.337488Z"
+      },
+      {
+        "feed_id": "guardian.technology",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:30.178951Z"
+      },
+      {
+        "feed_id": "guardian.world",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:29.856457Z"
+      },
+      {
+        "feed_id": "information.feed",
+        "source": "information",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.048703Z"
+      },
+      {
+        "feed_id": "jp.seneste",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.026282Z"
+      },
+      {
+        "feed_id": "jp.topnyheder",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.004562Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.artikler",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.392046Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.nyheder",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.361538Z"
+      },
+      {
+        "feed_id": "nytimes.arts",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:25.275555Z"
+      },
+      {
+        "feed_id": "nytimes.books",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:25.431755Z"
+      },
+      {
+        "feed_id": "nytimes.business",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:24.803812Z"
+      },
+      {
+        "feed_id": "nytimes.climate",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:25.169050Z"
+      },
+      {
+        "feed_id": "nytimes.europe",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:24.733804Z"
+      },
+      {
+        "feed_id": "nytimes.health",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:25.118472Z"
+      },
+      {
+        "feed_id": "nytimes.homepage",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:24.406669Z"
+      },
+      {
+        "feed_id": "nytimes.opinion",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:25.535041Z"
+      },
+      {
+        "feed_id": "nytimes.science",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:25.006220Z"
+      },
+      {
+        "feed_id": "nytimes.technology",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:24.953086Z"
+      },
+      {
+        "feed_id": "nytimes.world",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:24.504875Z"
+      },
+      {
+        "feed_id": "politiken.debat",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.834750Z"
+      },
+      {
+        "feed_id": "politiken.forbrugogliv",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.863975Z"
+      },
+      {
+        "feed_id": "politiken.ibyen",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.920815Z"
+      },
+      {
+        "feed_id": "politiken.indland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.589666Z"
+      },
+      {
+        "feed_id": "politiken.kultur",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.729010Z"
+      },
+      {
+        "feed_id": "politiken.latest",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.559332Z"
+      },
+      {
+        "feed_id": "politiken.oekonomi",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.699731Z"
+      },
+      {
+        "feed_id": "politiken.politik",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.668676Z"
+      },
+      {
+        "feed_id": "politiken.rejser",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.948574Z"
+      },
+      {
+        "feed_id": "politiken.sport",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.760001Z"
+      },
+      {
+        "feed_id": "politiken.udland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.615896Z"
+      },
+      {
+        "feed_id": "politiken.viden",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:26.788385Z"
+      },
+      {
+        "feed_id": "tv2.nyheder",
+        "source": "tv2",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:27.889643Z"
+      },
+      {
+        "feed_id": "via_ritzau.latest",
+        "source": "via_ritzau",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:28.420063Z"
+      },
+      {
+        "feed_id": "wapo.business",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:30.798285Z"
+      },
+      {
+        "feed_id": "wapo.national",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:30.748216Z"
+      },
+      {
+        "feed_id": "wapo.opinions",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:30.813387Z"
+      },
+      {
+        "feed_id": "wapo.politics",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:30.775721Z"
+      },
+      {
+        "feed_id": "wapo.technology",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:30.805960Z"
+      },
+      {
+        "feed_id": "wapo.world",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:30.731909Z"
+      },
+      {
+        "feed_id": "wsj.business",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:30.992219Z"
+      },
+      {
+        "feed_id": "wsj.economy",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:31.162763Z"
+      },
+      {
+        "feed_id": "wsj.markets",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:31.097676Z"
+      },
+      {
+        "feed_id": "wsj.opinion",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:31.341985Z"
+      },
+      {
+        "feed_id": "wsj.politics",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:31.241170Z"
+      },
+      {
+        "feed_id": "wsj.technology",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:31.283111Z"
+      },
+      {
+        "feed_id": "wsj.world",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-13T03:16:30.853852Z"
+      }
+    ],
+    "note": "Built from headlines and RSS descriptions published between 05:30 on 10 October and 05:30 on 13 October. All 132 feeds at 17 publishers polled."
+  },
+  "inputs": [
+    {
+      "id": "export-2026-10-13-0330",
+      "sha256": "sha256:29b447d7d1c345a8832fe6d1613878db084bed640d6ad5262a6e628699f2b703"
+    }
+  ],
+  "stories": [
+    {
+      "id": "danish-inflation-2-2-september",
+      "device_participation": "required",
+      "role": "lead",
+      "kicker": "Prices",
+      "copy": {
+        "headline": "Danish inflation rises to 2.2 per cent as fuel prices climb",
+        "body": {
+          "extended": [
+            {
+              "text": "Inflation in Denmark rose to 2.2 per cent in September, up 0.2 percentage points on August, according to figures published on Monday by Statistics Denmark, the national statistics agency. It is the first time in a year that inflation has been above two per cent.",
+              "sources": [
+                "kristeligt_dagblad",
+                "dr"
+              ]
+            },
+            {
+              "text": "Fuel prices drove the rise. Core inflation, which leaves out energy among other things, fell to 1.9 per cent, and cheaper holiday-home rentals, package holidays and food pulled the other way.",
+              "sources": [
+                "kristeligt_dagblad",
+                "borsen",
+                "politiken"
+              ]
+            },
+            {
+              "text": "Mette Hørdum Larsen, chief economist at Lederne, an organisation for managers, writes that the near-removal of the electricity tax this year and next hides much of the rise in energy prices. She sees no sign yet that it is spreading to the rest of the economy. 'There is still a long way to the inflation crisis we experienced in 2022,' she writes.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Søren Kristensen, chief economist at AL Sydbank, agrees, but says prices have outpaced wages in recent quarters, so Danes have lost purchasing power.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Ulrik Harald Bie, in an analysis for Berlingske, finds households split: prices have fallen considerably for some and risen markedly for others.",
+              "sources": [
+                "berlingske"
+              ]
+            }
+          ],
+          "standard": [
+            {
+              "text": "Inflation in Denmark rose to 2.2 per cent in September, up 0.2 percentage points on August, according to figures published on Monday by Statistics Denmark, the national statistics agency. It is the first time in a year that inflation has been above two per cent.",
+              "sources": [
+                "kristeligt_dagblad",
+                "dr"
+              ]
+            },
+            {
+              "text": "Fuel prices drove the rise. Core inflation, which leaves out energy among other things, fell to 1.9 per cent.",
+              "sources": [
+                "kristeligt_dagblad",
+                "borsen",
+                "politiken"
+              ]
+            },
+            {
+              "text": "Mette Hørdum Larsen, chief economist at Lederne, an organisation for managers, sees no sign yet that energy prices are spreading to the rest of the economy. 'There is still a long way to the inflation crisis we experienced in 2022,' she writes.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Søren Kristensen, chief economist at AL Sydbank, says prices have outpaced wages in recent quarters, so Danes have lost purchasing power.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Inflation in Denmark rose to 2.2 per cent in September on higher fuel prices, according to figures published on Monday by Statistics Denmark, the national statistics agency. Core inflation, which leaves out energy among other things, fell to 1.9 per cent.",
+              "sources": [
+                "kristeligt_dagblad",
+                "borsen",
+                "dr"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Inflation rises to 2.2 per cent",
+        "deck": "Core inflation falls to 1.9 per cent; economists see no sign yet that energy prices are spreading."
+      },
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "There is still a long way to the inflation crisis we experienced in 2022.",
+          "attribution": "Mette Hørdum Larsen, chief economist at Lederne",
+          "attribution_source": "kristeligt_dagblad"
+        }
+      ],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "015bf2a7-160b-414a-a81c-df749d1b46a4",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Højere brændstofpriser får inflationen til at stige",
+          "url": "https://www.kristeligt-dagblad.dk/hoejere-braendstofpriser-faar-inflationen-til-stige",
+          "published_at": "2026-10-12T06:07:29.000000Z",
+          "content_hash": "sha256:1ac547a34817cf2b2f7f0c3db4d160394c00b439e2af618afed2ac3dabb5c3ca",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/okonomi/4100450-inflationen-i-danmark-stiger-igen",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Inflationen i Danmark stiger igen",
+          "url": "https://borsen.dk/nyheder/okonomi/4100450-inflationen-i-danmark-stiger-igen",
+          "published_at": "2026-10-12T06:03:50.000000Z",
+          "content_hash": "sha256:d916d7eb683e301d328ba80d6aaa1fd8731808f7dd7ae68caa8abd134c560626",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:0bc5e935-82a8-4e78-bf67-aaae35806d12",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Inflationen stiger igen, men der er et lyspunkt i tallene",
+          "url": "https://www.dr.dk/nyheder/penge/inflationen-stiger-igen-men-der-er-et-lyspunkt-i-tallene",
+          "published_at": "2026-10-12T07:52:01.000000Z",
+          "content_hash": "sha256:5f1b6924c3d6b9229943ac351c1b9cdfb249f8656787dcdbedaf216d1c6f5fca",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11018911",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Inflationen krydser kritisk grænse – økonom følger udviklingen med »en vis bæven«",
+          "url": "https://politiken.dk/danmark/oekonomi/art11018911/Inflationen-krydser-kritisk-gr%C3%A6nse-%E2%80%93-%C3%B8konom-f%C3%B8lger-udviklingen-med-%C2%BBen-vis-b%C3%A6ven%C2%AB",
+          "published_at": "2026-10-12T11:25:26.000000Z",
+          "content_hash": "sha256:cc6f15692333d7aaa54bd4ab93e48c6acb0bef0f52fff7f2945d67ab36707096",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19727523",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Priserne stiger igen: Analytiker følger særligt én ting med »vis bæven«",
+          "url": "https://jyllands-posten.dk/okonomi/ECE19727523/nye-tal-inflationen-stiger-igen/",
+          "published_at": "2026-10-12T06:08:05.000000Z",
+          "content_hash": "sha256:fdef115079ede1c5c89800bd929a09e0a8369213d3706f2a0058d013b2c119cd",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:432a0875-b139-5a64-9cf1-ac8e56156c2e",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Nye tal afslører et Danmark delt i to: Her rammer prisstigninger hårdest",
+          "url": "https://www.berlingske.dk/oekonomi/nye-tal-afsloerer-et-danmark-delt-i-to-her-rammer-prisstigninger-haardest",
+          "published_at": "2026-10-12T09:04:43.000000Z",
+          "content_hash": "sha256:f119bfbc372dcc6781a8f68a06361f51888443dc8c63966e0312150e2b36d36a",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "greenland-parliament-first-reading",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Defence",
+      "copy": {
+        "headline": "Greenland opposition party wants a referendum on the US defence deal",
+        "body": {
+          "standard": [
+            {
+              "text": "Greenland's parliament, Inatsisartut, held the first reading of the new security and defence agreement with the United States and Denmark on Monday and sent it to a second reading, which has no date yet. The vote comes only at the third reading. The governing coalition holds 19 of the 31 seats.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "dr"
+              ]
+            },
+            {
+              "text": "Pele Broberg, leader of Naleraq, an opposition party, wants the deal put to a referendum. He said it 'turns our country's importance into rights for the United States' without a matching economic return for Greenlanders. According to KNR, a Greenlandic news outlet, Jens-Frederik Nielsen, Greenland's head of government, replied that the US had put no 'offers of money on the table'.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "The deal was signed on 22 September. It extends one from 1951 and lets the US set up two more military bases.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Greenland's parliament held the first reading of the new defence agreement with the United States and Denmark on Monday. Naleraq, an opposition party, wants it put to a referendum, but the governing coalition holds 19 of the 31 seats.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Greenland's parliament debates the US deal",
+        "deck": "Parliament held the first reading on Monday; the governing coalition holds 19 of its 31 seats."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "f4a8d8cc-f6ed-4468-9ed5-2efb2646628e",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Grønlandsk oppositionsparti vil have USA-aftale til folkeafstemning",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/groenlandsk-oppositionsparti-vil-have-usa-aftale-til-folkeafstemning",
+          "published_at": "2026-10-12T17:43:07.000000Z",
+          "content_hash": "sha256:33c6553c8695a1667ffb350b0dddbbcc16ce170f1a41f305bcc2df302c14ae4b",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:fb240f89-4fdf-48a2-8cd4-d139319e9b71",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Historisk debat i det grønlandske parlament: Her er tre punkter, der stadig skaber usikkerhed om USA-aftalen",
+          "url": "https://www.dr.dk/nyheder/indland/groenland/historisk-debat-i-det-groenlandske-parlament-her-er-tre-punkter-der-stadig-skaber-usikkerhed-om-usa",
+          "published_at": "2026-10-12T19:15:29.000000Z",
+          "content_hash": "sha256:733e450a054c1e6ada3106a6413799068e0f0b331de55900a2f2ce824a5229dc",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:315084f2-42ca-4987-8be6-d6f541518a6f",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Grønlandsk topminister om forholdet til USA: 'Noget er gået alvorligt i stykker'",
+          "url": "https://www.dr.dk/nyheder/indland/groenland/groenlandsk-topminister-om-forholdet-til-usa-noget-er-gaaet-alvorligt-i-stykker",
+          "published_at": "2026-10-12T03:36:00.000000Z",
+          "content_hash": "sha256:43fe2f990eeefca7ce50bf5064f79d5c3d2be87e15ab09f6423b7397ef878fad",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:21a118b9-1ea0-513e-93fc-c162d30fafc3",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Grønlandsk oppositionsparti vil have USA-aftale til folkeafstemning",
+          "url": "https://www.berlingske.dk/politik/groenlandsk-oppositionsparti-vil-have-usa-aftale-til-folkeafstemning",
+          "published_at": "2026-10-12T17:53:44.000000Z",
+          "content_hash": "sha256:1cd1ae518d49b7a66166614d1939904d60f06f358d3b952ca06f948d1d4fc5e8",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "us-threatens-ukraine-intelligence-cut",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "World",
+      "copy": {
+        "headline": "America threatens to stop sharing intelligence with Ukraine if it hits Russian oil plants",
+        "body": {
+          "standard": [
+            {
+              "text": "America will stop giving Ukraine intelligence on Russia if Ukraine attacks Russian oil plants, CNN reports. America's military delivered the warning to Ukraine's military high command at the weekend.",
+              "sources": [
+                "kristeligt_dagblad",
+                "jp"
+              ]
+            },
+            {
+              "text": "The threat follows a deal by Donald Trump to buy Russian diesel, which is under sanctions, to lower fuel prices in America. Strikes on Russian refineries would leave Russia with no diesel to sell.",
+              "sources": [
+                "kristeligt_dagblad",
+                "tv2"
+              ]
+            },
+            {
+              "text": "The intelligence shows where Russian ballistic missiles are launched from and where they are heading. Without it Ukraine's air defence goes blind and more civilians will die, the chair of the Ukrainian parliament's foreign affairs committee warns in DR.",
+              "sources": [
+                "kristeligt_dagblad",
+                "dr"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "America will stop giving Ukraine intelligence on Russia if Ukraine attacks Russian oil plants, CNN reports. The threat follows a deal by Donald Trump to buy Russian diesel, which is under sanctions.",
+              "sources": [
+                "kristeligt_dagblad",
+                "jp",
+                "tv2"
+              ]
+            }
+          ]
+        },
+        "headline_short": "America warns Ukraine off Russian oil",
+        "deck": "The warning also puts at risk American weapons that European donors buy for Ukraine."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "88c28df4-c5ce-4b3e-be64-dcfb3b24abe0",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "USA truer med at stoppe våbensalg og efterretninger til Ukraine",
+          "url": "https://www.kristeligt-dagblad.dk/udland/usa-truer-med-stoppe-vaabensalg-og-efterretninger-til-ukraine",
+          "published_at": "2026-10-12T11:00:01.000000Z",
+          "content_hash": "sha256:6f7a0575c912fc74d310cb0dfa4b77958e7d7b33460f39d5a238379b2083b4f8",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "jp",
+          "source_id": "19729376",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "USA sætter Ukraine pistolen for panden: Stop angreb - eller glem amerikanske våben og efterretninger",
+          "url": "https://jyllands-posten.dk/international/europa/ECE19729376/usa-truer-med-at-stoppe-vaabensalg-og-efterretninger-til-ukraine/",
+          "published_at": "2026-10-12T11:35:29.000000Z",
+          "content_hash": "sha256:a506cfca8faac16e319a238659d9829612d0d43d3588b15b82096ec1c58b0576",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/udland/2026-10-12-usa-truer-med-at-droppe-stoetten-hvis-ukraine-fortsaetter-angreb-paa-rusland",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "USA truer med at droppe støtten, hvis Ukraine fortsætter angreb på Rusland",
+          "url": "https://nyheder.tv2.dk/udland/2026-10-12-usa-truer-med-at-droppe-stoetten-hvis-ukraine-fortsaetter-angreb-paa-rusland",
+          "published_at": "2026-10-12T12:16:42.000000Z",
+          "content_hash": "sha256:1e4da68f1e13a45a4de4eb9b4d6b9531d848f14b1fc6c1f2090ab83f00d3f7aa",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:cd3828f4-b9c0-4338-8dd9-d4eda539c24f",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Ukrainsk politiker: Uden amerikanske efterretninger bliver vores luftforsvar blindt",
+          "url": "https://www.dr.dk/nyheder/udland/ukrainsk-politiker-uden-amerikanske-efterretninger-bliver-vores-luftforsvar-blindt",
+          "published_at": "2026-10-13T02:15:14.000000Z",
+          "content_hash": "sha256:d1d7aaea28fc4c3f53bf34d9a02c7e2ab6da9a964ef9b5f7f4d6d523fd039a47",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "68fd8c4f-6f34-4f6e-a52c-76f635164031",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "US threatens to block arms for Ukraine over attacks on Russian refineries",
+          "url": "https://www.ft.com/content/68fd8c4f-6f34-4f6e-a52c-76f635164031",
+          "published_at": "2026-10-12T06:42:57.000000Z",
+          "content_hash": "sha256:11dea711acc8383d4c5aa3bcb41540df060b8c63eb15e40f27eec70e7ade55ba",
+          "primary": false
+        },
+        {
+          "source": "economist",
+          "source_id": "e15e2402-9a89-49b6-b7a4-0443a50c53f5",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Donald Trump is again threatening to cut off arms to Ukraine",
+          "url": "https://www.economist.com/europe/2026/10/12/donald-trump-is-again-threatening-to-cut-off-arms-to-ukraine",
+          "published_at": "2026-10-12T12:00:25.000000Z",
+          "content_hash": "sha256:a18dd88da0b281e21da5629576eda4939a868b1ba8044f3df079bf1064926bfe",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "venstre-extraordinary-board-meeting",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Venstre's leader calls the party's executive to an extraordinary meeting",
+        "body": {
+          "standard": [
+            {
+              "text": "Troels Lund Poulsen, leader of Venstre, a liberal party, has called its national executive to an extraordinary meeting in Nyborg, a town on Funen, on 25 October. The agenda has one item: the current political situation.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "'After some hard weeks for Venstre it is natural to gather and discuss the way forward,' Stephanie Lose, the deputy leader, told Ritzau, a Danish news agency.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "The party took 10.1 per cent at the election in March, its worst result. Voxmeter, a polling firm, put it at 5.8 per cent on 21 September and 7.4 on Monday.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Two commentators quoted by Berlingske call the meeting 'uncommonly unusual' and a sign of crisis.",
+              "sources": [
+                "berlingske"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Troels Lund Poulsen, leader of Venstre, a liberal party, has called its national executive to an extraordinary meeting on 25 October to discuss the current political situation. The party took 10.1 per cent at the election in March, its worst result.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Venstre calls an extraordinary meeting",
+        "deck": "The executive meets on 25 October, after the party's worst election result and its lowest poll in Voxmeter's history."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "2a4c4d86-82a1-476c-bd0c-dd3d4c7fbfe6",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Venstre indkalder til ekstraordinært hovedbestyrelsesmøde",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/medier-troels-lund-indkalder-til-ekstraordinaert-hovedbestyrelsesmoede",
+          "published_at": "2026-10-12T11:46:25.000000Z",
+          "content_hash": "sha256:725a75d0ab043809a9042ffab47dc03a8df968a37bb8ec20cd85867317c22992",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:512940bf-8611-53a3-9745-2aa4e04488d7",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Troels Lund Poulsen indkalder til ekstraordinært hovedbestyrelsesmøde",
+          "url": "https://www.berlingske.dk/politik/troels-lund-poulsen-indkalder-til-ekstraordinaert-hovedbestyrelsesmoede",
+          "published_at": "2026-10-12T11:43:01.000000Z",
+          "content_hash": "sha256:4c66dff316a9fb92bb0c65668359e74d2d28b19839a997285bdad65af85184e9",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:fc865f28-c087-5c87-bd02-b9067bc3fb4b",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Ekstraordinært møde i Venstre er »ualmindeligt usædvanligt«, mener kommentatorer: Ingen vej tilbage for Troels Lund",
+          "url": "https://www.berlingske.dk/politik/ekstraordinaert-moede-i-venstre-er-ualmindeligt-usaedvanligt-mener-kommentatorer-ingen-vej-tilbage-for-troels-lund",
+          "published_at": "2026-10-12T16:17:20.000000Z",
+          "content_hash": "sha256:99d602304e522a19d3f84d0814a3ad196f11c8cfd5f8413ddcb0e0105dabe3cb",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19730416",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Niels Th. Dahl: Formålet med Venstre-krisemøde er ikke til at tage fejl af",
+          "url": "https://jyllands-posten.dk/politik/ECE19730416/ekstraordinaert-moede-i-venstre-skal-vise-om-der-stadig-er-opbakning-til-troels-lunds-rejse/",
+          "published_at": "2026-10-12T14:38:21.000000Z",
+          "content_hash": "sha256:adac1946cd964cc2462b763008f5902c127a4d770a9d2b63785a5bc5d3cc43df",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "cpr-hacker-says-ai-wrote-program",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Alleged hacker says AI wrote the program that took 8.7 million Danish ID numbers",
+        "body": {
+          "standard": [
+            {
+              "text": "The program that took 8,749,975 CPR numbers, Denmark's personal identification numbers, was written by artificial intelligence, the presumed hacker behind the theft told Politiken. 'Any AI model launched within the past year or so could do it,' the hacker wrote. Two experts who reviewed the code for the newspaper agree that it was made by AI.",
+              "sources": [
+                "politiken",
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "By the hacker's account, the program reached the register through a website run by Pays, a company on Funen with two employees, using a former employee's leaked password. A bug in the code searched for people born in 1877 instead of 1977, so nobody born in 1977 is in the material the hacker shared.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "The program that took 8,749,975 CPR numbers, Denmark's personal identification numbers, was written by artificial intelligence, the presumed hacker behind the theft told Politiken. Two experts who reviewed the code for the newspaper agree.",
+              "sources": [
+                "politiken",
+                "kristeligt_dagblad"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Hacker says AI wrote the code",
+        "deck": "Two experts who reviewed the code for Politiken agree; a bug left out everyone born in 1977."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "politiken",
+          "source_id": "11019319",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Angrebet på 8,7 millioner cpr-numre var skabt af kunstig intelligens",
+          "url": "https://politiken.dk/danmark/art11019319/Angrebet-p%C3%A5-87-millioner-cpr-numre-var-skabt-af-kunstig-intelligens",
+          "published_at": "2026-10-12T18:07:42.000000Z",
+          "content_hash": "sha256:3e9e466dacd5e40621f3912f96478663894fdadf7c04333ed7ea01537c06e657",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "7deea118-a13a-4084-9bc8-018ae4091cc0",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Medie: Program bag CPR-læk var skabt af kunstig intelligens",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/medie-program-bag-cpr-laek-var-skabt-af-kunstig-intelligens",
+          "published_at": "2026-10-13T01:43:22.000000Z",
+          "content_hash": "sha256:3a7ccff0b069db54021c120d20a8cb9d4556f208cfec20562e79408ca84bdeec",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:3a7f30d9-9b6d-5180-908e-7b35b6484b10",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Medie: Program bag CPR-læk var skabt af kunstig intelligens",
+          "url": "https://www.berlingske.dk/danmark/medie-program-bag-cpr-laek-var-skabt-af-kunstig-intelligens",
+          "published_at": "2026-10-13T02:33:46.000000Z",
+          "content_hash": "sha256:84441f2db0c6db449d6d6b1a9da915826cc28d8db5ef1222c0df2f111dc59143",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "nobel-economics-hall-woodford",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Economy",
+      "copy": {
+        "headline": "Two American economists win the Nobel prize in economics",
+        "body": {
+          "standard": [
+            {
+              "text": "Robert E. Hall of Stanford University and Michael Woodford of Columbia University won this year's Nobel prize in economics on Monday, for what the Royal Swedish Academy of Sciences called 'microeconomic foundations of macroeconomic stabilisation'. The two Americans share 12 million Swedish kronor.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "politiken",
+                "dr"
+              ]
+            },
+            {
+              "text": "Their models show how fiscal and monetary policy can smooth out booms and slumps. John Hassler, who chairs the prize committee, said the winners' work had given 'a solid theoretical foundation for the models that are used today by central banks and governments around the world'.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "During the financial crisis of 2008 it shaped central banks' monetary policy.",
+              "sources": [
+                "borsen",
+                "ft"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Robert E. Hall of Stanford University and Michael Woodford of Columbia University, both Americans, won the Nobel prize in economics on Monday for models that show how fiscal and monetary policy can smooth out booms and slumps.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "Their work shaped central banks' monetary policy during the financial crisis of 2008.",
+              "sources": [
+                "borsen",
+                "ft"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Americans win economics Nobel",
+        "deck": "Robert Hall and Michael Woodford are honoured for models that central banks and governments use to smooth out booms and slumps."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "4eae02b5-6af8-41c9-a152-0a4a0ef0d6f6",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Amerikanere modtager Nobelpris for stabiliserende økonomiske modeller",
+          "url": "https://www.kristeligt-dagblad.dk/udland/nobelpris-i-oekonomi-tildeles-amerikanere",
+          "published_at": "2026-10-12T10:13:51.000000Z",
+          "content_hash": "sha256:8f14b8687737404d6b06a6f34742fb2ffe6724d106ffdbbcb9cfefb82731dd6b",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/okonomi/amerikanske-okonomer-vinder-nobelprisen-i-okonomi",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Amerikanske økonomer vinder Nobelprisen i økonomi",
+          "url": "https://borsen.dk/nyheder/okonomi/amerikanske-okonomer-vinder-nobelprisen-i-okonomi",
+          "published_at": "2026-10-12T11:37:05.000000Z",
+          "content_hash": "sha256:0cfd83f42ab1026e8607e26a3093f9f67b8052dde07d293bb1dd68e90343415d",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11019416",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "De får nobelpris for deres modeller til at håndtere økonomiske mavepustere",
+          "url": "https://politiken.dk/danmark/oekonomi/art11019416/De-f%C3%A5r-nobelpris-for-deres-modeller-til-at-h%C3%A5ndtere-%C3%B8konomiske-mavepustere",
+          "published_at": "2026-10-12T10:02:14.000000Z",
+          "content_hash": "sha256:b0c74345f52c75177f2d9afd2d219cdf345b25a7981de623b48c852a09619cf7",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:80f921b2-f981-4943-9f48-c2007d6666e9",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Økonomer fra amerikanske eliteuniversiteter modtager Nobel-prisen i økonomi",
+          "url": "https://www.dr.dk/nyheder/seneste/oekonomer-fra-amerikanske-eliteuniversiteter-modtager-nobel-prisen-i-oekonomi",
+          "published_at": "2026-10-12T10:13:03.000000Z",
+          "content_hash": "sha256:550d71bcbbd468a1e9520f654a10d378eab32f2b20451910479ffb7fb9edadc7",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:6b5ba600-d0ec-5550-b447-24e0c9942d67",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Amerikanere modtager Nobelpris for stabiliserende økonomiske modeller",
+          "url": "https://www.berlingske.dk/internationalt/amerikanere-modtager-nobelpris-for-stabiliserende-oekonomiske-modeller",
+          "published_at": "2026-10-12T11:12:45.000000Z",
+          "content_hash": "sha256:1ebb1d0443c1718948f282dbf2c4fb09fff6100b4538c8ac3cafecade633e3e9",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/12/business/nobel-prize-economics.html",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Robert E. Hall and Michael Woodford Awarded Nobel for Economics",
+          "url": "https://www.nytimes.com/2026/10/12/business/nobel-prize-economics.html",
+          "published_at": "2026-10-12T19:01:19.000000Z",
+          "content_hash": "sha256:ed2d00af99687a22667add18648ee3ad19e3ff84182ab1a588a6f9a8cd6351fb",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "1d3b1c4f-823d-49eb-aaf5-b662a6281ac7",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Two economists who transformed crisis management win Nobel Prize",
+          "url": "https://www.ft.com/content/1d3b1c4f-823d-49eb-aaf5-b662a6281ac7",
+          "published_at": "2026-10-12T16:40:03.000000Z",
+          "content_hash": "sha256:27650dacb81a93b4e72dba1f498cb907935716915b4c9fb16fc27f93242f762a",
+          "primary": false
+        },
+        {
+          "source": "economist",
+          "source_id": "dd7ab4de-1e15-4764-81a5-d4c4921c969a",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "A Nobel prize for how to keep economies on an even keel",
+          "url": "https://www.economist.com/finance-and-economics/2026/10/12/a-nobel-prize-for-how-to-keep-economies-on-an-even-keel",
+          "published_at": "2026-10-12T16:29:06.000000Z",
+          "content_hash": "sha256:e88b129798a29671e885b90ee23c8889cf646319c4b2e76601096626b683b081",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/12/nobel-prize-for-economics-hall-woodford-new-keynesian-models",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Nobel Prize for economics awarded to Hall and Woodford for work on ‘smoothing’ crises",
+          "url": "https://www.theguardian.com/world/2026/oct/12/nobel-prize-for-economics-hall-woodford-new-keynesian-models",
+          "published_at": "2026-10-12T14:20:53.000000Z",
+          "content_hash": "sha256:fb70accbe0276c09da612f3f571f7e95095a0bb5c2cb5374501800addaa3d4c9",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/business/live/2026/oct/12/uk-growth-inflation-pressures-oil-price-sveriges-riksbank-nobel-prize-economic-sciences-awarded-latest-news-updates",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Nobel prize for economics awarded to two Americans, Hall and Woodford, for work on New Keynesian models – business live",
+          "url": "https://www.theguardian.com/business/live/2026/oct/12/uk-growth-inflation-pressures-oil-price-sveriges-riksbank-nobel-prize-economic-sciences-awarded-latest-news-updates",
+          "published_at": "2026-10-12T14:02:05.000000Z",
+          "content_hash": "sha256:da48a13de0788dbbfbef5d27f9352944e4eb6d6b3acaeff0fa2f21e0b2fd86ef",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "f4463a28-832d-4a2d-acc5-d83e258610cb",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Nobel Prize for economics awarded to Hall and Woodford",
+          "url": "https://www.ft.com/content/f4463a28-832d-4a2d-acc5-d83e258610cb",
+          "published_at": "2026-10-12T09:09:04.000000Z",
+          "content_hash": "sha256:77ac251637afb93c0118aafc7a258fee44d5209303706e07875fe93e4cabfbf4",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "zelensky-russia-broke-ceasefire-six-times",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Zelensky says Russia hit six energy sites despite Trump's ceasefire",
+        "body": {},
+        "lede": {
+          "text": "Russia hit six Ukrainian energy sites on Monday despite an energy ceasefire Donald Trump announced on Sunday, said Volodymyr Zelensky, Ukraine's president, who learned of the ceasefire from the media.",
+          "sources": [
+            "kristeligt_dagblad",
+            "borsen",
+            "bbc",
+            "ft",
+            "guardian"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "6f245c8d-ab2c-4bfd-8dcd-2b43700a4426",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Zelenskyj: Rusland har brudt energivåbenhvile seks gange mandag",
+          "url": "https://www.kristeligt-dagblad.dk/udland/zelenskyj-rusland-har-brudt-energivaabenhvile-seks-gange-mandag",
+          "published_at": "2026-10-12T14:27:15.000000Z",
+          "content_hash": "sha256:dabac4103eb1ebf4312a0ad6e0205aba34fb0a528b88fe104a5f03b28aeacee3",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/zelenskyj-rusland-har-brudt-energivabenhvile-seks-gange-mandag",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Zelenskyj: Rusland har brudt energivåbenhvile seks gange mandag",
+          "url": "https://borsen.dk/nyheder/udland/zelenskyj-rusland-har-brudt-energivabenhvile-seks-gange-mandag",
+          "published_at": "2026-10-12T14:31:42.000000Z",
+          "content_hash": "sha256:0e0dd73897f0947b023b02c2821d51d07e70516788cf90de24b5ffa14e717d3e",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cvlyd4pdlwkxo",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Six Ukrainian energy sites hit by Russia since Trump announced ceasefire, Zelensky says",
+          "url": "https://www.bbc.co.uk/news/articles/cvlyd4pdlwkxo?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-12T21:20:51.000000Z",
+          "content_hash": "sha256:df36f8d2dd27c4f7d196bdf69cd07ef5b9933a86d3fa496253bdf456cfc769b5",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/live/2026/oct/12/ukraine-russia-trump-energy-ceasefire-nato-zelenskyy-nobel-latest-news-updates",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Zelenskyy says ‘increasingly clear’ Russia does not want energy ceasefire after strikes on energy facilities – as it happened",
+          "url": "https://www.theguardian.com/world/live/2026/oct/12/ukraine-russia-trump-energy-ceasefire-nato-zelenskyy-nobel-latest-news-updates",
+          "published_at": "2026-10-12T16:31:54.000000Z",
+          "content_hash": "sha256:7ad902fc86bc4972995e0f3c5502f2dbb4221eb7fb537e221fcac3d17fecc129",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "863619b6-c4a7-4b1a-8a53-6950d47d1833",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Putin is breaching Trump’s ‘energy ceasefire’, Zelenskyy says",
+          "url": "https://www.ft.com/content/863619b6-c4a7-4b1a-8a53-6950d47d1833",
+          "published_at": "2026-10-12T14:27:52.000000Z",
+          "content_hash": "sha256:d066025ed079ab20e2cad98294899ddf3ddf0f7d26b76fdb117846a363e08049",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "french-supermarket-hack-danfoss",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Business",
+      "copy": {
+        "headline": "Danfoss cooling controls hit in cyberattack on French supermarkets",
+        "body": {},
+        "lede": {
+          "text": "A 'limited number' of cooling controls made by Danfoss, a Danish industrial group, were hit in Monday's cyberattack that heated fridges in hundreds of French supermarkets, the company says.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr",
+            "borsen"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "a2873362-f997-4bcc-b365-454485a4a145",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Danfoss-systemer ramt i cyberangreb på franske supermarkeder",
+          "url": "https://www.kristeligt-dagblad.dk/danfoss-systemer-ramt-i-cyberangreb-paa-franske-supermarkeder",
+          "published_at": "2026-10-12T15:00:05.000000Z",
+          "content_hash": "sha256:bf6387a59d1e042e657f35efe48d9ac68123584f468202c0321447c7873ac3ef",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "14d63a0d-339a-4b5c-93bf-b67fa0464f0f",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Temperaturer blev skruet op under cyberangreb i franske supermarkeder",
+          "url": "https://www.kristeligt-dagblad.dk/udland/temperaturer-blev-skruet-op-under-cyberangreb-i-franske-supermarkeder",
+          "published_at": "2026-10-12T12:17:05.000000Z",
+          "content_hash": "sha256:5a5b69b29f21bbd50cf5e13557c9fa0f4d83c72b436446c05273c18db2d1284f",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/virksomheder/cyberangreb-lammer-koleanlaeg-i-franske-supermarkeder-danfoss-berort",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Cyberangreb lammer køleanlæg i franske supermarkeder: Danfoss berørt",
+          "url": "https://borsen.dk/nyheder/virksomheder/cyberangreb-lammer-koleanlaeg-i-franske-supermarkeder-danfoss-berort",
+          "published_at": "2026-10-12T14:55:47.000000Z",
+          "content_hash": "sha256:563ad8a5967af292254b47c2f6dcd803f3d95cc2e7526f89ac7600bf7ec38581",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:28c885e6-3737-4058-ad4e-f497294a36c3",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Hackere skruer op for varmen i franske kølediske",
+          "url": "https://www.dr.dk/nyheder/udland/hackere-skruer-op-varmen-i-franske-koelediske",
+          "published_at": "2026-10-12T13:38:33.000000Z",
+          "content_hash": "sha256:af30bc92ded45fb75b71d8872fffee267ffc0f87098d58e003b850e026ba4b5d",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:e1ed5b1a-d56c-5672-8ede-75e46264c8eb",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Temperaturer blev skruet op under cyberangreb i franske supermarkeder",
+          "url": "https://www.berlingske.dk/internationalt/temperaturer-blev-skruet-op-under-cyberangreb-i-franske-supermarkeder",
+          "published_at": "2026-10-12T12:42:46.000000Z",
+          "content_hash": "sha256:b24f7c29a6ba4c59977b1131f8d814bf27acf682752d8b3a2603c0c422dc96ef",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "crq5nzxv9q4yo",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "French supermarket fridges heated up in 'unprecedented' cyber attack",
+          "url": "https://www.bbc.co.uk/news/articles/crq5nzxv9q4yo?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-12T18:31:32.000000Z",
+          "content_hash": "sha256:a7bb74d10c88198b1884f1665feb5c6a8d92559806e03688a07d8860ea3fd94f",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/technology/video/2026/oct/13/french-supermarket-director-apologises-after-cyber-attack-spoils-fresh-and-frozen-food-video",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "French supermarket director apologises after cyber-attack spoils fresh and frozen food - video",
+          "url": "https://www.theguardian.com/technology/video/2026/oct/13/french-supermarket-director-apologises-after-cyber-attack-spoils-fresh-and-frozen-food-video",
+          "published_at": "2026-10-13T02:57:06.000000Z",
+          "content_hash": "sha256:a6b07cf3a4c72716e0132d11b644b6ec9ed340a18bcb706d4080ad44fbad2411",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/12/cyber-attack-defrosts-refrigerators-france-supermarket-chains-intermarche-cooperative-u",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Hackers force French supermarket fridges to heat up to 50C in ‘unprecedented’ cyber-attack",
+          "url": "https://www.theguardian.com/world/2026/oct/12/cyber-attack-defrosts-refrigerators-france-supermarket-chains-intermarche-cooperative-u",
+          "published_at": "2026-10-12T16:38:36.000000Z",
+          "content_hash": "sha256:aa1f9561e729da67f06db8da5a31ea258480362e9216e7ed9c64636976052d44",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "district-heating-dearer-2027",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Prices",
+      "copy": {
+        "headline": "District heating will cost more in 2027 as energy prices rise",
+        "body": {},
+        "lede": {
+          "text": "Ten district-heating companies have so far announced price rises for 2027, mostly of 6 to 10 per cent, according to TV 2; Præstø, in south Zealand, faces a proposed 40 per cent rise.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "feffc375-e9eb-4f56-a978-99f712042f15",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Stigende energipriser betyder dyrere fjernvarme til næste år",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/stigende-energipriser-betyder-dyrere-fjernvarme-til-naeste-aar",
+          "published_at": "2026-10-12T05:24:13.000000Z",
+          "content_hash": "sha256:9ce129302b1978441b00186a42c0134429321ffef17a0251abe6f4fc23fa1dcc",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:728d9e45-0e87-4690-9082-717e6b1af1d6",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Udsigt til dyrere fjernvarme flere steder i landet",
+          "url": "https://www.dr.dk/nyheder/seneste/udsigt-til-dyrere-fjernvarme-flere-steder-i-landet",
+          "published_at": "2026-10-12T05:35:30.000000Z",
+          "content_hash": "sha256:6847e5568b47c35c96e341a778b5d4d049f961f915bdad114194be94bce69595",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:e6de626d-9707-5b41-9d46-0ada780c05dc",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Stigende energipriser betyder dyrere fjernvarme til næste år",
+          "url": "https://www.berlingske.dk/danmark/stigende-energipriser-betyder-dyrere-fjernvarme-til-naeste-aar",
+          "published_at": "2026-10-12T05:25:44.000000Z",
+          "content_hash": "sha256:332a8001a0f19180e6b29112ac252464702e3652bdd8a5d32bec183b64f05070",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "public-shelters-three-billion",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Defence",
+      "copy": {
+        "headline": "Readying Denmark's public shelters could cost up to three billion kroner",
+        "body": {},
+        "lede": {
+          "text": "Readying all 1,694 of Denmark's public concrete shelters would cost in the order of two to three billion kroner, Lisbeth Bech-Nielsen, the minister for civil security and preparedness, says in a reply to parliament.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "a1ed4d63-9b38-48aa-9f88-0d24dbf2e5c1",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Klargøring af 1694 beskyttelsesrum kan koste op mod tre milliarder",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/klargoering-af-1694-beskyttelsesrum-kan-koste-op-mod-tre-milliarder",
+          "published_at": "2026-10-12T12:43:07.000000Z",
+          "content_hash": "sha256:56ea693c5bd1655cc1bc34cdd3f42da7e7449e4e2384ac70b5196f15ebdae8ee",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:5196f8d9-0418-5087-8ed5-2c47e281765e",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Klargøring af 1694 beskyttelsesrum kan koste op mod tre milliarder",
+          "url": "https://www.berlingske.dk/politik/klargoering-af-1694-beskyttelsesrum-kan-koste-op-mod-tre-milliarder",
+          "published_at": "2026-10-12T18:08:48.000000Z",
+          "content_hash": "sha256:46730db3658decefa202dc4a0009a136d2ddd07b8424ffbb4a51140cffe2ece5",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "east-jutland-scooter-fines-wrong",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "East Jutland police apologise for 12 unlawful fines on parents of young e-scooter riders",
+        "body": {},
+        "lede": {
+          "text": "Police in East Jutland have apologised for fining parents in 12 cases where children under 15 were caught riding e-scooters without an adult, though they had no legal basis to do so.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "234232df-acad-4733-ac57-95915c2f1d80",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Politiet uddeler fejlagtigt 12 løbehjulsbøder til forældre",
+          "url": "https://www.kristeligt-dagblad.dk/politiet-uddeler-fejlagtigt-12-loebehjulsboeder-til-foraeldre",
+          "published_at": "2026-10-12T08:23:41.000000Z",
+          "content_hash": "sha256:5dbb53b1bd758052096799affbb1b10e7cb921d304de45c60786ed4996740bfa",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:ffa38b98-fef4-5049-b71c-a42e76c0dc81",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Politiet uddeler fejlagtigt 12 løbehjulsbøder til forældre",
+          "url": "https://www.berlingske.dk/indland/politiet-uddeler-fejlagtigt-12-loebehjulsboeder-til-foraeldre",
+          "published_at": "2026-10-12T09:47:43.000000Z",
+          "content_hash": "sha256:bb0fa09a6e86c1c395480cdde8c30ca15b445fe053ce2a327fc318b9ab03f52f",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:c2089620-831b-442d-a60c-5ed9afbe58aa",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Østjyllands Politi beklager fejlagtige løbehjulsbøder",
+          "url": "https://www.dr.dk/nyheder/seneste/oestjyllands-politi-beklager-fejlagtige-loebehjulsboeder",
+          "published_at": "2026-10-12T08:29:09.000000Z",
+          "content_hash": "sha256:e28d40966e928e640a39943f92f7cc652b48dd9153b14688d32b1c23202ce8f3",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "risskov-ebike-girl-dies",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Transport",
+      "copy": {
+        "headline": "Girl, 16, dies after electric-bike crash near Aarhus",
+        "body": {},
+        "lede": {
+          "text": "A 16-year-old girl has died ten days after losing control of an electric bike while riding downhill at relatively high speed in Risskov, near Aarhus, on the evening of 2 October.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "tv2"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "2b705830-77e2-44c8-9b45-e49f3dbba112",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "16-årig død efter styrt på elcykel tidligere på måneden",
+          "url": "https://www.kristeligt-dagblad.dk/16-aarig-doed-efter-styrt-paa-elcykel-tidligere-paa-maaneden",
+          "published_at": "2026-10-12T09:38:19.000000Z",
+          "content_hash": "sha256:c59bfa701da262abf4644764ad64cc1373584dcfaaff3cd123c98d4e53fcdff8",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/samfund/2026-10-12-16-aarig-pige-doed-efter-styrt-paa-elcykel",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "16-årig pige død efter styrt på elcykel",
+          "url": "https://nyheder.tv2.dk/samfund/2026-10-12-16-aarig-pige-doed-efter-styrt-paa-elcykel",
+          "published_at": "2026-10-12T09:22:37.000000Z",
+          "content_hash": "sha256:95c4a443ab9788f9b0ed0bf2367a9f5b7a76e265a8d9e6de1faca22b3acfb633",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:7cd49d6b-96ad-5ab7-9c24-10cbc4844b39",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "16-årig død efter styrt på elcykel tidligere på måneden",
+          "url": "https://www.berlingske.dk/indland/16-aarig-doed-efter-styrt-paa-elcykel-tidligere-paa-maaneden",
+          "published_at": "2026-10-12T09:38:46.000000Z",
+          "content_hash": "sha256:d6fab8571a705c9bb3d7f9ae32daeabcf61cf6f62c5419fde542243b245ea20f",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "dsb-odense-fredericia-week-42",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Transport",
+      "copy": {
+        "headline": "Fire slows trains between Funen and Jutland until Sunday",
+        "body": {},
+        "lede": {
+          "text": "Rail journeys between Odense, on Funen, and Fredericia, in Jutland, are expected to take longer until Sunday 18 October, with regional trains replaced by buses, after a fire in a signal hut on Friday.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "9ae1d404-a610-4cb2-b5af-042cd49a05cb",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Rejsende med DSB kan forvente længere køretid i hele uge 42",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/rejsende-med-dsb-kan-forvente-laengere-koeretid-i-hele-uge-42",
+          "published_at": "2026-10-12T13:57:35.000000Z",
+          "content_hash": "sha256:6903e2ac2f86928675411d68fb0487d4605f83bf3cb73d793f937ec1148498b4",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:00863995-2f10-46bb-a4cd-6728b4dcf966",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Rejsende med DSB kan forvente længere køretid i hele uge 42",
+          "url": "https://www.dr.dk/nyheder/indland/rejsende-med-dsb-kan-forvente-laengere-koeretid-i-hele-uge-42",
+          "published_at": "2026-10-12T14:18:21.000000Z",
+          "content_hash": "sha256:1c54b04298eb17aa6557869110a45ce4ffe76606fa2bae50064a29f556410edc",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:0c45e503-9a71-569a-9d5f-9916ea9013d7",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Rejsende med DSB kan forvente længere køretid i hele uge 42",
+          "url": "https://www.berlingske.dk/danmark/rejsende-med-dsb-kan-forvente-laengere-koeretid-i-hele-uge-42",
+          "published_at": "2026-10-12T14:11:49.000000Z",
+          "content_hash": "sha256:517b04224c11207e7669fabe63658296f9f68fd3c194bf30599654311d944438",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "skat-inquiry-467-million",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Cost of inquiry into Danish tax authority nears half a billion kroner",
+        "body": {},
+        "lede": {
+          "text": "The commission investigating Skat, the former Danish tax authority, is now budgeted to cost the state 467.3 million kroner over ten years, up from just under 400 million in October 2025.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "e7b4d458-e44f-4432-8a49-126bb0a9e139",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Udgifter til undersøgelse af Skat nærmer sig en halv milliard kroner",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/udgifter-til-undersoegelse-af-skat-naermer-sig-en-halv-milliard-kroner",
+          "published_at": "2026-10-12T14:29:15.000000Z",
+          "content_hash": "sha256:e6193c87220dfcefc9a4e7c957f91b679301acdd762c27c6eea19eccc96cdecd",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:1d2184b9-9e44-5a12-bde1-f328b331e11c",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Udgifter til undersøgelse af Skat nærmer sig en halv milliard kroner",
+          "url": "https://www.berlingske.dk/politik/udgifter-til-undersoegelse-af-skat-naermer-sig-en-halv-milliard-kroner",
+          "published_at": "2026-10-12T14:30:47.000000Z",
+          "content_hash": "sha256:b419adb46dfd6c4a9abb64eeec8a008c79534ec862bfda7a6f0278af61217fcf",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:a3f72642-dd43-4f2c-a337-5fc4606006d3",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Udgifter til undersøgelse af Skat nærmer sig en halv milliard kroner",
+          "url": "https://www.dr.dk/nyheder/politik/udgifter-til-undersoegelse-af-skat-naermer-sig-en-halv-milliard-kroner",
+          "published_at": "2026-10-12T15:01:36.000000Z",
+          "content_hash": "sha256:ca593961e1f0f14f126f04ab39f9131ac8abc9265248618bc734c4ccb789b443",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "herning-tiktok-terror-sentence",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "Man gets suspended sentence for TikTok video condoning Hamas attack",
+        "body": {},
+        "lede": {
+          "text": "A court in Herning, a town in central Jutland, on Monday gave a 28-year-old man a 60-day suspended sentence for a TikTok video condoning Hamas's 7 October 2023 attack on Israel.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "73dde502-cb28-48b3-9242-9f0cffe8727e",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "TikTok-video med israelsk flag var billigelse af terror",
+          "url": "https://www.kristeligt-dagblad.dk/28-aarig-idoemt-betinget-faengsel-paa-tiktok-billige-terrorhandlinger",
+          "published_at": "2026-10-12T11:55:29.000000Z",
+          "content_hash": "sha256:0672f8748d5a9d66543be9e5ddf098168282bb6db1634dadc724ebc29bd060f1",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:350aa8f8-0876-588f-8fc2-7cbe31e6aa3f",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "TikTok-video med israelsk flag var billigelse af terror",
+          "url": "https://www.berlingske.dk/indland/tiktok-video-med-israelsk-flag-var-billigelse-af-terror",
+          "published_at": "2026-10-12T12:25:52.000000Z",
+          "content_hash": "sha256:e7e48130892a48d85c598d0cf6ebb18086fb1d1372afa0b056aba2d2b9c4ffab",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:cf2e758b-f0be-422b-abe4-da090123ad4d",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "28-årig idømt betinget fængsel for på TikTok at billige terrorhandlinger",
+          "url": "https://www.dr.dk/nyheder/seneste/28-aarig-idoemt-betinget-faengsel-paa-tiktok-billige-terrorhandlinger",
+          "published_at": "2026-10-12T12:34:50.000000Z",
+          "content_hash": "sha256:59766601b6f831f98bb54ad5242b34301e9d6e0b1d691a6aee389511f9686c99",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "burnham-blames-iran-fairford",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Europe",
+      "copy": {
+        "headline": "Britain's prime minister blames Iran for incident at air base",
+        "body": {},
+        "lede": {
+          "text": "Andy Burnham, Britain's prime minister, said on Monday that Iran's Revolutionary Guards almost certainly directed a September incident at RAF Fairford, a British military base; 28 countries, Denmark included, back the assessment.",
+          "sources": [
+            "kristeligt_dagblad",
+            "borsen",
+            "guardian"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "c229eef7-ac51-42d9-ae09-bfe19395c2d6",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Burnham peger på Iran efter basehændelse - 28 lande bakker op",
+          "url": "https://www.kristeligt-dagblad.dk/udland/burnham-peger-paa-iran-efter-basehaendelse-28-lande-bakker-op",
+          "published_at": "2026-10-12T17:07:23.000000Z",
+          "content_hash": "sha256:99819e31e694d7cacb2318ef8dd4c38cb00f2fea359a946b6f680f3bcf6a1ec7",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/burnham-peger-pa-iran-efter-basehaendelse-28-lande-bakker-op",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Burnham peger på Iran efter basehændelse – 28 lande bakker op",
+          "url": "https://borsen.dk/nyheder/udland/burnham-peger-pa-iran-efter-basehaendelse-28-lande-bakker-op",
+          "published_at": "2026-10-12T18:13:35.000000Z",
+          "content_hash": "sha256:dc0158c411695f08c37d1abbbdd9144eead33f931fc5268dbc957c88fc3f6097",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:bf3a8ccf-81d9-452a-a92c-6353b95c84e8",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "29 lande fordømmer Iran efter hændelse ved flybase i England",
+          "url": "https://www.dr.dk/nyheder/seneste/29-lande-fordoemmer-iran-efter-haendelse-ved-flybase-i-england",
+          "published_at": "2026-10-12T16:10:12.000000Z",
+          "content_hash": "sha256:113a9bdebb5d36832a4191ed96b0ee22cc28571fe4a1dbc6b4a2dd6f898d0109",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/uk-news/2026/oct/12/iran-revolutionary-guards-irgc-raf-fairford-threats",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Iran’s Revolutionary Guards ‘almost certainly’ behind RAF Fairford threats, says Burnham",
+          "url": "https://www.theguardian.com/uk-news/2026/oct/12/iran-revolutionary-guards-irgc-raf-fairford-threats",
+          "published_at": "2026-10-12T17:08:11.000000Z",
+          "content_hash": "sha256:e8a65baa2afcd36ae1034e2301bd2b016623dc42191927971a90eb36cbc9ebaa",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "aubagne-school-shooting",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Pupil, 14, held after two school staff are shot in France",
+        "body": {},
+        "lede": {
+          "text": "French authorities arrested a 14-year-old pupil after a head teacher and a teacher were shot with a hunting rifle on Monday at a school in Aubagne, near Marseille; neither is in mortal danger.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr",
+            "bbc"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "0803ac02-2324-4211-8ad9-2e40cee3959f",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "To medarbejdere ramt af skud på skole i Frankrig",
+          "url": "https://www.kristeligt-dagblad.dk/udland/medarbejdere-ramt-af-skud-paa-skole-i-frankrig",
+          "published_at": "2026-10-12T09:39:47.000000Z",
+          "content_hash": "sha256:e68fab538ae8e265f5af081be459a3d3199bc1d40f411c9eb786c7fdfad66374",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:2c691d18-0dc3-5a41-ab61-04fbd3fd4316",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "To medarbejdere ramt af skud på skole i Frankrig",
+          "url": "https://www.berlingske.dk/internationalt/to-medarbejdere-ramt-af-skud-paa-skole-i-frankrig",
+          "published_at": "2026-10-12T13:48:46.000000Z",
+          "content_hash": "sha256:d04844fb3562039e51aebd908201f2ec668a37eddbf8ca921514e6369a2f0e5b",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:98bf0c0e-c1e2-4577-9b9c-5775da9bc72c",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Rektor og skolelærer skudt i Frankrig",
+          "url": "https://www.dr.dk/nyheder/seneste/rektor-og-skolelaerer-skudt-i-frankrig",
+          "published_at": "2026-10-12T09:42:19.000000Z",
+          "content_hash": "sha256:144a2f938c18bd2496dc211a4bc921d3d86d3012a90d2aa687c57dcdc9b68d41",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cm2keg7910gvo",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Pupil arrested after two teachers shot at French school",
+          "url": "https://www.bbc.co.uk/news/articles/cm2keg7910gvo?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-12T21:01:28.000000Z",
+          "content_hash": "sha256:7ebfa14688a00365bcdf2638cf8d3946cc205b59754a15f05007b17c8bcbf473",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "jyske-bank-raises-forecast",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Business",
+      "copy": {
+        "headline": "Jyske Bank raises its profit forecast for the year",
+        "body": {},
+        "lede": {
+          "text": "Jyske Bank, a Danish bank, raised its forecast for this year's after-tax profit to between 4.7 billion and 5.2 billion kroner on Monday, though even the top end would be its lowest since 2022.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "borsen"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "84d8efc5-1829-468b-a3c5-f9958259629b",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Jyske Bank opjusterer sine forventninger til årets overskud",
+          "url": "https://www.kristeligt-dagblad.dk/jyske-bank-opjusterer-sine-forventninger-til-aarets-overskud",
+          "published_at": "2026-10-12T09:36:55.000000Z",
+          "content_hash": "sha256:b85f66bf2feac1f8dea41bbb125c6495f37b3571a426e35b32d4b40429c3444d",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/finans/4100502-jyske-bank-opjusterer-forventningerne",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Jyske Bank opjusterer forventningerne",
+          "url": "https://borsen.dk/nyheder/finans/4100502-jyske-bank-opjusterer-forventningerne",
+          "published_at": "2026-10-12T09:28:16.000000Z",
+          "content_hash": "sha256:2be99a2ca46cfe7b6b1f50b4b6e0006aa87398e20a156fda23b693f7a41f6402",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:620cf9a1-8957-537f-b0c3-6a632d8e2be6",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Jyske Bank opjusterer sine forventninger til årets overskud",
+          "url": "https://www.berlingske.dk/business/jyske-bank-opjusterer-sine-forventninger-til-aarets-overskud",
+          "published_at": "2026-10-12T10:05:48.000000Z",
+          "content_hash": "sha256:b0e97fb961c2d8bffa76d4f50a1a33281f339871b066beb6797978b17bd5766c",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "eu-sanctions-1600-russians",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Europe",
+      "copy": {
+        "headline": "EU adds 1,600 Russian people and entities to its sanctions list",
+        "body": {},
+        "lede": {
+          "text": "EU countries on Monday added 1,600 more Russian people and entities to the EU's sanctions list, the largest single expansion since Russia invaded Ukraine, according to António Costa, president of the European Council.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "ed5841ad-42b2-4622-9bee-30cb08ee6efe",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "EU sætter 1600 russiske personer og enheder på sanktionsliste",
+          "url": "https://www.kristeligt-dagblad.dk/udland/eu-saetter-1600-russiske-personer-og-enheder-paa-sanktionsliste",
+          "published_at": "2026-10-12T10:53:33.000000Z",
+          "content_hash": "sha256:fd1464a340ce8656e6d91f4ed66d2a086350f5fd8a6f65f07c7eb134af341890",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:f168fe72-119b-5549-9967-c49af506e3d3",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "EU sætter 1600 russiske personer og enheder på sanktionsliste",
+          "url": "https://www.berlingske.dk/internationalt/eu-saetter-1600-russiske-personer-og-enheder-paa-sanktionsliste",
+          "published_at": "2026-10-12T10:53:43.000000Z",
+          "content_hash": "sha256:5df12e7852bc1f393ab379753a48941c2a1750c91781af2ad91a6bbbf824a11b",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "denmark-women-beat-canada-4-3",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Sport",
+      "copy": {
+        "headline": "Denmark's women beat Canada 4-3 in Toronto",
+        "body": {},
+        "lede": {
+          "text": "Denmark's women's football team beat Canada 4-3 in a friendly in Toronto on Monday evening, and Olivia Holdt scored one of the goals from the centre circle.",
+          "sources": [
+            "dr",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:0b787670-bd10-4930-9a1a-433f45619b1f",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Danmark slår Canada i vild målfest",
+          "url": "https://www.dr.dk/sporten/fodbold/kvindelandsholdet/danmark-jagter-revanche-i-vm-test",
+          "published_at": "2026-10-12T21:35:00.000000Z",
+          "content_hash": "sha256:8340a6ed2a8dbb378f23870c4603761b03276c410bc0d2c88ea5c4ff15022b93",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:854d529f-175b-5653-b41a-7cf71faa6afc",
+          "input_id": "export-2026-10-13-0330",
+          "original_title": "Mål fra midtercirklen grundlægger flot dansk sejr i Canada",
+          "url": "https://www.berlingske.dk/sport/maal-fra-midtercirklen-grundlaegger-flot-dansk-sejr-i-canada",
+          "published_at": "2026-10-12T21:41:46.000000Z",
+          "content_hash": "sha256:f89fdfec9f35b71daff5bae2f2bddbf9151bb1c92cd69956e027369744c05f6f",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    }
+  ],
+  "fit_policy": {
+    "allow_role_fallback": true,
+    "allow_composition_substitution": true,
+    "reserve_story_ids": [],
+    "omittable_story_ids": [
+      "greenland-parliament-first-reading",
+      "us-threatens-ukraine-intelligence-cut",
+      "venstre-extraordinary-board-meeting",
+      "cpr-hacker-says-ai-wrote-program",
+      "nobel-economics-hall-woodford",
+      "zelensky-russia-broke-ceasefire-six-times",
+      "french-supermarket-hack-danfoss",
+      "district-heating-dearer-2027",
+      "public-shelters-three-billion",
+      "east-jutland-scooter-fines-wrong",
+      "risskov-ebike-girl-dies",
+      "dsb-odense-fredericia-week-42",
+      "skat-inquiry-467-million",
+      "herning-tiktok-terror-sentence",
+      "burnham-blames-iran-fairford",
+      "aubagne-school-shooting",
+      "jyske-bank-raises-forecast",
+      "eu-sanctions-1600-russians",
+      "denmark-women-beat-canada-4-3"
+    ]
+  }
+}
