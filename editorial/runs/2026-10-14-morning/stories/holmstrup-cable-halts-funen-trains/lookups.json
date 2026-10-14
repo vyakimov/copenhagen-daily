@@ -1,0 +1,13 @@
+[
+ {
+  "requested": "DSB (railway company)",
+  "status": "found",
+  "title": "DSB (railway company)",
+  "extract": "DSB, an abbreviation of Danske Statsbaner, is the largest Danish train operating company. It's also the largest train operating company in Scandinavia. While DSB is responsible for passenger train operation on most of the Danish railways, goods transport and railway maintenance are outside its scope. DSB runs a commuter rail system, called the S-train, in the area around the Danish capital, Copenhagen, that connects the different areas and suburbs in the greater metropolitan area. Between 2010 and 2017, DSB operated trains in Sweden.",
+  "url": "https://en.wikipedia.org/wiki/DSB_(railway_company)",
+  "type": "standard",
+  "fetched_at": "2026-10-14T03:39:46.904219Z",
+  "term": "DSB",
+  "definition": "the state railway"
+ }
+]

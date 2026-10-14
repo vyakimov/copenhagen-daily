@@ -1,0 +1,47 @@
+{
+ "headline": "Health authority asks whether suspending three surgeons harms Denmark's only liver-transplant unit",
+ "headline_short": "Health authority questions surgeons' suspension",
+ "deck": "The three could be dismissed; from 1 November the hospital's pancreas patients will be operated on in Norway.",
+ "standard": [
+  [
+   "Sundhedsstyrelsen, the Danish Health Authority, has asked the Capital Region whether sending home three senior surgeons harms Denmark's only liver-transplant department. The department is at Rigshospitalet, Copenhagen's university hospital. The three were suspended after writing letters of concern to management, according to Sundhedsmonitor, a news outlet, and could be dismissed.",
+   [
+    "kristeligt_dagblad",
+    "politiken",
+    "berlingske"
+   ]
+  ],
+  [
+   "The region had warned the authority in June of surgical problems in its transplant work, Politiken reports. A Norwegian surgeon now assists at liver transplants under a deal with Oslo University Hospital, and from 1 November pancreas patients will be operated on in Norway. Rigshospitalet says the department still has the staff it needs.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "Sundhedsstyrelsen, the Danish Health Authority, has asked the Capital Region whether suspending three senior surgeons harms Denmark's only liver-transplant department, at Rigshospitalet, Copenhagen's university hospital. The three had written letters of concern to management, according to Sundhedsmonitor, a news outlet. The hospital says the department still has the staff it needs.",
+   [
+    "kristeligt_dagblad",
+    "politiken"
+   ]
+  ]
+ ],
+ "definitions": [
+  {
+   "term": "Sundhedsstyrelsen",
+   "definition": "the Danish Health Authority",
+   "wikipedia": "Danish Health Authority"
+  },
+  {
+   "term": "Region Hovedstaden",
+   "definition": "the Capital Region",
+   "wikipedia": "Capital Region of Denmark"
+  },
+  {
+   "term": "Rigshospitalet",
+   "definition": "Copenhagen's university hospital",
+   "wikipedia": "Rigshospitalet"
+  }
+ ]
+}

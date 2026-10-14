@@ -1,0 +1,13 @@
+[
+ {
+  "requested": "Riksdag",
+  "status": "found",
+  "title": "Riksdag",
+  "extract": "The Riksdag is the parliament and the supreme decision-making body of the Kingdom of Sweden. Since 1971, the Riksdag has been a unicameral parliament with 349 members, elected proportionally and since 1994, serving fixed four-year terms. The 2026 Swedish general election is the most recent general election.",
+  "url": "https://en.wikipedia.org/wiki/Riksdag",
+  "type": "standard",
+  "fetched_at": "2026-10-14T03:39:46.755300Z",
+  "term": "Riksdag",
+  "definition": "Sweden's parliament"
+ }
+]

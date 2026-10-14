@@ -1,0 +1,24 @@
+[
+ {
+  "requested": "Green Left (Denmark)",
+  "status": "found",
+  "title": "Green Left (Denmark)",
+  "extract": "The Green Left is a democratic socialist political party in Denmark. The SF was founded on 15 February 1959 by Aksel Larsen, a former leader of the Communist Party of Denmark (DKP), who was removed for criticizing the Soviet intervention in the Hungarian Revolution of 1956. Larsen aimed to create a third way between Denmark's US-oriented social democracy and Soviet-oriented communism, combining democracy with socialism. The SF entered the Folketing in the 1960 Danish general election, while the DKP lost its seats. The SF became involved in peace, anti-nuclear, and grassroots movements, advocating for independence from the Soviet Union.",
+  "url": "https://en.wikipedia.org/wiki/Green_Left_(Denmark)",
+  "type": "standard",
+  "fetched_at": "2026-10-14T03:39:45.772242Z",
+  "term": "SF",
+  "definition": "a left-wing party"
+ },
+ {
+  "requested": "da:Folketidende",
+  "status": "found",
+  "title": "Lolland-Falsters Folketidende",
+  "extract": "Lolland-Falsters Folketidende, grundlagt 1873, er et dansk dagblad, der redaktionelt dækker Guldborgsund og Lolland kommuner. Hovedsædet er i Nykøbing Falster, mens de to andre redaktioner findes i henholdsvis Maribo og Nakskov.",
+  "url": "https://da.wikipedia.org/wiki/Lolland-Falsters_Folketidende",
+  "type": "standard",
+  "fetched_at": "2026-10-14T03:39:45.917632Z",
+  "term": "Lolland-Falsters Folketidende",
+  "definition": "a local newspaper"
+ }
+]

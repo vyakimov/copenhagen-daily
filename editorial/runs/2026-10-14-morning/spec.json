@@ -1,0 +1,651 @@
+{
+  "edition": {
+    "id": "2026-10-14-morning",
+    "number": 9,
+    "name": "Wednesday edition",
+    "date": "2026-10-14",
+    "cutoff_at": "2026-10-14T03:30:00.000000Z",
+    "checked_from": "2026-10-11T03:30:00.000000Z",
+    "input_id": "export-2026-10-14-0330",
+    "presentation": {
+      "emphasis": "many_stories",
+      "ear_right": "Inside: the Pope's diagnosis, Copenhagen flat prices, Sweden's vote on Andersson"
+    },
+    "note": "Built from headlines and RSS descriptions published between 05:30 on Sunday 11 October and 05:30 on Wednesday 14 October, Copenhagen time: 3,062 articles. All 132 feeds at 17 publishers polled."
+  },
+  "stories": [
+    {
+      "id": "femern-cyber-incident-minister-summons",
+      "role": "lead",
+      "kicker": "Denmark",
+      "sources": [
+        715,
+        115,
+        718,
+        721,
+        717,
+        360,
+        709
+      ],
+      "headline": "Cyber incident hits work on tunnel to Germany; minister summons parties",
+      "headline_short": "Cyber incident hits tunnel works",
+      "deck": "Vessels lay idle and staff were kept off their computers, a local paper reports; who is behind it is not known.",
+      "extended": [
+        [
+          "Work on the Femern Belt tunnel, which is to link Rødbyhavn in Denmark with Puttgarden in Germany, has been hit by what the project's website calls a cyber incident. Lisbeth Bech-Nielsen, the minister for public security and preparedness, has summoned the parties behind Denmark's national strategy for cyber and information security to discuss what measures to take.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "politiken"
+          ]
+        ],
+        [
+          "Bech-Nielsen, of SF, a left-wing party, told TV 2 that 'the serious threat picture and the recent incidents' were the reason. She gave no date and said it was too early to conclude anything, but that 'the authorities are investigating'.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Lolland-Falsters Folketidende, a local newspaper, calls it a hacker attack. It reports that staff were told not to use wi-fi or open computers or emails, that even the guards' access system was down, and that several vessels at sea lay idle because they could not reach digital systems. The trouble began overnight into Monday, it says.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ],
+        [
+          "Who is behind it, and when the systems will be back, is not known.",
+          [
+            "berlingske",
+            "dr"
+          ]
+        ],
+        [
+          "Building began in 2020; the link was first due to open in 2029.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "standard": [
+        [
+          "Work on the Femern Belt tunnel, which is to link Rødbyhavn in Denmark with Puttgarden in Germany, has been hit by what the project's website calls a cyber incident. Lisbeth Bech-Nielsen, the minister for public security and preparedness, has summoned the parties behind Denmark's national strategy for cyber and information security to discuss what measures to take.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "politiken"
+          ]
+        ],
+        [
+          "Bech-Nielsen, of SF, a left-wing party, told TV 2 that 'the serious threat picture and the recent incidents' were the reason, and that 'the authorities are investigating'.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Lolland-Falsters Folketidende, a local newspaper, calls it a hacker attack that shut down large parts of the system and left several vessels at sea idle. Who is behind it, and when the systems will be back, is not known.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Work on the Femern Belt tunnel, which is to link Denmark and Germany, has been hit by what the project's website calls a cyber incident, leaving several vessels idle. Lisbeth Bech-Nielsen, the minister for public security and preparedness, has summoned the parties behind Denmark's cyber-security strategy to discuss what measures to take.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "politiken"
+          ]
+        ]
+      ],
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "The serious threat picture and the recent incidents are the reason I have summoned the parties to a discussion of what measures can be set in motion.",
+          "attribution": "Lisbeth Bech-Nielsen, minister for public security and preparedness",
+          "attribution_source": "kristeligt_dagblad"
+        }
+      ]
+    },
+    {
+      "id": "pope-leo-lung-cancer-surgery",
+      "role": "secondary",
+      "kicker": "World",
+      "sources": [
+        333,
+        329,
+        316,
+        202,
+        217,
+        67,
+        223,
+        20,
+        147,
+        124,
+        12,
+        135,
+        10
+      ],
+      "headline": "Pope Leo has lung cancer, the Vatican says",
+      "headline_short": "Pope has lung cancer",
+      "deck": "Surgeons removed the lower lobe of his right lung on Tuesday; he is expected to spend a week in hospital.",
+      "standard": [
+        [
+          "Pope Leo XIV, the 71-year-old head of the Catholic Church, has lung adenocarcinoma, a common form of lung cancer, the Vatican said on Tuesday. Surgeons in Rome removed the lower lobe of his right lung in an operation of about an hour and a half, without complications.",
+          [
+            "kristeligt_dagblad",
+            "politiken",
+            "guardian",
+            "bbc",
+            "wsj"
+          ]
+        ],
+        [
+          "He is expected to spend a week in hospital, and his audiences are cancelled until 20 October. He is due to tour Uruguay, Argentina and Peru for 11 days from 6 November.",
+          [
+            "kristeligt_dagblad",
+            "jp"
+          ]
+        ],
+        [
+          "Further tests are being carried out to see whether the cancer has spread, an unnamed Vatican source told AFP. It is Leo's first serious illness in 17 months as pope.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Pope Leo XIV, the 71-year-old head of the Catholic Church, has lung cancer, the Vatican said on Tuesday after surgeons removed the lower lobe of his right lung. He is expected to spend a week in hospital.",
+          [
+            "kristeligt_dagblad",
+            "jp",
+            "politiken"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "copenhagen-flat-prices-fall-september",
+      "role": "secondary",
+      "kicker": "Prices",
+      "sources": [
+        1192,
+        1200,
+        1201,
+        958,
+        1157,
+        1194
+      ],
+      "headline": "Copenhagen flat prices fall for a second month",
+      "headline_short": "Copenhagen flat prices fall again",
+      "deck": "In Aarhus they rose 3.7 per cent and passed 50,000 kroner per square metre for the first time.",
+      "standard": [
+        [
+          "Flat prices in Copenhagen Municipality fell 1.0 per cent from August to September, after a 0.5 per cent fall the month before, according to Boligsiden, a Danish property website. They remain 15.7 per cent higher than a year earlier, at 75,414 kroner per square metre.",
+          [
+            "kristeligt_dagblad",
+            "via_ritzau",
+            "dr"
+          ]
+        ],
+        [
+          "Birgit Daetz, a housing economist at Boligsiden, blames more flats for sale this year and weaker demand from buyers. An economist quoted by Politiken expects prices to fall by up to 10 per cent as 2027 begins.",
+          [
+            "kristeligt_dagblad",
+            "politiken",
+            "berlingske"
+          ]
+        ],
+        [
+          "In Aarhus prices rose 3.7 per cent to 50,649 kroner per square metre, the third-largest monthly rise since the figures began in 2011.",
+          [
+            "kristeligt_dagblad",
+            "via_ritzau"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Flat prices in Copenhagen Municipality fell 1.0 per cent in September, the second monthly fall in a row, according to Boligsiden, a Danish property website. In Aarhus they rose 3.7 per cent.",
+          [
+            "kristeligt_dagblad",
+            "via_ritzau"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "aarhus-university-nitrogen-calculation-error",
+      "role": "secondary",
+      "kicker": "Environment",
+      "sources": [
+        240,
+        270,
+        208
+      ],
+      "headline": "Aarhus University apologises for errors behind new nitrogen rules for farmers",
+      "headline_short": "Nitrogen figures were wrong",
+      "deck": "The university found the error a think tank had flagged, days after its figures were declared in order.",
+      "standard": [
+        [
+          "Aarhus University has apologised for errors in the calculations behind Denmark's new nitrogen rules, which from 1 January 2027 cap how much nitrogen farmers may discharge. The university says it will now gauge the error's extent and correct it; the error matters where much manure is used.",
+          [
+            "kristeligt_dagblad",
+            "via_ritzau",
+            "berlingske"
+          ]
+        ],
+        [
+          "Seges Innovation, a think tank, said last week that some farmers' limits had been set too low. On Friday a government agency said the university had checked the figures and found them in order. A 'triple check' announced on Tuesday found the same error as Seges.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "'We did not deliver as we should have, and we deeply regret it,' said Jørgen Eriksen, a professor at the university's Department of Agroecology.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Aarhus University has apologised for errors in the calculations behind Denmark's new nitrogen rules, which take effect on 1 January 2027. Seges Innovation, a think tank, had flagged the error last week; a government agency said on Friday that the figures were in order.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "rigshospitalet-transplant-surgeons-sent-home",
+      "role": "secondary",
+      "kicker": "Health",
+      "sources": [
+        506,
+        1158,
+        558
+      ],
+      "headline": "Health authority asks whether suspending three surgeons harms Denmark's only liver-transplant unit",
+      "headline_short": "Health authority questions surgeons' suspension",
+      "deck": "The three could be dismissed; from 1 November the hospital's pancreas patients will be operated on in Norway.",
+      "standard": [
+        [
+          "Sundhedsstyrelsen, the Danish Health Authority, has asked the Capital Region whether sending home three senior surgeons harms Denmark's only liver-transplant department. The department is at Rigshospitalet, Copenhagen's university hospital. The three were suspended after writing letters of concern to management, according to Sundhedsmonitor, a news outlet, and could be dismissed.",
+          [
+            "kristeligt_dagblad",
+            "politiken",
+            "berlingske"
+          ]
+        ],
+        [
+          "The region had warned the authority in June of surgical problems in its transplant work, Politiken reports. A Norwegian surgeon now assists at liver transplants under a deal with Oslo University Hospital, and from 1 November pancreas patients will be operated on in Norway. Rigshospitalet says the department still has the staff it needs.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Sundhedsstyrelsen, the Danish Health Authority, has asked the Capital Region whether suspending three senior surgeons harms Denmark's only liver-transplant department, at Rigshospitalet, Copenhagen's university hospital. The three had written letters of concern to management, according to Sundhedsmonitor, a news outlet. The hospital says the department still has the staff it needs.",
+          [
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "sweden-andersson-pm-vote-thursday",
+      "role": "secondary",
+      "kicker": "Nordics",
+      "sources": [
+        794,
+        865,
+        791,
+        861,
+        771
+      ],
+      "headline": "Sweden's parliament will vote on Magdalena Andersson as prime minister on Thursday",
+      "headline_short": "Sweden sets a prime-minister vote",
+      "deck": "Andersson, the Social Democrats' leader, would govern with her party alone; she says no government parliament would tolerate can yet be formed.",
+      "standard": [
+        [
+          "The Riksdag, Sweden's parliament, will vote at 12:00 on Thursday on whether Magdalena Andersson, leader of the Social Democrats, should be prime minister of a government of her party alone. Andreas Norlén, the Riksdag's speaker, announced the vote on Tuesday.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "politiken"
+          ]
+        ],
+        [
+          "Andersson had told him that morning that talks had made progress but that no government the Riksdag would tolerate could yet be formed. If she falls short on Thursday, Norlén will call the other party leaders and speed up the process.",
+          [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        ],
+        [
+          "The four red-green parties won 176 seats in the election on 13 September, the centre-right bloc 173.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "The Riksdag, Sweden's parliament, will vote at 12:00 on Thursday on whether Magdalena Andersson, leader of the Social Democrats, should be prime minister of a government of her party alone. She has concluded no government talks with other parties.",
+          [
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "motor-register-shut-irregularities",
+      "role": "brief",
+      "kicker": "Transport",
+      "sources": [
+        816,
+        495,
+        787
+      ],
+      "headline": "Denmark's vehicle register reopens after shutdown over irregularities",
+      "lede": [
+        "Motorregistret, Denmark's register of all motor vehicles, was back in normal operation on Tuesday after being shut since 14:53 on Monday over irregularities found during a weekend update.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "borsen"
+        ]
+      ]
+    },
+    {
+      "id": "holmstrup-cable-halts-funen-trains",
+      "role": "brief",
+      "kicker": "Transport",
+      "sources": [
+        660,
+        539,
+        230,
+        631
+      ],
+      "headline": "Fallen power cable halts trains between Odense and Fredericia",
+      "lede": [
+        "Trains between Odense and Fredericia ran again on Tuesday evening after a high-voltage cable fell across the line south-west of Odense; DSB, the state railway, expects no disruption on Wednesday.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "kirsten-schwalbe-oldest-dane-record",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        129,
+        291
+      ],
+      "headline": "Woman of 112 becomes the longest-lived Dane on record",
+      "lede": [
+        "Kirsten Schwalbe becomes the longest-lived Dane on record on Wednesday, at 112 years and 218 days, taking the record from Karla Lindholm Jensen, who died in 2020.",
+        [
+          "kristeligt_dagblad",
+          "jp"
+        ]
+      ]
+    },
+    {
+      "id": "rodovre-rifles-cocaine-12-years",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        830,
+        821
+      ],
+      "headline": "Man gets 12 years in prison for keeping rifles and 40 kilos of cocaine at home",
+      "lede": [
+        "A court on Tuesday sentenced a 26-year-old man to 12 years in prison for keeping four rifles and 40 kilos of cocaine at his home in Rødovre, a Copenhagen suburb.",
+        [
+          "kristeligt_dagblad",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "enhedslisten-school-costs-100-million",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        1003
+      ],
+      "headline": "Party demands 100 million kroner a year to cut poor families' school costs",
+      "lede": [
+        "Enhedslisten, a party in talks on next year's budget, demands 100 million kroner a year to cut what families pay for camps and lunches at Denmark's free state schools, starting with the poorest.",
+        [
+          "kristeligt_dagblad"
+        ]
+      ]
+    },
+    {
+      "id": "steen-ostergaard-dies-90",
+      "role": "brief",
+      "kicker": "Obituary",
+      "sources": [
+        554
+      ],
+      "headline": "Danish designer of a chair seen in James Bond dies at 90",
+      "lede": [
+        "Steen Østergaard, whose Modo 290 of 1966 was the world's first one-piece injection-moulded chair and appeared in James Bond and Star Trek, has died aged 90, his family says.",
+        [
+          "kristeligt_dagblad"
+        ]
+      ]
+    },
+    {
+      "id": "tupac-killer-davis-sentenced",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        281,
+        334,
+        289,
+        254,
+        261,
+        251,
+        255
+      ],
+      "headline": "Former gang leader gets 40 years to life for Tupac Shakur's murder",
+      "lede": [
+        "Duane 'Keffe D' Davis, a former Los Angeles gang leader, was sentenced in Las Vegas on Tuesday to 40 years to life in prison for the 1996 murder of the rapper Tupac Shakur.",
+        [
+          "kristeligt_dagblad",
+          "guardian",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "hungary-repeals-anti-lgbt-law",
+      "role": "brief",
+      "kicker": "Europe",
+      "sources": [
+        947,
+        346,
+        623
+      ],
+      "headline": "Hungary's parliament scraps Orbán's anti-LGBT measures",
+      "lede": [
+        "Hungary's parliament voted 139 to 51 on Tuesday to repeal parts of a 2021 law, passed under Viktor Orbán, the former prime minister, that banned showing or promoting homosexuality in media for under-18s.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "bbc"
+        ]
+      ]
+    },
+    {
+      "id": "kyiv-power-plant-missile-no-warning",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        36,
+        468,
+        31,
+        443,
+        145,
+        51,
+        177,
+        481
+      ],
+      "headline": "Russian missile hits Kyiv power plant without warning from allies, Zelensky says",
+      "lede": [
+        "A Russian ballistic missile hit a Kyiv power plant on Tuesday evening with no early warning from Ukraine's allies, said Volodymyr Zelensky, Ukraine's president; a strike on an apartment building killed two.",
+        [
+          "kristeligt_dagblad",
+          "bbc",
+          "guardian"
+        ]
+      ]
+    },
+    {
+      "id": "ilhan-omar-home-searched",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        1095,
+        692,
+        1030,
+        951,
+        799,
+        1529,
+        1281,
+        1249,
+        1277,
+        1557,
+        1466,
+        785
+      ],
+      "headline": "Federal agents search the home of Trump critic Ilhan Omar",
+      "lede": [
+        "Federal agents searched the Washington home of Ilhan Omar, a Democratic congresswoman from Minnesota, on Monday in a criminal investigation three weeks before the midterms; she called it an attempt 'to target political enemies'.",
+        [
+          "berlingske",
+          "dr",
+          "guardian",
+          "wapo"
+        ]
+      ]
+    },
+    {
+      "id": "fc-copenhagen-sale-explored",
+      "role": "brief",
+      "kicker": "Business",
+      "sources": [
+        656,
+        612,
+        320
+      ],
+      "headline": "FC Copenhagen's owner considers selling the club",
+      "lede": [
+        "Parken Sport & Entertainment, the company behind FC Copenhagen, said on Tuesday it would explore options for its football business, including selling all or part of the club, and its shares jumped.",
+        [
+          "borsen",
+          "berlingske",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "volvo-ex30-recall-denmark",
+      "role": "brief",
+      "kicker": "Business",
+      "sources": [
+        363,
+        248
+      ],
+      "headline": "Volvo recalls more than 5,500 electric cars in Denmark over a headrest fault",
+      "lede": [
+        "Volvo is recalling 5,542 EX30 electric cars in Denmark, of 234,000 worldwide, because a front headrest cushion can in rare cases come loose in a serious collision; Volvo knows of no injuries.",
+        [
+          "kristeligt_dagblad",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "mi5-iran-stepping-up-attacks",
+      "role": "brief",
+      "kicker": "Europe",
+      "sources": [
+        641,
+        560,
+        632,
+        483,
+        459,
+        646,
+        700,
+        652,
+        341,
+        441,
+        511,
+        392,
+        701
+      ],
+      "headline": "Iran steps up attempts to strike British military sites, MI5 chief says",
+      "lede": [
+        "Iran is stepping up attempts to hit targets such as military sites in Britain, Ken McCallum, head of MI5, Britain's domestic intelligence service, said on Tuesday; Russia, he said, remains the biggest aggressor.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "ft",
+          "wapo"
+        ]
+      ]
+    },
+    {
+      "id": "eu-budget-northern-states-demand-cuts",
+      "role": "brief",
+      "kicker": "Europe",
+      "sources": [
+        667,
+        1011
+      ],
+      "headline": "Denmark and five other northern EU states demand deeper cuts to the EU budget",
+      "lede": [
+        "Denmark, Germany, Sweden, the Netherlands, Austria and Finland want the EU's long-term budget cut by more than the 141 billion euros that Ireland, which holds the EU presidency, proposes to take off the Commission's plan.",
+        [
+          "kristeligt_dagblad"
+        ]
+      ]
+    },
+    {
+      "id": "black-sea-two-more-ships-hit",
+      "role": "brief",
+      "kicker": "Europe",
+      "sources": [
+        1045,
+        780,
+        534,
+        480,
+        684
+      ],
+      "headline": "Bulgaria summons Russia's ambassador after drones hit two more ships",
+      "lede": [
+        "Drones struck two ships off Bulgaria's Black Sea coast early on Tuesday, sinking one; Rumen Radev, Bulgaria's prime minister, said the attack favoured Russia and summoned its ambassador.",
+        [
+          "kristeligt_dagblad",
+          "bbc",
+          "nytimes",
+          "ft"
+        ]
+      ]
+    }
+  ]
+}

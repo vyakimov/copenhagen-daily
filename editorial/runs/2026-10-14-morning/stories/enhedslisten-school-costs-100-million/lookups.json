@@ -1,0 +1,11 @@
+[
+ {
+  "requested": "Red–Green Alliance (Denmark)",
+  "status": "unavailable",
+  "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Red%E2%80%93Green_Alliance_%28Denmark%29",
+  "http_status": 429,
+  "fetched_at": "2026-10-14T03:39:48.331871Z",
+  "term": "Enhedslisten",
+  "definition": "a far-left party"
+ }
+]

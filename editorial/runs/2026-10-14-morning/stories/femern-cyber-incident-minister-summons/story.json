@@ -1,0 +1,94 @@
+{
+ "headline": "Cyber incident hits work on tunnel to Germany; minister summons parties",
+ "headline_short": "Cyber incident hits tunnel works",
+ "deck": "Vessels lay idle and staff were kept off their computers, a local paper reports; who is behind it is not known.",
+ "extended": [
+  [
+   "Work on the Femern Belt tunnel, which is to link Rødbyhavn in Denmark with Puttgarden in Germany, has been hit by what the project's website calls a cyber incident. Lisbeth Bech-Nielsen, the minister for public security and preparedness, has summoned the parties behind Denmark's national strategy for cyber and information security to discuss what measures to take.",
+   [
+    "kristeligt_dagblad",
+    "dr",
+    "politiken"
+   ]
+  ],
+  [
+   "Bech-Nielsen, of SF, a left-wing party, told TV 2 that 'the serious threat picture and the recent incidents' were the reason. She gave no date and said it was too early to conclude anything, but that 'the authorities are investigating'.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "Lolland-Falsters Folketidende, a local newspaper, calls it a hacker attack. It reports that staff were told not to use wi-fi or open computers or emails, that even the guards' access system was down, and that several vessels at sea lay idle because they could not reach digital systems. The trouble began overnight into Monday, it says.",
+   [
+    "kristeligt_dagblad",
+    "berlingske"
+   ]
+  ],
+  [
+   "Who is behind it, and when the systems will be back, is not known.",
+   [
+    "berlingske",
+    "dr"
+   ]
+  ],
+  [
+   "Building began in 2020; the link was first due to open in 2029.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "standard": [
+  [
+   "Work on the Femern Belt tunnel, which is to link Rødbyhavn in Denmark with Puttgarden in Germany, has been hit by what the project's website calls a cyber incident. Lisbeth Bech-Nielsen, the minister for public security and preparedness, has summoned the parties behind Denmark's national strategy for cyber and information security to discuss what measures to take.",
+   [
+    "kristeligt_dagblad",
+    "dr",
+    "politiken"
+   ]
+  ],
+  [
+   "Bech-Nielsen, of SF, a left-wing party, told TV 2 that 'the serious threat picture and the recent incidents' were the reason, and that 'the authorities are investigating'.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "Lolland-Falsters Folketidende, a local newspaper, calls it a hacker attack that shut down large parts of the system and left several vessels at sea idle. Who is behind it, and when the systems will be back, is not known.",
+   [
+    "kristeligt_dagblad",
+    "berlingske"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "Work on the Femern Belt tunnel, which is to link Denmark and Germany, has been hit by what the project's website calls a cyber incident, leaving several vessels idle. Lisbeth Bech-Nielsen, the minister for public security and preparedness, has summoned the parties behind Denmark's cyber-security strategy to discuss what measures to take.",
+   [
+    "kristeligt_dagblad",
+    "berlingske",
+    "politiken"
+   ]
+  ]
+ ],
+ "callouts": [
+  {
+   "kind": "quote",
+   "text": "The serious threat picture and the recent incidents are the reason I have summoned the parties to a discussion of what measures can be set in motion.",
+   "attribution": "Lisbeth Bech-Nielsen, minister for public security and preparedness",
+   "attribution_source": "kristeligt_dagblad"
+  }
+ ],
+ "definitions": [
+  {
+   "term": "SF",
+   "definition": "a left-wing party",
+   "wikipedia": "Green Left (Denmark)"
+  },
+  {
+   "term": "Lolland-Falsters Folketidende",
+   "definition": "a local newspaper",
+   "wikipedia": "da:Folketidende"
+  }
+ ]
+}

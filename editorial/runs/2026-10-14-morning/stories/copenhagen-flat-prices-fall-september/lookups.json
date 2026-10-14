@@ -1,0 +1,13 @@
+[
+ {
+  "requested": "da:Boligsiden",
+  "status": "found",
+  "title": "Boligsiden.dk",
+  "extract": "Boligsiden er en dansk boligportal der præsenterer alle boliger og ejendomme der er til salg hos ejendomsmæglere i Danmark. Boligsiden ejes af ejendomsmæglerkæderne Home, EDC, Nybolig og Danbolig samt brancheforeningen Dansk Ejendomsmæglerforening. Boligsiden driver også Landbrugssiden.dk hvor man kan søge på landbrug til salg.",
+  "url": "https://da.wikipedia.org/wiki/Boligsiden.dk",
+  "type": "standard",
+  "fetched_at": "2026-10-14T03:39:46.078272Z",
+  "term": "Boligsiden",
+  "definition": "a Danish property website"
+ }
+]

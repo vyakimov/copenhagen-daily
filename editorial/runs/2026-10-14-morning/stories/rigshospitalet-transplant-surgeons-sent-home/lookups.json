@@ -1,0 +1,35 @@
+[
+ {
+  "requested": "Danish Health Authority",
+  "status": "found",
+  "title": "Danish Health Authority",
+  "extract": "The Danish Health Authority is a state-owned entity in Denmark sorting under the Ministry of Health. It was founded in 1909 and is situated in Copenhagen in the area of Islands Brygge.",
+  "url": "https://en.wikipedia.org/wiki/Danish_Health_Authority",
+  "type": "standard",
+  "fetched_at": "2026-10-14T03:39:46.223864Z",
+  "term": "Sundhedsstyrelsen",
+  "definition": "the Danish Health Authority"
+ },
+ {
+  "requested": "Capital Region of Denmark",
+  "status": "found",
+  "title": "Capital Region of Denmark",
+  "extract": "The Capital Region of Denmark is the easternmost administrative region of Denmark, and contains Copenhagen, the national capital.",
+  "url": "https://en.wikipedia.org/wiki/Capital_Region_of_Denmark",
+  "type": "standard",
+  "fetched_at": "2026-10-14T03:39:46.372852Z",
+  "term": "Region Hovedstaden",
+  "definition": "the Capital Region"
+ },
+ {
+  "requested": "Rigshospitalet",
+  "status": "found",
+  "title": "Rigshospitalet",
+  "extract": "Rigshospitalet is the largest public and teaching hospital in Copenhagen and the most highly specialised hospital in Denmark. The hospital's main building is a 16-storey functionalist highrise, one of the tallest structures in the central parts of the city. Rigshospitalet neighbours the Panum Building which houses the Faculty of Health and Medical Sciences at the University of Copenhagen. As a teaching hospital it is part of the framework organisation Copenhagen University Hospital.",
+  "url": "https://en.wikipedia.org/wiki/Rigshospitalet",
+  "type": "standard",
+  "fetched_at": "2026-10-14T03:39:46.511050Z",
+  "term": "Rigshospitalet",
+  "definition": "Copenhagen's university hospital"
+ }
+]

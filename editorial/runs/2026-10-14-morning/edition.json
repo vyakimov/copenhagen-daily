@@ -1,0 +1,2648 @@
+{
+  "schema_version": 2,
+  "title": "copenhagen-daily",
+  "edition": {
+    "id": "2026-10-14-morning",
+    "number": 9,
+    "name": "Wednesday edition",
+    "date": "2026-10-14",
+    "timezone": "Europe/Copenhagen",
+    "language": "en",
+    "cutoff_at": "2026-10-14T03:30:00.000000Z",
+    "generated_at": "2026-10-14T03:44:12.062695Z"
+  },
+  "presentation": {
+    "emphasis": "many_stories",
+    "ear_right": "Inside: the Pope's diagnosis, Copenhagen flat prices, Sweden's vote on Andersson"
+  },
+  "coverage": {
+    "status": "complete",
+    "checked_from": "2026-10-11T03:30:00.000000Z",
+    "checked_until": "2026-10-14T03:30:00.000000Z",
+    "feeds": [
+      {
+        "feed_id": "altinget.arbejdsmarked",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.616876Z"
+      },
+      {
+        "feed_id": "altinget.by",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.718081Z"
+      },
+      {
+        "feed_id": "altinget.christiansborg",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.463410Z"
+      },
+      {
+        "feed_id": "altinget.eu",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.533759Z"
+      },
+      {
+        "feed_id": "altinget.forside",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.427010Z"
+      },
+      {
+        "feed_id": "altinget.forsvar",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.642301Z"
+      },
+      {
+        "feed_id": "altinget.klima",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.561980Z"
+      },
+      {
+        "feed_id": "altinget.kommunal",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.667394Z"
+      },
+      {
+        "feed_id": "altinget.sundhed",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.589965Z"
+      },
+      {
+        "feed_id": "altinget.uddannelse",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.692538Z"
+      },
+      {
+        "feed_id": "bbc.business",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.924153Z"
+      },
+      {
+        "feed_id": "bbc.culture",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:59.300016Z"
+      },
+      {
+        "feed_id": "bbc.europe",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.877344Z"
+      },
+      {
+        "feed_id": "bbc.health",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:59.129282Z"
+      },
+      {
+        "feed_id": "bbc.politics",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:59.195280Z"
+      },
+      {
+        "feed_id": "bbc.science",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:59.066140Z"
+      },
+      {
+        "feed_id": "bbc.technology",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:59.023702Z"
+      },
+      {
+        "feed_id": "bbc.top",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.804825Z"
+      },
+      {
+        "feed_id": "bbc.world",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.849122Z"
+      },
+      {
+        "feed_id": "berlingske.business",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.400221Z"
+      },
+      {
+        "feed_id": "berlingske.kultur",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.423988Z"
+      },
+      {
+        "feed_id": "berlingske.latest",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.353492Z"
+      },
+      {
+        "feed_id": "berlingske.opinion",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.443771Z"
+      },
+      {
+        "feed_id": "berlingske.samfund",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.379223Z"
+      },
+      {
+        "feed_id": "borsen.baeredygtig",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.402153Z"
+      },
+      {
+        "feed_id": "borsen.breaking",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.396575Z"
+      },
+      {
+        "feed_id": "borsen.ejendomme",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.448340Z"
+      },
+      {
+        "feed_id": "borsen.executive",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.569347Z"
+      },
+      {
+        "feed_id": "borsen.finans",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.506611Z"
+      },
+      {
+        "feed_id": "borsen.homepage",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.340525Z"
+      },
+      {
+        "feed_id": "borsen.investor",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.535129Z"
+      },
+      {
+        "feed_id": "borsen.longread",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.608047Z"
+      },
+      {
+        "feed_id": "borsen.markedsberetninger",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.643071Z"
+      },
+      {
+        "feed_id": "borsen.okonomi",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.904403Z"
+      },
+      {
+        "feed_id": "borsen.opinion",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.682467Z"
+      },
+      {
+        "feed_id": "borsen.pleasure",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.712584Z"
+      },
+      {
+        "feed_id": "borsen.politik",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.774656Z"
+      },
+      {
+        "feed_id": "borsen.tech",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.810522Z"
+      },
+      {
+        "feed_id": "borsen.udland",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.849413Z"
+      },
+      {
+        "feed_id": "borsen.virksomheder",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.881458Z"
+      },
+      {
+        "feed_id": "dr.indland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.496945Z"
+      },
+      {
+        "feed_id": "dr.kultur",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.765421Z"
+      },
+      {
+        "feed_id": "dr.latest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.460425Z"
+      },
+      {
+        "feed_id": "dr.musik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.795022Z"
+      },
+      {
+        "feed_id": "dr.penge",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.590029Z"
+      },
+      {
+        "feed_id": "dr.politik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.620782Z"
+      },
+      {
+        "feed_id": "dr.regionale",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.851740Z"
+      },
+      {
+        "feed_id": "dr.regionale_bornholm",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.930800Z"
+      },
+      {
+        "feed_id": "dr.regionale_fyn",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.032150Z"
+      },
+      {
+        "feed_id": "dr.regionale_kbh",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.889714Z"
+      },
+      {
+        "feed_id": "dr.regionale_nord",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.089397Z"
+      },
+      {
+        "feed_id": "dr.regionale_oestjylland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.217144Z"
+      },
+      {
+        "feed_id": "dr.regionale_sjaelland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.149936Z"
+      },
+      {
+        "feed_id": "dr.regionale_syd",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.000854Z"
+      },
+      {
+        "feed_id": "dr.regionale_trekanten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.120107Z"
+      },
+      {
+        "feed_id": "dr.regionale_vest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.061262Z"
+      },
+      {
+        "feed_id": "dr.senestesport",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.673553Z"
+      },
+      {
+        "feed_id": "dr.sporten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.648527Z"
+      },
+      {
+        "feed_id": "dr.udland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.558346Z"
+      },
+      {
+        "feed_id": "dr.vejret",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.821267Z"
+      },
+      {
+        "feed_id": "dr.viden",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.702260Z"
+      },
+      {
+        "feed_id": "economist.briefing",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:59.724011Z"
+      },
+      {
+        "feed_id": "economist.business",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:59.724276Z"
+      },
+      {
+        "feed_id": "economist.culture",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:59.724399Z"
+      },
+      {
+        "feed_id": "economist.europe",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:59.724085Z"
+      },
+      {
+        "feed_id": "economist.finance",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:59.724214Z"
+      },
+      {
+        "feed_id": "economist.international",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:59.724144Z"
+      },
+      {
+        "feed_id": "economist.latest",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:59.376948Z"
+      },
+      {
+        "feed_id": "economist.leaders",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:59.723873Z"
+      },
+      {
+        "feed_id": "economist.science",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:59.724341Z"
+      },
+      {
+        "feed_id": "ft.climate_capital",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.147983Z"
+      },
+      {
+        "feed_id": "ft.companies",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.037684Z"
+      },
+      {
+        "feed_id": "ft.global_economy",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:55.994311Z"
+      },
+      {
+        "feed_id": "ft.homepage.international",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:55.898860Z"
+      },
+      {
+        "feed_id": "ft.life_arts",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.307007Z"
+      },
+      {
+        "feed_id": "ft.markets",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.070529Z"
+      },
+      {
+        "feed_id": "ft.opinion",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.233559Z"
+      },
+      {
+        "feed_id": "ft.technology",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.107399Z"
+      },
+      {
+        "feed_id": "ft.work_careers",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.274942Z"
+      },
+      {
+        "feed_id": "ft.world",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:55.926835Z"
+      },
+      {
+        "feed_id": "guardian.business",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:21:00.427929Z"
+      },
+      {
+        "feed_id": "guardian.culture",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:21:00.905481Z"
+      },
+      {
+        "feed_id": "guardian.environment",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:21:00.652993Z"
+      },
+      {
+        "feed_id": "guardian.europe",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:21:00.352622Z"
+      },
+      {
+        "feed_id": "guardian.international",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:59.817833Z"
+      },
+      {
+        "feed_id": "guardian.opinion",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:21:01.071027Z"
+      },
+      {
+        "feed_id": "guardian.science",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:21:00.785451Z"
+      },
+      {
+        "feed_id": "guardian.technology",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:21:00.543672Z"
+      },
+      {
+        "feed_id": "guardian.world",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:21:00.165903Z"
+      },
+      {
+        "feed_id": "information.feed",
+        "source": "information",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.419218Z"
+      },
+      {
+        "feed_id": "jp.seneste",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.409786Z"
+      },
+      {
+        "feed_id": "jp.topnyheder",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.386630Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.artikler",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.759283Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.nyheder",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.759165Z"
+      },
+      {
+        "feed_id": "nytimes.arts",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:55.534840Z"
+      },
+      {
+        "feed_id": "nytimes.books",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:55.704096Z"
+      },
+      {
+        "feed_id": "nytimes.business",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:55.084164Z"
+      },
+      {
+        "feed_id": "nytimes.climate",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:55.407051Z"
+      },
+      {
+        "feed_id": "nytimes.europe",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:55.010832Z"
+      },
+      {
+        "feed_id": "nytimes.health",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:55.348851Z"
+      },
+      {
+        "feed_id": "nytimes.homepage",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:54.679686Z"
+      },
+      {
+        "feed_id": "nytimes.opinion",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:55.808035Z"
+      },
+      {
+        "feed_id": "nytimes.science",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:55.251291Z"
+      },
+      {
+        "feed_id": "nytimes.technology",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:55.199206Z"
+      },
+      {
+        "feed_id": "nytimes.world",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:54.802821Z"
+      },
+      {
+        "feed_id": "politiken.debat",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.194873Z"
+      },
+      {
+        "feed_id": "politiken.forbrugogliv",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.225331Z"
+      },
+      {
+        "feed_id": "politiken.ibyen",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.300048Z"
+      },
+      {
+        "feed_id": "politiken.indland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.955205Z"
+      },
+      {
+        "feed_id": "politiken.kultur",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.113609Z"
+      },
+      {
+        "feed_id": "politiken.latest",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.922419Z"
+      },
+      {
+        "feed_id": "politiken.oekonomi",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.082151Z"
+      },
+      {
+        "feed_id": "politiken.politik",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.048208Z"
+      },
+      {
+        "feed_id": "politiken.rejser",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.326889Z"
+      },
+      {
+        "feed_id": "politiken.sport",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.139876Z"
+      },
+      {
+        "feed_id": "politiken.udland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:56.983431Z"
+      },
+      {
+        "feed_id": "politiken.viden",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:57.166538Z"
+      },
+      {
+        "feed_id": "tv2.nyheder",
+        "source": "tv2",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.273295Z"
+      },
+      {
+        "feed_id": "via_ritzau.latest",
+        "source": "via_ritzau",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:20:58.764573Z"
+      },
+      {
+        "feed_id": "wapo.business",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:21:01.279419Z"
+      },
+      {
+        "feed_id": "wapo.national",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:21:01.206228Z"
+      },
+      {
+        "feed_id": "wapo.opinions",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:21:01.306520Z"
+      },
+      {
+        "feed_id": "wapo.politics",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:21:01.244912Z"
+      },
+      {
+        "feed_id": "wapo.technology",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:21:01.290420Z"
+      },
+      {
+        "feed_id": "wapo.world",
+        "source": "wapo",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:21:01.182565Z"
+      },
+      {
+        "feed_id": "wsj.business",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:21:01.521612Z"
+      },
+      {
+        "feed_id": "wsj.economy",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:21:01.705537Z"
+      },
+      {
+        "feed_id": "wsj.markets",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:21:01.626587Z"
+      },
+      {
+        "feed_id": "wsj.opinion",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:21:01.903875Z"
+      },
+      {
+        "feed_id": "wsj.politics",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:21:01.788034Z"
+      },
+      {
+        "feed_id": "wsj.technology",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:21:01.834720Z"
+      },
+      {
+        "feed_id": "wsj.world",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-14T03:21:01.364354Z"
+      }
+    ],
+    "note": "Built from headlines and RSS descriptions published between 05:30 on Sunday 11 October and 05:30 on Wednesday 14 October, Copenhagen time: 3,062 articles. All 132 feeds at 17 publishers polled."
+  },
+  "inputs": [
+    {
+      "id": "export-2026-10-14-0330",
+      "sha256": "sha256:55a35010f4fcb4c5ad637a4b12d3c731bfde7c36a0104390f7a6974cc384f9c9"
+    }
+  ],
+  "stories": [
+    {
+      "id": "femern-cyber-incident-minister-summons",
+      "device_participation": "required",
+      "role": "lead",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Cyber incident hits work on tunnel to Germany; minister summons parties",
+        "body": {
+          "extended": [
+            {
+              "text": "Work on the Femern Belt tunnel, which is to link Rødbyhavn in Denmark with Puttgarden in Germany, has been hit by what the project's website calls a cyber incident. Lisbeth Bech-Nielsen, the minister for public security and preparedness, has summoned the parties behind Denmark's national strategy for cyber and information security to discuss what measures to take.",
+              "sources": [
+                "kristeligt_dagblad",
+                "dr",
+                "politiken"
+              ]
+            },
+            {
+              "text": "Bech-Nielsen, of SF, a left-wing party, told TV 2 that 'the serious threat picture and the recent incidents' were the reason. She gave no date and said it was too early to conclude anything, but that 'the authorities are investigating'.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Lolland-Falsters Folketidende, a local newspaper, calls it a hacker attack. It reports that staff were told not to use wi-fi or open computers or emails, that even the guards' access system was down, and that several vessels at sea lay idle because they could not reach digital systems. The trouble began overnight into Monday, it says.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "Who is behind it, and when the systems will be back, is not known.",
+              "sources": [
+                "berlingske",
+                "dr"
+              ]
+            },
+            {
+              "text": "Building began in 2020; the link was first due to open in 2029.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "standard": [
+            {
+              "text": "Work on the Femern Belt tunnel, which is to link Rødbyhavn in Denmark with Puttgarden in Germany, has been hit by what the project's website calls a cyber incident. Lisbeth Bech-Nielsen, the minister for public security and preparedness, has summoned the parties behind Denmark's national strategy for cyber and information security to discuss what measures to take.",
+              "sources": [
+                "kristeligt_dagblad",
+                "dr",
+                "politiken"
+              ]
+            },
+            {
+              "text": "Bech-Nielsen, of SF, a left-wing party, told TV 2 that 'the serious threat picture and the recent incidents' were the reason, and that 'the authorities are investigating'.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Lolland-Falsters Folketidende, a local newspaper, calls it a hacker attack that shut down large parts of the system and left several vessels at sea idle. Who is behind it, and when the systems will be back, is not known.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Work on the Femern Belt tunnel, which is to link Denmark and Germany, has been hit by what the project's website calls a cyber incident, leaving several vessels idle. Lisbeth Bech-Nielsen, the minister for public security and preparedness, has summoned the parties behind Denmark's cyber-security strategy to discuss what measures to take.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "politiken"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Cyber incident hits tunnel works",
+        "deck": "Vessels lay idle and staff were kept off their computers, a local paper reports; who is behind it is not known."
+      },
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "The serious threat picture and the recent incidents are the reason I have summoned the parties to a discussion of what measures can be set in motion.",
+          "attribution": "Lisbeth Bech-Nielsen, minister for public security and preparedness",
+          "attribution_source": "kristeligt_dagblad"
+        }
+      ],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "a0ce0b8c-38d2-4296-b0b6-2c4abdbfaa1e",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Femern Bælt-byggeriet ramt af cyberhændelse",
+          "url": "https://www.kristeligt-dagblad.dk/femern-byggeriet-ramt-af-cyberhaendelse",
+          "published_at": "2026-10-13T11:51:06.000000Z",
+          "content_hash": "sha256:c85ae1bec027946919e53c94ccbc0be415caaba35b744268dfdb437e492f1cfd",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "a81bd5f3-7f86-469a-a678-adaeda4817a9",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Minister indkalder partier efter cyberhændelse ved Femern",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/minister-indkalder-partier-efter-cyberhaendelse-ved-femern",
+          "published_at": "2026-10-13T22:46:55.000000Z",
+          "content_hash": "sha256:0fc89a16d950a07a80473859a63427a4a6d714bf819cfa3d95d8774e9f3c0b6f",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:9f2a817a-bfdc-5ddc-bd11-84167dcd76f8",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Femern-byggeriet ramt af hackerangreb – skibe ligger stille",
+          "url": "https://www.berlingske.dk/indland/femern-byggeriet-ramt-af-hackerangreb--skibe-ligger-stille",
+          "published_at": "2026-10-13T11:49:08.000000Z",
+          "content_hash": "sha256:54a2a96be0585bbddaa225685c49865adc038833aad5276d17306e4cf7d98338",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:876ccd4e-7a4b-4c8f-bd68-0241b0bb9377",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Femern-byggeri ramt af 'cyberhændelse'",
+          "url": "https://www.dr.dk/nyheder/indland/femern-byggeri-ramt-af-cyberhaendelse",
+          "published_at": "2026-10-13T11:47:01.000000Z",
+          "content_hash": "sha256:d8859f1198f196f1fc5839536223ba38b0a1fb5f60c00c53836b5d8e7963ef31",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19733209",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Femern-byggeriet ramt af omfattende »cyberhændelse«",
+          "url": "https://jyllands-posten.dk/indland/ECE19733209/femernbyggeriet-ramt-af-omfattende-cyberhaendelse/",
+          "published_at": "2026-10-13T11:50:24.000000Z",
+          "content_hash": "sha256:bc03ef6410c0341ad48282d4f070fa08cbfef37d01221b174947d5eb0f719871",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19734469",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "»Der er frit slag i bolledejen«: Pilen peger ifølge sikkerhedsekspert i én retning efter cyberhændelse",
+          "url": "https://jyllands-posten.dk/indland/ECE19734469/itsikkerhedsekspert-har-et-bud-paa-hvad-cyberhaendelse-paa-femernbyggeriet-daekker-over/",
+          "published_at": "2026-10-13T17:35:58.000000Z",
+          "content_hash": "sha256:6e4782100db53b5188f28e063c71145cfdb8f5d99aad887cd34a7dac4f3d2b16",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11021393",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Femern-byggeriet ramt af »cyberhændelse« – angrebet siges at være omfattende",
+          "url": "https://politiken.dk/danmark/art11021393/Femern-byggeriet-ramt-af-%C2%BBcyberh%C3%A6ndelse%C2%AB-%E2%80%93-angrebet-siges-at-v%C3%A6re-omfattende",
+          "published_at": "2026-10-13T11:58:18.000000Z",
+          "content_hash": "sha256:f75db0994197ab991885d7cf1e0e9ed7d7e5705dd394ce0174ffbaf80f0cac12",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "pope-leo-lung-cancer-surgery",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "World",
+      "copy": {
+        "headline": "Pope Leo has lung cancer, the Vatican says",
+        "body": {
+          "standard": [
+            {
+              "text": "Pope Leo XIV, the 71-year-old head of the Catholic Church, has lung adenocarcinoma, a common form of lung cancer, the Vatican said on Tuesday. Surgeons in Rome removed the lower lobe of his right lung in an operation of about an hour and a half, without complications.",
+              "sources": [
+                "kristeligt_dagblad",
+                "politiken",
+                "guardian",
+                "bbc",
+                "wsj"
+              ]
+            },
+            {
+              "text": "He is expected to spend a week in hospital, and his audiences are cancelled until 20 October. He is due to tour Uruguay, Argentina and Peru for 11 days from 6 November.",
+              "sources": [
+                "kristeligt_dagblad",
+                "jp"
+              ]
+            },
+            {
+              "text": "Further tests are being carried out to see whether the cancer has spread, an unnamed Vatican source told AFP. It is Leo's first serious illness in 17 months as pope.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Pope Leo XIV, the 71-year-old head of the Catholic Church, has lung cancer, the Vatican said on Tuesday after surgeons removed the lower lobe of his right lung. He is expected to spend a week in hospital.",
+              "sources": [
+                "kristeligt_dagblad",
+                "jp",
+                "politiken"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Pope has lung cancer",
+        "deck": "Surgeons removed the lower lobe of his right lung on Tuesday; he is expected to spend a week in hospital."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "4afcffcc-e470-4374-a96a-74e28b19333c",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Vatikanet melder om vellykket operation for paven",
+          "url": "https://www.kristeligt-dagblad.dk/udland/vatikanet-melder-om-vellykket-operation-paven",
+          "published_at": "2026-10-13T18:05:00.000000Z",
+          "content_hash": "sha256:98e562306a920169ad0dbd7919ad6cf199119c119f6a9ba93c98f2ee03fa8740",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "jp",
+          "source_id": "19734685",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Vatikanet melder om vellykket operation for paven",
+          "url": "https://jyllands-posten.dk/international/ECE19734685/vatikanet-melder-om-vellykket-operation-for-paven/",
+          "published_at": "2026-10-13T18:07:00.000000Z",
+          "content_hash": "sha256:f1ce5a8bff0f973514628e99d94f185faec487c5324ff24d816c21b658ece633",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11022006",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Paven har fået fjernet et stykke af en lunge",
+          "url": "https://politiken.dk/internationalt/art11022006/Paven-har-f%C3%A5et-fjernet-et-stykke-af-en-lunge",
+          "published_at": "2026-10-13T18:23:27.000000Z",
+          "content_hash": "sha256:66812eb91fdf23d37fdd3987d5507565615466887c8037666ca7cc051ab591f6",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:bada6461-82c5-4791-b032-32aef796004b",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Pave Leo har fået konstateret lungekræft",
+          "url": "https://www.dr.dk/nyheder/seneste/pave-leo-har-faaet-konstateret-lungekraeft",
+          "published_at": "2026-10-13T20:58:04.000000Z",
+          "content_hash": "sha256:439f12900f00d184e8a38e88ccd570d7ace44589a29dc09016637ced58c02569",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/udland/2026-10-13-paven-har-lungekraeft",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Paven har lungekræft",
+          "url": "https://nyheder.tv2.dk/udland/2026-10-13-paven-har-lungekraeft",
+          "published_at": "2026-10-13T20:41:13.000000Z",
+          "content_hash": "sha256:efc18ad220833a25a431c3900834eddb3a17ac40cd314c49c11f04535e8667cf",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "ck1wvd9dvv22o",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Pope diagnosed with lung cancer but had successful surgery, Vatican says",
+          "url": "https://www.bbc.co.uk/news/articles/ck1wvd9dvv22o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-14T00:17:00.000000Z",
+          "content_hash": "sha256:82f2a0051808fe86f853cc7165b1eb8a89f66e99e376e7cfbee71a0f3fce04c4",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/13/pope-leo-hospital-operation-growth-lung",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Pope Leo diagnosed with lung cancer as growth removed during surgery",
+          "url": "https://www.theguardian.com/world/2026/oct/13/pope-leo-hospital-operation-growth-lung",
+          "published_at": "2026-10-13T20:32:36.000000Z",
+          "content_hash": "sha256:e9465037f4c37e9abb8783a90796bf84831ff9f74eb85b10efb8709dc388dfa9",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/13/world/europe/pope-leo-lung-surgery.html",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Pope Leo Has Lung Cancer, Vatican Says",
+          "url": "https://www.nytimes.com/2026/10/13/world/europe/pope-leo-lung-surgery.html",
+          "published_at": "2026-10-14T02:10:07.000000Z",
+          "content_hash": "sha256:c0bdf8027bc299048ad609e309b0096e24d4c39a01ef487c421a0d2d39c00458",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/world/2026/10/13/pope-leo-enters-hospital-surgery-lung-nodule/",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Pope Leo’s surgery removed cancerous lung nodule, Vatican says",
+          "url": "https://www.washingtonpost.com/world/2026/10/13/pope-leo-enters-hospital-surgery-lung-nodule/",
+          "published_at": "2026-10-13T21:52:47.000000Z",
+          "content_hash": "sha256:fb51696cdb3bc7e0939f7aeb9da1e203bfece609da572c706b5a97e04131395e",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003973135",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Pope Leo Diagnosed With Lung Cancer After Surgery",
+          "url": "https://www.wsj.com/world/pope-leo-xiv-lung-cancer-a465cbe8",
+          "published_at": "2026-10-13T22:18:00.000000Z",
+          "content_hash": "sha256:83d43da477b1c20b8fd6537bb8d7eb3b4c73f6dffc646253c0cfe6ad1f557e00",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/13/world/europe/pope-leo-health-cancer.html",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Leo XIV’s Lung Cancer Diagnosis Tests a Papacy Still Taking Shape",
+          "url": "https://www.nytimes.com/2026/10/13/world/europe/pope-leo-health-cancer.html",
+          "published_at": "2026-10-14T02:42:27.000000Z",
+          "content_hash": "sha256:093f7569f2b29d57ddccd5012d3e63e4e5eb7fa1e2fc593ff4dc867107799146",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/13/well/pope-leo-lung-cancer-adenocarcinoma.html",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "What to Know About Pope Leo’s Lung Cancer Diagnosis",
+          "url": "https://www.nytimes.com/2026/10/13/well/pope-leo-lung-cancer-adenocarcinoma.html",
+          "published_at": "2026-10-13T22:03:02.000000Z",
+          "content_hash": "sha256:a1086a1eb15ded141bdc5f43a1adba5ce096c966ff64f66b5388d0e2a836de33",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/13/world/europe/pope-leo-cancer-diagnosis-prayers-reaction.html",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Pope Leo’s Cancer Surgery Draws Outpouring From World Leaders",
+          "url": "https://www.nytimes.com/2026/10/13/world/europe/pope-leo-cancer-diagnosis-prayers-reaction.html",
+          "published_at": "2026-10-14T02:46:25.000000Z",
+          "content_hash": "sha256:cf431f2a068a63d48bec31d4d350dd2c5d9aa67abc1c67d4d26176f8242b38d5",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "copenhagen-flat-prices-fall-september",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Prices",
+      "copy": {
+        "headline": "Copenhagen flat prices fall for a second month",
+        "body": {
+          "standard": [
+            {
+              "text": "Flat prices in Copenhagen Municipality fell 1.0 per cent from August to September, after a 0.5 per cent fall the month before, according to Boligsiden, a Danish property website. They remain 15.7 per cent higher than a year earlier, at 75,414 kroner per square metre.",
+              "sources": [
+                "kristeligt_dagblad",
+                "via_ritzau",
+                "dr"
+              ]
+            },
+            {
+              "text": "Birgit Daetz, a housing economist at Boligsiden, blames more flats for sale this year and weaker demand from buyers. An economist quoted by Politiken expects prices to fall by up to 10 per cent as 2027 begins.",
+              "sources": [
+                "kristeligt_dagblad",
+                "politiken",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "In Aarhus prices rose 3.7 per cent to 50,649 kroner per square metre, the third-largest monthly rise since the figures began in 2011.",
+              "sources": [
+                "kristeligt_dagblad",
+                "via_ritzau"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Flat prices in Copenhagen Municipality fell 1.0 per cent in September, the second monthly fall in a row, according to Boligsiden, a Danish property website. In Aarhus they rose 3.7 per cent.",
+              "sources": [
+                "kristeligt_dagblad",
+                "via_ritzau"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Copenhagen flat prices fall again",
+        "deck": "In Aarhus they rose 3.7 per cent and passed 50,000 kroner per square metre for the first time."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "de931c8a-110b-493c-a68d-fc683d986d76",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Lejlighedspriser falder i København og slår rekord i Aarhus",
+          "url": "https://www.kristeligt-dagblad.dk/lejlighedspriser-falder-i-koebenhavn-og-slaar-rekord-i-aarhus",
+          "published_at": "2026-10-13T04:00:02.000000Z",
+          "content_hash": "sha256:7de992b14dbc6d48c40bead3c645fa1c22fcd68cd9d6b22b5a8c51c0147fe138",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:c903e94e-5b0f-4bb2-9bb8-bdd9796d2470",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Københavnske lejligheder falder igen i pris, mens Aarhus når en ny milepæl",
+          "url": "https://www.dr.dk/nyheder/penge/koebenhavnske-lejligheder-falder-igen-i-pris-mens-aarhus-naar-en-ny-milepael",
+          "published_at": "2026-10-13T04:00:00.000000Z",
+          "content_hash": "sha256:8eb1185698b9966306f9eb7b4bf2a2c84322c037c158e88bfa33305bcda746f7",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/okonomi/steget-20-pct-om-aret-nu-falder-priserne-pa-lejligheder-i-kobenhavn",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Steget 20 pct. om året: Nu falder priserne på lejlig­heder i København",
+          "url": "https://borsen.dk/nyheder/okonomi/steget-20-pct-om-aret-nu-falder-priserne-pa-lejligheder-i-kobenhavn",
+          "published_at": "2026-10-13T04:00:00.000000Z",
+          "content_hash": "sha256:45d40c36c71286ce3665ffd5dae3fda0a47d5b978f36f7a07ac2c384161cbf76",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11020081",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Prisstigninger på huse fortsætter – lejligheder i København falder",
+          "url": "https://politiken.dk/danmark/oekonomi/art11020081/Prisstigninger-p%C3%A5-huse-forts%C3%A6tter-%E2%80%93-lejligheder-i-K%C3%B8benhavn-falder",
+          "published_at": "2026-10-13T08:21:24.000000Z",
+          "content_hash": "sha256:2ab3057a92eeb5ea10a75f6b6f659f053540af1dffefcd0d8e68f6ba4e76250a",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:fb483c76-42a9-5bc9-a7a4-360a84a71468",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Nyt prishug til københavnske lejligheder – økonom spår fald på op mod 10 procent",
+          "url": "https://www.berlingske.dk/dine-penge/nyt-prishug-til-koebenhavnske-lejligheder--oekonom-spaar-fald-paa-op-mod-10-procent",
+          "published_at": "2026-10-13T04:04:52.000000Z",
+          "content_hash": "sha256:1a71f43165d98420ff59ebd25864d71a94142745041b9063fdb9ef1d77a55680",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15221563/?publisherId=2576999&lang=da",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Lejlighedspriserne falder i København, men stiger og når ny milepæl i Aarhus",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15221563/lejlighedspriserne-falder-i-kobenhavn-men-stiger-og-nar-ny-milepael-i-aarhus?lang=da",
+          "published_at": "2026-10-13T04:00:00.000000Z",
+          "content_hash": "sha256:facf1af5f48243e6c24f49810fdc40bd8d9287d47abed2f23d3705f5b1bb7bb3",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "aarhus-university-nitrogen-calculation-error",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Environment",
+      "copy": {
+        "headline": "Aarhus University apologises for errors behind new nitrogen rules for farmers",
+        "body": {
+          "standard": [
+            {
+              "text": "Aarhus University has apologised for errors in the calculations behind Denmark's new nitrogen rules, which from 1 January 2027 cap how much nitrogen farmers may discharge. The university says it will now gauge the error's extent and correct it; the error matters where much manure is used.",
+              "sources": [
+                "kristeligt_dagblad",
+                "via_ritzau",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "Seges Innovation, a think tank, said last week that some farmers' limits had been set too low. On Friday a government agency said the university had checked the figures and found them in order. A 'triple check' announced on Tuesday found the same error as Seges.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "'We did not deliver as we should have, and we deeply regret it,' said Jørgen Eriksen, a professor at the university's Department of Agroecology.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Aarhus University has apologised for errors in the calculations behind Denmark's new nitrogen rules, which take effect on 1 January 2027. Seges Innovation, a think tank, had flagged the error last week; a government agency said on Friday that the figures were in order.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Nitrogen figures were wrong",
+        "deck": "The university found the error a think tank had flagged, days after its figures were declared in order."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "744737bf-e2b7-4a71-ac48-46b78e4fe6ca",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Aarhus Universitet undskylder fejl i beregning bag kvælstofregulering",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/aarhus-universitet-retter-fejl-i-beregning-bag-kvaelstofregulering",
+          "published_at": "2026-10-13T20:12:31.000000Z",
+          "content_hash": "sha256:74c1f7ff56f1d45e3e4e518f457dd8853e603018d7a2ca5b2c0302c15c51325b",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15223022/?publisherId=13559834&lang=da",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Aarhus Universitet retter fejl i datasæt til ny kvælstofregulering",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15223022/aarhus-universitet-retter-fejl-i-datasaet-til-ny-kvaelstofregulering?lang=da",
+          "published_at": "2026-10-13T19:27:01.000000Z",
+          "content_hash": "sha256:75a2ba0b1865229bafadb6858142c2c8dc2096d951172818e8a5ef3a8d0791bc",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:9fb12863-b4ca-5f15-9d80-fe8d730cc7a8",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Aarhus Universitet undskylder fejl i beregning bag kvælstofregulering",
+          "url": "https://www.berlingske.dk/danmark/aarhus-universitet-undskylder-fejl-i-beregning-bag-kvaelstofregulering",
+          "published_at": "2026-10-13T20:54:46.000000Z",
+          "content_hash": "sha256:b1cf0948a121b8ab516366886a7f986ee29d363040e1b4fd19b5211a0e0694bc",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "rigshospitalet-transplant-surgeons-sent-home",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Health",
+      "copy": {
+        "headline": "Health authority asks whether suspending three surgeons harms Denmark's only liver-transplant unit",
+        "body": {
+          "standard": [
+            {
+              "text": "Sundhedsstyrelsen, the Danish Health Authority, has asked the Capital Region whether sending home three senior surgeons harms Denmark's only liver-transplant department. The department is at Rigshospitalet, Copenhagen's university hospital. The three were suspended after writing letters of concern to management, according to Sundhedsmonitor, a news outlet, and could be dismissed.",
+              "sources": [
+                "kristeligt_dagblad",
+                "politiken",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "The region had warned the authority in June of surgical problems in its transplant work, Politiken reports. A Norwegian surgeon now assists at liver transplants under a deal with Oslo University Hospital, and from 1 November pancreas patients will be operated on in Norway. Rigshospitalet says the department still has the staff it needs.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Sundhedsstyrelsen, the Danish Health Authority, has asked the Capital Region whether suspending three senior surgeons harms Denmark's only liver-transplant department, at Rigshospitalet, Copenhagen's university hospital. The three had written letters of concern to management, according to Sundhedsmonitor, a news outlet. The hospital says the department still has the staff it needs.",
+              "sources": [
+                "kristeligt_dagblad",
+                "politiken"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Health authority questions surgeons' suspension",
+        "deck": "The three could be dismissed; from 1 November the hospital's pancreas patients will be operated on in Norway."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "e4cf76c6-f879-4995-950f-1a84b56487f9",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Sundhedsstyrelsen beder om orientering efter hjemsendelse af læger",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/sundhedsstyrelsen-beder-om-orientering-efter-hjemsendelse-af-laeger",
+          "published_at": "2026-10-13T15:22:00.000000Z",
+          "content_hash": "sha256:81911b5f9fa535a550734a201624d221d8a5b4dfbfd541df0fff8e379a176304",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "politiken",
+          "source_id": "11019963",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "»Jeg har aldrig oplevet noget lignende«: Rigshospitalet har sendt tre overlæger hjem",
+          "url": "https://politiken.dk/danmark/sundhed/art11019963/%C2%BBJeg-har-aldrig-oplevet-noget-lignende%C2%AB-Rigshospitalet-har-sendt-tre-overl%C3%A6ger-hjem",
+          "published_at": "2026-10-13T04:03:10.000000Z",
+          "content_hash": "sha256:f79314131ec0c48b3c348b77c0366f0c906b94e962ab0f9a6c3048b772ded6d0",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:db77866d-b615-52e6-9817-629641595cc9",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "»Det er meget voldsomt«. Fyringstrusler mod tre kritiske overlæger på Riget vækker dyb bekymring",
+          "url": "https://www.berlingske.dk/indland/det-er-meget-voldsomt-fyringstrusler-mod-tre-kritiske-overlaeger-paa-riget-vaekker-dyb-bekymring",
+          "published_at": "2026-10-13T14:26:08.000000Z",
+          "content_hash": "sha256:2c4ad42b1740434d94a38367ba0bbd9058a79f13c85eca8440b57c59d3a926c6",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "sweden-andersson-pm-vote-thursday",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Nordics",
+      "copy": {
+        "headline": "Sweden's parliament will vote on Magdalena Andersson as prime minister on Thursday",
+        "body": {
+          "standard": [
+            {
+              "text": "The Riksdag, Sweden's parliament, will vote at 12:00 on Thursday on whether Magdalena Andersson, leader of the Social Democrats, should be prime minister of a government of her party alone. Andreas Norlén, the Riksdag's speaker, announced the vote on Tuesday.",
+              "sources": [
+                "kristeligt_dagblad",
+                "borsen",
+                "politiken"
+              ]
+            },
+            {
+              "text": "Andersson had told him that morning that talks had made progress but that no government the Riksdag would tolerate could yet be formed. If she falls short on Thursday, Norlén will call the other party leaders and speed up the process.",
+              "sources": [
+                "kristeligt_dagblad",
+                "dr"
+              ]
+            },
+            {
+              "text": "The four red-green parties won 176 seats in the election on 13 September, the centre-right bloc 173.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "The Riksdag, Sweden's parliament, will vote at 12:00 on Thursday on whether Magdalena Andersson, leader of the Social Democrats, should be prime minister of a government of her party alone. She has concluded no government talks with other parties.",
+              "sources": [
+                "kristeligt_dagblad",
+                "politiken"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Sweden sets a prime-minister vote",
+        "deck": "Andersson, the Social Democrats' leader, would govern with her party alone; she says no government parliament would tolerate can yet be formed."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "8ee914e0-45f7-4d64-a380-6244976abe8a",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Riksdagen skal stemme om Andersson som svensk statsminister",
+          "url": "https://www.kristeligt-dagblad.dk/udland/riksdagen-skal-stemme-om-andersson-som-svensk-statsminister",
+          "published_at": "2026-10-13T10:43:20.000000Z",
+          "content_hash": "sha256:7a6e3b88206fcc261069ce1f1ab44360ac4671d4be1526b58d44b670badb51ed",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "6d07b359-0644-4603-a055-a46b11a9f321",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Svensk S-formand savner forudsætninger for at danne regering",
+          "url": "https://www.kristeligt-dagblad.dk/udland/svensk-s-formand-savner-forudsaetninger-danne-regering",
+          "published_at": "2026-10-13T09:48:00.000000Z",
+          "content_hash": "sha256:ab00c1ca982edb79038d43c18a5051b536eaae9a6b46f15ed8605cd2ddbf6a11",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/riksdagen-skal-stemme-om-andersson-som-statsminister",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Riksdagen skal stemme om Andersson som statsminister",
+          "url": "https://borsen.dk/nyheder/udland/riksdagen-skal-stemme-om-andersson-som-statsminister",
+          "published_at": "2026-10-13T10:48:07.000000Z",
+          "content_hash": "sha256:82d1c476f21a6fa320b3e549a9250b97f57ff6e7351e2cb5190857d69301a488",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:a31d15f1-e97d-4b62-a3ac-5fbeda8148b3",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Svensk S-formand: Ingen afklaring om ny regering",
+          "url": "https://www.dr.dk/nyheder/udland/svensk-s-formand-ingen-afklaring-om-ny-regering",
+          "published_at": "2026-10-13T09:52:49.000000Z",
+          "content_hash": "sha256:c89d346bdc6c644054196283f409d6ebcef6c0a264855c8c98e73dc11482b674",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11021224",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Riksdagen skal stemme om Andersson som svensk statsminister",
+          "url": "https://politiken.dk/internationalt/art11021224/Riksdagen-skal-stemme-om-Andersson-som-svensk-statsminister",
+          "published_at": "2026-10-13T11:00:39.000000Z",
+          "content_hash": "sha256:774322ba7bbdb471ae4752fbb042f9d6acf69b4e8d6501347c9ce41418cacb68",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "motor-register-shut-irregularities",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Transport",
+      "copy": {
+        "headline": "Denmark's vehicle register reopens after shutdown over irregularities",
+        "body": {},
+        "lede": {
+          "text": "Motorregistret, Denmark's register of all motor vehicles, was back in normal operation on Tuesday after being shut since 14:53 on Monday over irregularities found during a weekend update.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr",
+            "borsen"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "77efe10d-0ee9-4a8c-adf2-a3e97b2bc187",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Motorregistret er lukket ned på ubestemt tid efter fejl",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/motorregistret-er-lukket-ned-paa-ubestemt-tid-efter-fejl",
+          "published_at": "2026-10-13T10:20:36.000000Z",
+          "content_hash": "sha256:3299ef03dbc7da7e2d11a51ef0996c6f79a217e98ce83965566efcd25ffc3a5e",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:3e538bf7-cd92-49f2-9a23-77b6115b9877",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Motorregistret er tilbage i normal drift",
+          "url": "https://www.dr.dk/nyheder/seneste/motorregistret-er-tilbage-i-normal-drift",
+          "published_at": "2026-10-13T15:40:20.000000Z",
+          "content_hash": "sha256:09b6bf55936eb1a5e32a77e68ebf408e6083e739797d579f2858078829e04261",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/samfund/uregelmaessigheder-lukker-motorregistret-pa-ubestemt-tid",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "“Uregelmæssigheder” lukker Motorregistret på ubestemt tid",
+          "url": "https://borsen.dk/nyheder/samfund/uregelmaessigheder-lukker-motorregistret-pa-ubestemt-tid",
+          "published_at": "2026-10-13T10:54:32.000000Z",
+          "content_hash": "sha256:5e99746ad0f4daeba502c066fcc1db1f1c3788877f402523f1c32001fa5b68ba",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "holmstrup-cable-halts-funen-trains",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Transport",
+      "copy": {
+        "headline": "Fallen power cable halts trains between Odense and Fredericia",
+        "body": {},
+        "lede": {
+          "text": "Trains between Odense and Fredericia ran again on Tuesday evening after a high-voltage cable fell across the line south-west of Odense; DSB, the state railway, expects no disruption on Wednesday.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "e7ef2ffb-e594-4b4c-8eb5-2b8ab9706aec",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Kabel på jernbanen indstiller togtrafik mellem Odense og Fredericia",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/nedfaldet-kabel-indstiller-togtrafik-mellem-odense-og-fredericia",
+          "published_at": "2026-10-13T12:51:54.000000Z",
+          "content_hash": "sha256:185afe4423681cca78a11d5df4ed72f7010f413d6f221cb98ce445923d172838",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "ce6eec6b-cabd-4fd6-b701-c7103ceba153",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Dieseltog kører mellem Fredericia og Odense",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/alle-tog-mellem-fredericia-og-odense-er-aflyst-tirsdag",
+          "published_at": "2026-10-13T14:47:58.000000Z",
+          "content_hash": "sha256:0d407a26d14cf41c181c7f39feafac322d50752346d5886714e2cfefd3b8a3f7",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:88c48967-f298-54e5-a914-c6711026d1a0",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Togene kører igen mellem Odense og Fredericia",
+          "url": "https://www.berlingske.dk/danmark/togene-koerer-igen-mellem-odense-og-fredericia",
+          "published_at": "2026-10-13T20:29:47.000000Z",
+          "content_hash": "sha256:f75a0d60c5e0db8693bf2c68d4d367b14952e00fda56ff5940aaaa7a98b57980",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:2304491d-f699-4ecc-ad81-99960773f76a",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Togtrafik indstillet mellem Odense og Fredericia",
+          "url": "https://www.dr.dk/nyheder/indland/togtrafik-indstillet-mellem-odense-og-fredericia",
+          "published_at": "2026-10-13T13:19:42.000000Z",
+          "content_hash": "sha256:144f8a36fbed136839b3f7b3041fa904cd00c1678d596df30f0cf689910ca319",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "kirsten-schwalbe-oldest-dane-record",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Woman of 112 becomes the longest-lived Dane on record",
+        "body": {},
+        "lede": {
+          "text": "Kirsten Schwalbe becomes the longest-lived Dane on record on Wednesday, at 112 years and 218 days, taking the record from Karla Lindholm Jensen, who died in 2020.",
+          "sources": [
+            "kristeligt_dagblad",
+            "jp"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "49941e9b-5d15-421f-a7f9-a56ad06fe020",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Danmarks ældste person slår rekord med 112 år og 218 dage",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/danmarks-aeldste-person-slaar-rekord-med-112-aar-og-218-dage",
+          "published_at": "2026-10-13T22:11:13.000000Z",
+          "content_hash": "sha256:926caba84d411d86f6f3c8f9f57e9a44ec7910c0c106a050fa73dc7efdc2081f",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "jp",
+          "source_id": "19731250",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Hørelse og syn driller, men hovedet er stadig skarpt: Onsdag slår hun rekorden som den længstlevende nogensinde i Danmark",
+          "url": "https://jyllands-posten.dk/indland/ECE19731250/kirsten-schwalbe-slaar-onsdag-rekorden-som-den-laengstlevende-nogensinde-i-danmark/",
+          "published_at": "2026-10-13T19:00:00.000000Z",
+          "content_hash": "sha256:e80f94d094ccaf7bbb3c381079ef168946c2702e06cbbc991f731386a6c1394c",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "rodovre-rifles-cocaine-12-years",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "Man gets 12 years in prison for keeping rifles and 40 kilos of cocaine at home",
+        "body": {},
+        "lede": {
+          "text": "A court on Tuesday sentenced a 26-year-old man to 12 years in prison for keeping four rifles and 40 kilos of cocaine at his home in Rødovre, a Copenhagen suburb.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "a0134c10-2341-4994-83aa-70941a570ff1",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Mand får 12 års fængsel for våbenlager og 40 kilo kokain",
+          "url": "https://www.kristeligt-dagblad.dk/mand-faar-12-aars-faengsel-vaabenlager-og-40-kilo-kokain",
+          "published_at": "2026-10-13T10:07:22.000000Z",
+          "content_hash": "sha256:726c64ef05b80aa937a68055dd589f113463271946de9b4dba6b61a2a1f7e1e0",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:93cd9540-cc7c-4a31-9ed3-b80c0c205a8c",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "26-årig havde fire rifler og 40 kilo kokain liggende derhjemme",
+          "url": "https://www.dr.dk/nyheder/seneste/26-aarig-havde-fire-rifler-og-40-kilo-kokain-liggende-derhjemme",
+          "published_at": "2026-10-13T10:16:31.000000Z",
+          "content_hash": "sha256:fb37bb73a111745af339b2bacf6e6041f151d7c0a75583a276ea38c4c8059558",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "enhedslisten-school-costs-100-million",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Party demands 100 million kroner a year to cut poor families' school costs",
+        "body": {},
+        "lede": {
+          "text": "Enhedslisten, a party in talks on next year's budget, demands 100 million kroner a year to cut what families pay for camps and lunches at Denmark's free state schools, starting with the poorest.",
+          "sources": [
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "4629ee47-b9bb-41fd-8b01-ce4f40b2a054",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Enhedslisten kræver millioner til fattige familiers skoleudgifter",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/enhedslisten-kraever-millioner-til-fattige-familiers-skoleudgifter",
+          "published_at": "2026-10-13T07:10:26.000000Z",
+          "content_hash": "sha256:aed75d2e0c699571351471d71b3fc4d8b73704a48a2cb32757f6e882cb45195e",
+          "primary": true,
+          "wire": "ritzau"
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "steen-ostergaard-dies-90",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Obituary",
+      "copy": {
+        "headline": "Danish designer of a chair seen in James Bond dies at 90",
+        "body": {},
+        "lede": {
+          "text": "Steen Østergaard, whose Modo 290 of 1966 was the world's first one-piece injection-moulded chair and appeared in James Bond and Star Trek, has died aged 90, his family says.",
+          "sources": [
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "39a27f07-b3f1-4721-b08b-7226a16942f9",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Designer bag James Bond-stol Steen Østergaard er død - 90 år",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/designer-bag-james-bond-stol-steen-oestergaard-er-doed-90-aar",
+          "published_at": "2026-10-13T14:33:20.000000Z",
+          "content_hash": "sha256:8d370b43b53feb285828e1e9db0a1f6e9bd4c0e848096c80ea30891011a5416c",
+          "primary": true,
+          "wire": "ritzau"
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "tupac-killer-davis-sentenced",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Former gang leader gets 40 years to life for Tupac Shakur's murder",
+        "body": {},
+        "lede": {
+          "text": "Duane 'Keffe D' Davis, a former Los Angeles gang leader, was sentenced in Las Vegas on Tuesday to 40 years to life in prison for the 1996 murder of the rapper Tupac Shakur.",
+          "sources": [
+            "kristeligt_dagblad",
+            "guardian",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "e98a1865-6772-4aea-a9d3-f74e542cb02d",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Eks-bandeleder får 40 års fængsel for drab på rapperen 2Pac",
+          "url": "https://www.kristeligt-dagblad.dk/udland/eksbandeleder-faar-40-aars-faengsel-drab-paa-rapperen-2pac",
+          "published_at": "2026-10-13T19:09:49.000000Z",
+          "content_hash": "sha256:ec79ddedcc20021ea30d9e7f0f990be23ef47535cfe7863add12d09df2c46543",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/2026-10-13-efter-naesten-30-aar-er-der-faldet-dom-i-sagen-om-tupacs-drab",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Efter 30 år er der faldet dom i sagen om Tupacs drab",
+          "url": "https://nyheder.tv2.dk/2026-10-13-efter-naesten-30-aar-er-der-faldet-dom-i-sagen-om-tupacs-drab",
+          "published_at": "2026-10-13T18:00:26.000000Z",
+          "content_hash": "sha256:d8350926eb086287ef7068a4c45d6c776b326737a9f6bb86a6935b4564cf430d",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:0b023f43-9eed-42af-98c4-d7310212d329",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Tidligere bandeleder idømt 40 års fængsel for drabet på Tupac",
+          "url": "https://www.dr.dk/nyheder/udland/tidligere-bandeleder-idoemt-40-aars-faengsel-drabet-paa-tupac",
+          "published_at": "2026-10-13T19:01:37.000000Z",
+          "content_hash": "sha256:bcca4fa3e8305ecea9130f51795288d4863cf1fb7307d6bfcef7dccc4178a926",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "c60rln2jvv2zo",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Ex-gang boss sentenced to 40 years for orchestrating Tupac Shakur's murder",
+          "url": "https://www.bbc.co.uk/news/articles/c60rln2jvv2zo?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-13T19:51:14.000000Z",
+          "content_hash": "sha256:7888a95e672a26e80eec022aae2e6eb7f40e52758ac371d7c693d14481c337cd",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/music/2026/oct/13/duane-davis-sentencing-tupac-shakur-murder",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Duane ‘Keffe D’ Davis sentenced to 40 years to life over Tupac Shakur’s murder",
+          "url": "https://www.theguardian.com/music/2026/oct/13/duane-davis-sentencing-tupac-shakur-murder",
+          "published_at": "2026-10-13T19:43:45.000000Z",
+          "content_hash": "sha256:636315920e5835b81f72850b8f0d9c92382d04351086afc6e63aa7ee98f127d8",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/13/arts/music/tupac-shakur-murder-duane-keith-davis-sentenced.html",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Tupac Shakur Murder Conviction Lands Man 40 Years to Life in Prison",
+          "url": "https://www.nytimes.com/2026/10/13/arts/music/tupac-shakur-murder-duane-keith-davis-sentenced.html",
+          "published_at": "2026-10-13T19:58:06.000000Z",
+          "content_hash": "sha256:03d72afdfe7e998533cbcefcd51c2ff0d42619bcc83184b45ee212e33d870881",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/nation/2026/10/13/duane-keffe-d-davis-sentenced-tupac-shakur-murder-trial/",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Man sentenced to 40 years to life in prison for Tupac Shakur’s murder",
+          "url": "https://www.washingtonpost.com/nation/2026/10/13/duane-keffe-d-davis-sentenced-tupac-shakur-murder-trial/",
+          "published_at": "2026-10-13T19:50:05.000000Z",
+          "content_hash": "sha256:8381455011a6045ad402bffb0e3bacb3bf41abacaed342cb57843dba4b283932",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "hungary-repeals-anti-lgbt-law",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Europe",
+      "copy": {
+        "headline": "Hungary's parliament scraps Orbán's anti-LGBT measures",
+        "body": {},
+        "lede": {
+          "text": "Hungary's parliament voted 139 to 51 on Tuesday to repeal parts of a 2021 law, passed under Viktor Orbán, the former prime minister, that banned showing or promoting homosexuality in media for under-18s.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "bbc"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "de09b130-072a-4677-a768-25c61ee97d89",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Ungarns parlament tilbageruller anti-LGBTQ+-lovgivning",
+          "url": "https://www.kristeligt-dagblad.dk/udland/ungarns-parlament-tilbageruller-anti-lgbtq-lovgivning",
+          "published_at": "2026-10-13T08:37:10.000000Z",
+          "content_hash": "sha256:1d011dd17ac7e4c44e3ff44c28f1f53939d2ba68ae430efe5f1ac70dcaa426df",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:078f7459-49d3-575e-864c-9809d6bd341d",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Ungarn dropper Órbans anti-lgbt-love",
+          "url": "https://www.berlingske.dk/internationalt/ungarn-dropper-orbans-anti-lgbt-love",
+          "published_at": "2026-10-13T17:53:01.000000Z",
+          "content_hash": "sha256:7074e0e0c2ddd49dc8fb88912d7c9222cef2462efc3b8303b9eb5baf2b5ac364",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "c6vg9nj4l322o",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Hungarian MPs scrap Orbán's anti-LGBTQ measures",
+          "url": "https://www.bbc.co.uk/news/articles/c6vg9nj4l322o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-13T13:23:45.000000Z",
+          "content_hash": "sha256:1c7fb8bdb377aa005ec3134d30305b3edad9c865042786e25a450e06ba85918f",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "kyiv-power-plant-missile-no-warning",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Russian missile hits Kyiv power plant without warning from allies, Zelensky says",
+        "body": {},
+        "lede": {
+          "text": "A Russian ballistic missile hit a Kyiv power plant on Tuesday evening with no early warning from Ukraine's allies, said Volodymyr Zelensky, Ukraine's president; a strike on an apartment building killed two.",
+          "sources": [
+            "kristeligt_dagblad",
+            "bbc",
+            "guardian"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "d392e59e-77ef-43b1-ba89-9de9d007487d",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "To meldes dræbt i ballistisk missilangreb mod Kyiv",
+          "url": "https://www.kristeligt-dagblad.dk/udland/meldes-draebt-i-ballistisk-missilangreb-mod-kyiv",
+          "published_at": "2026-10-14T01:47:21.000000Z",
+          "content_hash": "sha256:9ff0ec73217fd5a60c0de8eed96b00cae7074432bdec9b25f5eb3f2a929fd2a8",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:97846f47-027d-4be7-a8f9-086f6377db23",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Udenrigsminister maner spekulationer i jorden: Vi modtager stadig amerikanske efterretninger",
+          "url": "https://www.dr.dk/nyheder/udland/udenrigsminister-maner-spekulationer-i-jorden-vi-modtager-stadig-amerikanske-efterretninger",
+          "published_at": "2026-10-13T16:00:03.000000Z",
+          "content_hash": "sha256:0563bc186c504fc6d4bc7b50dd105e160862264e950308fc56dcf63d8478abbe",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "ck20r9qpw505o",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Russian strikes hit key power plant in Kyiv, Zelensky says",
+          "url": "https://www.bbc.co.uk/news/articles/ck20r9qpw505o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-14T01:56:57.000000Z",
+          "content_hash": "sha256:f3554c112f1712f9414e437cf28444709f55b8be205cabfd7b8943c7f92bb3e2",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "da00e3ff-4392-46d8-bab5-13b4ccc49995",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Zelenskyy says Kyiv’s partners failed to warn of ballistic missile attack",
+          "url": "https://www.ft.com/content/da00e3ff-4392-46d8-bab5-13b4ccc49995",
+          "published_at": "2026-10-13T16:20:48.000000Z",
+          "content_hash": "sha256:5851c91ad752c513e48f35ab962520a0f6866f649d8eaa3ef123de3d3c4b34cd",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/13/allies-did-not-warn-kyiv-of-russian-ballistic-missile-strikes-says-zelenskyy",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Allies did not warn Kyiv of Russian ballistic missile strikes, says Zelenskyy",
+          "url": "https://www.theguardian.com/world/2026/oct/13/allies-did-not-warn-kyiv-of-russian-ballistic-missile-strikes-says-zelenskyy",
+          "published_at": "2026-10-13T21:54:12.000000Z",
+          "content_hash": "sha256:333bc92581fa3b26e894dfda445904a59895ec0fa31949c900b662f4d429009c",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/14/ukraine-war-briefing-zelenskyy-decries-absolutely-unjust-lack-of-warning-from-allies-after-kyiv-plant-strike",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Ukraine war briefing: Zelenskyy decries ‘absolutely unjust’ lack of warning from allies after Kyiv plant strike",
+          "url": "https://www.theguardian.com/world/2026/oct/14/ukraine-war-briefing-zelenskyy-decries-absolutely-unjust-lack-of-warning-from-allies-after-kyiv-plant-strike",
+          "published_at": "2026-10-14T01:04:32.000000Z",
+          "content_hash": "sha256:bac8a41ce0e54b13e10ddbba04ef3ccd22401f91e35ba7d4ee1f46b9b1693150",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/13/world/europe/ukraine-trump-intelligence.html",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Ukraine Says It Received No Intelligence About Strikes 2 Nights in a Row",
+          "url": "https://www.nytimes.com/2026/10/13/world/europe/ukraine-trump-intelligence.html",
+          "published_at": "2026-10-13T21:17:35.000000Z",
+          "content_hash": "sha256:581c5250b71aa8b5a95ee0726a77c7775b50c7138cd3e444bbb66ead1a308e2f",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/live/2026/oct/13/ships-hit-sunk-drones-bulgaria-black-sea-ukraine-russia-war-france-spains-sweden-pope-leo-europe-latest-news-updates",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Zelenskyy says Russia ‘did not heed’ Trump’s call for ceasefire and Ukraine had ‘no early warning’ before strikes on Kyiv – as it happened",
+          "url": "https://www.theguardian.com/world/live/2026/oct/13/ships-hit-sunk-drones-bulgaria-black-sea-ukraine-russia-war-france-spains-sweden-pope-leo-europe-latest-news-updates",
+          "published_at": "2026-10-13T15:54:55.000000Z",
+          "content_hash": "sha256:c1e061a36f7f99c980877310152174c3befdcefa91d4975c1b27681e4846b418",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "ilhan-omar-home-searched",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Federal agents search the home of Trump critic Ilhan Omar",
+        "body": {},
+        "lede": {
+          "text": "Federal agents searched the Washington home of Ilhan Omar, a Democratic congresswoman from Minnesota, on Monday in a criminal investigation three weeks before the midterms; she called it an attempt 'to target political enemies'.",
+          "sources": [
+            "berlingske",
+            "dr",
+            "guardian",
+            "wapo"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:e401efc8-7273-548f-adfd-87f90577f7c6",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Demokrats hjem ransaget: »I ti år har Trump forfulgt mig med grundløse løgne og smædekampagner«",
+          "url": "https://www.berlingske.dk/internationalt/demokrats-hjem-ransaget-i-ti-aar-har-trump-forfulgt-mig-med-grundloese-loegne-og-smaedekampagner",
+          "published_at": "2026-10-13T05:08:39.000000Z",
+          "content_hash": "sha256:c039805f64dd78bee9f009b27a9787f9bc5a15778f26286d2cca4ea97c4eb539",
+          "primary": true
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:544f8aa2-b14d-4fe7-bc2d-15de19172368",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "DR-korrespondent om ransagning af Trump-kritiker: Timingen er 'mystisk'",
+          "url": "https://www.dr.dk/nyheder/udland/dr-korrespondent-om-ransagning-af-trump-kritiker-timingen-er-mystisk",
+          "published_at": "2026-10-13T12:12:00.000000Z",
+          "content_hash": "sha256:e1d40e21c185240d1199dcec5de96d8d153b661e27823fbfd0b8af167dfcef9e",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11020251",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "I otte år har hun været en af Trumps største kritikere. Mandag blev hendes hjem ransaget",
+          "url": "https://politiken.dk/internationalt/art11020251/I-otte-%C3%A5r-har-hun-v%C3%A6ret-en-af-Trumps-st%C3%B8rste-kritikere.-Mandag-blev-hendes-hjem-ransaget",
+          "published_at": "2026-10-13T06:40:06.000000Z",
+          "content_hash": "sha256:a4bfacee383f9610728bc25ce4a03e4786cf9cadf8197f7f43a7945d37197ed0",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/udland/2026-10-13-trump-kalder-hende-et-forfaerdeligt-menneske-mandag-blev-hendes-hjem-ransaget",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Trump kalder hende \"et forfærdeligt menneske\" – mandag blev hendes hjem ransaget",
+          "url": "https://nyheder.tv2.dk/udland/2026-10-13-trump-kalder-hende-et-forfaerdeligt-menneske-mandag-blev-hendes-hjem-ransaget",
+          "published_at": "2026-10-13T08:32:30.000000Z",
+          "content_hash": "sha256:0eb8caff630b0ce06adde55288e6eb04b3fe28c82c681db4c6d4071984f135e0",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cvp8glg97393o",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Immigration agents search congresswoman Ilhan Omar's home",
+          "url": "https://www.bbc.co.uk/news/articles/cvp8glg97393o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-13T10:37:39.000000Z",
+          "content_hash": "sha256:34d2015764fe42dda8c5174624c7d21e882ff510dcd089e626cdc65666ff614c",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "e05d76f8-2ced-4acc-a449-926b49559f9b",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "US agents raid home of Trump critic Ilhan Omar",
+          "url": "https://www.ft.com/content/e05d76f8-2ced-4acc-a449-926b49559f9b",
+          "published_at": "2026-10-12T16:47:27.000000Z",
+          "content_hash": "sha256:315a8cc9e5b5d7fa3653d27209e37b23282b282d6732999e09b8f6e49462ed14",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/nation/2026/10/12/federal-agents-search-rep-ilhan-omars-dc-home/",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Federal agents search Rep. Ilhan Omar’s D.C. home",
+          "url": "https://www.washingtonpost.com/nation/2026/10/12/federal-agents-search-rep-ilhan-omars-dc-home/",
+          "published_at": "2026-10-12T23:16:20.000000Z",
+          "content_hash": "sha256:6d9210bac535845198d05244936ac4f36490085d891d1c1aa0df54a423d6937d",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/12/us/politics/ilhan-omar-home-searched.html",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Federal Agents Search Home of Rep. Ilhan Omar",
+          "url": "https://www.nytimes.com/2026/10/12/us/politics/ilhan-omar-home-searched.html",
+          "published_at": "2026-10-13T01:54:07.000000Z",
+          "content_hash": "sha256:0879408ecc5cddc976d7534736cf9fd58c433545c07a67d341727bab27f02ec0",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003968659",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Federal agents searched the Washington, D.C., home of Democratic Rep. Ilhan Omar as part of a criminal investigation, people familiar with the matter said",
+          "url": "https://www.wsj.com/politics/policy/ilhan-omars-home-is-searched-by-federal-agents-14a79871",
+          "published_at": "2026-10-12T23:44:00.000000Z",
+          "content_hash": "sha256:00c22e2f0092a6f0a8c605da6baf6b8cf513e05713085861bf9cb23b6f87b276",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/us-news/2026/oct/12/federal-agents-ilhan-omar-home-raid",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Ilhan Omar says she will not be silenced after federal agents raid her home",
+          "url": "https://www.theguardian.com/us-news/2026/oct/12/federal-agents-ilhan-omar-home-raid",
+          "published_at": "2026-10-12T16:20:42.000000Z",
+          "content_hash": "sha256:e0f8c63302fc2322eff7f54319ac9e711a3b8a03caf51e5ee2ca0b6379a5bbf6",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/us-news/2026/oct/12/democrats-reaction-ilhan-omar-federal-raid-home-trump",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Democrats rebuke federal raid of Ilhan Omar’s home: ‘rogue abuse of power’",
+          "url": "https://www.theguardian.com/us-news/2026/oct/12/democrats-reaction-ilhan-omar-federal-raid-home-trump",
+          "published_at": "2026-10-12T17:57:28.000000Z",
+          "content_hash": "sha256:133d4090de9af24af0d6bcd3cffada90e40cc6ac7cf30f5648172b1870a4bf7b",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/us-news/2026/oct/13/first-thing-democratic-leaders-condemn-federal-raid-ilhan-omar",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Democratic leaders condemn federal raid on Ilhan Omar as she vows not to be silenced | First Thing",
+          "url": "https://www.theguardian.com/us-news/2026/oct/13/first-thing-democratic-leaders-condemn-federal-raid-ilhan-omar",
+          "published_at": "2026-10-13T10:55:22.000000Z",
+          "content_hash": "sha256:396fb6dbc6017d96f5d44703837a9e05027d61a2473565f201d6136bfc1a3bac",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "fc-copenhagen-sale-explored",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Business",
+      "copy": {
+        "headline": "FC Copenhagen's owner considers selling the club",
+        "body": {},
+        "lede": {
+          "text": "Parken Sport & Entertainment, the company behind FC Copenhagen, said on Tuesday it would explore options for its football business, including selling all or part of the club, and its shares jumped.",
+          "sources": [
+            "borsen",
+            "berlingske",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/virksomheder/parken-overvejer-frasalg-af-fc-kobenhavn-aktien-brager-op",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Parken overvejer frasalg af F.C. København – aktien brager op",
+          "url": "https://borsen.dk/nyheder/virksomheder/parken-overvejer-frasalg-af-fc-kobenhavn-aktien-brager-op",
+          "published_at": "2026-10-13T12:55:16.000000Z",
+          "content_hash": "sha256:62315fd59687245e91f566da10b69d51cc4dac7e78ad65bac8032ecf9ee9fdb2",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:ec48b802-7a7a-54e4-8f07-f6b47df268a5",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Selskab bag F.C. København afsøger salg af fodboldklubben",
+          "url": "https://www.berlingske.dk/virksomheder/selskab-bag-fc-koebenhavn-afsoeger-salg-af-fodboldklubben",
+          "published_at": "2026-10-13T13:29:46.000000Z",
+          "content_hash": "sha256:93b33d8dde1c7d1d8bf5fa7a3be523eb742a5fa8dd8ceefc0e13ec830e72d0ab",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:5fa947bf-b62d-46ec-8769-34b3227cd028",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "FC København sat til salg af selskab bag",
+          "url": "https://www.dr.dk/sporten/fodbold/seneste-og-vigtigste-nyt-om-fodbold?focusId=12628480",
+          "published_at": "2026-10-13T18:21:32.000000Z",
+          "content_hash": "sha256:6730b0ec00486e41fa5456d526bc8e913cddaebfed48dfe36c277001c6a202b9",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "volvo-ex30-recall-denmark",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Business",
+      "copy": {
+        "headline": "Volvo recalls more than 5,500 electric cars in Denmark over a headrest fault",
+        "body": {},
+        "lede": {
+          "text": "Volvo is recalling 5,542 EX30 electric cars in Denmark, of 234,000 worldwide, because a front headrest cushion can in rare cases come loose in a serious collision; Volvo knows of no injuries.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "b7020894-79d2-44f0-8d48-003213cc8e25",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Volvo tilbagekalder over 5500 biler i Danmark efter fejl ved nakkestøtter",
+          "url": "https://www.kristeligt-dagblad.dk/udland/volvo-tilbagekalder-234000-biler-paa-grund-af-fejl-paa-nakkestoetter",
+          "published_at": "2026-10-13T17:33:10.000000Z",
+          "content_hash": "sha256:214ebd59d554ebc177924c133bde4f38a491dd3f4071930e23dc4ca64608b4d0",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:66d4ebf4-1aa1-45c2-a253-5cc1550fae77",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Volvo tilbagekalder 5.500 biler i Danmark efter fejl ved nakkestøtte",
+          "url": "https://www.dr.dk/nyheder/seneste/volvo-tilbagekalder-5-500-biler-i-danmark-efter-fejl-ved-nakkestoette",
+          "published_at": "2026-10-13T20:03:56.000000Z",
+          "content_hash": "sha256:3ea9031baea86e2dc009267543c8a720f62735a1fabfbead3ec43aafb1cb0a99",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "mi5-iran-stepping-up-attacks",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Europe",
+      "copy": {
+        "headline": "Iran steps up attempts to strike British military sites, MI5 chief says",
+        "body": {},
+        "lede": {
+          "text": "Iran is stepping up attempts to hit targets such as military sites in Britain, Ken McCallum, head of MI5, Britain's domestic intelligence service, said on Tuesday; Russia, he said, remains the biggest aggressor.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr",
+            "ft",
+            "wapo"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "d6d719b7-acbc-4410-a918-6585de041850",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Britisk efterretningschef: Iran og Rusland optrapper hybride angreb",
+          "url": "https://www.kristeligt-dagblad.dk/udland/britisk-efterretningschef-iran-og-rusland-optrapper-hybride-angreb",
+          "published_at": "2026-10-13T13:05:38.000000Z",
+          "content_hash": "sha256:ef7af982f8391865c563a90e31ee3379cd6fbdd2dd283164623ff781d632b812",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:d3b2d6e9-a626-53e9-94d8-5bf9e5a5b263",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Britisk efterretningschef: Iran og Rusland optrapper hybride angreb",
+          "url": "https://www.berlingske.dk/internationalt/britisk-efterretningschef-iran-og-rusland-optrapper-hybride-angreb",
+          "published_at": "2026-10-13T14:24:54.000000Z",
+          "content_hash": "sha256:89fca32079c0c014f79b68c99421e78cf404c2c3257a4eecfc1a4e83297ca108",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:e87fec53-53d5-4d50-bba1-3783fd7b5b8c",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "MI5-chef advarer om intensiverede iranske angreb",
+          "url": "https://www.dr.dk/nyheder/seneste/mi5-chef-advarer-om-intensiverede-iranske-angreb",
+          "published_at": "2026-10-13T13:18:35.000000Z",
+          "content_hash": "sha256:c9414bda5adff1636e6f165e0bf2aab6f7ac28137207d42468413f3e8fe2eb21",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "c60rl5vwpk02o",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "MI5 chief warns of threats to UK from Russia, Iran and AI",
+          "url": "https://www.bbc.co.uk/news/articles/c60rl5vwpk02o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-13T15:52:15.000000Z",
+          "content_hash": "sha256:379601782e989d3aa82dd5907047f76b0c9dc3bc58eb3a19c8c3e0771f6e3971",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/13/world/europe/mi5-uk-threat-iran-russia.html",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "MI5 Chief Warns of Escalating Hybrid Threats From Iran and Russia on British Soil",
+          "url": "https://www.nytimes.com/2026/10/13/world/europe/mi5-uk-threat-iran-russia.html",
+          "published_at": "2026-10-13T16:04:04.000000Z",
+          "content_hash": "sha256:d390e0f790435b5fe1931b68b05dc661a6301e47e4342fe6fcf2d76075786555",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003971514",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "U.K. Spy Agency Confronts Escalating Hybrid War With Russia and Iran",
+          "url": "https://www.wsj.com/world/europe/u-k-spy-agency-confronts-escalating-hybrid-war-with-russia-and-iran-4c54f9ab",
+          "published_at": "2026-10-13T13:01:00.000000Z",
+          "content_hash": "sha256:10e5b56dc8ce72986b5df225804bf71492a65667c053666ce79146c930d9a6c9",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "a0921eb6-637e-4fac-b15d-ea7aef441e6a",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Iran has made ‘major shift’ to target UK military sites, says MI5 chief",
+          "url": "https://www.ft.com/content/a0921eb6-637e-4fac-b15d-ea7aef441e6a",
+          "published_at": "2026-10-13T12:00:39.000000Z",
+          "content_hash": "sha256:06152d7b1f7aade5e86ad8553dd9cc226413e1ab950ca99ee869beec9933b321",
+          "primary": false
+        },
+        {
+          "source": "wapo",
+          "source_id": "https://www.washingtonpost.com/world/2026/10/13/uk-intelligence-chief-warns-iran-is-shifting-plots-harder-targets/",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "U.K. intelligence chief warns Iran is shifting plots to ‘harder targets’",
+          "url": "https://www.washingtonpost.com/world/2026/10/13/uk-intelligence-chief-warns-iran-is-shifting-plots-harder-targets/",
+          "published_at": "2026-10-13T12:58:36.000000Z",
+          "content_hash": "sha256:e00cf820bc8e4a362999e39363f5c65b431f9f427afaa8fce51e4048a3611ae9",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/uk-news/2026/oct/13/far-right-iran-terror-threat-uk-mi5-annual-update",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Far-right and Iran add to mix of terror threats UK faces – not to mention AI",
+          "url": "https://www.theguardian.com/uk-news/2026/oct/13/far-right-iran-terror-threat-uk-mi5-annual-update",
+          "published_at": "2026-10-13T17:58:40.000000Z",
+          "content_hash": "sha256:24d8bc6cccc4a579fbefd0a816be16b7420c1801f3edbe1a7b1f133331100b58",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/politics/live/2026/oct/13/andy-burnham-brexit-eu-europe-neil-kinnock-lobby-wes-streeting-labour-prisoner-early-release-uk-politics-latest-news-updates",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "MI5 chief Ken McCallum confirms Russia did interfere in Brexit referendum but says it had little impact – as it happened",
+          "url": "https://www.theguardian.com/politics/live/2026/oct/13/andy-burnham-brexit-eu-europe-neil-kinnock-lobby-wes-streeting-labour-prisoner-early-release-uk-politics-latest-news-updates",
+          "published_at": "2026-10-13T16:23:21.000000Z",
+          "content_hash": "sha256:a026f7bfb8a941ef181c8acc8c7087440bcc66742351e7a607045907037c449d",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/politics/2026/oct/13/russia-brexit-eu-referendum-interference-mi5",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Russia did try to interfere in Brexit referendum, head of MI5 confirms",
+          "url": "https://www.theguardian.com/politics/2026/oct/13/russia-brexit-eu-referendum-interference-mi5",
+          "published_at": "2026-10-13T15:15:45.000000Z",
+          "content_hash": "sha256:6dfb58d0c77c7bb5cd28ef5ec1db186d11a59cdcf47be7c39092a4cc77fdb4e4",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cky83q49e4w0o",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "MI5 chief warns against overstating Russian interference in Brexit vote",
+          "url": "https://www.bbc.co.uk/news/articles/cky83q49e4w0o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-13T17:06:18.000000Z",
+          "content_hash": "sha256:402634241bd5fc39284701250982c04321dd283a6e2253cfab29393029af4256",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/uk-news/2026/oct/13/rightwing-extremists-increasingly-likely-to-consider-terrorist-attacks-mi5-chief-says",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Rightwing extremists increasingly likely to consider terrorist attacks, MI5 chief says",
+          "url": "https://www.theguardian.com/uk-news/2026/oct/13/rightwing-extremists-increasingly-likely-to-consider-terrorist-attacks-mi5-chief-says",
+          "published_at": "2026-10-13T12:00:14.000000Z",
+          "content_hash": "sha256:bdbf21b8fa1cd8e01cca57ff312fe6f2381fe33a01559069afe38f296a6643e2",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "eu-budget-northern-states-demand-cuts",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Europe",
+      "copy": {
+        "headline": "Denmark and five other northern EU states demand deeper cuts to the EU budget",
+        "body": {},
+        "lede": {
+          "text": "Denmark, Germany, Sweden, the Netherlands, Austria and Finland want the EU's long-term budget cut by more than the 141 billion euros that Ireland, which holds the EU presidency, proposes to take off the Commission's plan.",
+          "sources": [
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "ac89301d-f0da-4c1a-aa3d-7f67575fa12f",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Nordeuropæiske lande kræver milliardbesparelser på EU-budget",
+          "url": "https://www.kristeligt-dagblad.dk/udland/nordeuropaeiske-lande-kraever-milliardbesparelser-paa-eu-budget",
+          "published_at": "2026-10-13T12:38:06.000000Z",
+          "content_hash": "sha256:8a18d203c4ab01e513aeb828fec99476176b9acf5ea76be2e30adb9e552f1df4",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "cd044faa-12bc-4d7e-bcc5-30f2a5351af0",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Irland: Ingen EU-lande har afvist budgetudspil før topmøde",
+          "url": "https://www.kristeligt-dagblad.dk/udland/irland-ingen-eu-lande-har-afvist-budgetudspil-foer-topmoede",
+          "published_at": "2026-10-13T07:01:48.000000Z",
+          "content_hash": "sha256:bb0bcb03947b43ab2e4b9018ddc571a129d1096930c02e79334c5704d790aa66",
+          "primary": false,
+          "wire": "ritzau"
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "black-sea-two-more-ships-hit",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Europe",
+      "copy": {
+        "headline": "Bulgaria summons Russia's ambassador after drones hit two more ships",
+        "body": {},
+        "lede": {
+          "text": "Drones struck two ships off Bulgaria's Black Sea coast early on Tuesday, sinking one; Rumen Radev, Bulgaria's prime minister, said the attack favoured Russia and summoned its ambassador.",
+          "sources": [
+            "kristeligt_dagblad",
+            "bbc",
+            "nytimes",
+            "ft"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "529cfb1f-b864-4740-9011-f3449f38f376",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Yderligere to skibe ramt af droner ud for Bulgariens kyst",
+          "url": "https://www.kristeligt-dagblad.dk/udland/yderligere-skibe-ramt-af-droner",
+          "published_at": "2026-10-13T06:05:48.000000Z",
+          "content_hash": "sha256:dfb0cc7786b8c09d101bce1512dc8e6b8d72a8a488a32d11197f914b1bee3b1f",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "information",
+          "source_id": "843294 at https://www.information.dk",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Droneangreb ved Bulgariens kyst får NATO til at se på sit forsvar",
+          "url": "https://www.information.dk/udland/2026/10/droneangreb-ved-bulgariens-kyst-faar-nato-se-paa-forsvar",
+          "published_at": "2026-10-13T10:58:11.000000Z",
+          "content_hash": "sha256:1648c427f7b5308447396149367400846d16bac6723607de687ffa239b6a7a23",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cmn06w5x9g25o",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Bulgaria summons Russian ambassador after ship sinks in Black Sea drone attack",
+          "url": "https://www.bbc.co.uk/news/articles/cmn06w5x9g25o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-13T14:51:59.000000Z",
+          "content_hash": "sha256:72d18f8ca33c104d724ad859c6aef76aebdf2e7f3e25d42594ebe42840583f32",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/13/world/europe/black-sea-drones-russia-bulgaria-nato.html",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Bulgaria Summons Russian Ambassador After More Black Sea Drone Strikes",
+          "url": "https://www.nytimes.com/2026/10/13/world/europe/black-sea-drones-russia-bulgaria-nato.html",
+          "published_at": "2026-10-13T15:56:06.000000Z",
+          "content_hash": "sha256:ac08019d8439f43eb6b7e31db24dc4f74d6f4c44510ca4c1c6a47a57ffe51fe2",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "c6bd25b8-ef9e-41a3-90d2-29c132e10ec2",
+          "input_id": "export-2026-10-14-0330",
+          "original_title": "Bulgaria suggests Russia behind ship attack that left 11 sailors missing",
+          "url": "https://www.ft.com/content/c6bd25b8-ef9e-41a3-90d2-29c132e10ec2",
+          "published_at": "2026-10-13T12:21:30.000000Z",
+          "content_hash": "sha256:e2f887f734bace41abe0ecbbe61158d12decd4ea57fc4785245289e8000a73cf",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    }
+  ],
+  "fit_policy": {
+    "allow_role_fallback": true,
+    "allow_composition_substitution": true,
+    "reserve_story_ids": [],
+    "omittable_story_ids": [
+      "pope-leo-lung-cancer-surgery",
+      "copenhagen-flat-prices-fall-september",
+      "aarhus-university-nitrogen-calculation-error",
+      "rigshospitalet-transplant-surgeons-sent-home",
+      "sweden-andersson-pm-vote-thursday",
+      "motor-register-shut-irregularities",
+      "holmstrup-cable-halts-funen-trains",
+      "kirsten-schwalbe-oldest-dane-record",
+      "rodovre-rifles-cocaine-12-years",
+      "enhedslisten-school-costs-100-million",
+      "steen-ostergaard-dies-90",
+      "tupac-killer-davis-sentenced",
+      "hungary-repeals-anti-lgbt-law",
+      "kyiv-power-plant-missile-no-warning",
+      "ilhan-omar-home-searched",
+      "fc-copenhagen-sale-explored",
+      "volvo-ex30-recall-denmark",
+      "mi5-iran-stepping-up-attacks",
+      "eu-budget-northern-states-demand-cuts",
+      "black-sea-two-more-ships-hit"
+    ]
+  }
+}
