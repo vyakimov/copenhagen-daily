@@ -1,0 +1,81 @@
+---
+import Broadsheet from "../../layouts/Broadsheet.astro";
+import { config, order } from "../../lib.ts";
+// The colophon: who makes the paper and how, what it does not do, and where to send a correction.
+// Written for a stranger who has just read an edition and wants to know whose words these were.
+const latest = order.at(-1);
+const publishers = Object.values(config.publishers as Record<string, string>);
+const count = publishers.length;
+---
+<Broadsheet title={`About — ${config.masthead}`}>
+  <main class="page colophon">
+    <div class="title">{config.masthead}</div>
+    <div class="dateline">
+      <span>About this paper</span>
+      <span class="mid">Colophon</span>
+      <span>{latest && <a href="/">Latest edition</a>}</span>
+    </div>
+
+    <p class="disclosure">This paper is written by a machine.</p>
+
+    <div class="colophon-body">
+      <section>
+        <h2>Where the stories come from</h2>
+        <p>
+          Every morning {config.masthead} reads the public RSS feeds of {count} newspapers and broadcasters
+          and makes one edition from what they published in the preceding days. The feeds carry headlines
+          and short descriptions, and that is all the paper reads. It never opens a publisher's page, and
+          no publisher's text is reproduced. Each story links to the original reporting it was built
+          from, so the full account is always one click away.
+        </p>
+      </section>
+      <section>
+        <h2>How an edition is made</h2>
+        <p>
+          A language model groups the articles by event and chooses which events make the paper, under a
+          written editorial line. For each chosen story a second, separate model session writes a short
+          account in its own words from the articles' descriptions and nothing else. A third model, from
+          a different company, then reads every sentence against its sources and strikes any it cannot
+          support. A sentence that only explains who someone is or what an institution does is checked
+          against Wikipedia instead. The checked edition is laid out, published and delivered by ordinary
+          software, without a person reading it first.
+        </p>
+        <p>
+          That is why the paper reads the way it does. It can tell you what the publishers reported and
+          how the reports relate. It cannot tell you anything they did not, and it does not try.
+        </p>
+      </section>
+      <section>
+        <h2>Who runs it</h2>
+        <p>
+          Victor Yakimov, who built it to read over breakfast. It is a personal project run from a
+          computer at home: nobody is paid, nothing is sold, and no money changes hands with any of the
+          publishers. {config.masthead} is not affiliated with any of them.
+        </p>
+      </section>
+      <section>
+        <h2>What is not collected</h2>
+        <p>
+          Nothing. The site is plain pages served from storage, with no analytics, no cookies, no
+          scripts, and no account. The paper is the same for everyone who opens it, and it does not know
+          who that is.
+        </p>
+      </section>
+      <section>
+        <h2>Corrections</h2>
+        <p>
+          A published edition is never changed; a correction appears in the next one. If a story is
+          wrong, or you are a publisher with a concern about how your feed is used, write to{" "}
+          {config.contact ? <a href={`mailto:${config.contact}`}>{config.contact}</a> : "the newsroom"}
+          {" "}with the edition number and the story. Each edition is listed in the
+          <a href="/archive/">archive</a> and announced in the <a href="/feed.xml">Atom feed</a>.
+        </p>
+      </section>
+    </div>
+
+    <footer class="folio">
+      <span>{config.masthead} is written by machine from publishers' feeds.</span>
+      <span>{config.contact && <>Write to <a href={`mailto:${config.contact}`}>{config.contact}</a>.</>}</span>
+    </footer>
+  </main>
+</Broadsheet>

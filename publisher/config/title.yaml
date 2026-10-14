@@ -1,5 +1,7 @@
 id: copenhagen-daily
 masthead: Copenhagen Daily
+# Where the paper is read; the feed needs absolute addresses. Pages themselves link relatively.
+site_url: https://copenhagen-daily.net
 # The address readers write to, printed in the folio of every page; leave out to print none.
 contact: newsroom@copenhagen-daily.net
 device_profile:

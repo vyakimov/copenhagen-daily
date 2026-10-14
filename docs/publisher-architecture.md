@@ -50,7 +50,7 @@ Astro runs once per edition in a scratch directory, with `TZ=Europe/Copenhagen` 
 `SOURCE_DATE_EPOCH=0`. Only that edition is in the content collection; the archive, the latest
 pointer, and the `go/<id>/prev|next` stubs are built from the store's index snapshot, the only way the
 build can know about editions it does not render. Every page links its stylesheet at
-`/a/<layout version>/web.css`; the layout version is `broadsheet-v5` (`src/contract/version.ts`).
+`/a/<layout version>/web.css`; the layout version is `broadsheet-v6` (`src/contract/version.ts`).
 Assets are `tokens.css` concatenated with `web.css` or `device.css` plus the vendored variable WOFF2
 files of Newsreader and Libre Franklin; no font loads from the network.
 
@@ -112,7 +112,9 @@ Chromium executable digest and the fonts lock), and assembles the release: hard 
 edition and to this bundle, hard links to every layout version in the store so archived pages keep
 the stylesheet they were published with, `index.json`, `latest.json` with separate web and device
 pointers, `device/current.png` linked to the newest edition with a device page, and a root
-`index.html` linked to the latest edition's own page.
+`index.html` linked to the latest edition's own page. The build also emits the pages that are not an
+edition: the archive, the about page at `/about/`, the not-found page `404.html` that CloudFront serves
+for any missing path, and the Atom feed `feed.xml`, one entry per edition from the index snapshot.
 
 The staged tree is synced to disk and the intent written atomically. Promotion renames each staged
 object to its final path and freezes it read-only. Activation renames a temporary symlink over `live`

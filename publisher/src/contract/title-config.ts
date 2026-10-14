@@ -5,6 +5,8 @@ import { parse } from "yaml";
 export type TitleConfig = {
   id: string;
   masthead: string;
+  /** The public address of the site, used where a page needs an absolute URL (the feed). */
+  site_url?: string;
   device_profile: { width: number; height: number; timezone: string };
   composition_order: string[];
   web_layout?: "grid" | "sheet";

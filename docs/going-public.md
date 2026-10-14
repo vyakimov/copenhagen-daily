@@ -2,8 +2,9 @@
 
 Status: notes from 12 October 2026, to revisit before the paper is promoted (a friend's network, a
 Reddit post). Written against the site as delivered that day, see [AWS delivery](aws-delivery.md).
-The one item already done is the evidence trail no longer showing publishers' headlines (decision log,
-12 October 2026). Nothing else below is built.
+Items ticked below are built; the first was the evidence trail no longer showing publishers'
+headlines (decision log, 12 October 2026), and section 3's pages, feed and cache headers followed on
+13 October 2026.
 
 ## 1. Licensing, the blocker that is not technical
 
@@ -65,23 +66,23 @@ Three noindex layers and one check that would start failing:
 
 ## 3. What a stranger needs that a household never did
 
-- [ ] **An about page.** There is none. It should say the paper is machine-written from publishers'
-      RSS feeds by a described process, who runs it, that nothing is tracked, and how to report an
-      error. Disclosing the AI authorship up front is both honest and the best defence against a
-      hostile thread. Link it from the folio.
+- [x] **An about page.** `/about/` (`publisher/site/src/pages/about/index.astro`), linked as "About
+      this paper" from the folio of every edition page and of the archive. It opens with the
+      disclosure, then says where the stories come from, how an edition is made, who runs it, that
+      nothing is collected, and where to send a correction. Built 13 October 2026.
 - [ ] **A working corrections address.** The folio prints `newsroom@copenhagen-daily.net` from
       `publisher/config/title.yaml`. Confirm the mailbox actually receives mail; a publisher's first
       move is usually an email.
-- [ ] **A 404 page.** A missing path currently returns S3's XML 403 (the bucket is private). One
-      CloudFront custom error response mapping 403 and 404 to a static page fixes it.
-- [ ] **A cache policy on HTML.** The front page is served with no `Cache-Control` header. CloudFront
-      is invalidated on publish, but browsers apply heuristics from `Last-Modified`, so a returning
-      reader at 06:05 can see yesterday's paper for hours. Give `index.html`, `latest.json` and
-      `index.json` a short `max-age`; the immutable `n/<edition>/` and `a/<assets>/` trees can be long.
-      Set it in the deliver step (`aws s3 sync` takes `--cache-control` per invocation, so two syncs
-      or a CloudFront response-headers policy).
-- [ ] **A feed.** Readers who like it will ask how to subscribe. An RSS or Atom feed of editions is a
-      small Astro page and fits a paper built from RSS.
+- [x] **A 404 page.** Astro writes `404.html` to the release root
+      (`publisher/site/src/pages/404.astro`). The two CloudFront custom error responses that serve it
+      for 403 and 404 are set by hand once; the command is in [aws-delivery.md](aws-delivery.md).
+- [x] **A cache policy on HTML.** The deliver step now runs two syncs: the immutable `n/` and `a/`
+      trees with `max-age=31536000, immutable`, everything else with `max-age=300, must-revalidate`
+      (`editorial/src/news_editorial/deliver.py`). Objects uploaded before 13 October 2026 carry no
+      header until the one-off backfill in [aws-delivery.md](aws-delivery.md) is run.
+- [x] **A feed.** An Atom feed of editions at `/feed.xml` (`publisher/site/src/pages/feed.xml.ts`),
+      one entry per edition from the index snapshot, advertised by a `<link rel="alternate">` in every
+      page's head. Absolute addresses come from `site_url` in `publisher/config/title.yaml`.
 
 ## 4. Operations for an audience that is not you
 

@@ -1,0 +1,21 @@
+---
+import Broadsheet from "../layouts/Broadsheet.astro";
+import { config } from "../lib.ts";
+// Served by CloudFront for any path the bucket does not hold (a 403 from the private bucket as much
+// as a 404). Astro writes it to /404.html; the distribution's custom error responses point there.
+---
+<Broadsheet title={`Not found — ${config.masthead}`}>
+  <main class="page">
+    <div class="title">{config.masthead}</div>
+    <div class="dateline">
+      <span>Not found</span>
+      <span class="mid">404</span>
+      <span><a href="/">Latest edition</a></span>
+    </div>
+    <p class="disclosure">There is no page at this address.</p>
+    <p class="stub">
+      Editions keep their addresses once published, so a link to one that is missing was never a
+      published edition. The <a href="/archive/">archive</a> lists every one there is.
+    </p>
+  </main>
+</Broadsheet>

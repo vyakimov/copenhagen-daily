@@ -24,7 +24,10 @@ The web edition is built by Astro from `site/`. In the grid composition the stor
 its rail are dealt into three fixed stacks at build time (`assets/html/columns.ts`) rather than
 balanced by CSS columns, so nothing a reader does moves a story to another column. The site is
 unlisted: every page carries a `noindex` robots meta tag (`site/src/layouts/Broadsheet.astro`) and
-`site/public/robots.txt` disallows everything. `preview` builds any edition into a scratch site and
+`site/public/robots.txt` disallows everything. Besides the editions and the archive the build emits
+`/about/` (the colophon, linked from every folio), `404.html` (served by CloudFront for 403 and 404),
+and `feed.xml`, an Atom feed with one entry per edition in the index; the feed's absolute addresses come
+from `site_url` in `config/title.yaml`. `preview` builds any edition into a scratch site and
 serves it on the loopback interface, with the archive index taken from the real publish root when
 `--publish-root` is given; it takes `--edition`, `--publish-root`, `--output`, `--layout`, and
 `--port` (default 4747).

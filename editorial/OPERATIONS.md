@@ -40,7 +40,8 @@ Homebrew's Node 26. A `dependency_missing` failure naming a Node version means t
 
 After an activated publish the run syncs block 3's `live/` directory to the bucket named in
 `config/desk.yaml` under `delivery` and invalidates the CloudFront distribution, through the AWS CLI
-and the named profile. That profile is `copenhagen-daily-deliver`, an IAM user whose only rights are
+and the named profile. The sync is two passes so each object gets its cache header: the immutable
+`n/` and `a/` trees for a year, everything else for five minutes (`docs/aws-delivery.md`). That profile is `copenhagen-daily-deliver`, an IAM user whose only rights are
 listing and writing the one bucket and invalidating the one distribution; its key lives in
 `~/.aws/credentials` and never needs a browser, which is what lets the launchd job deliver. The SSO
 profile `copenhagen-daily` is for a person at the keyboard. With no bucket configured the phase is skipped. `edit_news.sh deliver` does the

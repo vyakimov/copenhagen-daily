@@ -37,11 +37,10 @@ for (const row of rows) {
         </ol>
       </section>
     ))}
-    {config.contact && (
-      <footer class="folio">
-        <span>{config.masthead} is not affiliated with any publisher it cites.</span>
-        <span>Write to <a href={`mailto:${config.contact}`}>{config.contact}</a>.</span>
-      </footer>
-    )}
+    <footer class="folio">
+      <span>{config.masthead} is written by machine and is not affiliated with any publisher it cites.
+        <a href="/about/">About this paper</a>.</span>
+      <span>{config.contact && <>Write to <a href={`mailto:${config.contact}`}>{config.contact}</a>.</>}</span>
+    </footer>
   </main>
 </Broadsheet>
