@@ -1,0 +1,61 @@
+{
+ "headline": "Party says a citizenship applicant praised Hamas and wants her questioned",
+ "headline_short": "Citizenship applicant accused of praising Hamas",
+ "deck": "She denies supporting Hamas and says she will attend; the bill would make 2,055 people Danish.",
+ "standard": [
+  [
+   "Liberal Alliance, a libertarian party, wants a woman who is due to receive Danish citizenship called before the naturalisation committee of the Folketing, Denmark's parliament. The party says its own screening of the 2,055 people on the citizenship bill found that she had repeatedly praised Hamas and its former leaders Yahya Sinwar and Ismail Haniyeh.",
+   [
+    "kristeligt_dagblad",
+    "berlingske",
+    "politiken",
+    "dr"
+   ]
+  ],
+  [
+   "She denies it. 'I do not support anyone who kills anyone,' she told Politiken, and said she would attend.",
+   [
+    "kristeligt_dagblad",
+    "politiken"
+   ]
+  ],
+  [
+   "The government decided to put the bill forward before a model for screening applicants for anti-democratic views is ready. Dansk Folkeparti, a nationalist party, backs the summons; Enhedslisten, a far-left party, calls it undignified.",
+   [
+    "kristeligt_dagblad",
+    "politiken"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "Liberal Alliance, a libertarian party, wants a parliamentary committee to question a woman on a bill granting citizenship to 2,055 people, saying she praised Hamas. She denies supporting Hamas and says she will attend.",
+   [
+    "kristeligt_dagblad",
+    "politiken"
+   ]
+  ]
+ ],
+ "definitions": [
+  {
+   "term": "Liberal Alliance",
+   "definition": "a libertarian party",
+   "wikipedia": "Liberal Alliance (Denmark)"
+  },
+  {
+   "term": "Folketing",
+   "definition": "Denmark's parliament",
+   "wikipedia": "Folketing"
+  },
+  {
+   "term": "Dansk Folkeparti",
+   "definition": "a nationalist party",
+   "wikipedia": "Danish People's Party"
+  },
+  {
+   "term": "Enhedslisten",
+   "definition": "a far-left party",
+   "wikipedia": "Red–Green Alliance (Denmark)"
+  }
+ ]
+}

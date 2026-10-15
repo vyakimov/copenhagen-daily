@@ -1,0 +1,2488 @@
+{
+  "schema_version": 2,
+  "title": "copenhagen-daily",
+  "edition": {
+    "id": "2026-10-15-morning",
+    "number": 10,
+    "name": "Thursday edition",
+    "date": "2026-10-15",
+    "timezone": "Europe/Copenhagen",
+    "language": "en",
+    "cutoff_at": "2026-10-15T03:30:00.000000Z",
+    "generated_at": "2026-10-15T03:41:54.525021Z"
+  },
+  "presentation": {
+    "emphasis": "many_stories",
+    "ear_right": "Inside: 17 million land-registry queries, the Nord Stream trial opens, Zelensky feels betrayed"
+  },
+  "coverage": {
+    "status": "partial",
+    "checked_from": "2026-10-12T03:30:00.000000Z",
+    "checked_until": "2026-10-15T03:30:00.000000Z",
+    "feeds": [
+      {
+        "feed_id": "altinget.arbejdsmarked",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.283720Z"
+      },
+      {
+        "feed_id": "altinget.by",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.378570Z"
+      },
+      {
+        "feed_id": "altinget.christiansborg",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.150250Z"
+      },
+      {
+        "feed_id": "altinget.eu",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.179254Z"
+      },
+      {
+        "feed_id": "altinget.forside",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.124665Z"
+      },
+      {
+        "feed_id": "altinget.forsvar",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.311200Z"
+      },
+      {
+        "feed_id": "altinget.klima",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.205490Z"
+      },
+      {
+        "feed_id": "altinget.kommunal",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.332664Z"
+      },
+      {
+        "feed_id": "altinget.sundhed",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.258392Z"
+      },
+      {
+        "feed_id": "altinget.uddannelse",
+        "source": "altinget",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.354124Z"
+      },
+      {
+        "feed_id": "bbc.business",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.661006Z"
+      },
+      {
+        "feed_id": "bbc.culture",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.966924Z"
+      },
+      {
+        "feed_id": "bbc.europe",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.619954Z"
+      },
+      {
+        "feed_id": "bbc.health",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.819692Z"
+      },
+      {
+        "feed_id": "bbc.politics",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.881549Z"
+      },
+      {
+        "feed_id": "bbc.science",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.768469Z"
+      },
+      {
+        "feed_id": "bbc.technology",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.711794Z"
+      },
+      {
+        "feed_id": "bbc.top",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.539301Z"
+      },
+      {
+        "feed_id": "bbc.world",
+        "source": "bbc",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.586550Z"
+      },
+      {
+        "feed_id": "berlingske.business",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.190537Z"
+      },
+      {
+        "feed_id": "berlingske.kultur",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.210591Z"
+      },
+      {
+        "feed_id": "berlingske.latest",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.152916Z"
+      },
+      {
+        "feed_id": "berlingske.opinion",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.232170Z"
+      },
+      {
+        "feed_id": "berlingske.samfund",
+        "source": "berlingske",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.175148Z"
+      },
+      {
+        "feed_id": "borsen.baeredygtig",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.231443Z"
+      },
+      {
+        "feed_id": "borsen.breaking",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.226185Z"
+      },
+      {
+        "feed_id": "borsen.ejendomme",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.270317Z"
+      },
+      {
+        "feed_id": "borsen.executive",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.390110Z"
+      },
+      {
+        "feed_id": "borsen.finans",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.326403Z"
+      },
+      {
+        "feed_id": "borsen.homepage",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.180348Z"
+      },
+      {
+        "feed_id": "borsen.investor",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.353772Z"
+      },
+      {
+        "feed_id": "borsen.longread",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.425907Z"
+      },
+      {
+        "feed_id": "borsen.markedsberetninger",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.451455Z"
+      },
+      {
+        "feed_id": "borsen.okonomi",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.712735Z"
+      },
+      {
+        "feed_id": "borsen.opinion",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.483548Z"
+      },
+      {
+        "feed_id": "borsen.pleasure",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.514401Z"
+      },
+      {
+        "feed_id": "borsen.politik",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.578876Z"
+      },
+      {
+        "feed_id": "borsen.tech",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.613483Z"
+      },
+      {
+        "feed_id": "borsen.udland",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.640604Z"
+      },
+      {
+        "feed_id": "borsen.virksomheder",
+        "source": "borsen",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.669072Z"
+      },
+      {
+        "feed_id": "dr.indland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.280133Z"
+      },
+      {
+        "feed_id": "dr.kultur",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.546666Z"
+      },
+      {
+        "feed_id": "dr.latest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.248746Z"
+      },
+      {
+        "feed_id": "dr.musik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.573304Z"
+      },
+      {
+        "feed_id": "dr.penge",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.374026Z"
+      },
+      {
+        "feed_id": "dr.politik",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.405528Z"
+      },
+      {
+        "feed_id": "dr.regionale",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.624695Z"
+      },
+      {
+        "feed_id": "dr.regionale_bornholm",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.681638Z"
+      },
+      {
+        "feed_id": "dr.regionale_fyn",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.759519Z"
+      },
+      {
+        "feed_id": "dr.regionale_kbh",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.649802Z"
+      },
+      {
+        "feed_id": "dr.regionale_nord",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.815692Z"
+      },
+      {
+        "feed_id": "dr.regionale_oestjylland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.903101Z"
+      },
+      {
+        "feed_id": "dr.regionale_sjaelland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.872317Z"
+      },
+      {
+        "feed_id": "dr.regionale_syd",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.707498Z"
+      },
+      {
+        "feed_id": "dr.regionale_trekanten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.842896Z"
+      },
+      {
+        "feed_id": "dr.regionale_vest",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.787708Z"
+      },
+      {
+        "feed_id": "dr.senestesport",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.462541Z"
+      },
+      {
+        "feed_id": "dr.sporten",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.433147Z"
+      },
+      {
+        "feed_id": "dr.udland",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.345574Z"
+      },
+      {
+        "feed_id": "dr.vejret",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.598371Z"
+      },
+      {
+        "feed_id": "dr.viden",
+        "source": "dr",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.490502Z"
+      },
+      {
+        "feed_id": "economist.briefing",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.993241Z"
+      },
+      {
+        "feed_id": "economist.business",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.993509Z"
+      },
+      {
+        "feed_id": "economist.culture",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.993629Z"
+      },
+      {
+        "feed_id": "economist.europe",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.993308Z"
+      },
+      {
+        "feed_id": "economist.finance",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.993433Z"
+      },
+      {
+        "feed_id": "economist.international",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.993368Z"
+      },
+      {
+        "feed_id": "economist.latest",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.993105Z"
+      },
+      {
+        "feed_id": "economist.leaders",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.993178Z"
+      },
+      {
+        "feed_id": "economist.science",
+        "source": "economist",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.993566Z"
+      },
+      {
+        "feed_id": "ft.climate_capital",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.016697Z"
+      },
+      {
+        "feed_id": "ft.companies",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:49.905782Z"
+      },
+      {
+        "feed_id": "ft.global_economy",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:49.866946Z"
+      },
+      {
+        "feed_id": "ft.homepage.international",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:49.781789Z"
+      },
+      {
+        "feed_id": "ft.life_arts",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.148437Z"
+      },
+      {
+        "feed_id": "ft.markets",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:49.937324Z"
+      },
+      {
+        "feed_id": "ft.opinion",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.076821Z"
+      },
+      {
+        "feed_id": "ft.technology",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:49.977435Z"
+      },
+      {
+        "feed_id": "ft.work_careers",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.118492Z"
+      },
+      {
+        "feed_id": "ft.world",
+        "source": "ft",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:49.803341Z"
+      },
+      {
+        "feed_id": "guardian.business",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:53.610806Z"
+      },
+      {
+        "feed_id": "guardian.culture",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:54.038098Z"
+      },
+      {
+        "feed_id": "guardian.environment",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:53.852089Z"
+      },
+      {
+        "feed_id": "guardian.europe",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:53.527030Z"
+      },
+      {
+        "feed_id": "guardian.international",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:53.076607Z"
+      },
+      {
+        "feed_id": "guardian.opinion",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:54.245460Z"
+      },
+      {
+        "feed_id": "guardian.science",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:53.928595Z"
+      },
+      {
+        "feed_id": "guardian.technology",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:53.763254Z"
+      },
+      {
+        "feed_id": "guardian.world",
+        "source": "guardian",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:53.424718Z"
+      },
+      {
+        "feed_id": "information.feed",
+        "source": "information",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.119567Z"
+      },
+      {
+        "feed_id": "jp.seneste",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.110070Z"
+      },
+      {
+        "feed_id": "jp.topnyheder",
+        "source": "jp",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.090989Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.artikler",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.433703Z"
+      },
+      {
+        "feed_id": "kristeligt_dagblad.nyheder",
+        "source": "kristeligt_dagblad",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.403242Z"
+      },
+      {
+        "feed_id": "nytimes.arts",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:49.448782Z"
+      },
+      {
+        "feed_id": "nytimes.books",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:49.602329Z"
+      },
+      {
+        "feed_id": "nytimes.business",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:49.028724Z"
+      },
+      {
+        "feed_id": "nytimes.climate",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:49.335672Z"
+      },
+      {
+        "feed_id": "nytimes.europe",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:48.974978Z"
+      },
+      {
+        "feed_id": "nytimes.health",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:49.280024Z"
+      },
+      {
+        "feed_id": "nytimes.homepage",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:48.661859Z"
+      },
+      {
+        "feed_id": "nytimes.opinion",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:49.707988Z"
+      },
+      {
+        "feed_id": "nytimes.science",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:49.192742Z"
+      },
+      {
+        "feed_id": "nytimes.technology",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:49.131611Z"
+      },
+      {
+        "feed_id": "nytimes.world",
+        "source": "nytimes",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:48.774348Z"
+      },
+      {
+        "feed_id": "politiken.debat",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.019897Z"
+      },
+      {
+        "feed_id": "politiken.forbrugogliv",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.044930Z"
+      },
+      {
+        "feed_id": "politiken.ibyen",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.102591Z"
+      },
+      {
+        "feed_id": "politiken.indland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.814780Z"
+      },
+      {
+        "feed_id": "politiken.kultur",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.940602Z"
+      },
+      {
+        "feed_id": "politiken.latest",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.730108Z"
+      },
+      {
+        "feed_id": "politiken.oekonomi",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.909972Z"
+      },
+      {
+        "feed_id": "politiken.politik",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.882546Z"
+      },
+      {
+        "feed_id": "politiken.rejser",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.127302Z"
+      },
+      {
+        "feed_id": "politiken.sport",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.967869Z"
+      },
+      {
+        "feed_id": "politiken.udland",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.839938Z"
+      },
+      {
+        "feed_id": "politiken.viden",
+        "source": "politiken",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:50.993577Z"
+      },
+      {
+        "feed_id": "tv2.nyheder",
+        "source": "tv2",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:51.984147Z"
+      },
+      {
+        "feed_id": "via_ritzau.latest",
+        "source": "via_ritzau",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:52.475552Z"
+      },
+      {
+        "feed_id": "wapo.business",
+        "source": "wapo",
+        "outcome": "failed",
+        "last_checked_at": "2026-10-15T03:28:54.322426Z"
+      },
+      {
+        "feed_id": "wapo.national",
+        "source": "wapo",
+        "outcome": "failed",
+        "last_checked_at": "2026-10-15T03:28:54.322272Z"
+      },
+      {
+        "feed_id": "wapo.opinions",
+        "source": "wapo",
+        "outcome": "failed",
+        "last_checked_at": "2026-10-15T03:28:54.322575Z"
+      },
+      {
+        "feed_id": "wapo.politics",
+        "source": "wapo",
+        "outcome": "failed",
+        "last_checked_at": "2026-10-15T03:28:54.322349Z"
+      },
+      {
+        "feed_id": "wapo.technology",
+        "source": "wapo",
+        "outcome": "failed",
+        "last_checked_at": "2026-10-15T03:28:54.322500Z"
+      },
+      {
+        "feed_id": "wapo.world",
+        "source": "wapo",
+        "outcome": "failed",
+        "last_checked_at": "2026-10-15T03:28:54.322141Z"
+      },
+      {
+        "feed_id": "wsj.business",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:54.448846Z"
+      },
+      {
+        "feed_id": "wsj.economy",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:54.647070Z"
+      },
+      {
+        "feed_id": "wsj.markets",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:54.583555Z"
+      },
+      {
+        "feed_id": "wsj.opinion",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:54.821377Z"
+      },
+      {
+        "feed_id": "wsj.politics",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:54.697170Z"
+      },
+      {
+        "feed_id": "wsj.technology",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:54.730586Z"
+      },
+      {
+        "feed_id": "wsj.world",
+        "source": "wsj",
+        "outcome": "checked",
+        "last_checked_at": "2026-10-15T03:28:54.339864Z"
+      }
+    ],
+    "note": "Built from headlines and RSS descriptions published in the 72 hours to 05:30 Copenhagen time on 15 October: 3,502 articles. 126 of 132 feeds at 17 publishers polled; all six Washington Post feeds failed."
+  },
+  "inputs": [
+    {
+      "id": "export-2026-10-15-0330",
+      "sha256": "sha256:30b47472c6fb8c6a139d153a56d1e6f9c0b6f048c6cb0509488ce2bbd1184ba6"
+    }
+  ],
+  "stories": [
+    {
+      "id": "trump-greenland-oil-exploration-claim",
+      "device_participation": "required",
+      "role": "lead",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Trump says extensive oil exploration is coming in Greenland",
+        "body": {
+          "extended": [
+            {
+              "text": "Donald Trump wrote on Truth Social, his social network, on Wednesday morning that 'extensive exploration of oil, gas and minerals' was being prepared 'in our new and beautiful Greenland'. It is unclear which surveys he means.",
+              "sources": [
+                "kristeligt_dagblad",
+                "borsen",
+                "dr"
+              ]
+            },
+            {
+              "text": "The Foreign Ministry told Ritzau that any American exploration must follow Greenlandic law, because Greenland's self-government has taken over raw materials from Denmark. The agreement of 22 September between Greenland, Denmark and the US does not change that, it said.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "But the ministry also confirmed to Jyllands-Posten that the American government can block other countries' investments in Greenland, India's as well as China's and Russia's.",
+              "sources": [
+                "jp"
+              ]
+            },
+            {
+              "text": "Jørgen Hammeken-Holm, permanent secretary in Greenland's department for business and raw materials, told CNN that American companies are active but 'very far from a massive exploration'. It can take years, he said, before the many smaller explorations become operational.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Aleqa Hammond, chair of Siumut, a Greenlandic social-democratic party, told Berlingske that no company or country will ever get free access to Greenland's underground. The agreement must still be approved by the countries' parliaments.",
+              "sources": [
+                "berlingske",
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "standard": [
+            {
+              "text": "Donald Trump wrote on Truth Social, his social network, on Wednesday morning that 'extensive exploration of oil, gas and minerals' was being prepared 'in our new and beautiful Greenland'. It is unclear which surveys he means.",
+              "sources": [
+                "kristeligt_dagblad",
+                "borsen",
+                "dr"
+              ]
+            },
+            {
+              "text": "The Foreign Ministry told Ritzau that any American exploration must follow Greenlandic law, because Greenland's self-government has taken over raw materials from Denmark. The agreement of 22 September between the three countries does not change that, it said.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Jørgen Hammeken-Holm, permanent secretary in Greenland's department for business and raw materials, told CNN that American companies are active but 'very far from a massive exploration'.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Donald Trump wrote on Wednesday that extensive exploration of oil, gas and minerals was being prepared in Greenland. The Foreign Ministry says any American exploration must follow Greenlandic law, and a senior Greenlandic official told CNN that activity is 'very far from a massive exploration'.",
+              "sources": [
+                "kristeligt_dagblad",
+                "borsen",
+                "dr"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Trump promises oil search in Greenland",
+        "deck": "Denmark says Greenlandic law decides; a Greenlandic official says American activity is far from a massive search."
+      },
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "Very far from a massive exploration.",
+          "attribution": "Jørgen Hammeken-Holm, permanent secretary in Greenland's raw materials department",
+          "attribution_source": "kristeligt_dagblad"
+        }
+      ],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "f7b75bb3-d948-435e-bb2e-51089cb09f13",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Trump: Omfattende udforskning af olie og gas er på vej i Grønland",
+          "url": "https://www.kristeligt-dagblad.dk/udland/trump-omfattende-udforskning-af-olie-og-gas-er-paa-vej-i-groenland",
+          "published_at": "2026-10-14T04:35:00.000000Z",
+          "content_hash": "sha256:24e0c6750afa27cf8641b90f91b5855d38b7e6c1412f3a9d1be6687f3edbc61d",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "f7106320-6613-4de4-9c22-fa98bf377d47",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Ministerium: Amerikanske olieprojekter skal ske efter grønlandsk lov",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/ministerium-amerikanske-olieprojekter-skal-ske-efter-groenlandsk-lov",
+          "published_at": "2026-10-14T17:58:34.000000Z",
+          "content_hash": "sha256:a06629e7b384056d54f8f54374f95d8c40f1b032f80679b213ba0b39b3ce9e30",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "693c99a7-c62f-462f-b666-70ff4ea231cf",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Grønland: Vi er langt fra en massiv efterforskning af olie",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/groenland-vi-er-langt-fra-en-massiv-efterforskning-af-olie",
+          "published_at": "2026-10-14T13:18:39.000000Z",
+          "content_hash": "sha256:a8666ebd2c8b2ebd953f80b212fe3bbfb33b214d5797be8017c72a375c7258f3",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "jp",
+          "source_id": "19735517",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Danmark bekræfter: Trump får ret til at holde det meste af verden ude af Grønlands undergrund",
+          "url": "https://jyllands-posten.dk/international/ECE19735517/trump-faar-ret-til-at-holde-det-meste-af-verden-ude-af-groenlands-undergrund-bekraefter-danmark/",
+          "published_at": "2026-10-14T09:41:42.000000Z",
+          "content_hash": "sha256:3fb8fd5f93f14a3ce9f276a3347830a39c5befabc32a66d4bd3bf255908dcf19",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:b34776e1-8c5d-5d4d-b8e4-3a1ea0b8ceed",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Grønlandsk toppolitiker reagerer på Trump-melding: »Det er ingen hemmelighed, at USA har interesse i Grønlands ressourcer«",
+          "url": "https://www.berlingske.dk/politik/groenlandsk-toppolitiker-reagerer-paa-trump-melding-det-er-ingen-hemmelighed-at-usa-har-interesse-i-groenlands-ressourcer",
+          "published_at": "2026-10-14T13:54:43.000000Z",
+          "content_hash": "sha256:49208f04deb59c033e15df09dabf83f667cae585b8a58e4d6a610f8458ec9799",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:99fbd09f-c41b-4243-9973-777037718760",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Trump puster til ambitioner om amerikansk olie-eventyr i Grønland",
+          "url": "https://www.dr.dk/nyheder/udland/trump-puster-til-ambitioner-om-amerikansk-olie-eventyr-i-groenland",
+          "published_at": "2026-10-14T19:19:18.000000Z",
+          "content_hash": "sha256:20c0c8222aa45a099db345bb0852821c28f071c932bee7df021c5c3baeccaa09",
+          "primary": false
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/udland/trump-varsler-storstilet-udforskning-af-rastoffer-i-gronland",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Trump varsler storstilet udforskning af råstoffer i Grønland",
+          "url": "https://borsen.dk/nyheder/udland/trump-varsler-storstilet-udforskning-af-rastoffer-i-gronland",
+          "published_at": "2026-10-14T04:48:09.000000Z",
+          "content_hash": "sha256:08e947482bcac5a2cdd363bb69b1e966b02034dea77a90b80adee93c7dfe5120",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11022257",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "USA er snart klar til at bore i Grønland – men det kan de ikke bare, siger ekspert",
+          "url": "https://politiken.dk/internationalt/art11022257/USA-er-snart-klar-til-at-bore-i-Gr%C3%B8nland-%E2%80%93-men-det-kan-de-ikke-bare-siger-ekspert",
+          "published_at": "2026-10-14T13:58:18.000000Z",
+          "content_hash": "sha256:6dc9c83330b06657b103908b08c60ff25b844d46f655a56dad2a6d108e5a2f82",
+          "primary": false
+        },
+        {
+          "source": "information",
+          "source_id": "843327 at https://www.information.dk",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Trump vil have fingrene i Grønlands olie, men det er stadig grønlænderne, der bestemmer",
+          "url": "https://www.information.dk/indland/2026/10/trump-fingrene-groenlands-olie-stadig-groenlaenderne-bestemmer",
+          "published_at": "2026-10-14T12:17:37.000000Z",
+          "content_hash": "sha256:5faeb8d8b9eeb68d787e625d01fed31f40515706641c7b6b7a935dfa6daf2182",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "land-registry-17-million-queries",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Danish land registry limits searches after 17.2 million in a few days",
+        "body": {
+          "standard": [
+            {
+              "text": "Denmark's digital land registry has limited the number of searches it accepts after receiving 17.2 million in a few days, the Danish Court Administration said in a statement on Wednesday. It normally gets fewer than two million a week.",
+              "sources": [
+                "kristeligt_dagblad",
+                "tv2",
+                "berlingske"
+              ]
+            },
+            {
+              "text": "The searches were legal and touched only records open to anyone without a login. 'It is the number of look-ups that gives cause for attention,' said Rikke Holler, president of the Land Registration Court.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "The agency names no cause but warns that the records could make fraud attempts more credible, citing the recent leak of 8.8 million CPR numbers, Denmark's personal identification numbers. The justice minister is briefing parliament.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "dr"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Denmark's digital land registry has limited searches after receiving 17.2 million in a few days, against fewer than two million in a normal week, the Danish Court Administration said on Wednesday. The searches were legal, but it warns the records could make fraud more credible.",
+              "sources": [
+                "kristeligt_dagblad",
+                "tv2",
+                "berlingske"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Land registry limits searches",
+        "deck": "The searches were legal, but the courts' administration warns the records could make fraud more credible."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "4141bb22-a1d1-4e8f-b297-c168b9460904",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Tinglysningssystem indfører begrænsninger efter usædvanlig aktivitet",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/tinglysningssystem-indfoerer-begraensninger-efter-usaedvanlig-aktivitet",
+          "published_at": "2026-10-14T14:55:12.000000Z",
+          "content_hash": "sha256:9f9ceecadfd146a2d1fb49886f88ed88672b64dd300e3726d2cfdca365d6cfe4",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:85efd138-b869-40e9-9213-c16a06dbf1aa",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Tinglysningssystem ramt af 17,2 millioner forespørgsler - nu går Wammen ind i sagen",
+          "url": "https://www.dr.dk/nyheder/indland/tinglysningssystem-ramt-af-unormal-aktivitet-17-2-millioner-forespoergsler-paa-faa-dage",
+          "published_at": "2026-10-14T15:13:44.000000Z",
+          "content_hash": "sha256:c6bf5c517d1aa44604761f2ba1db8616c3d77f76e0371c58c5c1ac3b8f381cca",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/samfund/2026-10-14-tinglysningssystem-indfoerer-begraensninger-efter-usaedvanlig-aktivitet",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Tinglysningssystem indfører begrænsninger efter usædvanlig aktivitet",
+          "url": "https://nyheder.tv2.dk/samfund/2026-10-14-tinglysningssystem-indfoerer-begraensninger-efter-usaedvanlig-aktivitet",
+          "published_at": "2026-10-14T15:11:14.000000Z",
+          "content_hash": "sha256:cba023be1045eb93e7cec1730f7d1beb7ec33e8dc7dd747133c45f8f82d8b22c",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19738537",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Ny sag bekymrer sikkerhedsekspert: Måske er nogen i gang med at trække yderligere oplysninger ud om danske borgere",
+          "url": "https://jyllands-posten.dk/indland/ECE19738537/itsikkerhedsekspert-er-bekymret-over-ny-sag-mod-offentligt-system-med-data-om-danskere/",
+          "published_at": "2026-10-14T17:12:31.000000Z",
+          "content_hash": "sha256:1ed144706bb75e14b22e1109231b23b5d4ccd98504149047fbb36a5a96fe758c",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:ce9b9543-7e3b-5f5f-a60b-ccf16306ca1b",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Tinglysningssystem indfører begrænsninger efter usædvanlig aktivitet",
+          "url": "https://www.berlingske.dk/danmark/tinglysningssystem-indfoerer-begraensninger-efter-usaedvanlig-aktivitet",
+          "published_at": "2026-10-14T15:58:48.000000Z",
+          "content_hash": "sha256:606e59a5d5144e842149b1bf5d27b5e1cbf25c8a70bfdebb7b70d87ec3a683e7",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "nord-stream-hamburg-trial-opens",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "World",
+      "copy": {
+        "headline": "Ukrainian accused of blowing up Nord Stream stays silent as his trial opens",
+        "body": {
+          "standard": [
+            {
+              "text": "Serhii Kuznetsov, a former Ukrainian special forces officer, will not give evidence at his trial, his lawyer said as it opened in Hamburg on Wednesday. Prosecutors accuse him of leading the team that blew up the Nord Stream gas pipelines between Russia and Germany in September 2022, and charge him as an accessory to war crimes. The trial is expected to end in February.",
+              "sources": [
+                "kristeligt_dagblad",
+                "bbc",
+                "guardian"
+              ]
+            },
+            {
+              "text": "Nicola Canestrini, his lawyer, says no clear evidence links him to the blasts and that Russia used the pipelines as a weapon, so the case should be dismissed. 'Is it illegal to destroy an aggressor's infrastructure without harming anyone?' he asked the court.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Serhii Kuznetsov, a former Ukrainian special forces officer accused of leading the sabotage of the Nord Stream gas pipelines in September 2022, will not give evidence at his trial, which opened in Hamburg on Wednesday. His lawyer wants the case dismissed.",
+              "sources": [
+                "kristeligt_dagblad",
+                "bbc",
+                "guardian"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Nord Stream trial opens in Hamburg",
+        "deck": "His lawyer argues that Russia used the pipelines as a weapon and wants the case dismissed."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "283267cb-0fcd-4b33-999d-b31ae14a9c66",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Tiltalt i Nord Stream-retssag vil ikke afgive forklaring",
+          "url": "https://www.kristeligt-dagblad.dk/udland/tiltalt-i-nord-stream-retssag-vil-ikke-afgive-forklaring",
+          "published_at": "2026-10-14T12:15:33.000000Z",
+          "content_hash": "sha256:3377089e196f6a70d00b5efab47d15e934a62a93272192f225f85c51220d5a1f",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "ecdf1997-578c-45d6-8e2c-7d6331085b06",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Ukrainer skal i retten for krigsforbrydelser i Nord Stream-sag",
+          "url": "https://www.kristeligt-dagblad.dk/udland/ukrainer-skal-i-retten-krigsforbrydelser-i-nord-stream-sag",
+          "published_at": "2026-10-14T03:30:01.000000Z",
+          "content_hash": "sha256:b0aa778417d894a59fa05d4633dcd120b1da23346c463c9315d7f19f803bc076",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "politiken",
+          "source_id": "11010648",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Hovedpersonen var tavs, mens forsvarsadvokater gik til modangreb på skift",
+          "url": "https://politiken.dk/danmark/art11010648/Hovedpersonen-var-tavs-mens-forsvarsadvokater-gik-til-modangreb-p%C3%A5-skift",
+          "published_at": "2026-10-14T16:49:41.000000Z",
+          "content_hash": "sha256:b16911ab60bc441c81a1657a45d3245084f95c95ae734010a56036213e5964c6",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:eff045cf-41c7-4d71-bdef-0e75d7c5d9a1",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Nu begynder 'opsigtsvækkende' retssag om Nord Stream-sprængninger",
+          "url": "https://www.dr.dk/nyheder/indland/nu-starter-opsigtsvaekkende-retssag-om-nord-stream-spraengninger",
+          "published_at": "2026-10-14T05:31:00.000000Z",
+          "content_hash": "sha256:3be4a35a458f1302fa21582b97962793105bfdfe810d1ac7b352335572e793bb",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:ccbe0022-ee1f-5d48-8e65-ba317149fe4e",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Serhij er militærmand, veganer og far til fire. I dag bliver han hovedperson i retssag om en »krigsforbrydelse« nær Bornholm",
+          "url": "https://www.berlingske.dk/internationalt/serhij-er-militaermand-veganer-og-far-til-fire-i-dag-bliver-han-hovedperson-i-retssag-om-en-krigsforbrydelse-naer-bornholm",
+          "published_at": "2026-10-14T04:03:22.000000Z",
+          "content_hash": "sha256:bdc5e36e0e84b17715f5bbe69f65214623f98e925b3d8951473f4e3984f90e7f",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cw99zpmnxzmjo",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Germany puts Ukrainian on trial accused of blowing up Nord Stream pipelines",
+          "url": "https://www.bbc.co.uk/news/articles/cw99zpmnxzmjo?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-14T13:41:51.000000Z",
+          "content_hash": "sha256:e2efdfe4aa18d2fff7c8134fbcbc56cd2deddb114e8930db2013177e0463e3ae",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "8c3c631c-e37f-4209-aefd-112c4c58020c",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "German prosecutors accuse Ukraine of Nord Stream sabotage",
+          "url": "https://www.ft.com/content/8c3c631c-e37f-4209-aefd-112c4c58020c",
+          "published_at": "2026-10-14T13:39:09.000000Z",
+          "content_hash": "sha256:cff12ea2b8551687f397ac4521cc3cee9b4a697da02d21b0bdbd891726a65fb5",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/business/2026/oct/14/ukrainian-soldier-to-go-on-trial-over-sabotage-of-nord-stream-gas-pipelines",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Ukrainian soldier led team of divers sent to blow up Nord Stream gas pipelines, court hears",
+          "url": "https://www.theguardian.com/business/2026/oct/14/ukrainian-soldier-to-go-on-trial-over-sabotage-of-nord-stream-gas-pipelines",
+          "published_at": "2026-10-14T09:24:46.000000Z",
+          "content_hash": "sha256:a3c61ca2bfb666d77a9dcadac8872513c3868483589abe9654f5a56e21c722d1",
+          "primary": false
+        },
+        {
+          "source": "wsj",
+          "source_id": "WP-WSJ-0003975041",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Nord Stream Trial Tests Germany’s Alliance With Ukraine",
+          "url": "https://www.wsj.com/world/europe/nord-stream-trial-tests-germanys-alliance-with-ukraine-c8e0acdd",
+          "published_at": "2026-10-14T12:25:00.000000Z",
+          "content_hash": "sha256:150cbf90918ddea57cf788a2ea467c8ccfc21a441bcdc34b85d325fb691e80b7",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "zelensky-betrayed-piers-morgan",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "World",
+      "copy": {
+        "headline": "Ukraine's president says he feels betrayed by Trump",
+        "body": {
+          "standard": [
+            {
+              "text": "Asked by Piers Morgan, a British television presenter, whether he felt betrayed by Donald Trump, Volodymyr Zelensky, Ukraine's president, answered on Wednesday: 'Actually, yes. But it is more complex than just my feelings.'",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "dr"
+              ]
+            },
+            {
+              "text": "Trump has said in recent days that Zelensky should be replaced, and has agreed a diesel deal with Russia that has been criticised for giving Moscow money for the war. Ukraine's military has also had its access to Starlink, Elon Musk's satellite network, squeezed.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "guardian"
+              ]
+            },
+            {
+              "text": "'If you stand in the middle, you have to stay in the middle. Not on the wrong side,' Zelensky said. He blamed Trump's advisers. He spoke in London, where he was visiting Andy Burnham, the British prime minister.",
+              "sources": [
+                "kristeligt_dagblad",
+                "guardian"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Volodymyr Zelensky, Ukraine's president, said on Wednesday that he feels betrayed by Donald Trump, who has said Zelensky should be replaced and has agreed a diesel deal with Russia.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Zelensky feels betrayed by Trump",
+        "deck": "Volodymyr Zelensky calls it 'painful' that Trump has picked one side and not Ukraine's."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "b3088b8d-e50e-4df6-9b90-a1c57ae23328",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Zelenskyj: Smertefuldt at Trump tager parti for den anden side",
+          "url": "https://www.kristeligt-dagblad.dk/udland/zelenskyj-smertefuldt-trump-tager-parti-den-anden-side",
+          "published_at": "2026-10-14T16:51:40.000000Z",
+          "content_hash": "sha256:c8eac518f5d1a83585f91d1f4b24c31af409dc91e0c3d4162b398a10ba8d15b6",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:7916bc3f-b281-5fb8-8281-829a745e4ec5",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Zelenskyj føler sig forrådt af Trump, siger han",
+          "url": "https://www.berlingske.dk/internationalt/zelenskyj-foeler-sig-forraadt-af-trump-siger-han",
+          "published_at": "2026-10-14T17:31:50.000000Z",
+          "content_hash": "sha256:caa26503e3a2e049b221efb043ab951b2655ee90dde90e0fb9a4afc77132c035",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:31bb2e53-d2ce-4f93-b914-6614499f74e7",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Zelenskyj føler sig forrådt af Trump - en appel til Europa, mener ekspert",
+          "url": "https://www.dr.dk/nyheder/udland/zelenskyj-foeler-sig-forraadt-efter-trumps-dieselaftale-en-appel-til-europa-mener-ekspert",
+          "published_at": "2026-10-14T19:47:45.000000Z",
+          "content_hash": "sha256:1376fb1a4d94b63ac7576355194556ae8550a6e9a473bc63fa9ad2ef6047b2cc",
+          "primary": false
+        },
+        {
+          "source": "jp",
+          "source_id": "19738678",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Sikkerhedspolitisk rådgiver efter Zelenskyjs opsigtsvækkende melding: »Alle lamper må blinke rødt«",
+          "url": "https://jyllands-posten.dk/international/ECE19738678/sikkerhedspolitisk-raadgiver-efter-zelenskyjs-opsigtsvaekkende-melding-alle-lamper-maa-blinke-roedt/",
+          "published_at": "2026-10-14T20:32:58.000000Z",
+          "content_hash": "sha256:a6f13d70454a880292bb7198e8fc914e191aa318f416222ddacb97a64577d51a",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/2026/oct/14/volodymyr-zelenskyy-feels-betrayed-by-donald-trump-over-starlink-access",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Volodymyr Zelenskyy feels ‘betrayed’ by Donald Trump over Starlink access",
+          "url": "https://www.theguardian.com/world/2026/oct/14/volodymyr-zelenskyy-feels-betrayed-by-donald-trump-over-starlink-access",
+          "published_at": "2026-10-14T23:00:08.000000Z",
+          "content_hash": "sha256:1e4d4e670c45987e1ed4fcfa3234b65e9cf344b8c3dc9370364e6f0a327ad0f8",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "nitrogen-law-postponement-demand",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Environment",
+      "copy": {
+        "headline": "Two parties want the nitrogen law delayed after a university's calculation error",
+        "body": {
+          "standard": [
+            {
+              "text": "Venstre, a liberal party, and Liberal Alliance, a libertarian party, want the nitrogen law delayed by half a year after Aarhus University admitted errors in the calculations behind the law's discharge limits. The law is due to take effect after new year.",
+              "sources": [
+                "berlingske",
+                "kristeligt_dagblad",
+                "dr"
+              ]
+            },
+            {
+              "text": "The university announced the error on Tuesday, having said the previous week that it had double-checked its figures after criticism from Seges, agriculture's think tank. Because of the error, some farmers would have been allowed to discharge less nitrogen than they should.",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            },
+            {
+              "text": "Christian Rabjerg Madsen, the minister for nature and animal welfare, told Ritzau in a written comment: 'I take that very seriously, and it must of course be put right.'",
+              "sources": [
+                "kristeligt_dagblad"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Venstre, a liberal party, and Liberal Alliance, a libertarian party, want the nitrogen law delayed by half a year after Aarhus University admitted errors in the calculations behind its limits on farmers' nitrogen discharges.",
+              "sources": [
+                "berlingske",
+                "kristeligt_dagblad"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Parties seek delay to nitrogen law",
+        "deck": "Aarhus University has apologised for the mistake; the minister says it must be put right."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:5763711a-d8fc-5522-a7cc-20d0c148dde5",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Universitet lægger sig fladt ned efter fejl – nu vil partier have loven om kvælstof udskudt",
+          "url": "https://www.berlingske.dk/politik/universitet-laegger-sig-fladt-ned-efter-fejl-nu-vil-partier-have-loven-om-kvaelstof-udskudt",
+          "published_at": "2026-10-14T11:05:45.000000Z",
+          "content_hash": "sha256:2c73262e16ac23140d73d1a856e1d80b40ca6d8bb7a357da387261d23f6680ec",
+          "primary": true
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "f54ae27f-f95b-48bb-8032-52eec99eb01e",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Minister ser med alvor på fejl i grundlaget for ny kvælstofregulering",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/minister-ser-med-alvor-paa-fejl-i-grundlaget-ny-kvaelstofregulering",
+          "published_at": "2026-10-14T07:36:15.000000Z",
+          "content_hash": "sha256:fdc48cf37e80c98c0c88c863a3008c2192df9b9a25ff77ff85045855e5ef9470",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:59cbe557-3fed-447a-b8cd-e8d70f735901",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Landbrug og Fødevarer kalder på 'fjumreår' efter regnefejl",
+          "url": "https://www.dr.dk/nyheder/indland/landbrug-og-foedevarer-kalder-paa-fjumreaar-efter-regnefejl",
+          "published_at": "2026-10-14T11:45:00.000000Z",
+          "content_hash": "sha256:16d35245423af5ffa692175f4aa48cadc0a70467f62582cca2a5182db2027829",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11022317",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Aarhus Universitet erkender bommert i gylleberegninger: »Det gavner jo ikke umiddelbart vores troværdighed«",
+          "url": "https://politiken.dk/danmark/art11022317/Aarhus-Universitet-erkender-bommert-i-gylleberegninger-%C2%BBDet-gavner-jo-ikke-umiddelbart-vores-trov%C3%A6rdighed%C2%AB",
+          "published_at": "2026-10-14T15:48:55.000000Z",
+          "content_hash": "sha256:270c6e23b3d4a933103197bb19b03fd30c5402f3584cdcf32fb96d7fb2c6f4ea",
+          "primary": false
+        },
+        {
+          "source": "via_ritzau",
+          "source_id": "https://via.ritzau.dk/pressemeddelelse/15224695/?publisherId=13561562&lang=da",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "FødevareDanmark: Ministeren må forklare, hvordan fejl i kvælstofberegningerne kunne blive afvist",
+          "url": "https://via.ritzau.dk/pressemeddelelse/15224695/fodevaredanmark-ministeren-ma-forklare-hvordan-fejl-i-kvaelstofberegningerne-kunne-blive-afvist?lang=da",
+          "published_at": "2026-10-14T06:26:33.000000Z",
+          "content_hash": "sha256:9181a5f168aa7643c81f31ce826cbef9d9aa1e296107fdb984bd97d091c2fe51",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "la-citizenship-applicant-hamas-posts",
+      "device_participation": "optional",
+      "role": "secondary",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Party says a citizenship applicant praised Hamas and wants her questioned",
+        "body": {
+          "standard": [
+            {
+              "text": "Liberal Alliance, a libertarian party, wants a woman who is due to receive Danish citizenship called before the naturalisation committee of the Folketing, Denmark's parliament. The party says its own screening of the 2,055 people on the citizenship bill found that she had repeatedly praised Hamas and its former leaders Yahya Sinwar and Ismail Haniyeh.",
+              "sources": [
+                "kristeligt_dagblad",
+                "berlingske",
+                "politiken",
+                "dr"
+              ]
+            },
+            {
+              "text": "She denies it. 'I do not support anyone who kills anyone,' she told Politiken, and said she would attend.",
+              "sources": [
+                "kristeligt_dagblad",
+                "politiken"
+              ]
+            },
+            {
+              "text": "The government decided to put the bill forward before a model for screening applicants for anti-democratic views is ready. Dansk Folkeparti, a nationalist party, backs the summons; Enhedslisten, a far-left party, calls it undignified.",
+              "sources": [
+                "kristeligt_dagblad",
+                "politiken"
+              ]
+            }
+          ],
+          "short": [
+            {
+              "text": "Liberal Alliance, a libertarian party, wants a parliamentary committee to question a woman on a bill granting citizenship to 2,055 people, saying she praised Hamas. She denies supporting Hamas and says she will attend.",
+              "sources": [
+                "kristeligt_dagblad",
+                "politiken"
+              ]
+            }
+          ]
+        },
+        "headline_short": "Citizenship applicant accused of praising Hamas",
+        "deck": "She denies supporting Hamas and says she will attend; the bill would make 2,055 people Danish."
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "aa90cc82-c2ad-4e41-996e-9511024af2a7",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "LA vil indkalde en person til sindelagssamtale forud for statsborgerskab",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/la-vil-indkalde-en-person-til-sindelagssamtale-forud-statsborgerskab",
+          "published_at": "2026-10-14T05:10:35.000000Z",
+          "content_hash": "sha256:27565cdb4fb601224801adbb3d6738f3be9c01dbcfc8218e4f43d656a2510cf7",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:1a1686bb-9904-5fcd-86b9-74f161bb94aa",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Liberal Alliance vil indkalde kvinde til samtale om statsborgerskab: Der er »alvorlig grund til bekymring«",
+          "url": "https://www.berlingske.dk/politik/liberal-alliance-vil-indkalde-kvinde-til-samtale-om-statsborgerskab-der-er-alvorlig-grund-til-bekymring",
+          "published_at": "2026-10-14T07:52:31.000000Z",
+          "content_hash": "sha256:e90ee3151ad388818f4b554a03651d64fa703775346f6a6edbb5643d697edb69",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:e7200d63-0340-461c-a705-c9ab2c342f40",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Facebookopslag kan få politiske konsekvenser: Flere partier vil indkalde kvinde til samtale",
+          "url": "https://www.dr.dk/nyheder/politik/facebookopslag-kan-faa-politiske-konsekvenser-flere-partier-vil-indkalde-kvinde-til-samtale",
+          "published_at": "2026-10-14T17:37:00.000000Z",
+          "content_hash": "sha256:f80a10567f660374e4665edc1e43123c130705883e043f500c950492550ad940",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11016136",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Kvinde står til dansk statsborgerskab, men nu har LA udført detektivarbejde",
+          "url": "https://politiken.dk/danmark/politik/art11016136/Kvinde-st%C3%A5r-til-dansk-statsborgerskab-men-nu-har-LA-udf%C3%B8rt-detektivarbejde",
+          "published_at": "2026-10-14T04:47:13.000000Z",
+          "content_hash": "sha256:a7b50aeea58fcd8719e747f633cfff79685e8d97a3681052707e7e6be6f5a7fd",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11021713",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Vanopslaghs detektivarbejde splitter: Nyt uværdigt cirkus eller nødvendig øjenkontakt",
+          "url": "https://politiken.dk/danmark/politik/art11021713/Vanopslaghs-detektivarbejde-splitter-Nyt-uv%C3%A6rdigt-cirkus-eller-n%C3%B8dvendig-%C3%B8jenkontakt",
+          "published_at": "2026-10-14T08:40:04.000000Z",
+          "content_hash": "sha256:2c67c6c91c999ad3e0c916759d273284c01cd42394e9d1c426e36720ec3a7aff",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "odense-nedergade-stabbing-charge",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "81-year-old charged with homicide after fatal stabbing in Odense",
+        "body": {},
+        "lede": {
+          "text": "An 81-year-old man is charged with homicide after a 65-year-old man died from a stabbing in central Odense, a city on Funen, on Wednesday morning; he appears in court at 08:30 today.",
+          "sources": [
+            "kristeligt_dagblad",
+            "tv2",
+            "politiken"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "c41dfd01-9111-4908-8b59-9882e8530881",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "81-årig mand sigtet for drab efter knivstikkeri i Odense",
+          "url": "https://www.kristeligt-dagblad.dk/politi-massivt-til-stede-omkring-nedergade-i-odense",
+          "published_at": "2026-10-14T06:45:39.000000Z",
+          "content_hash": "sha256:f9043a8cef6588d5f0252407a0b0508fc9f50df8784ef86695886d87443cdef6",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/krimi/2026-10-14-mand-i-livsfare-efter-knivstikkeri-i-odense",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "81-årig anholdt i sagen om knivdrab",
+          "url": "https://nyheder.tv2.dk/krimi/2026-10-14-mand-i-livsfare-efter-knivstikkeri-i-odense",
+          "published_at": "2026-10-14T07:57:49.000000Z",
+          "content_hash": "sha256:2bf55ff4aeb449b7bad9e94ee9d8ce781bd6781dec9d0eea6d19177f335b0fde",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11022496",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "65-årig mand er dræbt i knivstikkeri i Odense",
+          "url": "https://politiken.dk/danmark/art11022496/65-%C3%A5rig-mand-er-dr%C3%A6bt-i-knivstikkeri-i-Odense",
+          "published_at": "2026-10-14T09:02:06.000000Z",
+          "content_hash": "sha256:d8b274bccced27056d78a6f103efe1d6a86b53df1752c3ce62061256981a509b",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "fredericia-couple-remanded-daughter",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "Couple remanded in custody over drugging and sexual abuse of woman's daughter",
+        "body": {},
+        "lede": {
+          "text": "A couple from Fredericia, in eastern Jutland, were remanded in custody for four weeks on Wednesday, charged with drugging the woman's daughter and having sex with her when she was 15 to 17.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "tv2"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "b3d9c6aa-a3d4-46cd-bdf8-270c37213f49",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Par fra Fredericia fængslet for drugging og samleje med datter",
+          "url": "https://www.kristeligt-dagblad.dk/par-fra-fredericia-sigtet-drugging-og-samleje-med-datter",
+          "published_at": "2026-10-14T09:06:45.000000Z",
+          "content_hash": "sha256:225383f917e159b8abd5a20692a72a6daef16e04921d1f21a37a89e9781db9c2",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/samfund/2026-10-14-par-sigtet-for-at-bedoeve-og-have-samleje-med-datter",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Par sigtet for at bedøve og voldtage datter",
+          "url": "https://nyheder.tv2.dk/samfund/2026-10-14-par-sigtet-for-at-bedoeve-og-have-samleje-med-datter",
+          "published_at": "2026-10-14T10:19:21.000000Z",
+          "content_hash": "sha256:554e26f620c52cf57d49c475dd96825ef1941a95ff0ec7882c2186ccd36d9305",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:3c1ab027-2624-5648-9ba2-03f5346034bb",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Par fra Fredericia fængslet for drugging og overgreb mod datter",
+          "url": "https://www.berlingske.dk/indland/par-fra-fredericia-faengslet-for-drugging-og-overgreb-mod-datter",
+          "published_at": "2026-10-14T14:04:44.000000Z",
+          "content_hash": "sha256:0f903bc2e4d0d158598ec67de95f017660dc0cce543281e1f1c83158decc254c",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "european-film-awards-danish-shortlist",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Culture",
+      "copy": {
+        "headline": "Three Danish films are shortlisted for the European Film Awards",
+        "body": {},
+        "lede": {
+          "text": "May el-Toukhy's Venice winner 'Kvinde ukendt', Mads Mengel's 'Gæsten' and Sine Plambech's documentary 'Rescue' are shortlisted for the European Film Awards, Europe's answer to the Oscars; nominations come on 14 November.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "6757009e-1d55-40fa-b1c2-7ad5d6f8d2d5",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Tre danske film er shortlistet til Europas svar på oscaruddelingen",
+          "url": "https://www.kristeligt-dagblad.dk/kultur/tre-danske-film-er-shortlistet-til-europas-svar-paa-oscaruddelingen",
+          "published_at": "2026-10-14T10:31:03.000000Z",
+          "content_hash": "sha256:ac9397ee53317883012d7c884b7ce50ba4c3654b9c8cd5aafbb29cdc96faaeee",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:6f4ec014-042d-540a-a4a6-482751d0a4c1",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Tre danske film er shortlistet til Europas svar på oscaruddelingen",
+          "url": "https://www.berlingske.dk/danmark/tre-danske-film-er-shortlistet-til-europas-svar-paa-oscaruddelingen",
+          "published_at": "2026-10-14T11:41:44.000000Z",
+          "content_hash": "sha256:4f020c4cec9024c8cf9f925632b17c37561a6caec52cda535548f1ea40cc8e1d",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:80d23c2f-aec7-40c4-9129-ffad6677cc7d",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Tre danske film er blevet shortlistet til stor prisuddeling",
+          "url": "https://www.dr.dk/nyheder/seneste/tre-danske-film-er-blevet-shortlistet-til-stor-prisuddeling",
+          "published_at": "2026-10-14T10:37:47.000000Z",
+          "content_hash": "sha256:0809e3919b17506e3364a835974f5041a06ea7538fa855370e1adb1a7ecab94d",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "refn-her-private-hell-reviews",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Culture",
+      "copy": {
+        "headline": "Danish director's first film in ten years divides critics",
+        "body": {},
+        "lede": {
+          "text": "Nicolas Winding Refn, director of Drive, returns to cinemas today after ten years with Her Private Hell; Børsen and the culture outlet Soundvenue give it two stars of six, the film magazine Ekko five.",
+          "sources": [
+            "kristeligt_dagblad",
+            "borsen"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "d3244297-38d1-4ad2-b313-bcb89a0e5010",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Anmeldere er uenige om Winding Refns nye film er spild af tid",
+          "url": "https://www.kristeligt-dagblad.dk/kultur/anmeldere-er-uenige-om-winding-refns-nye-film-er-spild-af-tid",
+          "published_at": "2026-10-14T17:55:46.000000Z",
+          "content_hash": "sha256:b590b3e7da13b2b6342d04eaf01f91efd81becdcae72a423b48a47b39670d4ed",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/pleasure/refn-er-tilbage-efter-ti-ar-det-skulle-han-have-ladet-vaere-med",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Refn er tilbage efter ti år. Det skulle han have ladet være med",
+          "url": "https://borsen.dk/nyheder/pleasure/refn-er-tilbage-efter-ti-ar-det-skulle-han-have-ladet-vaere-med",
+          "published_at": "2026-10-14T16:00:00.000000Z",
+          "content_hash": "sha256:70c5c2607663c0d5fe1a6ad2fc6bd435e56f77d33c7cda562c1612fe7816d856",
+          "primary": false
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "2bdcb53d-09ad-48a6-be5d-cb1adefe34ce",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Winding Refns nye film er lige så latterligt substansløs, som dens drømmefuturisme er visuelt besættende",
+          "url": "https://www.kristeligt-dagblad.dk/kultur/winding-refns-nye-film-er-lige-saa-latterligt-substansloes-som-dens-droemmefuturisme-er",
+          "published_at": "2026-10-14T14:50:00.000000Z",
+          "content_hash": "sha256:91092c54a8646756e4f37abc3bdb1c5c300767a77350ae4f39c60a647bcad4fc",
+          "primary": false
+        },
+        {
+          "source": "politiken",
+          "source_id": "11005922",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Som billedkunstner er Nicolas Winding Refn som altid mesterlig",
+          "url": "https://politiken.dk/kultur/film_og_tv/filmanmeldelser/art11005922/Som-billedkunstner-er-Nicolas-Winding-Refn-som-altid-mesterlig",
+          "published_at": "2026-10-14T18:55:38.000000Z",
+          "content_hash": "sha256:f72d3ae66d980e8b030a7e233c238b74049ef99668c3684ef1db42fdebe56a89",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "north-jutland-buses-30-million",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Transport",
+      "copy": {
+        "headline": "North Jutland wants at least 30 million kroner to keep rural buses running",
+        "body": {},
+        "lede": {
+          "text": "North Jutland's regional authority wants at least 30 million kroner more from the government for public transport or must close rural bus routes, as fuel prices rise and more young people drive.",
+          "sources": [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "24788583-118c-4ad2-aee9-7464791b4a96",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Region Nordjylland kræver millioner for at undgå lukning af busruter",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/region-nordjylland-kraever-millioner-undgaa-lukning-af-busruter",
+          "published_at": "2026-10-14T04:56:47.000000Z",
+          "content_hash": "sha256:e4ae27d43d9152db8bffa54c37528955d86f90f41fa47055d0aeeddf881c47f1",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:8967eb83-04c6-4cb4-925e-c4e8dfff75c1",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Region i opråb: Giv os minimum 30 millioner kroner. Ellers må vi lukke busruter",
+          "url": "https://www.dr.dk/nyheder/indland/region-i-opraab-giv-os-minimum-30-millioner-kroner-ellers-maa-vi-lukke-busruter",
+          "published_at": "2026-10-14T04:11:00.000000Z",
+          "content_hash": "sha256:0d2899f1f4d8a0693e4a03e4678bb24ef72f52cb11ddac8a54ec38ff0468a239",
+          "primary": false
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:9db65f16-0157-47ba-9088-45803acc9ecf",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Skal bussen køre, må regeringen høre: 'Ellers kan jeg ikke komme på arbejde'",
+          "url": "https://www.dr.dk/nyheder/indland/skal-bussen-koere-maa-regeringen-hoere-ellers-kan-jeg-ikke-komme-paa-arbejde",
+          "published_at": "2026-10-14T12:47:00.000000Z",
+          "content_hash": "sha256:2fa59eb428fb8eb866717ddb866a2e2048b497ab5717a0a9a4445fe659d3a165",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:6b20b334-6aac-5bdd-a868-6cb9d00758fc",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Region Nordjylland kræver millioner for at undgå lukning af busruter",
+          "url": "https://www.berlingske.dk/danmark/region-nordjylland-kraever-millioner-for-at-undgaa-lukning-af-busruter",
+          "published_at": "2026-10-14T07:00:44.000000Z",
+          "content_hash": "sha256:3ab4a7587a5efed50e67673317e73474f1a779db94938599ffc6529eeb663094",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "german-border-control-to-may",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Politics",
+      "copy": {
+        "headline": "Denmark extends border controls with Germany until May",
+        "body": {},
+        "lede": {
+          "text": "Denmark will extend its temporary border controls with Germany by six months, to 17 May 2027, Nicolai Wammen, the justice minister, told the European Commission on Wednesday, citing terror and sabotage threats.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "c67be5f9-d5ae-4629-8d3b-a48cdeb26c48",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Midlertidig grænsekontrol mod Tyskland forlænges med et halvt år",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/midlertidig-graensekontrol-mod-tyskland-forlaenges-med-et-halvt-aar",
+          "published_at": "2026-10-14T14:39:42.000000Z",
+          "content_hash": "sha256:5f7926b37e2c22c381fb1b0fee983f3084c058d8df7e518f98199678cfafeced",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:6d78f2c0-a22a-57ce-ad92-d3d8c0b75872",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Midlertidig grænsekontrol mod Tyskland forlænges med et halvt år",
+          "url": "https://www.berlingske.dk/politik/midlertidig-graensekontrol-mod-tyskland-forlaenges-med-et-halvt-aar",
+          "published_at": "2026-10-14T14:42:48.000000Z",
+          "content_hash": "sha256:31fe1aeed3186472e4cba61774c7e424eb2620ec93970dc7dae7ab09cb669c15",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "dmi-atlantic-currents-recover",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Science",
+      "copy": {
+        "headline": "Atlantic currents can regain strength if warming is reversed, Danish study finds",
+        "body": {},
+        "lede": {
+          "text": "Amoc, the Atlantic's big system of ocean currents, weakens as the world warms but regains strength if warming is reversed, a single-model study by the Danish Meteorological Institute finds.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "9649508d-fbc1-417e-83d5-bf61cc102100",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "DMI: Havstrømme i Atlanterhavet kan genvinde styrke efter svækkelse",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/frygtet-kollaps-af-vigtige-havstroemme-i-atlanterhavet-kan-vendes",
+          "published_at": "2026-10-14T19:19:46.000000Z",
+          "content_hash": "sha256:a32b8ef69beda694dabcb3def06581bd5b8304c9a3ca2669c7c06d551fab42de",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "jp",
+          "source_id": "19735712",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Nyt studie fra DMI: Opsigtsvækkende nyt om Golfstrømmen, der styrer vores klima",
+          "url": "https://jyllands-posten.dk/indland/ECE19735712/opsigtsvaekkende-nyt-om-golfstroemmen-der-styrer-vores-klima/",
+          "published_at": "2026-10-14T18:00:00.000000Z",
+          "content_hash": "sha256:a9f2b62032eed3a68a497487691c592ae2025c062abb58cc3d0c574b4b0ec676",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:b3e5d9fd-9ce7-505e-9a03-4a40eaf2eb00",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "DMI: Havstrømme i Atlanterhavet kan genvinde styrke efter svækkelse",
+          "url": "https://www.berlingske.dk/danmark/dmi-havstroemme-i-atlanterhavet-kan-genvinde-styrke-efter-svaekkelse",
+          "published_at": "2026-10-14T19:45:45.000000Z",
+          "content_hash": "sha256:3081a1295efd54ca095d249f95005382dd74ca4b1d77f42d2f2eb2603bc3e2e0",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "red-barnet-ai-abuse-record-reports",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Crime",
+      "copy": {
+        "headline": "Reports of AI-generated child abuse material reach a record",
+        "body": {},
+        "lede": {
+          "text": "Red Barnet's AnmeldDet service, which takes reports from the public, received 4,069 reports of suspected AI-generated child abuse material in the first half of the year, against 6,558 in all of 2025.",
+          "sources": [
+            "kristeligt_dagblad"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "c0527076-8646-472a-b208-5c8d74de0e04",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Anmeldelser om AI-genereret overgrebsmateriale af børn og unge stiger",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/anmeldelser-om-ai-genereret-overgrebsmateriale-af-boern-og-unge-stiger",
+          "published_at": "2026-10-14T20:11:44.000000Z",
+          "content_hash": "sha256:e7a67bafd315511ba0c028e807afe04ada9d0d957337cd389a1b9e87a957678f",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "3abfc2b2-98d8-4672-8b70-67b518f46678",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Rekordmange anmelder kunstigt overgrebsmateriale med børn og unge",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/rekordmange-anmelder-kunstigt-overgrebsmateriale",
+          "published_at": "2026-10-14T16:00:00.000000Z",
+          "content_hash": "sha256:b52de9fc0ab19d1d78c76610890e24e1217a9951d400472b7fd8b75bf3d86e84",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:97f98fb9-d1f0-56b0-b2af-5ba5c7b3d4ff",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Anmeldelser om AI-genereret overgrebsmateriale af børn og unge stiger",
+          "url": "https://www.berlingske.dk/danmark/anmeldelser-om-ai-genereret-overgrebsmateriale-af-boern-og-unge-stiger",
+          "published_at": "2026-10-14T20:52:44.000000Z",
+          "content_hash": "sha256:3535e6b2f02dd9ceabf69294f7ba735526ab1706f294761c4af214ead336ca8f",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "starlink-throttling-ukraine-missions",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Ukraine says Starlink speed limits disrupted military missions",
+        "body": {},
+        "lede": {
+          "text": "Elon Musk's SpaceX limited the speed of Starlink internet terminals in Ukraine without warning, disrupting several military missions, says Serhiy Beskrestnov, a technology adviser to Ukraine's president; Musk says the US government may be behind it.",
+          "sources": [
+            "kristeligt_dagblad",
+            "bbc"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "e48f8071-9d93-48ff-a118-999fc89a6b63",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Begrænsninger af Starlink forstyrrer ukrainske militærmissioner",
+          "url": "https://www.kristeligt-dagblad.dk/udland/ukraine-melder-om-begraensninger-af-starlink-under-angreb",
+          "published_at": "2026-10-14T07:39:21.000000Z",
+          "content_hash": "sha256:0ab8fd975768a2e9b17c647dddb16ea8ce3955e69b6e77b6a300c95e95932213",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "dr",
+          "source_id": "urn:dr:umbraco:article:04e198d3-c0f9-4dc4-9324-ca32c3546b43",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Kyiv under pres fra Trumps vrede og Putins missiler – og udeblevne luftalarmer",
+          "url": "https://www.dr.dk/nyheder/udland/kyiv-under-pres-fra-trumps-vrede-og-putins-missiler-og-udeblevne-luftalarmer",
+          "published_at": "2026-10-14T14:09:00.000000Z",
+          "content_hash": "sha256:0f2d0c0381d08204f85603830746f6d40a25de60c2cf99e0c87e69141dab3111",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:b279f2be-274a-5a8e-a7f4-02898083b8a7",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Zelenskyj: Begrænsninger på Starlink koster liv i Ukraine",
+          "url": "https://www.berlingske.dk/internationalt/zelenskyj-begraensninger-paa-starlink-koster-liv-i-ukraine",
+          "published_at": "2026-10-14T19:24:43.000000Z",
+          "content_hash": "sha256:1cd46ea93c5273ff0fce1d817899df9b85133a67e652f1e58481eaa961154339",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:c5ecfbf8-337a-5e7c-bf63-e220653a0d6a",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Trump ser ud til at straffe Ukraine: »På alle måder et mørkt øjeblik for den vestlige alliance«",
+          "url": "https://www.berlingske.dk/internationalt/trump-ser-ud-til-at-straffe-ukrainepaa-alle-maader-et-moerkt-oejeblik-for-den-vestlige-alliance",
+          "published_at": "2026-10-14T10:50:58.000000Z",
+          "content_hash": "sha256:e20c69f1b9b9a0912fcf3f317ba7af7bd51c926c5f72e92f99fa342bd8608100",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "37085602-726a-44dc-a859-51caab38eb75",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Ukraine blindsided by Starlink restrictions and intelligence gaps",
+          "url": "https://www.ft.com/content/37085602-726a-44dc-a859-51caab38eb75",
+          "published_at": "2026-10-14T21:37:16.000000Z",
+          "content_hash": "sha256:6131218e4b0b5e26500ee30c517ce3412f2aed7cd6d74fb20dcae682b8501dce",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "c8wy9veedgygo",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Musk says US government may be behind slowdown of Ukraine drone speeds",
+          "url": "https://www.bbc.co.uk/news/articles/c8wy9veedgygo?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-14T20:55:24.000000Z",
+          "content_hash": "sha256:fa6868bcf561e861b4d6b1770f5490a74bdeb2cdc474d4b45eee6b36cea359fc",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cqkgk4zg54reo",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Why is Starlink internet so important on the battlefield in Ukraine?",
+          "url": "https://www.bbc.co.uk/news/articles/cqkgk4zg54reo?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-14T19:52:04.000000Z",
+          "content_hash": "sha256:7c4b52b0daf511900ec3182b79e8121a37e3a624b2706985372f9ad58c44d1c1",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cm2d6e62p49do",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Starlink restrictions in Ukraine war linked to political situation, Zelensky aide says",
+          "url": "https://www.bbc.co.uk/news/articles/cm2d6e62p49do?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-14T13:11:17.000000Z",
+          "content_hash": "sha256:346ee63eb2543adf1fe9d77efceec3ec494823ad9221e90c88ff52a60cb8e60a",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "russian-strikes-kill-six-ukraine-oct14",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Russian strikes kill six in Ukraine and cut power to 600,000 in Kyiv",
+        "body": {},
+        "lede": {
+          "text": "Russian strikes overnight into Wednesday killed six people across Ukraine and left 600,000 in Kyiv without power, after Donald Trump said on Sunday that Russia and Ukraine had agreed an energy ceasefire.",
+          "sources": [
+            "kristeligt_dagblad",
+            "guardian"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "06269950-e253-40ef-bda4-1d1d6427a01d",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Natlige angreb koster seks personer livet i Ukraine",
+          "url": "https://www.kristeligt-dagblad.dk/udland/natlige-angreb-koster-seks-personer-livet-i-ukraine",
+          "published_at": "2026-10-14T05:39:39.000000Z",
+          "content_hash": "sha256:f5072fe2988b77d895a9fa3a793ee1347f83652a2e6675f19e7371234cb55f9b",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/udland/2026-10-14-putin-har-fundet-en-ny-maade-at-angribe-paa-og-nu-ligner-kyiv-en-frontlinjeby",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Putin har fundet en ny måde at angribe på, og nu ligner Kyiv en frontlinjeby",
+          "url": "https://nyheder.tv2.dk/udland/2026-10-14-putin-har-fundet-en-ny-maade-at-angribe-paa-og-nu-ligner-kyiv-en-frontlinjeby",
+          "published_at": "2026-10-14T11:36:23.000000Z",
+          "content_hash": "sha256:7666b99e9a411391890b4086d026cd25cade5c458cdb07b6a65b98cb98582aca",
+          "primary": false
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:4fe44ec2-a635-5d0d-9b92-a774ad3f3c29",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Stort russisk angreb på Kyiv – Zelenskyj har direkte besked til Trump",
+          "url": "https://www.berlingske.dk/internationalt/stort-russisk-angreb-paa-kyiv--zelenskyj-har-direkte-besked-til-trump",
+          "published_at": "2026-10-14T08:29:51.000000Z",
+          "content_hash": "sha256:0c61d7cb1b1d591c173b535d76c453d3d000f652f651ae04c2424f6dcd279dd2",
+          "primary": false
+        },
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "92b2d32e-ab77-4f7e-813d-905699889a15",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Ukraine melder om angreb på jernbaner og oliefaciliteter",
+          "url": "https://www.kristeligt-dagblad.dk/udland/ukraine-melder-om-angreb-paa-jernbaner-og-oliefaciliteter",
+          "published_at": "2026-10-14T06:15:47.000000Z",
+          "content_hash": "sha256:3c1161f530f99d09f24a89a828657734cc51f891339a412625e591002bc3fe67",
+          "primary": false,
+          "wire": "ritzau"
+        },
+        {
+          "source": "bbc",
+          "source_id": "cmx280x092x7o",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Block of flats in ruins after Russian strikes on Ukraine",
+          "url": "https://www.bbc.co.uk/news/videos/cmx280x092x7o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-14T09:25:03.000000Z",
+          "content_hash": "sha256:91d41d11cd0d24efbccb2fe67b8a890ec1d9bc529e7065c4bc79fd5ebd505470",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/video/2026/oct/14/a-completely-civilian-area-kyiv-residents-reel-after-overnight-russian-strike-video",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "'A completely civilian area': Kyiv residents reel after overnight Russian strike – video",
+          "url": "https://www.theguardian.com/world/video/2026/oct/14/a-completely-civilian-area-kyiv-residents-reel-after-overnight-russian-strike-video",
+          "published_at": "2026-10-14T13:25:41.000000Z",
+          "content_hash": "sha256:9968d9a4f9a55a8314c33fff501c0f480c08544d552b759e388afded3e4e23b4",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/world/live/2026/oct/14/russia-ukraine-war-latest-updates-zelenskyy-europe",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "EU says ‘no indication’ intelligence sharing with Ukraine has stopped as Russian attacks leave 600,000 without power – as it happened",
+          "url": "https://www.theguardian.com/world/live/2026/oct/14/russia-ukraine-war-latest-updates-zelenskyy-europe",
+          "published_at": "2026-10-14T15:02:35.000000Z",
+          "content_hash": "sha256:d1dca05bfede7262ab46004e2cf16cdb77d6d241e74f621b39aa8bd5fd6ea7d5",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "eu-summit-brussels-budget-ukraine",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Europe",
+      "copy": {
+        "headline": "EU leaders meet in Brussels over the next budget and Ukraine's shortfall",
+        "body": {},
+        "lede": {
+          "text": "EU leaders begin a two-day summit in Brussels on Thursday on the bloc's next long-term budget and a 70 billion euro gap in Ukraine's budget for 2027; Volodymyr Zelensky, Ukraine's president, joins on Friday.",
+          "sources": [
+            "kristeligt_dagblad",
+            "information"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "c663f3d3-c91f-483a-9b23-0b3bd2862027",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Nu skal Tyskland og Frankrig finde vej til forlig om EU-budget",
+          "url": "https://www.kristeligt-dagblad.dk/udland/nu-skal-tyskland-og-frankrig-finde-vej-til-forlig-om-eu-budget",
+          "published_at": "2026-10-14T15:30:16.000000Z",
+          "content_hash": "sha256:7c87f98781f49c1d6b9a24902915c1a7d77385ce09c20102cfc1858a756b0c3b",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "information",
+          "source_id": "843310 at https://www.information.dk",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "En perfekt storm trækker sammen over Europa. EU-topmødet skal løse mange kriser samtidig",
+          "url": "https://www.information.dk/udland/2026/10/perfekt-storm-traekker-sammen-europa-eu-topmoedet-loese-kriser-samtidig",
+          "published_at": "2026-10-14T05:28:46.000000Z",
+          "content_hash": "sha256:bea336adf57a16beb724613c9c822807681ce03dfde3fb77b3e4eb4d2ed3954e",
+          "primary": false
+        },
+        {
+          "source": "altinget",
+          "source_id": "https://www.altinget.dk/eu/artikel/kampen-om-eus-fremtidsbudget-bliver-op-ad-bakke-for-danmarks-sparebande",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Kampen om EU's fremtidsbudget bliver op ad bakke for Danmarks sparebande",
+          "url": "https://www.altinget.dk/eu/artikel/kampen-om-eus-fremtidsbudget-bliver-op-ad-bakke-for-danmarks-sparebande",
+          "published_at": "2026-10-15T00:00:00.000000Z",
+          "content_hash": "sha256:96af8fb2e71c168e5f1a0cabf26c949d846ee2a07a7d5bc162c27ee5994d4ebe",
+          "primary": false
+        },
+        {
+          "source": "ft",
+          "source_id": "b5faacca-4561-4e9d-bec5-c8ef843b0419",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "EU budget battle intensifies ahead of leaders’ summit",
+          "url": "https://www.ft.com/content/b5faacca-4561-4e9d-bec5-c8ef843b0419",
+          "published_at": "2026-10-12T05:00:06.000000Z",
+          "content_hash": "sha256:c47ae7e0b3d93530d100d4550cefbf3783f4605d6fa2d29783485dace501494c",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "trump-arizona-rally-greenland-military",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "World",
+      "copy": {
+        "headline": "Trump says he would never have sent the military into Greenland",
+        "body": {},
+        "lede": {
+          "text": "Donald Trump told a rally on the Arizona-Nevada border that he would never have sent the American military into Greenland, which he called 'another thing we can put on our beautiful plate'.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "21404409-aee4-4519-a778-8f6ffcdbc87b",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Trump: Jeg ville ikke have sendt militær ind i Grønland",
+          "url": "https://www.kristeligt-dagblad.dk/udland/trump-jeg-ville-ikke-have-sendt-militaer-ind-i-groenland",
+          "published_at": "2026-10-14T22:43:04.000000Z",
+          "content_hash": "sha256:613ec36ed3c5938cf92a0ad3b8e14c6fedc4e57b0872059be6addcff740b60fa",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:170731d1-4f6c-5995-8e04-0c8108c36c19",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Trump: Jeg ville ikke have sendt militær ind i Grønland",
+          "url": "https://www.berlingske.dk/internationalt/trump-jeg-ville-ikke-have-sendt-militaer-ind-i-groenland",
+          "published_at": "2026-10-14T23:03:48.000000Z",
+          "content_hash": "sha256:872e3088720c5094bace14a4dc65827de57dbbe10ce3846c1369e30151847295",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "bank-of-america-reporting-fine",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Business",
+      "copy": {
+        "headline": "Bank of America fined 1.21 billion dollars for failing to report suspicious activity",
+        "body": {},
+        "lede": {
+          "text": "US regulators fined Bank of America, the second-largest bank in the United States, 1.21 billion dollars for failing to report more than 5 billion dollars in suspicious activity.",
+          "sources": [
+            "borsen",
+            "berlingske",
+            "guardian"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "borsen",
+          "source_id": "https://borsen.dk/nyheder/finans/usas-naeststorste-bank-far-milliardbode-for-lovbrud",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "USA's næststørste bank får milliardbøde for lovbrud",
+          "url": "https://borsen.dk/nyheder/finans/usas-naeststorste-bank-far-milliardbode-for-lovbrud",
+          "published_at": "2026-10-14T04:26:03.000000Z",
+          "content_hash": "sha256:1268c9e97733358f14a4f67aeed2885e10127efd555ebeed4c474667328ae680",
+          "primary": true
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:450d28a6-2962-5ee3-8112-2756e253ae43",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "USA's næststørste bank får milliardbøde for lovbrud",
+          "url": "https://www.berlingske.dk/internationalt/usas-naeststoerste-bank-faar-milliardboede-for-lovbrud",
+          "published_at": "2026-10-14T00:44:45.000000Z",
+          "content_hash": "sha256:11500594454187d812b4c4d9826954e1dc292d10b3a4a3cb35b32af0602408fe",
+          "primary": false
+        },
+        {
+          "source": "bbc",
+          "source_id": "cm3wvxy6n3z8o",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Bank of America hit with $1.2bn fine for money laundering failings",
+          "url": "https://www.bbc.co.uk/news/articles/cm3wvxy6n3z8o?at_campaign=rss&at_medium=RSS",
+          "published_at": "2026-10-14T02:05:32.000000Z",
+          "content_hash": "sha256:cd17d34ba1969dcf5dfdb1c25ec487dcc14f5f8c9a7255cf778a21c2d49e0f3d",
+          "primary": false
+        },
+        {
+          "source": "guardian",
+          "source_id": "https://www.theguardian.com/business/2026/oct/14/bank-of-america-fined-money-laundering",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Bank of America fined $1.2bn for money-laundering failures",
+          "url": "https://www.theguardian.com/business/2026/oct/14/bank-of-america-fined-money-laundering",
+          "published_at": "2026-10-14T11:54:29.000000Z",
+          "content_hash": "sha256:e9e8d82f3432b66a3521ea19fbe036070460087138b88a2fd658524d32ff8cae",
+          "primary": false
+        },
+        {
+          "source": "nytimes",
+          "source_id": "https://www.nytimes.com/2026/10/13/business/bank-of-america-money-laundering-fine.html",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Bank of America Fined $1.2 Billion for Lax Money-Laundering Oversight",
+          "url": "https://www.nytimes.com/2026/10/13/business/bank-of-america-money-laundering-fine.html",
+          "published_at": "2026-10-15T01:54:40.000000Z",
+          "content_hash": "sha256:cc29c077f4b9e654aeed664c9071224cac0481611cf789db7c2dfe2b76bfd936",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    },
+    {
+      "id": "dane-among-dead-swiss-alps-crash",
+      "device_participation": "optional",
+      "role": "brief",
+      "kicker": "Denmark",
+      "copy": {
+        "headline": "Dane among three killed in Swiss Alps plane crash",
+        "body": {},
+        "lede": {
+          "text": "A Danish citizen was among three people killed when a small plane crashed near Leukerbad in the Swiss Alps on 15 September, Havarikommissionen, Denmark's accident investigation board, confirmed on Wednesday.",
+          "sources": [
+            "kristeligt_dagblad",
+            "berlingske",
+            "tv2"
+          ]
+        }
+      },
+      "callouts": [],
+      "sources": [
+        {
+          "source": "kristeligt_dagblad",
+          "source_id": "9bfeb2cf-a794-4b5d-a9e6-cb2a5f9f91a2",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Dansk statsborger mistede livet i flystyrt i Schweiz",
+          "url": "https://www.kristeligt-dagblad.dk/danmark/dansk-statsborger-mistede-livet-i-flystyrt-i-schweiz",
+          "published_at": "2026-10-14T11:45:57.000000Z",
+          "content_hash": "sha256:92bb3e4b99be5ec90d3f80097a5e2f91a85560f1d5978c0e9fffd5163011b1ec",
+          "primary": true,
+          "wire": "ritzau"
+        },
+        {
+          "source": "berlingske",
+          "source_id": "urn:bm:article:b0b44f9b-3285-5eb5-b99e-17ae46291970",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Dansk statsborger mistede livet i flystyrt i Schweiz",
+          "url": "https://www.berlingske.dk/danmark/dansk-statsborger-mistede-livet-i-flystyrt-i-schweiz",
+          "published_at": "2026-10-14T12:01:43.000000Z",
+          "content_hash": "sha256:a7a86e8d759c443ecff50caa5a3aac2337cb0784061b52f19dc46bbc35845d8f",
+          "primary": false
+        },
+        {
+          "source": "tv2",
+          "source_id": "https://nyheder.tv2.dk/udland/2026-10-14-dansk-statsborger-mistede-livet-i-flystyrt-i-schweiz",
+          "input_id": "export-2026-10-15-0330",
+          "original_title": "Dansker har mistet livet i flystyrt i Schweiz",
+          "url": "https://nyheder.tv2.dk/udland/2026-10-14-dansk-statsborger-mistede-livet-i-flystyrt-i-schweiz",
+          "published_at": "2026-10-14T12:11:55.000000Z",
+          "content_hash": "sha256:52e6a52dc5b9d89e8f9403f68d0c21f00d5ec33479d7c8ce171874a880053be7",
+          "primary": false
+        }
+      ],
+      "limitations": [
+        "digest_of_rss_description",
+        "translated_from_source_language"
+      ]
+    }
+  ],
+  "fit_policy": {
+    "allow_role_fallback": true,
+    "allow_composition_substitution": true,
+    "reserve_story_ids": [],
+    "omittable_story_ids": [
+      "land-registry-17-million-queries",
+      "nord-stream-hamburg-trial-opens",
+      "zelensky-betrayed-piers-morgan",
+      "nitrogen-law-postponement-demand",
+      "la-citizenship-applicant-hamas-posts",
+      "odense-nedergade-stabbing-charge",
+      "fredericia-couple-remanded-daughter",
+      "european-film-awards-danish-shortlist",
+      "refn-her-private-hell-reviews",
+      "north-jutland-buses-30-million",
+      "german-border-control-to-may",
+      "dmi-atlantic-currents-recover",
+      "red-barnet-ai-abuse-record-reports",
+      "starlink-throttling-ukraine-missions",
+      "russian-strikes-kill-six-ukraine-oct14",
+      "eu-summit-brussels-budget-ukraine",
+      "trump-arizona-rally-greenland-military",
+      "bank-of-america-reporting-fine",
+      "dane-among-dead-swiss-alps-crash"
+    ]
+  }
+}

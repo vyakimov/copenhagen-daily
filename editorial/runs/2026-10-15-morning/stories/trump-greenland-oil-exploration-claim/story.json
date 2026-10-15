@@ -1,0 +1,87 @@
+{
+ "headline": "Trump says extensive oil exploration is coming in Greenland",
+ "headline_short": "Trump promises oil search in Greenland",
+ "deck": "Denmark says Greenlandic law decides; a Greenlandic official says American activity is far from a massive search.",
+ "extended": [
+  [
+   "Donald Trump wrote on Truth Social, his social network, on Wednesday morning that 'extensive exploration of oil, gas and minerals' was being prepared 'in our new and beautiful Greenland'. It is unclear which surveys he means.",
+   [
+    "kristeligt_dagblad",
+    "borsen",
+    "dr"
+   ]
+  ],
+  [
+   "The Foreign Ministry told Ritzau that any American exploration must follow Greenlandic law, because Greenland's self-government has taken over raw materials from Denmark. The agreement of 22 September between Greenland, Denmark and the US does not change that, it said.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "But the ministry also confirmed to Jyllands-Posten that the American government can block other countries' investments in Greenland, India's as well as China's and Russia's.",
+   [
+    "jp"
+   ]
+  ],
+  [
+   "Jørgen Hammeken-Holm, permanent secretary in Greenland's department for business and raw materials, told CNN that American companies are active but 'very far from a massive exploration'. It can take years, he said, before the many smaller explorations become operational.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "Aleqa Hammond, chair of Siumut, a Greenlandic social-democratic party, told Berlingske that no company or country will ever get free access to Greenland's underground. The agreement must still be approved by the countries' parliaments.",
+   [
+    "berlingske",
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "standard": [
+  [
+   "Donald Trump wrote on Truth Social, his social network, on Wednesday morning that 'extensive exploration of oil, gas and minerals' was being prepared 'in our new and beautiful Greenland'. It is unclear which surveys he means.",
+   [
+    "kristeligt_dagblad",
+    "borsen",
+    "dr"
+   ]
+  ],
+  [
+   "The Foreign Ministry told Ritzau that any American exploration must follow Greenlandic law, because Greenland's self-government has taken over raw materials from Denmark. The agreement of 22 September between the three countries does not change that, it said.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "Jørgen Hammeken-Holm, permanent secretary in Greenland's department for business and raw materials, told CNN that American companies are active but 'very far from a massive exploration'.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "Donald Trump wrote on Wednesday that extensive exploration of oil, gas and minerals was being prepared in Greenland. The Foreign Ministry says any American exploration must follow Greenlandic law, and a senior Greenlandic official told CNN that activity is 'very far from a massive exploration'.",
+   [
+    "kristeligt_dagblad",
+    "borsen",
+    "dr"
+   ]
+  ]
+ ],
+ "callouts": [
+  {
+   "kind": "quote",
+   "text": "Very far from a massive exploration.",
+   "attribution": "Jørgen Hammeken-Holm, permanent secretary in Greenland's raw materials department",
+   "attribution_source": "kristeligt_dagblad"
+  }
+ ],
+ "definitions": [
+  {
+   "term": "Siumut",
+   "definition": "a Greenlandic social-democratic party",
+   "wikipedia": "Siumut"
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "headline": "Danish land registry limits searches after 17.2 million in a few days",
+ "headline_short": "Land registry limits searches",
+ "deck": "The searches were legal, but the courts' administration warns the records could make fraud more credible.",
+ "standard": [
+  [
+   "Denmark's digital land registry has limited the number of searches it accepts after receiving 17.2 million in a few days, the Danish Court Administration said in a statement on Wednesday. It normally gets fewer than two million a week.",
+   [
+    "kristeligt_dagblad",
+    "tv2",
+    "berlingske"
+   ]
+  ],
+  [
+   "The searches were legal and touched only records open to anyone without a login. 'It is the number of look-ups that gives cause for attention,' said Rikke Holler, president of the Land Registration Court.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "The agency names no cause but warns that the records could make fraud attempts more credible, citing the recent leak of 8.8 million CPR numbers, Denmark's personal identification numbers. The justice minister is briefing parliament.",
+   [
+    "kristeligt_dagblad",
+    "berlingske",
+    "dr"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "Denmark's digital land registry has limited searches after receiving 17.2 million in a few days, against fewer than two million in a normal week, the Danish Court Administration said on Wednesday. The searches were legal, but it warns the records could make fraud more credible.",
+   [
+    "kristeligt_dagblad",
+    "tv2",
+    "berlingske"
+   ]
+  ]
+ ],
+ "definitions": [
+  {
+   "term": "CPR numbers",
+   "definition": "Denmark's personal identification numbers",
+   "wikipedia": "Personal identification number (Denmark)"
+  }
+ ]
+}

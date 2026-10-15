@@ -1,0 +1,13 @@
+[
+ {
+  "requested": "Odense",
+  "status": "found",
+  "title": "Odense",
+  "extract": "Odense is the third largest city in Denmark and the largest city on the island of Funen. As of 1 January 2026, the city proper had a population of 187,558 while Odense Municipality had a population of 213,168, making it the fourth largest municipality in Denmark. Eurostat and OECD have used a definition for the Metropolitan area of Odense, which includes all municipalities in the Province of Funen, with a total population of 504,066 as of 1 July 2022.",
+  "url": "https://en.wikipedia.org/wiki/Odense",
+  "type": "standard",
+  "fetched_at": "2026-10-15T03:38:19.831989Z",
+  "term": "Odense",
+  "definition": "a city on Funen"
+ }
+]

@@ -1,0 +1,48 @@
+{
+ "headline": "Two parties want the nitrogen law delayed after a university's calculation error",
+ "headline_short": "Parties seek delay to nitrogen law",
+ "deck": "Aarhus University has apologised for the mistake; the minister says it must be put right.",
+ "standard": [
+  [
+   "Venstre, a liberal party, and Liberal Alliance, a libertarian party, want the nitrogen law delayed by half a year after Aarhus University admitted errors in the calculations behind the law's discharge limits. The law is due to take effect after new year.",
+   [
+    "berlingske",
+    "kristeligt_dagblad",
+    "dr"
+   ]
+  ],
+  [
+   "The university announced the error on Tuesday, having said the previous week that it had double-checked its figures after criticism from Seges, agriculture's think tank. Because of the error, some farmers would have been allowed to discharge less nitrogen than they should.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "Christian Rabjerg Madsen, the minister for nature and animal welfare, told Ritzau in a written comment: 'I take that very seriously, and it must of course be put right.'",
+   [
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "Venstre, a liberal party, and Liberal Alliance, a libertarian party, want the nitrogen law delayed by half a year after Aarhus University admitted errors in the calculations behind its limits on farmers' nitrogen discharges.",
+   [
+    "berlingske",
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "definitions": [
+  {
+   "term": "Venstre",
+   "definition": "a liberal party",
+   "wikipedia": "Venstre (Denmark)"
+  },
+  {
+   "term": "Liberal Alliance",
+   "definition": "a libertarian party",
+   "wikipedia": "Liberal Alliance (Denmark)"
+  }
+ ]
+}

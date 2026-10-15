@@ -1,0 +1,618 @@
+{
+  "edition": {
+    "id": "2026-10-15-morning",
+    "number": 10,
+    "name": "Thursday edition",
+    "date": "2026-10-15",
+    "cutoff_at": "2026-10-15T03:30:00.000000Z",
+    "checked_from": "2026-10-12T03:30:00.000000Z",
+    "input_id": "export-2026-10-15-0330",
+    "presentation": {
+      "emphasis": "many_stories",
+      "ear_right": "Inside: 17 million land-registry queries, the Nord Stream trial opens, Zelensky feels betrayed"
+    },
+    "note": "Built from headlines and RSS descriptions published in the 72 hours to 05:30 Copenhagen time on 15 October: 3,502 articles. 126 of 132 feeds at 17 publishers polled; all six Washington Post feeds failed."
+  },
+  "stories": [
+    {
+      "id": "trump-greenland-oil-exploration-claim",
+      "role": "lead",
+      "kicker": "Politics",
+      "sources": [
+        1156,
+        316,
+        662,
+        881,
+        621,
+        245,
+        1146,
+        614,
+        727
+      ],
+      "headline": "Trump says extensive oil exploration is coming in Greenland",
+      "headline_short": "Trump promises oil search in Greenland",
+      "deck": "Denmark says Greenlandic law decides; a Greenlandic official says American activity is far from a massive search.",
+      "extended": [
+        [
+          "Donald Trump wrote on Truth Social, his social network, on Wednesday morning that 'extensive exploration of oil, gas and minerals' was being prepared 'in our new and beautiful Greenland'. It is unclear which surveys he means.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "dr"
+          ]
+        ],
+        [
+          "The Foreign Ministry told Ritzau that any American exploration must follow Greenlandic law, because Greenland's self-government has taken over raw materials from Denmark. The agreement of 22 September between Greenland, Denmark and the US does not change that, it said.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "But the ministry also confirmed to Jyllands-Posten that the American government can block other countries' investments in Greenland, India's as well as China's and Russia's.",
+          [
+            "jp"
+          ]
+        ],
+        [
+          "Jørgen Hammeken-Holm, permanent secretary in Greenland's department for business and raw materials, told CNN that American companies are active but 'very far from a massive exploration'. It can take years, he said, before the many smaller explorations become operational.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Aleqa Hammond, chair of Siumut, a Greenlandic social-democratic party, told Berlingske that no company or country will ever get free access to Greenland's underground. The agreement must still be approved by the countries' parliaments.",
+          [
+            "berlingske",
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "standard": [
+        [
+          "Donald Trump wrote on Truth Social, his social network, on Wednesday morning that 'extensive exploration of oil, gas and minerals' was being prepared 'in our new and beautiful Greenland'. It is unclear which surveys he means.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "dr"
+          ]
+        ],
+        [
+          "The Foreign Ministry told Ritzau that any American exploration must follow Greenlandic law, because Greenland's self-government has taken over raw materials from Denmark. The agreement of 22 September between the three countries does not change that, it said.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Jørgen Hammeken-Holm, permanent secretary in Greenland's department for business and raw materials, told CNN that American companies are active but 'very far from a massive exploration'.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Donald Trump wrote on Wednesday that extensive exploration of oil, gas and minerals was being prepared in Greenland. The Foreign Ministry says any American exploration must follow Greenlandic law, and a senior Greenlandic official told CNN that activity is 'very far from a massive exploration'.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "dr"
+          ]
+        ]
+      ],
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "Very far from a massive exploration.",
+          "attribution": "Jørgen Hammeken-Holm, permanent secretary in Greenland's raw materials department",
+          "attribution_source": "kristeligt_dagblad"
+        }
+      ]
+    },
+    {
+      "id": "land-registry-17-million-queries",
+      "role": "secondary",
+      "kicker": "Denmark",
+      "sources": [
+        539,
+        515,
+        519,
+        354,
+        463
+      ],
+      "headline": "Danish land registry limits searches after 17.2 million in a few days",
+      "headline_short": "Land registry limits searches",
+      "deck": "The searches were legal, but the courts' administration warns the records could make fraud more credible.",
+      "standard": [
+        [
+          "Denmark's digital land registry has limited the number of searches it accepts after receiving 17.2 million in a few days, the Danish Court Administration said in a statement on Wednesday. It normally gets fewer than two million a week.",
+          [
+            "kristeligt_dagblad",
+            "tv2",
+            "berlingske"
+          ]
+        ],
+        [
+          "The searches were legal and touched only records open to anyone without a login. 'It is the number of look-ups that gives cause for attention,' said Rikke Holler, president of the Land Registration Court.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "The agency names no cause but warns that the records could make fraud attempts more credible, citing the recent leak of 8.8 million CPR numbers, Denmark's personal identification numbers. The justice minister is briefing parliament.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Denmark's digital land registry has limited searches after receiving 17.2 million in a few days, against fewer than two million in a normal week, the Danish Court Administration said on Wednesday. The searches were legal, but it warns the records could make fraud more credible.",
+          [
+            "kristeligt_dagblad",
+            "tv2",
+            "berlingske"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "nord-stream-hamburg-trial-opens",
+      "role": "secondary",
+      "kicker": "World",
+      "sources": [
+        729,
+        1238,
+        383,
+        1089,
+        1181,
+        630,
+        636,
+        900,
+        720
+      ],
+      "headline": "Ukrainian accused of blowing up Nord Stream stays silent as his trial opens",
+      "headline_short": "Nord Stream trial opens in Hamburg",
+      "deck": "His lawyer argues that Russia used the pipelines as a weapon and wants the case dismissed.",
+      "standard": [
+        [
+          "Serhii Kuznetsov, a former Ukrainian special forces officer, will not give evidence at his trial, his lawyer said as it opened in Hamburg on Wednesday. Prosecutors accuse him of leading the team that blew up the Nord Stream gas pipelines between Russia and Germany in September 2022, and charge him as an accessory to war crimes. The trial is expected to end in February.",
+          [
+            "kristeligt_dagblad",
+            "bbc",
+            "guardian"
+          ]
+        ],
+        [
+          "Nicola Canestrini, his lawyer, says no clear evidence links him to the blasts and that Russia used the pipelines as a weapon, so the case should be dismissed. 'Is it illegal to destroy an aggressor's infrastructure without harming anyone?' he asked the court.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Serhii Kuznetsov, a former Ukrainian special forces officer accused of leading the sabotage of the Nord Stream gas pipelines in September 2022, will not give evidence at his trial, which opened in Hamburg on Wednesday. His lawyer wants the case dismissed.",
+          [
+            "kristeligt_dagblad",
+            "bbc",
+            "guardian"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "zelensky-betrayed-piers-morgan",
+      "role": "secondary",
+      "kicker": "World",
+      "sources": [
+        380,
+        337,
+        226,
+        193,
+        105
+      ],
+      "headline": "Ukraine's president says he feels betrayed by Trump",
+      "headline_short": "Zelensky feels betrayed by Trump",
+      "deck": "Volodymyr Zelensky calls it 'painful' that Trump has picked one side and not Ukraine's.",
+      "standard": [
+        [
+          "Asked by Piers Morgan, a British television presenter, whether he felt betrayed by Donald Trump, Volodymyr Zelensky, Ukraine's president, answered on Wednesday: 'Actually, yes. But it is more complex than just my feelings.'",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "dr"
+          ]
+        ],
+        [
+          "Trump has said in recent days that Zelensky should be replaced, and has agreed a diesel deal with Russia that has been criticised for giving Moscow money for the war. Ukraine's military has also had its access to Starlink, Elon Musk's satellite network, squeezed.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "guardian"
+          ]
+        ],
+        [
+          "'If you stand in the middle, you have to stay in the middle. Not on the wrong side,' Zelensky said. He blamed Trump's advisers. He spoke in London, where he was visiting Andy Burnham, the British prime minister.",
+          [
+            "kristeligt_dagblad",
+            "guardian"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Volodymyr Zelensky, Ukraine's president, said on Wednesday that he feels betrayed by Donald Trump, who has said Zelensky should be replaced and has agreed a diesel deal with Russia.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "nitrogen-law-postponement-demand",
+      "role": "secondary",
+      "kicker": "Environment",
+      "sources": [
+        789,
+        1010,
+        762,
+        471,
+        1059
+      ],
+      "headline": "Two parties want the nitrogen law delayed after a university's calculation error",
+      "headline_short": "Parties seek delay to nitrogen law",
+      "deck": "Aarhus University has apologised for the mistake; the minister says it must be put right.",
+      "standard": [
+        [
+          "Venstre, a liberal party, and Liberal Alliance, a libertarian party, want the nitrogen law delayed by half a year after Aarhus University admitted errors in the calculations behind the law's discharge limits. The law is due to take effect after new year.",
+          [
+            "berlingske",
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        ],
+        [
+          "The university announced the error on Tuesday, having said the previous week that it had double-checked its figures after criticism from Seges, agriculture's think tank. Because of the error, some farmers would have been allowed to discharge less nitrogen than they should.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Christian Rabjerg Madsen, the minister for nature and animal welfare, told Ritzau in a written comment: 'I take that very seriously, and it must of course be put right.'",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Venstre, a liberal party, and Liberal Alliance, a libertarian party, want the nitrogen law delayed by half a year after Aarhus University admitted errors in the calculations behind its limits on farmers' nitrogen discharges.",
+          [
+            "berlingske",
+            "kristeligt_dagblad"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "la-citizenship-applicant-hamas-posts",
+      "role": "secondary",
+      "kicker": "Politics",
+      "sources": [
+        1116,
+        998,
+        329,
+        1149,
+        967
+      ],
+      "headline": "Party says a citizenship applicant praised Hamas and wants her questioned",
+      "headline_short": "Citizenship applicant accused of praising Hamas",
+      "deck": "She denies supporting Hamas and says she will attend; the bill would make 2,055 people Danish.",
+      "standard": [
+        [
+          "Liberal Alliance, a libertarian party, wants a woman who is due to receive Danish citizenship called before the naturalisation committee of the Folketing, Denmark's parliament. The party says its own screening of the 2,055 people on the citizenship bill found that she had repeatedly praised Hamas and its former leaders Yahya Sinwar and Ismail Haniyeh.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "politiken",
+            "dr"
+          ]
+        ],
+        [
+          "She denies it. 'I do not support anyone who kills anyone,' she told Politiken, and said she would attend.",
+          [
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        ],
+        [
+          "The government decided to put the bill forward before a model for screening applicants for anti-democratic views is ready. Dansk Folkeparti, a nationalist party, backs the summons; Enhedslisten, a far-left party, calls it undignified.",
+          [
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Liberal Alliance, a libertarian party, wants a parliamentary committee to question a woman on a bill granting citizenship to 2,055 people, saying she praised Hamas. She denies supporting Hamas and says she will attend.",
+          [
+            "kristeligt_dagblad",
+            "politiken"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "odense-nedergade-stabbing-charge",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        1050,
+        997,
+        919
+      ],
+      "headline": "81-year-old charged with homicide after fatal stabbing in Odense",
+      "lede": [
+        "An 81-year-old man is charged with homicide after a 65-year-old man died from a stabbing in central Odense, a city on Funen, on Wednesday morning; he appears in court at 08:30 today.",
+        [
+          "kristeligt_dagblad",
+          "tv2",
+          "politiken"
+        ]
+      ]
+    },
+    {
+      "id": "fredericia-couple-remanded-daughter",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        911,
+        839,
+        597
+      ],
+      "headline": "Couple remanded in custody over drugging and sexual abuse of woman's daughter",
+      "lede": [
+        "A couple from Fredericia, in eastern Jutland, were remanded in custody for four weeks on Wednesday, charged with drugging the woman's daughter and having sex with her when she was 15 to 17.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "tv2"
+        ]
+      ]
+    },
+    {
+      "id": "european-film-awards-danish-shortlist",
+      "role": "brief",
+      "kicker": "Culture",
+      "sources": [
+        833,
+        764,
+        827
+      ],
+      "headline": "Three Danish films are shortlisted for the European Film Awards",
+      "lede": [
+        "May el-Toukhy's Venice winner 'Kvinde ukendt', Mads Mengel's 'Gæsten' and Sine Plambech's documentary 'Rescue' are shortlisted for the European Film Awards, Europe's answer to the Oscars; nominations come on 14 November.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "refn-her-private-hell-reviews",
+      "role": "brief",
+      "kicker": "Culture",
+      "sources": [
+        318,
+        461,
+        548,
+        259
+      ],
+      "headline": "Danish director's first film in ten years divides critics",
+      "lede": [
+        "Nicolas Winding Refn, director of Drive, returns to cinemas today after ten years with Her Private Hell; Børsen and the culture outlet Soundvenue give it two stars of six, the film magazine Ekko five.",
+        [
+          "kristeligt_dagblad",
+          "borsen"
+        ]
+      ]
+    },
+    {
+      "id": "north-jutland-buses-30-million",
+      "role": "brief",
+      "kicker": "Transport",
+      "sources": [
+        1143,
+        1175,
+        702,
+        1038
+      ],
+      "headline": "North Jutland wants at least 30 million kroner to keep rural buses running",
+      "lede": [
+        "North Jutland's regional authority wants at least 30 million kroner more from the government for public transport or must close rural bus routes, as fuel prices rise and more young people drive.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "german-border-control-to-may",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        557,
+        551
+      ],
+      "headline": "Denmark extends border controls with Germany until May",
+      "lede": [
+        "Denmark will extend its temporary border controls with Germany by six months, to 17 May 2027, Nicolai Wammen, the justice minister, told the European Commission on Wednesday, citing terror and sabotage threats.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "dmi-atlantic-currents-recover",
+      "role": "brief",
+      "kicker": "Science",
+      "sources": [
+        244,
+        311,
+        228
+      ],
+      "headline": "Atlantic currents can regain strength if warming is reversed, Danish study finds",
+      "lede": [
+        "Amoc, the Atlantic's big system of ocean currents, weakens as the world warms but regains strength if warming is reversed, a single-model study by the Danish Meteorological Institute finds.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "red-barnet-ai-abuse-record-reports",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        210,
+        456,
+        184
+      ],
+      "headline": "Reports of AI-generated child abuse material reach a record",
+      "lede": [
+        "Red Barnet's AnmeldDet service, which takes reports from the public, received 4,069 reports of suspected AI-generated child abuse material in the first half of the year, against 6,558 in all of 2025.",
+        [
+          "kristeligt_dagblad"
+        ]
+      ]
+    },
+    {
+      "id": "starlink-throttling-ukraine-missions",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        1005,
+        591,
+        238,
+        813,
+        153,
+        182,
+        224,
+        673
+      ],
+      "headline": "Ukraine says Starlink speed limits disrupted military missions",
+      "lede": [
+        "Elon Musk's SpaceX limited the speed of Starlink internet terminals in Ukraine without warning, disrupting several military missions, says Serhiy Beskrestnov, a technology adviser to Ukraine's president; Musk says the US government may be behind it.",
+        [
+          "kristeligt_dagblad",
+          "bbc"
+        ]
+      ]
+    },
+    {
+      "id": "russian-strikes-kill-six-ukraine-oct14",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        1084,
+        766,
+        976,
+        1063,
+        898,
+        655,
+        527
+      ],
+      "headline": "Russian strikes kill six in Ukraine and cut power to 600,000 in Kyiv",
+      "lede": [
+        "Russian strikes overnight into Wednesday killed six people across Ukraine and left 600,000 in Kyiv without power, after Donald Trump said on Sunday that Russia and Ukraine had agreed an energy ceasefire.",
+        [
+          "kristeligt_dagblad",
+          "guardian"
+        ]
+      ]
+    },
+    {
+      "id": "eu-summit-brussels-budget-ukraine",
+      "role": "brief",
+      "kicker": "Europe",
+      "sources": [
+        498,
+        1095,
+        68,
+        3424
+      ],
+      "headline": "EU leaders meet in Brussels over the next budget and Ukraine's shortfall",
+      "lede": [
+        "EU leaders begin a two-day summit in Brussels on Thursday on the bloc's next long-term budget and a 70 billion euro gap in Ukraine's budget for 2027; Volodymyr Zelensky, Ukraine's president, joins on Friday.",
+        [
+          "kristeligt_dagblad",
+          "information"
+        ]
+      ]
+    },
+    {
+      "id": "trump-arizona-rally-greenland-military",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        114,
+        95
+      ],
+      "headline": "Trump says he would never have sent the military into Greenland",
+      "lede": [
+        "Donald Trump told a rally on the Arizona-Nevada border that he would never have sent the American military into Greenland, which he called 'another thing we can put on our beautiful plate'.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "bank-of-america-reporting-fine",
+      "role": "brief",
+      "kicker": "Business",
+      "sources": [
+        1163,
+        1279,
+        1251,
+        749,
+        35
+      ],
+      "headline": "Bank of America fined 1.21 billion dollars for failing to report suspicious activity",
+      "lede": [
+        "US regulators fined Bank of America, the second-largest bank in the United States, 1.21 billion dollars for failing to report more than 5 billion dollars in suspicious activity.",
+        [
+          "borsen",
+          "berlingske",
+          "guardian"
+        ]
+      ]
+    },
+    {
+      "id": "dane-among-dead-swiss-alps-crash",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        759,
+        736,
+        732
+      ],
+      "headline": "Dane among three killed in Swiss Alps plane crash",
+      "lede": [
+        "A Danish citizen was among three people killed when a small plane crashed near Leukerbad in the Swiss Alps on 15 September, Havarikommissionen, Denmark's accident investigation board, confirmed on Wednesday.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "tv2"
+        ]
+      ]
+    }
+  ]
+}
