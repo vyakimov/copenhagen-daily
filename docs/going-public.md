@@ -78,8 +78,8 @@ Three noindex layers and one check that would start failing:
       for 403 and 404 are set by hand once; the command is in [aws-delivery.md](aws-delivery.md).
 - [x] **A cache policy on HTML.** The deliver step now runs two syncs: the immutable `n/` and `a/`
       trees with `max-age=31536000, immutable`, everything else with `max-age=300, must-revalidate`
-      (`editorial/src/news_editorial/deliver.py`). Objects uploaded before 13 October 2026 carry no
-      header until the one-off backfill in [aws-delivery.md](aws-delivery.md) is run.
+      (`editorial/src/news_editorial/deliver.py`). Objects already in the bucket get it when the
+      trees are uploaded again, as [aws-delivery.md](aws-delivery.md) describes.
 - [x] **A feed.** An Atom feed of editions at `/feed.xml` (`publisher/site/src/pages/feed.xml.ts`),
       one entry per edition from the index snapshot, advertised by a `<link rel="alternate">` in every
       page's head. Absolute addresses come from `site_url` in `publisher/config/title.yaml`.

@@ -67,19 +67,23 @@ Then `curl -sI https://copenhagen-daily.net/no-such-page/` should answer `404` w
 The error caching TTL is a minute, so an edition address requested just before it was published is
 not remembered as missing for long; the publish's own invalidation clears it anyway.
 
-**The cache-header backfill.** Objects uploaded before 13 October 2026 carry no `Cache-Control`;
-`s3 sync` only sets metadata on the objects it uploads, and it does not re-upload an unchanged file.
-A one-off copy in place fixes the immutable trees (the deliver user cannot, it has no `GetObject`):
+**Re-uploading the immutable trees.** `s3 sync` sets headers only on the objects it uploads and
+never re-uploads an unchanged file, so a header or type that is wrong on an object already in the
+bucket stays wrong until the object is uploaded again. Upload the tree from the newsroom's live
+directory, where the CLI guesses each file's content type from its name; the deliver user may do this:
 
 ```sh
-for tree in n a; do
-  aws s3 cp s3://copenhagen-daily-live/$tree/ s3://copenhagen-daily-live/$tree/ --recursive \
-    --metadata-directive REPLACE --cache-control "public, max-age=31536000, immutable" \
-    --profile copenhagen-daily
+for tree in a n; do
+  aws s3 cp publisher/var/evaluation/site/live/$tree/ s3://copenhagen-daily-live/$tree/ --recursive \
+    --cache-control "public, max-age=31536000, immutable" --profile copenhagen-daily-deliver
 done
 ```
 
-The root files are rewritten by every publish and pick the short header up on the next one.
+Never fix such an object with an S3-to-S3 copy and `--metadata-directive REPLACE`: that copy keeps
+no content type and guesses none, so every object it touches becomes `binary/octet-stream`, and a
+browser refuses a stylesheet served that way. This happened on 14 October 2026 and left the site
+unstyled until the trees were uploaded again; `verify-live` now checks the stylesheet's type.
+The root files are rewritten by every publish and pick their short header up on the next one.
 
 ## What remains
 

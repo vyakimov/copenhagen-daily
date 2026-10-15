@@ -27,7 +27,7 @@ class Site:
             "/latest.json": (200, {"x-robots-tag": "noindex, nofollow"}, (live / "latest.json").read_bytes()),
             "/": (200, {}, PAGE),
             f"/n/{EDITION}/manifest.json": (200, {}, MANIFEST),
-            "/a/broadsheet-v3/web.css": (200, {}, b"body{}"),
+            "/a/broadsheet-v3/web.css": (200, {"content-type": "text/css"}, b"body{}"),
         }
         self.pages.update(overrides)
         self.requests: list[str] = []
@@ -83,6 +83,14 @@ def test_a_missing_stylesheet_is_broken_and_fixable_and_a_missing_robots_header_
     report = verify_live(root, "https://example.test", site, today="2026-09-30")
     assert report["state"] == "broken" and report["fixable"] is False
     assert any("robots" in p for p in report["problems"])
+
+
+def test_a_stylesheet_served_with_the_wrong_type_is_broken_and_not_fixable_by_delivering(tmp_path):
+    root = publish_root(tmp_path)
+    site = Site(root, **{"/a/broadsheet-v3/web.css": (200, {"content-type": "binary/octet-stream"}, b"body{}")})
+    report = verify_live(root, "https://example.test", site, today="2026-09-30")
+    assert report["state"] == "broken" and report["fixable"] is False
+    assert any("binary/octet-stream" in p and "re-upload" in p for p in report["problems"])
 
 
 def test_a_delivered_but_old_paper_reports_no_edition_today_or_a_run_in_progress(tmp_path):

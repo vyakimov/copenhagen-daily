@@ -110,11 +110,19 @@ def verify_live(
     stylesheet = re.search(rb'href="(/a/[^"]+\.css)"', page)
     if stylesheet:
         href = stylesheet.group(1).decode("ascii")
-        css_status, _, _ = _get(fetch, f"{site}{href}")
+        css_status, css_headers, _ = _get(fetch, f"{site}{href}")
         check("stylesheet", css_status == 200, None if css_status == 200 else f"{href} returned {css_status}")
         if css_status != 200:
             problems.append(f"the stylesheet {href} is missing from the site")
             return finish("broken", fixable=True)
+        # A browser applies a stylesheet only when it is served as text/css. An object copied in place
+        # on S3 loses its type, and a sync does not re-upload an unchanged file, so this is not fixable
+        # by delivering again: the a/ tree has to be uploaded afresh from the live tree.
+        css_type = css_headers.get("content-type", "").split(";")[0].strip()
+        check("stylesheet_type", css_type == "text/css", None if css_type == "text/css" else f"{href} is served as {css_type or 'no type'}")
+        if css_type != "text/css":
+            problems.append(f"the stylesheet {href} is served as {css_type or 'no type'}, not text/css; re-upload a/ from the live tree (docs/aws-delivery.md)")
+            return finish("broken")
     else:
         check("stylesheet", False, "the front page links no stylesheet")
         problems.append("the front page links no stylesheet")
