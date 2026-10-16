@@ -1,0 +1,649 @@
+{
+  "edition": {
+    "id": "2026-10-16-morning",
+    "number": 11,
+    "name": "Friday edition",
+    "date": "2026-10-16",
+    "cutoff_at": "2026-10-16T03:30:00.000000Z",
+    "checked_from": "2026-10-13T03:30:00.000000Z",
+    "input_id": "export-2026-10-16-0330",
+    "presentation": {
+      "emphasis": "many_stories",
+      "ear_right": "Inside: AI abuse images ruled real, Denmark's EU bill, Andersson voted down"
+    },
+    "note": "Built from headlines and RSS descriptions published between 05:30 on 13 October and 05:30 on 16 October, Copenhagen time. 126 of 132 feeds at 17 publishers polled; all six Washington Post feeds failed."
+  },
+  "stories": [
+    {
+      "id": "hamburg-court-convicts-aarhus-iran-plotters",
+      "role": "lead",
+      "kicker": "Crime",
+      "sources": [
+        837,
+        199,
+        816,
+        745,
+        231,
+        1519
+      ],
+      "headline": "German court jails two men arrested in Aarhus over Iran plot against Jewish leaders",
+      "headline_short": "Men arrested in Aarhus jailed over Iran plot",
+      "deck": "A Danish citizen gets eight and a half years and an Afghan four and a half; they watched two Jewish leaders for Iran.",
+      "extended": [
+        [
+          "Hamburg's highest court on Thursday convicted two men arrested in Denmark of preparing antisemitic attacks in Germany on behalf of Iran. Ali Hassan Sarwari, 54, a Danish citizen of Afghan background, got eight and a half years in prison; Tawab Mohsini, 43, an Afghan citizen, got four and a half.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "tv2",
+            "berlingske"
+          ]
+        ],
+        [
+          "The court found the two had watched Josef Schuster, head of the Central Council of Jews in Germany, and Volker Beck, chairman of the German-Israeli Society. They were convicted of spying for Iran, attempted complicity in murder and aggravated arson. The sentences match the prosecution's demand.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "According to Der Spiegel, a German news magazine, Sarwari had also prepared an arson attack on a kosher grocery in Berlin.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Sarwari was arrested in Aarhus in June 2025 on a German warrant. According to the indictment, seen by Bild, a German newspaper, the two shook hands at a McDonald's in Denmark on a plan to kill Beck.",
+          [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        ],
+        [
+          "'The trial has strikingly shown how Iran exports its terror to Germany,' Beck told Bild. He wants Iran's ambassador expelled at once.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "standard": [
+        [
+          "Hamburg's highest court on Thursday convicted two men arrested in Denmark of preparing antisemitic attacks in Germany on behalf of Iran. Ali Hassan Sarwari, 54, a Danish citizen of Afghan background, got eight and a half years in prison; Tawab Mohsini, 43, an Afghan citizen, got four and a half.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "tv2",
+            "berlingske"
+          ]
+        ],
+        [
+          "The court found the two had watched Josef Schuster, head of the Central Council of Jews in Germany, and Volker Beck, chairman of the German-Israeli Society. They were convicted of spying for Iran, attempted complicity in murder and aggravated arson.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "'The trial has strikingly shown how Iran exports its terror to Germany,' Beck told Bild, a German newspaper.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Hamburg's highest court on Thursday convicted two men arrested in Denmark of preparing antisemitic attacks in Germany on behalf of Iran. Ali Hassan Sarwari, 54, a Danish citizen, got eight and a half years in prison; Tawab Mohsini, 43, an Afghan citizen, got four and a half.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "tv2",
+            "berlingske"
+          ]
+        ]
+      ],
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "The trial has strikingly shown how Iran exports its terror to Germany.",
+          "attribution": "Volker Beck, chairman of the German-Israeli Society",
+          "attribution_source": "kristeligt_dagblad"
+        }
+      ]
+    },
+    {
+      "id": "supreme-court-ai-abuse-images-real",
+      "role": "secondary",
+      "kicker": "Justice",
+      "sources": [
+        875,
+        880,
+        981,
+        765,
+        869
+      ],
+      "headline": "Supreme Court rules AI images of child abuse are punishable as real ones",
+      "headline_short": "AI abuse images punished as real",
+      "deck": "A man who admitted making 36,209 such images must serve one year and six months in prison.",
+      "standard": [
+        [
+          "AI-generated images of child sexual abuse are as illegal and punishable as real ones, the Supreme Court ruled on Thursday. It upheld a prison term of one year and six months, none of it suspended, for a 31-year-old man from Randers, a town in Jutland, who admitted making 36,209 images with artificial intelligence and spreading them online.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske",
+            "jp"
+          ]
+        ],
+        [
+          "His lawyer had argued that the criminal code's ban on 'depictions or the like of persons under 18' does not cover AI images of people who appear to be children.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "It is the first such case to reach the Supreme Court. Red Barnet, a children's rights organisation, welcomed the ruling.",
+          [
+            "tv2",
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "AI-generated images of child sexual abuse are as punishable as real ones, the Supreme Court ruled on Thursday. It upheld a prison term of one year and six months for a man from Randers, a town in Jutland, who made 36,209 such images.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "jp"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "eu-summit-costa-new-budget-draft",
+      "role": "secondary",
+      "kicker": "Europe",
+      "sources": [
+        194,
+        935,
+        1121,
+        1059,
+        169,
+        854
+      ],
+      "headline": "EU's president will redraft the budget after leaders split over its size",
+      "headline_short": "New EU budget draft coming",
+      "deck": "Denmark is among six countries that want the Irish proposal cut; it would add 12.7 billion kroner a year to Denmark's bill.",
+      "standard": [
+        [
+          "António Costa, president of the European Council, concluded at Thursday's summit in Brussels that he must present a new draft of the EU budget. Ireland, which holds the EU presidency, presented its proposal less than a week earlier, on Saturday. An EU diplomat expects the new draft within weeks.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ],
+        [
+          "Six countries, Denmark among them, want the Irish plan cut sharply and more spent on defence and competitiveness. Seventeen mainly southern and eastern members want a large budget that protects farm and regional aid. The Finance Ministry estimates the plan would raise Denmark's contribution by 12.7 billion kroner a year. Several EU diplomats say a deal can still be reached before Christmas.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "António Costa, president of the European Council, will present a new EU budget draft after Thursday's summit showed deep division. Denmark is among six countries that want the Irish proposal cut; the Finance Ministry estimates it would raise Denmark's contribution by 12.7 billion kroner a year.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "nordea-q3-buyback-paused",
+      "role": "secondary",
+      "kicker": "Business",
+      "sources": [
+        804,
+        726,
+        961,
+        1083,
+        1161
+      ],
+      "headline": "Nordea shares fall more than 7 per cent after the bank pauses its buyback",
+      "headline_short": "Nordea pauses its share buyback",
+      "deck": "Quarterly results were roughly as forecast; the bank is waiting for the European Central Bank to settle how it measures risk, which is not expected until 2027.",
+      "standard": [
+        [
+          "Shares in Nordea, the Nordic region's largest bank, were down 7.3 per cent at 12:50 on Thursday, the worst in C25, Denmark's leading share index, after the bank paused a share buyback that investors had expected. Third-quarter profit fell to 1,181 million euros; that and revenue of 2,968 million euros were roughly what analysts had forecast.",
+          [
+            "kristeligt_dagblad",
+            "borsen",
+            "jp",
+            "dr"
+          ]
+        ],
+        [
+          "Nordea is waiting for the European Central Bank to settle how it should measure its risks, an answer not expected until 2027. Børsen says the buyback would have been worth about 500 million euros.",
+          [
+            "kristeligt_dagblad",
+            "borsen"
+          ]
+        ],
+        [
+          "Berlingske puts the cost to shareholders at 28.2 billion kroner. Other banks' shares also fell, but by less.",
+          [
+            "berlingske",
+            "jp"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Shares in Nordea, the Nordic region's largest bank, were down 7.3 per cent at 12:50 on Thursday after it paused an expected share buyback. It is waiting for the European Central Bank to settle how it should measure its risks, an answer not expected until 2027.",
+          [
+            "kristeligt_dagblad",
+            "jp"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "riksdag-votes-down-andersson",
+      "role": "secondary",
+      "kicker": "Nordics",
+      "sources": [
+        818,
+        796,
+        832,
+        813
+      ],
+      "headline": "Sweden's parliament votes down Magdalena Andersson as prime minister",
+      "headline_short": "Sweden's parliament rejects Andersson",
+      "deck": "Every party but her Social Democrats voted no; the speaker has hinted that Ulf Kristersson may be next to try.",
+      "standard": [
+        [
+          "The Riksdag, Sweden's parliament, rejected Magdalena Andersson, the Social Democrats' leader, as prime minister on Thursday; every party but hers voted no. It was the first such vote since the election on 13 September, which gave the red-green parties a narrow majority. Up to four votes may be held before a fresh election.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske",
+            "politiken"
+          ]
+        ],
+        [
+          "Andersson called the result 'entirely expected' and said it would take 'a number of' votes. Vänsterpartiet, a left-wing party, will back only a government it sits in; the Centre Party will not work with one that includes Vänsterpartiet.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "The speaker, Andreas Norlén, will now consult party leaders and has hinted that Ulf Kristersson, the sitting prime minister, may be next to try.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "The Riksdag, Sweden's parliament, rejected Magdalena Andersson, the Social Democrats' leader, as prime minister on Thursday; every party but hers voted no. The speaker, Andreas Norlén, has hinted that Ulf Kristersson, the sitting prime minister, may be next to try.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "berlingske"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "ukraine-resumes-refinery-strikes-ryazan",
+      "role": "secondary",
+      "kicker": "World",
+      "sources": [
+        1160,
+        1066,
+        1147,
+        379,
+        860,
+        914,
+        12,
+        136,
+        349
+      ],
+      "headline": "Ukraine resumes strikes on Russia's oil refineries, defying Trump",
+      "headline_short": "Ukraine resumes refinery strikes",
+      "deck": "A Ukrainian drone attack set fire to a refinery in Russia's Ryazan region on Thursday, days after Donald Trump declared an energy ceasefire.",
+      "standard": [
+        [
+          "Ukraine will resume attacks on Russia's oil refineries, Volodymyr Zelensky, its president, told the Financial Times: 'The restriction is lifted. Now it is over.' On Thursday a Ukrainian drone attack set fire to a refinery in Russia's Ryazan region, said Pavel Malkov, the region's governor. The refinery belongs to the oil giant Rosneft and helps supply Moscow with fuel.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "ft",
+            "nytimes",
+            "bbc",
+            "wsj"
+          ]
+        ],
+        [
+          "Donald Trump said on Sunday that Russia and Ukraine had agreed to stop attacking each other's energy sites. Zelensky says he learned of it from the media and paused strikes for three days while Russia kept bombing Ukrainian energy plants. He says the US threatened to cut off intelligence if Ukraine did not stop.",
+          [
+            "kristeligt_dagblad",
+            "ft"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Ukraine will resume attacks on Russia's oil refineries, Volodymyr Zelensky, its president, said, days after Donald Trump declared an energy ceasefire. On Thursday a Ukrainian drone attack set fire to a refinery in Russia's Ryazan region, the region's governor said.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "bbc"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "menapt-naturalised-citizens-crime-22-percent",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        830,
+        1302
+      ],
+      "headline": "22 per cent of new citizens from MENAPT countries have since committed crimes",
+      "lede": [
+        "Of the people from MENAPT countries, meaning the Middle East, North Africa, Pakistan and Turkey, granted Danish citizenship since 2015, 22 per cent have since committed crimes, and several parties are worried.",
+        [
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "obsidian-media-fake-tests-fine",
+      "role": "brief",
+      "kicker": "Business",
+      "sources": [
+        1102,
+        1070,
+        836,
+        1078,
+        1030
+      ],
+      "headline": "Marketing firm fined 400,000 kroner for fake product tests",
+      "lede": [
+        "Obsidian Media, an Aarhus marketing firm, will pay a fine of 400,000 kroner for five websites that posed as independent product tests but tested nothing and hid paid links, the Consumer Ombudsman says.",
+        [
+          "kristeligt_dagblad",
+          "jp",
+          "borsen"
+        ]
+      ]
+    },
+    {
+      "id": "bakken-girl-falls-from-polyppen",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        537,
+        505,
+        497,
+        486
+      ],
+      "headline": "Eight-year-old girl in hospital after falling from a ride at Bakken",
+      "lede": [
+        "An eight-year-old girl fell from a ride at Bakken, an amusement park north of Copenhagen, on Wednesday afternoon; she is in hospital but out of danger, and the ride is closed pending an investigation.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "berlingske",
+          "tv2"
+        ]
+      ]
+    },
+    {
+      "id": "risskov-19-year-old-remanded",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        1019,
+        794,
+        695,
+        1686
+      ],
+      "headline": "19-year-old remanded over two attempted rapes in Aarhus",
+      "lede": [
+        "A 19-year-old man previously convicted of attacks on women was remanded in custody on Thursday over two attempted rapes in Risskov, in Aarhus, after a DNA match; he pleads not guilty.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "dr",
+          "tv2"
+        ]
+      ]
+    },
+    {
+      "id": "christian-slater-dogme-25-dyrholm",
+      "role": "brief",
+      "kicker": "Culture",
+      "sources": [
+        1047,
+        1042,
+        956,
+        1035
+      ],
+      "headline": "Christian Slater joins Denmark's new Dogme wave",
+      "lede": [
+        "Christian Slater, the Hollywood actor, will star opposite Trine Dyrholm, a Danish actor, in 'Intime hændelser', the second film of Denmark's new Dogme 25 wave, due in cinemas in 2027.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "jp"
+        ]
+      ]
+    },
+    {
+      "id": "enhedslisten-youth-transport-guarantee",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        929,
+        848
+      ],
+      "headline": "Far-left party wants guaranteed buses to upper-secondary schools",
+      "lede": [
+        "Enhedslisten, a far-left party that backs the government, wants the budget talks to guarantee bus and train routes between all young people and upper-secondary schools.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "lidegaard-messerschmidt-libel-ruling-due",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        8,
+        6,
+        514
+      ],
+      "headline": "Court rules on Friday in defamation case between two Danish party leaders",
+      "lede": [
+        "A court rules on Friday whether Martin Lidegaard, leader of Radikale Venstre, a social-liberal party, defamed Morten Messerschmidt, a fellow party leader, by linking him to deporting people over faith or skin colour.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "borsen"
+        ]
+      ]
+    },
+    {
+      "id": "pig-stop-farmers-threaten-lawsuits",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        1271,
+        1225,
+        1273,
+        780
+      ],
+      "headline": "Farm lobby threatens lawsuits over halt on new pig farms",
+      "lede": [
+        "Landbrug & Fødevarer, a farming and food industry association, says the government's one-year halt on permits for new or bigger conventional pig farms lacks legal basis and would lead to lawsuits for damages.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "via_ritzau"
+        ]
+      ]
+    },
+    {
+      "id": "greenland-parliament-deep-sea-mining-ban",
+      "role": "brief",
+      "kicker": "Politics",
+      "sources": [
+        84,
+        78
+      ],
+      "headline": "Greenland's parliament votes for a ban on deep-sea mining",
+      "lede": [
+        "Every member present in Inatsisartut, Greenland's parliament, voted on Thursday to have its government draft a ban on deep-sea mining lasting until 31 December 2029, with two-year extensions possible.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "hans-tavsens-park-1000-skeletons",
+      "role": "brief",
+      "kicker": "Copenhagen",
+      "sources": [
+        401,
+        469,
+        387
+      ],
+      "headline": "Archaeologists dig up more than 1,000 skeletons in a Copenhagen park",
+      "lede": [
+        "Archaeologists from the Museum of Copenhagen have excavated more than 1,000 graves in Hans Tavsens Park, once a cemetery for the poor in Copenhagen's Nørrebro district, as it is rebuilt to collect storm water.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "denmark-team-pursuit-fourth-world-title",
+      "role": "brief",
+      "kicker": "Sport",
+      "sources": [
+        876,
+        857
+      ],
+      "headline": "Denmark wins the team pursuit world title for a fourth year running",
+      "lede": [
+        "Denmark's track cycling team won world championship gold in the 4,000-metre team pursuit on Thursday, beating Italy in the final for its fourth title in a row.",
+        [
+          "dr",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "haslev-farmhouse-fire-death",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        3,
+        1
+      ],
+      "headline": "Police believe a person died in a farmhouse fire in south Zealand",
+      "lede": [
+        "Police believe a person died when a farmhouse caught fire overnight in Haslev, in south Zealand; they were called at 02:42 and will investigate the cause.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "bo-johansson-dies-83",
+      "role": "brief",
+      "kicker": "Obituary",
+      "sources": [
+        1144,
+        1112,
+        856
+      ],
+      "headline": "Bo Johansson, Denmark's former football coach, dies at 83",
+      "lede": [
+        "Bo 'Bosse' Johansson, the Swede who coached Denmark's men's football team from 1996 to 2000 and led it to its best World Cup result, has died aged 83.",
+        [
+          "dr",
+          "berlingske",
+          "politiken"
+        ]
+      ]
+    },
+    {
+      "id": "trump-calls-ukraine-strikes-disgrace",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        26,
+        21
+      ],
+      "headline": "Trump calls Ukraine's strikes on Russian oil refineries a disgrace",
+      "lede": [
+        "Donald Trump told Newsmax, a television channel, that Ukraine's renewed strikes on Russian oil refineries are 'a disgrace' and push up global energy prices.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "starshield-throttle-order-white-house",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        56,
+        51
+      ],
+      "headline": "Officials say order to slow Ukraine's satellite link came from the White House",
+      "lede": [
+        "An order to slow Ukraine's use of Starshield, SpaceX's military satellite service, came from the White House, three officials say; a senior US official said the president made no such request.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "bend-oregon-school-shooting",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        97,
+        42,
+        45,
+        37,
+        7,
+        30,
+        27,
+        32
+      ],
+      "headline": "Teenager kills three children and a teacher at Oregon school",
+      "lede": [
+        "A 16-year-old killed three children, aged five, eight and 11, and a teacher at Silver Rail Elementary School in Bend, Oregon, on Thursday before a local resident shot him dead.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "guardian",
+          "bbc"
+        ]
+      ]
+    }
+  ]
+}

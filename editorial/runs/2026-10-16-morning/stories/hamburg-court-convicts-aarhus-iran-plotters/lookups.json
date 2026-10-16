@@ -1,0 +1,22 @@
+[
+ {
+  "requested": "Der Spiegel",
+  "status": "found",
+  "title": "Der Spiegel",
+  "extract": "Der Spiegel is a German weekly news magazine published in Hamburg. With a weekly circulation of about 724,000 copies in 2022, it is one of the largest such publications in Europe. It was founded in 1947 by John Seymour Chaloner, a British army officer, and Rudolf Augstein, a former Wehrmacht radio operator who was recognized in 2000 by the International Press Institute as one of the fifty World Press Freedom Heroes.",
+  "url": "https://en.wikipedia.org/wiki/Der_Spiegel",
+  "type": "standard",
+  "fetched_at": "2026-10-16T03:38:30.487600Z",
+  "term": "Der Spiegel",
+  "definition": "a German news magazine"
+ },
+ {
+  "requested": "Bild (newspaper)",
+  "status": "missing",
+  "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Bild_%28newspaper%29",
+  "http_status": 404,
+  "fetched_at": "2026-10-16T03:42:03.701338Z",
+  "term": "Bild",
+  "definition": "a German newspaper"
+ }
+]

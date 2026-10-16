@@ -1,0 +1,24 @@
+[
+ {
+  "requested": "Riksdag",
+  "status": "found",
+  "title": "Riksdag",
+  "extract": "The Riksdag is the parliament and the supreme decision-making body of the Kingdom of Sweden. Since 1971, the Riksdag has been a unicameral parliament with 349 members, elected proportionally and since 1994, serving fixed four-year terms. The 2026 Swedish general election is the most recent general election.",
+  "url": "https://en.wikipedia.org/wiki/Riksdag",
+  "type": "standard",
+  "fetched_at": "2026-10-16T03:38:31.351803Z",
+  "term": "Riksdag",
+  "definition": "Sweden's parliament"
+ },
+ {
+  "requested": "Left Party (Sweden)",
+  "status": "found",
+  "title": "Left Party (Sweden)",
+  "extract": "The Left Party is a socialist political party in Sweden. On economic issues, the party opposes privatisation and advocates for increased public expenditures. In foreign policy, the party is Eurosceptic, being critical of the European Union, NATO, and opposing Sweden's entry into the eurozone. It attempted to get Sweden to join the Non-Aligned Movement in 1980, but did not succeed. The party is eco-socialist and supports republicanism. It stands on the left wing of the political spectrum.",
+  "url": "https://en.wikipedia.org/wiki/Left_Party_(Sweden)",
+  "type": "standard",
+  "fetched_at": "2026-10-16T03:38:31.670253Z",
+  "term": "Vänsterpartiet",
+  "definition": "a left-wing party"
+ }
+]

@@ -1,0 +1,50 @@
+{
+ "headline": "Sweden's parliament votes down Magdalena Andersson as prime minister",
+ "headline_short": "Sweden's parliament rejects Andersson",
+ "deck": "Every party but her Social Democrats voted no; the speaker has hinted that Ulf Kristersson may be next to try.",
+ "standard": [
+  [
+   "The Riksdag, Sweden's parliament, rejected Magdalena Andersson, the Social Democrats' leader, as prime minister on Thursday; every party but hers voted no. It was the first such vote since the election on 13 September, which gave the red-green parties a narrow majority. Up to four votes may be held before a fresh election.",
+   [
+    "kristeligt_dagblad",
+    "dr",
+    "berlingske",
+    "politiken"
+   ]
+  ],
+  [
+   "Andersson called the result 'entirely expected' and said it would take 'a number of' votes. Vänsterpartiet, a left-wing party, will back only a government it sits in; the Centre Party will not work with one that includes Vänsterpartiet.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "The speaker, Andreas Norlén, will now consult party leaders and has hinted that Ulf Kristersson, the sitting prime minister, may be next to try.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "The Riksdag, Sweden's parliament, rejected Magdalena Andersson, the Social Democrats' leader, as prime minister on Thursday; every party but hers voted no. The speaker, Andreas Norlén, has hinted that Ulf Kristersson, the sitting prime minister, may be next to try.",
+   [
+    "kristeligt_dagblad",
+    "dr",
+    "berlingske"
+   ]
+  ]
+ ],
+ "definitions": [
+  {
+   "term": "Riksdag",
+   "definition": "Sweden's parliament",
+   "wikipedia": "Riksdag"
+  },
+  {
+   "term": "Vänsterpartiet",
+   "definition": "a left-wing party",
+   "wikipedia": "Left Party (Sweden)"
+  }
+ ]
+}

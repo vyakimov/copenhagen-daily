@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-10-16-morning",
+  "send_back": [],
+  "fallen": [],
+  "stories": {},
+  "strikes": [
+    {
+      "story": "hamburg-court-convicts-aarhus-iran-plotters",
+      "location": "extended[3]",
+      "sentence": 1,
+      "verdict": "unsupported",
+      "reason": "The evidence identifies Bild as a German media outlet, but does not identify it as a newspaper; no reference row supports that added description.",
+      "cites": [
+        "kristeligt_dagblad",
+        "dr"
+      ]
+    },
+    {
+      "story": "hamburg-court-convicts-aarhus-iran-plotters",
+      "location": "standard[2]",
+      "sentence": 0,
+      "verdict": "unsupported",
+      "reason": "The quotation and attribution to Bild are supported, but the added description of Bild as a German newspaper has no supporting evidence or reference row.",
+      "cites": [
+        "kristeligt_dagblad"
+      ]
+    },
+    {
+      "story": "ukraine-resumes-refinery-strikes-ryazan",
+      "location": "standard[0]",
+      "sentence": 3,
+      "verdict": "unsupported",
+      "reason": "The evidence identifies Rosneft as helping supply Moscow with fuel; it does not establish that this particular refinery supplies Moscow.",
+      "cites": [
+        "kristeligt_dagblad"
+      ]
+    }
+  ]
+}

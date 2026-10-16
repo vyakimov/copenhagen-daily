@@ -1,0 +1,95 @@
+{
+ "headline": "German court jails two men arrested in Aarhus over Iran plot against Jewish leaders",
+ "headline_short": "Men arrested in Aarhus jailed over Iran plot",
+ "deck": "A Danish citizen gets eight and a half years and an Afghan four and a half; they watched two Jewish leaders for Iran.",
+ "extended": [
+  [
+   "Hamburg's highest court on Thursday convicted two men arrested in Denmark of preparing antisemitic attacks in Germany on behalf of Iran. Ali Hassan Sarwari, 54, a Danish citizen of Afghan background, got eight and a half years in prison; Tawab Mohsini, 43, an Afghan citizen, got four and a half.",
+   [
+    "kristeligt_dagblad",
+    "dr",
+    "tv2",
+    "berlingske"
+   ]
+  ],
+  [
+   "The court found the two had watched Josef Schuster, head of the Central Council of Jews in Germany, and Volker Beck, chairman of the German-Israeli Society. They were convicted of spying for Iran, attempted complicity in murder and aggravated arson. The sentences match the prosecution's demand.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "According to Der Spiegel, a German news magazine, Sarwari had also prepared an arson attack on a kosher grocery in Berlin.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "Sarwari was arrested in Aarhus in June 2025 on a German warrant. According to the indictment, seen by Bild, a German newspaper, the two shook hands at a McDonald's in Denmark on a plan to kill Beck.",
+   [
+    "kristeligt_dagblad",
+    "dr"
+   ]
+  ],
+  [
+   "'The trial has strikingly shown how Iran exports its terror to Germany,' Beck told Bild. He wants Iran's ambassador expelled at once.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "standard": [
+  [
+   "Hamburg's highest court on Thursday convicted two men arrested in Denmark of preparing antisemitic attacks in Germany on behalf of Iran. Ali Hassan Sarwari, 54, a Danish citizen of Afghan background, got eight and a half years in prison; Tawab Mohsini, 43, an Afghan citizen, got four and a half.",
+   [
+    "kristeligt_dagblad",
+    "dr",
+    "tv2",
+    "berlingske"
+   ]
+  ],
+  [
+   "The court found the two had watched Josef Schuster, head of the Central Council of Jews in Germany, and Volker Beck, chairman of the German-Israeli Society. They were convicted of spying for Iran, attempted complicity in murder and aggravated arson.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "'The trial has strikingly shown how Iran exports its terror to Germany,' Beck told Bild, a German newspaper.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "Hamburg's highest court on Thursday convicted two men arrested in Denmark of preparing antisemitic attacks in Germany on behalf of Iran. Ali Hassan Sarwari, 54, a Danish citizen, got eight and a half years in prison; Tawab Mohsini, 43, an Afghan citizen, got four and a half.",
+   [
+    "kristeligt_dagblad",
+    "dr",
+    "tv2",
+    "berlingske"
+   ]
+  ]
+ ],
+ "callouts": [
+  {
+   "kind": "quote",
+   "text": "The trial has strikingly shown how Iran exports its terror to Germany.",
+   "attribution": "Volker Beck, chairman of the German-Israeli Society",
+   "attribution_source": "kristeligt_dagblad"
+  }
+ ],
+ "definitions": [
+  {
+   "term": "Der Spiegel",
+   "definition": "a German news magazine",
+   "wikipedia": "Der Spiegel"
+  },
+  {
+   "term": "Bild",
+   "definition": "a German newspaper",
+   "wikipedia": "Bild (newspaper)"
+  }
+ ]
+}
