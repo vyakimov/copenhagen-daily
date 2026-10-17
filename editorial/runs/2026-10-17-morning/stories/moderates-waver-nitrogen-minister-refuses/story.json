@@ -1,0 +1,49 @@
+{
+ "headline": "Minister refuses to let a calculation error delay Denmark's new limits on farm fertiliser",
+ "headline_short": "Minister holds to fertiliser deadline",
+ "deck": "The Moderates, his partners in government, had said the start date might have to be revisited.",
+ "standard": [
+  [
+   "Christian Rabjerg Madsen, the minister for nature and animal welfare, will not let a calculation error at Aarhus University delay stricter limits on farm fertiliser, due from 1 January 2027. 'The consequence of waiting is simply more oxygen depletion, more algal slime and more dead fish,' he told Ritzau, the Danish news agency, on Friday.",
+   [
+    "kristeligt_dagblad",
+    "berlingske"
+   ]
+  ],
+  [
+   "His government partners, the Moderates, a liberal party founded by Lars Løkke Rasmussen, a former prime minister, had said the start date might be revisited. The university admitted the errors after several inquiries from Seges, a farming think tank. SF, a left-wing party also in government, opposes any delay.",
+   [
+    "kristeligt_dagblad",
+    "berlingske",
+    "borsen"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "Christian Rabjerg Madsen, the minister for nature and animal welfare, will not let a calculation error at Aarhus University delay stricter limits on farm fertiliser, due from 1 January 2027. The Moderates, a liberal party founded by Lars Løkke Rasmussen, a former prime minister, had said the date might be revisited.",
+   [
+    "kristeligt_dagblad",
+    "berlingske",
+    "borsen"
+   ]
+  ]
+ ],
+ "definitions": [
+  {
+   "term": "the Moderates",
+   "definition": "a liberal party founded by Lars Løkke Rasmussen, a former prime minister",
+   "wikipedia": "Moderates (Denmark)"
+  },
+  {
+   "term": "SF",
+   "definition": "a left-wing party",
+   "wikipedia": "Green Left (Denmark)"
+  },
+  {
+   "term": "Ritzau",
+   "definition": "the Danish news agency",
+   "wikipedia": "Ritzau"
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+[
+ {
+  "requested": "Copenhagen Airport",
+  "status": "found",
+  "title": "Copenhagen Airport",
+  "extract": "Copenhagen Airport is an international airport serving Copenhagen, the capital of Denmark, as well as the wider Øresund Region, including Zealand, Malmö, and the southern Swedish province of Scania as a whole. It is the largest airport in the Nordic countries.",
+  "url": "https://en.wikipedia.org/wiki/Copenhagen_Airport",
+  "type": "standard",
+  "fetched_at": "2026-10-17T03:37:21.038870Z",
+  "term": "Copenhagen Airports",
+  "definition": "the company that runs Copenhagen Airport"
+ }
+]

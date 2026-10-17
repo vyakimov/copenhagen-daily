@@ -1,0 +1,57 @@
+[
+ {
+  "requested": "Danish Social Liberal Party",
+  "status": "found",
+  "title": "Danish Social Liberal Party",
+  "extract": "The Danish Social Liberal Party is a social-liberal and green-liberal political party in Denmark. The party was founded as a split from the Venstre Reform Party in 1905. Historically, the centrist to centre-left party has played a central role in Danish politics and has supported governments on both sides of the political spectrum, as co-operation is a primary belief of the party. A pro-European party, it is a member of Liberal International and the ALDE, and has one MEP in the Renew Europe group in the European Parliament.",
+  "url": "https://en.wikipedia.org/wiki/Danish_Social_Liberal_Party",
+  "type": "standard",
+  "fetched_at": "2026-10-17T03:37:18.741911Z",
+  "term": "Radikale Venstre",
+  "definition": "a social-liberal party"
+ },
+ {
+  "requested": "Danish People's Party",
+  "status": "found",
+  "title": "Danish People's Party",
+  "extract": "The Danish People's Party is a nationalist and right-wing populist political party in Denmark. It was formed in 1995 by former members of the Progress Party (FrP). The party saw a period of significant growth after its founding and lent its support to the Venstre–Conservative People's Party coalition government that ruled from the 2001 Danish general election until the defeat in the 2011 Danish general election.",
+  "url": "https://en.wikipedia.org/wiki/Danish_People's_Party",
+  "type": "standard",
+  "fetched_at": "2026-10-17T03:37:18.881553Z",
+  "term": "Dansk Folkeparti",
+  "definition": "a nationalist party"
+ },
+ {
+  "requested": "Randers",
+  "status": "found",
+  "title": "Randers",
+  "extract": "Randers is a city in northeast of the Jutland peninsula. It is Denmark's 7th largest city, with a population of 64,764. Randers is the main town and administration center of the Randers Municipality. By road it is 38.5 kilometres (23.9 mi) north of Aarhus, 43.8 kilometres (27.2 mi) east of Viborg, and 224 kilometres (139 mi) northwest of Copenhagen.",
+  "url": "https://en.wikipedia.org/wiki/Randers",
+  "type": "standard",
+  "fetched_at": "2026-10-17T03:37:18.933227Z",
+  "term": "Randers",
+  "definition": "a city in Jutland"
+ },
+ {
+  "requested": "Weekendavisen",
+  "status": "found",
+  "title": "Weekendavisen",
+  "extract": "Weekendavisen is a Danish weekly broadsheet newspaper published on Fridays in Denmark. Its circulation is approximately 60,000 copies, about ten per cent of which cover subscriptions outside Denmark. According to opinion polls, however, the actual number of readers is much higher.",
+  "url": "https://en.wikipedia.org/wiki/Weekendavisen",
+  "type": "standard",
+  "fetched_at": "2026-10-17T03:37:19.097546Z",
+  "term": "Weekendavisen",
+  "definition": "a weekly newspaper"
+ },
+ {
+  "requested": "Folketing",
+  "status": "found",
+  "title": "Folketing",
+  "extract": "The Folketing, also known as the Parliament of Denmark or the Danish Parliament in English, is the unicameral national legislature (parliament) of the Kingdom of Denmark — Denmark proper together with the Faroe Islands and Greenland. Established in 1849, the Folketing was the lower house of the bicameral parliament called the Rigsdag until 1953; the upper house was the Landsting.",
+  "url": "https://en.wikipedia.org/wiki/Folketing",
+  "type": "standard",
+  "fetched_at": "2026-10-17T03:37:19.256264Z",
+  "term": "Folketing",
+  "definition": "Denmark's parliament"
+ }
+]

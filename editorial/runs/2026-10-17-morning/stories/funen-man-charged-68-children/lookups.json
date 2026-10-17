@@ -1,0 +1,24 @@
+[
+ {
+  "requested": "Funen",
+  "status": "found",
+  "title": "Funen",
+  "extract": "Funen is the third-largest island of Denmark, after Zealand and Vendsyssel-Thy, with an area of 3,099.7 square kilometres (1,196.8 sq mi). It is the 165th-largest island in the world. It is located in the central part of the country and has a population of 469,947 as of 2020. Funen's main city is Odense, which is connected to the sea by a rarely-used canal. The city's shipyard, Odense Steel Shipyard, has been relocated outside Odense proper.",
+  "url": "https://en.wikipedia.org/wiki/Funen",
+  "type": "standard",
+  "fetched_at": "2026-10-17T03:37:19.784393Z",
+  "term": "Funen",
+  "definition": "a Danish island"
+ },
+ {
+  "requested": "Svendborg",
+  "status": "found",
+  "title": "Svendborg",
+  "extract": "Svendborg is a town on the island of Funen in south-central Denmark, and the seat of Svendborg Municipality. With a population of 27,593, Svendborg is Funen's second largest city. In 2000 Svendborg was declared \"Town of the year\" in Denmark, and in 2003 it celebrated its 750th anniversary as a market town. By road, Svendborg is located 195 kilometres (121 mi) southwest of Copenhagen, 183 kilometres (114 mi) south of Aarhus, 44.2 kilometres (27.5 mi) south of Odense, and 28.5 kilometres (17.7 mi) east of Faaborg.",
+  "url": "https://en.wikipedia.org/wiki/Svendborg",
+  "type": "standard",
+  "fetched_at": "2026-10-17T03:37:19.942231Z",
+  "term": "Svendborg",
+  "definition": "a town on Funen"
+ }
+]

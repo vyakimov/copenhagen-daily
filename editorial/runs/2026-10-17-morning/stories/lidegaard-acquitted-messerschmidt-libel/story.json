@@ -1,0 +1,109 @@
+{
+ "headline": "Danish minister cleared of libelling nationalist party leader",
+ "headline_short": "Minister cleared of libel",
+ "deck": "Martin Lidegaard said Morten Messerschmidt wanted to deport people for their faith or skin colour; Messerschmidt will not appeal.",
+ "extended": [
+  [
+   "Frederiksberg District Court on Friday acquitted Martin Lidegaard, leader of Radikale Venstre, a social-liberal party, of libelling Morten Messerschmidt, leader of Dansk Folkeparti, a nationalist party. Messerschmidt will not appeal. He must pay Lidegaard 93,750 kroner in costs, which Dansk Folkeparti will cover.",
+   [
+    "kristeligt_dagblad",
+    "altinget",
+    "berlingske",
+    "jp"
+   ]
+  ],
+  [
+   "Messerschmidt sued over three statements made at a debate in Randers, a city in Jutland, on 10 November 2025. Among them was Lidegaard's claim that 'one wants to intern and deport thousands of fellow citizens, just because they have a different faith or a different skin colour from most of us'. Lidegaard was responding to an interview in Weekendavisen, a weekly newspaper, in which Messerschmidt spoke of expelling criminal foreigners and those who cannot support themselves.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "The court found the remarks capable of harming Messerschmidt's honour but backed by a sufficient factual basis. As a member of the Folketing, Denmark's parliament, Lidegaard has 'particularly far-reaching freedom of expression'; Messerschmidt, as a politician, must 'show a higher degree of tolerance'.",
+   [
+    "kristeligt_dagblad",
+    "dr",
+    "jp",
+    "borsen"
+   ]
+  ],
+  [
+   "Lidegaard, who is also minister for business and competitiveness, called the ruling 'a completely unequivocal decision'. Messerschmidt said 'the truth has suffered a defeat'.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ]
+ ],
+ "standard": [
+  [
+   "Frederiksberg District Court on Friday acquitted Martin Lidegaard, leader of Radikale Venstre, a social-liberal party, of libelling Morten Messerschmidt, leader of Dansk Folkeparti, a nationalist party. Messerschmidt will not appeal and must pay 93,750 kroner in costs.",
+   [
+    "kristeligt_dagblad",
+    "altinget",
+    "berlingske",
+    "jp"
+   ]
+  ],
+  [
+   "At a debate in Randers, a city in Jutland, on 10 November 2025, Lidegaard said that 'one wants to intern and deport thousands of fellow citizens, just because they have a different faith or a different skin colour from most of us'.",
+   [
+    "kristeligt_dagblad"
+   ]
+  ],
+  [
+   "The court found a sufficient factual basis for the remarks. As a member of the Folketing, Denmark's parliament, Lidegaard has 'particularly far-reaching freedom of expression', and Messerschmidt must 'show a higher degree of tolerance'.",
+   [
+    "kristeligt_dagblad",
+    "dr",
+    "jp",
+    "borsen"
+   ]
+  ]
+ ],
+ "short": [
+  [
+   "Frederiksberg District Court on Friday acquitted Martin Lidegaard, leader of Radikale Venstre, a social-liberal party, of libelling Morten Messerschmidt, leader of Dansk Folkeparti, a nationalist party, over remarks at a debate last November. Messerschmidt will not appeal and must pay 93,750 kroner in costs.",
+   [
+    "kristeligt_dagblad",
+    "altinget",
+    "berlingske",
+    "dr"
+   ]
+  ]
+ ],
+ "callouts": [
+  {
+   "kind": "quote",
+   "text": "It is a completely unequivocal decision.",
+   "attribution": "Martin Lidegaard, leader of Radikale Venstre",
+   "attribution_source": "kristeligt_dagblad"
+  }
+ ],
+ "definitions": [
+  {
+   "term": "Radikale Venstre",
+   "definition": "a social-liberal party",
+   "wikipedia": "Danish Social Liberal Party"
+  },
+  {
+   "term": "Dansk Folkeparti",
+   "definition": "a nationalist party",
+   "wikipedia": "Danish People's Party"
+  },
+  {
+   "term": "Randers",
+   "definition": "a city in Jutland",
+   "wikipedia": "Randers"
+  },
+  {
+   "term": "Weekendavisen",
+   "definition": "a weekly newspaper",
+   "wikipedia": "Weekendavisen"
+  },
+  {
+   "term": "Folketing",
+   "definition": "Denmark's parliament",
+   "wikipedia": "Folketing"
+  }
+ ]
+}

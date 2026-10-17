@@ -1,0 +1,645 @@
+{
+  "edition": {
+    "id": "2026-10-17-morning",
+    "number": 12,
+    "name": "Saturday edition",
+    "date": "2026-10-17",
+    "cutoff_at": "2026-10-17T03:30:00.000000Z",
+    "checked_from": "2026-10-14T03:30:00.000000Z",
+    "input_id": "export-2026-10-17-0330",
+    "presentation": {
+      "emphasis": "many_stories",
+      "ear_right": "Inside: Trump eases Russia sanctions, the oldest Dane's Nazi past, 68 children groomed"
+    },
+    "note": "Built from headlines and RSS descriptions published between 05:30 on 14 October and 05:30 on 17 October, 3,563 articles in all. 126 of 132 feeds at 17 publishers polled; the Washington Post's six feeds failed."
+  },
+  "stories": [
+    {
+      "id": "lidegaard-acquitted-messerschmidt-libel",
+      "role": "lead",
+      "kicker": "Politics",
+      "sources": [
+        652,
+        675,
+        636,
+        649,
+        654,
+        689,
+        541,
+        444,
+        416,
+        594
+      ],
+      "headline": "Danish minister cleared of libelling nationalist party leader",
+      "headline_short": "Minister cleared of libel",
+      "deck": "Martin Lidegaard said Morten Messerschmidt wanted to deport people for their faith or skin colour; Messerschmidt will not appeal.",
+      "extended": [
+        [
+          "Frederiksberg District Court on Friday acquitted Martin Lidegaard, leader of Radikale Venstre, a social-liberal party, of libelling Morten Messerschmidt, leader of Dansk Folkeparti, a nationalist party. Messerschmidt will not appeal. He must pay Lidegaard 93,750 kroner in costs, which Dansk Folkeparti will cover.",
+          [
+            "kristeligt_dagblad",
+            "altinget",
+            "berlingske",
+            "jp"
+          ]
+        ],
+        [
+          "Messerschmidt sued over three statements made at a debate in Randers, a city in Jutland, on 10 November 2025. Among them was Lidegaard's claim that 'one wants to intern and deport thousands of fellow citizens, just because they have a different faith or a different skin colour from most of us'. Lidegaard was responding to an interview in Weekendavisen, a weekly newspaper, in which Messerschmidt spoke of expelling criminal foreigners and those who cannot support themselves.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "The court found the remarks capable of harming Messerschmidt's honour but backed by a sufficient factual basis. As a member of the Folketing, Denmark's parliament, Lidegaard has 'particularly far-reaching freedom of expression'; Messerschmidt, as a politician, must 'show a higher degree of tolerance'.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "jp",
+            "borsen"
+          ]
+        ],
+        [
+          "Lidegaard, who is also minister for business and competitiveness, called the ruling 'a completely unequivocal decision'. Messerschmidt said 'the truth has suffered a defeat'.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "standard": [
+        [
+          "Frederiksberg District Court on Friday acquitted Martin Lidegaard, leader of Radikale Venstre, a social-liberal party, of libelling Morten Messerschmidt, leader of Dansk Folkeparti, a nationalist party. Messerschmidt will not appeal and must pay 93,750 kroner in costs.",
+          [
+            "kristeligt_dagblad",
+            "altinget",
+            "berlingske",
+            "jp"
+          ]
+        ],
+        [
+          "At a debate in Randers, a city in Jutland, on 10 November 2025, Lidegaard said that 'one wants to intern and deport thousands of fellow citizens, just because they have a different faith or a different skin colour from most of us'.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "The court found a sufficient factual basis for the remarks. As a member of the Folketing, Denmark's parliament, Lidegaard has 'particularly far-reaching freedom of expression', and Messerschmidt must 'show a higher degree of tolerance'.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "jp",
+            "borsen"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Frederiksberg District Court on Friday acquitted Martin Lidegaard, leader of Radikale Venstre, a social-liberal party, of libelling Morten Messerschmidt, leader of Dansk Folkeparti, a nationalist party, over remarks at a debate last November. Messerschmidt will not appeal and must pay 93,750 kroner in costs.",
+          [
+            "kristeligt_dagblad",
+            "altinget",
+            "berlingske",
+            "dr"
+          ]
+        ]
+      ],
+      "callouts": [
+        {
+          "kind": "quote",
+          "text": "It is a completely unequivocal decision.",
+          "attribution": "Martin Lidegaard, leader of Radikale Venstre",
+          "attribution_source": "kristeligt_dagblad"
+        }
+      ]
+    },
+    {
+      "id": "trump-suspends-russia-sanctions-tariffs",
+      "role": "secondary",
+      "kicker": "World",
+      "sources": [
+        43,
+        16,
+        1,
+        2,
+        6,
+        10,
+        14
+      ],
+      "headline": "Trump suspends Russia sanctions days before they take effect",
+      "headline_short": "Trump suspends Russia sanctions",
+      "deck": "The law he signed last month would have put tariffs of up to 100 per cent on goods from the biggest buyers of Russian oil and gas.",
+      "standard": [
+        [
+          "Donald Trump on Friday suspended a range of sanctions, restrictions and tariffs on Russia, days before they were due to take effect, telling Congress that the exemption was 'in the US national interest'.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "guardian",
+            "bbc",
+            "wsj"
+          ]
+        ],
+        [
+          "They come from a law Trump signed in mid-September, named after Lindsey Graham, a Republican senator who died in July. It would have put tariffs of up to 100 per cent on goods from the five biggest importers of Russian oil or gas. India, among the largest buyers, had voiced concern.",
+          [
+            "kristeligt_dagblad",
+            "nytimes"
+          ]
+        ],
+        [
+          "Trump has announced a deal for Russia to deliver almost five million tonnes of diesel to America, and has suggested Ukraine needs a new leader.",
+          [
+            "kristeligt_dagblad",
+            "ft",
+            "guardian"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Donald Trump on Friday suspended a range of sanctions, restrictions and tariffs on Russia, days before they were due to take effect. The law he signed in mid-September would have put tariffs of up to 100 per cent on goods from the five biggest importers of Russian oil or gas.",
+          [
+            "kristeligt_dagblad",
+            "guardian",
+            "wsj"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "oldest-dane-was-nazi-party-member",
+      "role": "secondary",
+      "kicker": "History",
+      "sources": [
+        694,
+        398,
+        146
+      ],
+      "headline": "Denmark's oldest person confirms she joined the Danish Nazi party in 1941",
+      "headline_short": "Denmark's oldest was a Nazi party member",
+      "deck": "Kirsten Schwalbe set the national age record on Wednesday; the broadcaster that has followed her for years says it did not know.",
+      "standard": [
+        [
+          "Kirsten Schwalbe, who on Wednesday became the oldest person ever to have lived in Denmark, joined DNSAP, the Danish Nazi party, in August 1941, during the German occupation. On Friday she confirmed that she and her late husband had both been members, but would say no more.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "tv2"
+          ]
+        ],
+        [
+          "Two historians found her in the Bovrup file, a copy of the party's own membership register published after the war.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "TV Midtvest, a regional broadcaster that has followed her for four years, says it did not know. Bent Blüdnikow, a historian, told Kristeligt Dagblad that membership 'was treason', though it was not made a crime in itself after the occupation.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Kirsten Schwalbe, who on Wednesday became the oldest person ever to have lived in Denmark, has confirmed that she joined DNSAP, the Danish Nazi party, in 1941, during the German occupation.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "tv2"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "funen-man-charged-68-children",
+      "role": "secondary",
+      "kicker": "Crime",
+      "sources": [
+        716,
+        725,
+        693,
+        721,
+        288
+      ],
+      "headline": "Funen man is charged with abusing 68 children online",
+      "headline_short": "Man charged over abuse of 68 children",
+      "deck": "He denies the charges; his trial opens on Tuesday and a verdict is expected in December.",
+      "standard": [
+        [
+          "Prosecutors have charged a 25-year-old man from Funen, a Danish island, with grooming 68 children and with sextortion, in which an offender threatens to publish the victim's pictures or films. Most were between 11 and 14. He denies the charges. His trial opens on Tuesday in Svendborg, a town on Funen, and a verdict is expected in December.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "jp",
+            "politiken"
+          ]
+        ],
+        [
+          "According to the indictment, he contacted the children on Snapchat and OmeTV, which police call a chat roulette, and got them to perform sexual acts on themselves while he watched on screen. Police have identified 27 of the 68, most from Denmark. He has been in custody since March 2025.",
+          [
+            "kristeligt_dagblad",
+            "dr"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "A 25-year-old man from Funen, a Danish island, is charged with grooming and sextortion of 68 children, most of them aged 11 to 14. He denies the charges; his trial opens on Tuesday in Svendborg, a town on Funen.",
+          [
+            "kristeligt_dagblad",
+            "dr",
+            "jp",
+            "politiken"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "eu-summit-commission-ukraine-2027-gap",
+      "role": "secondary",
+      "kicker": "Europe",
+      "sources": [
+        283,
+        818,
+        337,
+        271,
+        359,
+        213
+      ],
+      "headline": "EU leaders tell the Commission to find money for Ukraine in 2027",
+      "headline_short": "EU seeks more money for Ukraine",
+      "deck": "Ukraine puts next year's shortfall at 70 billion euros or more; Belgium still refuses to use frozen Russian assets.",
+      "standard": [
+        [
+          "EU leaders asked the European Commission on Friday to propose how to close Ukraine's budget gap for 2027, said António Costa, president of the European Council, after the summit in Brussels. Ukraine puts its financial and military shortfall at 70 billion euros or more.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ],
+        [
+          "Last year 24 of the 27 EU countries, Denmark among them, agreed to borrow 90 billion euros for Ukraine for 2026 and 2027; the G7 and the IMF, which were to cover the rest, are slow to pay.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ],
+        [
+          "Mette Frederiksen, the prime minister, points to frozen Russian assets. Belgium, where most are held at Euroclear, a securities depository, refuses for fear of a Russian lawsuit.",
+          [
+            "kristeligt_dagblad"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "EU leaders asked the European Commission on Friday to propose how to close Ukraine's budget gap for 2027, which Ukraine puts at 70 billion euros or more. Belgium still refuses to use frozen Russian assets.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "moderates-waver-nitrogen-minister-refuses",
+      "role": "secondary",
+      "kicker": "Politics",
+      "sources": [
+        701,
+        841,
+        619,
+        829
+      ],
+      "headline": "Minister refuses to let a calculation error delay Denmark's new limits on farm fertiliser",
+      "headline_short": "Minister holds to fertiliser deadline",
+      "deck": "The Moderates, his partners in government, had said the start date might have to be revisited.",
+      "standard": [
+        [
+          "Christian Rabjerg Madsen, the minister for nature and animal welfare, will not let a calculation error at Aarhus University delay stricter limits on farm fertiliser, due from 1 January 2027. 'The consequence of waiting is simply more oxygen depletion, more algal slime and more dead fish,' he told Ritzau, the Danish news agency, on Friday.",
+          [
+            "kristeligt_dagblad",
+            "berlingske"
+          ]
+        ],
+        [
+          "His government partners, the Moderates, a liberal party founded by Lars Løkke Rasmussen, a former prime minister, had said the start date might be revisited. The university admitted the errors after several inquiries from Seges, a farming think tank. SF, a left-wing party also in government, opposes any delay.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "borsen"
+          ]
+        ]
+      ],
+      "short": [
+        [
+          "Christian Rabjerg Madsen, the minister for nature and animal welfare, will not let a calculation error at Aarhus University delay stricter limits on farm fertiliser, due from 1 January 2027. The Moderates, a liberal party founded by Lars Løkke Rasmussen, a former prime minister, had said the date might be revisited.",
+          [
+            "kristeligt_dagblad",
+            "berlingske",
+            "borsen"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "femern-work-partly-resumes",
+      "role": "brief",
+      "kicker": "Transport",
+      "sources": [
+        567,
+        548,
+        515,
+        558,
+        601
+      ],
+      "headline": "Work partly resumes on Denmark–Germany tunnel after cyberattack",
+      "lede": [
+        "Work has partly resumed on the Femern Belt tunnel between Denmark and Germany after a cyberattack on its main contractor, Femern Link Contractors, in the early hours of Monday; earthworks continue unhindered.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "politiken"
+        ]
+      ]
+    },
+    {
+      "id": "zacharia-fired-white-house",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        279,
+        272,
+        265,
+        212,
+        190,
+        130,
+        37,
+        184,
+        15,
+        27,
+        126
+      ],
+      "headline": "Trump fires his new press secretary after five days",
+      "lede": [
+        "Donald Trump fired Katie Zacharia, the White House press secretary, on Friday after five days in the job; she had called herself a lawyer but has admitted she never passed the exam to practise law.",
+        [
+          "kristeligt_dagblad",
+          "guardian",
+          "ft",
+          "nytimes",
+          "politiken"
+        ]
+      ]
+    },
+    {
+      "id": "trump-denies-starlink-throttling",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        105,
+        602,
+        180,
+        245
+      ],
+      "headline": "Trump denies limiting Ukraine's Starlink access",
+      "lede": [
+        "Donald Trump denied limiting Ukraine's access to Starlink, a satellite internet service; Volodymyr Zelenskyy, Ukraine's president, said on Friday its speed had been cut and was still not fully restored.",
+        [
+          "dr",
+          "kristeligt_dagblad",
+          "bbc",
+          "guardian"
+        ]
+      ]
+    },
+    {
+      "id": "trump-greenland-biggest-real-estate-deal",
+      "role": "brief",
+      "kicker": "World",
+      "sources": [
+        69,
+        11,
+        63
+      ],
+      "headline": "Trump calls the Greenland security pact the biggest real estate deal ever",
+      "lede": [
+        "Donald Trump told a rally in Dalton, Georgia, that the defence and security agreement the United States signed with Greenland and Denmark in September was 'probably the biggest real estate deal ever made'.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "nets-fault-double-card-charges",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        538,
+        517,
+        513
+      ],
+      "headline": "Payment company's fault charges card customers twice",
+      "lede": [
+        "A technical fault at Nets, a payment company, charged customers in Denmark, Sweden and Norway twice for purchases; Nets said the duplicate charges would be deleted on Friday.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "heart-runners-fastest-ever",
+      "role": "brief",
+      "kicker": "Health",
+      "sources": [
+        1091,
+        975,
+        351
+      ],
+      "headline": "Danish volunteers reach cardiac arrests faster than ever",
+      "lede": [
+        "Volunteers alerted by phone to a nearby cardiac arrest have never arrived faster, new figures from Denmark's heart-runner scheme show: one arrives within five minutes in 77 per cent of cases.",
+        [
+          "kristeligt_dagblad",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "combined-flu-covid-vaccine-first-europe",
+      "role": "brief",
+      "kicker": "Health",
+      "sources": [
+        908,
+        939,
+        885
+      ],
+      "headline": "Dane gets Europe's first combined flu and covid-19 vaccine",
+      "lede": [
+        "A 65-year-old Dane was due on Friday to be the first in Europe to get a combined flu and covid-19 vaccine, in a trial expected to enrol more than 300,000 Danes.",
+        [
+          "kristeligt_dagblad",
+          "dr",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "brorup-crash-two-dead",
+      "role": "brief",
+      "kicker": "Denmark",
+      "sources": [
+        753,
+        749,
+        747
+      ],
+      "headline": "Two men die after car and van collide",
+      "lede": [
+        "Two of five Romanian men in a car died after it collided with a van early on Friday in Brørup, between Esbjerg and Kolding; a third was in critical condition.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "sanger-soren-stroget-dies",
+      "role": "brief",
+      "kicker": "Obituary",
+      "sources": [
+        236,
+        692,
+        868,
+        494
+      ],
+      "headline": "Sanger Søren, Copenhagen's street singer, dies at 53",
+      "lede": [
+        "Søren Jakobsen, the street singer known as Sanger Søren, who for decades sang unaccompanied on Strøget in Copenhagen, has died aged 53.",
+        [
+          "dr",
+          "kristeligt_dagblad",
+          "politiken",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "annika-wins-p3-prize",
+      "role": "brief",
+      "kicker": "Culture",
+      "sources": [
+        150,
+        148
+      ],
+      "headline": "Singer Annika wins Danish radio's top music prize a year after missing out",
+      "lede": [
+        "Annika Wedderkopp, a 21-year-old singer who performs as Annika, won the top prize at P3 Guld, the annual music awards run by Danmarks Radio's P3, on Friday, a year after losing as a nominee.",
+        [
+          "kristeligt_dagblad",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "fields-escaped-convict-search",
+      "role": "brief",
+      "kicker": "Crime",
+      "sources": [
+        873,
+        850,
+        858
+      ],
+      "headline": "Convicted man escapes from staff at Copenhagen shopping centre",
+      "lede": [
+        "Police are searching for Anas Hamad, 31, who was placed in an institution by court order and escaped from staff during an accompanied outing at Field's, a Copenhagen shopping centre, on Thursday.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "dr"
+        ]
+      ]
+    },
+    {
+      "id": "wetlands-scheme-extra-500-million",
+      "role": "brief",
+      "kicker": "Environment",
+      "sources": [
+        821,
+        775,
+        889
+      ],
+      "headline": "Government adds 500 million kroner for wetland projects after rush of applications",
+      "lede": [
+        "The government is adding 500 million kroner to a grant scheme for projects that raise the water level on farmland to cut emissions, after applications outran its original 100 million within 15 minutes.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "via_ritzau"
+        ]
+      ]
+    },
+    {
+      "id": "dsb-director-passengers-leaving",
+      "role": "brief",
+      "kicker": "Transport",
+      "sources": [
+        773,
+        759
+      ],
+      "headline": "Rail operator's director calls loss of 718,000 passengers natural",
+      "lede": [
+        "DSB, the train operator, carried 718,000 fewer long-distance and regional passengers in the first half of the year than a year earlier, a fall its director, Flemming Jensen, calls natural given delays and cancellations.",
+        [
+          "kristeligt_dagblad",
+          "berlingske"
+        ]
+      ]
+    },
+    {
+      "id": "state-loss-copenhagen-airport-shares",
+      "role": "brief",
+      "kicker": "Business",
+      "sources": [
+        579,
+        440
+      ],
+      "headline": "State has lost billions on Copenhagen airport shares",
+      "lede": [
+        "The Danish state has so far lost billions of kroner on its purchase of shares in Copenhagen Airports, the share price shows.",
+        [
+          "jp",
+          "borsen"
+        ]
+      ]
+    },
+    {
+      "id": "tesla-roadster-lifts-off",
+      "role": "brief",
+      "kicker": "Technology",
+      "sources": [
+        929,
+        820,
+        593,
+        712,
+        550,
+        1109,
+        598,
+        781,
+        707,
+        181
+      ],
+      "headline": "Tesla unveils a Roadster that can lift off the ground",
+      "lede": [
+        "Tesla has unveiled a new Roadster whose rocket-like motor, built with SpaceX, Elon Musk's space company, let it lift off and flip in the air at the launch; production begins in 2028.",
+        [
+          "kristeligt_dagblad",
+          "berlingske",
+          "dr"
+        ]
+      ]
+    }
+  ]
+}

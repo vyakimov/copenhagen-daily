@@ -1,0 +1,11 @@
+[
+ {
+  "requested": "Strøget",
+  "status": "unavailable",
+  "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Str%C3%B8get",
+  "http_status": 429,
+  "fetched_at": "2026-10-17T03:37:20.695392Z",
+  "term": "Strøget",
+  "definition": "a pedestrian shopping street in Copenhagen"
+ }
+]

@@ -1,0 +1,11 @@
+[
+ {
+  "requested": "DR (broadcaster)",
+  "status": "unavailable",
+  "url": "https://en.wikipedia.org/api/rest_v1/page/summary/DR_%28broadcaster%29",
+  "http_status": 429,
+  "fetched_at": "2026-10-17T03:37:20.848012Z",
+  "term": "DR",
+  "definition": "Denmark's public broadcaster"
+ }
+]

@@ -1,0 +1,35 @@
+[
+ {
+  "requested": "Moderates (Denmark)",
+  "status": "found",
+  "title": "Moderates (Denmark)",
+  "extract": "The Moderates is a liberal political party in Denmark founded by former prime minister and current minister of foreign affairs Lars Løkke Rasmussen.",
+  "url": "https://en.wikipedia.org/wiki/Moderates_(Denmark)",
+  "type": "standard",
+  "fetched_at": "2026-10-17T03:37:20.256164Z",
+  "term": "the Moderates",
+  "definition": "a liberal party founded by Lars Løkke Rasmussen, a former prime minister"
+ },
+ {
+  "requested": "Green Left (Denmark)",
+  "status": "found",
+  "title": "Green Left (Denmark)",
+  "extract": "The Green Left is a democratic socialist political party in Denmark. The SF was founded on 15 February 1959 by Aksel Larsen, a former leader of the Communist Party of Denmark (DKP), who was removed for criticizing the Soviet intervention in the Hungarian Revolution of 1956. Larsen aimed to create a third way between Denmark's US-oriented social democracy and Soviet-oriented communism, combining democracy with socialism. The SF entered the Folketing in the 1960 Danish general election, while the DKP lost its seats. The SF became involved in peace, anti-nuclear, and grassroots movements, advocating for independence from the Soviet Union.",
+  "url": "https://en.wikipedia.org/wiki/Green_Left_(Denmark)",
+  "type": "standard",
+  "fetched_at": "2026-10-17T03:37:20.407953Z",
+  "term": "SF",
+  "definition": "a left-wing party"
+ },
+ {
+  "requested": "Ritzau",
+  "status": "found",
+  "title": "Ritzau",
+  "extract": "Ritzaus Bureau A/S, or Ritzau for short, sometimes stylized as /ritzau/, is a Danish news agency founded by Erik Ritzau in 1866. It collaborates with three other Scandinavian news agencies to provide Nordic News, an English-language Scandinavian news service. It is based in Copenhagen and Lars Vesterløkke is editor-in-chief and CEO of the company.",
+  "url": "https://en.wikipedia.org/wiki/Ritzau",
+  "type": "standard",
+  "fetched_at": "2026-10-17T03:39:50.419811Z",
+  "term": "Ritzau",
+  "definition": "the Danish news agency"
+ }
+]

@@ -1,0 +1,11 @@
+[
+ {
+  "requested": "DSB (railway company)",
+  "status": "unavailable",
+  "url": "https://en.wikipedia.org/api/rest_v1/page/summary/DSB_%28railway_company%29",
+  "http_status": 429,
+  "fetched_at": "2026-10-17T03:37:20.989457Z",
+  "term": "DSB",
+  "definition": "Denmark's state railway operator"
+ }
+]
